@@ -1,66 +1,53 @@
-#include "Main.h"
+#include "iostream"
 
-static void Main::main(String args[]) {
-	// TODO - implement Main::main
-	throw "Not yet implemented";
-}
+using namespace std;
 
-static void Main::test1() {
-	// TODO - implement Main::test1
-	throw "Not yet implemented";
-}
+int main() {
+	cout << "                       .|" << endl;
+    cout << "                       | |" << endl;
+    cout << "                       |'|            ._____" << endl;
+    cout << "               ___    |  |            |.   |' .---\"|" << endl;
+    cout << "       _    .-'   '-. |  |     .--'|  ||   | _|    |" << endl;
+    cout << "    .-'|  _.|  |    ||   '-__  |   |  |    ||      |" << endl;
+    cout << "    |' | |.    |    ||       | |   |  |    ||      |" << endl;
+    cout << " ___|  '-'     '    \"\"       '-'   '-.'    '`      |____" << endl;
+    cout << "jgs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "      _ _         " << endl;
+    
+	cout << "_________ .__  __           __________      .__.__       .___             " << endl;
+    cout << "\\_   ___ \\|__|/  |_ ___.__. \\______   \\__ __|__|  |    __| _/___________  " << endl;
+    cout << "/    \\  \\/|  \\   __<   |  |  |    |  _/  |  \\  |  |   / __ |/ __ \\_  __ \\ " << endl;
+    cout << "\\     \\___|  ||  |  \\___  |  |    |   \\  |  /  |  |__/ /_/ \\  ___/|  | \\/ " << endl;
+    cout << " \\______  /__||__|  / ____|  |______  /____/|__|____/\\____ |\\___  >__|    " << endl;
+    cout << "        \\/          \\/              \\/                    \\/    \\/         " << endl;
 
-static void Main::test2() {
-	// TODO - implement Main::test2
-	throw "Not yet implemented";
-}
+	
 
-static void Main::test3() {
-	// TODO - implement Main::test3
-	throw "Not yet implemented";
-}
+	cout << "   _____ _ _           ____        _ _     _            " << endl;
+    cout << "  / ____(_) |         |  _ \\      (_) |   | |           " << endl;
+    cout << " | |     _| |_ _   _  | |_) |_   _ _| | __| | ___ _ __  " << endl;
+    cout << " | |    | | __| | | | |  _ <| | | | | |/ _` |/ _ \\ '__| " << endl;
+    cout << " | |____| | |_| |_| | | |_) | |_| | | | (_| |  __/ |    " << endl;
+    cout << "  \\_____|_|\\__|\\__, | |____/ \\__,_|_|_|\\__,_|\\___|_|    " << endl;
+    cout << "                __/ |                                   " << endl;
+    cout << "               |___/                                    " << endl;
 
-static void Main::test4() {
-	// TODO - implement Main::test4
-	throw "Not yet implemented";
-}
 
-static void Main::test5() {
-	// TODO - implement Main::test5
-	throw "Not yet implemented";
-}
+	cout << "  ___  __  ____  _  _    ____  _  _  __  __    ____  ____  ____       " << endl;
+    cout << " / __)(  )(_  _)( \\/ )  (  _ \\/ )( \\(  )(  )  (    \\(  __)(  _ \\      " << endl;
+    cout << "( (__  )(   )(   )  /    ) _ () \\/ ( )( / (_/\\ ) D ( ) _)  )   /      " << endl;
+    cout << " \\___)(__) (__) (__/    (____/\\____/(__)\\____/(____/(____)(__\\_)      " << endl;
 
-static void Main::test6() {
-	// TODO - implement Main::test6
-	throw "Not yet implemented";
-}
+	cout << "   ___ _ _          ___      _ _    _          " << endl;
+    cout << "  / __(_) |_ _  _  | _ )_  _(_) |__| |___ _ _  " << endl;
+    cout << " | (__| |  _| || | | _ \\ || | | / _` / -_) '_| " << endl;
+    cout << "  \\___|_|\\__|\\_, | |___/\\_,_|_|_\\__,_\\___|_|   " << endl;
+    cout << "             |__/                              " << endl;
 
-static void Main::test7() {
-	// TODO - implement Main::test7
-	throw "Not yet implemented";
-}
+ 	cout << "┏┓•     ┳┓  •┓ ┓      " << endl;
+    cout << "┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl;
+    cout << "┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl;
+    cout << "     ┛                 " << endl;
 
-static void Main::test8() {
-	// TODO - implement Main::test8
-	throw "Not yet implemented";
-}
-
-static void Main::test9() {
-	// TODO - implement Main::test9
-	throw "Not yet implemented";
-}
-
-static void Main::test10() {
-	// TODO - implement Main::test10
-	throw "Not yet implemented";
-}
-
-static void Main::test11() {
-	// TODO - implement Main::test11
-	throw "Not yet implemented";
-}
-
-static void Main::printPath(Vertex path[]) {
-	// TODO - implement Main::printPath
-	throw "Not yet implemented";
+	return 0;
 }
