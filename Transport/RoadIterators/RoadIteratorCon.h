@@ -1,7 +1,7 @@
 #ifndef ROADITERATORCON_H
 #define ROADITERATORCON_H
 
-#include "RoadIterator.h"
+#include "../RoadIterator.h"
 
 class RoadIteratorCon : RoadIterator
 {

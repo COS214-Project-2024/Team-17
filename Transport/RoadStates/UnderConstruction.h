@@ -1,8 +1,7 @@
 #ifndef UNDERCONSTRUCTION_H
 #define UNDERCONSTRUCTION_H
 
-#include "RoadState.h"
-#include "RoadComponent.h"
+#include "../RoadState.h"
 #include <string>
 
 class UnderConstruction : public RoadState

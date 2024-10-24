@@ -1,6 +1,6 @@
 # Define the source files and headers
-SOURCES := $(wildcard *.cpp)
-HEADERS := $(wildcard *.h) ../Citizens/CityBlock.h
+SOURCES := $(shell find . -name '*.cpp')
+HEADERS := $(shell find . -name '*.h') ../Citizens/CityBlock.h
 OBJECTS := $(SOURCES:.cpp=.o) ../Citizens/CityBlock.o
 
 # Define the target
@@ -8,6 +8,7 @@ main: $(OBJECTS)
 	g++ -o main $(OBJECTS)
 
 # Define the object file rule
+# This rule handles source files in subdirectories
 %.o: %.cpp $(HEADERS)
 	g++ -c $< -o $@
 

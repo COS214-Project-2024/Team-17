@@ -1,7 +1,7 @@
 #ifndef RESIDENTIALSTREETS_H
 #define RESIDENTIALSTREETS_H
 
-#include "RoadComponent.h"
+#include "../RoadComponent.h"
 
 class ResidentialStreets : public RoadComponent
 {

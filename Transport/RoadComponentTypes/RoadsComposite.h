@@ -1,7 +1,7 @@
 #ifndef ROADSCOMPOSITE_H
 #define ROADSCOMPOSITE_H
 
-#include "RoadComponent.h"
+#include "../RoadComponent.h"
 #include <memory>
 #include <vector>
 

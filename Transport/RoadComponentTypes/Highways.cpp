@@ -1,6 +1,6 @@
 #include "Highways.h"
 #include <iostream>
-#include "Congested.h"
+#include "../RoadStates/RoadStatesIncludes.h"
 
 Highways::Highways(CityMediator *mediator) : RoadComponent(mediator)
 {

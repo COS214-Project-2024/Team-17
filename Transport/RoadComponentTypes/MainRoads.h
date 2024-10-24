@@ -1,7 +1,7 @@
 #ifndef MAINROADS_H
 #define MAINROADS_H
 
-#include "RoadComponent.h"
+#include "../RoadComponent.h"
 
 class MainRoads : public RoadComponent
 {

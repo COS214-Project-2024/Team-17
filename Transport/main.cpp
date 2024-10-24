@@ -1,10 +1,5 @@
 #include <iostream>
-#include "RoadComponent.h"
-#include "MainRoads.h"
-#include "Highways.h"
-#include "RoadsComposite.h"
-#include "ResidentialStreets.h"
-#include "../Citizens/CityMediator.h"
+#include "TransportInclude.h"
 
 void testRoadComponent(RoadComponent *roadComponent)
 {

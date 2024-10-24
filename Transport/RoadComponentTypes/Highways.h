@@ -1,7 +1,7 @@
 #ifndef HIGHWAYS_H
 #define HIGHWAYS_H
 
-#include "RoadComponent.h"
+#include "../RoadComponent.h"
 
 class Highways : public RoadComponent
 {
