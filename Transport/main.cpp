@@ -4,11 +4,11 @@
 void testRoadComponent(RoadComponent *roadComponent)
 {
     std::cout << " - Testing Road Component:" << std::endl;
-    std::cout << "\t - Displaying Info:" << std::endl;
+    std::cout << "\t - Displaying Info" << std::endl;
     roadComponent->displayInfo();
-    std::cout << "\t - Calculating Traffic:" << std::endl;
+    std::cout << "\t - Calculating Traffic" << std::endl;
     roadComponent->calculateTraffic();
-    std::cout << "\t - Getting Distance:" << std::endl;
+    std::cout << "\t - Getting Distance" << std::endl;
     roadComponent->getDistance();
     std::cout << "\t - Testing Complete!" << std::endl;
 }
@@ -34,8 +34,33 @@ void testRoads()
     }
 }
 
+void testRoadsIterator()
+{
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Road Iterators" << std::endl;
+    std::cout << "############################################" << std::endl;
+    CityMediator *mediator = new CityMediator();
+    std::cout << " - CityMediator created!" << std::endl;
+
+    std::vector<RoadComponent *> roads = {new MainRoads(mediator), new Highways(mediator), new RoadsComposite(mediator), new ResidentialStreets(mediator)};
+
+    RoadIterator *iterator = new RoadIteratorCon(&roads);
+
+    std::cout << " - Testing Road Iterator:" << std::endl;
+    std::cout << "\t - First" << std::endl;
+    iterator->first();
+    std::cout << "\t - Next" << std::endl;
+    iterator->next();
+    std::cout << "\t - Is Done" << std::endl;
+    iterator->isDone();
+    std::cout << "\t - Current Road" << std::endl;
+    iterator->currentRoad();
+    std::cout << "\t - Testing Complete!" << std::endl;
+}
+
 int main()
 {
     testRoads();
+    testRoadsIterator();
     return 0;
 }

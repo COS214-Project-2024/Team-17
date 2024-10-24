@@ -4,7 +4,7 @@
 #include "../RoadIterator.h"
 #include <vector>
 
-class RoadIteratorCon : RoadIterator
+class RoadIteratorCon : public RoadIterator
 {
 private:
 	int current;
