@@ -1,7 +1,12 @@
 #ifndef BUILDDECORUPGRADE_H
 #define BUILDDECORUPGRADE_H
 
-class BuildDecorUpgrade : BuildingDecorator {
+#include "BuildingDecorator.h"
+
+class BuildDecorUpgrade : public BuildingDecorator {
+public:
+    BuildDecorUpgrade(Building* b);
+    virtual void displayBuildingInfo() override;
 };
 
 #endif

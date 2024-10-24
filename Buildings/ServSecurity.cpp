@@ -1,11 +1,17 @@
 #include "ServSecurity.h"
 
-void ServSecurity::Police() {
-	// TODO - implement ServSecurity::Police
-	throw "Not yet implemented";
+ServSecurity::ServSecurity() {
+    cout << BLACK << "\t-->Security service created" << RESET << endl;
 }
 
-void ServSecurity::Firestation() {
-	// TODO - implement ServSecurity::Firestation
-	throw "Not yet implemented";
+void ServSecurity::displayBuildingInfo() {
+    cout << "Security service with " << this->visitors << " visitors\n";
+}
+
+int ServSecurity::getVisitors() {
+    return visitors;
+}
+
+void ServSecurity::setVisitors(int visitors) {
+    this->visitors = visitors;
 }

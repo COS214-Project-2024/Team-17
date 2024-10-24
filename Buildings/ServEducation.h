@@ -1,15 +1,23 @@
 #ifndef SERVEDUCATION_H
 #define SERVEDUCATION_H
 
-class ServEducation : Services {
+#include "Services.h"
 
-
+class ServEducation : public Services {
 public:
-	void Primary();
+	ServEducation();
 
-	void Secondary();
+	void displayBuildingInfo() override;	
 
-	void Tertiary();
+	int getVisitors() override;
+	void setVisitors(int visitors) override;
+
+	// void Primary();
+	// void Secondary();
+	// void Tertiary();
+
+private:
+	int visitors;
 };
 
 #endif

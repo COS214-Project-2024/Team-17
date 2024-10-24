@@ -1,15 +1,23 @@
 #ifndef SERVENTERTAINMENT_H
 #define SERVENTERTAINMENT_H
 
-class ServEntertainment : Services {
+#include "Services.h"
 
-
+class ServEntertainment : public Services {
 public:
-	void Movie();
+	ServEntertainment();
 
-	void Arcade();
+	void displayBuildingInfo() override;	
 
-	void Gym();
+	int getVisitors() override;
+	void setVisitors(int visitors) override;
+
+	// void Movie();
+	// void Arcade();
+	// void Gym();
+
+private:
+	int visitors;
 };
 
 #endif

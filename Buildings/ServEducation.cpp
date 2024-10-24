@@ -1,16 +1,17 @@
 #include "ServEducation.h"
 
-void ServEducation::Primary() {
-	// TODO - implement ServEducation::Primary
-	throw "Not yet implemented";
+ServEducation::ServEducation() {
+    cout << BLACK << "\t-->Education service created" << RESET << endl;
 }
 
-void ServEducation::Secondary() {
-	// TODO - implement ServEducation::Secondary
-	throw "Not yet implemented";
+void ServEducation::displayBuildingInfo() {
+    cout << "Education service with " << this->visitors << " visitors\n";
 }
 
-void ServEducation::Tertiary() {
-	// TODO - implement ServEducation::Tertiary
-	throw "Not yet implemented";
+int ServEducation::getVisitors() {
+    return visitors;
+}
+
+void ServEducation::setVisitors(int visitors) {
+    this->visitors = visitors;
 }

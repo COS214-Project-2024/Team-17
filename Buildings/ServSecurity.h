@@ -1,13 +1,22 @@
 #ifndef SERVSECURITY_H
 #define SERVSECURITY_H
 
-class ServSecurity : Services {
+#include "Services.h"
 
-
+class ServSecurity : public Services {
 public:
-	void Police();
+	ServSecurity();
 
-	void Firestation();
+	void displayBuildingInfo() override;	
+
+	int getVisitors() override;
+	void setVisitors(int visitors) override;
+
+	// void Police();
+	// void Firestation();
+
+private:
+	int visitors;
 };
 
 #endif

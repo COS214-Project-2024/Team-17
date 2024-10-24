@@ -1,16 +1,17 @@
 #include "ServEntertainment.h"
 
-void ServEntertainment::Movie() {
-	// TODO - implement ServEntertainment::Movie
-	throw "Not yet implemented";
+ServEntertainment::ServEntertainment() {
+    cout << BLACK << "\t-->Entertainment service created" << RESET << endl;
 }
 
-void ServEntertainment::Arcade() {
-	// TODO - implement ServEntertainment::Arcade
-	throw "Not yet implemented";
+void ServEntertainment::displayBuildingInfo() {
+    cout << "Entertainment service with " << this->visitors << " visitors\n";
 }
 
-void ServEntertainment::Gym() {
-	// TODO - implement ServEntertainment::Gym
-	throw "Not yet implemented";
+int ServEntertainment::getVisitors() {
+    return visitors;
+}
+
+void ServEntertainment::setVisitors(int visitors) {
+    this->visitors = visitors;
 }
