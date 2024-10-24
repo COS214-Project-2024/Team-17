@@ -2,18 +2,24 @@
 #define ROADITERATORCON_H
 
 #include "../RoadIterator.h"
+#include <vector>
 
 class RoadIteratorCon : RoadIterator
 {
+private:
+	int current;
+	std::vector<RoadComponent *> *roads;
 
 public:
-	void first();
+	RoadIteratorCon(std::vector<RoadComponent *> *roads);
 
-	void next();
+	virtual void first();
 
-	void isDone();
+	virtual void next();
 
-	void currentRoad();
+	virtual bool isDone();
+
+	virtual RoadComponent *currentRoad();
 };
 
 #endif

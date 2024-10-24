@@ -1,5 +1,7 @@
 #include "RoadComponent.h"
 #include "../Citizens/CityMediator.h"
+#include "RoadIterator.h"
+#include "RoadState.h"
 
 RoadIterator *RoadComponent::createIterator()
 {

@@ -4,8 +4,8 @@
 class CityMediator;
 // #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
-#include "RoadState.h"
-#include "RoadIterator.h"
+class RoadState;
+class RoadIterator;
 
 class RoadComponent : CityBlock
 {
@@ -34,6 +34,8 @@ public:
 	virtual void notifyChange();
 
 	virtual void accept(TaxAndBudgetVisitor *visitor);
+
+	virtual ~RoadComponent() = 0;
 };
 
 #endif
