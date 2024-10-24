@@ -1,31 +1,39 @@
 #ifndef CITYCENTRALMEDIATOR_H
 #define CITYCENTRALMEDIATOR_H
 
-class CityCentralMediator : CityMediator {
+#include <vector>
+#include "CityMediator.h"
+#include "Citizen.h"
+class Building;
+class Utilities;
+class RoadState;
+
+class CityCentralMediator : CityMediator
+{
 
 private:
-	vector<Building*> buildings;
-	Utilities* utilities;
-	vector<Citizen*> citizens;
-	RoadState roadState;
+	std::vector<Building *> buildings;
+	Utilities *utilities;
+	std::vector<Citizen *> citizens;
+	RoadState *roadState;
 
 public:
-	void registerBuilding(Building* building);
+	void registerBuilding(Building *building);
 
-	void registerUtility(Utilities* util);
+	void registerUtility(Utilities *util);
 
-	void notifyBuildingChange(Building* building);
+	void notifyBuildingChange(Building *building);
 
-	void notifyUtilityChange(UtilityType type, bool status);
+	void notifyUtilityChange(Utilities *type, bool status);
 
-	void notifyRoadChange(RoadStatus status);
+	void notifyRoadChange(RoadState *status);
 
 private:
 	void handlePopulationGrowth();
 
 	void handleUtilityFailure();
 
-	void handleTrafficStatus(TrafficStatus status);
+	void handleTrafficStatus(RoadState *status);
 
 	void updateCitizenSatisfaction();
 };
