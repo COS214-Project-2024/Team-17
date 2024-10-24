@@ -18,6 +18,8 @@ public:
 
 	void setState(CitizenState newState);
 
+	CitizenState getState();
+
 	void notifyChange();
 
 	void accept(TaxAndBudgetVisitor *visitor);
