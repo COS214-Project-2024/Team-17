@@ -1,8 +1,8 @@
 #ifndef ROADITERATOR_H
 #define ROADITERATOR_H
 
-class RoadIterator {
-
+class RoadIterator
+{
 
 public:
 	virtual void first() = 0;
