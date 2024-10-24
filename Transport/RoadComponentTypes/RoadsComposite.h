@@ -22,6 +22,8 @@ public:
 	void remove(RoadComponent *component);
 
 	float getDistance();
+
+	~RoadsComposite() {}
 };
 
 #endif

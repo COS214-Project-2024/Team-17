@@ -47,3 +47,11 @@ void RoadComponent::accept(TaxAndBudgetVisitor *visitor)
 	// TODO - implement RoadComponent::accept
 	throw "Not yet implemented";
 }
+
+RoadComponent::~RoadComponent()
+{
+	if (state != nullptr)
+	{
+		delete state;
+	}
+}

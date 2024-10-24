@@ -14,6 +14,8 @@ public:
 	void calculateTraffic();
 
 	float getDistance();
+
+	~MainRoads() {}
 };
 
 #endif

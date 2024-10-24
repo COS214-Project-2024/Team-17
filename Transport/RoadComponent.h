@@ -35,7 +35,7 @@ public:
 
 	virtual void accept(TaxAndBudgetVisitor *visitor);
 
-	virtual ~RoadComponent() = 0;
+	virtual ~RoadComponent();
 };
 
 #endif
