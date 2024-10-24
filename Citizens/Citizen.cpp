@@ -2,8 +2,8 @@
 
 Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
-	// TODO - implement Citizen::Citizen
-	throw "Not yet implemented";
+	this->mediator = mediator;
+	this->state = Indifferent();
 }
 
 void Citizen::setState(CitizenState newState)

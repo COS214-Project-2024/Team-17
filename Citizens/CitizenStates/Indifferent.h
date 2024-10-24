@@ -3,7 +3,7 @@
 
 #include "../CitizenState.h"
 
-class Indifferent : CitizenState
+class Indifferent : public CitizenState
 {
 };
 
