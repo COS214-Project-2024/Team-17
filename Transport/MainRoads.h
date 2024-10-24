@@ -1,10 +1,13 @@
 #ifndef MAINROADS_H
 #define MAINROADS_H
 
-class MainRoads : RoadComponent {
+#include "RoadComponent.h"
+
+class MainRoads : public RoadComponent
+{
 
 public:
-	float distance;
+	MainRoads(CityMediator *mediator);
 
 	void displayInfo();
 

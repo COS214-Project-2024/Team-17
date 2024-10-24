@@ -1,7 +1,10 @@
 #ifndef WORKINGNOISSUES_H
 #define WORKINGNOISSUES_H
 
-class WorkingNoIssues : RoadState {
+#include "RoadState.h"
+
+class WorkingNoIssues : RoadState
+{
 };
 
 #endif

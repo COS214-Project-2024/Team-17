@@ -1,11 +1,20 @@
 #ifndef ROADCOMPONENT_H
 #define ROADCOMPONENT_H
 
-class RoadComponent : CityBlock {
+class CityMediator;
+// #include "../Citizens/CityMediator.h"
+#include "../Citizens/CityBlock.h"
+#include "RoadState.h"
+#include "RoadIterator.h"
+
+class RoadComponent : CityBlock
+{
 
 private:
-	RoadState* state;
-	TrafficStatus status;
+	RoadState *state;
+
+protected:
+	float distance;
 
 public:
 	virtual void displayInfo() = 0;
@@ -14,17 +23,17 @@ public:
 
 	virtual float getDistance() = 0;
 
-	RoadIterator createIterator();
+	RoadIterator *createIterator();
 
-	void setState(RoadState* newState);
+	void setState(RoadState *newState);
 
 	void handleTraffic();
 
-	RoadComponent(CityMediator* mediator);
+	RoadComponent(CityMediator *mediator);
 
-	void updateTraffic(TrafficStatus newStatus);
+	virtual void notifyChange();
 
-	void notifyChange();
+	virtual void accept(TaxAndBudgetVisitor *visitor);
 };
 
 #endif

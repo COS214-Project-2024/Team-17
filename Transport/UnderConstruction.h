@@ -1,13 +1,17 @@
 #ifndef UNDERCONSTRUCTION_H
 #define UNDERCONSTRUCTION_H
 
-class UnderConstruction : RoadState {
+#include "RoadState.h"
+#include "RoadComponent.h"
+#include <string>
 
+class UnderConstruction : RoadState
+{
 
 public:
-	void handleTraffic(RoadComponent& road);
+	void handleTraffic(RoadComponent &road);
 
-	string getStatus();
+	std::string getStatus();
 };
 
 #endif

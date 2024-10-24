@@ -1,10 +1,13 @@
 #ifndef RESIDENTIALSTREETS_H
 #define RESIDENTIALSTREETS_H
 
-class ResidentialStreets : RoadComponent {
+#include "RoadComponent.h"
+
+class ResidentialStreets : public RoadComponent
+{
 
 public:
-	float distance;
+	ResidentialStreets(CityMediator *mediator);
 
 	void displayInfo();
 

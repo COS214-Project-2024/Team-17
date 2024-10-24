@@ -1,7 +1,10 @@
 #ifndef CONGESTED_H
 #define CONGESTED_H
 
-class Congested : RoadState {
+#include "RoadState.h"
+
+class Congested : RoadState
+{
 };
 
 #endif

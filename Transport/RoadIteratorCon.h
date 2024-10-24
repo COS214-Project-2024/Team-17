@@ -1,8 +1,10 @@
 #ifndef ROADITERATORCON_H
 #define ROADITERATORCON_H
 
-class RoadIteratorCon : RoadIterator {
+#include "RoadIterator.h"
 
+class RoadIteratorCon : RoadIterator
+{
 
 public:
 	void first();
