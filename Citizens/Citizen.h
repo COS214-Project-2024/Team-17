@@ -1,21 +1,26 @@
 #ifndef CITIZEN_H
 #define CITIZEN_H
 
-class Citizen : CityBlock {
+#include "CitizenStates/CitizenStatesIncludes.h"
+#include "CityBlock.h"
+#include "CityMediator.h"
+
+class Citizen : CityBlock
+{
 
 private:
 	int population;
-	CityMediator* mediator;
+	CityMediator *mediator;
 	CitizenState state;
 
 public:
-	Citizen(CityMediator* mediator);
+	Citizen(CityMediator *mediator);
 
 	void setState(CitizenState newState);
 
 	void notifyChange();
 
-	void accept(TaxAndBudgetVisitor* visitor);
+	void accept(TaxAndBudgetVisitor *visitor);
 };
 
 #endif
