@@ -1,25 +1,27 @@
 #include "RoadIteratorCon.h"
+#include "../RoadComponent.h"
+
+RoadIteratorCon::RoadIteratorCon(std::vector<RoadComponent *> *roads)
+{
+	this->roads = roads;
+}
 
 void RoadIteratorCon::first()
 {
-	// TODO - implement RoadIteratorCon::first
-	throw "Not yet implemented";
+	current = 0;
 }
 
 void RoadIteratorCon::next()
 {
-	// TODO - implement RoadIteratorCon::next
-	throw "Not yet implemented";
+	current++;
 }
 
-void RoadIteratorCon::isDone()
+bool RoadIteratorCon::isDone()
 {
-	// TODO - implement RoadIteratorCon::isDone
-	throw "Not yet implemented";
+	return current >= roads->size();
 }
 
-void RoadIteratorCon::currentRoad()
+RoadComponent *RoadIteratorCon::currentRoad()
 {
-	// TODO - implement RoadIteratorCon::currentRoad
-	throw "Not yet implemented";
+	return roads->at(current);
 }

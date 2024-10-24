@@ -8,7 +8,7 @@ RoadsComposite::RoadsComposite(CityMediator *mediator) : RoadComponent(mediator)
 
 void RoadsComposite::displayInfo()
 {
-	std::cout << "Composite Road of distance: " << distance << std::endl;
+	std::cout << "Composite Road of distance: " << getDistance() << std::endl;
 }
 
 void RoadsComposite::calculateTraffic()
@@ -18,14 +18,19 @@ void RoadsComposite::calculateTraffic()
 
 void RoadsComposite::add(RoadComponent *component)
 {
-	// TODO - implement RoadsComposite::add
-	throw "Not yet implemented";
+	components.push_back(component);
 }
 
 void RoadsComposite::remove(RoadComponent *component)
 {
-	// TODO - implement RoadsComposite::remove
-	throw "Not yet implemented";
+	for (auto it = components.begin(); it != components.end(); it++)
+	{
+		if (*it == component)
+		{
+			components.erase(it);
+			break;
+		}
+	}
 }
 
 float RoadsComposite::getDistance()

@@ -2,13 +2,12 @@
 #define ROADSCOMPOSITE_H
 
 #include "../RoadComponent.h"
-#include <memory>
 #include <vector>
 
 class RoadsComposite : public RoadComponent
 {
 private:
-	std::vector<std::shared_ptr<RoadComponent>> components;
+	std::vector<RoadComponent *> components;
 
 public:
 	RoadsComposite(CityMediator *mediator);
@@ -22,6 +21,8 @@ public:
 	void remove(RoadComponent *component);
 
 	float getDistance();
+
+	~RoadsComposite() {}
 };
 
 #endif

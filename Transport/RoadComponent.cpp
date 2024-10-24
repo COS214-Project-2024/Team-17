@@ -1,5 +1,7 @@
 #include "RoadComponent.h"
 #include "../Citizens/CityMediator.h"
+#include "RoadIterator.h"
+#include "RoadState.h"
 
 RoadIterator *RoadComponent::createIterator()
 {
@@ -44,4 +46,12 @@ void RoadComponent::accept(TaxAndBudgetVisitor *visitor)
 {
 	// TODO - implement RoadComponent::accept
 	throw "Not yet implemented";
+}
+
+RoadComponent::~RoadComponent()
+{
+	if (state != nullptr)
+	{
+		delete state;
+	}
 }

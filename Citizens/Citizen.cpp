@@ -11,6 +11,11 @@ void Citizen::setState(CitizenState newState)
 	this->state = newState;
 }
 
+CitizenState Citizen::getState()
+{
+	return state;
+}
+
 void Citizen::notifyChange()
 {
 	// TODO - implement Citizen::notifyChange
