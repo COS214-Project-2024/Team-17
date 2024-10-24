@@ -11,6 +11,8 @@ public:
 	virtual void handleTraffic(RoadComponent *road) = 0;
 
 	virtual std::string getStatus() = 0;
+
+	virtual ~RoadState() {}
 };
 
 #endif
