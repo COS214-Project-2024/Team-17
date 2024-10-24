@@ -1,4 +1,6 @@
 #include "MainRoads.h"
+#include <iostream>
+#include "Congested.h"
 
 MainRoads::MainRoads(CityMediator *mediator) : RoadComponent(mediator)
 {
@@ -6,14 +8,12 @@ MainRoads::MainRoads(CityMediator *mediator) : RoadComponent(mediator)
 
 void MainRoads::displayInfo()
 {
-	// TODO - implement MainRoads::displayInfo
-	throw "Not yet implemented";
+	std::cout << "Main Road of distance: " << distance << std::endl;
 }
 
 void MainRoads::calculateTraffic()
 {
-	// TODO - implement MainRoads::calculateTraffic
-	throw "Not yet implemented";
+	setState(new Congested());
 }
 
 float MainRoads::getDistance()

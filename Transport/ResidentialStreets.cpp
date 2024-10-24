@@ -1,4 +1,6 @@
 #include "ResidentialStreets.h"
+#include <iostream>
+#include "Congested.h"
 
 ResidentialStreets::ResidentialStreets(CityMediator *mediator) : RoadComponent(mediator)
 {
@@ -6,14 +8,12 @@ ResidentialStreets::ResidentialStreets(CityMediator *mediator) : RoadComponent(m
 
 void ResidentialStreets::displayInfo()
 {
-	// TODO - implement ResidentialStreets::displayInfo
-	throw "Not yet implemented";
+	std::cout << "Residential Street of distance: " << distance << std::endl;
 }
 
 void ResidentialStreets::calculateTraffic()
 {
-	// TODO - implement ResidentialStreets::calculateTraffic
-	throw "Not yet implemented";
+	setState(new Congested());
 }
 
 float ResidentialStreets::getDistance()

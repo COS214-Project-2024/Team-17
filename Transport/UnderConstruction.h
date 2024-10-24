@@ -5,13 +5,12 @@
 #include "RoadComponent.h"
 #include <string>
 
-class UnderConstruction : RoadState
+class UnderConstruction : public RoadState
 {
-
 public:
-	void handleTraffic(RoadComponent &road);
+	virtual void handleTraffic(RoadComponent *road);
 
-	std::string getStatus();
+	virtual std::string getStatus();
 };
 
 #endif

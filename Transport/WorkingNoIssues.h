@@ -3,8 +3,12 @@
 
 #include "RoadState.h"
 
-class WorkingNoIssues : RoadState
+class WorkingNoIssues : public RoadState
 {
+public:
+    virtual void handleTraffic(RoadComponent *road);
+
+    virtual std::string getStatus();
 };
 
 #endif

@@ -1,4 +1,6 @@
 #include "RoadsComposite.h"
+#include <iostream>
+#include "Congested.h"
 
 RoadsComposite::RoadsComposite(CityMediator *mediator) : RoadComponent(mediator)
 {
@@ -6,14 +8,12 @@ RoadsComposite::RoadsComposite(CityMediator *mediator) : RoadComponent(mediator)
 
 void RoadsComposite::displayInfo()
 {
-	// TODO - implement RoadsComposite::displayInfo
-	throw "Not yet implemented";
+	std::cout << "Composite Road of distance: " << distance << std::endl;
 }
 
 void RoadsComposite::calculateTraffic()
 {
-	// TODO - implement RoadsComposite::calculateTraffic
-	throw "Not yet implemented";
+	setState(new Congested());
 }
 
 void RoadsComposite::add(RoadComponent *component)
@@ -30,6 +30,10 @@ void RoadsComposite::remove(RoadComponent *component)
 
 float RoadsComposite::getDistance()
 {
-	// TODO - implement RoadsComposite::getDistance
-	throw "Not yet implemented";
+	float sumDistance = 0;
+	for (auto component : components)
+	{
+		sumDistance += component->getDistance();
+	}
+	return sumDistance;
 }

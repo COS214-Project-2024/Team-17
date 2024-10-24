@@ -9,6 +9,10 @@ RoadIterator *RoadComponent::createIterator()
 
 void RoadComponent::setState(RoadState *newState)
 {
+	if (this->state != nullptr)
+	{
+		delete this->state;
+	}
 	this->state = newState;
 }
 
