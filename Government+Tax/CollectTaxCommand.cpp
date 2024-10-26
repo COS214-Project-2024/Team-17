@@ -5,6 +5,5 @@ CollectTaxCommand::CollectTaxCommand(Government* gov) {
 }
 
 void CollectTaxCommand::execute() {
-	// TODO - implement CollectTaxCommand ::execute
-	throw "Not yet implemented";
+  this->government->collectTaxes();
 }

@@ -7,6 +7,5 @@ SetTaxRateCommand::SetTaxRateCommand(Government* gov, double rate, std::string c
 }
 
 void SetTaxRateCommand::execute() {
-	// TODO - implement SetTaxRateCommand ::execute
-	throw "Not yet implemented";
+  this->government->setTaxRate(this->category , this->taxRate);
 }

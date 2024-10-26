@@ -7,6 +7,5 @@ AllocateTaxCommand::AllocateTaxCommand(Government* gov, double amt, std::string 
 }
 
 void AllocateTaxCommand::execute() {
-	// TODO - implement AllocateTaxCommand ::execute
-	throw "Not yet implemented";
+  this->government->allocateTaxes(this->department , this->amount);
 }

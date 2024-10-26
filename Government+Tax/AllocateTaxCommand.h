@@ -14,7 +14,6 @@ private:
 
 public:
 	AllocateTaxCommand(Government* gov, double amt, std::string dept);
-
 	void execute();
 };
 
