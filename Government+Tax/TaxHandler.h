@@ -3,13 +3,9 @@
 
 class TaxCommand;
 
-#include "TaxCommand.h"
-
 class TaxHandler {
-
 protected:
 	TaxHandler* nextHandler;
-
 public:
 	TaxHandler();
 	void setNext(TaxHandler* next);

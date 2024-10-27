@@ -13,7 +13,19 @@ void Government::processTaxes(CityStructure& city) {
 }
 
 void Government::applyBudget(CityStructure& city) {
-  this->policy->applyBudget(city, cityTaxes[city.getName()]);
+  if(policy) {
+    this->policy->applyBudget(city, cityTaxes[city.getName()]);
+  }
+  else {
+    double budget = cityTaxes[city.getName()];
+    double budgetHealth = budget * 0.33;
+    double budgetEducation = budget * 0.33;
+    double budgetInfrastucture = budget * 0.33;
+
+    city.allocateBudget("Health" , budgetHealth);
+    city.allocateBudget("Education" , budgetEducation);
+    city.allocateBudget("Infrastructure" , budgetInfrastucture);
+  }
 }
 
 void Government::setPolicy(Policy& policy)
@@ -36,8 +48,7 @@ void Government::addCity(CityStructure& city) {
 }
 
 void Government::allocateTaxes(std::string department, double amount) {
-	// TODO - implement Government::allocateTaxes
-	throw "Not yet implemented";
+  this->taxRates[department] = amount;
 }
 
 TaxHandler* Government::createTaxHandlerChain() {

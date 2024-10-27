@@ -1,4 +1,5 @@
 #include "TaxCollectionHandler.h"
+#include "TaxCommand.h"
 
 void TaxCollectionHandler::handleRequest(TaxCommand* command) {
   if(nextHandler) {

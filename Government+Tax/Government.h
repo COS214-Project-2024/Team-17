@@ -11,6 +11,8 @@
 #include <map>
 #include <vector>
 
+class Policy;
+
 class Government {
 public:
 	void processTaxes(CityStructure& city);
@@ -25,7 +27,7 @@ private:
   std::map<std::string, double> taxRates;
   std::map<std::string, double> cityTaxes;
   std::vector<CityStructure> cities;
-  Policy* policy;
+  Policy* policy = nullptr;
 };
 
 #endif

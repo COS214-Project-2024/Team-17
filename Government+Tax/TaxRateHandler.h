@@ -3,6 +3,8 @@
 
 #include "TaxHandler.h"
 
+class TaxCommand;
+
 class TaxRateHandler : public TaxHandler {
 public:
 	void handleRequest(TaxCommand* command) override;

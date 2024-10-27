@@ -1,10 +1,9 @@
 #include "InfrastructurePolicy.h"
 
-void InfrastructurePolicy::applyBudget(CityStructure& city, double income) {
-  double taxes = income;
-  double budgetHealth = taxes * 0.3;
-  double budgetEducation = taxes * 0.2;
-  double budgetInfrastucture = taxes * 0.5;
+void InfrastructurePolicy::applyBudget(CityStructure& city, double budget) {
+  double budgetHealth = budget * 0.3;
+  double budgetEducation = budget * 0.2;
+  double budgetInfrastucture = budget * 0.5;
 
   city.allocateBudget("Health" , budgetHealth);
   city.allocateBudget("Education" , budgetEducation);

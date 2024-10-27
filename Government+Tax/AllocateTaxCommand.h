@@ -2,10 +2,12 @@
 #define ALLOCATETAXCOMMAND_H
 
 #include "TaxCommand.h"
-#include "Government.h"
+
+class Government;
+
 #include <string>
 
-class AllocateTaxCommand : TaxCommand {
+class AllocateTaxCommand : public TaxCommand {
 
 private:
 	Government* government;

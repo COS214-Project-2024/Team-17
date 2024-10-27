@@ -6,7 +6,7 @@
 
 class InfrastructurePolicy : public Policy {
 public:
-  	void applyBudget(CityStructure& city, double taxes);
+  	void applyBudget(CityStructure& city, double budget);
 };
 
 #endif
