@@ -1,13 +1,12 @@
 #ifndef CITIZENTAXAB_H
 #define CITIZENTAXAB_H
 
-class CitizenTaxAB : TaxAndBudgetVisitor {
+#include "TaxAndBudgetVisitor.h"
 
-
+class CitizenTaxAB : public TaxAndBudgetVisitor {
 public:
 	void visit(Citizen* citizen);
-
-	void visit(Business* business);
+	void visit(Building* business);
 };
 
 #endif

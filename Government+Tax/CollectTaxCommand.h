@@ -5,6 +5,7 @@
 #include "Government.h"
 
 class CollectTaxCommand : public TaxCommand {
+
 private:
 	Government* government;
 public:

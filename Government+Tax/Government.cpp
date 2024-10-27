@@ -1,31 +1,51 @@
 #include "Government.h"
 
 void Government::processTaxes(CityStructure& city) {
-	// TODO - implement Government::processTaxes
-	throw "Not yet implemented";
+  double income = city.getIncome();
+  double totalTax = 0;
+
+  for(const auto& [category, rate] : taxRates) {
+    double taxforCategory = income * rate;
+    totalTax += taxforCategory;
+  }
+
+  cityTaxes[city.getName()] += totalTax;
 }
 
 void Government::applyBudget(CityStructure& city) {
-	// TODO - implement Government::applyBudget
-	throw "Not yet implemented";
+  this->policy->applyBudget(city, cityTaxes[city.getName()]);
 }
 
-void Government::setTaxRate(string category, double rate) {
-	// TODO - implement Government::setTaxRate
-	throw "Not yet implemented";
+void Government::setPolicy(Policy& policy)
+{
+  this->policy = &policy;
+}
+
+void Government::setTaxRate(std::string category, double rate) {
+  taxRates[category] = rate;
 }
 
 void Government::collectTaxes() {
-	// TODO - implement Government::collectTaxes
-	throw "Not yet implemented";
+  for (CityStructure& citystructure : cities) {
+    processTaxes(citystructure);
+  }
 }
 
-void Government::allocateTaxes(string department, double amount) {
+void Government::addCity(CityStructure& city) {
+  this->cities.push_back(city);
+}
+
+void Government::allocateTaxes(std::string department, double amount) {
 	// TODO - implement Government::allocateTaxes
 	throw "Not yet implemented";
 }
 
 TaxHandler* Government::createTaxHandlerChain() {
-	// TODO - implement Government::createTaxHandlerChain
-	throw "Not yet implemented";
+  TaxRateHandler* rateHandler = new TaxRateHandler();
+  TaxCollectionHandler* collectionHanlder = new TaxCollectionHandler();
+  TaxAllocationHandler* allocationHandler = new TaxAllocationHandler();
+
+  rateHandler->setNext(collectionHanlder);
+  collectionHanlder->setNext(allocationHandler);
+  return rateHandler;
 }

@@ -1,22 +1,31 @@
 #ifndef GOVERNMENT_H
 #define GOVERNMENT_H
 
+#include "CityStructure.h"
+#include "TaxHandler.h"
+#include "TaxRateHandler.h"
+#include "TaxAllocationHandler.h"
+#include "TaxCollectionHandler.h"
+#include "Policy.h"
+#include <string>
+#include <map>
+#include <vector>
+
 class Government {
-
-
 public:
 	void processTaxes(CityStructure& city);
-
 	void applyBudget(CityStructure& city);
-
-	void setTaxRate(string category, double rate);
-
+	void setTaxRate(std::string category, double rate);
 	void collectTaxes();
-
-	void allocateTaxes(string department, double amount);
-
+	void allocateTaxes(std::string department, double amount);
+  void addCity(CityStructure& city);
+  void setPolicy(Policy& policy);
 private:
 	TaxHandler* createTaxHandlerChain();
+  std::map<std::string, double> taxRates;
+  std::map<std::string, double> cityTaxes;
+  std::vector<CityStructure> cities;
+  Policy* policy;
 };
 
 #endif

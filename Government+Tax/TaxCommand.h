@@ -1,6 +1,10 @@
 #ifndef TAXCOMMAND_H
 #define TAXCOMMAND_H
 
+#include "Government.h"
+
+class Government;
+
 class TaxCommand 
 {
 public:
