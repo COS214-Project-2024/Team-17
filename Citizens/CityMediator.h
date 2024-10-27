@@ -4,6 +4,7 @@
 class Building;
 class Utilities;
 class RoadState;
+class Citizen;
 
 class CityMediator
 {
@@ -11,6 +12,8 @@ public:
     virtual void registerBuilding(Building *building) = 0;
 
     virtual void registerUtility(Utilities *util) = 0;
+
+    virtual void registerCitizen(Citizen *citizen) = 0;
 
     virtual void notifyBuildingChange(Building *building) = 0;
 

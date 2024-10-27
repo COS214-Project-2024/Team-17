@@ -2,14 +2,17 @@
 
 void CityCentralMediator::registerBuilding(Building *building)
 {
-	// TODO - implement CityCentralMediator::registerBuilding
-	throw "Not yet implemented";
+	buildings.push_back(building);
 }
 
 void CityCentralMediator::registerUtility(Utilities *util)
 {
-	// TODO - implement CityCentralMediator::registerUtility
-	throw "Not yet implemented";
+	utilities.push_back(util);
+}
+
+void CityCentralMediator::registerCitizen(Citizen *citizen)
+{
+	citizens.push_back(citizen);
 }
 
 void CityCentralMediator::notifyBuildingChange(Building *building)

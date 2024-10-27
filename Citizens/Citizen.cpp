@@ -3,6 +3,7 @@
 Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
 	this->mediator = mediator;
+	mediator->registerCitizen(this);
 	this->state = Indifferent();
 }
 
