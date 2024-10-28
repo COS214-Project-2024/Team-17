@@ -250,14 +250,13 @@ void test5() {
 void test6() {
     cout << YELLOW << "Test Decorators [ALL]" << RESET << endl;
 
-    // Building* residentialBuilding = FactResidential().createResBuilding("House");
+    Building* residentialBuilding = FactResidential().createResBuilding("House");
 
-    // // Wrap the building with decorators
-    // residentialBuilding = new BuildDecorUpgrade(residentialBuilding);
-    // residentialBuilding = new BuildDecorRepair(residentialBuilding);
-    // residentialBuilding = new BuildDecorEconomic(residentialBuilding);
-
-    // residentialBuilding->displayBuildingInfo();
+    // Wrap the building with decorators
+    residentialBuilding = new BuildDecorUpgrade(residentialBuilding);
+    residentialBuilding = new BuildDecorRepair(residentialBuilding);
+    residentialBuilding = new BuildDecorEconomic(residentialBuilding);
+    residentialBuilding->displayBuildingInfo();
 
     // Upgrade
     FactoryBuilding* factory = new FactResidential();
@@ -270,15 +269,14 @@ void test6() {
     BuildingDecorator* repair = new BuildDecorRepair(building);
     repair->displayBuildingInfo();
 
-    // // Economic - ERROR??? 
-    // BuildingDecorator* economic = new BuildDecorEconomic(building);
-    // economic->displayBuildingInfo();
+    // Economic
+    BuildingDecorator* economic = new BuildDecorEconomic(building);
+    economic->displayBuildingInfo();
 
     //Clean up
     delete building;
     delete factory;
-
-   // delete residentialBuilding;
+    delete residentialBuilding;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
