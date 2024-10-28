@@ -20,3 +20,8 @@ float Highways::getDistance()
 {
 	return this->distance;
 }
+
+void Highways::notifyChange(std::string message)
+{
+	std::cout << "Highway received message: " << message << std::endl;
+}

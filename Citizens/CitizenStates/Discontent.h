@@ -5,6 +5,10 @@
 
 class Discontent : public CitizenState
 {
+public:
+    void handleChange();
+    std::string getState();
+    ~Discontent() {};
 };
 
 #endif

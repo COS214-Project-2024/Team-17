@@ -65,10 +65,10 @@
 // 	throw "Not yet implemented";
 // }
 
-// Building::Building(CityMediator* mediator, string type) {
-// 	// TODO - implement Building::Building
-// 	throw "Not yet implemented";
-// }
+Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
+	this->mediator = mediator;
+	this->name = type;
+}
 
 // string Building::getType() {
 // 	// TODO - implement Building::getType
@@ -80,10 +80,10 @@
 // 	throw "Not yet implemented";
 // }
 
-// void Building::abstract_notifyChange() {
-// 	// TODO - implement Building::abstract notifyChange
-// 	throw "Not yet implemented";
-// }
+void Building::notifyChange() {
+	// TODO - implement Building::abstract notifyChange
+	throw "Not yet implemented";
+}
 
 // void Building::accept(TaxAndBudgetVisitor* visitor) {
 // 	// TODO - implement Building::accept

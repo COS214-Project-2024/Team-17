@@ -1,7 +1,7 @@
 # Define the source files and headers
-SOURCES := $(shell find . -name '*.cpp')
-HEADERS := $(shell find . -name '*.h') ../Citizens/CityBlock.h
-OBJECTS := $(SOURCES:.cpp=.o) ../Citizens/CityBlock.o
+SOURCES := $(shell find . ../Citizens -name '*.cpp' | grep -v '../Citizens/main.cpp')
+HEADERS := $(shell find . ../Citizens -name '*.h')
+OBJECTS := $(SOURCES:.cpp=.o)
 
 # Define the target
 main: $(OBJECTS)
