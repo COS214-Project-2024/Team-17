@@ -39,6 +39,10 @@ void CityCentralMediator::notifyRoadChange(RoadState *status, std::string messag
 	}
 }
 
+CityCentralMediator::CityCentralMediator()
+{
+}
+
 void CityCentralMediator::handlePopulationGrowth()
 {
 	// TODO - implement CityCentralMediator::handlePopulationGrowth

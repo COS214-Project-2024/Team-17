@@ -1,5 +1,7 @@
 #include <iostream>
 #include "TransportInclude.h"
+#include "../Citizens/CityCentralMediator.h"
+// #include "../Citizens/CitizensIncludes.h"
 
 void testRoadComponent(RoadComponent *roadComponent)
 {
@@ -18,7 +20,7 @@ void testRoads()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Components" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityMediator();
+    CityMediator *mediator = new CityCentralMediator();
     std::cout << " - CityMediator created!" << std::endl;
 
     RoadComponent **roads = new RoadComponent *[4];
@@ -39,7 +41,7 @@ void testRoadsIterator()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Iterators" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityMediator();
+    CityMediator *mediator = new CityCentralMediator();
     std::cout << " - CityMediator created!" << std::endl;
 
     std::vector<RoadComponent *> roads = {new MainRoads(mediator), new Highways(mediator), new RoadsComposite(mediator), new ResidentialStreets(mediator)};
@@ -63,7 +65,7 @@ void testRoadsComposite()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Composite" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityMediator();
+    CityMediator *mediator = new CityCentralMediator();
     std::cout << " - CityMediator created!" << std::endl;
 
     RoadsComposite *roadsComposite = new RoadsComposite(mediator);

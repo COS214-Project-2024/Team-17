@@ -22,6 +22,8 @@ public:
     virtual void notifyUtilityChange(Utilities *type, bool status, std::string message) = 0;
 
     virtual void notifyRoadChange(RoadState *status, std::string message) = 0;
+
+    virtual ~CityMediator() {}
 };
 
 #endif

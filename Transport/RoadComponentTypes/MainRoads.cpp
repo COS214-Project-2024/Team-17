@@ -20,3 +20,8 @@ float MainRoads::getDistance()
 {
 	return this->distance;
 }
+
+void MainRoads::notifyChange(std::string message)
+{
+	std::cout << "Main Road received message: " << message << std::endl;
+}

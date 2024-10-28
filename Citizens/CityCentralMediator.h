@@ -71,6 +71,10 @@ public:
 	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
+	CityCentralMediator();
+
+	~CityCentralMediator() {}
+
 private:
 	void handlePopulationGrowth();
 
