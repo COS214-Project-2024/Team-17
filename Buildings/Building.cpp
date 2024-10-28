@@ -45,7 +45,7 @@ void Building::notifySewageRemove(string& utility) {
 	throw "Not yet implemented";
 }
 
-Building::Building(CityMediator* mediator, string type) {
+Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
 	// TODO - implement Building::Building
 	throw "Not yet implemented";
 }
@@ -60,7 +60,7 @@ void Building::construct() {
 	throw "Not yet implemented";
 }
 
-void Building::abstract_notifyChange() {
+void Building::notifyChange() {
 	// TODO - implement Building::abstract notifyChange
 	throw "Not yet implemented";
 }

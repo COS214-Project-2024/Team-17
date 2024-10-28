@@ -17,7 +17,7 @@ void CityCentralMediator::notifyBuildingChange(Building* building) {
 }
 
 void CityCentralMediator::notifyUtilityChange(UtilityManager* type, bool status) {
-	utilities->notifyChange();
+	// not exactly sure what to do here
 }
 
 void CityCentralMediator::notifyRoadChange(RoadComponent* status) {
