@@ -20,11 +20,32 @@ std::string type="Power Plant";
     // int capacity;
     
 public:
+	/**
+     * @brief Constructor for UtilPowerPlants.
+     */
 	UtilPowerPlants();
+	/**
+     * @brief Starts the Power Plant service
+     */
 	void startUtility();
+	/**
+ 	* @brief Updates the operational state of the utility based on the building's current status.
+	 *@param[in] unit Pointer to the Building object that notifies this utility.
+	 */
 	void update(Building* unit);
+	/**
+	 * @brief Returns the type of utility service (Power Plant)
+	 * @return string
+	 */
 	std::string getType();
+	/**
+	 * @brief Returns the operational status of the Power Plant service
+	 * @return bool
+	 */
 	bool isOperational();
+	/**
+	 * @brief Shuts down the Power Plant service
+	 */
 	void shutDown();
 	// void restart();
 
