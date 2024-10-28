@@ -4,6 +4,7 @@
 #include "../colours.h" // Testing colours and other includes
 #include "../Citizens/CityBlock.h"
 #include "../Utilities/UtilityObserver.h"
+#include "../Citizens/CityMediator.h"
 
 class Building : public UtilityObserver, public CityBlock{
 private:
@@ -16,37 +17,37 @@ public:
     virtual void displayBuildingInfo() = 0;
     virtual ~Building() = default;
 
-    virtual void createBuilding() = 0;
+    // virtual void createBuilding() = 0;
 
-	void update(string& utilityStatus);
+	// void update(string& utilityStatus);
 
-	void receiveElectricity();
+	// void receiveElectricity();
 
-	void receiveWater();
+	// void receiveWater();
 
-	void removeWaste();
+	// void removeWaste();
 
-	void removeSewage();
+	// void removeSewage();
 
-	void notifyOutage(string& utility);
+	// void notifyOutage(string& utility);
 
-	void notifyNoWater(string& utility);
+	// void notifyNoWater(string& utility);
 
-	void notifyWasteRemove(string& utility);
+	// void notifyWasteRemove(string& utility);
 
-	void notifySewageRemove(string& utility);
+	// void notifySewageRemove(string& utility);
 
-	virtual void affectEmotionalState() = 0;
+	// virtual void affectEmotionalState() = 0;
 
 	Building(CityMediator* mediator, string type);
 
-	string getType();
+	// string getType();
 
-	void construct();
+	// void construct();
 
 	void notifyChange();
 
-	void accept(TaxAndBudgetVisitor* visitor);
+	// void accept(TaxAndBudgetVisitor* visitor);
 
 
 };
