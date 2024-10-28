@@ -16,8 +16,16 @@ public:
 	// void Arcade();
 	// void Gym();
 
+	//Observer
+	void callUtilities()override;//call Utilities in Buildings
+	bool getState()override;
+	void setState(bool state)override;
+	std::string getBuildingType()override;
+
 private:
 	int visitors;
+	std::string type="Service Entertainment";
+	bool operational;//CS State
 };
 
 #endif

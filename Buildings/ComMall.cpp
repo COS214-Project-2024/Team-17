@@ -15,3 +15,24 @@ int ComMall::getJobCapacity() {
 void ComMall::setJobCapacity(int capacity) {
     this->jobCapacity = capacity;
 }
+
+	void ComMall::callUtilities(){
+        notifyUtilities();
+    }
+
+	bool ComMall::getState(){
+        return operational;
+    }
+
+	void ComMall::setState(bool state){
+        if(operational!=state){
+        operational = state;
+        callUtilities();}
+        else{
+            cout<<"No change in state"<<endl;
+        }
+    }
+
+	std::string ComMall::getBuildingType(){
+        return type;
+    }
