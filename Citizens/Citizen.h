@@ -12,21 +12,23 @@ class Citizen : CityBlock
 private:
 	int population;
 	CityMediator *mediator;
-	CitizenState state;
+	CitizenState *state;
 	std::string name;
 
 public:
 	Citizen(CityMediator *mediator);
 
-	void setState(CitizenState newState);
+	void setState(CitizenState *newState);
 
-	CitizenState getState();
+	CitizenState *getState();
 
 	void notifyChange(std::string message);
 
 	void accept(TaxAndBudgetVisitor *visitor);
 
 	std::string getName();
+
+	~Citizen();
 };
 
 #endif

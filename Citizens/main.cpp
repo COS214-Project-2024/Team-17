@@ -10,12 +10,14 @@ void testCitizens()
     Citizen *citizen = new Citizen(mediator);
     std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
     std::cout << " - Testing Citizen State" << std::endl;
-    citizen->setState(Happy());
-    citizen->setState(Content());
-    citizen->setState(Indifferent());
-    citizen->setState(Discontent());
-    citizen->setState(Upset());
+    citizen->setState(new Happy());
+    citizen->setState(new Content());
+    citizen->setState(new Indifferent());
+    citizen->setState(new Discontent());
+    citizen->setState(new Upset());
     std::cout << " - Testing Complete!" << std::endl;
+    delete citizen;
+    delete mediator;
 }
 
 int main()

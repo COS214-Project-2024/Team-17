@@ -17,20 +17,26 @@ void CityCentralMediator::registerCitizen(Citizen *citizen)
 
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
 {
-	// TODO - implement CityCentralMediator::notifyBuildingChange
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
 }
 
 void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status, std::string message = "")
 {
-	// TODO - implement CityCentralMediator::notifyUtilityChange
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
 }
 
 void CityCentralMediator::notifyRoadChange(RoadState *status, std::string message = "")
 {
-	// TODO - implement CityCentralMediator::notifyRoadChange
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
 }
 
 void CityCentralMediator::handlePopulationGrowth()
@@ -53,6 +59,33 @@ void CityCentralMediator::handleTrafficStatus(RoadState *status)
 
 void CityCentralMediator::updateCitizenSatisfaction()
 {
-	// TODO - implement CityCentralMediator::updateCitizenSatisfaction
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		int random = rand() % 5;
+		CitizenState *newState = NULL;
+
+		switch (random)
+		{
+		case 0:
+			newState = new Happy();
+			break;
+		case 1:
+			newState = new Content();
+			break;
+		case 2:
+			newState = new Indifferent();
+			break;
+		case 3:
+			newState = new Discontent();
+			break;
+		case 4:
+			newState = new Upset();
+			break;
+
+		default:
+			break;
+		}
+
+		c->setState(newState);
+	}
 }

@@ -6,17 +6,25 @@ Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
 	this->mediator = mediator;
 	mediator->registerCitizen(this);
-	this->state = Indifferent();
-
+	setState(new Indifferent());
 	name = CitizenNameGen::generateName();
 }
 
-void Citizen::setState(CitizenState newState)
+void Citizen::setState(CitizenState *newState)
 {
+	if (newState == nullptr)
+	{
+		return;
+	}
+	std::cout << "Citizen " << name << " changed state to " << newState->getName() << std::endl;
+	if (this->state != nullptr)
+	{
+		delete this->state;
+	}
 	this->state = newState;
 }
 
-CitizenState Citizen::getState()
+CitizenState *Citizen::getState()
 {
 	return state;
 }
@@ -35,4 +43,12 @@ void Citizen::accept(TaxAndBudgetVisitor *visitor)
 std::string Citizen::getName()
 {
 	return name;
+}
+
+Citizen::~Citizen()
+{
+	if (state != nullptr)
+	{
+		delete state;
+	}
 }

@@ -5,6 +5,11 @@
 
 class Happy : public CitizenState
 {
+public:
+    std::string getName()
+    {
+        return "Happy";
+    }
 };
 
 #endif
