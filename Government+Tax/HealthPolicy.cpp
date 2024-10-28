@@ -10,5 +10,5 @@ void HealthPolicy::applyBudget(CityStructure& city, double budget) {
   city.allocateBudget("Education" , budgetEducation);
   city.allocateBudget("Infrastructure" , budgetInfrastucture);
 
-  std::cout << "Allocated Healh\n";
+  std::cout << "Allocated Budget to Health\n";
 }

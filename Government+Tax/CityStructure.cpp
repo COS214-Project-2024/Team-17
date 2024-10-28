@@ -1,5 +1,6 @@
 #include "CityStructure.h"
 #include "TaxAndBudgetVisitor.h"
+#include <iostream>
 
 CityStructure::CityStructure(std::string name) {
   this->Name = name;
@@ -7,6 +8,7 @@ CityStructure::CityStructure(std::string name) {
 }
 
 void CityStructure::accept(TaxAndBudgetVisitor* visitor) {
+  std::cout << "Visiting all Citizens and Buildings/Bussinesses in citystructure\n"; 
   visitor->visit(new Citizen());
   visitor->visit(new Building());
   // for(CityBlock* block : blocks) {

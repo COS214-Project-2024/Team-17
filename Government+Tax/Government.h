@@ -22,8 +22,8 @@ public:
 	void allocateTaxes(std::string department, double amount);
   void addCity(CityStructure& city);
   void setPolicy(Policy& policy);
+  TaxHandler* createTaxHandlerChain();
 private:
-	TaxHandler* createTaxHandlerChain();
   std::map<std::string, double> taxRates;
   std::map<std::string, double> cityTaxes;
   std::vector<CityStructure> cities;

@@ -1,4 +1,5 @@
 #include "Government.h"
+#include <iostream>
 
 void Government::processTaxes(CityStructure& city) {
   double income = city.getIncome();
@@ -30,28 +31,34 @@ void Government::applyBudget(CityStructure& city) {
 
 void Government::setPolicy(Policy& policy)
 {
+  std::cout << "setting government policy\n";
   this->policy = &policy;
 }
 
 void Government::setTaxRate(std::string category, double rate) {
+  std::cout << "setting tax rate\n";
   taxRates[category] = rate;
 }
 
 void Government::collectTaxes() {
+  std::cout << "collecting taxes for all citystructures\n";
   for (CityStructure& citystructure : cities) {
     processTaxes(citystructure);
   }
 }
 
 void Government::addCity(CityStructure& city) {
+  std::cout << "added city\n";
   this->cities.push_back(city);
 }
 
 void Government::allocateTaxes(std::string department, double amount) {
+  std::cout << "allocated taxes to department\n";
   this->taxRates[department] = amount;
 }
 
 TaxHandler* Government::createTaxHandlerChain() {
+  std::cout << "creating tax handler\n";
   TaxRateHandler* rateHandler = new TaxRateHandler();
   TaxCollectionHandler* collectionHanlder = new TaxCollectionHandler();
   TaxAllocationHandler* allocationHandler = new TaxAllocationHandler();

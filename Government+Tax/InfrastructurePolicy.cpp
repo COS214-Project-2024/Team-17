@@ -1,5 +1,5 @@
 #include "InfrastructurePolicy.h"
-
+#include <iostream>
 void InfrastructurePolicy::applyBudget(CityStructure& city, double budget) {
   double budgetHealth = budget * 0.3;
   double budgetEducation = budget * 0.2;
@@ -8,4 +8,6 @@ void InfrastructurePolicy::applyBudget(CityStructure& city, double budget) {
   city.allocateBudget("Health" , budgetHealth);
   city.allocateBudget("Education" , budgetEducation);
   city.allocateBudget("Infrastructure" , budgetInfrastucture);
+
+  std::cout << "Allocated Budget to Infrastructure\n";
 }

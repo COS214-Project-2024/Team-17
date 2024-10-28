@@ -1,4 +1,5 @@
 #include "TaxManager.h"
+#include <iostream>
 
 void TaxManager::setCommand(TaxCommand* cmd) {
 	this->command = cmd;
@@ -9,6 +10,6 @@ void TaxManager::executeCommand() {
     this->command->execute();
   }
   else {
-    throw "No command set";
+    std::cout << "No command set\n";
   }
 }
