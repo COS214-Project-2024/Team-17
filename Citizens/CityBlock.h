@@ -2,6 +2,8 @@
 #define CITYBLOCK_H
 
 #include "CityMediator.h"
+#include <string>
+
 class TaxAndBudgetVisitor;
 
 class CityBlock
@@ -13,7 +15,7 @@ protected:
 public:
 	CityBlock(CityMediator *mediator);
 
-	virtual void notifyChange() = 0;
+	virtual void notifyChange(std::string message) = 0;
 
 	virtual void accept(TaxAndBudgetVisitor *visitor) = 0;
 };

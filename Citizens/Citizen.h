@@ -22,7 +22,7 @@ public:
 
 	CitizenState getState();
 
-	void notifyChange();
+	void notifyChange(std::string message);
 
 	void accept(TaxAndBudgetVisitor *visitor);
 

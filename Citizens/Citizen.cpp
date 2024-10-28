@@ -1,5 +1,6 @@
 #include "Citizen.h"
 #include "CitizenNameGen.h"
+#include <iostream>
 
 Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
@@ -20,10 +21,9 @@ CitizenState Citizen::getState()
 	return state;
 }
 
-void Citizen::notifyChange()
+void Citizen::notifyChange(std::string message)
 {
-	// TODO - implement Citizen::notifyChange
-	throw "Not yet implemented";
+	std::cout << "Citizen " << name << " received message: " << message << std::endl;
 }
 
 void Citizen::accept(TaxAndBudgetVisitor *visitor)
