@@ -15,6 +15,8 @@ void testCitizens()
     citizen->setState(new Indifferent());
     citizen->setState(new Discontent());
     citizen->setState(new Upset());
+    std::cout << " - Testing notifyChange" << std::endl;
+    mediator->notifyUtilityChange(nullptr, false, "Test Message");
     std::cout << " - Testing Complete!" << std::endl;
     delete citizen;
     delete mediator;

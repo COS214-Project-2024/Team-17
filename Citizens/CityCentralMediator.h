@@ -49,10 +49,26 @@ public:
 	*/
 	void registerCitizen(Citizen *citizen);
 
+	/*
+	@brief Notifies all citizens of a building change.
+	@param building The building that changed.
+	@param message The message to send to the citizens.
+	*/
 	void notifyBuildingChange(Building *building, std::string message);
 
+	/*
+	@brief Notifies all citizens of a utility change.
+	@param type The utilities building that changed.
+	@param status The new status of the utility.
+	@param message The message to send to the citizens.
+	*/
 	void notifyUtilityChange(Utilities *type, bool status, std::string message);
 
+	/*
+	@brief Notifies all citizens of a road status change.
+	@param status The road status that changed.
+	@param message The message to send to the citizens.
+	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
 private:
