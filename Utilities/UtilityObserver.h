@@ -3,9 +3,9 @@
 
 class UtilityObserver {
 
-
+//CLASS TO BE REMOVED
 public:
-	void update(string& utilityStatus);
+	// void update(string& utilityStatus);
 };
 
 #endif

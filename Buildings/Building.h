@@ -2,11 +2,25 @@
 #define BUILDING_H
 
 #include "../colours.h" // Testing colours and other includes
+#include "UtilityManager.h"
+#include <vector>
+#include <iostream>
 
+class UtilityManager;
 class Building {
+    private:
+    bool operational;//state
+    std::vector<UtilityManager*> Utilities;
+
 public:
     virtual void displayBuildingInfo() = 0;
     virtual ~Building() = default;
+    // virtual void update(UtilityManager* unit) = 0;
+    //Add virtual?
+    virtual bool getState()=0;
+    void addUtility(UtilityManager* utility);//attach
+    void removeUtility(UtilityManager* utility);//detach
+    void notifyUtilities();//notify
 };
 
 

@@ -1,5 +1,5 @@
 #include "ServSecurity.h"
-
+#include <iostream>
 ServSecurity::ServSecurity() {
     cout << BLACK << "\t-->Security service created" << RESET << endl;
 }
@@ -15,3 +15,24 @@ int ServSecurity::getVisitors() {
 void ServSecurity::setVisitors(int visitors) {
     this->visitors = visitors;
 }
+
+	void ServSecurity::callUtilities(){
+        notifyUtilities();
+    }
+
+	bool ServSecurity::getState(){
+        return operational;
+    }
+
+	void ServSecurity::setState(bool state){
+        if(operational!=state){
+        operational = state;
+        callUtilities();}
+        else{
+            cout<<"No change in state"<<endl;
+        }
+    }
+
+	std::string ServSecurity::getBuildingType(){
+        return type;
+    }

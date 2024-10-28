@@ -16,8 +16,19 @@ public:
 	// virtual int increasePopulation() override;
 	// virtual void affectEmotionalState() override;
 
+//Observer
+	void callUtilities()override;//call Utilities in Buildings
+	bool getState()override;
+	void setState(bool state)override;
+	// int getTotalCapacity();
+	// int getCurrentStorage();
+	// int setCurrentStorage(int storage);
+	std::string getBuildingType()override;
+
 private:
     int capacity;
+    std::string type="Residential Flat";
+    bool operational;//CS State
 };
 
 #endif // RESFLAT_H

@@ -1,27 +1,34 @@
+/**
+ * @file UtilPowerPlants.h
+ * @brief Header file for the UtilPowerPlants class which implements UtilPowerPlants.
+ * @author WORKONMYMACHINE TEAM Nic
+ * @headerfile UtilPowerPlants.h
+ */
 #ifndef UTILPOWERPLANTS_H
 #define UTILPOWERPLANTS_H
-
-class UtilPowerPlants {
-
+#include "UtilityManager.h"
+#include <string>
+using namespace std;
+/**
+ * @class UtilPowerPlants
+ * @brief ...
+ */
+class UtilPowerPlants: public UtilityManager {
 private:
-	bool operational;
-
+std::string type="Power Plant";
+	bool operational;//Observer State
+    // int capacity;
+    
 public:
 	UtilPowerPlants();
-
+	void startUtility();
+	void update(Building* unit);
+	std::string getType();
 	bool isOperational();
-
 	void shutDown();
+	// void restart();
 
-	void restart();
-
-	void generateElectricity(Building& building);
-
-	void addObserver(Building* observer);
-
-	void removeObserver(Building* observer);
-
-	void notifyObservers();
+	// void generateElectricity(Building& building);
 };
 
 #endif
