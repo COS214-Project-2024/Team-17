@@ -3,7 +3,7 @@
 // Observer Design Pattern
      void Building::addUtility(UtilityManager* utility) {
     	Utilities.push_back(utility);
-		std::cout<<"Utility Construction of type:"<<utility->getType()<<std::endl;
+		std::cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
 		
     }
     

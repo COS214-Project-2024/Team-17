@@ -1,8 +1,19 @@
 #include "ServHospital.h"
 #include <iostream>
 ServHospital::ServHospital() {
-    std::cout << "Hospital Service Being Built!" << std::endl;
-    operational = false; // constructing
+    cout << BLACK << "\t-->Security service created" << RESET << endl;
+}
+
+void ServHospital::displayBuildingInfo() {
+    cout << "Security service with " << this->visitors << " visitors\n";
+}
+
+int ServHospital::getVisitors() {
+    return visitors;
+}
+
+void ServHospital::setVisitors(int visitors) {
+    this->visitors = visitors;
 }
 
 	void ServHospital::callUtilities(){
