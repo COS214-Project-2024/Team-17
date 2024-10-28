@@ -4,6 +4,8 @@
 #include <vector>
 #include "CityMediator.h"
 #include "Citizen.h"
+#include <string>
+
 class Building;
 class Utilities;
 class RoadState;
@@ -47,11 +49,11 @@ public:
 	*/
 	void registerCitizen(Citizen *citizen);
 
-	void notifyBuildingChange(Building *building);
+	void notifyBuildingChange(Building *building, std::string message);
 
-	void notifyUtilityChange(Utilities *type, bool status);
+	void notifyUtilityChange(Utilities *type, bool status, std::string message);
 
-	void notifyRoadChange(RoadState *status);
+	void notifyRoadChange(RoadState *status, std::string message);
 
 private:
 	void handlePopulationGrowth();

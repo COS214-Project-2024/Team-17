@@ -15,19 +15,19 @@ void CityCentralMediator::registerCitizen(Citizen *citizen)
 	citizens.push_back(citizen);
 }
 
-void CityCentralMediator::notifyBuildingChange(Building *building)
+void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
 {
 	// TODO - implement CityCentralMediator::notifyBuildingChange
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status)
+void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status, std::string message = "")
 {
 	// TODO - implement CityCentralMediator::notifyUtilityChange
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::notifyRoadChange(RoadState *status)
+void CityCentralMediator::notifyRoadChange(RoadState *status, std::string message = "")
 {
 	// TODO - implement CityCentralMediator::notifyRoadChange
 	throw "Not yet implemented";
