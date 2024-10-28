@@ -14,7 +14,7 @@ using namespace std;
 class Building;
 /**
  * @class UtilityManager
- * @brief ...
+ * @brief Abstract base class for all concrete utilities in the system
  */
 class UtilityManager{
 
@@ -29,12 +29,31 @@ private:
 	bool operational;//observer state
 
 public:
+    /**
+     * @brief Starts the utility service
+     */
 	virtual void startUtility() = 0;
+	/**
+ 	* @brief Updates the operational state of the utility based on the building's current status.
+	 * @param[in] unit Pointer to the Building object that notifies this utility.
+	 */
 	virtual void update(Building* unit)=0;
+	/**
+	 * @brief Returns the type of utility service
+	 * @return string
+	 */
 	virtual std::string getType()=0;
+	/**
+	 * @brief Returns the operational status of the utility service
+	 * @return bool
+	 */
 	virtual bool isOperational()=0;
+	/**
+	 * @brief Shuts down the utility service
+	 */
 	virtual void shutDown()=0;
 	// virtual void restart()=0;
+	
 
 	// virtual bool getState()=0;
 	// void addDevice(Building* device);

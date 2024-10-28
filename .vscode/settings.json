@@ -111,6 +111,8 @@
     "text_encoding": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp",
+    "fstream": "cpp"
     "xstring": "cpp"
+
   }
 }

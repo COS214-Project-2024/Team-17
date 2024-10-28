@@ -21,6 +21,7 @@ public:
     // virtual void update(UtilityManager* unit) = 0;
     //Add virtual?
     virtual bool getState()=0;
+    virtual std::string getBuildingType()=0;
     void addUtility(UtilityManager* utility);//attach
     void removeUtility(UtilityManager* utility);//detach
     void notifyUtilities();//notify
