@@ -6,9 +6,9 @@ void testCitizens()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityMediator();
+    CityMediator *mediator = new CityCentralMediator();
     Citizen *citizen = new Citizen(mediator);
-    std::cout << " - Citizen created" << std::endl;
+    std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
     std::cout << " - Testing Citizen State" << std::endl;
     citizen->setState(Happy());
     citizen->setState(Content());

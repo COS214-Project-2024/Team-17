@@ -8,7 +8,7 @@ class Building;
 class Utilities;
 class RoadState;
 
-class CityCentralMediator : CityMediator
+class CityCentralMediator : public CityMediator
 {
 
 private:

@@ -1,10 +1,13 @@
 #include "Citizen.h"
+#include "CitizenNameGen.h"
 
 Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
 	this->mediator = mediator;
 	mediator->registerCitizen(this);
 	this->state = Indifferent();
+
+	name = CitizenNameGen::generateName();
 }
 
 void Citizen::setState(CitizenState newState)
@@ -27,4 +30,9 @@ void Citizen::accept(TaxAndBudgetVisitor *visitor)
 {
 	// TODO - implement Citizen::accept
 	throw "Not yet implemented";
+}
+
+std::string Citizen::getName()
+{
+	return name;
 }
