@@ -1,6 +1,5 @@
 #include "CityBlock.h"
 
-CityBlock::CityBlock(CityMediator *mediator)
-{
-	// TODO - implement CityBlock::CityBlock
+CityBlock::CityBlock(CityMediator* mediator) {
+	this->mediator = mediator;
 }

@@ -4,36 +4,32 @@
 #include <vector>
 #include "CityMediator.h"
 #include "Citizen.h"
-class Building;
-class Utilities;
-class RoadState;
 
-class CityCentralMediator : CityMediator
-{
+class CityCentralMediator : public CityMediator {
 
 private:
-	std::vector<Building *> buildings;
-	Utilities *utilities;
-	std::vector<Citizen *> citizens;
-	RoadState *roadState;
+	vector<Building*> buildings;
+	UtilityManager* utilities;
+	vector<Citizen*> citizens;
+	RoadComponent* roadState;
 
 public:
-	void registerBuilding(Building *building);
+	void registerBuilding(Building* building);
 
-	void registerUtility(Utilities *util);
+	void registerUtility(UtilityManager* util);
 
-	void notifyBuildingChange(Building *building);
+	void notifyBuildingChange(Building* building);
 
-	void notifyUtilityChange(Utilities *type, bool status);
+	void notifyUtilityChange(UtilityManager* type, bool status);
 
-	void notifyRoadChange(RoadState *status);
+	void notifyRoadChange(RoadComponent* status);
 
 private:
 	void handlePopulationGrowth();
 
 	void handleUtilityFailure();
 
-	void handleTrafficStatus(RoadState *status);
+	void handleTrafficStatus(RoadComponent* status);
 
 	void updateCitizenSatisfaction();
 };

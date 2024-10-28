@@ -1,55 +1,44 @@
 #include "CityCentralMediator.h"
 
-void CityCentralMediator::registerBuilding(Building *building)
-{
-	// TODO - implement CityCentralMediator::registerBuilding
+void CityCentralMediator::registerBuilding(Building* building) {
+	buildings.push_back(building);
+}
+
+void CityCentralMediator::registerUtility(UtilityManager* util) {
+	utilities = util;
+}
+
+void CityCentralMediator::notifyBuildingChange(Building* building) {
+	for (int i = 0; i < buildings.size(); i++) {
+		if (buildings[i] != building) {
+			buildings[i]->notifyChange();
+		}
+	}
+}
+
+void CityCentralMediator::notifyUtilityChange(UtilityManager* type, bool status) {
+	// not exactly sure what to do here
+}
+
+void CityCentralMediator::notifyRoadChange(RoadComponent* status) {
+	roadState = status;
+	for (int i = 0; i < citizens.size(); i++) {
+		citizens[i]->notifyChange();
+	}
+}
+
+void CityCentralMediator::handlePopulationGrowth() {
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::registerUtility(Utilities *util)
-{
-	// TODO - implement CityCentralMediator::registerUtility
+void CityCentralMediator::handleUtilityFailure() {
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::notifyBuildingChange(Building *building)
-{
-	// TODO - implement CityCentralMediator::notifyBuildingChange
+void CityCentralMediator::handleTrafficStatus(RoadComponent* status) {
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status)
-{
-	// TODO - implement CityCentralMediator::notifyUtilityChange
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::notifyRoadChange(RoadState *status)
-{
-	// TODO - implement CityCentralMediator::notifyRoadChange
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::handlePopulationGrowth()
-{
-	// TODO - implement CityCentralMediator::handlePopulationGrowth
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::handleUtilityFailure()
-{
-	// TODO - implement CityCentralMediator::handleUtilityFailure
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::handleTrafficStatus(RoadState *status)
-{
-	// TODO - implement CityCentralMediator::handleTrafficStatus
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::updateCitizenSatisfaction()
-{
-	// TODO - implement CityCentralMediator::updateCitizenSatisfaction
+void CityCentralMediator::updateCitizenSatisfaction() {
 	throw "Not yet implemented";
 }

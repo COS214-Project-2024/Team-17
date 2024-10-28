@@ -3,8 +3,11 @@
 
 #include "../CitizenState.h"
 
-class Content : public CitizenState
-{
+class Content : public CitizenState {
+public:
+    void handleChange();
+    std::string getState();
+    ~Content() {};
 };
 
 #endif

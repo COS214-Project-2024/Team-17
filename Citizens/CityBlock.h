@@ -2,20 +2,19 @@
 #define CITYBLOCK_H
 
 #include "CityMediator.h"
-class TaxAndBudgetVisitor;
+#include "../Government+Tax/TaxAndBudgetVisitor.h"
 
-class CityBlock
-{
+class CityBlock {
 
 protected:
-	CityMediator *mediator;
+	CityMediator* mediator;
 
 public:
-	CityBlock(CityMediator *mediator);
+	CityBlock(CityMediator* mediator);
 
 	virtual void notifyChange() = 0;
 
-	virtual void accept(TaxAndBudgetVisitor *visitor) = 0;
+	virtual void accept(TaxAndBudgetVisitor* visitor) = 0;
 };
 
 #endif

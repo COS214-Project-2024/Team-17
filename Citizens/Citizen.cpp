@@ -3,15 +3,15 @@
 Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 {
 	this->mediator = mediator;
-	this->state = Indifferent();
+	this->state = new Indifferent();
 }
 
-void Citizen::setState(CitizenState newState)
+void Citizen::setState(CitizenState* newState)
 {
 	this->state = newState;
 }
 
-CitizenState Citizen::getState()
+CitizenState* Citizen::getState()
 {
 	return state;
 }
