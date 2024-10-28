@@ -3,8 +3,6 @@
 
 #include "Government.h"
 
-class Government;
-
 class TaxCommand 
 {
 public:

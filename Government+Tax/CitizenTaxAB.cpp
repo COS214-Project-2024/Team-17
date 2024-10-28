@@ -1,11 +1,14 @@
 #include "CitizenTaxAB.h"
+#include <iostream>
 
-void CitizenTaxAB::visit(Citizen* citizen) {
-	// TODO - implement CitizenTaxAB::visit
-	throw "Not yet implemented";
+double CitizenTaxAB::visit(Citizen* citizen) {
+  std::cout << "Getting Tax from Citizen\n";
+  return 1;
+  // return citizen->getTax();
 }
 
-void CitizenTaxAB::visit(Business* business) {
-	// TODO - implement CitizenTaxAB::visit
-	throw "Not yet implemented";
+double CitizenTaxAB::visit(Building* business) {
+  std::cout << "Getting Tax from Bussiness\n";
+  return 1;
+	// return business->getTax();
 }

@@ -1,8 +1,8 @@
 #ifndef SETTAXRATECOMMAND_H
 #define SETTAXRATECOMMAND_H
 
-#include "Government.h"
 #include "TaxCommand.h"
+#include "Government.h"
 #include <string>
 
 class SetTaxRateCommand : public TaxCommand {

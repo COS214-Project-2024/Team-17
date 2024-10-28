@@ -5,8 +5,8 @@
 
 class CitizenTaxAB : public TaxAndBudgetVisitor {
 public:
-	void visit(Citizen* citizen);
-	void visit(Building* business);
+	double visit(Citizen* citizen);
+	double visit(Building* business);
 };
 
 #endif

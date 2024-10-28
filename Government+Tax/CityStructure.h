@@ -1,6 +1,8 @@
 #ifndef CITYSTRUCTURE_H
 #define CITYSTRUCTURE_H
 
+class TaxAndBudgetVisitor;
+
 #include "CityBlock.h"
 #include <vector>
 #include <string>
@@ -11,8 +13,10 @@ private:
   std::string Name;
 	std::vector<CityBlock*> blocks;
   std::map<std::string, double> departments;
+  double income;
 public:
   CityStructure(std::string name);
+  void accept(TaxAndBudgetVisitor* visitor);
 	void addBlock(CityBlock* block);
   void allocateBudget(std::string dept , double amount);
   double getIncome();

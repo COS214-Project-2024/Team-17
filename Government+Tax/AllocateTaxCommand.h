@@ -2,8 +2,7 @@
 #define ALLOCATETAXCOMMAND_H
 
 #include "TaxCommand.h"
-
-class Government;
+#include "Government.h"
 
 #include <string>
 
