@@ -20,3 +20,8 @@ float ResidentialStreets::getDistance()
 {
 	return this->distance;
 }
+
+void ResidentialStreets::notifyChange(std::string message)
+{
+	std::cout << "Residential Street received message: " << message << std::endl;
+}

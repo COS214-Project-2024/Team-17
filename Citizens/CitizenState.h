@@ -3,11 +3,12 @@
 
 #include <string>
 
-class CitizenState {
+class CitizenState
+{
 public:
     virtual void handleChange() = 0;
     virtual std::string getState() = 0;
-    ~CitizenState() {};
+    virtual ~CitizenState() {};
 };
 
 #endif

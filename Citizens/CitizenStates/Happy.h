@@ -3,7 +3,8 @@
 
 #include "../CitizenState.h"
 
-class Happy : public CitizenState {
+class Happy : public CitizenState
+{
 public:
     void handleChange();
     std::string getState();

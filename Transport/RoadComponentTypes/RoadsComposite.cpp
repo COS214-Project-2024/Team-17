@@ -42,3 +42,8 @@ float RoadsComposite::getDistance()
 	}
 	return sumDistance;
 }
+
+void RoadsComposite::notifyChange(std::string message)
+{
+	std::cout << "Composite Road received message: " << message << std::endl;
+}
