@@ -6,7 +6,9 @@
 #include "../Utilities/UtilityManager.h"
 #include "../Citizens/CityMediator.h"
 
+
 class Building : public CityBlock{
+
 private:
 	string name;
 	CityMediator* mediator;
