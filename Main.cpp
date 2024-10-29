@@ -14,7 +14,6 @@
 #include "./Buildings/BuildDecorRepair.h"
 #include "./Buildings/BuildDecorEconomic.h"
 
-
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
 void test2(); // Buildings [COMMERCIAL]
@@ -25,7 +24,6 @@ void test5(); // Buildings [SERVICES]
 void test6(); // Decorators [ALL]
 
 int main() {
-
  	cout << YELLOW  << "\t┏┓•     ┳┓  •┓ ┓      " << endl
                     << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
                     << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
