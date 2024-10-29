@@ -5,6 +5,10 @@
 
 class Happy : public CitizenState
 {
+public:
+    void handleChange();
+    std::string getState();
+    ~Happy() {};
 };
 
 #endif

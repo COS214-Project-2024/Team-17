@@ -2,5 +2,5 @@
 
 CityBlock::CityBlock(CityMediator *mediator)
 {
-	// TODO - implement CityBlock::CityBlock
+	this->mediator = mediator;
 }

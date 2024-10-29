@@ -5,6 +5,10 @@
 
 class Upset : public CitizenState
 {
+public:
+    void handleChange();
+    std::string getState();
+    ~Upset() {};
 };
 
 #endif

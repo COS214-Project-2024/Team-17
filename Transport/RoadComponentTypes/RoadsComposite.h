@@ -22,6 +22,8 @@ public:
 
 	float getDistance();
 
+	void notifyChange(std::string message);
+
 	~RoadsComposite() {}
 };
 

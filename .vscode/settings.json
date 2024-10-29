@@ -112,5 +112,7 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "fstream": "cpp"
+    "xstring": "cpp"
+
   }
 }

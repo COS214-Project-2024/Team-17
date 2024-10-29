@@ -5,6 +5,10 @@
 
 class Indifferent : public CitizenState
 {
+public:
+    void handleChange();
+    std::string getState();
+    ~Indifferent() {};
 };
 
 #endif

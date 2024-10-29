@@ -2,32 +2,45 @@
 
 void CityCentralMediator::registerBuilding(Building *building)
 {
-	// TODO - implement CityCentralMediator::registerBuilding
-	throw "Not yet implemented";
+	buildings.push_back(building);
 }
 
 void CityCentralMediator::registerUtility(Utilities *util)
 {
-	// TODO - implement CityCentralMediator::registerUtility
-	throw "Not yet implemented";
+	utilities.push_back(util);
 }
 
-void CityCentralMediator::notifyBuildingChange(Building *building)
+void CityCentralMediator::registerCitizen(Citizen *citizen)
 {
-	// TODO - implement CityCentralMediator::notifyBuildingChange
-	throw "Not yet implemented";
+	citizens.push_back(citizen);
 }
 
-void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status)
+void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
 {
-	// TODO - implement CityCentralMediator::notifyUtilityChange
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
 }
 
-void CityCentralMediator::notifyRoadChange(RoadState *status)
+void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status, std::string message = "")
 {
-	// TODO - implement CityCentralMediator::notifyRoadChange
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
+void CityCentralMediator::notifyRoadChange(RoadState *status, std::string message = "")
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
+CityCentralMediator::CityCentralMediator()
+{
 }
 
 void CityCentralMediator::handlePopulationGrowth()
@@ -50,6 +63,33 @@ void CityCentralMediator::handleTrafficStatus(RoadState *status)
 
 void CityCentralMediator::updateCitizenSatisfaction()
 {
-	// TODO - implement CityCentralMediator::updateCitizenSatisfaction
-	throw "Not yet implemented";
+	for (auto c : citizens)
+	{
+		int random = rand() % 5;
+		CitizenState *newState = NULL;
+
+		switch (random)
+		{
+		case 0:
+			newState = new Happy();
+			break;
+		case 1:
+			newState = new Content();
+			break;
+		case 2:
+			newState = new Indifferent();
+			break;
+		case 3:
+			newState = new Discontent();
+			break;
+		case 4:
+			newState = new Upset();
+			break;
+
+		default:
+			break;
+		}
+
+		c->setState(newState);
+	}
 }
