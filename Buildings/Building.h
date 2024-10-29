@@ -3,10 +3,10 @@
 
 #include "../colours.h" // Testing colours and other includes
 #include "../Citizens/CityBlock.h"
-#include "../Utilities/UtilityObserver.h"
+#include "../Utilities/UtilityManager.h"
 #include "../Citizens/CityMediator.h"
 
-class Building : public UtilityObserver, public CityBlock{
+class Building : public UtilityManager, public CityBlock{
 private:
 	string name;
 	CityMediator* mediator;
