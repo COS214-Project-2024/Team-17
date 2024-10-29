@@ -11,3 +11,11 @@ void BuildingDecorator::displayBuildingInfo() {
 BuildingDecorator::~BuildingDecorator() {
     delete building;
 }
+
+bool BuildingDecorator::checkBuildRequirements() {
+    return building->checkBuildRequirements();
+}
+
+bool BuildingDecorator::getState() {
+    return building->getState();
+}

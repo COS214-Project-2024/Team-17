@@ -1,26 +1,40 @@
 #include "Commercial.h"
 
-// void Commercial::operation() {
-// 	// TODO - implement Commercial::operation
-// 	throw "Not yet implemented";
-// }
-void Commercial::callUtilities(){
-        notifyUtilities();
-    }
+bool Commercial::getState(){
+    //  cout<<"commercial state"<<endl;
+    return operational;
+}
 
-	bool Commercial::getState(){
-        //  cout<<"commercial state"<<endl;
-        return operational;
-    }
+string Commercial::getBuildingType(){
+    return "Commercial";
+}
 
-	void Commercial::setState(bool state){
-        if(operational!=state){
-        operational = state;
-        callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
+bool Commercial::checkBuildRequirements(){
+    // add implementation
+    return true;
+}
+
+// Observer Design Pattern
+     void Commercial::addUtility(UtilityManager* utility) {
+    	Utilities.push_back(utility);
+		std::cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
+		
+    }
+    
+    void Commercial::removeUtility(UtilityManager* utility) {
+    auto it = Utilities.begin();
+    while (it != Utilities.end()) {
+        if (*it == utility) {
+            Utilities.erase(it);
+			std::cout<<"Utility Deconstruction of type:"<<utility->getType()<<std::endl;
+            return;
         }
+        ++it;
     }
-    	std::string Commercial::getBuildingType(){
-        return "Commercial";
+}
+
+void Commercial::notifyUtilities(){
+    for(UtilityManager* utility:Utilities){
+        utility->update(this);
     }
+}

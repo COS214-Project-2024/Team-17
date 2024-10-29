@@ -12,22 +12,22 @@ public:
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
 
-	// void Police();
-	// void Firestation();
-
 	//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
 	// int getTotalCapacity();
 	// int getCurrentStorage();
 	// int setCurrentStorage(int storage);
-	std::string getBuildingType()override;
+	std::string getBuildingType();
+
+	// void Police();
+	// void Firestation();
 
 private:
 	int visitors;
 	bool operational;//CS State
-	std::string type="Service Security";
+	string type="Service Security";
 };
 
 #endif

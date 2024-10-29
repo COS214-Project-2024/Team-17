@@ -16,23 +16,23 @@ void ServHospital::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void ServHospital::callUtilities(){
-        notifyUtilities();
-    }
+void ServHospital::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ServHospital::getState(){
-        return operational;
-    }
+bool ServHospital::getState(){
+    return operational;
+}
 
-	void ServHospital::setState(bool state){
-        if(operational!=state){
+void ServHospital::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string ServHospital::getBuildingType(){
-        return type;
-    }
+std::string ServHospital::getBuildingType(){
+    return type;
+}

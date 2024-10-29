@@ -6,5 +6,5 @@ void BuildDecorUpgrade::displayBuildingInfo() {
     if (building) {
         building->displayBuildingInfo();
     }
-    cout << "This building has been decorated with upgrades." << endl;
+    cout << "This building has been upgraded with decorative elements." << endl;
 }

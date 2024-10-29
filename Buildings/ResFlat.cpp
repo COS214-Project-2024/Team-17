@@ -16,23 +16,23 @@ void ResFlat::setCapacity(int capacity) {
     this->capacity = capacity;
 }
 
-	void ResFlat::callUtilities(){
-        notifyUtilities();
-    }
+void ResFlat::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ResFlat::getState(){
-        return operational;
-    }
+bool ResFlat::getState(){
+    return operational;
+}
 
-	void ResFlat::setState(bool state){
-        if(operational!=state){
+void ResFlat::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string ResFlat::getBuildingType(){
-        return type;
-    }
+string ResFlat::getBuildingType(){
+    return type;
+}

@@ -3,26 +3,27 @@
 
 #include "Services.h"
 class ServHospital :public Services {
-    private:
+private:
 	int visitors;
-    bool operational;//CS State
-    std::string type="Service Hospital";
+    bool operational; // CS State
+    string type = "Service Hospital";
     
-    public:
-		ServHospital();
+public:
+	ServHospital();
 
 	void displayBuildingInfo() override;	
 
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
+
     //Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
 	// int getTotalCapacity();
 	// int getCurrentStorage();
 	// int setCurrentStorage(int storage);
-	std::string getBuildingType()override;
+	std::string getBuildingType();
 };
 
 #endif
