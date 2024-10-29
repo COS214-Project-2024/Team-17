@@ -2,43 +2,33 @@
 #define BUILDING_H
 
 #include "../colours.h" // Testing colours and other includes
-#include "../Citizens/CityBlock.h"
 #include "../Utilities/UtilityManager.h"
-#include "../Citizens/CityMediator.h"
+//#include "../Utilities/CityMediator.h"
 
+class UtilityManager;
 
-class Building : public CityBlock{
-
-private:
-	string name;
-	CityMediator* mediator;
-	virtual bool checkBuildRequirements() = 0;
-	bool operational;//state
-    std::vector<UtilityManager*> Utilities;
-
-
+class Building {
 public:
+    Building();
+
     virtual void displayBuildingInfo() = 0;
     virtual ~Building() = default;
-    // virtual void update(UtilityManager* unit) = 0;
-    //Add virtual?
-    virtual bool getState()=0;
-    virtual std::string getBuildingType()=0;
-    void addUtility(UtilityManager* utility);//attach
-    void removeUtility(UtilityManager* utility);//detach
-    void notifyUtilities();//notify
 
-	Building(CityMediator* mediator, string type);
+    //Building(CityMediator* mediator, string type);
+    virtual bool getState() = 0;
+    virtual string getBuildingType();
 
-	void notifyChange();
+    virtual bool checkBuildRequirements() = 0;
 
+private:
+    vector<UtilityManager*> utilities;
+    string name;
+	// CityMediator* mediator;
+	bool operational; //state
 };
 
 
 #endif // BUILDING_H
-
-
-
 
 
 
@@ -47,7 +37,7 @@ public:
 // #ifndef BUILDING_H
 // #define BUILDING_H
 
-// class Building : public UtilityObserver, CityBlock {
+// class Building : UtilityObserver, CityBlock {
 
 // private:
 // 	string name;

@@ -12,22 +12,22 @@ public:
     int getCapacity() const override;
     void setCapacity(int capacity) override;
 
+    //Observer
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+	// int getTotalCapacity();
+	// int getCurrentStorage();
+	// int setCurrentStorage(int storage);
+	std::string getBuildingType();
+
     // virtual bool checkBuildRequirements() override;
 	// virtual int increasePopulation() override;
 	// virtual void affectEmotionalState() override;
 
-//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	std::string getBuildingType()override;
-
 private:
     int capacity;
-    std::string type="Residential Flat";
+    string type="Residential Flat";
     bool operational;//CS State
 };
 

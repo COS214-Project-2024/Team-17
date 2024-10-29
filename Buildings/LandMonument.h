@@ -12,22 +12,22 @@ public:
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
 
+	//Observer
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+	// int getTotalCapacity();
+	// int getCurrentStorage();
+	// int setCurrentStorage(int storage);
+	string getBuildingType();
+
 	// bool checkBuildRequirements() override;
 	// void createBuilding() override;
 	// void affectEmotionalState() override;
 
-//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	std::string getBuildingType()override;
-
 private:
 	int visitors;
-	std::string type="Landmark Monument";
+	string type="Landmark Monument";
 	bool operational;//CS State
 };
 

@@ -25,7 +25,7 @@ private:
 	// UtilWasteMan wasteManagement;
 	// UtilSewageSyst sewageSystem;
 	// CityMediator* mediator;
-	std::string type;
+	string type;
 	bool operational;//observer state
 
 public:
@@ -42,7 +42,7 @@ public:
 	 * @brief Returns the type of utility service
 	 * @return string
 	 */
-	virtual std::string getType()=0;
+	virtual string getType()=0;
 	/**
 	 * @brief Returns the operational status of the utility service
 	 * @return bool

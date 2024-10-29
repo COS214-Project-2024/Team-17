@@ -16,23 +16,23 @@ void LandMonument::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void LandMonument::callUtilities(){
-        notifyUtilities();
-    }
+void LandMonument::callUtilities(){
+    notifyUtilities();
+}
 
-	bool LandMonument::getState(){
-        return operational;
-    }
+bool LandMonument::getState(){
+    return operational;
+}
 
-	void LandMonument::setState(bool state){
-        if(operational!=state){
+void LandMonument::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
+    else{
             cout<<"No change in state"<<endl;
-        }
     }
+}
 
-	std::string LandMonument::getBuildingType(){
-        return type;
-    }
+string LandMonument::getBuildingType(){
+    return type;
+}

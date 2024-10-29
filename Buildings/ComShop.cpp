@@ -16,23 +16,23 @@ void ComShop::setJobCapacity(int capacity) {
     this->jobCapacity = capacity;
 }
 
-	void ComShop::callUtilities(){
-        notifyUtilities();
-    }
+void ComShop::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ComShop::getState(){
-        return operational;
-    }
+bool ComShop::getState(){
+    return operational;
+}
 
-	void ComShop::setState(bool state){
-        if(operational!=state){
+void ComShop::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string ComShop::getBuildingType(){
-        return type;
-    }
+string ComShop::getBuildingType(){
+    return type;
+}

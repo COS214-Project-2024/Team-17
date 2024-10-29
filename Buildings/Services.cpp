@@ -1,22 +1,40 @@
 #include "Services.h"
 
-void Services::callUtilities(){
-        notifyUtilities();
-    }
+bool Services::getState(){
+    //  cout<<"commercial state"<<endl;
+    return operational;
+}
 
-	bool Services::getState(){
-        //  cout<<"commercial state"<<endl;
-        return operational;
-    }
+string Services::getBuildingType(){
+    return "Residential";
+}
 
-	void Services::setState(bool state){
-        if(operational!=state){
-        operational = state;
-        callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
+bool Services::checkBuildRequirements(){
+    // add implementation
+    return true;
+}
+
+// Observer Design Pattern
+     void Services::addUtility(UtilityManager* utility) {
+    	Utilities.push_back(utility);
+		std::cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
+		
+    }
+    
+    void Services::removeUtility(UtilityManager* utility) {
+    auto it = Utilities.begin();
+    while (it != Utilities.end()) {
+        if (*it == utility) {
+            Utilities.erase(it);
+			std::cout<<"Utility Deconstruction of type:"<<utility->getType()<<std::endl;
+            return;
         }
+        ++it;
     }
-    	std::string Services::getBuildingType(){
-        return "Residential";
+}
+
+void Services::notifyUtilities(){
+    for(UtilityManager* utility:Utilities){
+        utility->update(this);
     }
+}

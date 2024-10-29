@@ -14,6 +14,28 @@
 #include "./Buildings/BuildDecorRepair.h"
 #include "./Buildings/BuildDecorEconomic.h"
 
+
+#include "./Buildings/Building.h"
+#include "./Buildings/ComMall.h"
+#include "./Buildings/LandCCenter.h"
+#include "./Buildings/ComOffice.h"
+#include "./Buildings/ComShop.h"
+#include "./Buildings/ServHospital.h"
+#include "./Buildings/ServSecurity.h"
+#include "./Buildings/ServEntertainment.h"
+#include "./Buildings/LandPark.h"
+#include "./Buildings/LandMonument.h"
+#include "./Buildings/IndPlant.h"
+#include "./Buildings/IndFactory.h"
+#include "./Buildings/IndWarehouse.h"
+#include "./Buildings/ResHouse.h"
+#include "./Buildings/ResEstate.h"
+#include "./Buildings/ResFlat.h"
+#include "./Utilities/UtilPowerPlants.h"
+#include "./Utilities/UtilWaterSupply.h"
+#include "./Utilities/UtilWasteMan.h"
+#include "./Utilities/UtilSewageSyst.h"
+
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
 void test2(); // Buildings [COMMERCIAL]
@@ -23,23 +45,28 @@ void test5(); // Buildings [SERVICES]
 
 void test6(); // Decorators [ALL]
 
+void test7(); // Utilities [ALL]
+
 int main() {
+
  	cout << YELLOW  << "\t┏┓•     ┳┓  •┓ ┓      " << endl
                     << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
                     << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
                     << "\t     ┛                 " << RESET << endl << endl;
 
-    test1();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test2();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test3();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test4();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test5();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test6();
+    // test1();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test2();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test3();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test4();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test5();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test6();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    test7();
     cout << YELLOW << "==============================" << RESET << endl;
 
 	return 0;
@@ -254,6 +281,7 @@ void test6() {
     residentialBuilding = new BuildDecorUpgrade(residentialBuilding);
     residentialBuilding = new BuildDecorRepair(residentialBuilding);
     residentialBuilding = new BuildDecorEconomic(residentialBuilding);
+
     residentialBuilding->displayBuildingInfo();
 
     // Upgrade
@@ -274,7 +302,260 @@ void test6() {
     //Clean up
     delete building;
     delete factory;
-    delete residentialBuilding;
+
+   // delete residentialBuilding;
+
+    cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
+}
+
+void test7() {
+    cout << YELLOW << "Test Utilities [ALL]" << RESET << endl;
+
+        // Create a commercial
+    ComMall* mall= new ComMall();
+    ComOffice* office= new ComOffice();
+    ComShop* shop= new ComShop();
+    mall->displayBuildingInfo();
+    cout<<"Mall building type:"<<mall->getBuildingType()<<endl;
+
+
+     UtilPowerPlants* powerPlant = new UtilPowerPlants();
+     UtilWaterSupply* waterPlant = new UtilWaterSupply();
+     UtilWasteMan* wastePlant = new UtilWasteMan();    
+     UtilSewageSyst* sewagePlant = new UtilSewageSyst();
+    mall->addUtility(powerPlant);
+    office->addUtility(waterPlant);
+    shop->addUtility(wastePlant);
+    mall->addUtility(sewagePlant);
+
+    ComMall* mall1= new ComMall();
+    mall1->addUtility(powerPlant);
+    cout<<"Built?"<<endl;
+    cout<<"Power Plant state:"<<powerPlant->isOperational()<<endl;
+    cout<<endl;
+    cout<<"Mall state:"<<mall1->getState()<<endl;
+    cout<<"Power Plant state:"<<powerPlant->isOperational()<<endl;
+    mall1->setState(true);
+    // mall1->setState(false);
+    cout<<endl;
+    cout<<"States after set true"<<endl;
+    cout<<"Mall state:"<<mall1->getState()<<endl;
+    cout<<"Power Plant state:"<<powerPlant->isOperational()<<endl;
+    
+    cout<<endl;
+    mall1->setState(false);
+        cout<<"States after set false from true"<<endl;
+    cout<<"Mall state:"<<mall1->getState()<<endl;
+    cout<<"Power Plant state:"<<powerPlant->isOperational()<<endl;
+    cout<<endl;
+    // mall->notifyUtilities();
+    mall->removeUtility(powerPlant);
+    mall->removeUtility(sewagePlant);
+    office->removeUtility(waterPlant);
+    shop->removeUtility(wastePlant);
+
+    cout<<endl;
+cout<<"END OF COMMERCIAL TESTING!"<<endl;
+cout<<endl;
+    // create service
+    ServHospital* hospital=new ServHospital();
+    ServSecurity* security=new ServSecurity();
+    ServEntertainment* entertainment=new ServEntertainment();
+
+    UtilPowerPlants* SpowerPlant = new UtilPowerPlants();
+     UtilWaterSupply* SwaterPlant = new UtilWaterSupply();
+     UtilWasteMan* SwastePlant = new UtilWasteMan();    
+     UtilSewageSyst* SsewagePlant = new UtilSewageSyst();
+
+
+  hospital->addUtility(SpowerPlant);
+    security->addUtility(SwaterPlant);
+    entertainment->addUtility(SwastePlant);
+    hospital->addUtility(SsewagePlant);
+
+    ComMall* hospital1= new ComMall();
+    hospital1->addUtility(SpowerPlant);
+    cout<<"Built?"<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    cout<<endl;
+    cout<<"Mall state:"<<hospital1->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    hospital1->setState(true);
+    // mall1->setState(false);
+    cout<<endl;
+    cout<<"States after set true"<<endl;
+    cout<<"Mall state:"<<hospital1->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    
+    cout<<endl;
+    hospital1->setState(false);
+        cout<<"States after set false from true"<<endl;
+    cout<<"Mall state:"<<hospital1->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    cout<<endl;
+    // mall->notifyUtilities();
+    hospital->removeUtility(SpowerPlant);
+    hospital->removeUtility(SsewagePlant);
+    security->removeUtility(SwaterPlant);
+    entertainment->removeUtility(SwastePlant);
+
+    cout<<endl;
+
+
+    cout<<endl;
+cout<<"END OF SERVICE TESTING!"<<endl;
+cout<<endl;
+
+    // create landmark
+    LandPark* park=new LandPark();
+    LandCCenter* land=new LandCCenter();
+    LandMonument* landmonument=new LandMonument();
+
+    park->addUtility(SpowerPlant);
+    land->addUtility(SwaterPlant);
+    landmonument->addUtility(SwastePlant);
+    park->addUtility(SsewagePlant);
+
+     LandMonument* hospital11= new LandMonument();
+    hospital11->addUtility(SpowerPlant);
+    cout<<"Built?"<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    cout<<endl;
+    cout<<"Mall state:"<<hospital11->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    hospital1->setState(true);
+    // mall1->setState(false);
+    cout<<endl;
+    cout<<"States after set true"<<endl;
+    cout<<"Mall state:"<<hospital11->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    
+    cout<<endl;
+    hospital1->setState(false);
+        cout<<"States after set false from true"<<endl;
+    cout<<"Mall state:"<<hospital11->getState()<<endl;
+    cout<<"Power Plant state:"<<SpowerPlant->isOperational()<<endl;
+    cout<<endl;
+    // mall->notifyUtilities();
+    hospital1->removeUtility(SpowerPlant);
+    hospital11->removeUtility(SpowerPlant);
+    hospital->removeUtility(SsewagePlant);
+    security->removeUtility(SwaterPlant);
+    entertainment->removeUtility(SwastePlant);
+
+    cout<<endl;
+cout<<"END OF LANDMARK TESTING!"<<endl;
+cout<<endl;
+    //Create Industry
+    IndPlant* plant=new IndPlant();
+    IndFactory* factory=new IndFactory();
+    IndWarehouse* warehouse=new IndWarehouse();
+
+    UtilPowerPlants* IpowerPlant = new UtilPowerPlants();
+     UtilWaterSupply* IwaterPlant = new UtilWaterSupply();
+     UtilWasteMan* IwastePlant = new UtilWasteMan();    
+     UtilSewageSyst* IsewagePlant = new UtilSewageSyst();
+    // Industry linking testing
+    plant->addUtility(IsewagePlant);
+    factory->addUtility(IpowerPlant);
+    warehouse->addUtility(IwaterPlant);
+cout << endl;
+    plant->displayBuildingInfo(); 
+    cout<<endl;
+
+    plant->getState();
+    factory->getState();
+    cout<<endl;
+
+    plant->setState(false);
+    cout<<"Plant state after setting true:"<<plant->getState()<<endl;
+    cout<<"Utility attached state:"<<IsewagePlant->isOperational()<<endl;
+
+    factory->setState(true);
+    cout<<"Factory state after setting true:"<<factory->getState()<<endl;
+    cout<<"Utility attached state:"<<IpowerPlant->isOperational()<<endl;
+
+    plant->removeUtility(IsewagePlant);
+    factory->removeUtility(IpowerPlant);
+    warehouse->removeUtility(IwaterPlant);
+
+cout<<"END OF INDUSTRY TESTING!"<<endl;
+cout<<endl;
+
+    // Create Ressidence
+    ResHouse* house=new ResHouse();
+    ResEstate* estate=new ResEstate();
+    ResFlat* flat=new ResFlat();
+
+    //Creating utilities
+     UtilPowerPlants* RpowerPlant = new UtilPowerPlants();
+     UtilWaterSupply* RwaterPlant = new UtilWaterSupply();
+     UtilWasteMan* RwastePlant = new UtilWasteMan();    
+     UtilSewageSyst* RsewagePlant = new UtilSewageSyst();
+    
+    // Ressidence linking testing
+    house->addUtility(wastePlant);
+    estate->addUtility(powerPlant);
+    flat->addUtility(waterPlant);
+
+    cout << endl;
+    house->displayBuildingInfo();
+    estate->displayBuildingInfo();
+    flat->displayBuildingInfo();
+        cout<<endl;
+
+    house->getState();
+    estate->getState();
+    cout<<endl;
+    house->setState(false);
+    cout<<"Hose state after setting true:"<<house->getState()<<endl;
+    cout<<"Utility attached state:"<<wastePlant->isOperational()<<endl;
+
+    estate->setState(true);
+    cout<<"Estate state after setting true:"<<estate->getState()<<endl;
+    cout<<"Utility attached state:"<<powerPlant->isOperational()<<endl;
+
+    house->removeUtility(wastePlant);
+    estate->removeUtility(powerPlant);
+    flat->removeUtility(waterPlant);
+
+
+cout<<"END OF RESIDENCE TESTING!"<<endl;
+cout<<endl;
+
+    delete mall;
+    delete office;
+    delete shop;
+    delete security;
+    delete entertainment;
+    delete hospital;
+    delete park;
+    delete land;
+    delete landmonument;
+    delete plant;
+    delete factory;
+    delete warehouse;
+    delete house;
+    delete estate;
+    delete flat;
+    delete powerPlant;
+    delete waterPlant;
+    delete wastePlant;
+    delete sewagePlant;
+    delete SpowerPlant;
+    delete SwaterPlant;
+    delete SwastePlant;
+    delete SsewagePlant;
+    delete IpowerPlant;
+    delete IwaterPlant;
+    delete IwastePlant;
+    delete IsewagePlant;
+    delete RpowerPlant;
+    delete RwaterPlant;
+    delete RwastePlant;
+    delete RsewagePlant;
+    cout<<"END OF PROGRAM!"<<endl;
+    
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }

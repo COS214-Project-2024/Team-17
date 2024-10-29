@@ -6,5 +6,5 @@ void BuildDecorEconomic::displayBuildingInfo() {
     if (building) {
         building->displayBuildingInfo();
     }
-    cout << "This building has been decorated with economic elements." << endl;
+    cout << "This building has been upgraded with economic elements." << endl;
 }

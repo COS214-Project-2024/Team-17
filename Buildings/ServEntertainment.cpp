@@ -16,23 +16,23 @@ void ServEntertainment::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void ServEntertainment::callUtilities(){
-        notifyUtilities();
-    }
+void ServEntertainment::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ServEntertainment::getState(){
+bool ServEntertainment::getState(){
         return operational;
-    }
+}
 
-	void ServEntertainment::setState(bool state){
-        if(operational!=state){
+void ServEntertainment::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string ServEntertainment::getBuildingType(){
-        return type;
-    }
+string ServEntertainment::getBuildingType(){
+    return type;
+}
