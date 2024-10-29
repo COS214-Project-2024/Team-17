@@ -1,13 +1,16 @@
 #ifndef TAXANDBUDGETVISITOR_H
 #define TAXANDBUDGETVISITOR_H
 
-class TaxAndBudgetVisitor : Government {
+#include "Government.h"
+class Building;
+class Citizen;
 
-
+class TaxAndBudgetVisitor : public Government
+{
 public:
-	virtual void visit(Citizen* citizen) = 0;
-
-	virtual void visit(Business* business) = 0;
+	virtual double visit(Citizen *citizen) = 0;
+	virtual double visit(Building *business) = 0;
+	virtual ~TaxAndBudgetVisitor() {}
 };
 
 #endif

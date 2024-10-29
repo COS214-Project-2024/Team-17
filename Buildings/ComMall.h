@@ -12,6 +12,13 @@ public:
 	virtual int getJobCapacity() override;
 	virtual void setJobCapacity(int capacity) override;
 
+	// Observer
+	void callUtilities(); //call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+
+	string getBuildingType();
+
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
 	// virtual void affectEmotionalState() = 0;
@@ -21,6 +28,8 @@ public:
 
 private:
     int jobCapacity;
+	string type = "Commercial Mall";
+	bool operational; //CS State
 };
 
 #endif

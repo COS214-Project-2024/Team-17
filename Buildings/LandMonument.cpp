@@ -15,3 +15,24 @@ int LandMonument::getVisitors() {
 void LandMonument::setVisitors(int visitors) {
     this->visitors = visitors;
 }
+
+void LandMonument::callUtilities(){
+    notifyUtilities();
+}
+
+bool LandMonument::getState(){
+    return operational;
+}
+
+void LandMonument::setState(bool state){
+    if(operational!=state){
+        operational = state;
+        callUtilities();}
+    else{
+            cout<<"No change in state"<<endl;
+    }
+}
+
+string LandMonument::getBuildingType(){
+    return type;
+}

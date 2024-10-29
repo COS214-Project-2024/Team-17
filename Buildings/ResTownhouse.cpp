@@ -15,3 +15,24 @@ int ResTownhouse::getCapacity() const {
 void ResTownhouse::setCapacity(int capacity) {
     this->capacity = capacity;
 }
+
+void ResTownhouse::callUtilities(){
+    notifyUtilities();
+}
+
+bool ResTownhouse::getState(){
+    return operational;
+}
+
+void ResTownhouse::setState(bool state){
+    if(operational!=state){
+        operational = state;
+        callUtilities();}
+    else{
+        cout<<"No change in state"<<endl;
+    }
+}
+
+std::string ResTownhouse::getBuildingType(){
+    return type;
+}

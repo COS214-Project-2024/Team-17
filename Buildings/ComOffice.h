@@ -9,8 +9,17 @@ public:
 
     void displayBuildingInfo() override;
 
-	virtual int getJobCapacity() override;
-	virtual void setJobCapacity(int capacity) override;
+	int getJobCapacity() override;
+	void setJobCapacity(int capacity) override;
+
+	//Observer
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+	// int getTotalCapacity();
+	// int getCurrentStorage();
+	// int setCurrentStorage(int storage);
+	string getBuildingType()override;
 
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
@@ -21,6 +30,8 @@ public:
 
 private:
     int jobCapacity;
+	string type = "Commercial Office";
+	bool operational;//CS State
 };
 
 #endif

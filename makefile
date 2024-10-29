@@ -1,27 +1,29 @@
-# Makefile
-CXX = g++
-CXXFLAGS = -Wall -Wextra -g
+# Define the source files and headers
+SOURCES := $(shell find . -name '*.cpp' | grep -v 'main.cpp')
+HEADERS := $(shell find . -name '*.h')
+OBJECTS := $(SOURCES:.cpp=.o) 
 
-# List of source files
-SRC = main.cpp $(wildcard Buildings/*.cpp)
-OBJ = $(SRC:.cpp=.o)
+# Define the target
+main: $(OBJECTS)
+	g++ -o main $(OBJECTS)
 
-# Target executable
-TARGET = my_program
+# Define the object file rule
+# This rule handles source files in subdirectories
+%.o: %.cpp $(HEADERS)
+	g++ -c $< -o $@
 
-# Default target
-all: $(TARGET)
+# Define the run rule
+run: main
+	./main
 
-$(TARGET): $(OBJ)
-	$(CXX) $(OBJ) -o $@
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-# Run the program
-run: $(TARGET)
-	./$(TARGET)
-
-# Clean the object files and the target
+# Define the clean rule
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJECTS) main
+
+# Define the valgrind rule
+val: main
+	valgrind --leak-check=full ./main
+
+# Clean Zone.Identifier files
+clean_zone:
+	find . -name '*:Zone.Identifier' -type f -delete

@@ -11,6 +11,9 @@ public:
     BuildingDecorator(Building* b);
     virtual void displayBuildingInfo() override;
     virtual ~BuildingDecorator();
+
+    bool checkBuildRequirements() override;
+    bool getState() override;
 };
 
 #endif

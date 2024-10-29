@@ -15,3 +15,24 @@ int ResFlat::getCapacity() const {
 void ResFlat::setCapacity(int capacity) {
     this->capacity = capacity;
 }
+
+void ResFlat::callUtilities(){
+    notifyUtilities();
+}
+
+bool ResFlat::getState(){
+    return operational;
+}
+
+void ResFlat::setState(bool state){
+    if(operational!=state){
+        operational = state;
+        callUtilities();}
+    else{
+        cout<<"No change in state"<<endl;
+    }
+}
+
+string ResFlat::getBuildingType(){
+    return type;
+}
