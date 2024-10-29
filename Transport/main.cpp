@@ -20,20 +20,21 @@ void testRoads()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Components" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
+    CityMediator *mediator = CityCentralMediator::getInstance();
     std::cout << " - CityMediator created!" << std::endl;
 
     RoadComponent **roads = new RoadComponent *[4];
-    roads[0] = new MainRoads(mediator);
-    roads[1] = new Highways(mediator);
-    roads[2] = new RoadsComposite(mediator);
-    roads[3] = new ResidentialStreets(mediator);
+    roads[0] = new MainRoads();
+    roads[1] = new Highways();
+    roads[2] = new RoadsComposite();
+    roads[3] = new ResidentialStreets();
     std::cout << " - Roads created!" << std::endl;
 
     for (int i = 0; i < 4; i++)
     {
         testRoadComponent(roads[i]);
     }
+    delete mediator;
 }
 
 void testRoadsIterator()
@@ -41,10 +42,10 @@ void testRoadsIterator()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Iterators" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
+    CityMediator *mediator = CityCentralMediator::getInstance();
     std::cout << " - CityMediator created!" << std::endl;
 
-    std::vector<RoadComponent *> roads = {new MainRoads(mediator), new Highways(mediator), new RoadsComposite(mediator), new ResidentialStreets(mediator)};
+    std::vector<RoadComponent *> roads = {new MainRoads(), new Highways(), new RoadsComposite(), new ResidentialStreets()};
 
     RoadIterator *iterator = new RoadIteratorCon(&roads);
 
@@ -58,6 +59,7 @@ void testRoadsIterator()
     std::cout << "\t - Current Road" << std::endl;
     iterator->currentRoad();
     std::cout << "\t - Testing Complete!" << std::endl;
+    delete mediator;
 }
 
 void testRoadsComposite()
@@ -65,17 +67,17 @@ void testRoadsComposite()
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Road Composite" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
+    CityMediator *mediator = CityCentralMediator::getInstance();
     std::cout << " - CityMediator created!" << std::endl;
 
-    RoadsComposite *roadsComposite = new RoadsComposite(mediator);
+    RoadsComposite *roadsComposite = new RoadsComposite();
     std::cout << " - Roads Composite created!" << std::endl;
 
     RoadComponent **roads = new RoadComponent *[4];
-    roads[0] = new MainRoads(mediator);
-    roads[1] = new Highways(mediator);
-    roads[2] = new RoadsComposite(mediator);
-    roads[3] = new ResidentialStreets(mediator);
+    roads[0] = new MainRoads();
+    roads[1] = new Highways();
+    roads[2] = new RoadsComposite();
+    roads[3] = new ResidentialStreets();
     std::cout << " - Roads created!" << std::endl;
 
     for (int i = 0; i < 4; i++)
@@ -94,6 +96,9 @@ void testRoadsComposite()
     roadsComposite->remove(roads[0]);
     std::cout << " - Road removed from composite!" << std::endl;
     std::cout << "\t - Testing Complete!" << std::endl;
+    mediator->notifyRoadChange(new Congested(), "Road removed from composite!");
+
+    delete mediator;
 }
 
 int main()

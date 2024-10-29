@@ -7,7 +7,7 @@ class MainRoads : public RoadComponent
 {
 
 public:
-	MainRoads(CityMediator *mediator);
+	MainRoads();
 
 	void displayInfo();
 

@@ -1,19 +1,31 @@
 #include "Building.h"
-
+#include "../Citizens/CityCentralMediator.h"
 // Observer Design Pattern
 // Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
 // 	this->mediator = mediator;
 // 	this->name = type;
 // }
 
-Building::Building() {
+Building::Building()
+{
+    mediator = CityCentralMediator::getInstance();
     // constructor
 }
 
-string Building::getBuildingType(){
+string Building::getBuildingType()
+{
     return name;
 }
 
+void Building::notifyChange(std::string message)
+{
+    throw "Should be implemented by derived classes";
+}
+
+void Building::accept(TaxAndBudgetVisitor *visitor)
+{
+    throw "Should be implemented by derived classes";
+}
 
 // // void Building::receiveElectricity() {
 // // 	// TODO - implement Building::receiveElectricity

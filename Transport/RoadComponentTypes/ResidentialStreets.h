@@ -7,7 +7,7 @@ class ResidentialStreets : public RoadComponent
 {
 
 public:
-	ResidentialStreets(CityMediator *mediator);
+	ResidentialStreets();
 
 	void displayInfo();
 

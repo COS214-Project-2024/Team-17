@@ -16,7 +16,7 @@ private:
 	std::string name;
 
 public:
-	Citizen(CityMediator *mediator);
+	Citizen();
 
 	void setState(CitizenState *newState);
 

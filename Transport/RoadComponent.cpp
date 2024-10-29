@@ -1,5 +1,6 @@
 #include "RoadComponent.h"
 #include "../Citizens/CityMediator.h"
+#include "../Citizens/CityCentralMediator.h"
 #include "RoadIterator.h"
 #include "RoadState.h"
 
@@ -24,8 +25,9 @@ void RoadComponent::handleTraffic()
 	throw "Not yet implemented";
 }
 
-RoadComponent::RoadComponent(CityMediator *mediator) : CityBlock(mediator)
+RoadComponent::RoadComponent() : CityBlock()
 {
+	mediator = CityCentralMediator::getInstance();
 	// TODO - implement RoadComponent::RoadComponent
 	// throw "Not yet implemented";
 }

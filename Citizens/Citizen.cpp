@@ -1,10 +1,11 @@
 #include "Citizen.h"
 #include "CitizenNameGen.h"
+#include "CityCentralMediator.h"
 #include <iostream>
 
-Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
+Citizen::Citizen() : CityBlock()
 {
-	this->mediator = mediator;
+	this->mediator = CityCentralMediator::getInstance();
 	mediator->registerCitizen(this);
 	setState(new Indifferent());
 	name = CitizenNameGen::generateName();
