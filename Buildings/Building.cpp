@@ -6,8 +6,13 @@
 // 	this->name = type;
 // }
 
-Building::Building() {
+Building::Building() : CityBlock() {
     // constructor
+}
+
+Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
+    this->mediator = mediator;
+    this->name = type;
 }
 
 string Building::getBuildingType(){
