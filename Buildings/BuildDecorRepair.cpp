@@ -6,5 +6,5 @@ void BuildDecorRepair::displayBuildingInfo() {
     if (building) {
         building->displayBuildingInfo();
     }
-    cout << "This building has been repaired." << endl;
+    cout << "This building has been decorated with repairs." << endl;
 }
