@@ -20,7 +20,7 @@
 #include "../Buildings/ResEstate.h"
 #include "../Buildings/ResFlat.h"
 
-int main() {
+int main() {//Building needs to be updates to fix inheritance and abstraction!
     // Create a commercial
     ComMall mall;
     ComOffice office;
