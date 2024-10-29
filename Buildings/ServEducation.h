@@ -17,9 +17,9 @@ public:
 	// void Tertiary();
 
 	//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
 	std::string getBuildingType()override;
 
 private:

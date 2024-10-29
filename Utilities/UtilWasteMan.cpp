@@ -16,8 +16,9 @@ UtilWasteMan::UtilWasteMan() {
 	void UtilWasteMan::update(Building* unit){
     operational = unit->getState();
     if (operational==false) {
-        startUtility();
+        
         std::cout << "Waste Dump becoming available!" << std::endl;
+        startUtility();
     }
     }
 

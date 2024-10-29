@@ -1,8 +1,9 @@
 #include "ServHospital.h"
 #include <iostream>
-ServHospital::ServHospital() {
-    cout << BLACK << "\t-->Security service created" << RESET << endl;
-}
+// Error?
+// ServHospital::ServHospital() {
+//     cout << BLACK << "\t-->Security service created" << RESET << endl;
+// }
 
 void ServHospital::displayBuildingInfo() {
     cout << "Security service with " << this->visitors << " visitors\n";

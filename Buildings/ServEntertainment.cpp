@@ -1,8 +1,8 @@
 #include "ServEntertainment.h"
-
-ServEntertainment::ServEntertainment() {
-    cout << BLACK << "\t-->Entertainment service created" << RESET << endl;
-}
+// Error?
+// ServEntertainment::ServEntertainment() {
+//     cout << BLACK << "\t-->Entertainment service created" << RESET << endl;
+// }
 
 void ServEntertainment::displayBuildingInfo() {
     cout << "Entertainment service with " << this->visitors << " visitors\n";

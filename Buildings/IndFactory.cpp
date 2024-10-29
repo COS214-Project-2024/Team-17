@@ -1,8 +1,8 @@
 #include "IndFactory.h"
-
-IndFactory::IndFactory() {
-    cout << BLACK << "\t-->Factory created" << RESET << endl;
-}
+// Error?
+// IndFactory::IndFactory() {
+//     cout << BLACK << "\t-->Factory created" << RESET << endl;
+// }
 
 void IndFactory::displayBuildingInfo() {
     cout << "Factory with production capacity of " << this->productionCapacity << " units\n";

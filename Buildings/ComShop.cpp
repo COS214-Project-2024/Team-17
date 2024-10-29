@@ -1,8 +1,8 @@
 #include "ComShop.h"
-
-ComShop::ComShop() {
-    cout << BLACK << "\t-->Shop created" << RESET << endl;
-}
+// Error?
+// ComShop::ComShop() {
+//     cout << BLACK << "\t-->Shop created" << RESET << endl;
+// }
 
 void ComShop::displayBuildingInfo() {
     cout << "Shop with " << this->jobCapacity << " jobs\n";

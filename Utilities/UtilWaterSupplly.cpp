@@ -17,8 +17,9 @@ UtilWaterSupply::UtilWaterSupply() {
 	void UtilWaterSupply::update(Building* unit){
     operational = unit->getState();
     if (operational==false) {
-        startUtility();
+        
         std::cout << "Water Supply becoming available!" << std::endl;
+        startUtility();
     }
     }
 

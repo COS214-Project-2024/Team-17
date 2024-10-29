@@ -1,8 +1,8 @@
 #include "ComMall.h"
-
-ComMall::ComMall() {
-    cout << BLACK << "\t-->Mall created" << RESET << endl;
-}
+// Error?
+// ComMall::ComMall() {
+//     cout << BLACK << "\t-->Mall created" << RESET << endl;
+// }
 
 void ComMall::displayBuildingInfo() {
     cout << "Mall with " << this->jobCapacity << " jobs\n";

@@ -1,8 +1,8 @@
 #include "ServEducation.h"
-
-ServEducation::ServEducation() {
-    cout << BLACK << "\t-->Education service created" << RESET << endl;
-}
+// Error?
+// ServEducation::ServEducation() {
+//     cout << BLACK << "\t-->Education service created" << RESET << endl;
+// }
 
 void ServEducation::displayBuildingInfo() {
     cout << "Education service with " << this->visitors << " visitors\n";

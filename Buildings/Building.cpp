@@ -1,29 +1,29 @@
 #include "Building.h"
 
-// Observer Design Pattern
-     void Building::addUtility(UtilityManager* utility) {
-    	Utilities.push_back(utility);
-		std::cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
+// // Observer Design Pattern
+//      void Building::addUtility(UtilityManager* utility) {
+//     	Utilities.push_back(utility);
+// 		std::cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
 		
-    }
+//     }
     
-    void Building::removeUtility(UtilityManager* utility) {
-    auto it = Utilities.begin();
-    while (it != Utilities.end()) {
-        if (*it == utility) {
-            Utilities.erase(it);
-			std::cout<<"Utility Deconstruction of type:"<<utility->getType()<<std::endl;
-            return;
-        }
-        ++it;
-    }
-}
+//     void Building::removeUtility(UtilityManager* utility) {
+//     auto it = Utilities.begin();
+//     while (it != Utilities.end()) {
+//         if (*it == utility) {
+//             Utilities.erase(it);
+// 			std::cout<<"Utility Deconstruction of type:"<<utility->getType()<<std::endl;
+//             return;
+//         }
+//         ++it;
+//     }
+// }
 
-	void Building::notifyUtilities(){
-  for(UtilityManager* utility:Utilities){
-	  utility->update(this);
-  }
-	}
+// 	void Building::notifyUtilities(){
+//   for(UtilityManager* utility:Utilities){
+// 	  utility->update(this);
+//   }
+// 	}
 
 // void Building::receiveElectricity() {
 // 	// TODO - implement Building::receiveElectricity

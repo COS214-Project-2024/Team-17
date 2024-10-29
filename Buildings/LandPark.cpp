@@ -1,8 +1,8 @@
 #include "LandPark.h"
-
-LandPark::LandPark() {
-    cout << BLACK << "\t-->Park created" << RESET << endl;
-}
+// Error?
+// LandPark::LandPark() {
+//     cout << BLACK << "\t-->Park created" << RESET << endl;
+// }
 
 void LandPark::displayBuildingInfo() {
     cout << "Park with " << this->visitors << " visitors\n";

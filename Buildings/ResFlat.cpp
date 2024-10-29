@@ -1,8 +1,8 @@
 #include "ResFlat.h"
-
-ResFlat::ResFlat() {
-    cout << BLACK << "\t-->Flat created" << RESET << endl;
-}
+// Error?
+// ResFlat::ResFlat() {
+//     cout << BLACK << "\t-->Flat created" << RESET << endl;
+// }
 
 void ResFlat::displayBuildingInfo() {
     cout << "Flat for " << this->capacity << " people\n";

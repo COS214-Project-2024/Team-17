@@ -16,9 +16,9 @@ public:
 	// void Firestation();
 
 	//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
 	// int getTotalCapacity();
 	// int getCurrentStorage();
 	// int setCurrentStorage(int storage);

@@ -2,25 +2,26 @@
 #define COMMERCIAL_H
 
 #include "Building.h"
+#include "../Utilities/UtilityManager.h"
+#include <vector>
 #include <iostream>
+class UtilityManager;
 class Commercial : public Building {
 	private:
-	bool operational;//CS State
-	std::string type;
+    // bool operational;//state
+    std::vector<UtilityManager*> Utilities;
 	// int jobCapacity;?
 public:
 	virtual int getJobCapacity() = 0;
 	virtual void setJobCapacity(int capacity) = 0;
 	// virtual void update(UtilityManager* unit);
+
 //Observer
-	// idk if this should be pure virt bc supposed to be concrete subject XD
-	virtual void callUtilities();//call Utilities in Buildings
-	virtual bool getState();
-	virtual void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	virtual std::string getBuildingType();
+    virtual bool getState()=0;
+    virtual std::string getBuildingType()=0;
+    void addUtility(UtilityManager* utility);//attach
+    void removeUtility(UtilityManager* utility);//detach
+    void notifyUtilities();//notify
 	
 	
 	// virtual bool checkBuildRequirements() = 0;

@@ -1,8 +1,9 @@
 #include "ServSecurity.h"
 #include <iostream>
-ServSecurity::ServSecurity() {
-    cout << BLACK << "\t-->Security service created" << RESET << endl;
-}
+// Error?
+// ServSecurity::ServSecurity() {
+//     cout << BLACK << "\t-->Security service created" << RESET << endl;
+// }
 
 void ServSecurity::displayBuildingInfo() {
     cout << "Security service with " << this->visitors << " visitors\n";

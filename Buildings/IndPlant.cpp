@@ -1,8 +1,8 @@
 #include "IndPlant.h"
-
-IndPlant::IndPlant() {
-    cout << BLACK << "\t-->Plant created" << RESET << endl;
-}
+// Error?
+// IndPlant::IndPlant() {
+//     cout << BLACK << "\t-->Plant created" << RESET << endl;
+// }
 
 void IndPlant::displayBuildingInfo() {
     cout << "Plant with production capacity of " << this->productionCapacity << " units\n";

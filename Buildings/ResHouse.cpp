@@ -1,8 +1,8 @@
 #include "ResHouse.h"
-
-ResHouse::ResHouse() {
-    cout << BLACK << "\t-->House created" << RESET << endl;
-}
+// Error?
+// ResHouse::ResHouse() {
+//     cout << BLACK << "\t-->House created" << RESET << endl;
+// }
 
 void ResHouse::displayBuildingInfo() {
     cout << "House for " << this->capacity << " people\n";

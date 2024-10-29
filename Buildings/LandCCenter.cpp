@@ -1,8 +1,8 @@
 #include "LandCCenter.h"
-
-LandCCenter::LandCCenter() {
-    cout << BLACK << "\t-->Community center created" << RESET << endl;
-}
+// Error?
+// LandCCenter::LandCCenter() {
+//     cout << BLACK << "\t-->Community center created" << RESET << endl;
+// }
 
 void LandCCenter::displayBuildingInfo() {
     cout << "Community center with " << this->visitors << " visitors\n";

@@ -1,8 +1,8 @@
 #include "ResTownhouse.h"
-
-ResTownhouse::ResTownhouse() {
-    cout << BLACK << "\t-->Townhouse created" << RESET << endl;
-}
+// Error?
+// ResTownhouse::ResTownhouse() {
+//     cout << BLACK << "\t-->Townhouse created" << RESET << endl;
+// }
 
 void ResTownhouse::displayBuildingInfo() {
     cout << "Townhouse for " << this->capacity << " people\n";

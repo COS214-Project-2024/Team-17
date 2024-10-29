@@ -17,8 +17,9 @@ UtilSewageSyst::UtilSewageSyst() {
 //Or we can make the update print latest state of utility
     operational = unit->getState();
     if (operational==false) {
-        startUtility();
+        
         std::cout << "Sewage System becoming available!" << std::endl;
+        startUtility();
     }else{
 		std::cout << "Sewage System is already operational!" << std::endl;
 	}
