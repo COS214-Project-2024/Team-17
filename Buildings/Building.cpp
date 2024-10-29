@@ -19,6 +19,14 @@ string Building::getBuildingType(){
     return name;
 }
 
+void Building::notifyChange(std::string message){
+    mediator->notifyBuildingChange(this, message);
+}
+
+void Building::accept(TaxAndBudgetVisitor *visitor){
+    //no clue  what this is
+}
+
 
 // // void Building::receiveElectricity() {
 // // 	// TODO - implement Building::receiveElectricity

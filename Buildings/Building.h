@@ -23,6 +23,10 @@ public:
 
     virtual bool checkBuildRequirements() = 0;
 
+
+    void notifyChange(std::string message);
+	void accept(TaxAndBudgetVisitor *visitor);
+
 private:
     vector<UtilityManager*> utilities;
     string name;
