@@ -2,12 +2,15 @@
 #include "TaxCommand.h"
 #include <iostream>
 
-void TaxRateHandler::handleRequest(TaxCommand* command) {
-  if(nextHandler) {
+void TaxRateHandler::handleRequest(TaxCommand *command)
+{
+  if (nextHandler)
+  {
     std::cout << "Giving command to next handler\n";
     nextHandler->handleRequest(command);
   }
-  else {
+  else
+  {
     std::cout << "executing command in this tax rate handler\n";
     command->execute();
   }

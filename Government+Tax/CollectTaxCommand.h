@@ -4,12 +4,14 @@
 #include "TaxCommand.h"
 #include "Government.h"
 
-class CollectTaxCommand : public TaxCommand {
+class CollectTaxCommand : public TaxCommand
+{
 
 private:
-	Government* government;
+	Government *government;
+
 public:
-	CollectTaxCommand(Government* gov);
+	CollectTaxCommand(Government *gov);
 	void execute();
 };
 

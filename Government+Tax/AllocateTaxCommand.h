@@ -6,15 +6,16 @@
 
 #include <string>
 
-class AllocateTaxCommand : public TaxCommand {
+class AllocateTaxCommand : public TaxCommand
+{
 
 private:
-	Government* government;
+	Government *government;
 	double amount;
 	std::string department;
 
 public:
-	AllocateTaxCommand(Government* gov, double amt, std::string dept);
+	AllocateTaxCommand(Government *gov, double amt, std::string dept);
 	void execute();
 };
 

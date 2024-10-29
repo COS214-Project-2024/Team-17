@@ -16,7 +16,7 @@ int main()
   CityStructure city("Pretoria");
   gov.addCity(city);
 
-  Policy* policy = new HealthPolicy();
+  Policy *policy = new HealthPolicy();
 
   std::cout << "\n==Policy==\n";
   gov.setPolicy(*policy);
@@ -31,9 +31,9 @@ int main()
   std::cout << city.getIncome() << std::endl;
 
   std::cout << "\n==Comand Manager==\n";
-  TaxCommand* allocateCommand = new AllocateTaxCommand(&gov,100.0,"Military");
-  TaxCommand* collectCommand = new CollectTaxCommand(&gov);
-  TaxCommand* setRateCommand = new SetTaxRateCommand(&gov,0.5,"Commercial");
+  TaxCommand *allocateCommand = new AllocateTaxCommand(&gov, 100.0, "Military");
+  TaxCommand *collectCommand = new CollectTaxCommand(&gov);
+  TaxCommand *setRateCommand = new SetTaxRateCommand(&gov, 0.5, "Commercial");
 
   TaxManager manager;
   manager.executeCommand();
@@ -45,10 +45,10 @@ int main()
   manager.executeCommand();
 
   std::cout << "\n==Comand Handler==\n";
-  TaxHandler* handler = gov.createTaxHandlerChain();
+  TaxHandler *handler = gov.createTaxHandlerChain();
   handler->handleRequest(setRateCommand);
 
   std::cout << "\n==Visitor==\n";
-  TaxAndBudgetVisitor* visitor = new CitizenTaxAB();
+  TaxAndBudgetVisitor *visitor = new CitizenTaxAB();
   city.accept(visitor);
 }

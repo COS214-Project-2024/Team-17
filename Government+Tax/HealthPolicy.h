@@ -4,10 +4,10 @@
 #include "Policy.h"
 #include "CityStructure.h"
 
-
-class HealthPolicy : public Policy {
+class HealthPolicy : public Policy
+{
 public:
-  	void applyBudget(CityStructure& city, double budget);
+	void applyBudget(CityStructure &city, double budget);
 };
 
 #endif

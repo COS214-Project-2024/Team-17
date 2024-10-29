@@ -3,10 +3,11 @@
 
 #include "TaxAndBudgetVisitor.h"
 
-class CitizenTaxAB : public TaxAndBudgetVisitor {
+class CitizenTaxAB : public TaxAndBudgetVisitor
+{
 public:
-	double visit(Citizen* citizen);
-	double visit(Building* business);
+	double visit(Citizen *citizen);
+	double visit(Building *business);
 };
 
 #endif

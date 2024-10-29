@@ -3,14 +3,16 @@
 
 class TaxCommand;
 
-class TaxHandler {
+class TaxHandler
+{
 protected:
-	TaxHandler* nextHandler;
+	TaxHandler *nextHandler;
+
 public:
 	TaxHandler();
-	void setNext(TaxHandler* next);
-	virtual void handleRequest(TaxCommand* command);
-  virtual ~TaxHandler() {}
+	void setNext(TaxHandler *next);
+	virtual void handleRequest(TaxCommand *command);
+	virtual ~TaxHandler() {}
 };
 
 #endif

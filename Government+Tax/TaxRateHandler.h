@@ -5,9 +5,10 @@
 
 class TaxCommand;
 
-class TaxRateHandler : public TaxHandler {
+class TaxRateHandler : public TaxHandler
+{
 public:
-	void handleRequest(TaxCommand* command) override;
+	void handleRequest(TaxCommand *command) override;
 };
 
 #endif

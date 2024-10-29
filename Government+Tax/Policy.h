@@ -3,9 +3,10 @@
 
 #include "CityStructure.h"
 
-class Policy {
+class Policy
+{
 public:
-	virtual void applyBudget(CityStructure& city, double budget) = 0;
+  virtual void applyBudget(CityStructure &city, double budget) = 0;
   virtual ~Policy() {}
 };
 

@@ -3,12 +3,13 @@
 
 #include "TaxCommand.h"
 
-class TaxManager 
+class TaxManager
 {
 private:
-	TaxCommand* command;
+	TaxCommand *command = nullptr;
+
 public:
-	void setCommand(TaxCommand* cmd);
+	void setCommand(TaxCommand *cmd);
 	void executeCommand();
 };
 

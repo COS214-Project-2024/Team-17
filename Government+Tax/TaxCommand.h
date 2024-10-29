@@ -3,11 +3,11 @@
 
 #include "Government.h"
 
-class TaxCommand 
+class TaxCommand
 {
 public:
   virtual ~TaxCommand() {}
-	virtual void execute() = 0;
+  virtual void execute() = 0;
 };
 
 #endif

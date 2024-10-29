@@ -3,9 +3,10 @@
 
 #include "TaxHandler.h"
 
-class TaxCollectionHandler : public TaxHandler {
+class TaxCollectionHandler : public TaxHandler
+{
 public:
-	void handleRequest(TaxCommand* command);
+	void handleRequest(TaxCommand *command);
 };
 
 #endif

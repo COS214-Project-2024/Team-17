@@ -1,16 +1,19 @@
 #include "TaxHandler.h"
 
-TaxHandler::TaxHandler() {
+TaxHandler::TaxHandler()
+{
   this->nextHandler = nullptr;
 }
 
-void TaxHandler::setNext(TaxHandler* next) {
+void TaxHandler::setNext(TaxHandler *next)
+{
   this->nextHandler = next;
 }
 
-void TaxHandler::handleRequest(TaxCommand* command)
+void TaxHandler::handleRequest(TaxCommand *command)
 {
-  if(nextHandler) {
+  if (nextHandler)
+  {
     nextHandler->handleRequest(command);
   }
 }
