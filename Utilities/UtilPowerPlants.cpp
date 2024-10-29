@@ -17,8 +17,9 @@ UtilPowerPlants::UtilPowerPlants() {
    //Or we can make the update print latest state of utility
     operational = unit->getState();
     if (operational==false) {
-        startUtility();
-        std::cout << "Power Plant becoming available!" << std::endl;
+        
+    std::cout << "Power Plant becoming available!" << std::endl;
+    startUtility();    
     }else{
 		std::cout << "Power Plant is already operational!" << std::endl;
 	}
