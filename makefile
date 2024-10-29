@@ -1,5 +1,5 @@
 # Define the source files and headers
-SOURCES := $(shell find . -name '*.cpp')
+SOURCES := $(shell find . -name '*.cpp' | grep -v 'main.cpp')
 HEADERS := $(shell find . -name '*.h')
 OBJECTS := $(SOURCES:.cpp=.o) 
 
