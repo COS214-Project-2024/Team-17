@@ -16,23 +16,28 @@ void LandCCenter::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void LandCCenter::callUtilities(){
-        notifyUtilities();
-    }
+bool LandCCenter::checkBuildRequirements() {
+    // I dunno why this was giving an error, but anyways [AMBER]
+    return true;
+}
 
-	bool LandCCenter::getState(){
-        return operational;
-    }
+void LandCCenter::callUtilities(){
+    notifyUtilities();
+}
 
-	void LandCCenter::setState(bool state){
-        if(operational!=state){
+bool LandCCenter::getState(){
+    return operational;
+}
+
+void LandCCenter::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
+    else{
             cout<<"No change in state"<<endl;
-        }
     }
+}
 
-	std::string LandCCenter::getBuildingType(){
-        return type;
-    }
+std::string LandCCenter::getBuildingType(){
+    return type;
+}

@@ -2,24 +2,22 @@
 #define COMMALL_H
 
 #include "Commercial.h"
-#include <iostream>
+
 class ComMall : public Commercial {
 public:
     ComMall();
 
     void displayBuildingInfo() override;
 
-	int getJobCapacity() override;
-	void setJobCapacity(int capacity) override;
-//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	std::string getBuildingType()override;
+	virtual int getJobCapacity() override;
+	virtual void setJobCapacity(int capacity) override;
 
+	// Observer
+	void callUtilities(); //call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+
+	string getBuildingType();
 
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
@@ -30,8 +28,8 @@ public:
 
 private:
     int jobCapacity;
-	std::string type="Commercial Mall";
-	bool operational;//CS State
+	string type = "Commercial Mall";
+	bool operational; //CS State
 };
 
 #endif

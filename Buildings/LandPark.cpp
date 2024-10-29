@@ -16,23 +16,23 @@ void LandPark::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void LandPark::callUtilities(){
-        notifyUtilities();
-    }
+void LandPark::callUtilities(){
+    notifyUtilities();
+}
 
-	bool LandPark::getState(){
-        return operational;
-    }
+bool LandPark::getState(){
+    return operational;
+}
 
-	void LandPark::setState(bool state){
-        if(operational!=state){
+void LandPark::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string LandPark::getBuildingType(){
-        return type;
-    }
+string LandPark::getBuildingType(){
+    return type;
+}

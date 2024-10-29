@@ -12,19 +12,22 @@ public:
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
 
+	//Observer
+	void callUtilities();//call Utilities in Buildings
+	bool getState();
+	void setState(bool state);
+	// int getTotalCapacity();
+	// int getCurrentStorage();
+	// int setCurrentStorage(int storage);
+	string getBuildingType();
+
 	// void Movie();
 	// void Arcade();
 	// void Gym();
 
-	//Observer
-	void callUtilities()override;//call Utilities in Buildings
-	bool getState()override;
-	void setState(bool state)override;
-	std::string getBuildingType()override;
-
 private:
 	int visitors;
-	std::string type="Service Entertainment";
+	string type="Service Entertainment";
 	bool operational;//CS State
 };
 

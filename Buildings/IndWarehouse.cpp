@@ -16,23 +16,23 @@ void IndWarehouse::setProductionCapacity(int capacity) {
     this->productionCapacity = capacity;
 }
 
-	void IndWarehouse::callUtilities(){
-        notifyUtilities();
-    }
+void IndWarehouse::callUtilities(){
+    notifyUtilities();
+}
 
-	bool IndWarehouse::getState(){
-        return operational;
-    }
+bool IndWarehouse::getState(){
+    return operational;
+}
 
-	void IndWarehouse::setState(bool state){
-        if(operational!=state){
+void IndWarehouse::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string IndWarehouse::getBuildingType(){
-        return type;
-    }
+std::string IndWarehouse::getBuildingType(){
+    return type;
+}

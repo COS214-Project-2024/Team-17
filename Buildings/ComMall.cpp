@@ -16,23 +16,24 @@ void ComMall::setJobCapacity(int capacity) {
     this->jobCapacity = capacity;
 }
 
-	void ComMall::callUtilities(){
-        notifyUtilities();
-    }
+// Observer
+void ComMall::callUtilities() {
+    notifyUtilities();
+}
 
-	bool ComMall::getState(){
-        return operational;
-    }
+bool ComMall::getState() {
+    return operational;
+}
 
-	void ComMall::setState(bool state){
-        if(operational!=state){
+void ComMall::setState(bool state) {
+    if (operational != state) {
         operational = state;
-        callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+        callUtilities();
+    } else {
+        cout << "No change in state" << endl;
     }
+}
 
-	std::string ComMall::getBuildingType(){
-        return type;
-    }
+string ComMall::getBuildingType() {
+    return type;
+}

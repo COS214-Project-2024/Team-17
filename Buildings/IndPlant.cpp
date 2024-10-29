@@ -16,23 +16,23 @@ void IndPlant::setProductionCapacity(int capacity) {
     this->productionCapacity = capacity;
 }
 
-	void IndPlant::callUtilities(){
-        notifyUtilities();
-    }
+void IndPlant::callUtilities(){
+    notifyUtilities();
+}
 
-	bool IndPlant::getState(){
-        return operational;
-    }
+bool IndPlant::getState(){
+    return operational;
+}
 
-	void IndPlant::setState(bool state){
-        if(operational!=state){
+void IndPlant::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string IndPlant::getBuildingType(){
-        return type;
-    }
+std::string IndPlant::getBuildingType(){
+    return type;
+}

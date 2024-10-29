@@ -16,15 +16,45 @@ Services* FactService::createServiceBuilding(string type) {
 }
 
 Residential* FactService::createResBuilding(string type) {
+        if (type == "House") {
+        return nullptr;
+    } else if (type == "Townhouse") {
+        return nullptr;
+    } else if (type == "Flat") {
+        return nullptr;
+    } else if (type == "Estate") {
+        return nullptr;
+    }
     return nullptr;
 }
 
 Commercial* FactService::createComBuilding(string type) {
+    if (type == "Mall") {
+        return nullptr;
+    } else if (type == "Shop") {
+        return nullptr;
+    } else if (type == "Office") {
+        return nullptr;
+    }
     return nullptr;
 }
 Industrial* FactService::createIndBuilding(string type) {
+    if (type == "Factory") {
+        return nullptr;
+    } else if (type == "Warehouse") {
+        return nullptr;
+    } else if (type == "Plant") {
+        return nullptr;
+    }
     return nullptr;
 }
 Landmark* FactService::createLandmark(string type) {
+        if (type == "Park") {
+        return nullptr;
+    } else if (type == "Community Center") {
+        return nullptr;
+    } else if (type == "Monument") {
+        return nullptr;
+    }
     return nullptr;
 }

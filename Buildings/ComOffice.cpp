@@ -16,23 +16,24 @@ void ComOffice::setJobCapacity(int capacity) {
     this->jobCapacity = capacity;
 }
 
-	void ComOffice::callUtilities(){
-        notifyUtilities();
-    }
+// Observer
+void ComOffice::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ComOffice::getState(){
-        return operational;
-    }
+bool ComOffice::getState(){
+    return operational;
+}
 
-	void ComOffice::setState(bool state){
-        if(operational!=state){
+void ComOffice::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
+    else {
             cout<<"No change in state"<<endl;
-        }
     }
+}
 
-	std::string ComOffice::getBuildingType(){
-        return type;
-    }
+string ComOffice::getBuildingType(){
+    return type;
+}

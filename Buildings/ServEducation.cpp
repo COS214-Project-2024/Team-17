@@ -16,23 +16,23 @@ void ServEducation::setVisitors(int visitors) {
     this->visitors = visitors;
 }
 
-	void ServEducation::callUtilities(){
-        notifyUtilities();
-    }
+void ServEducation::callUtilities(){
+    notifyUtilities();
+}
 
-	bool ServEducation::getState(){
-        return operational;
-    }
+bool ServEducation::getState(){
+    return operational;
+}
 
-	void ServEducation::setState(bool state){
-        if(operational!=state){
+void ServEducation::setState(bool state){
+    if(operational!=state){
         operational = state;
         callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
-        }
+    else{
+        cout<<"No change in state"<<endl;
     }
+}
 
-	std::string ServEducation::getBuildingType(){
-        return type;
-    }
+string ServEducation::getBuildingType(){
+    return type;
+}

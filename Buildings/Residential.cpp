@@ -1,22 +1,40 @@
 #include "Residential.h"
 
-void Residential::callUtilities(){
-        notifyUtilities();
-    }
+bool Residential::getState(){
+    //  cout<<"commercial state"<<endl;
+    return operational;
+}
 
-	bool Residential::getState(){
-        //  cout<<"commercial state"<<endl;
-        return operational;
-    }
+string Residential::getBuildingType(){
+    return "Residential";
+}
 
-	void Residential::setState(bool state){
-        if(operational!=state){
-        operational = state;
-        callUtilities();}
-        else{
-            cout<<"No change in state"<<endl;
+bool Residential::checkBuildRequirements(){
+    // add implementation
+    return true;
+}
+
+// Observer Design Pattern
+void Residential::addUtility(UtilityManager* utility) {
+    Utilities.push_back(utility);
+	cout<<this->getBuildingType()<<" Has Utility Connection of type:"<<utility->getType()<<std::endl;
+		
+}
+    
+void Residential::removeUtility(UtilityManager* utility) {
+    auto it = Utilities.begin();
+    while (it != Utilities.end()) {
+        if (*it == utility) {
+            Utilities.erase(it);
+			cout<<"Utility Deconstruction of type:"<<utility->getType()<<std::endl;
+            return;
         }
+        ++it;
     }
-    	std::string Residential::getBuildingType(){
-        return "Residential";
+}
+
+void Residential::notifyUtilities(){
+    for(UtilityManager* utility:Utilities){
+        utility->update(this);
     }
+}
