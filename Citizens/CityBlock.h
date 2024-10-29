@@ -1,17 +1,23 @@
 #ifndef CITYBLOCK_H
 #define CITYBLOCK_H
 
-class CityBlock {
+#include "CityMediator.h"
+#include <string>
+
+class TaxAndBudgetVisitor;
+
+class CityBlock
+{
 
 protected:
-	CityMediator* mediator;
+	CityMediator *mediator;
 
 public:
-	CityBlock(CityMediator* mediator);
+	CityBlock(CityMediator *mediator);
 
-	virtual void abstract_notifyChange() = 0;
+	virtual void notifyChange(std::string message) = 0;
 
-	virtual void accept(TaxAndBudgetVisitor* visitor) = 0;
+	virtual void accept(TaxAndBudgetVisitor *visitor) = 0;
 };
 
 #endif
