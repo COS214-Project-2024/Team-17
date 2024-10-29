@@ -8,7 +8,7 @@
 #define UTILITYMANAGER_H
 #include <vector>
 #include <string>
-#include "Building.h"
+#include "../Buildings/Building.h"
 using namespace std;
 
 class Building;
