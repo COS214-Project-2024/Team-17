@@ -41,7 +41,15 @@ void ComMall::setState(bool state) {
     }
 }
 
+string ComMall::getBuildingType() {
+    return type;
+}
+
 void ComMall::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
     employees.push_back(employee);
 }
 
@@ -52,8 +60,4 @@ void ComMall::removeEmployee(Citizen* employee) {
             break;
         }
     }
-}
-
-string ComMall::getBuildingType() {
-    return type;
 }

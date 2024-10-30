@@ -25,8 +25,27 @@ public:
 	// virtual void increaseJobs() override;
 	// virtual void affectEmotionalState() override;
 
+	void addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
+
 private:
-    int productionCapacity;
+	vector<Citizen*> employees;
+
+	//Resources
+
+	int cost = 1500;
+
+    int jobCapacity = 10;
+	
+	int woodCost = 20;
+	int steelCost = 10;
+	int concreteCost = 10;
+
+	int electricityUsage = 10;
+	int waterUsage = 5;
+
+	int steelProduction = 10;
+
     string type="Industrial Plant";
     bool operational;//CS State
 };

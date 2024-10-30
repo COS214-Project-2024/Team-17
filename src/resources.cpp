@@ -20,12 +20,24 @@ int Resources::getWood(){
     return woodUnits;
 }
 
+int Resources::getWoodPerTick(){
+    return woodUnitsPerTick;
+}
+
 int Resources::getSteel(){
     return steelUnits;
 }
 
+int Resources::getSteelPerTick(){
+    return steelUnitsPerTick;
+}
+
 int Resources::getConcrete(){
     return concreteUnits;
+}
+
+int Resources::getConcretePerTick(){
+    return concreteUnitsPerTick;
 }
 
 int Resources::getElectricityUsage(){
@@ -64,12 +76,24 @@ void Resources::addWood(int wood){
     woodUnits += wood;
 }
 
+void Resources::addWoodPerTick(int wood){
+    woodUnitsPerTick += wood;
+}
+
 void Resources::addSteel(int steel){
     steelUnits += steel;
 }
 
+void Resources::addSteelPerTick(int steel){
+    steelUnitsPerTick += steel;
+}
+
 void Resources::addConcrete(int concrete){
     concreteUnits += concrete;
+}
+
+void Resources::addConcretePerTick(int concrete){
+    concreteUnitsPerTick += concrete;
 }
 
 void Resources::addElectricityGenerated(int electricity){
@@ -108,12 +132,24 @@ void Resources::removeWood(int wood){
     woodUnits -= wood;
 }
 
+void Resources::removeWoodPerTick(int wood){
+    woodUnitsPerTick -= wood;
+}
+
 void Resources::removeSteel(int steel){
     steelUnits -= steel;
 }
 
+void Resources::removeSteelPerTick(int steel){
+    steelUnitsPerTick -= steel;
+}
+
 void Resources::removeConcrete(int concrete){
     concreteUnits -= concrete;
+}
+
+void Resources::removeConcretePerTick(int concrete){
+    concreteUnitsPerTick -= concrete;
 }
 
 void Resources::removeElectricityGenerated(int electricity){

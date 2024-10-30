@@ -45,6 +45,10 @@ string ComShop::getBuildingType(){
 }
 
 void ComShop::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
     employees.push_back(employee);
 }
 

@@ -32,6 +32,8 @@ public:
 private:
 	vector<Citizen*> employees;
 
+	//Resources
+
 	int cost = 5000;
 
     int jobCapacity = 100;
