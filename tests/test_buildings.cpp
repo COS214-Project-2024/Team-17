@@ -34,7 +34,7 @@
 #include "../src/Utilities/UtilWasteMan.h"
 #include "../src/Utilities/UtilSewageSyst.h"
 
-#include "./Citizens/CitizensIncludes.h"
+#include "../src/Citizens/CitizensIncludes.h"
 
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
@@ -568,7 +568,8 @@ void test7()
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
-void test8(){
+void test8()
+{
 
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
