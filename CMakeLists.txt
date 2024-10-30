@@ -5,10 +5,8 @@ project(WorksOnMyMachineTeam)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Define the source files, excluding the Tests/ folder
+# Define the source files, excluding the Tests/ folder and main.cpp files in subdirectories
 file(GLOB_RECURSE ALL_SOURCES "src/*.cpp")
-
-# Filter out main.cpp files that are not in the root directory
 set(SOURCES "")
 foreach(SOURCE ${ALL_SOURCES})
     if(NOT SOURCE MATCHES ".*/main.cpp$")
@@ -48,12 +46,17 @@ target_link_libraries(Main ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 # Enable testing
 enable_testing()
 
-# Add a test executable
+# Add a test executable for each test file, excluding main.cpp files in subdirectories
 file(GLOB_RECURSE TEST_SOURCES "tests/*.cpp")
-if(TEST_SOURCES)
-    add_executable(MyTest ${TEST_SOURCES})
-    target_link_libraries(MyTest ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
-    add_test(NAME MyTest COMMAND MyTest)
-else()
-    message(WARNING "No test source files found in the tests directory")
-endif()
+foreach(TEST_SOURCE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
+    set(TEST_SRC "")
+    foreach(SOURCE ${ALL_SOURCES})
+        if(NOT SOURCE MATCHES ".*/main.cpp$")
+            list(APPEND TEST_SRC ${SOURCE})
+        endif()
+    endforeach()
+    add_executable(${TEST_NAME} ${TEST_SOURCE} ${TEST_SRC})
+    target_link_libraries(${TEST_NAME} ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endforeach()

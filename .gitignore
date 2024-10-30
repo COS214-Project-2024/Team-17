@@ -24,4 +24,4 @@
 *.exe
 *.out
 *.app
-src/
+build/
