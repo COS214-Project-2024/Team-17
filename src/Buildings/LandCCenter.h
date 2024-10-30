@@ -27,7 +27,27 @@ public:
 	// void createBuilding() override;
 	// void affectEmotionalState() override;
 
+	void addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
+
 private:
+	vector<Citizen*> employees;
+
+	//Resources
+
+	int cost = 2000;
+
+    int jobCapacity = 10;
+	
+	int woodCost = 20;
+	int concreteCost = 30;
+	int steelCost = 15;
+
+	int electricityUsage = 5;
+	int waterUsage = 10;
+
+	int happiness = 15;
+
 	int visitors;
 	string type="Landmark Community Center";
 	bool operational;//CS State
