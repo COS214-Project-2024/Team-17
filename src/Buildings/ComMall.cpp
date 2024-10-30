@@ -45,6 +45,15 @@ void ComMall::addEmployee(Citizen* employee) {
     employees.push_back(employee);
 }
 
+void ComMall::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+}
+
 string ComMall::getBuildingType() {
     return type;
 }

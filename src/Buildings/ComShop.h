@@ -28,6 +28,9 @@ public:
 	// virtual void increaseJobs() = 0;
 	// virtual void affectEmotionalState() = 0;
 
+	void addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
+
 private:
 	vector<Citizen*> employees;
 
