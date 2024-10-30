@@ -31,6 +31,18 @@ private:
     int capacity;
     string type = "Residential House";
     bool operational; // CS State
+
+    // Resources
+    int cost = 2500;
+
+    int woodCost = 15;
+    int steelCost = 10;
+    int concreteCost = 20;
+
+    int electricityUsage = 15;
+    int waterUsage = 15;
+
+    int popIncrease = 20;
 };
 
 #endif // RESHOUSE_H

@@ -29,6 +29,18 @@ private:
     int capacity;
     string type = "Residential Estate";
     bool operational;//CS State
+
+    // Resources
+    int cost = 4000;
+
+    int woodCost = 20;
+    int steelCost = 20;
+    int concreteCost = 20;
+
+    int electricityUsage = 20;
+    int waterUsage = 20;
+
+    int popIncrease = 50;
 };
 
 #endif // RESESTATE_H

@@ -29,6 +29,18 @@ private:
     int capacity;
     string type="Residential Flat";
     bool operational;//CS State
+
+    // Resources
+    int cost = 1000;
+
+    int woodCost = 10;
+    int steelCost = 5;
+    int concreteCost = 5;
+
+    int electricityUsage = 5;
+    int waterUsage = 5;
+
+    int popIncrease = 5;
 };
 
 #endif // RESFLAT_H

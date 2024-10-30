@@ -31,6 +31,7 @@ struct Resources{
         static int getMaxPopulation();
 
         //adding resources
+        static int getHappiness();
 
         static void addWood(int wood);
         static void addWoodPerTick(int wood);
@@ -50,10 +51,13 @@ struct Resources{
         static void addMoney(double Addedmoney);
         static void addIncome(double income);
 
+        static void addMoney(double Addedmoney); // total money you have
+        static void addIncome(double income); // amount generated
         static void addPopulation(int population);
         static void addToMaxPopulation(int population);
 
         //removing resources
+        static void addHappiness(int happiness);
 
         static void removeWood(int wood);
         static void removeWoodPerTick(int wood);
@@ -73,8 +77,11 @@ struct Resources{
         static void removeMoney(double Addedmoney);
         static void removeIncome(double income);
         
+        static void removeMoney(double Addedmoney); // cost
+        static void removeIncome(double income); // income
         static void removePopulation(int population);
         static void removeFromMaxPopulation(int population);
+        static void removeHappiness(int happiness);
 
     private:
         static int woodUnits;
@@ -97,6 +104,8 @@ struct Resources{
 
         static int maxPopulation;
         static int currentPopulation;
+
+        static int happiness;
 };
 
 #endif

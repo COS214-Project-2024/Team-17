@@ -2,6 +2,16 @@
 #include <iostream>
 ServHospital::ServHospital() {
     cout << BLACK << "\t-->Security service created" << RESET << endl;
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addHappiness(happinessIncrease);
+    /*
+	int jobCapacity = 20;
+	int cityIncome = 50;*/
 }
 
 void ServHospital::displayBuildingInfo() {
