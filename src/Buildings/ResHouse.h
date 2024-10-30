@@ -8,6 +8,7 @@ class ResHouse : public Residential
 {
 public:
     ResHouse();
+    ~ResHouse();
 
     void displayBuildingInfo() override;
 

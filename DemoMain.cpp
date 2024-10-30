@@ -36,6 +36,8 @@
 
 #include "./src/Citizens/CitizensIncludes.h"
 
+#include "./src/resources.h"
+
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
 void test2(); // Buildings [COMMERCIAL]
@@ -590,6 +592,7 @@ void test8()
     mediator->registerBuilding(building);
     mediator->registerUtility(powerPlant);
     mediator->notifyUtilityChange(powerPlant, false, "Test Message");
+    cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
     std::cout << " - Testing Complete!" << std::endl;
     delete citizen;
     delete mediator;

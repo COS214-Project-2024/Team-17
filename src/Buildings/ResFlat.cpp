@@ -8,7 +8,7 @@ ResFlat::ResFlat() {
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addPopulation(popIncrease);
+    Resources::addToMaxPopulation(popIncrease);
 }
 
 void ResFlat::displayBuildingInfo() {

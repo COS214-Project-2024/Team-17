@@ -8,7 +8,15 @@ ResHouse::ResHouse() {
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addPopulation(popIncrease);
+    Resources::addToMaxPopulation(popIncrease);
+}
+
+ResHouse::~ResHouse() {
+    cout << BLACK << "\t-->House destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeFromMaxPopulation(popIncrease);
+
 }
 
 void ResHouse::displayBuildingInfo() {
