@@ -21,6 +21,8 @@ public:
 	void addEmployee(Citizen* employee);
 	string getBuildingType();
 
+	int getIncome();
+
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
 	// virtual void affectEmotionalState() = 0;
@@ -30,10 +32,18 @@ public:
 
 private:
 	vector<Citizen*> employees;
-    int jobCapacity;
-	int woodCost = 100;
-	int steelCost = 100;
-	int concreteCost = 100;
+
+    int jobCapacity = 100;
+	
+	int woodCost = 20;
+	int steelCost = 25;
+	int concreteCost = 25;
+
+	int electricityUsage = 20;
+	int waterUsage = 10;
+
+	int income = 500;
+
 	string type = "Commercial Mall";
 	bool operational; //CS State
 };
