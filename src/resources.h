@@ -105,7 +105,7 @@ struct Resources{
         static int maxPopulation;
         static int currentPopulation;
 
-        static int happiness;
+        static int happinessUnits;
 };
 
 #endif

@@ -9,9 +9,7 @@ ServHospital::ServHospital() {
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
     Resources::addHappiness(happinessIncrease);
-    /*
-	int jobCapacity = 20;
-	int cityIncome = 50;*/
+    Resources::addIncome(cityIncome);
 }
 
 void ServHospital::displayBuildingInfo() {
@@ -45,4 +43,22 @@ void ServHospital::setState(bool state){
 
 std::string ServHospital::getBuildingType(){
     return type;
+}
+
+
+void ServHospital::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
+    employees.push_back(employee);
+}
+
+void ServHospital::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
 }

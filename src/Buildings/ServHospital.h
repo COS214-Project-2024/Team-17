@@ -20,12 +20,17 @@ public:
 	// int setCurrentStorage(int storage);
 	std::string getBuildingType();
 
+	// Resources
+	void addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
+
 private:
 	int visitors;
     bool operational; // CS State
     string type = "Service Hospital";
 
 	// Resources
+	vector<Citizen*> employees;
 	int cost = 1500;
 
     int woodCost = 5;
@@ -38,22 +43,6 @@ private:
     int happinessIncrease = 5;
 	int jobCapacity = 20;
 	int cityIncome = 50;
-
-	/*
-Education	Security	Entertainment
-Wood:					5	5	10
-Concrete:				15	15	15
-Steel:					10	10	10
-				
-Electricity Usage:		5	5	15
-Water Usage				10	15	15
-				
-Cost:					1500	1500	2000
-
-Happiness increase		5	5	10
-Jobs:					20	10	10
-City Income				50	50	100		
-*/
 };
 
 #endif
