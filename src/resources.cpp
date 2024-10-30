@@ -1,29 +1,20 @@
 #include "resources.h"
 
-Resources::Resources(){
-    woodUnits = 0;
-    steelUnits = 0;
-    concreteUnits = 0;
-    totalElectricityUnitUsage = 0;
-    totalElectricityUnitGenerated = 0;
-    waterUnitsGenerated = 0;
-    waterUnitsUsed = 0;
-    money = 0;
-    maxPopulation = 0;
-    currentPopulation = 0;
-}
+int Resources::woodUnits = 0;
+int Resources::steelUnits = 0;
+int Resources::concreteUnits = 0;
 
-Resources::~Resources(){
-    woodUnits = 0;
-    steelUnits = 0;
-    concreteUnits = 0;
-    totalElectricityUnitUsage = 0;
-    waterUnitsGenerated = 0;
-    waterUnitsUsed = 0;
-    money = 0;
-    maxPopulation = 0;
-    currentPopulation = 0;
-}
+int Resources::totalElectricityUnitUsage = 0;
+int Resources::totalElectricityUnitGenerated = 0;
+
+int Resources::waterUnitsGenerated = 0;
+int Resources::waterUnitsUsed = 0;
+
+double Resources::money = 0.0;
+
+int Resources::maxPopulation = 0;
+int Resources::currentPopulation = 0;
+
 
 int Resources::getWood(){
     return woodUnits;
@@ -89,8 +80,8 @@ void Resources::addWaterUsage(int water){
     waterUnitsUsed += water;
 }
 
-void Resources::addMoney(double money){
-    this->money += money;
+void Resources::addMoney(double Addedmoney){
+    money += Addedmoney;
 }
 
 void Resources::addPopulation(int population){
@@ -129,8 +120,8 @@ void Resources::removeWaterUsage(int water){
     waterUnitsUsed -= water;
 }
 
-void Resources::removeMoney(double money){
-    this->money -= money;
+void Resources::removeMoney(double Addedmoney){
+    money -= Addedmoney;
 }
 
 void Resources::removePopulation(int population){

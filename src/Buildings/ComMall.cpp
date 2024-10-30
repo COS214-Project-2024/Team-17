@@ -2,6 +2,7 @@
 
 ComMall::ComMall() {
     cout << BLACK << "\t-->Mall created" << RESET << endl;
+    jobCapacity = 100;
 }
 
 void ComMall::displayBuildingInfo() {
@@ -32,6 +33,10 @@ void ComMall::setState(bool state) {
     } else {
         cout << "No change in state" << endl;
     }
+}
+
+void ComMall::addEmployee(Citizen* employee) {
+    employees.push_back(employee);
 }
 
 string ComMall::getBuildingType() {

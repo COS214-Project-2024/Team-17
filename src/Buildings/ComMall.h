@@ -3,6 +3,8 @@
 
 #include "Commercial.h"
 
+#include "../resources.h"
+
 class ComMall : public Commercial {
 public:
     ComMall();
@@ -16,7 +18,7 @@ public:
 	void callUtilities(); //call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-
+	void addEmployee(Citizen* employee);
 	string getBuildingType();
 
 	// virtual bool checkBuildRequirements() = 0;
@@ -27,7 +29,11 @@ public:
 	// virtual void affectEmotionalState() = 0;
 
 private:
+	vector<Citizen*> employees;
     int jobCapacity;
+	int woodCost = 100;
+	int steelCost = 100;
+	int concreteCost = 100;
 	string type = "Commercial Mall";
 	bool operational; //CS State
 };
