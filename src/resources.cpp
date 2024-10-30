@@ -73,7 +73,7 @@ int Resources::getMaxPopulation(){
 }
 
 int Resources::getHappiness(){
-    return happiness;
+    return happinessUnits;
 }
 
 void Resources::addWood(int wood){
@@ -133,7 +133,7 @@ void Resources::addToMaxPopulation(int population){
 }
 
 void Resources::addHappiness(int happiness){
-    Resources::happiness += happiness;
+    happinessUnits += happiness;
 }
 
 void Resources::removeWood(int wood){
@@ -193,5 +193,5 @@ void Resources::removeFromMaxPopulation(int population){
 }
 
 void Resources::removeHappiness(int happiness){
-    Resources::happiness -= happiness;
+    happinessUnits -= happiness;
 }
