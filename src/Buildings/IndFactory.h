@@ -38,13 +38,13 @@ private:
     int jobCapacity = 10;
 	
 	int woodCost = 20;
-	int steelCost = 10;
 	int concreteCost = 10;
+	int steelCost = 10;
 
 	int electricityUsage = 10;
 	int waterUsage = 5;
 
-	int woodProduction = 10;
+	int woodProduction = 5;
 
     string type = "Industrial Factory";
     bool operational;//CS State

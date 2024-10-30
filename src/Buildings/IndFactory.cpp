@@ -44,3 +44,20 @@ void IndFactory::setState(bool state){
 std::string IndFactory::getBuildingType(){
     return type;
 }
+
+void IndFactory::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
+    employees.push_back(employee);
+}
+
+void IndFactory::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+}

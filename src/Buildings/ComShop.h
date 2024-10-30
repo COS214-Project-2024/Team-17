@@ -40,8 +40,8 @@ private:
     int jobCapacity = 10;
 	
 	int woodCost = 5;
-	int steelCost = 10;
-	int concreteCost = 5;
+	int concreteCost = 10;
+	int steelCost = 5;
 
 	int electricityUsage = 5;
 	int waterUsage = 5;
