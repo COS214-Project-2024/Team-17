@@ -1,11 +1,10 @@
 # Create the build directory if it doesn't exist
-mkdir -p build
-
+#!/bin/bash
+mkdir -p build;
 # Navigate to the build directory
-cd build
-
+cd build;
 # Run CMake to generate the build files
-cmake ..
+cmake ..;
 
 # Build the project
-make
+make;
