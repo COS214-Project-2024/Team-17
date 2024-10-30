@@ -5,7 +5,7 @@ void CityCentralMediator::registerBuilding(Building *building)
 	buildings.push_back(building);
 }
 
-void CityCentralMediator::registerUtility(Utilities *util)
+void CityCentralMediator::registerUtility(UtilityManager *util)
 {
 	utilities.push_back(util);
 }
@@ -23,7 +23,7 @@ void CityCentralMediator::notifyBuildingChange(Building *building, std::string m
 	}
 }
 
-void CityCentralMediator::notifyUtilityChange(Utilities *type, bool status, std::string message = "")
+void CityCentralMediator::notifyUtilityChange(UtilityManager *type, bool status, std::string message = "")
 {
 	for (auto c : citizens)
 	{

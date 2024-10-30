@@ -7,7 +7,8 @@ Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
 	this->mediator = mediator;
 	mediator->registerCitizen(this);
 	setState(new Indifferent());
-	name = CitizenNameGen::generateName();
+	// name = CitizenNameGen::generateName();
+	name = "John Doe";
 }
 
 void Citizen::setState(CitizenState *newState)
