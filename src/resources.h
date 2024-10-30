@@ -48,11 +48,9 @@ struct Resources{
         static void addWaterUsage(int water);
         static void addWaterGenerated(int water);
 
-        static void addMoney(double Addedmoney);
-        static void addIncome(double income);
-
         static void addMoney(double Addedmoney); // total money you have
         static void addIncome(double income); // amount generated
+        
         static void addPopulation(int population);
         static void addToMaxPopulation(int population);
 
@@ -73,14 +71,13 @@ struct Resources{
 
         static void removeWaterUsage(int water);
         static void removeWaterGenerated(int water);
-
-        static void removeMoney(double Addedmoney);
-        static void removeIncome(double income);
         
         static void removeMoney(double Addedmoney); // cost
         static void removeIncome(double income); // income
+
         static void removePopulation(int population);
         static void removeFromMaxPopulation(int population);
+
         static void removeHappiness(int happiness);
 
     private:
