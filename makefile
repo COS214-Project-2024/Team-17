@@ -1,29 +1,11 @@
-# Define the source files and headers
-SOURCES := $(shell find . -name '*.cpp' | grep -v 'main.cpp')
-HEADERS := $(shell find . -name '*.h')
-OBJECTS := $(SOURCES:.cpp=.o) 
+main:
+	./build.sh
 
-# Define the target
-main: $(OBJECTS)
-	g++ -o main $(OBJECTS)
-
-# Define the object file rule
-# This rule handles source files in subdirectories
-%.o: %.cpp $(HEADERS)
-	g++ -c $< -o $@
-
-# Define the run rule
 run: main
-	./main
+	./build/Main
 
-# Define the clean rule
+test:
+	./test.sh
+
 clean:
-	rm -f $(OBJECTS) main
-
-# Define the valgrind rule
-val: main
-	valgrind --leak-check=full ./main
-
-# Clean Zone.Identifier files
-clean_zone:
-	find . -name '*:Zone.Identifier' -type f -delete
+	rm -rf build

@@ -7,7 +7,7 @@
 #include <string>
 
 class Building;
-class Utilities;
+class UtilityManager;
 class RoadState;
 
 class CityCentralMediator : public CityMediator
@@ -22,7 +22,7 @@ private:
 	/*
 	@brief Stores the array of utilities in the city.
 	*/
-	std::vector<Utilities *> utilities;
+	std::vector<UtilityManager *> utilities;
 
 	/*
 	@brief Stores the array of citizens in the city.
@@ -42,7 +42,7 @@ public:
 	@brief Registers a utility with the mediator.
 	@param util The utility to register.
 	*/
-	void registerUtility(Utilities *util);
+	void registerUtility(UtilityManager *util);
 
 	/*
 	@brief Registers a citizen with the mediator.
@@ -63,7 +63,7 @@ public:
 	@param status The new status of the utility.
 	@param message The message to send to the citizens.
 	*/
-	void notifyUtilityChange(Utilities *type, bool status, std::string message);
+	void notifyUtilityChange(UtilityManager *type, bool status, std::string message);
 
 	/*
 	@brief Notifies all citizens of a road status change.

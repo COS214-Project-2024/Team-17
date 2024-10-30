@@ -1,38 +1,40 @@
-#include "colours.h" // Testing colours and other includes
+#include "../colours.h" // Testing colours and other includes
 // BLACK IS USED FOR FUNCTION CALL CHECKS
 // THINGS TO BE IGNORED AND REMOVED BEFORE FINAL DEM0
 
-#include "./Buildings/FactoryBuilding.h"
-#include "./Buildings/FactResidential.h"
-#include "./Buildings/FactCommercial.h"
-#include "./Buildings/FactIndustrial.h"
-#include "./Buildings/FactLandmarks.h"
-#include "./Buildings/FactService.h"
+#include "../src/Buildings/FactoryBuilding.h"
+#include "../src/Buildings/FactResidential.h"
+#include "../src/Buildings/FactCommercial.h"
+#include "../src/Buildings/FactIndustrial.h"
+#include "../src/Buildings/FactLandmarks.h"
+#include "../src/Buildings/FactService.h"
 
-#include "./Buildings/BuildDecorUpgrade.h"
-#include "./Buildings/BuildDecorRepair.h"
-#include "./Buildings/BuildDecorEconomic.h"
+#include "../src/Buildings/BuildDecorUpgrade.h"
+#include "../src/Buildings/BuildDecorRepair.h"
+#include "../src/Buildings/BuildDecorEconomic.h"
 
-#include "./Buildings/Building.h"
-#include "./Buildings/ComMall.h"
-#include "./Buildings/LandCCenter.h"
-#include "./Buildings/ComOffice.h"
-#include "./Buildings/ComShop.h"
-#include "./Buildings/ServHospital.h"
-#include "./Buildings/ServSecurity.h"
-#include "./Buildings/ServEntertainment.h"
-#include "./Buildings/LandPark.h"
-#include "./Buildings/LandMonument.h"
-#include "./Buildings/IndPlant.h"
-#include "./Buildings/IndFactory.h"
-#include "./Buildings/IndWarehouse.h"
-#include "./Buildings/ResHouse.h"
-#include "./Buildings/ResEstate.h"
-#include "./Buildings/ResFlat.h"
-#include "./Utilities/UtilPowerPlants.h"
-#include "./Utilities/UtilWaterSupply.h"
-#include "./Utilities/UtilWasteMan.h"
-#include "./Utilities/UtilSewageSyst.h"
+#include "../src/Buildings/Building.h"
+#include "../src/Buildings/ComMall.h"
+#include "../src/Buildings/LandCCenter.h"
+#include "../src/Buildings/ComOffice.h"
+#include "../src/Buildings/ComShop.h"
+#include "../src/Buildings/ServHospital.h"
+#include "../src/Buildings/ServSecurity.h"
+#include "../src/Buildings/ServEntertainment.h"
+#include "../src/Buildings/LandPark.h"
+#include "../src/Buildings/LandMonument.h"
+#include "../src/Buildings/IndPlant.h"
+#include "../src/Buildings/IndFactory.h"
+#include "../src/Buildings/IndWarehouse.h"
+#include "../src/Buildings/ResHouse.h"
+#include "../src/Buildings/ResEstate.h"
+#include "../src/Buildings/ResFlat.h"
+#include "../src/Utilities/UtilPowerPlants.h"
+#include "../src/Utilities/UtilWaterSupply.h"
+#include "../src/Utilities/UtilWasteMan.h"
+#include "../src/Utilities/UtilSewageSyst.h"
+
+#include "../src/Citizens/CitizensIncludes.h"
 
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
@@ -44,6 +46,8 @@ void test5(); // Buildings [SERVICES]
 void test6(); // Decorators [ALL]
 
 void test7(); // Utilities [ALL]
+
+void test8(); // Citizens [ALL]
 
 int main()
 {
@@ -66,7 +70,9 @@ int main()
     // cout << YELLOW << "==============================" << RESET << endl;
     // test6();
     // cout << YELLOW << "==============================" << RESET << endl;
-    test7();
+    // test7();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    test8();
     cout << YELLOW << "==============================" << RESET << endl;
 
     return 0;
@@ -560,4 +566,30 @@ void test7()
     cout << "END OF PROGRAM!" << endl;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
+}
+
+void test8()
+{
+
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Citizens" << std::endl;
+    std::cout << "############################################" << std::endl;
+    CityMediator *mediator = CityCentralMediator::getInstance();
+    Citizen *citizen = new Citizen();
+    std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
+    std::cout << " - Testing Citizen State" << std::endl;
+    citizen->setState(new Happy());
+    citizen->setState(new Content());
+    citizen->setState(new Indifferent());
+    citizen->setState(new Discontent());
+    citizen->setState(new Upset());
+    std::cout << " - Testing notifyChange" << std::endl;
+    UtilPowerPlants *powerPlant = new UtilPowerPlants();
+    ResEstate *building = new ResEstate();
+    mediator->registerBuilding(building);
+    mediator->registerUtility(powerPlant);
+    mediator->notifyUtilityChange(powerPlant, false, "Test Message");
+    std::cout << " - Testing Complete!" << std::endl;
+    delete citizen;
+    delete mediator;
 }

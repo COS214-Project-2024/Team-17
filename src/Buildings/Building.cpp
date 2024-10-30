@@ -1,15 +1,16 @@
 #include "Building.h"
 #include "../Citizens/CityCentralMediator.h"
+
 // Observer Design Pattern
 // Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
 // 	this->mediator = mediator;
 // 	this->name = type;
 // }
 
-Building::Building()
+Building::Building(string type) : CityBlock()
 {
-    mediator = CityCentralMediator::getInstance();
-    // constructor
+    this->mediator = CityCentralMediator::getInstance();
+    this->name = type;
 }
 
 string Building::getBuildingType()
@@ -19,12 +20,12 @@ string Building::getBuildingType()
 
 void Building::notifyChange(std::string message)
 {
-    throw "Should be implemented by derived classes";
+    mediator->notifyBuildingChange(this, message);
 }
 
 void Building::accept(TaxAndBudgetVisitor *visitor)
 {
-    throw "Should be implemented by derived classes";
+    // no clue  what this is
 }
 
 // // void Building::receiveElectricity() {
