@@ -1,4 +1,5 @@
 #include "Building.h"
+#include "../Citizens/CityCentralMediator.h"
 
 // Observer Design Pattern
 // Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
@@ -6,27 +7,26 @@
 // 	this->name = type;
 // }
 
-Building::Building() : CityBlock() {
-    // constructor
-}
-
-Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
-    this->mediator = mediator;
+Building::Building(string type) : CityBlock()
+{
+    this->mediator = CityCentralMediator::getInstance();
     this->name = type;
 }
 
-string Building::getBuildingType(){
+string Building::getBuildingType()
+{
     return name;
 }
 
-void Building::notifyChange(std::string message){
+void Building::notifyChange(std::string message)
+{
     mediator->notifyBuildingChange(this, message);
 }
 
-void Building::accept(TaxAndBudgetVisitor *visitor){
-    //no clue  what this is
+void Building::accept(TaxAndBudgetVisitor *visitor)
+{
+    // no clue  what this is
 }
-
 
 // // void Building::receiveElectricity() {
 // // 	// TODO - implement Building::receiveElectricity

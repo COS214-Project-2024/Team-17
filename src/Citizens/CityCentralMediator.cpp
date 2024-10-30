@@ -1,4 +1,16 @@
 #include "CityCentralMediator.h"
+#include <iostream>
+
+static CityMediator *instance = nullptr;
+
+CityMediator *CityCentralMediator::getInstance()
+{
+	if (instance == nullptr)
+	{
+		instance = new CityCentralMediator();
+	}
+	return instance;
+}
 
 void CityCentralMediator::registerBuilding(Building *building)
 {
@@ -41,6 +53,11 @@ void CityCentralMediator::notifyRoadChange(RoadState *status, std::string messag
 
 CityCentralMediator::CityCentralMediator()
 {
+}
+
+CityCentralMediator::~CityCentralMediator()
+{
+	instance = nullptr;
 }
 
 void CityCentralMediator::handlePopulationGrowth()

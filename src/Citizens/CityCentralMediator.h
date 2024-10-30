@@ -31,6 +31,7 @@ private:
 	RoadState *roadState;
 
 public:
+	static CityMediator *getInstance();
 	/*
 	@brief Registers a building with the mediator.
 	@param building The building to register.
@@ -73,7 +74,7 @@ public:
 
 	CityCentralMediator();
 
-	~CityCentralMediator() {}
+	~CityCentralMediator();
 
 private:
 	void handlePopulationGrowth();

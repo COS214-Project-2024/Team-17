@@ -13,8 +13,7 @@ protected:
 	CityMediator *mediator;
 
 public:
-	CityBlock(CityMediator *mediator);
-	CityBlock(){};
+	CityBlock();
 
 	virtual void notifyChange(std::string message) = 0;
 

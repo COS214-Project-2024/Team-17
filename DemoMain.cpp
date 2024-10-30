@@ -568,15 +568,14 @@ void test7()
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
-
 void test8()
 {
 
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
-    Citizen *citizen = new Citizen(mediator);
+    CityMediator *mediator = CityCentralMediator::getInstance();
+    Citizen *citizen = new Citizen();
     std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
     std::cout << " - Testing Citizen State" << std::endl;
     citizen->setState(new Happy());

@@ -1,21 +1,29 @@
 #include "BuildingDecorator.h"
 
-BuildingDecorator::BuildingDecorator(Building* b) : building(b) {}
+BuildingDecorator::BuildingDecorator(Building *b) : Building()
+{
+    building = b;
+}
 
-void BuildingDecorator::displayBuildingInfo() {
-    if (building) {
+void BuildingDecorator::displayBuildingInfo()
+{
+    if (building)
+    {
         building->displayBuildingInfo();
     }
 }
 
-BuildingDecorator::~BuildingDecorator() {
+BuildingDecorator::~BuildingDecorator()
+{
     delete building;
 }
 
-bool BuildingDecorator::checkBuildRequirements() {
+bool BuildingDecorator::checkBuildRequirements()
+{
     return building->checkBuildRequirements();
 }
 
-bool BuildingDecorator::getState() {
+bool BuildingDecorator::getState()
+{
     return building->getState();
 }
