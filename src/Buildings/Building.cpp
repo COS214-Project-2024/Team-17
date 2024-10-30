@@ -6,12 +6,25 @@
 // 	this->name = type;
 // }
 
-Building::Building() {
+Building::Building() : CityBlock() {
     // constructor
+}
+
+Building::Building(CityMediator* mediator, string type) : CityBlock(mediator) {
+    this->mediator = mediator;
+    this->name = type;
 }
 
 string Building::getBuildingType(){
     return name;
+}
+
+void Building::notifyChange(std::string message){
+    mediator->notifyBuildingChange(this, message);
+}
+
+void Building::accept(TaxAndBudgetVisitor *visitor){
+    //no clue  what this is
 }
 
 

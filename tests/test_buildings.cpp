@@ -34,6 +34,8 @@
 #include "../src/Utilities/UtilWasteMan.h"
 #include "../src/Utilities/UtilSewageSyst.h"
 
+#include "./Citizens/CitizensIncludes.h"
+
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
 void test2(); // Buildings [COMMERCIAL]
@@ -44,6 +46,8 @@ void test5(); // Buildings [SERVICES]
 void test6(); // Decorators [ALL]
 
 void test7(); // Utilities [ALL]
+
+void test8(); // Citizens [ALL]
 
 int main()
 {
@@ -66,7 +70,9 @@ int main()
     // cout << YELLOW << "==============================" << RESET << endl;
     // test6();
     // cout << YELLOW << "==============================" << RESET << endl;
-    test7();
+    // test7();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    test8();
     cout << YELLOW << "==============================" << RESET << endl;
 
     return 0;
@@ -560,4 +566,29 @@ void test7()
     cout << "END OF PROGRAM!" << endl;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
+}
+
+void test8(){
+
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Citizens" << std::endl;
+    std::cout << "############################################" << std::endl;
+    CityMediator *mediator = new CityCentralMediator();
+    Citizen *citizen = new Citizen(mediator);
+    std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
+    std::cout << " - Testing Citizen State" << std::endl;
+    citizen->setState(new Happy());
+    citizen->setState(new Content());
+    citizen->setState(new Indifferent());
+    citizen->setState(new Discontent());
+    citizen->setState(new Upset());
+    std::cout << " - Testing notifyChange" << std::endl;
+    UtilPowerPlants *powerPlant = new UtilPowerPlants();
+    ResEstate *building = new ResEstate();
+    mediator->registerBuilding(building);
+    mediator->registerUtility(powerPlant);
+    mediator->notifyUtilityChange(powerPlant, false, "Test Message");
+    std::cout << " - Testing Complete!" << std::endl;
+    delete citizen;
+    delete mediator;
 }

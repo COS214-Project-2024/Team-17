@@ -3,29 +3,35 @@
 
 #include "../../colours.h" // Testing colours and other includes
 #include "../Utilities/UtilityManager.h"
-// #include "../Utilities/CityMediator.h"
+#include "../Citizens/CityMediator.h"
+#include "../Citizens/CityBlock.h"
 
+class CityMediator;
 class UtilityManager;
 
-class Building
+class Building : public CityBlock
 {
 public:
     Building();
+    Building(CityMediator* mediator, string type);
 
     virtual void displayBuildingInfo() = 0;
     virtual ~Building() = default;
 
-    // Building(CityMediator* mediator, string type);
     virtual bool getState() = 0;
     virtual string getBuildingType();
 
     virtual bool checkBuildRequirements() = 0;
 
+
+    void notifyChange(std::string message);
+	void accept(TaxAndBudgetVisitor *visitor);
+
 private:
     vector<UtilityManager *> utilities;
     string name;
-    // CityMediator* mediator;
-    bool operational; // state
+	CityMediator* mediator;
+	bool operational; //state
 };
 
 #endif // BUILDING_H
