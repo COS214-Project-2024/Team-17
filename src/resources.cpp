@@ -1,8 +1,13 @@
 #include "resources.h"
 
 int Resources::woodUnits = 0;
+int Resources::woodUnitsPerTick = 0;
+
 int Resources::steelUnits = 0;
+int Resources::steelUnitsPerTick = 0;
+
 int Resources::concreteUnits = 0;
+int Resources::concreteUnitsPerTick = 0;
 
 int Resources::totalElectricityUnitUsage = 0;
 int Resources::totalElectricityUnitGenerated = 0;
@@ -11,9 +16,12 @@ int Resources::waterUnitsGenerated = 0;
 int Resources::waterUnitsUsed = 0;
 
 double Resources::money = 0.0;
+double Resources::tickIncome = 0.0;
 
 int Resources::maxPopulation = 0;
 int Resources::currentPopulation = 0;
+
+int Resources::happinessUnits = 0;
 
 
 int Resources::getWood(){
