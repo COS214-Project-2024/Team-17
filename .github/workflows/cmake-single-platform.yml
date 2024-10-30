@@ -7,7 +7,6 @@ on:
     branches: [ "main", "Dev" ]
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
@@ -27,5 +26,15 @@ jobs:
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
     - name: Test
+      if: always()
       working-directory: ${{github.workspace}}/build
-      run: ctest -C ${{env.BUILD_TYPE}} --output-on-failure
+      timeout-minutes: 5
+      run: |
+        ctest -C ${{env.BUILD_TYPE}} --output-on-failure -V
+        exit_code=$?
+        if [ $exit_code -eq 0 ]; then
+          echo "Tests completed successfully"
+        else
+          echo "Tests failed with exit code $exit_code"
+          exit $exit_code
+        fi
