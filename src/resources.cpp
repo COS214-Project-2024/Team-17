@@ -48,8 +48,16 @@ double Resources::getMoney(){
     return money;
 }
 
+double Resources::getIncome(){
+    return tickIncome;
+}
+
 int Resources::getPopulation(){
     return currentPopulation;
+}
+
+int Resources::getMaxPopulation(){
+    return maxPopulation;
 }
 
 void Resources::addWood(int wood){
@@ -82,6 +90,10 @@ void Resources::addWaterUsage(int water){
 
 void Resources::addMoney(double Addedmoney){
     money += Addedmoney;
+}
+
+void Resources::addIncome(double income){
+    tickIncome += income;  
 }
 
 void Resources::addPopulation(int population){
@@ -124,6 +136,14 @@ void Resources::removeMoney(double Addedmoney){
     money -= Addedmoney;
 }
 
+void Resources::removeIncome(double income){
+    tickIncome -= income;
+}
+
 void Resources::removePopulation(int population){
     currentPopulation -= population;
+}
+
+void Resources::removeFromMaxPopulation(int population){
+    maxPopulation -= population;
 }

@@ -29,7 +29,19 @@ public:
 	// virtual void affectEmotionalState() = 0;
 
 private:
-    int jobCapacity;
+    vector<Citizen*> employees;
+
+    int jobCapacity = 100;
+	
+	int woodCost = 20;
+	int steelCost = 25;
+	int concreteCost = 25;
+
+	int electricityUsage = 20;
+	int waterUsage = 10;
+
+	int income = 500;
+	
 	string type = "Commercial Office";
 	bool operational;//CS State
 };

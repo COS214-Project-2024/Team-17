@@ -16,7 +16,9 @@ struct Resources{
         static int getWaterUsage();
         static int getWaterGenerated();
         static double getMoney();
+        static double getIncome();
         static int getPopulation();
+        static int getMaxPopulation();
 
         static void addWood(int wood);
         static void addSteel(int steel);
@@ -26,6 +28,7 @@ struct Resources{
         static void addWaterUsage(int water);
         static void addWaterGenerated(int water);
         static void addMoney(double Addedmoney);
+        static void addIncome(double income);
         static void addPopulation(int population);
         static void addToMaxPopulation(int population);
 
@@ -37,7 +40,9 @@ struct Resources{
         static void removeWaterUsage(int water);
         static void removeWaterGenerated(int water);
         static void removeMoney(double Addedmoney);
+        static void removeIncome(double income);
         static void removePopulation(int population);
+        static void removeFromMaxPopulation(int population);
 
     private:
         static int woodUnits;
@@ -50,6 +55,7 @@ struct Resources{
         static int waterUnitsGenerated;
         static int waterUnitsUsed;
 
+        static double tickIncome;
         static double money;
 
         static int maxPopulation;
