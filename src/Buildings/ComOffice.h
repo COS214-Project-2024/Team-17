@@ -31,17 +31,20 @@ public:
 private:
     vector<Citizen*> employees;
 
-    int jobCapacity = 100;
-	
-	int woodCost = 20;
-	int steelCost = 25;
-	int concreteCost = 25;
+	//Recources
+	int cost = 1500;
 
-	int electricityUsage = 20;
+    int jobCapacity = 20;
+	
+	int woodCost = 5;
+	int steelCost = 10;
+	int concreteCost = 5;
+
+	int electricityUsage = 10;
 	int waterUsage = 10;
 
-	int income = 500;
-	
+	int income = 200;
+
 	string type = "Commercial Office";
 	bool operational;//CS State
 };

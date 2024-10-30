@@ -2,11 +2,13 @@
 
 ComMall::ComMall() {
     cout << BLACK << "\t-->Mall created" << RESET << endl;
+    Resources::removeMoney(woodCost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
+    Resources::addIncome(income);
 }
 
 void ComMall::displayBuildingInfo() {
@@ -19,10 +21,6 @@ int ComMall::getJobCapacity() {
 
 void ComMall::setJobCapacity(int capacity) {
     this->jobCapacity = capacity;
-}
-
-int ComMall::getIncome() {
-    return income;
 }
 
 // Observer

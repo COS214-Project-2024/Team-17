@@ -2,6 +2,13 @@
 
 ComOffice::ComOffice() {
     cout << BLACK << "\t-->Office created" << RESET << endl;
+    Resources::removeMoney(woodCost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addIncome(income);
 }
 
 void ComOffice::displayBuildingInfo() {

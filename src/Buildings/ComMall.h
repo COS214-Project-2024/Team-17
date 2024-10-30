@@ -3,8 +3,6 @@
 
 #include "Commercial.h"
 
-#include "../resources.h"
-
 class ComMall : public Commercial {
 public:
     ComMall();
@@ -21,8 +19,6 @@ public:
 	void addEmployee(Citizen* employee);
 	string getBuildingType();
 
-	int getIncome();
-
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
 	// virtual void affectEmotionalState() = 0;
@@ -33,6 +29,8 @@ public:
 private:
 	vector<Citizen*> employees;
 
+	int cost = 5000;
+
     int jobCapacity = 100;
 	
 	int woodCost = 20;
@@ -40,7 +38,7 @@ private:
 	int concreteCost = 25;
 
 	int electricityUsage = 20;
-	int waterUsage = 10;
+	int waterUsage = 20;
 
 	int income = 500;
 
