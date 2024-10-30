@@ -4,8 +4,10 @@ Resources::Resources(){
     woodUnits = 0;
     steelUnits = 0;
     concreteUnits = 0;
-    electricityUnits = 0;
-    waterUnits = 0;
+    totalElectricityUnitUsage = 0;
+    totalElectricityUnitGenerated = 0;
+    waterUnitsGenerated = 0;
+    waterUnitsUsed = 0;
     money = 0;
     maxPopulation = 0;
     currentPopulation = 0;
@@ -15,8 +17,9 @@ Resources::~Resources(){
     woodUnits = 0;
     steelUnits = 0;
     concreteUnits = 0;
-    electricityUnits = 0;
-    waterUnits = 0;
+    totalElectricityUnitUsage = 0;
+    waterUnitsGenerated = 0;
+    waterUnitsUsed = 0;
     money = 0;
     maxPopulation = 0;
     currentPopulation = 0;
@@ -34,12 +37,20 @@ int Resources::getConcrete(){
     return concreteUnits;
 }
 
-int Resources::getElectricity(){
-    return electricityUnits;
+int Resources::getElectricityUsage(){
+    return totalElectricityUnitUsage;
 }
 
-int Resources::getWater(){
-    return waterUnits;
+int Resources::getElectricityGenerated(){
+    return totalElectricityUnitGenerated;
+}
+
+int Resources::getWaterUsage(){
+    return waterUnitsUsed;
+}
+
+int Resources::getWaterGenerated(){
+    return waterUnitsGenerated;
 }
 
 double Resources::getMoney(){
@@ -62,12 +73,20 @@ void Resources::addConcrete(int concrete){
     concreteUnits += concrete;
 }
 
-void Resources::addElectricity(int electricity){
-    electricityUnits += electricity;
+void Resources::addElectricityGenerated(int electricity){
+    totalElectricityUnitGenerated += electricity;
 }
 
-void Resources::addWater(int water){
-    waterUnits += water;
+void Resources::addElectricityUsage(int electricity){
+    totalElectricityUnitUsage += electricity;
+}
+
+void Resources::addWaterGenerated(int water){
+    waterUnitsGenerated += water;
+}
+
+void Resources::addWaterUsage(int water){
+    waterUnitsUsed += water;
 }
 
 void Resources::addMoney(double money){
@@ -94,12 +113,20 @@ void Resources::removeConcrete(int concrete){
     concreteUnits -= concrete;
 }
 
-void Resources::removeElectricity(int electricity){
-    electricityUnits -= electricity;
+void Resources::removeElectricityGenerated(int electricity){
+    totalElectricityUnitGenerated -= electricity;
 }
 
-void Resources::removeWater(int water){
-    waterUnits -= water;
+void Resources::removeElectricityUsage(int electricity){
+    totalElectricityUnitUsage -= electricity;
+}
+
+void Resources::removeWaterGenerated(int water){
+    waterUnitsGenerated -= water;
+}
+
+void Resources::removeWaterUsage(int water){
+    waterUnitsUsed -= water;
 }
 
 void Resources::removeMoney(double money){

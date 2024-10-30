@@ -14,16 +14,20 @@ class Resources{
         int getWood();
         int getSteel();
         int getConcrete();
-        int getElectricity();
-        int getWater();
+        int getElectricityUsage();
+        int getElectricityGenerated();
+        int getWaterUsage();
+        int getWaterGenerated();
         double getMoney();
         int getPopulation();
 
         void addWood(int wood);
         void addSteel(int steel);
         void addConcrete(int concrete);
-        void addElectricity(int electricity);
-        void addWater(int water);
+        void addElectricityUsage(int electricity);
+        void addElectricityGenerated(int electricity);
+        void addWaterUsage(int water);
+        void addWaterGenerated(int water);
         void addMoney(double money);
         void addPopulation(int population);
         void addToMaxPopulation(int population);
@@ -31,8 +35,10 @@ class Resources{
         void removeWood(int wood);
         void removeSteel(int steel);
         void removeConcrete(int concrete);
-        void removeElectricity(int electricity);
-        void removeWater(int water);
+        void removeElectricityUsage(int electricity);
+        void removeElectricityGenerated(int electricity);
+        void removeWaterUsage(int water);
+        void removeWaterGenerated(int water);
         void removeMoney(double money);
         void removePopulation(int population);
 
@@ -41,8 +47,11 @@ class Resources{
         int steelUnits;
         int concreteUnits;
 
-        int electricityUnits;
-        int waterUnits;
+        int totalElectricityUnitUsage;
+        int totalElectricityUnitGenerated;
+
+        int waterUnitsGenerated;
+        int waterUnitsUsed;
 
         double money;
 
