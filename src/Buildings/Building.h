@@ -1,7 +1,7 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
-#include "../colours.h" // Testing colours and other includes
+#include "../../colours.h" // Testing colours and other includes
 #include "../Utilities/UtilityManager.h"
 #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
@@ -28,16 +28,13 @@ public:
 	void accept(TaxAndBudgetVisitor *visitor);
 
 private:
-    vector<UtilityManager*> utilities;
+    vector<UtilityManager *> utilities;
     string name;
 	CityMediator* mediator;
 	bool operational; //state
 };
 
-
 #endif // BUILDING_H
-
-
 
 ////// EVERYTHING BELOW IS FROM VP - IT IS SUBJECT TO CHANGE //////
 
