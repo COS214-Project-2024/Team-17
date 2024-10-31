@@ -33,6 +33,13 @@ RoadsComposite::RoadsComposite(int sX, int sY, int eX, int eY, std::string type)
 			add(new ResidentialStreets(ssX, ssY, eeX, eeY));
 		}
 	}
+
+	// Link the sections
+	for (int i = 0; i < numSections - 1; i++)
+	{
+		components[i]->addConnection(components[i + 1], MAX_SECTION_DISTANCE);
+		components[i + 1]->addConnection(components[i], 0);
+	}
 }
 
 void RoadsComposite::displayInfo()
