@@ -1,9 +1,14 @@
 #include "UtilPowerPlants.h"
+#include "../resources.h"
 #include <iostream>
 UtilPowerPlants::UtilPowerPlants() {
     std::cout << "Power Plant Being Built!" << std::endl;
     type = "Power Plant";
     operational = false; // constructing
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
 }
 
 

@@ -1,6 +1,7 @@
 #include "Citizen.h"
 #include "CitizenNameGen.h"
 #include "CityCentralMediator.h"
+#include "../resources.h"
 #include <iostream>
 
 Citizen::Citizen() : CityBlock()
@@ -11,6 +12,7 @@ Citizen::Citizen() : CityBlock()
 	state = nullptr;
 	setState(new Indifferent());
 	// name = CitizenNameGen::generateName();
+	Resources::addPopulation(1);
 }
 
 void Citizen::setState(CitizenState *newState)
