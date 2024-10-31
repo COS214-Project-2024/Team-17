@@ -1,6 +1,7 @@
 #include "RoadsComposite.h"
 #include <iostream>
 #include <cmath>
+#include "../../colours.h"
 #include "../RoadStates/RoadStatesIncludes.h"
 #include "RoadComponentTypesIncludes.h"
 
@@ -89,7 +90,8 @@ void RoadsComposite::addConnection(RoadComponent *connection, float distance)
 	float td = getDistance();
 	if (distance < 0 || distance > td)
 	{
-		throw "Invalid distance";
+		std::cout << RED << "Invalid distance for connection" << RESET << std::endl;
+		return;
 	}
 
 	int idx = 0;
@@ -100,6 +102,17 @@ void RoadsComposite::addConnection(RoadComponent *connection, float distance)
 	}
 
 	components[idx]->addConnection(connection, distance);
+}
+
+std::vector<RoadComponent *> RoadsComposite::getConnections()
+{
+	std::vector<RoadComponent *> result;
+	for (auto component : components)
+	{
+		std::vector<RoadComponent *> temp = component->getConnections();
+		result.insert(result.end(), temp.begin(), temp.end());
+	}
+	return result;
 }
 
 float RoadsComposite::calculateDistance(int x, int y)

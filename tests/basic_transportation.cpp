@@ -1,7 +1,19 @@
 #include "../src/Transport/TransportInclude.h"
 #include <gtest/gtest.h>
 
+TEST(TestConnections, TestCompositeConnections)
+{
+    RoadComponent *highway = new RoadsComposite(0, 0, 150, 0, "highway");
 
+    RoadComponent *mainRoad = new MainRoads(0, 0, 50, 20);
+    RoadComponent *residentialStreet = new ResidentialStreets(60, 0, 50, 30);
+
+    highway->addConnection(mainRoad, 0);
+    highway->addConnection(residentialStreet, 60);
+
+    std::vector<RoadComponent *> connections = highway->getConnections();
+    EXPECT_EQ(connections.size(), 6);
+}
 
 TEST(PointDistance, CheckRoadPointDistance)
 {
