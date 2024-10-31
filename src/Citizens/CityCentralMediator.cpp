@@ -8,7 +8,7 @@ CityCentralMediator *CityCentralMediator::getInstance()
 {
 	if (instance == nullptr)
 	{
-		instance = new CityCentralMediator();
+		instance = new CityCentralMediator("all good!");
 	}
 	return instance;
 }
