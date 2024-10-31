@@ -82,8 +82,8 @@ void Citizen::evicted()
 
 Citizen::~Citizen()
 {
-	if (state != nullptr)
-	{
-		delete state;
-	}
+	// if (state != nullptr)
+	// {
+	// 	delete state;
+	// }
 }
