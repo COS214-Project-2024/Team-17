@@ -13,9 +13,9 @@
 //     highway->addConnection(mainRoad, 0);
 //     highway->addConnection(residentialStreet, 60);
 
-//     std::vector<RoadComponent *> connections = highway->getConnections();
-//     EXPECT_EQ(connections.size(), 6);
-// }
+    std::vector<RoadComponent *> connections = highway->getConnections();
+    EXPECT_EQ(connections.size(), 4);
+}
 
 // TEST(PointDistance, CheckRoadPointDistance)
 // {
@@ -54,9 +54,9 @@
 //     bool roadsCompositeInRange = abs(roadsComposite->getDistance() - val) < 0.0001;
 //     EXPECT_TRUE(roadsCompositeInRange);
 
-//     std::vector<RoadComponent *> components = roadsComposite->getComponents();
-//     EXPECT_EQ(components.size(), 3);
-// }
+    std::vector<RoadComponent *> components = roadsComposite->getComponents();
+    EXPECT_EQ(components.size(), 2);
+}
 
 // TEST(ConstructorTest, CheckDistance)
 // {

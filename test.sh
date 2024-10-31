@@ -1,4 +1,4 @@
-./build.sh
-cd build
+./build.sh;
+cd build;
 # Optionally, run the tests
-ctest --output-on-failure --verbose
+ctest --output-on-failure --verbose;
