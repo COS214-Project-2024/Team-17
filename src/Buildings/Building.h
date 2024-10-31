@@ -6,6 +6,8 @@
 #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
 
+#include "../resources.h"
+
 class CityMediator;
 class UtilityManager;
 

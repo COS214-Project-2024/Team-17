@@ -28,8 +28,26 @@ public:
 	// virtual void increaseJobs() = 0;
 	// virtual void affectEmotionalState() = 0;
 
+	void addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
+
 private:
-    int jobCapacity;
+    vector<Citizen*> employees;
+
+	//Recources
+	int cost = 1500;
+
+    int jobCapacity = 20;
+	
+	int woodCost = 5;
+	int concreteCost = 10;
+	int steelCost = 5;
+
+	int electricityUsage = 10;
+	int waterUsage = 10;
+
+	int income = 200;
+
 	string type = "Commercial Office";
 	bool operational;//CS State
 };

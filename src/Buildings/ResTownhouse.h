@@ -29,6 +29,18 @@ private:
     int capacity;
     string type="Residential Townhouse";
     bool operational;//CS State
+
+    // Resources
+    int cost = 1500;
+
+    int woodCost = 10;
+    int steelCost = 10;
+    int concreteCost = 15;
+
+    int electricityUsage = 10;
+    int waterUsage = 10;
+
+    int popIncrease = 10;
 };
 
 #endif // RESTOWNHOUSE_H

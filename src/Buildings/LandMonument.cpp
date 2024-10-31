@@ -2,6 +2,14 @@
 
 LandMonument::LandMonument() {
     cout << BLACK << "\t-->Monument created" << RESET << endl;
+
+    Resources::removeMoney(woodCost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addHappiness(happiness);
 }
 
 void LandMonument::displayBuildingInfo() {
@@ -36,3 +44,20 @@ void LandMonument::setState(bool state){
 string LandMonument::getBuildingType(){
     return type;
 }
+
+void LandMonument::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
+    employees.push_back(employee);
+}
+
+void LandMonument::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+} 

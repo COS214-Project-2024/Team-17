@@ -2,6 +2,14 @@
 
 LandPark::LandPark() {
     cout << BLACK << "\t-->Park created" << RESET << endl;
+    
+    Resources::removeMoney(woodCost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addHappiness(happiness);
 }
 
 void LandPark::displayBuildingInfo() {
@@ -36,3 +44,20 @@ void LandPark::setState(bool state){
 string LandPark::getBuildingType(){
     return type;
 }
+
+void LandPark::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
+    employees.push_back(employee);
+}
+
+void LandPark::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+} 

@@ -2,6 +2,13 @@
 
 ResTownhouse::ResTownhouse() {
     cout << BLACK << "\t-->Townhouse created" << RESET << endl;
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addPopulation(popIncrease);
 }
 
 void ResTownhouse::displayBuildingInfo() {

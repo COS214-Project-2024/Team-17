@@ -1,40 +1,51 @@
 #include "resources.h"
 
-Resources::Resources(){
-    woodUnits = 0;
-    steelUnits = 0;
-    concreteUnits = 0;
-    totalElectricityUnitUsage = 0;
-    totalElectricityUnitGenerated = 0;
-    waterUnitsGenerated = 0;
-    waterUnitsUsed = 0;
-    money = 0;
-    maxPopulation = 0;
-    currentPopulation = 0;
-}
+int Resources::woodUnits = 0;
+int Resources::woodUnitsPerTick = 0;
 
-Resources::~Resources(){
-    woodUnits = 0;
-    steelUnits = 0;
-    concreteUnits = 0;
-    totalElectricityUnitUsage = 0;
-    waterUnitsGenerated = 0;
-    waterUnitsUsed = 0;
-    money = 0;
-    maxPopulation = 0;
-    currentPopulation = 0;
-}
+int Resources::steelUnits = 0;
+int Resources::steelUnitsPerTick = 0;
+
+int Resources::concreteUnits = 0;
+int Resources::concreteUnitsPerTick = 0;
+
+int Resources::totalElectricityUnitUsage = 0;
+int Resources::totalElectricityUnitGenerated = 0;
+
+int Resources::waterUnitsGenerated = 0;
+int Resources::waterUnitsUsed = 0;
+
+double Resources::money = 0.0;
+double Resources::tickIncome = 0.0;
+
+int Resources::maxPopulation = 0;
+int Resources::currentPopulation = 0;
+
+int Resources::happinessUnits = 0;
+
 
 int Resources::getWood(){
     return woodUnits;
+}
+
+int Resources::getWoodPerTick(){
+    return woodUnitsPerTick;
 }
 
 int Resources::getSteel(){
     return steelUnits;
 }
 
+int Resources::getSteelPerTick(){
+    return steelUnitsPerTick;
+}
+
 int Resources::getConcrete(){
     return concreteUnits;
+}
+
+int Resources::getConcretePerTick(){
+    return concreteUnitsPerTick;
 }
 
 int Resources::getElectricityUsage(){
@@ -57,20 +68,44 @@ double Resources::getMoney(){
     return money;
 }
 
+double Resources::getIncome(){
+    return tickIncome;
+}
+
 int Resources::getPopulation(){
     return currentPopulation;
+}
+
+int Resources::getMaxPopulation(){
+    return maxPopulation;
+}
+
+int Resources::getHappiness(){
+    return happinessUnits;
 }
 
 void Resources::addWood(int wood){
     woodUnits += wood;
 }
 
+void Resources::addWoodPerTick(int wood){
+    woodUnitsPerTick += wood;
+}
+
 void Resources::addSteel(int steel){
     steelUnits += steel;
 }
 
+void Resources::addSteelPerTick(int steel){
+    steelUnitsPerTick += steel;
+}
+
 void Resources::addConcrete(int concrete){
     concreteUnits += concrete;
+}
+
+void Resources::addConcretePerTick(int concrete){
+    concreteUnitsPerTick += concrete;
 }
 
 void Resources::addElectricityGenerated(int electricity){
@@ -89,8 +124,12 @@ void Resources::addWaterUsage(int water){
     waterUnitsUsed += water;
 }
 
-void Resources::addMoney(double money){
-    this->money += money;
+void Resources::addMoney(double Addedmoney){
+    money += Addedmoney;
+}
+
+void Resources::addIncome(double income){
+    tickIncome += income;  
 }
 
 void Resources::addPopulation(int population){
@@ -101,16 +140,32 @@ void Resources::addToMaxPopulation(int population){
     maxPopulation += population;
 }
 
+void Resources::addHappiness(int happiness){
+    happinessUnits += happiness;
+}
+
 void Resources::removeWood(int wood){
     woodUnits -= wood;
+}
+
+void Resources::removeWoodPerTick(int wood){
+    woodUnitsPerTick -= wood;
 }
 
 void Resources::removeSteel(int steel){
     steelUnits -= steel;
 }
 
+void Resources::removeSteelPerTick(int steel){
+    steelUnitsPerTick -= steel;
+}
+
 void Resources::removeConcrete(int concrete){
     concreteUnits -= concrete;
+}
+
+void Resources::removeConcretePerTick(int concrete){
+    concreteUnitsPerTick -= concrete;
 }
 
 void Resources::removeElectricityGenerated(int electricity){
@@ -129,10 +184,22 @@ void Resources::removeWaterUsage(int water){
     waterUnitsUsed -= water;
 }
 
-void Resources::removeMoney(double money){
-    this->money -= money;
+void Resources::removeMoney(double Addedmoney){
+    money -= Addedmoney;
+}
+
+void Resources::removeIncome(double income){
+    tickIncome -= income;
 }
 
 void Resources::removePopulation(int population){
     currentPopulation -= population;
+}
+
+void Resources::removeFromMaxPopulation(int population){
+    maxPopulation -= population;
+}
+
+void Resources::removeHappiness(int happiness){
+    happinessUnits -= happiness;
 }

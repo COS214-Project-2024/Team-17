@@ -2,6 +2,13 @@
 
 ComShop::ComShop() {
     cout << BLACK << "\t-->Shop created" << RESET << endl;
+    Resources::removeMoney(woodCost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addIncome(income);
 }
 
 void ComShop::displayBuildingInfo() {
@@ -35,4 +42,21 @@ void ComShop::setState(bool state){
 
 string ComShop::getBuildingType(){
     return type;
+}
+
+void ComShop::addEmployee(Citizen* employee) {
+    if (employees.size() >= jobCapacity) {
+        cout << "Job capacity reached" << endl;
+        return;
+    }
+    employees.push_back(employee);
+}
+
+void ComShop::removeEmployee(Citizen* employee) {
+    for (int i = 0; i < employees.size(); i++) {
+        if (employees[i] == employee) {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
 }

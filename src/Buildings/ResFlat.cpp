@@ -2,6 +2,13 @@
 
 ResFlat::ResFlat() {
     cout << BLACK << "\t-->Flat created" << RESET << endl;
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
+    Resources::addElectricityUsage(electricityUsage);
+    Resources::addWaterUsage(waterUsage);
+    Resources::addToMaxPopulation(popIncrease);
 }
 
 void ResFlat::displayBuildingInfo() {
