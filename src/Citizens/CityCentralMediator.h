@@ -93,7 +93,7 @@ public:
 	*/
 	CityCentralMediator(std::string param = "error");
 
-	void calculateRoute(int startX, int startY, int endX, int endY);
+	std::vector<RoadComponent *> calculateRoute(int startX, int startY, int endX, int endY);
 
 	~CityCentralMediator();
 

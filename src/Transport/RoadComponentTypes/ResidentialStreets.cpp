@@ -11,7 +11,7 @@ ResidentialStreets::ResidentialStreets(int sX, int sY, int eX, int eY) : RoadCom
 
 void ResidentialStreets::displayInfo()
 {
-	std::cout << "Residential Street of distance: " << distance << std::endl;
+	std::cout << "Residential Road from (" << startX << ", " << startY << ") to (" << endX << ", " << endY << ")" << std::endl;
 }
 
 void ResidentialStreets::calculateTraffic()

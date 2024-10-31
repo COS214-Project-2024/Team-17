@@ -11,7 +11,7 @@ MainRoads::MainRoads(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX,
 
 void MainRoads::displayInfo()
 {
-	std::cout << "Main Road of distance: " << distance << std::endl;
+	std::cout << "Main Road from (" << startX << ", " << startY << ") to (" << endX << ", " << endY << ")" << std::endl;
 }
 
 void MainRoads::calculateTraffic()

@@ -43,6 +43,8 @@ public:
 
 	float calculateDistance(int x, int y);
 
+	RoadComponent *closestSection(int x, int y);
+
 	~RoadsComposite() {}
 };
 
