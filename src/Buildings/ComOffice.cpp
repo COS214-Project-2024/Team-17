@@ -11,6 +11,19 @@ ComOffice::ComOffice() {
     Resources::addIncome(income);
 }
 
+ComOffice::~ComOffice() {
+    cout << BLACK << "\t-->Office destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeIncome(income);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void ComOffice::displayBuildingInfo() {
     cout << "Office with " << this->jobCapacity << " jobs\n";
 }
@@ -45,12 +58,15 @@ string ComOffice::getBuildingType(){
     return type;
 }
 
-void ComOffice::addEmployee(Citizen* employee) {
+bool ComOffice::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void ComOffice::removeEmployee(Citizen* employee) {

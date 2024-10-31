@@ -8,7 +8,21 @@ ComMall::ComMall() {
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addIncome(income);
+    Resources::addIncome(income); 
+}
+
+ComMall::~ComMall() {
+    cout << BLACK << "\t-->Mall destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeIncome(income);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+
 }
 
 void ComMall::displayBuildingInfo() {
@@ -45,12 +59,15 @@ string ComMall::getBuildingType() {
     return type;
 }
 
-void ComMall::addEmployee(Citizen* employee) {
+bool ComMall::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void ComMall::removeEmployee(Citizen* employee) {

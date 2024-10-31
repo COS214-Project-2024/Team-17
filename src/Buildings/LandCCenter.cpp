@@ -12,6 +12,19 @@ LandCCenter::LandCCenter() {
     Resources::addHappiness(happiness);
 }
 
+LandCCenter::~LandCCenter() {
+    cout << BLACK << "\t-->Community center destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happiness);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void LandCCenter::displayBuildingInfo() {
     cout << "Community center with " << this->visitors << " visitors\n";
 }
@@ -50,12 +63,15 @@ std::string LandCCenter::getBuildingType(){
     return type;
 }
 
-void LandCCenter::addEmployee(Citizen* employee) {
+bool LandCCenter::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void LandCCenter::removeEmployee(Citizen* employee) {

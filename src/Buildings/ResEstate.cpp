@@ -11,6 +11,13 @@ ResEstate::ResEstate() {
     Resources::addToMaxPopulation(popIncrease);
 }
 
+ResEstate::~ResEstate() {
+    cout << BLACK << "\t-->Estate destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeFromMaxPopulation(popIncrease);
+}
+
 void ResEstate::displayBuildingInfo() {
     cout << "Estate for " << this->capacity << " people\n";
 }

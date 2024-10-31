@@ -11,6 +11,13 @@ ResFlat::ResFlat() {
     Resources::addToMaxPopulation(popIncrease);
 }
 
+ResFlat::~ResFlat() {
+    cout << BLACK << "\t-->Flat destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeFromMaxPopulation(popIncrease);
+}
+
 void ResFlat::displayBuildingInfo() {
     cout << "Flat for " << this->capacity << " people\n";
 }

@@ -47,6 +47,23 @@ std::string Citizen::getName()
 	return name;
 }
 
+void Citizen::setWorkplace(Building *workplace)
+{
+	this->workplace = workplace;
+}
+
+Building *Citizen::getWorkplace()
+{
+	return workplace;
+}
+
+void Citizen::fired()
+{
+	workplace = nullptr;
+	std::cout << "Citizen " << name << " was fired" << std::endl;
+}
+
+
 Citizen::~Citizen()
 {
 	if (state != nullptr)

@@ -60,18 +60,18 @@ int main()
          << "\t     ┛                 " << RESET << endl
          << endl;
 
-    // test1();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test2();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test3();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test4();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test5();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test6();
-    // cout << YELLOW << "==============================" << RESET << endl;
+    test1();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test2();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test3();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test4();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test5();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test6();
+    cout << YELLOW << "==============================" << RESET << endl;
     test7();
     cout << YELLOW << "==============================" << RESET << endl;
     test8();
@@ -591,8 +591,19 @@ void test8()
     mediator->registerBuilding(building);
     mediator->registerUtility(powerPlant);
     mediator->notifyUtilityChange(powerPlant, false, "Test Message");
-    cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
+    
+    // cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
+    // cout << "wood" << Resources::getWood()<< endl;
+    // cout << "steel" << Resources::getSteel()<< endl;
+    // cout << "concrete" << Resources::getConcrete()<< endl;
+
+    // cout << "electricity" << Resources::getElectricityUsage()<< endl;
+    // cout << "water" << Resources::getWaterUsage()<< endl;
+
     std::cout << " - Testing Complete!" << std::endl;
+    
+
+
     delete citizen;
     delete mediator;
 }

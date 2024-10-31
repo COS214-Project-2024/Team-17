@@ -6,6 +6,7 @@
 class ResTownhouse : public Residential {
 public:
     ResTownhouse();
+    ~ResTownhouse();
 
     void displayBuildingInfo() override;
 
@@ -16,14 +17,8 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	std::string getBuildingType();
 
-    // virtual bool checkBuildRequirements() override;
-	// virtual int increasePopulation() override;
-	// virtual void affectEmotionalState() override;
+	std::string getBuildingType();
 
 private:
     int capacity;

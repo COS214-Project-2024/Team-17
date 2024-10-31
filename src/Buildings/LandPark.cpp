@@ -12,6 +12,19 @@ LandPark::LandPark() {
     Resources::addHappiness(happiness);
 }
 
+LandPark::~LandPark() {
+    cout << BLACK << "\t-->Park destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happiness);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void LandPark::displayBuildingInfo() {
     cout << "Park with " << this->visitors << " visitors\n";
 }
@@ -45,12 +58,15 @@ string LandPark::getBuildingType(){
     return type;
 }
 
-void LandPark::addEmployee(Citizen* employee) {
+bool LandPark::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void LandPark::removeEmployee(Citizen* employee) {
@@ -60,4 +76,4 @@ void LandPark::removeEmployee(Citizen* employee) {
             break;
         }
     }
-} 
+}

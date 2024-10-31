@@ -6,6 +6,7 @@
 class ResEstate : public Residential {
 public:
     ResEstate();
+    ~ResEstate();
 
     void displayBuildingInfo() override;
 

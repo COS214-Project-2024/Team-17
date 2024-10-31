@@ -6,6 +6,7 @@
 class ComMall : public Commercial {
 public:
     ComMall();
+	~ComMall();
 
     void displayBuildingInfo() override;
 
@@ -19,14 +20,7 @@ public:
 	
 	string getBuildingType();
 
-	// virtual bool checkBuildRequirements() = 0;
-	// virtual int increasePopulation() = 0;
-	// virtual void affectEmotionalState() = 0;
-	// virtual bool checkBuildRequirements() = 0;
-	// virtual void increaseJobs() = 0;
-	// virtual void affectEmotionalState() = 0;
-
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:
@@ -34,13 +28,13 @@ private:
 
 	//Resources
 
-	int cost = 5000;
+	int cost = BuildingRequirements::mallBuildCost;
 
     int jobCapacity = 100;
 	
-	int woodCost = 20;
-	int concreteCost = 25;
-	int steelCost = 25;
+	int woodCost = BuildingRequirements::mallWoodCost;
+	int concreteCost = BuildingRequirements::mallConcreteCost;
+	int steelCost = BuildingRequirements::mallSteelCost;
 
 	int electricityUsage = 20;
 	int waterUsage = 20;

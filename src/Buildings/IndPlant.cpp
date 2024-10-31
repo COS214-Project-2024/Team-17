@@ -12,6 +12,19 @@ IndPlant::IndPlant() {
     Resources::addWoodPerTick(steelProduction);
 }
 
+IndPlant::~IndPlant() {
+    cout << BLACK << "\t-->Plant destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeWoodPerTick(steelProduction);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void IndPlant::displayBuildingInfo() {
     cout << "Plant with production capacity of " << this->steelProduction << " units\n";
 }
@@ -45,12 +58,15 @@ std::string IndPlant::getBuildingType(){
     return type;
 }
 
-void IndPlant::addEmployee(Citizen* employee) {
+bool IndPlant::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void IndPlant::removeEmployee(Citizen* employee) {

@@ -12,6 +12,20 @@ ServEntertainment::ServEntertainment() {
     Resources::addIncome(cityIncome);
 }
 
+ServEntertainment::~ServEntertainment() {
+    cout << BLACK << "\t-->Entertainment service destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happinessIncrease);
+    Resources::removeIncome(cityIncome);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void ServEntertainment::displayBuildingInfo() {
     cout << "Entertainment service with " << this->visitors << " visitors\n";
 }
@@ -45,12 +59,15 @@ string ServEntertainment::getBuildingType(){
     return type;
 }
 
-void ServEntertainment::addEmployee(Citizen* employee) {
+bool ServEntertainment::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void ServEntertainment::removeEmployee(Citizen* employee) {

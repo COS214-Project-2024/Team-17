@@ -12,6 +12,19 @@ LandMonument::LandMonument() {
     Resources::addHappiness(happiness);
 }
 
+LandMonument::~LandMonument() {
+    cout << BLACK << "\t-->Monument destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happiness);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void LandMonument::displayBuildingInfo() {
     cout << "Monument with " << this->visitors << " visitors\n";
 }
@@ -45,12 +58,15 @@ string LandMonument::getBuildingType(){
     return type;
 }
 
-void LandMonument::addEmployee(Citizen* employee) {
+bool LandMonument::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void LandMonument::removeEmployee(Citizen* employee) {
@@ -60,4 +76,4 @@ void LandMonument::removeEmployee(Citizen* employee) {
             break;
         }
     }
-} 
+}

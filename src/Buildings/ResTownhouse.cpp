@@ -8,7 +8,14 @@ ResTownhouse::ResTownhouse() {
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addPopulation(popIncrease);
+    Resources::addToMaxPopulation(popIncrease);
+}
+
+ResTownhouse::~ResTownhouse() {
+    cout << BLACK << "\t-->Townhouse destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeFromMaxPopulation(popIncrease);
 }
 
 void ResTownhouse::displayBuildingInfo() {
