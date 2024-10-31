@@ -17,20 +17,18 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
 	std::string getBuildingType();
 
-    // virtual bool checkBuildRequirements() override;
-	// virtual int increasePopulation() override;
-	// virtual void affectEmotionalState() override;
+    bool moveIn(Citizen* resident);
+    void moveOut(Citizen* resident);
 
 private:
     int capacity;
     string type = "Residential Estate";
     bool operational;//CS State
 
+
+    vector<Citizen*> residents;
     // Resources
     int cost = 4000;
 
