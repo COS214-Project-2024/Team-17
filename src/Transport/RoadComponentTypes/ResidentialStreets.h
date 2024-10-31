@@ -7,7 +7,7 @@ class ResidentialStreets : public RoadComponent
 {
 
 public:
-	ResidentialStreets();
+	ResidentialStreets(int sX, int sY, int eX, int eY);
 
 	void displayInfo();
 

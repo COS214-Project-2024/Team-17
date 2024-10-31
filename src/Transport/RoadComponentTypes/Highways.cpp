@@ -1,9 +1,12 @@
 #include "Highways.h"
 #include <iostream>
+#include <cmath>
 #include "../RoadStates/RoadStatesIncludes.h"
 
-Highways::Highways() : RoadComponent()
+Highways::Highways(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX, eY)
 {
+	float totalDistance = sqrt(pow(eX - sX, 2) + pow(eY - sY, 2));
+	distance = totalDistance;
 }
 
 void Highways::displayInfo()

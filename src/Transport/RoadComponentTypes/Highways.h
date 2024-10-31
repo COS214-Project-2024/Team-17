@@ -7,7 +7,7 @@ class Highways : public RoadComponent
 {
 
 public:
-	Highways();
+	Highways(int sX, int sY, int eX, int eY);
 
 	void displayInfo();
 

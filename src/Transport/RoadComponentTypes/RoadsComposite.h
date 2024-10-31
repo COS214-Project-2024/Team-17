@@ -10,7 +10,7 @@ private:
 	std::vector<RoadComponent *> components;
 
 public:
-	RoadsComposite();
+	RoadsComposite(int sX, int sY, int eX, int eY, std::string type);
 
 	void displayInfo();
 
@@ -23,6 +23,8 @@ public:
 	float getDistance();
 
 	void notifyChange(std::string message);
+
+	void addConnection(RoadComponent *connection, float distance);
 
 	~RoadsComposite() {}
 };

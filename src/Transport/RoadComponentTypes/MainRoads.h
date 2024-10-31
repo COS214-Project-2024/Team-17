@@ -7,7 +7,7 @@ class MainRoads : public RoadComponent
 {
 
 public:
-	MainRoads();
+	MainRoads(int sX, int sY, int eX, int eY);
 
 	void displayInfo();
 

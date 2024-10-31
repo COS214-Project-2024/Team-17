@@ -25,11 +25,13 @@ void RoadComponent::handleTraffic()
 	throw "Not yet implemented";
 }
 
-RoadComponent::RoadComponent() : CityBlock()
+RoadComponent::RoadComponent(int sX, int sY, int eX, int eY) : CityBlock()
 {
+	this->startX = sX;
+	this->startY = sY;
+	this->endX = eX;
+	this->endY = eY;
 	mediator = CityCentralMediator::getInstance();
-	// TODO - implement RoadComponent::RoadComponent
-	// throw "Not yet implemented";
 }
 
 // void RoadComponent::updateTraffic(TrafficStatus newStatus)
