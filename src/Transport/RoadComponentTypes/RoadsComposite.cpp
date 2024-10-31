@@ -28,7 +28,7 @@ RoadsComposite::RoadsComposite(int sX, int sY, int eX, int eY, std::string type)
 		{
 			add(new MainRoads(ssX, ssY, eeX, eeY));
 		}
-		else if (type == "alley")
+		else if (type == "residential")
 		{
 			add(new ResidentialStreets(ssX, ssY, eeX, eeY));
 		}
