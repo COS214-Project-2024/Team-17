@@ -19,6 +19,8 @@ public:
 
 	void addConnection(RoadComponent *connection, float distance);
 
+	float calculateDistance(int x, int y);
+
 	~ResidentialStreets() {}
 };
 

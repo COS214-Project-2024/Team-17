@@ -9,11 +9,18 @@
 class Building;
 class UtilityManager;
 class RoadState;
+class RoadComponent;
+class RoadIterator;
 
 class CityCentralMediator : public CityMediator
 {
 
 private:
+	/*
+	@brief Stores the array of roads in the city.
+	*/
+	std::vector<RoadComponent *> roads;
+
 	/*
 	@brief Stores the array of buildings in the city.
 	*/
@@ -29,6 +36,8 @@ private:
 	*/
 	std::vector<Citizen *> citizens;
 	RoadState *roadState;
+
+	RoadComponent *getClosestRoad(int x, int y);
 
 public:
 	static CityCentralMediator *getInstance();
@@ -49,6 +58,12 @@ public:
 	@param citizen The citizen to register.
 	*/
 	void registerCitizen(Citizen *citizen);
+
+	/*
+	@brief Registers a road with the mediator.
+	@param road The road to register.
+	*/
+	void registerRoad(RoadComponent *road);
 
 	/*
 	@brief Notifies all citizens of a building change.
@@ -77,6 +92,8 @@ public:
 	@param param Used to show that the constructor is private.
 	*/
 	CityCentralMediator(std::string param = "error");
+
+	void calculateRoute(int startX, int startY, int endX, int endY);
 
 	~CityCentralMediator();
 

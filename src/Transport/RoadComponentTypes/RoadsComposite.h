@@ -39,6 +39,8 @@ public:
 		return components;
 	}
 
+	float calculateDistance(int x, int y);
+
 	~RoadsComposite() {}
 };
 

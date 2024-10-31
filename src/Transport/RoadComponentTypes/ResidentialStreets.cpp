@@ -29,6 +29,17 @@ void ResidentialStreets::addConnection(RoadComponent *connection, float distance
 	connections.push_back(connection);
 }
 
+float ResidentialStreets::calculateDistance(int x, int y)
+{
+	int yDiff = endY - startY;
+	int xDiff = endX - startX;
+	int x1y2 = startX * endY;
+	int x2y1 = endX * startY;
+	float dist = abs(yDiff * x - xDiff * y + x2y1 - x1y2) / sqrt(pow(yDiff, 2) + pow(xDiff, 2));
+
+	return dist;
+}
+
 void ResidentialStreets::notifyChange(std::string message)
 {
 	std::cout << "Residential Street received message: " << message << std::endl;

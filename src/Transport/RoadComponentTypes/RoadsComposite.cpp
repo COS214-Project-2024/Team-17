@@ -94,3 +94,20 @@ void RoadsComposite::addConnection(RoadComponent *connection, float distance)
 
 	components[idx]->addConnection(connection, distance);
 }
+
+float RoadsComposite::calculateDistance(int x, int y)
+{
+	// Calculate the shortest distance from the point to the road
+
+	float shortest = INT32_MAX;
+	for (auto component : components)
+	{
+		float dist = component->calculateDistance(x, y);
+		if (dist < shortest)
+		{
+			shortest = dist;
+		}
+	}
+
+	return shortest;
+}

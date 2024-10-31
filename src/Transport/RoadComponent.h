@@ -41,6 +41,8 @@ public:
 	virtual ~RoadComponent();
 
 	virtual void addConnection(RoadComponent *connection, float distance) = 0;
+
+	virtual float calculateDistance(int x, int y) = 0;
 };
 
 #endif
