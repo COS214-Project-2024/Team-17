@@ -72,6 +72,7 @@ void ComShop::removeEmployee(Citizen* employee) {
     for (int i = 0; i < employees.size(); i++) {
         if (employees[i] == employee) {
             employees.erase(employees.begin() + i);
+            employee->fired();
             break;
         }
     }

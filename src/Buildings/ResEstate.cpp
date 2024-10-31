@@ -58,6 +58,7 @@ std::string ResEstate::getBuildingType(){
 bool ResEstate::moveIn(Citizen* resident) {
     if (residents.size() < capacity) {
         residents.push_back(resident);
+        resident->setHome(this);
         return true;
     }
     return false;
@@ -67,6 +68,7 @@ void ResEstate::moveOut(Citizen* resident) {
     for (int i = 0; i < residents.size(); i++) {
         if (residents[i] == resident) {
             residents.erase(residents.begin() + i);
+            resident->evicted();
         }
     }
 }

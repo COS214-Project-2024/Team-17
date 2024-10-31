@@ -51,6 +51,8 @@ void test7(); // Utilities [ALL]
 
 void test8(); // Citizens [ALL]
 
+void test9(); // Jobs [ALL]
+
 int main()
 {
 
@@ -75,6 +77,8 @@ int main()
     test7();
     cout << YELLOW << "==============================" << RESET << endl;
     test8();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test9();
     cout << YELLOW << "==============================" << RESET << endl;
 
     return 0;
@@ -606,4 +610,28 @@ void test8()
 
     delete citizen;
     delete mediator;
+}
+
+void test9()
+{
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Jobs" << std::endl;
+    std::cout << "############################################" << std::endl;
+    Citizen *citizen = new Citizen();
+    
+    ComMall *mall = new ComMall();
+    mall->addEmployee(citizen);
+    std::cout << " - Testing Jobs" << std::endl;
+    citizen->getWorkplace()->displayBuildingInfo();
+    mall->removeEmployee(citizen);
+    if(citizen->getWorkplace() == nullptr){
+        std::cout << " - Citizen is unemployed" << std::endl;
+    }
+    else{
+        std::cout << " - Citizen is employed" << std::endl;
+    }
+
+    std::cout << " - Testing Complete!" << std::endl;
+    delete mall;
+    delete citizen;
 }

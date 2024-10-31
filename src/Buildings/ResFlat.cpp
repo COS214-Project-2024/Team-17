@@ -59,6 +59,7 @@ string ResFlat::getBuildingType(){
 bool ResFlat::moveIn(Citizen* resident) {
     if (residents.size() < capacity) {
         residents.push_back(resident);
+        resident->setHome(this);
         return true;
     }
     return false;
@@ -68,6 +69,7 @@ void ResFlat::moveOut(Citizen* resident) {
     for (int i = 0; i < residents.size(); i++) {
         if (residents[i] == resident) {
             residents.erase(residents.begin() + i);
+            resident->evicted();
         }
     }
 }
