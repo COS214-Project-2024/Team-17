@@ -5,7 +5,7 @@
 #include "../RoadStates/RoadStatesIncludes.h"
 #include "RoadComponentTypesIncludes.h"
 
-static const int MAX_SECTION_DISTANCE = 50;
+static const int MAX_SECTION_DISTANCE = 100;
 
 RoadsComposite::RoadsComposite(int sX, int sY, int eX, int eY, std::string type)
 	: RoadComponent(sX, sY, eX, eY)
