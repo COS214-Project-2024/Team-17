@@ -4,6 +4,8 @@
 class CityMediator;
 // #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
+#include <vector>
+#include <cstdint>
 class RoadState;
 class RoadIterator;
 
@@ -15,6 +17,8 @@ private:
 
 protected:
 	float distance;
+	int startX, startY, endX, endY;
+	std::vector<RoadComponent *> connections;
 
 public:
 	virtual void displayInfo() = 0;
@@ -29,13 +33,21 @@ public:
 
 	void handleTraffic();
 
-	RoadComponent();
+	RoadComponent(int startX, int startY, int endX, int endY);
 
 	virtual void notifyChange();
 
 	virtual void accept(TaxAndBudgetVisitor *visitor);
 
 	virtual ~RoadComponent();
+
+	virtual void addConnection(RoadComponent *connection, float distance) = 0;
+
+	virtual std::vector<RoadComponent *> getConnections();
+
+	// virtual void removeConnection(RoadComponent *connection) = 0;
+
+	virtual float calculateDistance(int x, int y) = 0;
 };
 
 #endif

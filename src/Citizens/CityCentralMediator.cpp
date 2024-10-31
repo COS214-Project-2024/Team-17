@@ -1,14 +1,36 @@
 #include "CityCentralMediator.h"
 #include "../../colours.h"
 #include <iostream>
+#include "../Transport/TransportInclude.h"
 
 static CityCentralMediator *instance = nullptr;
+
+RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
+{
+	RoadIterator *seq = new RoadIteratorCon(&roads);
+	seq->first();
+	RoadComponent *closest = seq->currentRoad();
+	float distance = INT32_MAX;
+
+	while (!seq->isDone())
+	{
+		float dist = seq->currentRoad()->calculateDistance(x, y);
+		if (dist < distance)
+		{
+			distance = dist;
+			closest = seq->currentRoad();
+		}
+		seq->next();
+	}
+
+	return closest;
+}
 
 CityCentralMediator *CityCentralMediator::getInstance()
 {
 	if (instance == nullptr)
 	{
-		instance = new CityCentralMediator();
+		instance = new CityCentralMediator("all good!");
 	}
 	return instance;
 }
@@ -59,6 +81,10 @@ CityCentralMediator::CityCentralMediator(std::string param)
 	{
 		std::cout << RED << "Error: CityCentralMediator is a singleton. Use CityCentralMediator::getInstance() instead." << RESET << std::endl;
 	}
+}
+
+void CityCentralMediator::calculateRoute(int startX, int startY, int endX, int endY)
+{
 }
 
 CityCentralMediator::~CityCentralMediator()

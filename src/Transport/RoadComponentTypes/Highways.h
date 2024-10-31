@@ -7,7 +7,7 @@ class Highways : public RoadComponent
 {
 
 public:
-	Highways();
+	Highways(int sX, int sY, int eX, int eY);
 
 	void displayInfo();
 
@@ -16,6 +16,12 @@ public:
 	float getDistance();
 
 	void notifyChange(std::string message);
+
+	void addConnection(RoadComponent *connection, float distance);
+
+	float calculateDistance(int x, int y);
+
+	
 
 	~Highways() {}
 };
