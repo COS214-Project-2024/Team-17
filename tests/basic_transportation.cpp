@@ -2,6 +2,7 @@
 #include "../src/Citizens/CitizensIncludes.h"
 #include "../colours.h"
 #include <gtest/gtest.h>
+#include <cmath>
 
 TEST(TestConnections, TestCompositeConnections)
 {
