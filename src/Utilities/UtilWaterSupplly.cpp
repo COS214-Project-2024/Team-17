@@ -5,6 +5,10 @@ UtilWaterSupply::UtilWaterSupply() {
     std::cout << "Water Supply Being Built!" << std::endl;
     type = "Water Supply";
     operational = false; // constructing
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
 }
 
 

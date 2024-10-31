@@ -16,6 +16,7 @@ struct BuildingRequirements{
         static bool checkIndustrialRequirements(string type);
         static bool checkLandmarkRequirements(string type);
         static bool checkServiceRequirements(string type);
+        static bool checkUtilityRequirements(string type);
         
         
         //residential
@@ -112,6 +113,32 @@ struct BuildingRequirements{
         static const int entertainmentWoodCost = 10;
         static const int entertainmentConcreteCost = 15;
         static const int entertainmentSteelCost = 10;
+
+        //Utility
+        //Power Plant
+        static const int powerPlantBuildCost = 2000;
+        static const int powerPlantWoodCost = 5;
+        static const int powerPlantConcreteCost = 20;
+        static const int powerPlantSteelCost = 20;
+
+        //Water Supply
+        static const int waterSupplyBuildCost = 2000;
+        static const int waterSupplyWoodCost = 5;
+        static const int waterSupplyConcreteCost = 20;
+        static const int waterSupplySteelCost = 20;
+
+        //Waste Management
+        static const int wasteManagementBuildCost = 3000;
+        static const int wasteManagementWoodCost = 5;
+        static const int wasteManagementConcreteCost = 30;
+        static const int wasteManagementSteelCost = 10;
+
+        //Sewage System
+        static const int sewageSystemBuildCost = 3000;
+        static const int sewageSystemWoodCost = 5;
+        static const int sewageSystemConcreteCost = 20;
+        static const int sewageSystemSteelCost = 30;
+
 };
 
 #endif

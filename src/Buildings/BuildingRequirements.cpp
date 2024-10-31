@@ -104,3 +104,27 @@ bool BuildingRequirements::checkServiceRequirements(string type){
     }
     return false;
 }
+
+bool BuildingRequirements::checkUtilityRequirements(string type){
+    if(type == "PowerPlant"){
+        if(Resources::getMoney() >= powerPlantBuildCost && Resources::getWood() >= powerPlantWoodCost && Resources::getConcrete() >= powerPlantConcreteCost && Resources::getSteel() >= powerPlantSteelCost){
+            return true;
+        }
+    }
+    else if(type == "WaterSupply"){
+        if(Resources::getMoney() >= waterSupplyBuildCost && Resources::getWood() >= waterSupplyWoodCost && Resources::getConcrete() >= waterSupplyConcreteCost && Resources::getSteel() >= waterSupplySteelCost){
+            return true;
+        }
+    }
+    else if(type == "WasteManagement"){
+        if(Resources::getMoney() >= wasteManagementBuildCost && Resources::getWood() >= wasteManagementWoodCost && Resources::getConcrete() >= wasteManagementConcreteCost && Resources::getSteel() >= wasteManagementSteelCost){
+            return true;
+        }
+    }
+    else if(type == "SewageSystem"){
+        if(Resources::getMoney() >= sewageSystemBuildCost && Resources::getWood() >= sewageSystemWoodCost && Resources::getConcrete() >= sewageSystemConcreteCost && Resources::getSteel() >= sewageSystemSteelCost){
+            return true;
+        }
+    }
+    return false;
+}
