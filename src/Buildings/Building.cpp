@@ -28,6 +28,26 @@ void Building::accept(TaxAndBudgetVisitor *visitor)
     // no clue  what this is
 }
 
+int Building::getXCoordinate()
+{
+    return xCoordinate;
+}
+
+int Building::getYCoordinate()
+{
+    return yCoordinate;
+}
+
+void Building::setXCoordinate(int x)
+{
+    xCoordinate = x;
+}
+
+void Building::setYCoordinate(int y)
+{
+    yCoordinate = y;
+}
+
 // // void Building::receiveElectricity() {
 // // 	// TODO - implement Building::receiveElectricity
 // // 	throw "Not yet implemented";
