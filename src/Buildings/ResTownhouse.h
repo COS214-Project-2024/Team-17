@@ -25,6 +25,7 @@ private:
     string type="Residential Townhouse";
     bool operational;//CS State
 
+    
     // Resources
     int cost = 1500;
 
