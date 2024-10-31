@@ -16,6 +16,11 @@ ResTownhouse::~ResTownhouse() {
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeFromMaxPopulation(popIncrease);
+
+    for (int i = 0; i < residents.size(); i++) {
+        residents[i]->evicted();
+    }
+    residents.clear();
 }
 
 void ResTownhouse::displayBuildingInfo() {
@@ -49,4 +54,20 @@ void ResTownhouse::setState(bool state){
 
 std::string ResTownhouse::getBuildingType(){
     return type;
+}
+
+bool ResTownhouse::moveIn(Citizen* resident) {
+    if (residents.size() < capacity) {
+        residents.push_back(resident);
+        return true;
+    }
+    return false;
+}
+
+void ResTownhouse::moveOut(Citizen* resident) {
+    for (int i = 0; i < residents.size(); i++) {
+        if (residents[i] == resident) {
+            residents.erase(residents.begin() + i);
+        }
+    }
 }
