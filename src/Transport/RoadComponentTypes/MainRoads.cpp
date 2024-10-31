@@ -2,7 +2,7 @@
 #include <iostream>
 #include "../RoadStates/RoadStatesIncludes.h"
 
-MainRoads::MainRoads(CityMediator *mediator) : RoadComponent(mediator)
+MainRoads::MainRoads() : RoadComponent()
 {
 }
 

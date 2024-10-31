@@ -1,14 +1,18 @@
 #include "Citizen.h"
 #include "CitizenNameGen.h"
+#include "CityCentralMediator.h"
+#include "../resources.h"
 #include <iostream>
 
-Citizen::Citizen(CityMediator *mediator) : CityBlock(mediator)
+Citizen::Citizen() : CityBlock()
 {
-	this->mediator = mediator;
+	name = "John Doe";
+	this->mediator = CityCentralMediator::getInstance();
 	mediator->registerCitizen(this);
+	state = nullptr;
 	setState(new Indifferent());
 	// name = CitizenNameGen::generateName();
-	name = "John Doe";
+	Resources::addPopulation(1);
 }
 
 void Citizen::setState(CitizenState *newState)
@@ -46,10 +50,39 @@ std::string Citizen::getName()
 	return name;
 }
 
+void Citizen::setWorkplace(Building *workplace)
+{
+	this->workplace = workplace;
+}
+
+Building *Citizen::getWorkplace()
+{
+	return workplace;
+}
+
+void Citizen::fired()
+{
+	workplace = nullptr;
+	std::cout << "Citizen " << name << " was fired" << std::endl;
+}
+
+void Citizen::setHome(Building *home)
+{
+	this->home = home;
+}
+
+Building *Citizen::getHome()
+{
+	return home;
+}
+
+void Citizen::evicted()
+{
+	home = nullptr;
+	std::cout << "Citizen " << name << " was evicted" << std::endl;
+}
+
 Citizen::~Citizen()
 {
-	if (state != nullptr)
-	{
-		delete state;
-	}
+	std::cout << "Citizen " << name << " deleted" << std::endl;
 }

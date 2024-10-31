@@ -10,7 +10,7 @@ private:
 	std::vector<RoadComponent *> components;
 
 public:
-	RoadsComposite(CityMediator *mediator);
+	RoadsComposite();
 
 	void displayInfo();
 

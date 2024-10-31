@@ -6,6 +6,7 @@
 class ServEntertainment : public Services {
 public:
 	ServEntertainment();
+	~ServEntertainment();
 
 	void displayBuildingInfo() override;	
 
@@ -16,17 +17,11 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	string getBuildingType();
 
-	// void Movie();
-	// void Arcade();
-	// void Gym();
-
 	// Resources
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:

@@ -12,6 +12,19 @@ IndWarehouse::IndWarehouse() {
     Resources::addWoodPerTick(concreteProduction);
 }
 
+IndWarehouse::~IndWarehouse() {
+    cout << BLACK << "\t-->Warehouse destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeWoodPerTick(concreteProduction);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void IndWarehouse::displayBuildingInfo() {
     cout << "Warehouse with production capacity of " << this->concreteProduction << " units\n";
 }
@@ -45,18 +58,22 @@ std::string IndWarehouse::getBuildingType(){
     return type;
 }
 
-void IndWarehouse::addEmployee(Citizen* employee) {
+bool IndWarehouse::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void IndWarehouse::removeEmployee(Citizen* employee) {
     for (int i = 0; i < employees.size(); i++) {
         if (employees[i] == employee) {
             employees.erase(employees.begin() + i);
+            employee->fired();
             break;
         }
     }

@@ -6,6 +6,7 @@
 class ServEducation : public Services {
 public:
 	ServEducation();
+	~ServEducation();
 
 	void displayBuildingInfo() override;	
 
@@ -16,17 +17,11 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	string getBuildingType();
 
-	// void Primary();
-	// void Secondary();
-	// void Tertiary();
-
 	// Resources
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:

@@ -1,4 +1,17 @@
 #include "CityCentralMediator.h"
+#include "../../colours.h"
+#include <iostream>
+
+static CityCentralMediator *instance = nullptr;
+
+CityCentralMediator *CityCentralMediator::getInstance()
+{
+	if (instance == nullptr)
+	{
+		instance = new CityCentralMediator();
+	}
+	return instance;
+}
 
 void CityCentralMediator::registerBuilding(Building *building)
 {
@@ -13,6 +26,7 @@ void CityCentralMediator::registerUtility(UtilityManager *util)
 void CityCentralMediator::registerCitizen(Citizen *citizen)
 {
 	citizens.push_back(citizen);
+	std::cout << "Citizen " << citizen->getName() << " registered" << std::endl;
 }
 
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
@@ -39,8 +53,17 @@ void CityCentralMediator::notifyRoadChange(RoadState *status, std::string messag
 	}
 }
 
-CityCentralMediator::CityCentralMediator()
+CityCentralMediator::CityCentralMediator(std::string param)
 {
+	if (param == "error")
+	{
+		std::cout << RED << "Error: CityCentralMediator is a singleton. Use CityCentralMediator::getInstance() instead." << RESET << std::endl;
+	}
+}
+
+CityCentralMediator::~CityCentralMediator()
+{
+	instance = nullptr;
 }
 
 void CityCentralMediator::handlePopulationGrowth()

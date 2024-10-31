@@ -31,6 +31,7 @@ private:
 	RoadState *roadState;
 
 public:
+	static CityCentralMediator *getInstance();
 	/*
 	@brief Registers a building with the mediator.
 	@param building The building to register.
@@ -71,9 +72,13 @@ public:
 	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
-	CityCentralMediator();
+	/*
+	@brief Constructor for the CityCentralMediator. You should not be calling this. Use getInstance() instead.
+	@param param Used to show that the constructor is private.
+	*/
+	CityCentralMediator(std::string param = "error");
 
-	~CityCentralMediator() {}
+	~CityCentralMediator();
 
 private:
 	void handlePopulationGrowth();

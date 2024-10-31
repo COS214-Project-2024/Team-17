@@ -51,6 +51,8 @@ void test7(); // Utilities [ALL]
 
 void test8(); // Citizens [ALL]
 
+void test9(); // Jobs [ALL]
+
 int main()
 {
 
@@ -60,21 +62,23 @@ int main()
          << "\t     ┛                 " << RESET << endl
          << endl;
 
-    // test1();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test2();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test3();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test4();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test5();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test6();
-    // cout << YELLOW << "==============================" << RESET << endl;
+    test1();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test2();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test3();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test4();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test5();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test6();
+    cout << YELLOW << "==============================" << RESET << endl;
     test7();
     cout << YELLOW << "==============================" << RESET << endl;
     test8();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test9();
     cout << YELLOW << "==============================" << RESET << endl;
 
     return 0;
@@ -570,15 +574,14 @@ void test7()
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
-
 void test8()
 {
 
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
-    Citizen *citizen = new Citizen(mediator);
+    CityMediator *mediator = CityCentralMediator::getInstance();
+    Citizen *citizen = new Citizen();
     std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
     std::cout << " - Testing Citizen State" << std::endl;
     citizen->setState(new Happy());
@@ -592,8 +595,43 @@ void test8()
     mediator->registerBuilding(building);
     mediator->registerUtility(powerPlant);
     mediator->notifyUtilityChange(powerPlant, false, "Test Message");
-    cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
+    
+    // cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
+    // cout << "wood" << Resources::getWood()<< endl;
+    // cout << "steel" << Resources::getSteel()<< endl;
+    // cout << "concrete" << Resources::getConcrete()<< endl;
+
+    // cout << "electricity" << Resources::getElectricityUsage()<< endl;
+    // cout << "water" << Resources::getWaterUsage()<< endl;
+
     std::cout << " - Testing Complete!" << std::endl;
+    
+
+
     delete citizen;
     delete mediator;
+}
+
+void test9()
+{
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Jobs" << std::endl;
+    std::cout << "############################################" << std::endl;
+    Citizen *citizen = new Citizen();
+    
+    ComMall *mall = new ComMall();
+    mall->addEmployee(citizen);
+    std::cout << " - Testing Jobs" << std::endl;
+    citizen->getWorkplace()->displayBuildingInfo();
+    mall->removeEmployee(citizen);
+    if(citizen->getWorkplace() == nullptr){
+        std::cout << " - Citizen is unemployed" << std::endl;
+    }
+    else{
+        std::cout << " - Citizen is employed" << std::endl;
+    }
+
+    std::cout << " - Testing Complete!" << std::endl;
+    delete mall;
+    delete citizen;
 }

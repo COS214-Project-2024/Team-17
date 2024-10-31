@@ -29,7 +29,7 @@ public:
 
 	void handleTraffic();
 
-	RoadComponent(CityMediator *mediator);
+	RoadComponent();
 
 	virtual void notifyChange();
 

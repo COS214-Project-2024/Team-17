@@ -14,9 +14,11 @@ private:
 	CityMediator *mediator;
 	CitizenState *state;
 	std::string name;
+	Building *workplace;
+	Building *home;
 
 public:
-	Citizen(CityMediator *mediator);
+	Citizen();
 
 	void setState(CitizenState *newState);
 
@@ -27,6 +29,18 @@ public:
 	void accept(TaxAndBudgetVisitor *visitor);
 
 	std::string getName();
+
+	void setWorkplace(Building *workplace);
+
+	Building *getWorkplace();
+
+	void fired();
+
+	void setHome(Building *home);
+
+	Building *getHome();
+
+	void evicted();
 
 	~Citizen();
 };

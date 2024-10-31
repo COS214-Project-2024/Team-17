@@ -6,7 +6,10 @@
 #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
 
+#include "../Citizens/Citizen.h"
+
 #include "../resources.h"
+#include "BuildingRequirements.h"
 
 class CityMediator;
 class UtilityManager;
@@ -14,8 +17,7 @@ class UtilityManager;
 class Building : public CityBlock
 {
 public:
-    Building();
-    Building(CityMediator* mediator, string type);
+    Building(string type = "");
 
     virtual void displayBuildingInfo() = 0;
     virtual ~Building() = default;
@@ -25,15 +27,14 @@ public:
 
     virtual bool checkBuildRequirements() = 0;
 
-
     void notifyChange(std::string message);
-	void accept(TaxAndBudgetVisitor *visitor);
+    void accept(TaxAndBudgetVisitor *visitor);
 
 private:
     vector<UtilityManager *> utilities;
     string name;
-	CityMediator* mediator;
-	bool operational; //state
+    CityMediator *mediator;
+    bool operational; // state
 };
 
 #endif // BUILDING_H
