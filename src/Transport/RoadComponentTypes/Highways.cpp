@@ -28,3 +28,8 @@ void Highways::notifyChange(std::string message)
 {
 	std::cout << "Highway received message: " << message << std::endl;
 }
+
+void Highways::addConnection(RoadComponent *connection, float distance)
+{
+	connections.push_back(connection);
+}

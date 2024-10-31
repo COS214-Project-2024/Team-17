@@ -17,6 +17,8 @@ public:
 
 	void notifyChange(std::string message);
 
+	void addConnection(RoadComponent *connection, float distance);
+
 	~MainRoads() {}
 };
 

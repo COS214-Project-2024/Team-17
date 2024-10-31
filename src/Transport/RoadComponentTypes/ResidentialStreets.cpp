@@ -24,6 +24,11 @@ float ResidentialStreets::getDistance()
 	return this->distance;
 }
 
+void ResidentialStreets::addConnection(RoadComponent *connection, float distance)
+{
+	connections.push_back(connection);
+}
+
 void ResidentialStreets::notifyChange(std::string message)
 {
 	std::cout << "Residential Street received message: " << message << std::endl;

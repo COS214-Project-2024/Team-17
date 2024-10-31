@@ -24,6 +24,11 @@ float MainRoads::getDistance()
 	return this->distance;
 }
 
+void MainRoads::addConnection(RoadComponent *connection, float distance)
+{
+	connections.push_back(connection);
+}
+
 void MainRoads::notifyChange(std::string message)
 {
 	std::cout << "Main Road received message: " << message << std::endl;
