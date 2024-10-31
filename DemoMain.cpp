@@ -620,6 +620,11 @@ void test9()
     Citizen *citizen = new Citizen();
     
     ComMall *mall = new ComMall();
+    mall->setXCoordinate(200);
+    mall->setYCoordinate(200);
+
+    std::cout << "Coordinate: " << mall->getXCoordinate() << ", " << mall->getYCoordinate() << std::endl;
+
     mall->addEmployee(citizen);
     std::cout << " - Testing Jobs" << std::endl;
     citizen->getWorkplace()->displayBuildingInfo();

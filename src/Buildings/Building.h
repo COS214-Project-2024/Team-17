@@ -30,11 +30,23 @@ public:
     void notifyChange(std::string message);
     void accept(TaxAndBudgetVisitor *visitor);
 
+    int getXCoordinate();
+    int getYCoordinate();
+
+    void setXCoordinate(int x);
+    void setYCoordinate(int y);
+
+
+
 private:
     vector<UtilityManager *> utilities;
     string name;
     CityMediator *mediator;
     bool operational; // state
+
+    //Coordinates:
+    int xCoordinate;
+    int yCoordinate;
 };
 
 #endif // BUILDING_H
