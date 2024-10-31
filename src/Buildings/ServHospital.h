@@ -5,6 +5,7 @@
 class ServHospital :public Services {
 public:
 	ServHospital();
+	~ServHospital();
 
 	void displayBuildingInfo() override;	
 
@@ -15,13 +16,11 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	std::string getBuildingType();
 
 	// Resources
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:

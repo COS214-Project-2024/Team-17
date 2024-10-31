@@ -12,6 +12,20 @@ ServSecurity::ServSecurity() {
     Resources::addIncome(cityIncome);
 }
 
+ServSecurity::~ServSecurity() {
+    cout << BLACK << "\t-->Security service destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happinessIncrease);
+    Resources::removeIncome(cityIncome);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void ServSecurity::displayBuildingInfo() {
     cout << "Security service with " << this->visitors << " visitors\n";
 }
@@ -45,18 +59,22 @@ std::string ServSecurity::getBuildingType(){
     return type;
 }
 
-void ServSecurity::addEmployee(Citizen* employee) {
+bool ServSecurity::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void ServSecurity::removeEmployee(Citizen* employee) {
     for (int i = 0; i < employees.size(); i++) {
         if (employees[i] == employee) {
             employees.erase(employees.begin() + i);
+            employee->fired();
             break;
         }
     }

@@ -11,6 +11,17 @@ ResFlat::ResFlat() {
     Resources::addToMaxPopulation(popIncrease);
 }
 
+ResFlat::~ResFlat() {
+    cout << BLACK << "\t-->Flat destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeFromMaxPopulation(popIncrease);
+    for (int i = 0; i < residents.size(); i++) {
+        residents[i]->evicted();
+    }
+    residents.clear();
+}
+
 void ResFlat::displayBuildingInfo() {
     cout << "Flat for " << this->capacity << " people\n";
 }
@@ -42,4 +53,23 @@ void ResFlat::setState(bool state){
 
 string ResFlat::getBuildingType(){
     return type;
+}
+
+
+bool ResFlat::moveIn(Citizen* resident) {
+    if (residents.size() < capacity) {
+        residents.push_back(resident);
+        resident->setHome(this);
+        return true;
+    }
+    return false;
+}
+
+void ResFlat::moveOut(Citizen* resident) {
+    for (int i = 0; i < residents.size(); i++) {
+        if (residents[i] == resident) {
+            residents.erase(residents.begin() + i);
+            resident->evicted();
+        }
+    }
 }

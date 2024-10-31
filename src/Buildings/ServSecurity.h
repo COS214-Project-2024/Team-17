@@ -6,6 +6,7 @@
 class ServSecurity : public Services {
 public:
 	ServSecurity();
+	~ServSecurity();
 
 	void displayBuildingInfo() override;	
 
@@ -16,16 +17,11 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	std::string getBuildingType();
 
-	// void Police();
-	// void Firestation();
-
 	// Resources
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:

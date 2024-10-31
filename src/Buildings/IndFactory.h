@@ -6,6 +6,7 @@
 class IndFactory : public Industrial {
 public:
     IndFactory();
+	~IndFactory();
 
     void displayBuildingInfo() override;
 
@@ -16,16 +17,10 @@ public:
 	void callUtilities();
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
-	string getBuildingType() override;
 
-	// virtual bool checkBuildRequirements() override;
-	// virtual void increaseJobs() override;
-	// virtual void affectEmotionalState() override;
+	string getBuildingType() override;
 	
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:

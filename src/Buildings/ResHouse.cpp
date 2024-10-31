@@ -17,6 +17,10 @@ ResHouse::~ResHouse() {
     Resources::removeWaterUsage(waterUsage);
     Resources::removeFromMaxPopulation(popIncrease);
 
+    for (int i = 0; i < residents.size(); i++) {
+        residents[i]->evicted();
+    }
+    residents.clear();
 }
 
 void ResHouse::displayBuildingInfo() {
@@ -50,4 +54,22 @@ void ResHouse::setState(bool state){
 
 string ResHouse::getBuildingType(){
     return type;
+}
+
+bool ResHouse::moveIn(Citizen* resident) {
+    if (residents.size() < capacity) {
+        residents.push_back(resident);
+        resident->setHome(this);
+        return true;
+    }
+    return false;
+}
+
+void ResHouse::moveOut(Citizen* resident) {
+    for (int i = 0; i < residents.size(); i++) {
+        if (residents[i] == resident) {
+            residents.erase(residents.begin() + i);
+            resident->evicted();
+        }
+    }
 }

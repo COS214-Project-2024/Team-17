@@ -12,6 +12,20 @@ ServEducation::ServEducation() {
     Resources::addIncome(cityIncome);
 }
 
+ServEducation::~ServEducation() {
+    cout << BLACK << "\t-->Education service destroyed" << RESET << endl;
+    Resources::removeElectricityUsage(electricityUsage);
+    Resources::removeWaterUsage(waterUsage);
+    Resources::removeHappiness(happinessIncrease);
+    Resources::removeIncome(cityIncome);
+
+    for (int i = 0; i < employees.size(); i++) {
+        employees[i]->fired();
+    }
+
+    employees.clear();
+}
+
 void ServEducation::displayBuildingInfo() {
     cout << "Education service with " << this->visitors << " visitors\n";
 }
@@ -45,18 +59,22 @@ string ServEducation::getBuildingType(){
     return type;
 }
 
-void ServEducation::addEmployee(Citizen* employee) {
+bool ServEducation::addEmployee(Citizen* employee) {
     if (employees.size() >= jobCapacity) {
         cout << "Job capacity reached" << endl;
-        return;
+        return false;
     }
+
     employees.push_back(employee);
+    employee->setWorkplace(this);
+    return true;
 }
 
 void ServEducation::removeEmployee(Citizen* employee) {
     for (int i = 0; i < employees.size(); i++) {
         if (employees[i] == employee) {
             employees.erase(employees.begin() + i);
+            employee->fired();
             break;
         }
     }

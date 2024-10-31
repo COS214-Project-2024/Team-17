@@ -6,6 +6,7 @@
 class LandMonument : public Landmark {
 public:
     LandMonument();
+	~LandMonument();
 
     void displayBuildingInfo() override;
 
@@ -16,16 +17,10 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	string getBuildingType();
 
-	// bool checkBuildRequirements() override;
-	// void createBuilding() override;
-	// void affectEmotionalState() override;
-
-	void addEmployee(Citizen* employee);
+	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
 
 private:
