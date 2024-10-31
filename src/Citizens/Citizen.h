@@ -15,6 +15,7 @@ private:
 	CitizenState *state;
 	std::string name;
 	Building *workplace;
+	Building *home;
 
 public:
 	Citizen();
@@ -34,6 +35,12 @@ public:
 	Building *getWorkplace();
 
 	void fired();
+
+	void setHome(Building *home);
+
+	Building *getHome();
+
+	void evicted();
 
 	~Citizen();
 };

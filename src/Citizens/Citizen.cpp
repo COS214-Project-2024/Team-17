@@ -63,6 +63,22 @@ void Citizen::fired()
 	std::cout << "Citizen " << name << " was fired" << std::endl;
 }
 
+void Citizen::setHome(Building *home)
+{
+	this->home = home;
+}
+
+Building *Citizen::getHome()
+{
+	return home;
+}
+
+void Citizen::evicted()
+{
+	home = nullptr;
+	std::cout << "Citizen " << name << " was evicted" << std::endl;
+}
+
 
 Citizen::~Citizen()
 {
