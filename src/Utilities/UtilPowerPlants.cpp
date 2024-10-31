@@ -1,5 +1,5 @@
 #include "UtilPowerPlants.h"
-#include "../Resources.h"
+#include "../resources.h"
 #include <iostream>
 UtilPowerPlants::UtilPowerPlants() {
     std::cout << "Power Plant Being Built!" << std::endl;

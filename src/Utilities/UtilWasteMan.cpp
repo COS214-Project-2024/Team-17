@@ -1,4 +1,5 @@
 #include "UtilWasteMan.h"
+#include "../resources.h"
 #include <iostream>
 UtilWasteMan::UtilWasteMan() {
     std::cout << "Waste Dump Being Built!" << std::endl;

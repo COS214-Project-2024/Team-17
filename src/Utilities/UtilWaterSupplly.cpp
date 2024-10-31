@@ -1,4 +1,5 @@
 #include "UtilWaterSupply.h"
+#include "../resources.h"
 #include <iostream>
 
 UtilWaterSupply::UtilWaterSupply() {
