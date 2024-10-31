@@ -6,11 +6,12 @@
 
 Citizen::Citizen() : CityBlock()
 {
+	name = "John Doe";
 	this->mediator = CityCentralMediator::getInstance();
 	mediator->registerCitizen(this);
+	state = nullptr;
 	setState(new Indifferent());
 	// name = CitizenNameGen::generateName();
-	name = "John Doe";
 	Resources::addPopulation(1);
 }
 
@@ -81,11 +82,7 @@ void Citizen::evicted()
 	std::cout << "Citizen " << name << " was evicted" << std::endl;
 }
 
-
 Citizen::~Citizen()
 {
-	// if (state != nullptr)
-	// {
-	// 	delete state;
-	// }
+	std::cout << "Citizen " << name << " deleted" << std::endl;
 }
