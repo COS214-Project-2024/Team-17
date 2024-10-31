@@ -43,6 +43,10 @@ public:
 
 	virtual void addConnection(RoadComponent *connection, float distance) = 0;
 
+	virtual std::vector<RoadComponent *> getConnections();
+
+	// virtual void removeConnection(RoadComponent *connection) = 0;
+
 	virtual float calculateDistance(int x, int y) = 0;
 };
 

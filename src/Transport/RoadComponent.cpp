@@ -59,3 +59,8 @@ RoadComponent::~RoadComponent()
 		delete state;
 	}
 }
+
+std::vector<RoadComponent *> RoadComponent::getConnections()
+{
+	return connections;
+}

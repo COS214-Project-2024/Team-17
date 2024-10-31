@@ -1,9 +1,11 @@
 #include "../src/Transport/TransportInclude.h"
 #include <gtest/gtest.h>
 
+
+
 TEST(PointDistance, CheckRoadPointDistance)
 {
-    RoadComponent *residentialStreet = new ResidentialStreets(0, 0, 10, 0);
+    RoadComponent *residentialStreet = new RoadsComposite(0, 0, 90, 0, "residential");
     int x = 5;
     int y = 5;
     float val = 5;

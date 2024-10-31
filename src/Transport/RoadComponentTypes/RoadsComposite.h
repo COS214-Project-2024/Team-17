@@ -34,6 +34,8 @@ public:
 
 	void addConnection(RoadComponent *connection, float distance);
 
+	void getConnections(std::vector<RoadComponent *> &connections);
+
 	const std::vector<RoadComponent *> &getComponents() const
 	{
 		return components;

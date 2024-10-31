@@ -21,6 +21,8 @@ public:
 
 	float calculateDistance(int x, int y);
 
+	
+
 	~Highways() {}
 };
 
