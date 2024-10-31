@@ -5,6 +5,7 @@ class CityMediator;
 // #include "../Citizens/CityMediator.h"
 #include "../Citizens/CityBlock.h"
 #include <vector>
+#include <cstdint>
 class RoadState;
 class RoadIterator;
 

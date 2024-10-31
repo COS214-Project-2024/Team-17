@@ -1,7 +1,7 @@
 #include "CityCentralMediator.h"
 #include "../../colours.h"
 #include <iostream>
-#include "../Transport/RoadIterators/RoadIteratorsIncludes.h"
+#include "../Transport/TransportInclude.h"
 
 static CityCentralMediator *instance = nullptr;
 
@@ -10,7 +10,20 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 	RoadIterator *seq = new RoadIteratorCon(&roads);
 	seq->first();
 	RoadComponent *closest = seq->currentRoad();
-	float distance = 
+	float distance = INT32_MAX;
+
+	while (!seq->isDone())
+	{
+		float dist = seq->currentRoad()->calculateDistance(x, y);
+		if (dist < distance)
+		{
+			distance = dist;
+			closest = seq->currentRoad();
+		}
+		seq->next();
+	}
+
+	return closest;
 }
 
 CityCentralMediator *CityCentralMediator::getInstance()
