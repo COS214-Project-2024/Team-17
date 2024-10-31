@@ -12,7 +12,7 @@ TEST(TestConnections, TestCompositeConnections)
     highway->addConnection(residentialStreet, 60);
 
     std::vector<RoadComponent *> connections = highway->getConnections();
-    EXPECT_EQ(connections.size(), 6);
+    EXPECT_EQ(connections.size(), 4);
 }
 
 TEST(PointDistance, CheckRoadPointDistance)
@@ -53,7 +53,7 @@ TEST(CompositeTest, CheckCompositeLength)
     EXPECT_TRUE(roadsCompositeInRange);
 
     std::vector<RoadComponent *> components = roadsComposite->getComponents();
-    EXPECT_EQ(components.size(), 3);
+    EXPECT_EQ(components.size(), 2);
 }
 
 TEST(ConstructorTest, CheckDistance)

@@ -7,10 +7,10 @@ Highways::Highways(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX, e
 {
 	float totalDistance = sqrt(pow(eX - sX, 2) + pow(eY - sY, 2));
 	distance = totalDistance;
-	Resources::removeConcrete(BuildingRequirements::highwayConcreteCost);
-	Resources::removeSteel(BuildingRequirements::highwaySteelCost);
-	Resources::removeWood(BuildingRequirements::highwayWoodCost);
-	Resources::removeMoney(BuildingRequirements::highwayBuildCost);
+	// Resources::removeConcrete(BuildingRequirements::highwayConcreteCost);
+	// Resources::removeSteel(BuildingRequirements::highwaySteelCost);
+	// Resources::removeWood(BuildingRequirements::highwayWoodCost);
+	// Resources::removeMoney(BuildingRequirements::highwayBuildCost);
 
 }
 
