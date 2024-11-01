@@ -218,26 +218,26 @@ void testRouteCalculationComplex()
     }
     std::cout << "End: 300, 300" << std::endl;
 
-    // Cleanup
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            delete horizontalRoads[i][j];
-        }
-        delete[] horizontalRoads[i];
-    }
-    delete[] horizontalRoads;
+    // // Cleanup
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     for (int j = 0; j < 3; j++)
+    //     {
+    //         delete horizontalRoads[i][j];
+    //     }
+    //     delete[] horizontalRoads[i];
+    // }
+    // delete[] horizontalRoads;
 
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            delete verticalRoads[i][j];
-        }
-        delete[] verticalRoads[i];
-    }
-    delete[] verticalRoads;
+    // for (int i = 0; i < 3; i++)
+    // {
+    //     for (int j = 0; j < 4; j++)
+    //     {
+    //         delete verticalRoads[i][j];
+    //     }
+    //     delete[] verticalRoads[i];
+    // }
+    // delete[] verticalRoads;
 }
 
 int main()

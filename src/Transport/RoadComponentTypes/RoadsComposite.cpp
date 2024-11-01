@@ -102,8 +102,6 @@ void RoadsComposite::addConnection(RoadComponent *connection, float distance)
 		idx++;
 	}
 
-	std::cout << "Adding connection to section " << idx << " with distance " << distance << std::endl;
-
 	RoadsComposite *conn = dynamic_cast<RoadsComposite *>(connection);
 	if (conn != nullptr)
 	{
@@ -163,7 +161,6 @@ RoadComponent *RoadsComposite::closestSection(int x, int y)
 	for (auto component : components)
 	{
 		float dist = component->calculateDistance(x, y);
-		std::cout << "Distance to section: " << dist << std::endl;
 		if (dist < distance)
 		{
 			distance = dist;
