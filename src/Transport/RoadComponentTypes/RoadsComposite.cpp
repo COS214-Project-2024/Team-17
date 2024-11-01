@@ -4,8 +4,7 @@
 #include "../../../colours.h"
 #include "../RoadStates/RoadStatesIncludes.h"
 #include "RoadComponentTypesIncludes.h"
-
-static const int MAX_SECTION_DISTANCE = 100;
+#include "../../Citizens/CityCentralMediator.h"
 
 RoadsComposite::RoadsComposite(int sX, int sY, int eX, int eY, std::string type)
 	: RoadComponent(sX, sY, eX, eY)
@@ -41,11 +40,13 @@ RoadsComposite::RoadsComposite(int sX, int sY, int eX, int eY, std::string type)
 		components[i]->addConnection(components[i + 1], MAX_SECTION_DISTANCE);
 		components[i + 1]->addConnection(components[i], 0);
 	}
+
+	CityCentralMediator::getInstance()->registerRoad(this);
 }
 
 void RoadsComposite::displayInfo()
 {
-	std::cout << "Composite Road of distance: " << getDistance() << std::endl;
+	std::cout << "Composite Road from (" << startX << ", " << startY << ") to (" << endX << ", " << endY << ")" << std::endl;
 }
 
 void RoadsComposite::calculateTraffic()
@@ -101,7 +102,27 @@ void RoadsComposite::addConnection(RoadComponent *connection, float distance)
 		idx++;
 	}
 
-	components[idx]->addConnection(connection, distance);
+	RoadsComposite *conn = dynamic_cast<RoadsComposite *>(connection);
+	if (conn != nullptr)
+	{
+		// Calculate x and y value of the distance of the entire roads composite
+		int x = startX + (endX - startX) * distance / td;
+		int y = startY + (endY - startY) * distance / td;
+
+		// Get the closest section to the x and y value
+		RoadComponent *closest = conn->closestSection(x, y);
+		if (closest == nullptr)
+		{
+			std::cout << RED << "Could not find closest section" << RESET << std::endl;
+			return;
+		}
+		closest->addConnection(components[idx], distance);
+		components[idx]->addConnection(closest, distance);
+	}
+	else
+	{
+		components[idx]->addConnection(connection, distance);
+	}
 }
 
 std::vector<RoadComponent *> RoadsComposite::getConnections()
@@ -130,4 +151,22 @@ float RoadsComposite::calculateDistance(int x, int y)
 	}
 
 	return shortest;
+}
+
+RoadComponent *RoadsComposite::closestSection(int x, int y)
+{
+	float distance = INT32_MAX;
+	RoadComponent *closest = nullptr;
+
+	for (auto component : components)
+	{
+		float dist = component->calculateDistance(x, y);
+		if (dist < distance)
+		{
+			distance = dist;
+			closest = component;
+		}
+	}
+
+	return closest;
 }

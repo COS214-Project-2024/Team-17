@@ -2,6 +2,7 @@
 #include "../../colours.h"
 #include <iostream>
 #include "../Transport/TransportInclude.h"
+#include <set>
 
 static CityCentralMediator *instance = nullptr;
 
@@ -21,6 +22,23 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 			closest = seq->currentRoad();
 		}
 		seq->next();
+	}
+
+	// Try cast to RoadsComposite
+	RoadsComposite *composite = dynamic_cast<RoadsComposite *>(closest);
+	if (composite != nullptr)
+	{
+		std::vector<RoadComponent *> components = composite->getComponents();
+		for (auto c : components)
+		{
+			c->displayInfo();
+			float dist = c->calculateDistance(x, y);
+			if (dist <= distance)
+			{
+				distance = dist;
+				closest = c;
+			}
+		}
 	}
 
 	return closest;
@@ -49,6 +67,11 @@ void CityCentralMediator::registerCitizen(Citizen *citizen)
 {
 	citizens.push_back(citizen);
 	std::cout << "Citizen " << citizen->getName() << " registered" << std::endl;
+}
+
+void CityCentralMediator::registerRoad(RoadComponent *road)
+{
+	roads.push_back(road);
 }
 
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
@@ -83,8 +106,44 @@ CityCentralMediator::CityCentralMediator(std::string param)
 	}
 }
 
-void CityCentralMediator::calculateRoute(int startX, int startY, int endX, int endY)
+std::vector<RoadComponent *> CityCentralMediator::calculateRoute(int startX, int startY, int endX, int endY)
 {
+	std::set<RoadComponent *> visited;
+	std::vector<RoadComponent *> path;
+	RoadComponent *current = getClosestRoad(startX, startY);
+	RoadComponent *end = getClosestRoad(endX, endY);
+
+	while (current != end)
+	{
+		path.push_back(current);
+		visited.insert(current);
+		std::vector<RoadComponent *> connections = current->getConnections();
+		float distance = 999999;
+		RoadComponent *next = nullptr;
+
+		for (auto c : connections)
+		{
+			if (visited.find(c) == visited.end())
+			{
+				float dist = c->calculateDistance(endX, endY);
+				if (dist < distance)
+				{
+					distance = dist;
+					next = c;
+				}
+			}
+		}
+
+		if (next == nullptr)
+		{
+			std::cout << RED << "Error: No path found." << RESET << std::endl;
+			return path;
+		}
+
+		current = next;
+	}
+	path.push_back(current);
+	return path;
 }
 
 CityCentralMediator::~CityCentralMediator()
