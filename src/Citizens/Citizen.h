@@ -23,12 +23,15 @@ protected:
 	CityMediator *mediator;
 	Bus *myBus;
 	bool ownsCar;
+	int waitTimer = 0;
 	enum Activity
 	{
 		Rest,
 		Work,
+		TryBusWork,
 		InTransitWork,
 		AwaitTransitWork,
+		TryBusHome,
 		InTransitHome,
 		AwaitTransitHome,
 		Nothing

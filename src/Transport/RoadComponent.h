@@ -57,6 +57,8 @@ public:
 
 	virtual bool removeUser(Citizen *user);
 
+	virtual std::vector<Citizen *> getUsers();
+
 	// virtual void removeConnection(RoadComponent *connection) = 0;
 
 	virtual float calculateDistance(int x, int y) = 0;

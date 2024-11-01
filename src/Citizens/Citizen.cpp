@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../../colours.h"
 #include "../Buildings/Building.h"
+#include "../Transport/RoadComponent.h"
 #include "Bus.h"
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
@@ -17,7 +18,7 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 	}
 	state = nullptr;
 	setState(new Indifferent());
-	// name = CitizenNameGen::generateName();
+	name = CitizenNameGen::generateName();
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
@@ -63,19 +64,8 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
-				currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-				if (currentRoad)
-				{
-					myBus = ccm->requestBus(nullptr, currentRoad);
-					if (myBus)
-					{
-						activity = Activity::AwaitTransitHome;
-					}
-				}
-				else
-				{
-					std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
-				}
+				waitTimer = 3;
+				activity = Activity::TryBusHome;
 			}
 		}
 	}
@@ -95,19 +85,8 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
-				currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-				if (currentRoad)
-				{
-					myBus = ccm->requestBus(nullptr, currentRoad);
-					if (myBus)
-					{
-						activity = Activity::AwaitTransitWork;
-					}
-				}
-				else
-				{
-					std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
-				}
+				waitTimer = 3;
+				activity = Activity::TryBusWork;
 			}
 		}
 	}
@@ -217,6 +196,102 @@ void Citizen::doSomething()
 		break;
 	case Activity::Nothing:
 		std::cout << "Citizen " << name << " is doing nothing" << std::endl;
+		break;
+	case Activity::TryBusWork:
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			for (auto c : currentRoad->getUsers())
+			{
+				Bus *bus = dynamic_cast<Bus *>(c);
+				if (bus)
+				{
+					if (!bus->isFull())
+					{
+						std::cout << "Found bus" << std::endl;
+						myBus = bus;
+						activity = Activity::InTransitWork;
+						currentLocation = nullptr;
+						myBus->addPassenger(this, ccm->getClosestRoad(workplace->getXCoordinate(), workplace->getYCoordinate()));
+						break;
+					}
+				}
+			}
+		}
+		if (waitTimer > 0)
+		{
+			std::cout << RED << "Waiting for bus" << RESET << std::endl;
+			waitTimer--;
+			break;
+		}
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			myBus = ccm->requestBus(nullptr, currentRoad);
+			if (myBus)
+			{
+				activity = Activity::AwaitTransitWork;
+			}
+			else
+			{
+				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
+				activity = Activity::TryBusWork;
+				waitTimer = 3;
+			}
+		}
+		else
+		{
+			std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+		}
+		break;
+	case Activity::TryBusHome:
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			for (Citizen *c : currentRoad->getUsers())
+			{
+				std::cout << c->getName() << std::endl;
+
+				Bus *bus = dynamic_cast<Bus *>(c);
+				if (bus)
+				{
+					if (!bus->isFull())
+					{
+						std::cout << "Found bus" << std::endl;
+						myBus = bus;
+						activity = Activity::InTransitHome;
+						currentLocation = nullptr;
+						myBus->addPassenger(this, ccm->getClosestRoad(home->getXCoordinate(), home->getYCoordinate()));
+						break;
+					}
+				}
+			}
+		}
+		if (waitTimer > 0)
+		{
+			std::cout << RED << "Waiting for bus" << RESET << std::endl;
+			waitTimer--;
+			break;
+		}
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			myBus = ccm->requestBus(nullptr, currentRoad);
+			if (myBus)
+			{
+				activity = Activity::AwaitTransitHome;
+			}
+			else
+			{
+				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
+				activity = Activity::TryBusWork;
+				waitTimer = 3;
+			}
+		}
+		else
+		{
+			std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+		}
 		break;
 	}
 }
