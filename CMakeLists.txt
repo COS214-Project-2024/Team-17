@@ -5,6 +5,9 @@ project(WorksOnMyMachineTeam)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Enable experimental modules support
+set(CMAKE_EXPERIMENTAL_CXX_MODULE_DYNDEP 1)
+
 # Define the source files, excluding the Tests/ folder and main.cpp files in subdirectories
 file(GLOB_RECURSE ALL_SOURCES "src/*.cpp")
 set(SOURCES "")
@@ -28,6 +31,12 @@ endif()
 
 # Define the header files
 file(GLOB_RECURSE HEADERS "src/*.h")
+
+# Use ccache if available
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+endif()
 
 # Add the executable
 add_executable(Main ${SOURCES})

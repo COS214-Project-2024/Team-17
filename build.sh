@@ -7,4 +7,4 @@ cd build;
 cmake ..;
 
 # Build the project
-make;
+cmake --build . -j$(nproc)
