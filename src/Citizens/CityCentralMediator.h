@@ -41,6 +41,8 @@ private:
 
 public:
 	static CityCentralMediator *getInstance();
+	static const int BUILDING_ROAD_DISTANCE = 30;
+
 	/*
 	@brief Registers a building with the mediator.
 	@param building The building to register.
@@ -94,6 +96,8 @@ public:
 	CityCentralMediator(std::string param = "error");
 
 	std::vector<RoadComponent *> calculateRoute(int startX, int startY, int endX, int endY);
+
+	bool isReachableByRoad(int x, int y);
 
 	~CityCentralMediator();
 

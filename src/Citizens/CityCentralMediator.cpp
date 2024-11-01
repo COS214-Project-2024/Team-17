@@ -108,6 +108,11 @@ CityCentralMediator::CityCentralMediator(std::string param)
 
 std::vector<RoadComponent *> CityCentralMediator::calculateRoute(int startX, int startY, int endX, int endY)
 {
+	if (!isReachableByRoad(startX, startY) || !isReachableByRoad(endX, endY))
+	{
+		std::cout << RED << "Error: Start or end point is not reachable by road." << RESET << std::endl;
+		return std::vector<RoadComponent *>();
+	}
 	std::set<RoadComponent *> visited;
 	std::vector<RoadComponent *> path;
 	RoadComponent *current = getClosestRoad(startX, startY);
@@ -144,6 +149,19 @@ std::vector<RoadComponent *> CityCentralMediator::calculateRoute(int startX, int
 	}
 	path.push_back(current);
 	return path;
+}
+
+bool CityCentralMediator::isReachableByRoad(int x, int y)
+{
+	RoadComponent *road = getClosestRoad(x, y);
+	std::cout << "Closest road to ()" << x << ", " << y << ") is ";
+	road->displayInfo();
+	if (road->calculateDistance(x, y) < BUILDING_ROAD_DISTANCE)
+	{
+		std::cout << "Distance: " << road->calculateDistance(x, y) << std::endl;
+		return true;
+	}
+	return false;
 }
 
 CityCentralMediator::~CityCentralMediator()
