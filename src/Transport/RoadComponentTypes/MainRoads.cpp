@@ -7,6 +7,7 @@ MainRoads::MainRoads(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX,
 {
 	float totalDistance = sqrt(pow(eX - sX, 2) + pow(eY - sY, 2));
 	distance = totalDistance;
+	capacity = 4;
 	// Resources::removeConcrete(BuildingRequirements::mainRoadConcreteCost);
 	// Resources::removeSteel(BuildingRequirements::mainRoadSteelCost);
 	// Resources::removeWood(BuildingRequirements::mainRoadWoodCost);

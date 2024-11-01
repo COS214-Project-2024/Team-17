@@ -139,7 +139,6 @@ std::vector<RoadComponent *> RoadsComposite::getConnections()
 float RoadsComposite::calculateDistance(int x, int y)
 {
 	// Calculate the shortest distance from the point to the road
-
 	float shortest = INT32_MAX;
 	for (auto component : components)
 	{
