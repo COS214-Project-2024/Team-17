@@ -10,7 +10,7 @@ TEST(Bus, TestRequestBus)
 
     RoadsComposite *road = new RoadsComposite(0, 0, 300, 0, "highway");
 
-    Bus *bus = new Bus(road->getComponents()[0], 10);
+    Bus *bus = new Bus(road, 10);
 
     Citizen *citizen = new Citizen();
 
