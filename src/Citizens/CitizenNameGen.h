@@ -2,10 +2,6 @@
 #define CITIZENNAMEGEN_H
 
 #include <string>
-#include <vector>
-
-#define FIRST_NAMES_FILE "first-names.txt"
-#define LAST_NAMES_FILE "last-names.txt"
 
 /**
  * @class CitizenNameGen
@@ -26,15 +22,6 @@ public:
      * @return A randomly generated full name.
      */
     static std::string generateName();
-
-private:
-    /**
-     * @brief Initializes the name lists by reading from files.
-     *
-     * This function reads first names and last names from predefined files and
-     * stores them in static vectors. It also seeds the random number generator.
-     */
-    static void initialize();
 };
 
 #endif // CITIZENNAMEGEN_H
