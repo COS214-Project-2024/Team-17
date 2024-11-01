@@ -20,6 +20,7 @@ public:
     ~HomePage();
     Ui::HomePage *ui;
     void CreateBuilding(QString buildingType);
+    void CreateRoad(QString roadType);
 
 private slots:
 
@@ -71,6 +72,24 @@ private slots:
     void on_btnServSecurity_clicked();
 
     void on_btnServEntertainment_clicked();
+
+    void on_btnUtilPower_clicked();
+
+    void on_btnUtilWater_clicked();
+
+    void on_btnUtilSewage_clicked();
+
+    void on_btnUtilWaste_clicked();
+
+    void on_btnUtilPower_2_clicked();
+
+    void on_btnBuildRoad_clicked();
+
+    void on_btnCancelRoad_clicked();
+
+    void on_cmbRoadOrientation_currentIndexChanged(int index);
+
+    void on_spnRoadEditLength_valueChanged(int arg1);
 
 private:
 

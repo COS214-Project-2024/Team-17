@@ -1,12 +1,15 @@
 #include "homepage.h"
 #include "./ui_homepage.h"
 #include "DraggableFrame.h"
+#include "DraggableRoad.h"
 #include <QWidget>
 #include <QVBoxLayout>
 
 QVector<DraggableFrame *> buildings;
+QVector<DraggableRoad *> roads;
 
 DraggableFrame* frame;
+DraggableRoad* road;
 QLabel* BuildingType;
 
 HomePage::HomePage(QWidget *parent)
@@ -15,6 +18,7 @@ HomePage::HomePage(QWidget *parent)
 {
     ui->setupUi(this);
     ui->frmEditBuildingPos->hide();
+    ui->frmEditRoadPos->hide();
     ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
 }
@@ -278,5 +282,93 @@ void HomePage::on_btnServEntertainment_clicked()
 {
     CreateBuilding("Entertainment");
     ui->tabBuildCity->setEnabled(0);
+}
+
+
+void HomePage::on_btnUtilPower_clicked()
+{
+    CreateBuilding("Power Station");
+    ui->tabBuildCity->setEnabled(0);
+}
+
+
+void HomePage::on_btnUtilWater_clicked()
+{
+    CreateBuilding("Water Supply");
+    ui->tabBuildCity->setEnabled(0);
+}
+
+
+void HomePage::on_btnUtilSewage_clicked()
+{
+    CreateBuilding("Sewage System");
+    ui->tabBuildCity->setEnabled(0);
+}
+
+
+void HomePage::on_btnUtilWaste_clicked()
+{
+    CreateBuilding("Waste Management");
+    ui->tabBuildCity->setEnabled(0);
+}
+
+void HomePage::CreateRoad(QString roadType){
+    road = new DraggableRoad(ui->scAreaMainMap, ui->spnRoadEditX, ui->spnRoadEditY, this, roads);
+    road->move(100, 50);
+    road->show();
+    roads.append(road);
+    ui->spnRoadEditX->setValue(road->x());
+    ui->spnRoadEditY->setValue(road->y());
+    ui->frmEditRoadPos->show();
+    ui->frmEditRoadPos->raise();
+}
+
+
+void HomePage::on_btnUtilPower_2_clicked()
+{
+    CreateRoad("");
+    ui->tabBuildCity->setEnabled(0);
+}
+
+
+void HomePage::on_btnBuildRoad_clicked()
+{
+    ui->frmEditRoadPos->hide();
+    road->editable=false;
+    ui->tabBuildCity->setEnabled(1);
+}
+
+
+void HomePage::on_btnCancelRoad_clicked()
+{
+    road->setVisible(false);
+    road->deleteLater();
+    roads.removeOne(road);
+    ui->frmEditRoadPos->hide();
+    ui->tabBuildCity->setEnabled(1);
+}
+
+
+void HomePage::on_cmbRoadOrientation_currentIndexChanged(int index)
+{
+    if(ui->cmbRoadOrientation->currentIndex() == 0){
+        road->setFixedWidth(ui->spnRoadEditLength->value());
+        road->setFixedHeight(10);
+    }
+    else{
+        road->setFixedHeight(ui->spnRoadEditLength->value());
+        road->setFixedWidth(10);
+    }
+}
+
+
+void HomePage::on_spnRoadEditLength_valueChanged(int arg1)
+{
+    if(ui->cmbRoadOrientation->currentIndex() == 1){
+        road->setFixedHeight(arg1);
+    }
+    else{
+        road->setFixedWidth(arg1);
+    }
 }
 
