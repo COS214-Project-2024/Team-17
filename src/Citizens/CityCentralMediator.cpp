@@ -83,6 +83,12 @@ void CityCentralMediator::registerRoad(RoadComponent *road)
 	roads.push_back(road);
 }
 
+void CityCentralMediator::registerTrainStation(Trainstation *trainStation)
+{
+	trainStations.push_back(trainStation);
+	std::cout << "Trainstation registered" << std::endl;
+}
+
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
 {
 	for (auto c : citizens)
@@ -268,6 +274,22 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 		return true;
 	}
 	return false;
+}
+
+Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
+{
+	Trainstation *closest = nullptr;
+
+	for (auto t : trainStations)
+	{
+		if (t->pointInRange(x, y))
+		{
+			closest = t;
+			break;
+		}
+	}
+
+	return closest;
 }
 
 void CityCentralMediator::updateBuses()

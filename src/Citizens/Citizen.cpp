@@ -53,18 +53,29 @@ void Citizen::notifyChange(std::string message)
 		if (!ownsCar)
 		{
 			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-			currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-			if (currentRoad)
+			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
+			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+			if (workStation && homeStation)
 			{
-				myBus = ccm->requestBus(nullptr, currentRoad);
-				if (myBus)
-				{
-					activity = Activity::AwaitTransitHome;
-				}
+				std::cout << "Citizen " << name << " took the train home" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = home;
 			}
 			else
 			{
-				std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+				if (currentRoad)
+				{
+					myBus = ccm->requestBus(nullptr, currentRoad);
+					if (myBus)
+					{
+						activity = Activity::AwaitTransitHome;
+					}
+				}
+				else
+				{
+					std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				}
 			}
 		}
 	}
@@ -74,18 +85,29 @@ void Citizen::notifyChange(std::string message)
 		if (!ownsCar)
 		{
 			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-			currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-			if (currentRoad)
+			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
+			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+			if (workStation && homeStation)
 			{
-				myBus = ccm->requestBus(nullptr, currentRoad);
-				if (myBus)
-				{
-					activity = Activity::AwaitTransitWork;
-				}
+				std::cout << "Citizen " << name << " took the train to work" << std::endl;
+				activity = Activity::Work;
+				currentLocation = workplace;
 			}
 			else
 			{
-				std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+				if (currentRoad)
+				{
+					myBus = ccm->requestBus(nullptr, currentRoad);
+					if (myBus)
+					{
+						activity = Activity::AwaitTransitWork;
+					}
+				}
+				else
+				{
+					std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				}
 			}
 		}
 	}
