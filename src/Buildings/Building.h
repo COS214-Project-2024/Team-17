@@ -36,6 +36,12 @@ public:
     void setXCoordinate(int x);
     void setYCoordinate(int y);
 
+    virtual bool addEmployee(Citizen* employee) = 0;
+	virtual void removeEmployee(Citizen* employee) = 0;
+
+    virtual bool moveIn(Citizen* resident) = 0;
+    virtual void moveOut(Citizen* resident) = 0;
+
 
 
 private:

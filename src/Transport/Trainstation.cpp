@@ -52,3 +52,22 @@ bool Trainstation::checkBuildRequirements()
 {
     return true;
 }
+
+bool Trainstation::addEmployee(Citizen *employee)
+{
+    return true;
+}
+
+void Trainstation::removeEmployee(Citizen *employee)
+{
+}
+
+bool Trainstation::moveIn(Citizen *resident)
+{
+    return true;
+}
+
+void Trainstation::moveOut(Citizen *resident)
+{
+}
+

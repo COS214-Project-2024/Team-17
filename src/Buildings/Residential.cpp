@@ -38,3 +38,10 @@ void Residential::notifyUtilities(){
         utility->update(this);
     }
 }
+
+bool Residential::addEmployee(Citizen* employee){
+    return true;
+}
+
+void Residential::removeEmployee(Citizen* employee){
+}
