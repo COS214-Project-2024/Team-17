@@ -5,7 +5,14 @@
 #include <iostream>
 #include "../../colours.h"
 #include "../Buildings/Building.h"
+#include "../Transport/RoadComponent.h"
 #include "Bus.h"
+
+void Citizen::changeHappiness(int change)
+{
+	CitizenState *newState = state->handleChange(change);
+	setState(newState);
+}
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
@@ -17,7 +24,7 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 	}
 	state = nullptr;
 	setState(new Indifferent());
-	// name = CitizenNameGen::generateName();
+	name = CitizenNameGen::generateName();
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
@@ -53,18 +60,18 @@ void Citizen::notifyChange(std::string message)
 		if (!ownsCar)
 		{
 			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-			currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-			if (currentRoad)
+			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
+			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+			if (workStation && homeStation)
 			{
-				myBus = ccm->requestBus(nullptr, currentRoad);
-				if (myBus)
-				{
-					activity = Activity::AwaitTransitHome;
-				}
+				std::cout << "Citizen " << name << " took the train home" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = home;
 			}
 			else
 			{
-				std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				waitTimer = 3;
+				activity = Activity::TryBusHome;
 			}
 		}
 	}
@@ -74,18 +81,18 @@ void Citizen::notifyChange(std::string message)
 		if (!ownsCar)
 		{
 			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-			currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
-			if (currentRoad)
+			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
+			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+			if (workStation && homeStation)
 			{
-				myBus = ccm->requestBus(nullptr, currentRoad);
-				if (myBus)
-				{
-					activity = Activity::AwaitTransitWork;
-				}
+				std::cout << "Citizen " << name << " took the train to work" << std::endl;
+				activity = Activity::Work;
+				currentLocation = workplace;
 			}
 			else
 			{
-				std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+				waitTimer = 3;
+				activity = Activity::TryBusWork;
 			}
 		}
 	}
@@ -96,11 +103,13 @@ void Citizen::notifyChange(std::string message)
 		{
 			activity = Activity::Work;
 			currentLocation = workplace;
+			changeHappiness(1);
 		}
 		else if (activity == Activity::InTransitHome)
 		{
 			activity = Activity::Rest;
 			currentLocation = home;
+			changeHappiness(1);
 		}
 		myBus = nullptr;
 	}
@@ -132,12 +141,14 @@ void Citizen::fired()
 {
 	workplace = nullptr;
 	std::cout << "Citizen " << name << " was fired" << std::endl;
+	changeHappiness(-1);
 }
 
 void Citizen::setHome(Building *home)
 {
 	this->home = home;
 	this->currentLocation = home;
+	changeHappiness(1);
 }
 
 Building *Citizen::getHome()
@@ -149,6 +160,7 @@ void Citizen::evicted()
 {
 	home = nullptr;
 	std::cout << "Citizen " << name << " was evicted" << std::endl;
+	changeHappiness(-1);
 }
 
 void Citizen::giveCar()
@@ -196,12 +208,136 @@ void Citizen::doSomething()
 	case Activity::Nothing:
 		std::cout << "Citizen " << name << " is doing nothing" << std::endl;
 		break;
+	case Activity::TryBusWork:
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			for (auto c : currentRoad->getUsers())
+			{
+				Bus *bus = dynamic_cast<Bus *>(c);
+				if (bus)
+				{
+					if (!bus->isFull())
+					{
+						std::cout << "Found bus" << std::endl;
+						myBus = bus;
+						activity = Activity::InTransitWork;
+						currentLocation = nullptr;
+						myBus->addPassenger(this, ccm->getClosestRoad(workplace->getXCoordinate(), workplace->getYCoordinate()));
+						break;
+					}
+				}
+			}
+		}
+		if (waitTimer > 0)
+		{
+			std::cout << RED << "Waiting for bus" << RESET << std::endl;
+			waitTimer--;
+			break;
+		}
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			myBus = ccm->requestBus(nullptr, currentRoad);
+			if (myBus)
+			{
+				activity = Activity::AwaitTransitWork;
+			}
+			else
+			{
+				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
+				activity = Activity::TryBusWork;
+				waitTimer = 3;
+				changeHappiness(-1);
+			}
+		}
+		else
+		{
+			std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+		}
+		break;
+	case Activity::TryBusHome:
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			for (Citizen *c : currentRoad->getUsers())
+			{
+				std::cout << c->getName() << std::endl;
+
+				Bus *bus = dynamic_cast<Bus *>(c);
+				if (bus)
+				{
+					if (!bus->isFull())
+					{
+						std::cout << "Found bus" << std::endl;
+						myBus = bus;
+						activity = Activity::InTransitHome;
+						currentLocation = nullptr;
+						myBus->addPassenger(this, ccm->getClosestRoad(home->getXCoordinate(), home->getYCoordinate()));
+						break;
+					}
+				}
+			}
+		}
+		if (waitTimer > 0)
+		{
+			std::cout << RED << "Waiting for bus" << RESET << std::endl;
+			waitTimer--;
+			break;
+		}
+		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
+		if (currentRoad)
+		{
+			myBus = ccm->requestBus(nullptr, currentRoad);
+			if (myBus)
+			{
+				activity = Activity::AwaitTransitHome;
+			}
+			else
+			{
+				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
+				activity = Activity::TryBusWork;
+				waitTimer = 3;
+				changeHappiness(-1);
+			}
+		}
+		else
+		{
+			std::cout << RED << "Could not find closest road for citizen!" << RESET << std::endl;
+		}
+		break;
 	}
 }
 
 Building *Citizen::getCurrentBuilding()
 {
 	return currentLocation;
+}
+
+int Citizen::getHappiness()
+{
+	std::string stat = state->getState();
+
+	if (stat == "Happy")
+	{
+		return 100;
+	}
+	else if (stat == "Content")
+	{
+		return 75;
+	}
+	else if (stat == "Indifferent")
+	{
+		return 50;
+	}
+	else if (stat == "Discontent")
+	{
+		return 25;
+	}
+	else if (stat == "Upset")
+	{
+		return 0;
+	}
 }
 
 Citizen::~Citizen()

@@ -11,6 +11,7 @@ Building::Building(string type) : CityBlock()
 {
     this->mediator = CityCentralMediator::getInstance();
     this->name = type;
+    mediator->registerBuilding(this);
 }
 
 string Building::getBuildingType()

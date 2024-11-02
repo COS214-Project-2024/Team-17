@@ -6,7 +6,7 @@
 class Happy : public CitizenState
 {
 public:
-    void handleChange();
+    CitizenState *handleChange(int change);
     std::string getState();
     ~Happy() {};
 };

@@ -6,7 +6,9 @@
 #include <queue>
 #include <unordered_map>
 #include <limits>
+#include <cmath>
 #include "Bus.h"
+#include "../Buildings/Residential.h"
 
 static CityCentralMediator *instance = nullptr;
 
@@ -81,6 +83,12 @@ void CityCentralMediator::registerBus(Bus *bus)
 void CityCentralMediator::registerRoad(RoadComponent *road)
 {
 	roads.push_back(road);
+}
+
+void CityCentralMediator::registerTrainStation(Trainstation *trainStation)
+{
+	trainStations.push_back(trainStation);
+	std::cout << "Trainstation registered" << std::endl;
 }
 
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
@@ -270,6 +278,22 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 	return false;
 }
 
+Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
+{
+	Trainstation *closest = nullptr;
+
+	for (auto t : trainStations)
+	{
+		if (t->pointInRange(x, y))
+		{
+			closest = t;
+			break;
+		}
+	}
+
+	return closest;
+}
+
 void CityCentralMediator::updateBuses()
 {
 	for (auto b : buses)
@@ -309,19 +333,52 @@ CityCentralMediator::~CityCentralMediator()
 
 void CityCentralMediator::handlePopulationGrowth()
 {
-	// TODO - implement CityCentralMediator::handlePopulationGrowth
-	throw "Not yet implemented";
+	int happiness = Resources::getHappiness();
+
+	std::cout << "Happiness: " << happiness << std::endl;
+
+	happiness = clamp(happiness, 0, 100);
+
+	int maxPop = Resources::getMaxPopulation();
+	int curPop = Resources::getPopulation();
+
+	float happinessRatio = 1.0 + happiness / 100.0;
+
+	std::cout << "Happiness ratio: " << happinessRatio << std::endl;
+
+	std::cout << "Max population: " << maxPop << std::endl;
+
+	int popDelta = maxPop - curPop;
+
+	int newPop = ceil(popDelta * 0.1 * happinessRatio);
+
+	std::cout << "New population: " << newPop << std::endl;
+
+	Resources::addPopulation(newPop);
+
+	for (int i = 0; i < newPop; i++)
+	{
+		Citizen *c = new Citizen();
+
+		for (auto b : buildings)
+		{
+			Residential *house = dynamic_cast<Residential *>(b);
+			if (house != nullptr)
+			{
+				if (house->moveIn(c))
+				{
+					std::cout << "Citizen " << c->getName() << " moved in!" << std::endl;
+					c->setHome(house);
+					break;
+				}
+			}
+		}
+	}
 }
 
 void CityCentralMediator::handleUtilityFailure()
 {
 	// TODO - implement CityCentralMediator::handleUtilityFailure
-	throw "Not yet implemented";
-}
-
-void CityCentralMediator::handleTrafficStatus(RoadState *status)
-{
-	// TODO - implement CityCentralMediator::handleTrafficStatus
 	throw "Not yet implemented";
 }
 

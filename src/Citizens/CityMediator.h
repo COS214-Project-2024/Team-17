@@ -7,6 +7,8 @@ class Building;
 class UtilityManager;
 class RoadState;
 class Citizen;
+class Bus;
+class Trainstation;
 
 class CityMediator
 {
@@ -16,6 +18,10 @@ public:
     virtual void registerUtility(UtilityManager *util) = 0;
 
     virtual void registerCitizen(Citizen *citizen) = 0;
+
+    virtual void registerBus(Bus *bus) = 0;
+
+    virtual void registerTrainStation(Trainstation *trainStation) = 0;
 
     virtual void notifyBuildingChange(Building *building, std::string message) = 0;
 

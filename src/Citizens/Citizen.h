@@ -13,7 +13,6 @@ class Citizen : CityBlock
 {
 
 protected:
-	int population;
 	CitizenState *state;
 	std::string name;
 	Building *workplace;
@@ -23,18 +22,23 @@ protected:
 	CityMediator *mediator;
 	Bus *myBus;
 	bool ownsCar;
+	int waitTimer = 0;
 	enum Activity
 	{
 		Rest,
 		Work,
+		TryBusWork,
 		InTransitWork,
 		AwaitTransitWork,
+		TryBusHome,
 		InTransitHome,
 		AwaitTransitHome,
 		Nothing
 	};
 
 	Activity activity;
+
+	void changeHappiness(int change);
 
 public:
 	Citizen(bool autoRegister = true);
@@ -66,6 +70,8 @@ public:
 	virtual void doSomething();
 
 	Building *getCurrentBuilding();
+
+	int getHappiness();
 
 	~Citizen();
 };

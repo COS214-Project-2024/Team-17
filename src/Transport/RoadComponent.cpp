@@ -92,3 +92,8 @@ bool RoadComponent::removeUser(Citizen *user)
 	}
 	return false;
 }
+
+std::vector<Citizen *> RoadComponent::getUsers()
+{
+	return users;
+}
