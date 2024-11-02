@@ -3,7 +3,6 @@ main:
 
 run: main
 	./build/Main
-
 test:
 	./test.sh
 
