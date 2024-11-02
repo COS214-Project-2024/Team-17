@@ -1,5 +1,4 @@
 #include "AllocateTaxCommand.h"
-#include <iostream>
 
 AllocateTaxCommand::AllocateTaxCommand(Government *gov, double amt, std::string dept)
 {
@@ -10,6 +9,5 @@ AllocateTaxCommand::AllocateTaxCommand(Government *gov, double amt, std::string 
 
 void AllocateTaxCommand::execute()
 {
-  std::cout << "executing allocate tax\n";
   this->government->allocateTaxes(this->department, this->amount);
 }

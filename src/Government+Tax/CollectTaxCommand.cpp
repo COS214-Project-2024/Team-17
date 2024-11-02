@@ -8,6 +8,5 @@ CollectTaxCommand::CollectTaxCommand(Government *gov)
 
 void CollectTaxCommand::execute()
 {
-  std::cout << "executing collect taxes\n";
   this->government->collectTaxes();
 }
