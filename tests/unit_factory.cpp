@@ -22,6 +22,11 @@
 #include "../src/Buildings/LandMonument.h"
 #include "../src/Buildings/LandCCenter.h"
 
+#include "../src/Buildings/FactService.h"
+#include "../src/Buildings/ServEducation.h"
+#include "../src/Buildings/ServSecurity.h"
+#include "../src/Buildings/ServEntertainment.h"
+
 // Test fixture for Residential and Commercial factories
 class FactTest : public ::testing::Test {
 protected:
@@ -29,6 +34,7 @@ protected:
     FactCommercial comFactory;
     FactIndustrial indFactory;
     FactLandmarks landmarkFactory;
+    FactService serviceFactory;
 };
 
 // Test that the Residential factory is created
@@ -200,6 +206,47 @@ TEST_F(FactTest, LandmarkFactoryUnsupportedTypes) {
     EXPECT_EQ(landmarkFactory.createComBuilding("Mall"), nullptr);
     EXPECT_EQ(landmarkFactory.createIndBuilding("Factory"), nullptr);
     EXPECT_EQ(landmarkFactory.createServiceBuilding("Education"), nullptr);
+}
+
+// Test that the Service factory is created
+TEST_F(FactTest, ServiceFactoryCreation) {
+    ASSERT_NO_THROW(FactService());
+}
+
+// Test creating Services
+TEST_F(FactTest, CreateEducationService) {
+    Services* service = serviceFactory.createServiceBuilding("Education");
+    ASSERT_NE(service, nullptr);
+    EXPECT_TRUE(dynamic_cast<ServEducation*>(service) != nullptr);
+    delete service;
+}
+
+TEST_F(FactTest, CreateSecurityService) {
+    Services* service = serviceFactory.createServiceBuilding("Security");
+    ASSERT_NE(service, nullptr);
+    EXPECT_TRUE(dynamic_cast<ServSecurity*>(service) != nullptr);
+    delete service;
+}
+
+TEST_F(FactTest, CreateEntertainmentService) {
+    Services* service = serviceFactory.createServiceBuilding("Entertainment");
+    ASSERT_NE(service, nullptr);
+    EXPECT_TRUE(dynamic_cast<ServEntertainment*>(service) != nullptr);
+    delete service;
+}
+
+// Test that unsupported service type returns nullptr
+TEST_F(FactTest, CreateUnknownServiceType) {
+    Services* service = serviceFactory.createServiceBuilding("Health");
+    EXPECT_EQ(service, nullptr);
+}
+
+// Test that other building types return nullptr in the Service factory
+TEST_F(FactTest, ServiceFactoryUnsupportedTypes) {
+    EXPECT_EQ(serviceFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(serviceFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(serviceFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(serviceFactory.createLandmark("Park"), nullptr);
 }
 
 int main(int argc, char **argv) {
