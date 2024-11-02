@@ -5,6 +5,14 @@
 class DraggableFrame;
 class DraggableRoad;
 #include "../src/Buildings/BuildingRequirements.h"
+#include "../src/resources.h"
+
+#include "../src/Buildings/FactResidential.h"
+#include "../src/Buildings/FactCommercial.h"
+#include "../src/Buildings/FactIndustrial.h"
+#include "../src/Buildings/FactLandmarks.h"
+#include "../src/Buildings/FactService.h"
+#include "../src/Buildings/Building.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,8 +29,9 @@ public:
     void deleteBuilding(DraggableFrame* deleteMe);
     ~HomePage();
     Ui::HomePage *ui;
-    void CreateBuilding(QString buildingType);
+    void CreateBuilding(QString buildingType, Building* link);
     void CreateRoad(QString roadType);
+    void updateInfoScreen();
 
     void resizeEvent(QResizeEvent *event);
 
@@ -54,14 +63,13 @@ private slots:
 
     void on_btnComOffice_clicked();
 
-    void on_spnComMall_clicked();
+    void on_btnComMall_clicked();
 
     void on_btnIndFactory_clicked();
 
     void on_btnIndWarehouse_clicked();
 
     void on_btnIndPlant_clicked();
-
 
     void on_btnLandPark_clicked();
 
@@ -85,8 +93,6 @@ private slots:
 
     void on_btnUtilWaste_clicked();
 
-    void on_btnUtilPower_2_clicked();
-
     void on_btnBuildRoad_clicked();
 
     void on_btnCancelRoad_clicked();
@@ -98,6 +104,8 @@ private slots:
     void on_spnRoadEditX_valueChanged(int arg1);
 
     void on_spnRoadEditY_valueChanged(int arg1);
+
+    void on_btnRoadRes_clicked();
 
 private:
 

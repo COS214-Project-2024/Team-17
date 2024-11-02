@@ -8,7 +8,7 @@
 #include "DraggableRoad.h"
 #include <QWidget>
 #include <QVBoxLayout>
-
+#include <QMessageBox>
 QVector<DraggableFrame *> buildings;
 QVector<DraggableRoad *> roads;
 
@@ -20,6 +20,10 @@ HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::HomePage)
 {
+    Resources::addMoney(1000000);
+    Resources::addWood(1000000);
+    Resources::addConcrete(1000000);
+    Resources::addSteel(1000000);
     ui->setupUi(this);
     ui->frmEditBuildingPos->hide();
     ui->frmEditRoadPos->hide();
@@ -27,6 +31,7 @@ HomePage::HomePage(QWidget *parent)
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
     ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 100);
     ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 20);
+    updateInfoScreen();
 
     //set all build costs
     ui->spnComMallCash->setValue(BuildingRequirements::mallBuildCost);
@@ -50,7 +55,9 @@ HomePage::HomePage(QWidget *parent)
     ui->spnUtilSewageCost->setValue(BuildingRequirements::sewageSystemBuildCost);
     ui->spnUtilWasteCost->setValue(BuildingRequirements::wasteManagementBuildCost);
     ui->spnUtilWaterCost->setValue(BuildingRequirements::waterSupplyBuildCost);
-    ui->spnRoadResCost->setValue(BuildingRequirements::ResCost);
+    ui->spnRoadResCost->setValue(BuildingRequirements::residentialStreetBuildCost);
+    ui->spnRoadMainCost->setValue(BuildingRequirements::mainRoadBuildCost);
+    ui->spnRoadHighwayCost->setValue(BuildingRequirements::highwayBuildCost);
 
     //set all Wood costs
     ui->spnComMallWood->setValue(BuildingRequirements::mallWoodCost);
@@ -74,6 +81,62 @@ HomePage::HomePage(QWidget *parent)
     ui->spnUtilSewageWood->setValue(BuildingRequirements::sewageSystemWoodCost);
     ui->spnUtilWasteWood->setValue(BuildingRequirements::wasteManagementWoodCost);
     ui->spnUtilWaterWood->setValue(BuildingRequirements::waterSupplyWoodCost);
+    ui->spnRoadResWood->setValue(BuildingRequirements::residentialStreetWoodCost);
+    ui->spnRoadMainWood->setValue(BuildingRequirements::mainRoadWoodCost);
+    ui->spnRoadHighwayWood->setValue(BuildingRequirements::highwayWoodCost);
+
+    //set all concrete costs
+    ui->spnComMallConcrete->setValue(BuildingRequirements::mallConcreteCost);
+    ui->spnComOfficeConcrete->setValue(BuildingRequirements::officeConcreteCost);
+    ui->spnComShopConcrete->setValue(BuildingRequirements::shopConcreteCost);
+    ui->spnIndFactoryConcrete->setValue(BuildingRequirements::factoryConcreteCost);
+    ui->spnIndPlantConcrete->setValue(BuildingRequirements::plantConcreteCost);
+    ui->spnIndWarehouseConcrete->setValue(BuildingRequirements::warehouseConcreteCost);
+    ui->spnLandCCenterConcrete->setValue(BuildingRequirements::communityCenterConcreteCost);
+    ui->spnLandMonumentConcrete->setValue(BuildingRequirements::monumentConcreteCost);
+    ui->spnLandParkConcrete->setValue(BuildingRequirements::parkConcreteCost);
+    ui->spnResEstateConcrete->setValue(BuildingRequirements::estateConcreteCost);
+    ui->spnResFlatConcrete->setValue(BuildingRequirements::flatConcreteCost);
+    ui->spnResHouseConcrete->setValue(BuildingRequirements::houseConcreteCost);
+    ui->spnResTownHouseConcrete->setValue(BuildingRequirements::townhouseConcreteCost);
+    ui->spnServEducationConcrete->setValue(BuildingRequirements::educationConcreteCost);
+    ui->spnServEntertainmentConcrete->setValue(BuildingRequirements::entertainmentConcreteCost);
+    ui->spnServHospitalConcrete->setValue(BuildingRequirements::hospitalConcreteCost);
+    ui->spnServSecurityConcrete->setValue(BuildingRequirements::securityConcreteCost);
+    ui->spnUtilPowerConcrete->setValue(BuildingRequirements::powerPlantConcreteCost);
+    ui->spnUtilSewageConcrete->setValue(BuildingRequirements::sewageSystemConcreteCost);
+    ui->spnUtilWasteConcrete->setValue(BuildingRequirements::wasteManagementConcreteCost);
+    ui->spnUtilWaterConcrete->setValue(BuildingRequirements::waterSupplyConcreteCost);
+    ui->spnRoadResConcrete->setValue(BuildingRequirements::residentialStreetConcreteCost);
+    ui->spnRoadMainConcrete->setValue(BuildingRequirements::mainRoadConcreteCost);
+    ui->spnRoadHighwayConcrete->setValue(BuildingRequirements::highwayConcreteCost);
+
+    //set all steel costs
+    ui->spnComMallSteel->setValue(BuildingRequirements::mallSteelCost);
+    ui->spnComOfficeSteel->setValue(BuildingRequirements::officeSteelCost);
+    ui->spnComShopSteel->setValue(BuildingRequirements::shopSteelCost);
+    ui->spnIndFactorySteel->setValue(BuildingRequirements::factorySteelCost);
+    ui->spnIndPlantSteel->setValue(BuildingRequirements::plantSteelCost);
+    ui->spnIndWarehouseSteel->setValue(BuildingRequirements::warehouseSteelCost);
+    ui->spnLandCCenterSteel->setValue(BuildingRequirements::communityCenterSteelCost);
+    ui->spnLandMonumentSteel->setValue(BuildingRequirements::monumentSteelCost);
+    ui->spnLandParkSteel->setValue(BuildingRequirements::parkSteelCost);
+    ui->spnResEstateSteel->setValue(BuildingRequirements::estateSteelCost);
+    ui->spnResFlatSteel->setValue(BuildingRequirements::flatSteelCost);
+    ui->spnResHouseSteel->setValue(BuildingRequirements::houseSteelCost);
+    ui->spnResTownHouseSteel->setValue(BuildingRequirements::townhouseSteelCost);
+    ui->spnServEducationSteel->setValue(BuildingRequirements::educationSteelCost);
+    ui->spnServEntertainmentSteel->setValue(BuildingRequirements::entertainmentSteelCost);
+    ui->spnServHospitalSteel->setValue(BuildingRequirements::hospitalSteelCost);
+    ui->spnServSecuritySteel->setValue(BuildingRequirements::securitySteelCost);
+    ui->spnUtilPowerSteel->setValue(BuildingRequirements::powerPlantSteelCost);
+    ui->spnUtilSewageSteel->setValue(BuildingRequirements::sewageSystemSteelCost);
+    ui->spnUtilWasteSteel->setValue(BuildingRequirements::wasteManagementSteelCost);
+    ui->spnUtilWaterSteel->setValue(BuildingRequirements::waterSupplySteelCost);
+    ui->spnRoadResSteel->setValue(BuildingRequirements::residentialStreetSteelCost);
+    ui->spnRoadMainSteel->setValue(BuildingRequirements::mainRoadSteelCost);
+    ui->spnRoadHighwaySteel->setValue(BuildingRequirements::highwaySteelCost);
+
 
 
 }
@@ -87,7 +150,7 @@ HomePage::~HomePage()
     delete ui;
 }
 
-void HomePage::CreateBuilding(QString buildingType)
+void HomePage::CreateBuilding(QString buildingType, Building* link)
 {
     ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
@@ -121,6 +184,7 @@ void HomePage::CreateBuilding(QString buildingType)
     ui->frmEditBuildingPos->show();
     ui->frmInfo->hide();
     ui->frmEditBuildingPos->raise();
+    updateInfoScreen();
 }
 
 
@@ -245,144 +309,297 @@ void HomePage::on_cmbBuildingColor_currentIndexChanged(int index)
 
 void HomePage::on_btnResFlat_clicked()
 {
-    CreateBuilding("Flat");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkResidentialRequirements("Flat")){
+        FactoryBuilding *factory = new FactResidential();
+        Residential *newBuilding = factory->createResBuilding("Flat");
+        CreateBuilding("Flat", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Flat");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnResTownHouse_clicked()
 {
-    CreateBuilding("Town House");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkResidentialRequirements("Townhouse")){
+        FactoryBuilding *factory = new FactResidential();
+        Residential *newBuilding = factory->createResBuilding("Townhouse");
+        CreateBuilding("Townhouse", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Townhouse");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnResHouse_clicked()
 {
-    CreateBuilding("House");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkResidentialRequirements("House")){
+        FactoryBuilding *factory = new FactResidential();
+        Residential *newBuilding = factory->createResBuilding("House");
+        CreateBuilding("House", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build House");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnResEstate_clicked()
 {
-    CreateBuilding("Estate");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkResidentialRequirements("Estate")){
+        FactoryBuilding *factory = new FactResidential();
+        Residential *newBuilding = factory->createResBuilding("Estate");
+        CreateBuilding("Estate", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Estate");
+        msgBox.exec();
+    }
 }
 
 void HomePage::on_btnComShop_clicked()
 {
-    CreateBuilding("Shop");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkCommercialRequirements("Shop")){
+        FactoryBuilding *factory = new FactCommercial();
+        Commercial *newBuilding = factory->createComBuilding("Shop");
+        CreateBuilding("Shop", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Shop");
+        msgBox.exec();
+    }
 }
 
 void HomePage::on_btnComOffice_clicked()
 {
-    CreateBuilding("Office");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkCommercialRequirements("Office")){
+        FactoryBuilding *factory = new FactCommercial();
+        Commercial *newBuilding = factory->createComBuilding("Office");
+        CreateBuilding("Office", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Office");
+        msgBox.exec();
+    }
 }
 
 
-void HomePage::on_spnComMall_clicked()
+void HomePage::on_btnComMall_clicked()
 {
-    CreateBuilding("Mall");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkCommercialRequirements("Mall")){
+        FactoryBuilding *factory = new FactCommercial();
+        Commercial *newBuilding = factory->createComBuilding("Mall");
+        CreateBuilding("Mall", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Mall");
+        msgBox.exec();
+    }
 }
 
 void HomePage::on_btnIndFactory_clicked()
 {
-    CreateBuilding("Factory");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkIndustrialRequirements("Factory")){
+        FactoryBuilding *factory = new FactIndustrial();
+        Industrial *newBuilding = factory->createIndBuilding("Factory");
+        CreateBuilding("Factory", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Factory");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnIndWarehouse_clicked()
 {
-    CreateBuilding("Warehouse");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkIndustrialRequirements("Warehouse")){
+        FactoryBuilding *factory = new FactIndustrial();
+        Industrial *newBuilding = factory->createIndBuilding("Warehouse");
+        CreateBuilding("Warehouse", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Warehouse");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnIndPlant_clicked()
 {
-    CreateBuilding("Industrial Plant");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkIndustrialRequirements("Plant")){
+        FactoryBuilding *factory = new FactIndustrial();
+        Industrial *newBuilding = factory->createIndBuilding("Plant");
+        CreateBuilding("Plant", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Plant");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnLandPark_clicked()
 {
-    CreateBuilding("Park");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkLandmarkRequirements("Park")){
+        FactoryBuilding *factory = new FactLandmarks();
+        Landmark *newBuilding = factory->createLandmark("Park");
+        CreateBuilding("Park", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Park");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnLandMonument_clicked()
 {
-    CreateBuilding("Monument");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkLandmarkRequirements("Monument")){
+        FactoryBuilding *factory = new FactLandmarks();
+        Landmark *newBuilding = factory->createLandmark("Monument");
+        CreateBuilding("Monument", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Monument");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnLandCCenter_clicked()
 {
-    CreateBuilding("Community Center");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkLandmarkRequirements("Community Center")){
+        FactoryBuilding *factory = new FactLandmarks();
+        Landmark *newBuilding = factory->createLandmark("Community Center");
+        CreateBuilding("Community Center", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Community Center");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnServHospital_clicked()
 {
-    CreateBuilding("Hospital");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkServiceRequirements("Hospital")){
+        FactoryBuilding *factory = new FactService();
+        Services *newBuilding = factory->createServiceBuilding("Hospital");
+        CreateBuilding("Hospital", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Hospital");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnServEducation_clicked()
 {
-    CreateBuilding("Education");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkServiceRequirements("Education")){
+        FactoryBuilding *factory = new FactService();
+        Services *newBuilding = factory->createServiceBuilding("Education");
+        CreateBuilding("Education", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Education");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnServSecurity_clicked()
 {
-    CreateBuilding("Security");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkServiceRequirements("Security")){
+        FactoryBuilding *factory = new FactService();
+        Services *newBuilding = factory->createServiceBuilding("Security");
+        CreateBuilding("Security", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Security");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnServEntertainment_clicked()
 {
-    CreateBuilding("Entertainment");
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkServiceRequirements("Entertainment")){
+        FactoryBuilding *factory = new FactService();
+        Services *newBuilding = factory->createServiceBuilding("Entertainment");
+        CreateBuilding("Entertainment", newBuilding);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Entertainment");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnUtilPower_clicked()
 {
-    CreateBuilding("Power Station");
+    CreateBuilding("Power Station", nullptr);
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilWater_clicked()
 {
-    CreateBuilding("Water Supply");
+    CreateBuilding("Water Supply", nullptr);
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilSewage_clicked()
 {
-    CreateBuilding("Sewage System");
+    CreateBuilding("Sewage System", nullptr);
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilWaste_clicked()
 {
-    CreateBuilding("Waste Management");
+    CreateBuilding("Waste Management", nullptr);
     ui->tabBuildCity->setEnabled(0);
 }
 
@@ -489,6 +706,13 @@ void HomePage::on_spnRoadEditY_valueChanged(int arg1)
     }
 }
 
+void HomePage::updateInfoScreen()
+{
+    ui->dspnCash->setValue(Resources::getMoney());
+    ui->spnWood->setValue(Resources::getWood());
+    ui->spnConcrete->setValue(Resources::getConcrete());
+    ui->spnSteel->setValue(Resources::getSteel());
+}
 
 
 #endif // HOMEPAGE_CPP
