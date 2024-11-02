@@ -27,7 +27,6 @@
 #include "../src/Buildings/ServSecurity.h"
 #include "../src/Buildings/ServEntertainment.h"
 
-// Test fixture for Residential and Commercial factories
 class FactTest : public ::testing::Test {
 protected:
     FactResidential resFactory;
@@ -80,9 +79,17 @@ TEST_F(FactTest, CreateUnknownResidentialType) {
 // Test that other building types return nullptr in the Residential factory
 TEST_F(FactTest, ResidentialFactoryUnsupportedTypes) {
     EXPECT_EQ(resFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(resFactory.createComBuilding("Shop"), nullptr);
+    EXPECT_EQ(resFactory.createComBuilding("Office"), nullptr);
     EXPECT_EQ(resFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(resFactory.createIndBuilding("Warehouse"), nullptr);
+    EXPECT_EQ(resFactory.createIndBuilding("Plant"), nullptr);
     EXPECT_EQ(resFactory.createLandmark("Park"), nullptr);
+    EXPECT_EQ(resFactory.createLandmark("Community Center"), nullptr);
+    EXPECT_EQ(resFactory.createLandmark("Monument"), nullptr);
     EXPECT_EQ(resFactory.createServiceBuilding("Education"), nullptr);
+    EXPECT_EQ(resFactory.createServiceBuilding("Security"), nullptr);
+    EXPECT_EQ(resFactory.createServiceBuilding("Entertainment"), nullptr);
 }
 
 // Test that the Commercial factory is created
