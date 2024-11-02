@@ -142,6 +142,75 @@ TEST_F(ComOfficeTest, DisplayBuildingInfo) {
     EXPECT_NE(output.find("Office with 12 jobs"), std::string::npos);
 }
 
+// Test fixture for ComMall
+class ComMallTest : public ::testing::Test {
+protected:
+    ComMall* comMall;
+
+    void SetUp() override {
+        comMall = new ComMall();
+    }
+
+    void TearDown() override {
+        delete comMall;
+    }
+};
+
+// Test ComMall creation
+TEST_F(ComMallTest, CreateComMall) {
+    ASSERT_NE(comMall, nullptr);
+}
+
+// Test setting and getting job capacity
+TEST_F(ComMallTest, SetAndGetJobCapacity) {
+    comMall->setJobCapacity(120);
+    EXPECT_EQ(comMall->getJobCapacity(), 120);
+}
+
+// Test adding and removing an employee
+TEST_F(ComMallTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(comMall->addEmployee(employee));
+    comMall->removeEmployee(employee);
+    delete employee;
+}
+
+// Test reaching job capacity limit
+TEST_F(ComMallTest, AddEmployeeJobCapacityLimit) {
+    comMall->setJobCapacity(1);
+    Citizen* employee1 = new Citizen();
+    Citizen* employee2 = new Citizen();
+    EXPECT_TRUE(comMall->addEmployee(employee1));
+    EXPECT_FALSE(comMall->addEmployee(employee2)); // Should fail as capacity is reached
+    delete employee1;
+    delete employee2;
+}
+
+// Test utility connection for ComMall
+TEST_F(ComMallTest, AddUtility) {
+    UtilityManager* utility = new UtilPowerPlants();
+    comMall->addUtility(utility);
+    EXPECT_NO_THROW(comMall->notifyUtilities());
+    delete utility;
+}
+
+// Test ComMall state
+TEST_F(ComMallTest, SetAndGetState) {
+    comMall->setState(true);
+    EXPECT_TRUE(comMall->getState());
+    comMall->setState(false);
+    EXPECT_FALSE(comMall->getState());
+}
+
+// Test ComMall info display
+TEST_F(ComMallTest, DisplayBuildingInfo) {
+    comMall->setJobCapacity(100);
+    testing::internal::CaptureStdout();
+    comMall->displayBuildingInfo();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Mall with 100 jobs"), std::string::npos);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
