@@ -178,10 +178,60 @@ TEST_F(FactTest, CreateUnknownIndustrialType) {
 // Test that other building types return nullptr in the Industrial factory
 TEST_F(FactTest, IndustrialFactoryUnsupportedTypes) {
     EXPECT_EQ(indFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(indFactory.createResBuilding("Townhouse"), nullptr);
+    EXPECT_EQ(indFactory.createResBuilding("Apartment"), nullptr);
     EXPECT_EQ(indFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(indFactory.createComBuilding("Shop"), nullptr);
+    EXPECT_EQ(indFactory.createComBuilding("Office"), nullptr);
     EXPECT_EQ(indFactory.createLandmark("Park"), nullptr);
+    EXPECT_EQ(indFactory.createLandmark("Community Center"), nullptr);
+    EXPECT_EQ(indFactory.createLandmark("Monument"), nullptr);
     EXPECT_EQ(indFactory.createServiceBuilding("Education"), nullptr);
+    EXPECT_EQ(indFactory.createServiceBuilding("Security"), nullptr);
+    EXPECT_EQ(indFactory.createServiceBuilding("Entertainment"), nullptr);
 }
+
+/*
+Residential* FactIndustrial::createResBuilding(string type) {
+    if (type == "House") {
+        return nullptr;
+    } else if (type == "Townhouse") {
+        return nullptr;
+    } else if (type == "Apartment") {
+        return nullptr;
+    }
+    return nullptr;
+}
+Commercial* FactIndustrial::createComBuilding(string type) {
+    if (type == "Mall") {
+        return nullptr;
+    } else if (type == "Shop") {
+        return nullptr;
+    } else if (type == "Office") {
+        return nullptr;
+    }
+    return nullptr;
+}
+Landmark* FactIndustrial::createLandmark(string type) {
+        if (type == "Park") {
+        return nullptr;
+    } else if (type == "Community Center") {
+        return nullptr;
+    } else if (type == "Monument") {
+        return nullptr;
+    }
+    return nullptr;
+}
+Services* FactIndustrial::createServiceBuilding(string type) {
+        if (type == "Education") {
+        return nullptr;
+    } else if (type == "Security") {
+        return nullptr;
+    } else if (type == "Entertainment") {
+        return nullptr;
+    }
+    return nullptr;
+}*/
 
 // Test that the Landmark factory is created
 TEST_F(FactTest, LandmarkFactoryCreation) {
