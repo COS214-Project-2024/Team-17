@@ -1,6 +1,8 @@
 /**
+/**
  * @file UtilSewageSyst.h
- * @brief Header file for the UtilSewageSyst class which implements UtilSewageSyst.
+ * @brief Header file for the UtilSewageSyst class, implementing sewage system services.
+ * @details Contains the declaration of the UtilSewageSyst class, managing operations related to sewage disposal.
  * @author WORKONMYMACHINE TEAM Nic
  * @headerfile UtilSewageSyst.h
  */
@@ -11,7 +13,8 @@
 using namespace std;
 /**
  * @class UtilSewageSyst
- * @brief ...
+ * @brief Represents the sewage management system.
+ * @details Handles sewage disposal operations for buildings.
  */
 class UtilSewageSyst: public UtilityManager {
         private :
@@ -19,32 +22,32 @@ class UtilSewageSyst: public UtilityManager {
 	bool operational;//Observer State
     
 public:
-	/**
-     * @brief Constructor for UtilSewageSyst.
+    /**
+     * @brief Constructs a new Sewage System utility.
      */
 	UtilSewageSyst();
-	/**
-     * @brief Starts the Sweage System service
+    /**
+     * @brief Starts the Sewage System service, making it operational.
      */
 	void startUtility();
-	/**
- 	* @brief Updates the operational state of the utility based on the building's current status.
-	* @param[in] unit Pointer to the Building object that notifies this utility.
-	*/
+    /**
+     * @brief Updates the operational state based on the status of the specified building.
+     * @param[in] unit Pointer to the Building object that notifies this utility.
+     */
 	void update(Building* unit);
-	/**
-	 * @brief Returns the type of utility service
-	 * @return string
-	 */
+    /**
+     * @brief Retrieves the type of this utility.
+     * @return The type as a string ("Sewage System").
+     */
 	std::string getType();
-	/**
-	 * @brief Returns the operational status of the utility service
-	 * @return bool
-	 */
+    /**
+     * @brief Checks if the Sewage System is operational.
+     * @return True if operational; otherwise, false.
+     */
 	bool isOperational();
-	/**
-	 * @brief Shuts down the Sewage System service
-	 */
+    /**
+     * @brief Shuts down the Sewage System, making it non-operational.
+     */
 	void shutDown();
 };
 
