@@ -148,6 +148,8 @@ public:
 	void handleUtilityFailure();
 
 	void updateCitizenSatisfaction();
+
+	void handleCitizenEmigration(Citizen *citizen);
 };
 
 #endif

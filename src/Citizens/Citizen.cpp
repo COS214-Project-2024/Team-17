@@ -10,7 +10,15 @@
 
 void Citizen::changeHappiness(int change)
 {
+	CitizenState *oldstate = state;
 	CitizenState *newState = state->handleChange(change);
+
+	if (oldstate->getState() == newState->getState() && newState->getState() == "Upset")
+	{
+		CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+		ccm->handleCitizenEmigration(this);
+	}
+
 	setState(newState);
 }
 
@@ -342,5 +350,14 @@ int Citizen::getHappiness()
 
 Citizen::~Citizen()
 {
+	if (state != nullptr)
+	{
+		delete state;
+	}
+	Resources::removePopulation(1);
+	if(workplace != nullptr)
+	{
+		
+	}
 	std::cout << "Citizen " << name << " deleted" << std::endl;
 }

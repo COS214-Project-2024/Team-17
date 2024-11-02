@@ -414,3 +414,18 @@ void CityCentralMediator::updateCitizenSatisfaction()
 		c->setState(newState);
 	}
 }
+
+void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
+{
+	if (citizen != nullptr)
+	{
+		std::cout << "Citizen " << citizen->getName() << " is leaving due to being upset!" << std::endl;
+		// remove from citizens array
+		auto it = std::find(citizens.begin(), citizens.end(), citizen);
+		if (it != citizens.end())
+		{
+			citizens.erase(it);
+		}
+		delete citizen;
+	}
+}
