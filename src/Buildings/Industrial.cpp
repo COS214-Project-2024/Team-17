@@ -37,3 +37,10 @@ void Industrial::notifyUtilities(){
         utility->update(this);
     }
 }
+
+bool Industrial::moveIn(Citizen* resident){
+    return true;
+}
+
+void Industrial::moveOut(Citizen* resident){
+}

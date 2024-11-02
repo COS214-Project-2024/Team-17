@@ -38,3 +38,10 @@ void Commercial::notifyUtilities(){
         utility->update(this);
     }
 }
+
+bool Commercial::moveIn(Citizen* resident){
+    return true;
+}
+
+void Commercial::moveOut(Citizen* resident){
+}
