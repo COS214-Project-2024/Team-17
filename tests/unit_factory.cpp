@@ -17,12 +17,18 @@
 #include "../src/Buildings/IndWarehouse.h"
 #include "../src/Buildings/IndPlant.h"
 
+#include "../src/Buildings/FactLandmarks.h"
+#include "../src/Buildings/LandPark.h"
+#include "../src/Buildings/LandMonument.h"
+#include "../src/Buildings/LandCCenter.h"
+
 // Test fixture for Residential and Commercial factories
 class FactTest : public ::testing::Test {
 protected:
     FactResidential resFactory;
     FactCommercial comFactory;
     FactIndustrial indFactory;
+    FactLandmarks landmarkFactory;
 };
 
 // Test that the Residential factory is created
@@ -153,6 +159,47 @@ TEST_F(FactTest, IndustrialFactoryUnsupportedTypes) {
     EXPECT_EQ(indFactory.createComBuilding("Mall"), nullptr);
     EXPECT_EQ(indFactory.createLandmark("Park"), nullptr);
     EXPECT_EQ(indFactory.createServiceBuilding("Education"), nullptr);
+}
+
+// Test that the Landmark factory is created
+TEST_F(FactTest, LandmarkFactoryCreation) {
+    ASSERT_NO_THROW(FactLandmarks());
+}
+
+// Test creating Landmarks
+TEST_F(FactTest, CreatePark) {
+    Landmark* building = landmarkFactory.createLandmark("Park");
+    ASSERT_NE(building, nullptr);
+    EXPECT_TRUE(dynamic_cast<LandPark*>(building) != nullptr);
+    delete building;
+}
+
+TEST_F(FactTest, CreateCommunityCenter) {
+    Landmark* building = landmarkFactory.createLandmark("Community Center");
+    ASSERT_NE(building, nullptr);
+    EXPECT_TRUE(dynamic_cast<LandCCenter*>(building) != nullptr);
+    delete building;
+}
+
+TEST_F(FactTest, CreateMonument) {
+    Landmark* building = landmarkFactory.createLandmark("Monument");
+    ASSERT_NE(building, nullptr);
+    EXPECT_TRUE(dynamic_cast<LandMonument*>(building) != nullptr);
+    delete building;
+}
+
+// Test that unsupported Landmark type returns nullptr
+TEST_F(FactTest, CreateUnknownLandmarkType) {
+    Landmark* building = landmarkFactory.createLandmark("Tower");
+    EXPECT_EQ(building, nullptr);
+}
+
+// Test that other building types return nullptr in the Landmark factory
+TEST_F(FactTest, LandmarkFactoryUnsupportedTypes) {
+    EXPECT_EQ(landmarkFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(landmarkFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(landmarkFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(landmarkFactory.createServiceBuilding("Education"), nullptr);
 }
 
 int main(int argc, char **argv) {
