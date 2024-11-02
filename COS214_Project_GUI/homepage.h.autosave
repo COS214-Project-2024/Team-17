@@ -98,7 +98,9 @@ private slots:
     void on_spnRoadEditX_valueChanged(int arg1);
 
     void on_spnRoadEditY_valueChanged(int arg1);
-
+    
+    void on_btnRoadRes_clicked();
+    
 private:
 
 

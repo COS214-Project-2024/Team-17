@@ -1,5 +1,9 @@
+#ifndef HOMEPAGE_CPP
+#define HOMEPAGE_CPP
+
 #include "homepage.h"
 #include "./ui_homepage.h"
+#include "MovingFrame.h"
 #include "DraggableFrame.h"
 #include "DraggableRoad.h"
 #include <QWidget>
@@ -21,8 +25,57 @@ HomePage::HomePage(QWidget *parent)
     ui->frmEditRoadPos->hide();
     ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
-    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 120);
-    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 100);
+    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 100);
+    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 20);
+
+    //set all build costs
+    ui->spnComMallCash->setValue(BuildingRequirements::mallBuildCost);
+    ui->spnComOfficeCash->setValue(BuildingRequirements::officeBuildCost);
+    ui->spnComShopCash->setValue(BuildingRequirements::shopBuildCost);
+    ui->spnIndFactoryCash->setValue(BuildingRequirements::factoryBuildCost);
+    ui->spnIndPlantCash->setValue(BuildingRequirements::plantBuildCost);
+    ui->spnIndWarehouseCash->setValue(BuildingRequirements::warehouseBuildCost);
+    ui->spnLandCCenterCash->setValue(BuildingRequirements::communityCenterBuildCost);
+    ui->spnLandMonumentCash->setValue(BuildingRequirements::monumentBuildCost);
+    ui->spnLandParkCash->setValue(BuildingRequirements::parkBuildCost);
+    ui->spnResEstateCash->setValue(BuildingRequirements::estateBuildCost);
+    ui->spnResFlatCash->setValue(BuildingRequirements::flatBuildCost);
+    ui->spnResHouseCash->setValue(BuildingRequirements::houseBuildCost);
+    ui->spnResTownHouseCash->setValue(BuildingRequirements::townhouseBuildCost);
+    ui->spnServEducationCash->setValue(BuildingRequirements::educationBuildCost);
+    ui->spnServEntertainmentCash->setValue(BuildingRequirements::entertainmentBuildCost);
+    ui->spnServHospitalCash->setValue(BuildingRequirements::hospitalBuildCost);
+    ui->spnServSecurityCash->setValue(BuildingRequirements::securityBuildCost);
+    ui->spnUtilPowerCost->setValue(BuildingRequirements::powerPlantBuildCost);
+    ui->spnUtilSewageCost->setValue(BuildingRequirements::sewageSystemBuildCost);
+    ui->spnUtilWasteCost->setValue(BuildingRequirements::wasteManagementBuildCost);
+    ui->spnUtilWaterCost->setValue(BuildingRequirements::waterSupplyBuildCost);
+    ui->spnRoadResCost->setValue(BuildingRequirements::ResCost);
+
+    //set all Wood costs
+    ui->spnComMallWood->setValue(BuildingRequirements::mallWoodCost);
+    ui->spnComOfficeWood->setValue(BuildingRequirements::officeWoodCost);
+    ui->spnComShopWood->setValue(BuildingRequirements::shopWoodCost);
+    ui->spnIndFactoryWood->setValue(BuildingRequirements::factoryWoodCost);
+    ui->spnIndPlantWood->setValue(BuildingRequirements::plantWoodCost);
+    ui->spnIndWarehouseWood->setValue(BuildingRequirements::warehouseWoodCost);
+    ui->spnLandCCenterWood->setValue(BuildingRequirements::communityCenterWoodCost);
+    ui->spnLandMonumentWood->setValue(BuildingRequirements::monumentWoodCost);
+    ui->spnLandParkWood->setValue(BuildingRequirements::parkWoodCost);
+    ui->spnResEstateWood->setValue(BuildingRequirements::estateWoodCost);
+    ui->spnResFlatWood->setValue(BuildingRequirements::flatWoodCost);
+    ui->spnResHouseWood->setValue(BuildingRequirements::houseWoodCost);
+    ui->spnResTownHouseWood->setValue(BuildingRequirements::townhouseWoodCost);
+    ui->spnServEducationWood->setValue(BuildingRequirements::educationWoodCost);
+    ui->spnServEntertainmentWood->setValue(BuildingRequirements::entertainmentWoodCost);
+    ui->spnServHospitalWood->setValue(BuildingRequirements::hospitalWoodCost);
+    ui->spnServSecurityWood->setValue(BuildingRequirements::securityWoodCost);
+    ui->spnUtilPowerWood->setValue(BuildingRequirements::powerPlantWoodCost);
+    ui->spnUtilSewageWood->setValue(BuildingRequirements::sewageSystemWoodCost);
+    ui->spnUtilWasteWood->setValue(BuildingRequirements::wasteManagementWoodCost);
+    ui->spnUtilWaterWood->setValue(BuildingRequirements::waterSupplyWoodCost);
+
+
 }
 
 HomePage::~HomePage()
@@ -36,6 +89,8 @@ HomePage::~HomePage()
 
 void HomePage::CreateBuilding(QString buildingType)
 {
+    ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
+    ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
     frame = new DraggableFrame(ui->scAreaMainMap, ui->spnBuildingEditX, ui->spnBuildingEditY, this);
     frame->setFrameShape(QFrame::Box);  // Optional: set frame shape
     frame->setLineWidth(2);  // Optional: set border width
@@ -58,6 +113,7 @@ void HomePage::CreateBuilding(QString buildingType)
     frame->move(100, 50);
     frame->show();
     buildings.append(frame);
+    ui->scAreaMainMap->addToBuildings(frame);
     ui->spnBuildingEditWidth->setValue(frame->width());
     ui->spnBuildingEditHeight->setValue(frame->height());
     ui->spnBuildingEditX->setValue(frame->x());
@@ -104,6 +160,7 @@ void HomePage::on_btnCancelBuilding_clicked()
     frame->setVisible(false);
     frame->deleteLater();
     buildings.removeOne(frame);
+    ui->scAreaMainMap->removeFromBuildings(frame);
     ui->frmEditBuildingPos->hide();
     ui->frmInfo->show();
     ui->tabBuildCity->setEnabled(1);
@@ -136,6 +193,7 @@ void HomePage::on_spnBuildingEditHeight_valueChanged(int arg1)
 void HomePage::deleteBuilding(DraggableFrame* deleteMe){
     deleteMe->setVisible(false);
     buildings.removeOne(deleteMe);
+    ui->scAreaMainMap->removeFromBuildings(deleteMe);
     deleteMe->deleteLater();
     ui->frmEditBuildingPos->hide();
 }
@@ -329,10 +387,13 @@ void HomePage::on_btnUtilWaste_clicked()
 }
 
 void HomePage::CreateRoad(QString roadType){
+    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 120);
+    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 100);
     road = new DraggableRoad(ui->scAreaMainMap, ui->spnRoadEditX, ui->spnRoadEditY, this, roads);
     road->move(100, 50);
     road->show();
     roads.append(road);
+    ui->scAreaMainMap->addToRoads(road);
     ui->spnRoadEditX->setValue(road->x());
     ui->spnRoadEditY->setValue(road->y());
     ui->frmEditRoadPos->show();
@@ -341,7 +402,7 @@ void HomePage::CreateRoad(QString roadType){
 }
 
 
-void HomePage::on_btnUtilPower_2_clicked()
+void HomePage::on_btnRoadRes_clicked()
 {
     CreateRoad("");
     ui->tabBuildCity->setEnabled(0);
@@ -351,6 +412,7 @@ void HomePage::on_btnUtilPower_2_clicked()
 void HomePage::on_btnBuildRoad_clicked()
 {
     ui->frmEditRoadPos->hide();
+    ui->frmInfo->show();
     road->editable=false;
     road=nullptr;
     ui->tabBuildCity->setEnabled(1);
@@ -362,6 +424,7 @@ void HomePage::on_btnCancelRoad_clicked()
     road->setVisible(false);
     road->deleteLater();
     roads.removeOne(road);
+    ui->scAreaMainMap->removeFromRoads(road);
     ui->frmEditRoadPos->hide();
     ui->tabBuildCity->setEnabled(1);
     ui->frmInfo->show();
@@ -427,3 +490,5 @@ void HomePage::on_spnRoadEditY_valueChanged(int arg1)
 }
 
 
+
+#endif // HOMEPAGE_CPP

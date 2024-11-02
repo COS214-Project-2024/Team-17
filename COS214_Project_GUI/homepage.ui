@@ -943,7 +943,7 @@ QComboBox::down-arrow {
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="FrameContainer" name="scAreaMainMap">
+       <widget class="MovingFrame" name="scAreaMainMap">
         <property name="minimumSize">
          <size>
           <width>800</width>
@@ -984,7 +984,7 @@ QDoubleSpinBox:disabled{
 }</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -997,7 +997,7 @@ QDoubleSpinBox:disabled{
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="tab_7">
              <attribute name="title">
@@ -1214,7 +1214,7 @@ QDoubleSpinBox:disabled{
                       <number>1000000</number>
                      </property>
                     </widget>
-                    <widget class="QSpinBox" name="spnResFlatCost">
+                    <widget class="QSpinBox" name="spnResFlatCash">
                      <property name="enabled">
                       <bool>false</bool>
                      </property>
@@ -6879,7 +6879,7 @@ QDoubleSpinBox:disabled{
                   <number>1000000</number>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilPowerCost_2">
+                <widget class="QSpinBox" name="spnRoadResCost">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -6996,7 +6996,7 @@ QDoubleSpinBox:disabled{
                   <string>Cost:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilWaterWood_2">
+                <widget class="QSpinBox" name="spnRoadMainWood">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7036,7 +7036,7 @@ QDoubleSpinBox:disabled{
                   <string>Wood:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilWaterSteel_2">
+                <widget class="QSpinBox" name="spnRoadMainSteel">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7094,7 +7094,7 @@ QDoubleSpinBox:disabled{
                   <string>Concrete:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilWaterConcrete_2">
+                <widget class="QSpinBox" name="spnRoadMainConcrete">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7116,7 +7116,7 @@ QDoubleSpinBox:disabled{
                   <number>1000000</number>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilWaterCost_2">
+                <widget class="QSpinBox" name="spnRoadMainCost">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7233,7 +7233,7 @@ QDoubleSpinBox:disabled{
                   <string>Cost:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilSewageWood_2">
+                <widget class="QSpinBox" name="spnRoadHighwayWood">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7273,7 +7273,7 @@ QDoubleSpinBox:disabled{
                   <string>Wood:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilSewageSteel_2">
+                <widget class="QSpinBox" name="spnRoadHighwaySteel">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7331,7 +7331,7 @@ QDoubleSpinBox:disabled{
                   <string>Concrete:</string>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilSewageConcrete_2">
+                <widget class="QSpinBox" name="spnRoadHighwayConcrete">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7353,7 +7353,7 @@ QDoubleSpinBox:disabled{
                   <number>1000000</number>
                  </property>
                 </widget>
-                <widget class="QSpinBox" name="spnUtilSewageCost_2">
+                <widget class="QSpinBox" name="spnRoadHighwayCost">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -7410,9 +7410,9 @@ QDoubleSpinBox:disabled{
  </widget>
  <customwidgets>
   <customwidget>
-   <class>FrameContainer</class>
+   <class>MovingFrame</class>
    <extends>QFrame</extends>
-   <header location="global">framecontainer.h</header>
+   <header>MovingFrame.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

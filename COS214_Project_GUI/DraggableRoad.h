@@ -16,13 +16,14 @@ public:
     explicit DraggableRoad(QWidget *parent = nullptr, QSpinBox *EditXpos = nullptr, QSpinBox *EditYpos = nullptr, HomePage *homePage = nullptr, QVector<DraggableRoad*> roads = QVector<DraggableRoad*>())
         : QFrame(parent), EditXpos(EditXpos), EditYpos(EditYpos), homePage(homePage), roads(roads){
         setFrameShape(QFrame::Box);
-        setStyleSheet("background-color: #202020;");
+        setStyleSheet("background-color: #202020; border: 1px solid grey;");
         setFixedSize(120, 10);  // Set size for the frame
     }
 
     bool editable = true;
     bool dragging = false;
     QFrame *frame;
+    DraggableRoad * next;
 
     // Method to snap to another road
     void snapToRoad(DraggableRoad *otherRoad) {
@@ -65,7 +66,7 @@ public:
         else if ((endPos - otherEndPos).manhattanLength() <= snapDistance) {
             if(!(otherRoad->width()==10&&width()==10)&&!(otherRoad->height()==10&&height()==10)){
                 if(width()==10){
-                    move(otherEndPos - QPoint(0, height()-10));
+                    move(otherEndPos - QPoint(0, height()));
                 }
                 else{
                     move(otherEndPos - QPoint(width(), 0));
