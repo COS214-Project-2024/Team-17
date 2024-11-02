@@ -128,9 +128,18 @@ TEST_F(FactTest, CreateUnknownCommercialType) {
 // Test that other building types return nullptr in the Commercial factory
 TEST_F(FactTest, CommercialFactoryUnsupportedTypes) {
     EXPECT_EQ(comFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(comFactory.createResBuilding("Townhouse"), nullptr);
+    EXPECT_EQ(comFactory.createResBuilding("Flat"), nullptr);
+    EXPECT_EQ(comFactory.createResBuilding("Estate"), nullptr);
     EXPECT_EQ(comFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(comFactory.createIndBuilding("Warehouse"), nullptr);
+    EXPECT_EQ(comFactory.createIndBuilding("Plant"), nullptr);
     EXPECT_EQ(comFactory.createLandmark("Park"), nullptr);
+    EXPECT_EQ(comFactory.createLandmark("Community Center"), nullptr);
+    EXPECT_EQ(comFactory.createLandmark("Monument"), nullptr);
     EXPECT_EQ(comFactory.createServiceBuilding("Education"), nullptr);
+    EXPECT_EQ(comFactory.createServiceBuilding("Security"), nullptr);
+    EXPECT_EQ(comFactory.createServiceBuilding("Entertainment"), nullptr);
 }
 
 // Test that the Industrial factory is created
