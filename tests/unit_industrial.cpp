@@ -85,9 +85,9 @@ TEST_F(IndFactoryTest, AddAndRemoveEmployee) {
 TEST_F(IndFactoryTest, JobCapacity) {
     Citizen* employee1 = new Citizen();
     indFactory->setProductionCapacity(1);
-
     EXPECT_TRUE(indFactory->addEmployee(employee1));
     indFactory->removeEmployee(employee1); // Removing to test capacity freeing up
+    // EXPECT_TRUE(indFactory->addEmployee(employee3)); // Now should succeed
     delete employee1;
 }
 
@@ -98,6 +98,120 @@ TEST_F(IndFactoryTest, DisplayBuildingInfo) {
     indFactory->displayBuildingInfo();
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("Factory with wood production capacity of 20 units"), std::string::npos);
+}
+
+// Test fixture for IndWarehouse
+class IndWarehouseTest : public ::testing::Test {
+protected:
+    IndWarehouse* warehouse;
+
+    void SetUp() override {
+        warehouse = new IndWarehouse();
+    }
+
+    void TearDown() override {
+        delete warehouse;
+    }
+};
+
+// Test IndWarehouse creation
+TEST_F(IndWarehouseTest, CreateIndWarehouse) {
+    ASSERT_NE(warehouse, nullptr);
+}
+
+// Test setting and getting production capacity for IndWarehouse
+TEST_F(IndWarehouseTest, SetAndGetProductionCapacity) {
+    warehouse->setProductionCapacity(20);
+    EXPECT_EQ(warehouse->getProductionCapacity(), 20);
+}
+
+// Test adding and removing employees in IndWarehouse
+TEST_F(IndWarehouseTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(warehouse->addEmployee(employee));
+    warehouse->removeEmployee(employee);
+    //delete employee;
+}
+
+// Test for utility connection in IndWarehouse
+TEST_F(IndWarehouseTest, AddUtility) {
+    UtilityManager* utility = new UtilWaterSupply();
+    warehouse->addUtility(utility);
+    EXPECT_NO_THROW(warehouse->callUtilities());
+    delete utility;
+}
+
+// Test getting and setting state in IndWarehouse
+TEST_F(IndWarehouseTest, SetAndGetState) {
+    warehouse->setState(true);
+    EXPECT_TRUE(warehouse->getState());
+    warehouse->setState(false);
+    EXPECT_FALSE(warehouse->getState());
+}
+
+// Test displaying building info for IndWarehouse
+TEST_F(IndWarehouseTest, DisplayBuildingInfo) {
+    testing::internal::CaptureStdout();
+    warehouse->displayBuildingInfo();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Warehouse with production capacity"), std::string::npos);
+}
+
+// Test fixture for IndPlant
+class IndPlantTest : public ::testing::Test {
+protected:
+    IndPlant* plant;
+
+    void SetUp() override {
+        plant = new IndPlant();
+    }
+
+    void TearDown() override {
+        delete plant;
+    }
+};
+
+// Test IndPlant creation
+TEST_F(IndPlantTest, CreateIndPlant) {
+    ASSERT_NE(plant, nullptr);
+}
+
+// Test setting and getting production capacity for IndPlant
+TEST_F(IndPlantTest, SetAndGetProductionCapacity) {
+    plant->setProductionCapacity(15);
+    EXPECT_EQ(plant->getProductionCapacity(), 15);
+}
+
+// Test adding and removing employees in IndPlant
+TEST_F(IndPlantTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(plant->addEmployee(employee));
+    plant->removeEmployee(employee);
+    //delete employee;
+}
+
+// Test for utility connection in IndPlant
+TEST_F(IndPlantTest, AddUtility) {
+    UtilityManager* utility = new UtilPowerPlants();
+    plant->addUtility(utility);
+    EXPECT_NO_THROW(plant->callUtilities());
+    delete utility;
+}
+
+// Test getting and setting state in IndPlant
+TEST_F(IndPlantTest, SetAndGetState) {
+    plant->setState(true);
+    EXPECT_TRUE(plant->getState());
+    plant->setState(false);
+    EXPECT_FALSE(plant->getState());
+}
+
+// Test displaying building info for IndPlant
+TEST_F(IndPlantTest, DisplayBuildingInfo) {
+    testing::internal::CaptureStdout();
+    plant->displayBuildingInfo();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Plant with production capacity"), std::string::npos);
 }
 
 int main(int argc, char **argv) {
