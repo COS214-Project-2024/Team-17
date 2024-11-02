@@ -38,3 +38,11 @@ void Services::notifyUtilities(){
         utility->update(this);
     }
 }
+
+bool Services::moveIn(Citizen* resident){
+    return true;
+}
+
+void Services::moveOut(Citizen* resident){
+    return;
+}

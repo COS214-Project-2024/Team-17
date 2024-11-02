@@ -19,6 +19,12 @@ public:
 
     bool checkBuildRequirements();
 
+    virtual bool addEmployee(Citizen* employee);
+	virtual void removeEmployee(Citizen* employee);
+
+    virtual bool moveIn(Citizen* resident);
+    virtual void moveOut(Citizen* resident);
+
 private:
     vector<UtilityManager *> utilities;
     string name;
@@ -37,6 +43,7 @@ private:
     int popIncrease = 0;
 
     int serveRange;
+    
 };
 
 #endif

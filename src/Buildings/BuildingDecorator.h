@@ -14,6 +14,13 @@ public:
 
     bool checkBuildRequirements() override;
     bool getState() override;
+
+    
+    virtual bool addEmployee(Citizen* employee);
+	virtual void removeEmployee(Citizen* employee);
+
+    virtual bool moveIn(Citizen* resident);
+    virtual void moveOut(Citizen* resident);
 };
 
 #endif

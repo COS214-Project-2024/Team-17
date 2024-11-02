@@ -17,6 +17,13 @@ public:
     void removeUtility(UtilityManager* utility);//detach
     void notifyUtilities();//notify
 
+	
+    virtual bool addEmployee(Citizen* employee) = 0;
+	virtual void removeEmployee(Citizen* employee) = 0;
+
+    virtual bool moveIn(Citizen* resident);
+    virtual void moveOut(Citizen* resident);
+
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual void createBuilding() = 0;
 	// virtual void affectEmotionalState() = 0;
