@@ -103,11 +103,13 @@ void Citizen::notifyChange(std::string message)
 		{
 			activity = Activity::Work;
 			currentLocation = workplace;
+			changeHappiness(1);
 		}
 		else if (activity == Activity::InTransitHome)
 		{
 			activity = Activity::Rest;
 			currentLocation = home;
+			changeHappiness(1);
 		}
 		myBus = nullptr;
 	}
@@ -139,12 +141,14 @@ void Citizen::fired()
 {
 	workplace = nullptr;
 	std::cout << "Citizen " << name << " was fired" << std::endl;
+	changeHappiness(-1);
 }
 
 void Citizen::setHome(Building *home)
 {
 	this->home = home;
 	this->currentLocation = home;
+	changeHappiness(1);
 }
 
 Building *Citizen::getHome()
@@ -156,6 +160,7 @@ void Citizen::evicted()
 {
 	home = nullptr;
 	std::cout << "Citizen " << name << " was evicted" << std::endl;
+	changeHappiness(-1);
 }
 
 void Citizen::giveCar()
@@ -243,6 +248,7 @@ void Citizen::doSomething()
 				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
 				activity = Activity::TryBusWork;
 				waitTimer = 3;
+				changeHappiness(-1);
 			}
 		}
 		else
@@ -292,6 +298,7 @@ void Citizen::doSomething()
 				std::cout << RED << "Trying to wait for another bus!" << RESET << std::endl;
 				activity = Activity::TryBusWork;
 				waitTimer = 3;
+				changeHappiness(-1);
 			}
 		}
 		else
