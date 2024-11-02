@@ -13,7 +13,6 @@ class Citizen : CityBlock
 {
 
 protected:
-	int population;
 	CitizenState *state;
 	std::string name;
 	Building *workplace;
@@ -38,6 +37,8 @@ protected:
 	};
 
 	Activity activity;
+
+	void changeHappiness(int change);
 
 public:
 	Citizen(bool autoRegister = true);
@@ -69,6 +70,8 @@ public:
 	virtual void doSomething();
 
 	Building *getCurrentBuilding();
+
+	int getHappiness();
 
 	~Citizen();
 };

@@ -1,8 +1,13 @@
 #include "Happy.h"
+#include "Content.h"
 
-void Happy::handleChange()
+CitizenState *Happy::handleChange(int change)
 {
-    // will change productivity and stuff once simulation engine is implemented
+    if (change <= 0)
+    {
+        return new Content();
+    }
+    return new Happy();
 }
 
 std::string Happy::getState()

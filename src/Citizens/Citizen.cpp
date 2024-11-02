@@ -8,6 +8,12 @@
 #include "../Transport/RoadComponent.h"
 #include "Bus.h"
 
+void Citizen::changeHappiness(int change)
+{
+	CitizenState *newState = state->handleChange(change);
+	setState(newState);
+}
+
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
 	name = "John Doe";
@@ -299,6 +305,32 @@ void Citizen::doSomething()
 Building *Citizen::getCurrentBuilding()
 {
 	return currentLocation;
+}
+
+int Citizen::getHappiness()
+{
+	std::string stat = state->getState();
+
+	if (stat == "Happy")
+	{
+		return 100;
+	}
+	else if (stat == "Content")
+	{
+		return 75;
+	}
+	else if (stat == "Indifferent")
+	{
+		return 50;
+	}
+	else if (stat == "Discontent")
+	{
+		return 25;
+	}
+	else if (stat == "Upset")
+	{
+		return 0;
+	}
 }
 
 Citizen::~Citizen()

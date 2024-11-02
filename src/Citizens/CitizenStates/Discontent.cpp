@@ -1,8 +1,19 @@
 #include "Discontent.h"
+#include "Upset.h"
+#include "Indifferent.h"
 
-void Discontent::handleChange()
+CitizenState *Discontent::handleChange(int change)
 {
-    // will change productivity and stuff once simulation engine is implemented
+    if (change > 0)
+    {
+        return new Indifferent();
+    }
+    else if (change < 0)
+    {
+        return new Upset();
+    }
+
+    return new Discontent();
 }
 
 std::string Discontent::getState()

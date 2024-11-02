@@ -143,12 +143,9 @@ public:
 
 	~CityCentralMediator();
 
-private:
 	void handlePopulationGrowth();
 
 	void handleUtilityFailure();
-
-	void handleTrafficStatus(RoadState *status);
 
 	void updateCitizenSatisfaction();
 };
