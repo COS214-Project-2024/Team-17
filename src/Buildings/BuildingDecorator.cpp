@@ -38,6 +38,11 @@ void BuildingDecorator::removeEmployee(Citizen *employee)
     building->removeEmployee(employee);
 }
 
+bool BuildingDecorator::hasJob()
+{
+    return building->hasJob();
+}
+
 bool BuildingDecorator::moveIn(Citizen *resident)
 {
     return building->moveIn(resident);

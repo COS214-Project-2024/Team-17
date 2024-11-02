@@ -18,11 +18,12 @@ public:
 	void removeUtility(UtilityManager *utility); // detach
 	void notifyUtilities();						 // notify
 
-    virtual bool addEmployee(Citizen* employee);
-	virtual void removeEmployee(Citizen* employee);
+	virtual bool addEmployee(Citizen *employee);
+	virtual void removeEmployee(Citizen *employee);
+	virtual bool hasJob();
 
-    virtual bool moveIn(Citizen* resident) = 0;
-    virtual void moveOut(Citizen* resident) = 0;
+	virtual bool moveIn(Citizen *resident) = 0;
+	virtual void moveOut(Citizen *resident) = 0;
 
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;

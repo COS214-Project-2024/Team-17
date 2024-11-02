@@ -1,6 +1,7 @@
 #include "LandMonument.h"
 
-LandMonument::LandMonument() {
+LandMonument::LandMonument()
+{
     cout << BLACK << "\t-->Monument created" << RESET << endl;
 
     Resources::removeMoney(woodCost);
@@ -12,54 +13,68 @@ LandMonument::LandMonument() {
     Resources::addHappiness(happiness);
 }
 
-LandMonument::~LandMonument() {
+LandMonument::~LandMonument()
+{
     cout << BLACK << "\t-->Monument destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happiness);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void LandMonument::displayBuildingInfo() {
+void LandMonument::displayBuildingInfo()
+{
     cout << "Monument with " << this->visitors << " visitors\n";
 }
 
-int LandMonument::getVisitors() {
+int LandMonument::getVisitors()
+{
     return visitors;
 }
 
-void LandMonument::setVisitors(int visitors) {
+void LandMonument::setVisitors(int visitors)
+{
     this->visitors = visitors;
 }
 
-void LandMonument::callUtilities(){
+void LandMonument::callUtilities()
+{
     notifyUtilities();
 }
 
-bool LandMonument::getState(){
+bool LandMonument::getState()
+{
     return operational;
 }
 
-void LandMonument::setState(bool state){
-    if(operational!=state){
+void LandMonument::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-            cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-string LandMonument::getBuildingType(){
+string LandMonument::getBuildingType()
+{
     return type;
 }
 
-bool LandMonument::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool LandMonument::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
     }
@@ -69,12 +84,20 @@ bool LandMonument::addEmployee(Citizen* employee) {
     return true;
 }
 
-void LandMonument::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void LandMonument::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
         }
     }
+}
+
+bool LandMonument::hasJob()
+{
+    return employees.size() < jobCapacity;
 }

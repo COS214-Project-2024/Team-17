@@ -294,6 +294,18 @@ Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 	return closest;
 }
 
+Building *CityCentralMediator::requestJob()
+{
+	for (auto b : buildings)
+	{
+		if (b->hasJob())
+		{
+			return b;
+		}
+	}
+	return nullptr;
+}
+
 void CityCentralMediator::updateBuses()
 {
 	for (auto b : buses)

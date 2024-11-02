@@ -15,8 +15,11 @@ void Citizen::changeHappiness(int change)
 
 	if (oldstate->getState() == newState->getState() && newState->getState() == "Upset")
 	{
-		CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-		ccm->handleCitizenEmigration(this);
+		if (activity != Activity::InTransitHome && activity != Activity::InTransitWork)
+		{
+			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+			ccm->handleCitizenEmigration(this);
+		}
 	}
 	else
 	{

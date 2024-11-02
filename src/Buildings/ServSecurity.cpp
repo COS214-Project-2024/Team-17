@@ -1,6 +1,7 @@
 #include "ServSecurity.h"
 
-ServSecurity::ServSecurity() {
+ServSecurity::ServSecurity()
+{
     cout << BLACK << "\t-->Security service created" << RESET << endl;
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
@@ -12,55 +13,69 @@ ServSecurity::ServSecurity() {
     Resources::addIncome(cityIncome);
 }
 
-ServSecurity::~ServSecurity() {
+ServSecurity::~ServSecurity()
+{
     cout << BLACK << "\t-->Security service destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happinessIncrease);
     Resources::removeIncome(cityIncome);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void ServSecurity::displayBuildingInfo() {
+void ServSecurity::displayBuildingInfo()
+{
     cout << "Security service with " << this->visitors << " visitors\n";
 }
 
-int ServSecurity::getVisitors() {
+int ServSecurity::getVisitors()
+{
     return visitors;
 }
 
-void ServSecurity::setVisitors(int visitors) {
+void ServSecurity::setVisitors(int visitors)
+{
     this->visitors = visitors;
 }
 
-void ServSecurity::callUtilities(){
+void ServSecurity::callUtilities()
+{
     notifyUtilities();
 }
 
-bool ServSecurity::getState(){
+bool ServSecurity::getState()
+{
     return operational;
 }
 
-void ServSecurity::setState(bool state){
-    if(operational!=state){
+void ServSecurity::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-        cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-std::string ServSecurity::getBuildingType(){
+std::string ServSecurity::getBuildingType()
+{
     return type;
 }
 
-bool ServSecurity::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool ServSecurity::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
     }
@@ -70,12 +85,20 @@ bool ServSecurity::addEmployee(Citizen* employee) {
     return true;
 }
 
-void ServSecurity::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void ServSecurity::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
         }
     }
+}
+
+bool ServSecurity::hasJob()
+{
+    return employees.size() < jobCapacity;
 }
