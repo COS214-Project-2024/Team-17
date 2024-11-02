@@ -126,6 +126,26 @@ void Citizen::notifyChange(std::string message)
 		}
 		myBus = nullptr;
 	}
+	else if (message == "Update_Job")
+	{
+		if (workplace == nullptr)
+		{
+			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+			Building *job = ccm->requestJob();
+
+			if (!job)
+			{
+				changeHappiness(-1);
+				std::cout << RED << "Could not find job for citizen " << name << "!" << RESET << std::endl;
+			}
+			else
+			{
+				std::cout << GREEN << "Citizen " << name << " found a job!" << RESET << std::endl;
+				changeHappiness(1);
+				setWorkplace(job);
+			}
+		}
+	}
 }
 
 void Citizen::accept(TaxAndBudgetVisitor *visitor)
