@@ -185,6 +185,22 @@ void Citizen::notifyChange(std::string message)
 			}
 		}
 	}
+	else if (message == "No_Education")
+	{
+		changeHappiness(-1);
+	}
+	else if (message == "No_Entertainment")
+	{
+		changeHappiness(-1);
+	}
+	else if (message == "No_Health")
+	{
+		changeHappiness(-1);
+	}
+	else if (message == "No_Security")
+	{
+		changeHappiness(-1);
+	}
 }
 
 void Citizen::accept(TaxAndBudgetVisitor *visitor)

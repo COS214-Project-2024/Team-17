@@ -1,6 +1,6 @@
 #include "ServHospital.h"
 #include <iostream>
-ServHospital::ServHospital()
+ServHospital::ServHospital() : Services(100)
 {
     cout << BLACK << "\t-->Security service created" << RESET << endl;
     Resources::removeMoney(cost);

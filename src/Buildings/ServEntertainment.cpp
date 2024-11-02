@@ -1,6 +1,6 @@
 #include "ServEntertainment.h"
 
-ServEntertainment::ServEntertainment()
+ServEntertainment::ServEntertainment() : Services(35)
 {
     cout << BLACK << "\t-->Entertainment service created" << RESET << endl;
     Resources::removeMoney(cost);
