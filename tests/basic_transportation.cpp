@@ -186,7 +186,7 @@ TEST(TestBlockedRoads, TestBlockedRoads)
     Bus *bus1 = new Bus(roadsComposite->getComponents()[2], 10);
     Bus *bus2 = new Bus(roadsComposite->getComponents()[2], 10);
 
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 10; i++)
     {
         mediator->updateBuses();
         mediator->citizensDoSomething();

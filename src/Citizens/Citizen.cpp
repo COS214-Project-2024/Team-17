@@ -271,6 +271,19 @@ void Citizen::doSomething()
 				currentRoad = route.at(0);
 				route.erase(route.begin());
 			}
+			else
+			{
+				if (waitTimer > 0)
+				{
+					waitTimer--;
+					break;
+				}
+				else
+				{
+					waitTimer = 5;
+					changeHappiness(-1);
+				}
+			}
 			if (currentRoad == ccm->getClosestRoad(workplace->getXCoordinate(), workplace->getYCoordinate()))
 			{
 				activity = Activity::Work;
@@ -305,6 +318,19 @@ void Citizen::doSomething()
 				currentRoad->removeUser(this);
 				currentRoad = route.at(0);
 				route.erase(route.begin());
+			}
+			else
+			{
+				if (waitTimer > 0)
+				{
+					waitTimer--;
+					break;
+				}
+				else
+				{
+					waitTimer = 5;
+					changeHappiness(-1);
+				}
 			}
 			if (currentRoad == ccm->getClosestRoad(home->getXCoordinate(), home->getYCoordinate()))
 			{
