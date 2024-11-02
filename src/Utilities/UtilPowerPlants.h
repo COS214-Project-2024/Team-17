@@ -9,6 +9,7 @@
 #ifndef UTILPOWERPLANTS_H
 #define UTILPOWERPLANTS_H
 #include "UtilityManager.h"
+#include "../Buildings/BuildingRequirements.h"
 #include <string>
 
 /**
@@ -18,9 +19,16 @@
  */
 class UtilPowerPlants: public UtilityManager {
 private:
-    std::string type = "Power Plant"; ///< Type of utility
-    bool operational; ///< Operational state of the Power Plant
+	std::string type="Power Plant";
+	bool operational;//Observer State
     // int capacity;
+
+	//Resources:
+	static const int cost = BuildingRequirements::powerPlantBuildCost;
+	static const int woodCost = BuildingRequirements::powerPlantWoodCost;
+	static const int concreteCost = BuildingRequirements::powerPlantConcreteCost;
+	static const int steelCost = BuildingRequirements::powerPlantSteelCost;
+	
     
 public:
     /**

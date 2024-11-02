@@ -1,3 +1,262 @@
+// #include "colours.h" // Testing colours and other includes
+// // BLACK IS USED FOR FUNCTION CALL CHECKS
+// // THINGS TO BE IGNORED AND REMOVED BEFORE FINAL DEM0
+
+// #include "./src/Buildings/FactoryBuilding.h"
+// #include "./src/Buildings/FactResidential.h"
+// #include "./src/Buildings/FactCommercial.h"
+// #include "./src/Buildings/FactIndustrial.h"
+// #include "./src/Buildings/FactLandmarks.h"
+// #include "./src/Buildings/FactService.h"
+
+// // Prototypes
+// void test1(); // Buildings [RESIDENTIAL]
+// void test2(); // Buildings [COMMERCIAL]
+// void test3(); // Buildings [INDUSTRIAL]
+// void test4(); // Buildings [LANDMARKS]
+// void test5(); // Buildings [SERVICES]
+
+// void createBuilding();
+// void updateCity();
+
+// int main()
+// {
+
+//     cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
+//          << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
+//          << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
+//          << "\t     ┛                 " << RESET << endl
+//          << endl;
+
+//     test1();
+//     cout << YELLOW << "==============================" << RESET << endl;
+//     // test2();
+//     // cout << YELLOW << "==============================" << RESET << endl;
+//     // test3();
+//     // cout << YELLOW << "==============================" << RESET << endl;
+//     // test4();
+//     // cout << YELLOW << "==============================" << RESET << endl;
+//     // test5();
+//     // cout << YELLOW << "==============================" << RESET << endl;
+
+//     return 0;
+// }
+
+// void test1()
+// {
+
+//     cout << BLUE << "••○••○••○••○••○••○••○••○••○••○••○••" << RESET << endl;
+//     cout << PURPLE << BOLD << "❇\tLOAD SAVE SATE ...\t❇" << RESET << endl;
+//     cout << BLUE << "••○••○••○••○••○••○••○••○••○••○••○••\n"
+//          << RESET << endl;
+
+//     int option;
+
+//     int attempts = 0;
+//     while (attempts < 3)
+//     {
+//         cout << YELLOW << "••○••○••○••○••○••○••○••○••○••○••○••" << RESET << endl;
+//         cout << "Welcome! What would you like to do in the " << BOLD << "City" << RESET << " today?" << endl;
+//         cout << YELLOW << "••○••○••○••○••○••○••○••○••○••○••○••\n"
+//              << RESET << endl;
+//         cout << BLUE << "------------------------------" << endl;
+//         cout << "Choose an option: " << endl;
+//         cout << "\t1. Create a new building" << endl;
+//         cout << "\t2. Change current city state" << endl;
+//         cout << "\t3. Exit" << endl;
+//         cout << "--------------------------------" << RESET << endl;
+//         cout << "Enter your choice: ";
+//         cin >> option;
+
+//         if (option == 1)
+//         {
+//             cout << BLUE << BOLD << "Creating new building" << RESET << endl;
+//             createBuilding();
+//             continue;
+//         }
+//         else if (option == 2)
+//         {
+//             cout << BOLD << "Changing city state" << RESET << endl;
+//             updateCity();
+//             return;
+//         }
+//         else if (option == 3)
+//         {
+//             cout << YELLOW << BOLD << "❇\tEXITING ...\t❇" << RESET << endl;
+//             return;
+//         }
+//         else
+//         {
+//             cout << RED << BOLD << "Invalid option" << RESET << endl;
+//             attempts++;
+//         }
+//     }
+//     if (attempts == 3)
+//     {
+//         cout << RED << BOLD << "Too many invalid attempts. Exiting..." << RESET << endl;
+//     }
+
+//     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
+// }
+
+// void createBuilding()
+// {
+//     string buildingType;
+//     int capacity;
+//     int jobCapacity;
+//     int option, option2;
+
+//     struct BuildingOption
+//     {
+//         string type;
+//         vector<string> subtypes;
+//     };
+
+//     vector<BuildingOption> buildingOptions = {
+//         {"Residential", {"House", "Flats/apartments", "Townhouse", "Estate"}},
+//         {"Commercial", {"Mall", "Shop", "Office"}},
+//         {"Industrial", {"Warehouse", "Factory", "Plant"}},
+//         {"Landmarks", {"Park", "Monument", "Community Center"}},
+//         {"Services", {"Education", "Security", "Entertainment"}}};
+
+//     cout << "What Building Type do you want to build?" << endl;
+//     cout << BLUE << "------------------------------" << endl;
+//     cout << "Choose an option: " << endl;
+//     for (int i = 0; i < buildingOptions.size(); ++i)
+//     {
+//         cout << BLUE << BOLD << "\t" << i + 1 << ". " << buildingOptions[i].type << ":" << RESET;
+//         for (const auto &subtype : buildingOptions[i].subtypes)
+//         {
+//             cout << " " << subtype << ",";
+//         }
+//         cout << endl;
+//     }
+//     cout << BLUE << "--------------------------------" << RESET << endl;
+
+//     int attempts = 0;
+//     while (attempts < 3)
+//     {
+//         cout << "Enter your choice: ";
+//         cin >> option;
+
+//         if (option >= 1 && option <= buildingOptions.size())
+//         {
+//             const auto &selectedOption = buildingOptions[option - 1];
+//             cout << "What kind of " << selectedOption.type << " Building?" << endl;
+//             cout << BLUE << "------------------------------" << endl;
+//             cout << "Choose an option: " << endl;
+//             for (int i = 0; i < selectedOption.subtypes.size(); ++i)
+//             {
+//                 cout << "\t" << i + 1 << ". " << selectedOption.subtypes[i] << endl;
+//             }
+//             cout << "--------------------------------" << RESET << endl;
+
+//             cout << "Enter your choice: ";
+//             cin >> option2;
+
+//             if (option2 >= 1 && option2 <= selectedOption.subtypes.size())
+//             {
+//                 buildingType = selectedOption.subtypes[option2 - 1];
+
+//                 if (selectedOption.type == "Residential")
+//                 {
+//                     cout << "Enter the capacity for " << buildingType << ": ";
+//                     cin >> capacity;
+
+//                     FactoryBuilding *factory = new FactResidential();
+//                     Residential *building = factory->createResBuilding(buildingType);
+
+//                     building->setCapacity(capacity);
+//                     building->displayBuildingInfo();
+//                     cout << "Capacity: " << building->getCapacity() << endl;
+
+//                     delete building;
+//                     delete factory;
+//                 }
+//                 else if (selectedOption.type == "Commercial")
+//                 {
+//                     cout << "Enter the job capacity for " << buildingType << ": ";
+//                     cin >> jobCapacity;
+
+//                     FactoryBuilding *factory = new FactCommercial();
+//                     Commercial *building = factory->createComBuilding(buildingType);
+
+//                     building->setJobCapacity(jobCapacity);
+//                     building->displayBuildingInfo();
+//                     cout << "Job Capacity: " << building->getJobCapacity() << endl;
+
+//                     delete building;
+//                     delete factory;
+//                 }
+//             }
+//             else if (selectedOption.type == "Industrial")
+//             {
+//                 cout << "Enter the production capacity for " << buildingType << ": ";
+//                 cin >> jobCapacity;
+
+//                 FactoryBuilding *factory = new FactIndustrial();
+//                 Industrial *building = factory->createIndBuilding(buildingType);
+
+//                 building->setProductionCapacity(jobCapacity);
+//                 building->displayBuildingInfo();
+//                 cout << "Production Capacity: " << building->getProductionCapacity() << endl;
+
+//                 delete building;
+//                 delete factory;
+//             }
+//             else if (selectedOption.type == "Landmarks")
+//             {
+//                 cout << "Enter the number of visitors for " << buildingType << ": ";
+//                 cin >> jobCapacity;
+
+//                 FactoryBuilding *factory = new FactLandmarks();
+//                 Landmark *building = factory->createLandmark(buildingType);
+
+//                 building->setVisitors(jobCapacity);
+//                 building->displayBuildingInfo();
+//                 cout << "Visitors: " << building->getVisitors() << endl;
+
+//                 delete building;
+//                 delete factory;
+//             }
+//             else if (selectedOption.type == "Services")
+//             {
+//                 cout << "Enter the number of visitors for " << buildingType << ": ";
+//                 cin >> jobCapacity;
+
+//                 FactoryBuilding *factory = new FactService();
+//                 Services *building = factory->createServiceBuilding(buildingType);
+
+//                 building->setVisitors(jobCapacity);
+//                 building->displayBuildingInfo();
+//                 cout << "Visitors: " << building->getVisitors() << endl;
+
+//                 delete building;
+//                 delete factory;
+//             }
+//             else
+//             {
+//                 cout << RED << BOLD << "Invalid subtype option." << RESET << endl;
+//             }
+//             return;
+//         }
+//         else
+//         {
+//             cout << RED << BOLD << "Invalid option." << RESET << endl;
+//             attempts++;
+//         }
+//     }
+//     if (attempts == 3)
+//     {
+//         cout << RED << BOLD << "Too many invalid attempts. Exiting..." << RESET << endl;
+//     }
+// }
+
+// void updateCity()
+// {
+//     cout << RED << "Feature not implemented yet..." << RESET << endl;
+// }
+
 #include "colours.h" // Testing colours and other includes
 // BLACK IS USED FOR FUNCTION CALL CHECKS
 // THINGS TO BE IGNORED AND REMOVED BEFORE FINAL DEM0
@@ -36,6 +295,8 @@
 
 #include "./src/Citizens/CitizensIncludes.h"
 
+#include "./src/resources.h"
+
 // Prototypes
 void test1(); // Buildings [RESIDENTIAL]
 void test2(); // Buildings [COMMERCIAL]
@@ -49,6 +310,8 @@ void test7(); // Utilities [ALL]
 
 void test8(); // Citizens [ALL]
 
+void test9(); // Jobs [ALL]
+
 int main()
 {
 
@@ -58,21 +321,23 @@ int main()
          << "\t     ┛                 " << RESET << endl
          << endl;
 
-    // test1();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test2();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test3();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test4();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test5();
-    // cout << YELLOW << "==============================" << RESET << endl;
-    // test6();
-    // cout << YELLOW << "==============================" << RESET << endl;
+    test1();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test2();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test3();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test4();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test5();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test6();
+    cout << YELLOW << "==============================" << RESET << endl;
     test7();
     cout << YELLOW << "==============================" << RESET << endl;
     test8();
+    cout << YELLOW << "==============================" << RESET << endl;
+    test9();
     cout << YELLOW << "==============================" << RESET << endl;
 
     return 0;
@@ -568,15 +833,14 @@ void test7()
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
-
 void test8()
 {
 
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
     std::cout << "############################################" << std::endl;
-    CityMediator *mediator = new CityCentralMediator();
-    Citizen *citizen = new Citizen(mediator);
+    CityMediator *mediator = CityCentralMediator::getInstance();
+    Citizen *citizen = new Citizen();
     std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
     std::cout << " - Testing Citizen State" << std::endl;
     citizen->setState(new Happy());
@@ -590,7 +854,46 @@ void test8()
     mediator->registerBuilding(building);
     mediator->registerUtility(powerPlant);
     mediator->notifyUtilityChange(powerPlant, false, "Test Message");
+
+    // cout << "Citizen Count: " << Resources::getMaxPopulation() <<endl;
+    // cout << "wood" << Resources::getWood()<< endl;
+    // cout << "steel" << Resources::getSteel()<< endl;
+    // cout << "concrete" << Resources::getConcrete()<< endl;
+
+    // cout << "electricity" << Resources::getElectricityUsage()<< endl;
+    // cout << "water" << Resources::getWaterUsage()<< endl;
+
     std::cout << " - Testing Complete!" << std::endl;
+
     delete citizen;
     delete mediator;
+}
+
+void test9()
+{
+    std::cout << "############################################" << std::endl;
+    std::cout << "Testing Jobs" << std::endl;
+    std::cout << "############################################" << std::endl;
+    Citizen *citizen = new Citizen();
+
+    ComMall *mall = new ComMall();
+    mall->setXCoordinate(200);
+    mall->setYCoordinate(200);
+
+    std::cout << "Coordinate: " << mall->getXCoordinate() << ", " << mall->getYCoordinate() << std::endl;
+
+    mall->addEmployee(citizen);
+    std::cout << " - Testing Jobs" << std::endl;
+    citizen->getWorkplace()->displayBuildingInfo();
+    mall->removeEmployee(citizen);
+    if(citizen->getWorkplace() == nullptr){
+        std::cout << " - Citizen is unemployed" << std::endl;
+    }
+    else{
+        std::cout << " - Citizen is employed" << std::endl;
+    }
+
+    std::cout << " - Testing Complete!" << std::endl;
+    delete mall;
+    delete citizen;
 }

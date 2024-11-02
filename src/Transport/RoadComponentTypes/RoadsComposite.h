@@ -10,7 +10,16 @@ private:
 	std::vector<RoadComponent *> components;
 
 public:
-	RoadsComposite(CityMediator *mediator);
+	static const int MAX_SECTION_DISTANCE = 100;
+	/*
+	 * @brief Constructor for RoadsComposite
+	 * @param sX - start x coordinate
+	 * @param sY - start y coordinate
+	 * @param eX - end x coordinate
+	 * @param eY - end y coordinate
+	 * @param type - type of road (highway, main, residential)
+	 */
+	RoadsComposite(int sX, int sY, int eX, int eY, std::string type);
 
 	void displayInfo();
 
@@ -23,6 +32,19 @@ public:
 	float getDistance();
 
 	void notifyChange(std::string message);
+
+	void addConnection(RoadComponent *connection, float distance);
+
+	std::vector<RoadComponent *> getConnections();
+
+	const std::vector<RoadComponent *> &getComponents() const
+	{
+		return components;
+	}
+
+	float calculateDistance(int x, int y);
+
+	RoadComponent *closestSection(int x, int y);
 
 	~RoadsComposite() {}
 };

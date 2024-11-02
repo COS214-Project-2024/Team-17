@@ -1,5 +1,6 @@
 #include "RoadComponent.h"
 #include "../Citizens/CityMediator.h"
+#include "../Citizens/CityCentralMediator.h"
 #include "RoadIterator.h"
 #include "RoadState.h"
 
@@ -24,10 +25,13 @@ void RoadComponent::handleTraffic()
 	throw "Not yet implemented";
 }
 
-RoadComponent::RoadComponent(CityMediator *mediator) : CityBlock(mediator)
+RoadComponent::RoadComponent(int sX, int sY, int eX, int eY) : CityBlock()
 {
-	// TODO - implement RoadComponent::RoadComponent
-	// throw "Not yet implemented";
+	this->startX = sX;
+	this->startY = sY;
+	this->endX = eX;
+	this->endY = eY;
+	mediator = CityCentralMediator::getInstance();
 }
 
 // void RoadComponent::updateTraffic(TrafficStatus newStatus)
@@ -54,4 +58,37 @@ RoadComponent::~RoadComponent()
 	{
 		delete state;
 	}
+}
+
+std::vector<RoadComponent *> RoadComponent::getConnections()
+{
+	return connections;
+}
+
+bool RoadComponent::isFull()
+{
+	return users.size() == capacity;
+}
+
+bool RoadComponent::addUser(Citizen *user)
+{
+	if (users.size() < capacity)
+	{
+		users.push_back(user);
+		return true;
+	}
+	return false;
+}
+
+bool RoadComponent::removeUser(Citizen *user)
+{
+	for (auto it = users.begin(); it != users.end(); it++)
+	{
+		if (*it == user)
+		{
+			users.erase(it);
+			return true;
+		}
+	}
+	return false;
 }

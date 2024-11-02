@@ -8,6 +8,7 @@
 #ifndef UTILWASTEMAN_H
 #define UTILWASTEMAN_H
 #include "UtilityManager.h"
+#include "../Buildings/BuildingRequirements.h"
 #include <string>
 using namespace std;
 /**
@@ -20,6 +21,13 @@ class UtilWasteMan: public UtilityManager {
     std::string type = "Waste Dump"; ///< Type of utility
     bool operational; ///< Operational state of the Waste Management service
     // int capacity;
+
+	//Resources:
+	static const int cost = BuildingRequirements::wasteManagementBuildCost;
+	static const int woodCost = BuildingRequirements::wasteManagementWoodCost;
+	static const int concreteCost = BuildingRequirements::wasteManagementConcreteCost;
+	static const int steelCost = BuildingRequirements::wasteManagementSteelCost;
+
     
 public:
     /**

@@ -6,17 +6,38 @@
 #include "CityMediator.h"
 #include <string>
 
+class Bus;
+class RoadComponent;
+
 class Citizen : CityBlock
 {
 
-private:
+protected:
 	int population;
-	CityMediator *mediator;
 	CitizenState *state;
 	std::string name;
+	Building *workplace;
+	Building *home;
+	Building *currentLocation;
+	RoadComponent *currentRoad;
+	CityMediator *mediator;
+	Bus *myBus;
+	bool ownsCar;
+	enum Activity
+	{
+		Rest,
+		Work,
+		InTransitWork,
+		AwaitTransitWork,
+		InTransitHome,
+		AwaitTransitHome,
+		Nothing
+	};
+
+	Activity activity;
 
 public:
-	Citizen(CityMediator *mediator);
+	Citizen(bool autoRegister = true);
 
 	void setState(CitizenState *newState);
 
@@ -27,6 +48,24 @@ public:
 	void accept(TaxAndBudgetVisitor *visitor);
 
 	std::string getName();
+
+	void setWorkplace(Building *workplace);
+
+	Building *getWorkplace();
+
+	void fired();
+
+	void setHome(Building *home);
+
+	Building *getHome();
+
+	void evicted();
+
+	void giveCar();
+
+	virtual void doSomething();
+
+	Building *getCurrentBuilding();
 
 	~Citizen();
 };

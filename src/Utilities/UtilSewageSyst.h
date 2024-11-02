@@ -9,6 +9,7 @@
 #ifndef UTILSEWAGESYST_H
 #define UTILSEWAGESYST_H
 #include "UtilityManager.h"
+#include "../Buildings/BuildingRequirements.h"
 #include <string>
 using namespace std;
 /**
@@ -20,6 +21,12 @@ class UtilSewageSyst: public UtilityManager {
         private :
 	std::string type="Sewage System";
 	bool operational;//Observer State
+
+	//Resources:
+	static const int cost = BuildingRequirements::sewageSystemBuildCost;
+	static const int woodCost = BuildingRequirements::sewageSystemWoodCost;
+	static const int concreteCost = BuildingRequirements::sewageSystemConcreteCost;
+	static const int steelCost = BuildingRequirements::sewageSystemSteelCost;
     
 public:
     /**

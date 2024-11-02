@@ -1,4 +1,5 @@
 #include "UtilSewageSyst.h"
+#include "../resources.h"
 #include <iostream>
 
 /**
@@ -9,6 +10,10 @@ UtilSewageSyst::UtilSewageSyst() {
     std::cout << "Sewage System Being Built!" << std::endl;
     type = "Sewage System";
     operational = false; // constructing
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
 }
 
 

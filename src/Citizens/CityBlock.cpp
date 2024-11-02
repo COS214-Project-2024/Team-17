@@ -1,6 +1,7 @@
 #include "CityBlock.h"
+#include "CityCentralMediator.h"
 
-CityBlock::CityBlock(CityMediator *mediator)
+CityBlock::CityBlock()
 {
-	this->mediator = mediator;
+	this->mediator = CityCentralMediator::getInstance();
 }

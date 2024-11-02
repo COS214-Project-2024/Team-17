@@ -6,6 +6,7 @@
 class ComShop : public Commercial {
 public:
     ComShop();
+	~ComShop();
 
     void displayBuildingInfo() override;
 
@@ -16,20 +17,29 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	string getBuildingType()override;
 
-	// virtual bool checkBuildRequirements() = 0;
-	// virtual int increasePopulation() = 0;
-	// virtual void affectEmotionalState() = 0;
-	// virtual bool checkBuildRequirements() = 0;
-	// virtual void increaseJobs() = 0;
-	// virtual void affectEmotionalState() = 0;
+	bool addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
 
 private:
-    int jobCapacity;
+	vector<Citizen*> employees;
+
+	//Recources
+	int cost = 1000;
+
+    int jobCapacity = 10;
+	
+	int woodCost = 5;
+	int concreteCost = 10;
+	int steelCost = 5;
+
+	int electricityUsage = 5;
+	int waterUsage = 5;
+
+	int income = 100;
+
 	string type = "Commercial Shop";
 	bool operational;//CS State
 };

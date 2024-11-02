@@ -9,11 +9,19 @@
 class Building;
 class UtilityManager;
 class RoadState;
+class RoadComponent;
+class RoadIterator;
+class Bus;
 
 class CityCentralMediator : public CityMediator
 {
 
 private:
+	/*
+	@brief Stores the array of roads in the city.
+	*/
+	std::vector<RoadComponent *> roads;
+
 	/*
 	@brief Stores the array of buildings in the city.
 	*/
@@ -29,8 +37,15 @@ private:
 	*/
 	std::vector<Citizen *> citizens;
 	RoadState *roadState;
+	std::vector<Bus *> buses;
+	std::vector<Bus *> busQueue;
 
 public:
+	RoadComponent *getClosestRoad(int x, int y);
+
+	static CityCentralMediator *getInstance();
+	static const int BUILDING_ROAD_DISTANCE = 30;
+
 	/*
 	@brief Registers a building with the mediator.
 	@param building The building to register.
@@ -48,6 +63,18 @@ public:
 	@param citizen The citizen to register.
 	*/
 	void registerCitizen(Citizen *citizen);
+
+	/*
+	@brief Registers a bus with the mediator.
+	@param bus The bus to register.
+	 */
+	void registerBus(Bus *bus);
+
+	/*
+	@brief Registers a road with the mediator.
+	@param road The road to register.
+	*/
+	void registerRoad(RoadComponent *road);
 
 	/*
 	@brief Notifies all citizens of a building change.
@@ -71,9 +98,33 @@ public:
 	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
-	CityCentralMediator();
+	void notifyBusReady(Bus *bus);
 
-	~CityCentralMediator() {}
+	/*
+
+	*/
+	Bus *requestBus(Citizen *citizen, RoadComponent *location);
+
+	/*
+	@brief Constructor for the CityCentralMediator. You should not be calling this. Use getInstance() instead.
+	@param param Used to show that the constructor is private.
+	*/
+	CityCentralMediator(std::string param = "error");
+
+	std::vector<RoadComponent *> calculateRoute(int startX, int startY, int endX, int endY);
+	std::vector<RoadComponent *> calculateRoute(RoadComponent *start, RoadComponent *end);
+
+	bool isReachableByRoad(int x, int y);
+
+	void updateBuses();
+
+	void citizensDoSomething();
+
+	void citizensStartWork();
+
+	void citizensEndWork();
+
+	~CityCentralMediator();
 
 private:
 	void handlePopulationGrowth();

@@ -8,6 +8,7 @@
 #ifndef UTILWATERSUPPLY_H
 #define UTILWATERSUPPLY_H
 #include "UtilityManager.h"
+#include "../Buildings/BuildingRequirements.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -21,6 +22,12 @@ private :
     std::string type = "Water Supply"; ///< Type of utility
     bool operational; ///< Operational state of the Water Supply service
     // int capacity;
+
+    //Resources:
+    static const int cost = BuildingRequirements::waterSupplyBuildCost;
+    static const int woodCost = BuildingRequirements::waterSupplyWoodCost;
+    static const int concreteCost = BuildingRequirements::waterSupplyConcreteCost;
+    static const int steelCost = BuildingRequirements::waterSupplySteelCost;
     
 public:
     /**

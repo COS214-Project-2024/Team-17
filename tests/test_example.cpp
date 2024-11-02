@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <iostream>
 
 // Example function to be tested
 int add(int a, int b)
@@ -11,6 +12,7 @@ TEST(AdditionTest, HandlesPositiveInput)
 {
     EXPECT_EQ(add(1, 2), 3);
     EXPECT_EQ(add(10, 20), 30);
+    std::cout << "Test Passed" << std::endl;
 }
 
 TEST(AdditionTest, HandlesNegativeInput)

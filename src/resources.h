@@ -6,57 +6,103 @@
 
 using namespace std;
 
-class Resources{
+struct Resources{
     public:
-        Resources();
-        ~Resources();
+        //getters
+        static int getWood();
+        static int getWoodPerTick();
 
-        int getWood();
-        int getSteel();
-        int getConcrete();
-        int getElectricityUsage();
-        int getElectricityGenerated();
-        int getWaterUsage();
-        int getWaterGenerated();
-        double getMoney();
-        int getPopulation();
+        static int getSteel();
+        static int getSteelPerTick();
 
-        void addWood(int wood);
-        void addSteel(int steel);
-        void addConcrete(int concrete);
-        void addElectricityUsage(int electricity);
-        void addElectricityGenerated(int electricity);
-        void addWaterUsage(int water);
-        void addWaterGenerated(int water);
-        void addMoney(double money);
-        void addPopulation(int population);
-        void addToMaxPopulation(int population);
+        static int getConcrete();
+        static int getConcretePerTick();
 
-        void removeWood(int wood);
-        void removeSteel(int steel);
-        void removeConcrete(int concrete);
-        void removeElectricityUsage(int electricity);
-        void removeElectricityGenerated(int electricity);
-        void removeWaterUsage(int water);
-        void removeWaterGenerated(int water);
-        void removeMoney(double money);
-        void removePopulation(int population);
+        static int getElectricityUsage();
+        static int getElectricityGenerated();
+
+        static int getWaterUsage();
+        static int getWaterGenerated();
+
+        static double getMoney();
+        static double getIncome();
+
+        static int getPopulation();
+        static int getMaxPopulation();
+
+        //adding resources
+        static int getHappiness();
+
+        static void addWood(int wood);
+        static void addWoodPerTick(int wood);
+
+        static void addSteel(int steel);
+        static void addSteelPerTick(int steel);
+
+        static void addConcrete(int concrete);
+        static void addConcretePerTick(int concrete);
+
+        static void addElectricityUsage(int electricity);
+        static void addElectricityGenerated(int electricity);
+
+        static void addWaterUsage(int water);
+        static void addWaterGenerated(int water);
+
+        static void addMoney(double Addedmoney); // total money you have
+        static void addIncome(double income); // amount generated
+        
+        static void addPopulation(int population);
+        static void addToMaxPopulation(int population);
+
+        //removing resources
+        static void addHappiness(int happiness);
+
+        static void removeWood(int wood);
+        static void removeWoodPerTick(int wood);
+
+        static void removeSteel(int steel);
+        static void removeSteelPerTick(int steel);
+
+        static void removeConcrete(int concrete);
+        static void removeConcretePerTick(int concrete);
+
+        static void removeElectricityUsage(int electricity);
+        static void removeElectricityGenerated(int electricity);
+
+        static void removeWaterUsage(int water);
+        static void removeWaterGenerated(int water);
+        
+        static void removeMoney(double Addedmoney); // cost
+        static void removeIncome(double income); // income
+
+        static void removePopulation(int population);
+        static void removeFromMaxPopulation(int population);
+
+        static void removeHappiness(int happiness);
 
     private:
-        int woodUnits;
-        int steelUnits;
-        int concreteUnits;
+        static int woodUnits;
+        static int woodUnitsPerTick;
 
-        int totalElectricityUnitUsage;
-        int totalElectricityUnitGenerated;
+        static int steelUnits;
+        static int steelUnitsPerTick;
 
-        int waterUnitsGenerated;
-        int waterUnitsUsed;
+        static int concreteUnits;
+        static int concreteUnitsPerTick;
 
-        double money;
+        static int totalElectricityUnitUsage;
+        static int totalElectricityUnitGenerated;
 
-        int maxPopulation;
-        int currentPopulation;
+        static int waterUnitsGenerated;
+        static int waterUnitsUsed;
+
+        static double tickIncome;
+        static double money;
+
+        static int maxPopulation;
+        static int currentPopulation;
+
+        static int happinessUnits;
 };
 
 #endif

@@ -6,6 +6,7 @@
 class ServEducation : public Services {
 public:
 	ServEducation();
+	~ServEducation();
 
 	void displayBuildingInfo() override;	
 
@@ -16,19 +17,32 @@ public:
 	void callUtilities();//call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	// int getTotalCapacity();
-	// int getCurrentStorage();
-	// int setCurrentStorage(int storage);
+
 	string getBuildingType();
 
-	// void Primary();
-	// void Secondary();
-	// void Tertiary();
+	// Resources
+	bool addEmployee(Citizen* employee);
+	void removeEmployee(Citizen* employee);
 
 private:
 	int visitors;
 	string type="Service Education";
 	bool operational;//CS State
+
+	// Resources
+	vector<Citizen*> employees;
+	int cost = 1500;
+
+    int woodCost = 5;
+    int steelCost = 10;
+    int concreteCost = 15;
+
+    int electricityUsage = 10;
+    int waterUsage = 10;
+
+    int happinessIncrease = 5;
+	int jobCapacity = 20;
+	int cityIncome = 50;
 };
 
 #endif

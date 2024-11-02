@@ -1,4 +1,5 @@
 #include "UtilWasteMan.h"
+#include "../resources.h"
 #include <iostream>
 
 /**
@@ -9,6 +10,10 @@ UtilWasteMan::UtilWasteMan() {
     std::cout << "Waste Dump Being Built!" << std::endl;
     type = "Waste Dump";
     operational = false; // constructing
+    Resources::removeMoney(cost);
+    Resources::removeWood(woodCost);
+    Resources::removeSteel(steelCost);
+    Resources::removeConcrete(concreteCost);
 }
 
 
