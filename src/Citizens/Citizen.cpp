@@ -71,6 +71,9 @@ void Citizen::notifyChange(std::string message)
 
 	if (message == "Go_Home")
 	{
+		if (!home)
+			return;
+
 		std::cout << YELLOW << "Citizen " << name << " is going home" << RESET << std::endl;
 		if (!ownsCar)
 		{
@@ -90,13 +93,23 @@ void Citizen::notifyChange(std::string message)
 		}
 		else
 		{
-			activity = Activity::InTransitHome;
-			route = ccm->calculateRoute(workplace->getXCoordinate(), workplace->getYCoordinate(), home->getXCoordinate(), home->getYCoordinate());
-			currentRoad = route.at(0);
+			if (ccm->isReachableByRoad(home->getXCoordinate(), home->getYCoordinate()))
+			{
+				activity = Activity::InTransitHome;
+				route = ccm->calculateRoute(workplace->getXCoordinate(), workplace->getYCoordinate(), home->getXCoordinate(), home->getYCoordinate());
+				currentRoad = route.at(0);
+			}
+			else
+			{
+				changeHappiness(-1);
+			}
 		}
 	}
 	else if (message == "Go_Work")
 	{
+		if (!workplace)
+			return;
+
 		std::cout << YELLOW << "Citizen " << name << " is going to work" << RESET << std::endl;
 		if (!ownsCar)
 		{
@@ -116,9 +129,23 @@ void Citizen::notifyChange(std::string message)
 		}
 		else
 		{
-			activity = Activity::InTransitWork;
-			route = ccm->calculateRoute(home->getXCoordinate(), home->getYCoordinate(), workplace->getXCoordinate(), workplace->getYCoordinate());
-			currentRoad = route.at(0);
+			if (ccm->isReachableByRoad(workplace->getXCoordinate(), workplace->getYCoordinate()))
+			{
+				activity = Activity::InTransitWork;
+				route = ccm->calculateRoute(home->getXCoordinate(), home->getYCoordinate(), workplace->getXCoordinate(), workplace->getYCoordinate());
+				std::cout << "Current location: " << currentLocation->getBuildingType() << std::endl;
+				std::cout << BLUE << "ROUTE: " << std::endl;
+				for (auto r : route)
+				{
+					r->displayInfo();
+				}
+				std::cout << RESET << std::endl;
+				currentRoad = route.at(0);
+			}
+			else
+			{
+				changeHappiness(-1);
+			}
 		}
 	}
 	else if (message == "Arrived_Destination")
@@ -235,6 +262,7 @@ void Citizen::doSomething()
 				// Handle errors
 				currentLocation = home;
 				activity = Activity::Rest;
+				std::cout << RED << "Route is empty!" << RESET << std::endl;
 				break;
 			}
 			if (route.at(0)->addUser(this))
@@ -247,6 +275,7 @@ void Citizen::doSomething()
 			{
 				activity = Activity::Work;
 				currentLocation = workplace;
+				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
 			}
 		}
 		break;
@@ -268,6 +297,7 @@ void Citizen::doSomething()
 				// Handle errors
 				currentLocation = home;
 				activity = Activity::Rest;
+				std::cout << RED << "Route is empty!" << RESET << std::endl;
 				break;
 			}
 			if (route.at(0)->addUser(this))
@@ -280,6 +310,7 @@ void Citizen::doSomething()
 			{
 				activity = Activity::Rest;
 				currentLocation = home;
+				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
 			}
 		}
 		break;

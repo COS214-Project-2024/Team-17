@@ -270,7 +270,6 @@ std::vector<RoadComponent *> CityCentralMediator::calculateRoute(RoadComponent *
 bool CityCentralMediator::isReachableByRoad(int x, int y)
 {
 	RoadComponent *road = getClosestRoad(x, y);
-	road->displayInfo();
 	if (road->calculateDistance(x, y) < BUILDING_ROAD_DISTANCE)
 	{
 		return true;
