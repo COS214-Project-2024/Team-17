@@ -112,6 +112,13 @@ public:
 	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
+	/*
+	@brief Notifies all citizens of a road status change.
+	@param status The road status that changed.
+	@param message The message to send to the citizens.
+	*/
+	void notifyPolicyChange(std::string message);
+
 	void notifyBusReady(Bus *bus);
 
 	/*
@@ -152,7 +159,7 @@ public:
 
 	void updateCitizenSatisfaction();
 
-  double accept(TaxAndBudgetVisitor *visitor);
+	double accept(TaxAndBudgetVisitor *visitor);
 
 	void handleCitizenEmigration(Citizen *citizen);
 };

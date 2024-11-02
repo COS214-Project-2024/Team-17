@@ -116,6 +116,14 @@ void CityCentralMediator::notifyRoadChange(RoadState *status, std::string messag
 	}
 }
 
+void CityCentralMediator::notifyPolicyChange(std::string message)
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
 void CityCentralMediator::notifyBusReady(Bus *bus)
 {
 	// push bus to busQueue if not in queue already
@@ -444,13 +452,13 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 
 double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
 {
-  double total = 0;
-  for(Building* building : buildings)
-  {
-    total += visitor->visit(building);
-  }
-  for(Citizen* citizen : citizens)
-  {
-    total += visitor->visit(citizen);
-  }
+	double total = 0;
+	for (Building *building : buildings)
+	{
+		total += visitor->visit(building);
+	}
+	for (Citizen *citizen : citizens)
+	{
+		total += visitor->visit(citizen);
+	}
 }
