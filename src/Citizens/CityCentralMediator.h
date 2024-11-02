@@ -13,6 +13,7 @@ class RoadComponent;
 class RoadIterator;
 class Bus;
 class Trainstation;
+class Services;
 
 class CityCentralMediator : public CityMediator
 {
