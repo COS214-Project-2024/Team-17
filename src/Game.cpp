@@ -39,7 +39,8 @@ void Game::updateCityGrowth()
     std::cout << "Policies/laws enacted\n";
 }
 
-std::string toLowerCase(const std::string& str) {
+std::string toLowerCase(const std::string& str) 
+{
     std::string lowerStr = str;
     std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
     return lowerStr;
@@ -47,115 +48,150 @@ std::string toLowerCase(const std::string& str) {
 
 void Game::updateCityTax()
 {
-  std::string input;
-  this->gov.collectTaxes();
-  while(true)
-  {
-    std::cout << "What action do you want to do? (Laws,Taxes,Nothing): ";
-    std::cin >> input;
+   std::string input;
+  bool paused = false;
+   while (true) 
+   {
+        if (!paused) 
+        {
+            std::cout << "What action do you want to do? (Laws, Taxes, Pause, Skip): ";
+            std::cin >> input;
+            input = toLowerCase(input);
+        }
+        
+        if (input == "skip") 
+        {
+            break;
+        }
+        else if (input == "pause") 
+        {
+            std::cout << "System paused. Type 'resume' to continue: ";
+            paused = true;
+            while (paused) {
+                std::cin >> input;
+                if (toLowerCase(input) == "resume") 
+                {
+                    paused = false;
+                } else {
+                    std::cout << "Invalid input. Type 'resume' to continue: ";
+                }
+            }
+            continue;
+        }
+        else if (input == "laws") 
+        {
+            while (true) {
+                std::cout << "What do you want to do in Laws? (Add, Remove, List, Back): ";
+                std::cin >> input;
+                input = toLowerCase(input);
 
-    input = toLowerCase(input);
-    if(input == "laws")
-    {
-      while(true)
-      {
-        std::cout << "What do you want to do? (Add,Remove,List): ";
-        std::cin >> input;
-        input = toLowerCase(input);
-        if(input == "add")
-        {
-          std::cout << "Give the name of the law you want to add: ";
-          std::cin >> input;
-          Policy* law = new Law(&this->gov);
-          this->gov.addPolicy(*law,input);
-          break;
+                if (input == "add") 
+                {
+                    std::cout << "Give the name of the law you want to add: ";
+                    std::cin >> input;
+                    // Policy* law = new Law(&this->gov);
+                    // this->gov.addPolicy(*law, input);
+                    std::cout << "Added law: " << input << "\n";
+                } 
+                else if (input == "remove") 
+                {
+                    std::cout << "Give the name of the law you want to remove: ";
+                    std::cin >> input;
+                    this->gov.removePolicy(input);
+                    std::cout << "Removed law: " << input << "\n";
+                }
+                else if (input == "list") 
+                {
+                    this->gov.listPolicies();
+                }
+                else if (input == "back") 
+                {
+                    break;
+                }
+                else 
+                {
+                    std::cout << "Invalid action. Please try again.\n";
+                }
+            }
         }
-        else if(input == "remove")
+        else if (input == "taxes") 
         {
-          std::cout << "Give the name of the law you want to remove: ";
-          std::cin >> input;
-          this->gov.removePolicy(input);
-          break;
+            while (true) 
+            {
+                std::cout << "What do you want to do in Taxes? (Execute, Add, Remove, List, Back): ";
+                std::cin >> input;
+                input = toLowerCase(input);
+
+                if (input == "execute") 
+                {
+                    std::cout << "Give the name of the policy you want to execute: ";
+                    std::cin >> input;
+                    if (this->taxManager.executeCommand(input))
+                    std::cout << "Executed policy: " << input << "\n";
+                }
+                else if (input == "add") 
+                {
+                    std::cout << "What type of policy do you want to add? (Allocate, Collect, SetRate): ";
+                    std::cin >> input;
+                    input = toLowerCase(input);
+
+                    if (input == "allocate") 
+                    {
+                        std::string name, department;
+                        double amount;
+                        std::cout << "Enter name for the tax policy: ";
+                        std::cin >> name;
+                        std::cout << "Enter tax amount: ";
+                        std::cin >> amount;
+                        std::cout << "Enter department for allocation: ";
+                        std::cin >> department;
+                        TaxCommand* command = new AllocateTaxCommand(&this->gov, amount, department);
+                        this->taxManager.addCommand(name, command);
+                        std::cout << "Added allocation command: " << name << "\n";
+                    }
+                    else if (input == "collect") 
+                    {
+                        std::string name;
+                        std::cout << "Enter name for the collection command: ";
+                        std::cin >> name;
+                        TaxCommand* command = new CollectTaxCommand(&this->gov);
+                        this->taxManager.addCommand(name, command);
+                        std::cout << "Added collection command: " << name << "\n";
+                    }
+                    else if (input == "setrate") 
+                    {
+                        std::string name, category;
+                        double rate;
+                        std::cout << "Enter name for the rate command: ";
+                        std::cin >> name;
+                        std::cout << "Enter tax rate: ";
+                        std::cin >> rate;
+                        std::cout << "Enter category for the rate: ";
+                        std::cin >> category;
+                        TaxCommand* command = new SetTaxRateCommand(&this->gov, rate, category);
+                        this->taxManager.addCommand(name, command);
+                        std::cout << "Added rate command: " << name << "\n";
+                    }
+                }
+                else if (input == "list") 
+                {
+                    this->taxManager.listCommands();
+                }
+                else if (input == "back") 
+                {
+                    break;
+                }
+                else 
+                {
+                    std::cout << "Invalid action. Please try again.\n";
+                }
+            }
         }
-        else if(input == "list")
+        else 
         {
-          this->gov.listPolicies();
+            std::cout << "Invalid main action. Please try again.\n";
         }
-      }
     }
-    else if(input == "taxes") 
-    {
-      while(true)
-      {
-        std::cout << "What do you want to do? (Execute,Add,Remove,List): ";
-        std::cin >> input;
-
-        input = toLowerCase(input);
-        if(input == "execute")
-        {
-          std::cout << "Give the name of the command you want to execute: ";
-          std::cin >> input;
-          if(this->taxManager.executeCommand(input))
-          break;
-        }
-        else if(input == "add")
-        {
-          std::cout << "What type of policy do you want to add? (Allocate,Collect,SetRate): ";
-          std::cin >> input;
-          input = toLowerCase(input);
-
-          if(input == "allocate")
-          {
-            std::cout << "What name do you want to give to your new tax policy?: ";
-            std::string name;
-            std::cin >> name;
-
-            std::cout << "How much tax do you want to allocate?: ";
-            double amount;
-            std::cin >> amount;
-
-            std::cout << "What department should this tax go to?: ";
-            std::string department;
-            std::cin >> department;
-            TaxCommand* command = new AllocateTaxCommand(&this->gov,amount,department);
-            this->taxManager.addCommand(name,command);
-          }
-          else if(input == "collect")
-          {
-            std::cout << "What name do you want to give to your new command?: ";
-            std::string name;
-            std::cin >> name;
-
-            TaxCommand* command = new CollectTaxCommand(&this->gov);
-            this->taxManager.addCommand(name,command);
-          }
-          else if(input == "setrate")
-          {
-            std::cout << "What name do you want to give to your new command?: ";
-            std::string name;
-            std::cin >> name;
-
-            std::cout << "How much should the rate be?: ";
-            double rate;
-            std::cin >> rate;
-
-            std::cout << "What category should the rate be attributed to?: ";
-            std::string category;
-            std::cin >> category;
-
-            TaxCommand* command = new SetTaxRateCommand(&this->gov,rate,category);
-            this->taxManager.addCommand(name,command);
-          }
-          break;
-        }
-        else if(input == "list")
-        {
-          this->taxManager.listCommands();
-        }
-      }
-    }
-  }
-
 }
 
 void Game::start()
