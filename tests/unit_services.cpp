@@ -1,5 +1,8 @@
 #include <gtest/gtest.h>
 #include "../src/Buildings/ServHospital.h"
+#include "../src/Buildings/ServEducation.h"
+#include "../src/Buildings/ServSecurity.h"
+#include "../src/Buildings/ServEntertainment.h"
 
 class ServHospitalTest : public ::testing::Test {
 protected:
@@ -51,6 +54,39 @@ TEST_F(ServHospitalTest, RemoveEmployee) {
 // Test calling utilities
 TEST_F(ServHospitalTest, CallUtilities) {
     EXPECT_NO_THROW(hospital->callUtilities());
+}
+
+// Test fixture for ServEducation
+class ServEducationTest : public ::testing::Test {
+protected:
+    ServEducation* education;
+
+    void SetUp() override {
+        education = new ServEducation();
+    }
+
+    void TearDown() override {
+        delete education;
+    }
+};
+
+// Test education service creation
+TEST_F(ServEducationTest, CreateServEducation) {
+    ASSERT_NE(education, nullptr);
+}
+
+// Test setting and getting visitors
+TEST_F(ServEducationTest, SetAndGetVisitors) {
+    education->setVisitors(20);
+    EXPECT_EQ(education->getVisitors(), 20);
+}
+
+// Test adding and removing employees
+TEST_F(ServEducationTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(education->addEmployee(employee));
+    education->removeEmployee(employee);
+    delete employee;
 }
 
 int main(int argc, char **argv) {
