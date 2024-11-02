@@ -1,4 +1,4 @@
-// This will test Buildings and it's children
+// This will test Building
 
 #include <gtest/gtest.h>
 #include "../src/Buildings/Building.h"
@@ -141,6 +141,8 @@ TEST_F(ResHouseTest, DisplayBuildingInfo) {
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_NE(output.find("House for 5 people"), std::string::npos); // Check that output contains expected string
 }
+
+
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
