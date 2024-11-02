@@ -4,7 +4,7 @@
 #include "../src/Utilities/UtilSewageSyst.h"
 #include "../src/Utilities/UtilWasteMan.h"
 #include "../src/Utilities/UtilWaterSupply.h"
-#include "../src/Buildings/Building.h"  // Assuming a basic Building class with getState() method
+#include "../src/Buildings/ComMall.h"  // Assuming a basic Building class with getState() method
 
 // Test cases for UtilPowerPlants
 TEST(UtilPowerPlantsTest, StartsAndShutsDownCorrectly) {
@@ -68,7 +68,7 @@ TEST(UtilWaterSupplyTest, TypeIsCorrect) {
 
 // General test case for utility updates based on Building state
 TEST(UtilityTest, UpdatesAccordingToBuildingState) {
-    Building building;
+    ComMall building;
     UtilPowerPlants powerPlant;
     UtilSewageSyst sewageSystem;
     UtilWasteMan wasteManagement;
