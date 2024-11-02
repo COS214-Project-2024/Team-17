@@ -22,6 +22,8 @@ public:
     void CreateBuilding(QString buildingType);
     void CreateRoad(QString roadType);
 
+    void resizeEvent(QResizeEvent *event);
+
 private slots:
 
     void on_btnCancelBuilding_clicked();
@@ -90,6 +92,10 @@ private slots:
     void on_cmbRoadOrientation_currentIndexChanged(int index);
 
     void on_spnRoadEditLength_valueChanged(int arg1);
+
+    void on_spnRoadEditX_valueChanged(int arg1);
+
+    void on_spnRoadEditY_valueChanged(int arg1);
 
 private:
 

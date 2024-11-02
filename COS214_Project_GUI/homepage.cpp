@@ -21,6 +21,8 @@ HomePage::HomePage(QWidget *parent)
     ui->frmEditRoadPos->hide();
     ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
+    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 120);
+    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 100);
 }
 
 HomePage::~HomePage()
@@ -61,6 +63,7 @@ void HomePage::CreateBuilding(QString buildingType)
     ui->spnBuildingEditX->setValue(frame->x());
     ui->spnBuildingEditY->setValue(frame->y());
     ui->frmEditBuildingPos->show();
+    ui->frmInfo->hide();
     ui->frmEditBuildingPos->raise();
 }
 
@@ -69,23 +72,29 @@ void HomePage::CreateBuilding(QString buildingType)
 void HomePage::on_btnBuildBuilding_clicked()
 {
     ui->frmEditBuildingPos->hide();
+    ui->frmInfo->show();
     frame->editable=false;
+    frame=nullptr;
     ui->tabBuildCity->setEnabled(1);
 }
 
 
 void HomePage::on_spnBuildingEditX_valueChanged(int arg1)
 {
-    if(!frame->dragging){
-        frame->move(ui->spnBuildingEditX->value(), ui->spnBuildingEditY->value());
+    if(frame!=nullptr){
+        if(!frame->dragging){
+            frame->move(ui->spnBuildingEditX->value(), ui->spnBuildingEditY->value());
+        }
     }
 }
 
 
 void HomePage::on_spnBuildingEditY_valueChanged(int arg1)
 {
-    if(!frame->dragging){
-        frame->move(ui->spnBuildingEditX->value(), ui->spnBuildingEditY->value());
+    if(frame!=nullptr){
+        if(!frame->dragging){
+            frame->move(ui->spnBuildingEditX->value(), ui->spnBuildingEditY->value());
+        }
     }
 }
 
@@ -96,27 +105,32 @@ void HomePage::on_btnCancelBuilding_clicked()
     frame->deleteLater();
     buildings.removeOne(frame);
     ui->frmEditBuildingPos->hide();
+    ui->frmInfo->show();
     ui->tabBuildCity->setEnabled(1);
 }
 
 
 void HomePage::on_spnBuildingEditWidth_valueChanged(int arg1)
 {
-    frame->setFixedWidth(arg1);
-    if(frame->x() + arg1 > ui->scAreaMainMap->width()){
-        frame->move(ui->scAreaMainMap->width()-arg1, frame->y());
+    if(frame!=nullptr){
+        frame->setFixedWidth(arg1);
+        if(frame->x() + arg1 > ui->scAreaMainMap->width()){
+            frame->move(ui->scAreaMainMap->width()-arg1, frame->y());
+        }
+        ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-arg1);
     }
-    ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-arg1);
 }
 
 
 void HomePage::on_spnBuildingEditHeight_valueChanged(int arg1)
 {
-    frame->setFixedHeight(arg1);
-    if(frame->y() + arg1 > ui->scAreaMainMap->height()){
-        frame->move(frame->x(), ui->scAreaMainMap->height()-arg1);
+    if(frame!=nullptr){
+        frame->setFixedHeight(arg1);
+        if(frame->y() + arg1 > ui->scAreaMainMap->height()){
+            frame->move(frame->x(), ui->scAreaMainMap->height()-arg1);
+        }
+        ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-arg1);
     }
-    ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-arg1);
 }
 
 void HomePage::deleteBuilding(DraggableFrame* deleteMe){
@@ -129,43 +143,45 @@ void HomePage::deleteBuilding(DraggableFrame* deleteMe){
 
 void HomePage::on_cmbBuildingColor_currentIndexChanged(int index)
 {
-    switch (ui->cmbBuildingColor->currentIndex()) {
-        case 0:
-            frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 1:
-            frame->setStyleSheet("background-color: green");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 2:
-            frame->setStyleSheet("background-color: blue");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 3:
-            frame->setStyleSheet("background-color: orange");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 4:
-            frame->setStyleSheet("background-color: yellow");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 5:
-            frame->setStyleSheet("background-color: black");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 6:
-            frame->setStyleSheet("background-color: white");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 7:
-            frame->setStyleSheet("background-color: grey");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
-            break;
-        case 8:
-            frame->setStyleSheet("background-color: #fffdd0");  // Set color (using hex or color names)
-            BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
-            break;
+    if(frame!=nullptr){
+        switch (ui->cmbBuildingColor->currentIndex()) {
+            case 0:
+                frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 1:
+                frame->setStyleSheet("background-color: green");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 2:
+                frame->setStyleSheet("background-color: blue");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 3:
+                frame->setStyleSheet("background-color: orange");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 4:
+                frame->setStyleSheet("background-color: yellow");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 5:
+                frame->setStyleSheet("background-color: black");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 6:
+                frame->setStyleSheet("background-color: white");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 7:
+                frame->setStyleSheet("background-color: grey");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+                break;
+            case 8:
+                frame->setStyleSheet("background-color: #fffdd0");  // Set color (using hex or color names)
+                BuildingType->setStyleSheet("color: black; background-color: rgba(0, 0, 0, 0);");
+                break;
+        }
     }
 }
 
@@ -320,6 +336,7 @@ void HomePage::CreateRoad(QString roadType){
     ui->spnRoadEditX->setValue(road->x());
     ui->spnRoadEditY->setValue(road->y());
     ui->frmEditRoadPos->show();
+    ui->frmInfo->hide();
     ui->frmEditRoadPos->raise();
 }
 
@@ -335,6 +352,7 @@ void HomePage::on_btnBuildRoad_clicked()
 {
     ui->frmEditRoadPos->hide();
     road->editable=false;
+    road=nullptr;
     ui->tabBuildCity->setEnabled(1);
 }
 
@@ -346,29 +364,66 @@ void HomePage::on_btnCancelRoad_clicked()
     roads.removeOne(road);
     ui->frmEditRoadPos->hide();
     ui->tabBuildCity->setEnabled(1);
+    ui->frmInfo->show();
 }
 
 
 void HomePage::on_cmbRoadOrientation_currentIndexChanged(int index)
 {
-    if(ui->cmbRoadOrientation->currentIndex() == 0){
-        road->setFixedWidth(ui->spnRoadEditLength->value());
-        road->setFixedHeight(10);
-    }
-    else{
-        road->setFixedHeight(ui->spnRoadEditLength->value());
-        road->setFixedWidth(10);
+    if(road!=nullptr){
+        if(ui->cmbRoadOrientation->currentIndex() == 0){
+            road->setFixedWidth(ui->spnRoadEditLength->value());
+            road->setFixedHeight(10);
+        }
+        else{
+            road->setFixedHeight(ui->spnRoadEditLength->value());
+            road->setFixedWidth(10);
+        }
     }
 }
 
 
 void HomePage::on_spnRoadEditLength_valueChanged(int arg1)
 {
-    if(ui->cmbRoadOrientation->currentIndex() == 1){
-        road->setFixedHeight(arg1);
-    }
-    else{
-        road->setFixedWidth(arg1);
+    if(road!=nullptr){
+        if(ui->cmbRoadOrientation->currentIndex() == 1){
+            road->setFixedHeight(arg1);
+        }
+        else{
+            road->setFixedWidth(arg1);
+        }
     }
 }
+
+void HomePage::resizeEvent(QResizeEvent *event)
+{
+    // Call base class resize event handler
+    QMainWindow::resizeEvent(event);
+    // Adjust maximum values for spin boxes based on new size
+    ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width() - 120);
+    ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height() - 100);
+    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 120);
+    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 100);
+}
+
+
+void HomePage::on_spnRoadEditX_valueChanged(int arg1)
+{
+    if(road!=nullptr){
+        if(!road->dragging){
+            road->move(ui->spnRoadEditX->value(), ui->spnRoadEditY->value());
+        }
+    }
+}
+
+
+void HomePage::on_spnRoadEditY_valueChanged(int arg1)
+{
+    if(road!=nullptr){
+        if(!road->dragging){
+            road->move(ui->spnRoadEditX->value(), ui->spnRoadEditY->value());
+        }
+    }
+}
+
 

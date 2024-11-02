@@ -16,8 +16,7 @@ public:
     explicit DraggableRoad(QWidget *parent = nullptr, QSpinBox *EditXpos = nullptr, QSpinBox *EditYpos = nullptr, HomePage *homePage = nullptr, QVector<DraggableRoad*> roads = QVector<DraggableRoad*>())
         : QFrame(parent), EditXpos(EditXpos), EditYpos(EditYpos), homePage(homePage), roads(roads){
         setFrameShape(QFrame::Box);
-        setLineWidth(1);
-        setStyleSheet("background-color: #3498db;");
+        setStyleSheet("background-color: #202020;");
         setFixedSize(120, 10);  // Set size for the frame
     }
 
