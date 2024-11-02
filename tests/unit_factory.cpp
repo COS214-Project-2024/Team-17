@@ -191,48 +191,6 @@ TEST_F(FactTest, IndustrialFactoryUnsupportedTypes) {
     EXPECT_EQ(indFactory.createServiceBuilding("Entertainment"), nullptr);
 }
 
-/*
-Residential* FactIndustrial::createResBuilding(string type) {
-    if (type == "House") {
-        return nullptr;
-    } else if (type == "Townhouse") {
-        return nullptr;
-    } else if (type == "Apartment") {
-        return nullptr;
-    }
-    return nullptr;
-}
-Commercial* FactIndustrial::createComBuilding(string type) {
-    if (type == "Mall") {
-        return nullptr;
-    } else if (type == "Shop") {
-        return nullptr;
-    } else if (type == "Office") {
-        return nullptr;
-    }
-    return nullptr;
-}
-Landmark* FactIndustrial::createLandmark(string type) {
-        if (type == "Park") {
-        return nullptr;
-    } else if (type == "Community Center") {
-        return nullptr;
-    } else if (type == "Monument") {
-        return nullptr;
-    }
-    return nullptr;
-}
-Services* FactIndustrial::createServiceBuilding(string type) {
-        if (type == "Education") {
-        return nullptr;
-    } else if (type == "Security") {
-        return nullptr;
-    } else if (type == "Entertainment") {
-        return nullptr;
-    }
-    return nullptr;
-}*/
-
 // Test that the Landmark factory is created
 TEST_F(FactTest, LandmarkFactoryCreation) {
     ASSERT_NO_THROW(FactLandmarks());
@@ -269,9 +227,18 @@ TEST_F(FactTest, CreateUnknownLandmarkType) {
 // Test that other building types return nullptr in the Landmark factory
 TEST_F(FactTest, LandmarkFactoryUnsupportedTypes) {
     EXPECT_EQ(landmarkFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(landmarkFactory.createResBuilding("Townhouse"), nullptr);
+    EXPECT_EQ(landmarkFactory.createResBuilding("Flat"), nullptr);
+    EXPECT_EQ(landmarkFactory.createResBuilding("Estate"), nullptr);
     EXPECT_EQ(landmarkFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(landmarkFactory.createComBuilding("Shop"), nullptr);
+    EXPECT_EQ(landmarkFactory.createComBuilding("Office"), nullptr);
     EXPECT_EQ(landmarkFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(landmarkFactory.createIndBuilding("Warehouse"), nullptr);
+    EXPECT_EQ(landmarkFactory.createIndBuilding("Plant"), nullptr);
     EXPECT_EQ(landmarkFactory.createServiceBuilding("Education"), nullptr);
+    EXPECT_EQ(landmarkFactory.createServiceBuilding("Security"), nullptr);
+    EXPECT_EQ(landmarkFactory.createServiceBuilding("Entertainment"), nullptr);
 }
 
 // Test that the Service factory is created
