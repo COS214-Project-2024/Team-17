@@ -147,7 +147,6 @@ TEST_F(LandParkTest, DisplayBuildingInfoLandPark) {
     EXPECT_NE(output.find("Park with 8 visitors"), std::string::npos);
 }
 
-
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
