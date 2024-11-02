@@ -1,6 +1,6 @@
 #include "ServSecurity.h"
 
-ServSecurity::ServSecurity()
+ServSecurity::ServSecurity() : Services(20)
 {
     cout << BLACK << "\t-->Security service created" << RESET << endl;
     Resources::removeMoney(cost);

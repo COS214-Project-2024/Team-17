@@ -13,6 +13,7 @@ class RoadComponent;
 class RoadIterator;
 class Bus;
 class Trainstation;
+class Services;
 class TaxAndBudgetVisitor;
 
 class CityCentralMediator : public CityMediator
@@ -47,6 +48,8 @@ private:
 	RoadState *roadState;
 	std::vector<Bus *> buses;
 	std::vector<Bus *> busQueue;
+
+	void checkCitizenServiceSatisfaction();
 
 public:
 	RoadComponent *getClosestRoad(int x, int y);
@@ -104,6 +107,13 @@ public:
 	@param message The message to send to the citizens.
 	*/
 	void notifyUtilityChange(UtilityManager *type, bool status, std::string message);
+
+	/*
+	@brief Notifies all citizens of a Services change.
+	@param type The services building that changed.
+	@param message The message to send to the citizens.
+	*/
+	void notifyServicesChange(Services *type, std::string message);
 
 	/*
 	@brief Notifies all citizens of a road status change.
