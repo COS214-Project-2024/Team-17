@@ -24,10 +24,10 @@ void Building::notifyChange(std::string message)
     mediator->notifyBuildingChange(this, message);
 }
 
-void Building::accept(TaxAndBudgetVisitor *visitor)
-{
-    // no clue  what this is
-}
+// void Building::accept(TaxAndBudgetVisitor *visitor)
+// {
+//     // no clue  what this is
+// }
 
 int Building::getXCoordinate()
 {

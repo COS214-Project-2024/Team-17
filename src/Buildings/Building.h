@@ -28,7 +28,7 @@ public:
     virtual bool checkBuildRequirements() = 0;
 
     void notifyChange(std::string message);
-    void accept(TaxAndBudgetVisitor *visitor);
+    // void accept(TaxAndBudgetVisitor *visitor);
 
     int getXCoordinate();
     int getYCoordinate();
