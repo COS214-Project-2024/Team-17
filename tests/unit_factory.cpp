@@ -277,9 +277,18 @@ TEST_F(FactTest, CreateUnknownServiceType) {
 // Test that other building types return nullptr in the Service factory
 TEST_F(FactTest, ServiceFactoryUnsupportedTypes) {
     EXPECT_EQ(serviceFactory.createResBuilding("House"), nullptr);
+    EXPECT_EQ(serviceFactory.createResBuilding("Townhouse"), nullptr);
+    EXPECT_EQ(serviceFactory.createResBuilding("Flat"), nullptr);
+    EXPECT_EQ(serviceFactory.createResBuilding("Estate"), nullptr);
     EXPECT_EQ(serviceFactory.createComBuilding("Mall"), nullptr);
+    EXPECT_EQ(serviceFactory.createComBuilding("Shop"), nullptr);
+    EXPECT_EQ(serviceFactory.createComBuilding("Office"), nullptr);
     EXPECT_EQ(serviceFactory.createIndBuilding("Factory"), nullptr);
+    EXPECT_EQ(serviceFactory.createIndBuilding("Warehouse"), nullptr);
+    EXPECT_EQ(serviceFactory.createIndBuilding("Plant"), nullptr);
     EXPECT_EQ(serviceFactory.createLandmark("Park"), nullptr);
+    EXPECT_EQ(serviceFactory.createLandmark("Community Center"), nullptr);
+    EXPECT_EQ(serviceFactory.createLandmark("Monument"), nullptr);
 }
 
 int main(int argc, char **argv) {
