@@ -261,8 +261,80 @@ TEST_F(ResFlatTest, GetBuildingType) {
     EXPECT_EQ(resFlat->getBuildingType(), "Residential Flat");
 }
 
+// Test fixture for ResEstate
+class ResEstateTest : public ::testing::Test {
+protected:
+    ResEstate* resEstate;
+
+    void SetUp() override {
+        resEstate = new ResEstate();
+    }
+
+    void TearDown() override {
+        delete resEstate;
+    }
+};
+
+// Test ResEstate creation
+TEST_F(ResEstateTest, CreateResEstate) {
+    ASSERT_NE(resEstate, nullptr);
+}
+
+// Test ResEstate capacity
+TEST_F(ResEstateTest, SetAndGetCapacity) {
+    resEstate->setCapacity(50);
+    EXPECT_EQ(resEstate->getCapacity(), 50);
+}
+
+// Test moving in a resident
+TEST_F(ResEstateTest, MoveInResident) {
+    Citizen* resident = new Citizen();
+    resEstate->setCapacity(10);
+    EXPECT_TRUE(resEstate->moveIn(resident));
+    delete resident;
+}
+
+// Test moving out a resident
+TEST_F(ResEstateTest, MoveOutResident) {
+    Citizen* resident = new Citizen();
+    resEstate->setCapacity(10);
+    resEstate->moveIn(resident);
+    resEstate->moveOut(resident);
+    EXPECT_TRUE(resEstate->moveIn(resident));  // Check if the resident can move in again after moving out
+    delete resident;
+}
+
+// Test utility connection
+TEST_F(ResEstateTest, AddUtility) {
+    UtilityManager* utility = new UtilPowerPlants();
+    resEstate->addUtility(utility);
+    EXPECT_NO_THROW(resEstate->notifyUtilities());
+    delete utility;
+}
+
+// Test state change and observer notification
+TEST_F(ResEstateTest, SetAndGetState) {
+    resEstate->setState(true);
+    EXPECT_TRUE(resEstate->getState());
+    resEstate->setState(false);
+    EXPECT_FALSE(resEstate->getState());
+}
+
+// Test displayBuildingInfo
+TEST_F(ResEstateTest, DisplayBuildingInfo) {
+    resEstate->setCapacity(50);
+    testing::internal::CaptureStdout();
+    resEstate->displayBuildingInfo();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Estate for 50 people"), std::string::npos);
+}
+
+// Test building type retrieval
+TEST_F(ResEstateTest, GetBuildingType) {
+    EXPECT_EQ(resEstate->getBuildingType(), "Residential Estate");
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
