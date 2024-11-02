@@ -1,6 +1,6 @@
 #include "ServEducation.h"
 
-ServEducation::ServEducation()
+ServEducation::ServEducation() : Services(50)
 {
     cout << BLACK << "\t-->Education service created" << RESET << endl;
     Resources::removeMoney(cost);

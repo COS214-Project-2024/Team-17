@@ -9,8 +9,74 @@
 #include <cmath>
 #include "Bus.h"
 #include "../Buildings/Residential.h"
+#include "../Buildings/ServEducation.h"
+#include "../Buildings/ServEntertainment.h"
+#include "../Buildings/ServHospital.h"
+#include "../Buildings/ServSecurity.h"
 
 static CityCentralMediator *instance = nullptr;
+
+void CityCentralMediator::checkCitizenServiceSatisfaction()
+{
+	int education = 0;
+	int entertainment = 0;
+	int health = 0;
+	int security = 0;
+
+	for (auto b : buildings)
+	{
+		ServEducation *edu = dynamic_cast<ServEducation *>(b);
+		if (edu != nullptr)
+		{
+			education += edu->getCitizenServed();
+		}
+
+		ServEntertainment *ent = dynamic_cast<ServEntertainment *>(b);
+		if (ent != nullptr)
+		{
+			entertainment += ent->getCitizenServed();
+		}
+
+		ServHospital *hos = dynamic_cast<ServHospital *>(b);
+		if (hos != nullptr)
+		{
+			health += hos->getCitizenServed();
+		}
+
+		ServSecurity *sec = dynamic_cast<ServSecurity *>(b);
+
+		if (sec != nullptr)
+		{
+			security += sec->getCitizenServed();
+		}
+	}
+
+	int citizenCount = Resources::getPopulation();
+
+	if (education < citizenCount)
+	{
+		std::cout << RED << "Not enough education services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Education");
+	}
+
+	if (entertainment < citizenCount)
+	{
+		std::cout << RED << "Not enough entertainment services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Entertainment");
+	}
+
+	if (health < citizenCount)
+	{
+		std::cout << RED << "Not enough health services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Health");
+	}
+
+	if (security < citizenCount)
+	{
+		std::cout << RED << "Not enough security services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Security");
+	}
+}
 
 RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 {
@@ -100,6 +166,14 @@ void CityCentralMediator::notifyBuildingChange(Building *building, std::string m
 }
 
 void CityCentralMediator::notifyUtilityChange(UtilityManager *type, bool status, std::string message = "")
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
+void CityCentralMediator::notifyServicesChange(Services *type, std::string message)
 {
 	for (auto c : citizens)
 	{
@@ -395,35 +469,7 @@ void CityCentralMediator::handleUtilityFailure()
 
 void CityCentralMediator::updateCitizenSatisfaction()
 {
-	for (auto c : citizens)
-	{
-		int random = rand() % 5;
-		CitizenState *newState = NULL;
-
-		switch (random)
-		{
-		case 0:
-			newState = new Happy();
-			break;
-		case 1:
-			newState = new Content();
-			break;
-		case 2:
-			newState = new Indifferent();
-			break;
-		case 3:
-			newState = new Discontent();
-			break;
-		case 4:
-			newState = new Upset();
-			break;
-
-		default:
-			break;
-		}
-
-		c->setState(newState);
-	}
+	checkCitizenServiceSatisfaction();
 }
 
 void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
