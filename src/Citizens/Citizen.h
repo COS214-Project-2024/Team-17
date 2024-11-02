@@ -5,6 +5,7 @@
 #include "CityBlock.h"
 #include "CityMediator.h"
 #include <string>
+#include <vector>
 
 class Bus;
 class RoadComponent;
@@ -19,6 +20,7 @@ protected:
 	Building *home;
 	Building *currentLocation;
 	RoadComponent *currentRoad;
+	std::vector<RoadComponent *> route;
 	CityMediator *mediator;
 	Bus *myBus;
 	bool ownsCar;
