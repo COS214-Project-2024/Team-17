@@ -83,6 +83,65 @@ TEST_F(ComShopTest, DisplayBuildingInfo) {
     EXPECT_NE(output.find("Shop with 8 jobs"), std::string::npos);
 }
 
+
+// Test fixture for ComOffice
+class ComOfficeTest : public ::testing::Test {
+protected:
+    ComOffice* comOffice;
+
+    void SetUp() override {
+        comOffice = new ComOffice();
+    }
+
+    void TearDown() override {
+        delete comOffice;
+    }
+};
+
+// Test ComOffice creation
+TEST_F(ComOfficeTest, CreateComOffice) {
+    ASSERT_NE(comOffice, nullptr);
+}
+
+// Test setting and getting job capacity
+TEST_F(ComOfficeTest, SetAndGetJobCapacity) {
+    comOffice->setJobCapacity(25);
+    EXPECT_EQ(comOffice->getJobCapacity(), 25);
+}
+
+// Test adding and removing an employee
+TEST_F(ComOfficeTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(comOffice->addEmployee(employee));
+    comOffice->removeEmployee(employee);
+    delete employee;
+}
+
+// Test utility connection for ComOffice
+TEST_F(ComOfficeTest, AddUtility) {
+    UtilityManager* utility = new UtilWaterSupply();
+    comOffice->addUtility(utility);
+    EXPECT_NO_THROW(comOffice->notifyUtilities());
+    delete utility;
+}
+
+// Test ComOffice state
+TEST_F(ComOfficeTest, SetAndGetState) {
+    comOffice->setState(true);
+    EXPECT_TRUE(comOffice->getState());
+    comOffice->setState(false);
+    EXPECT_FALSE(comOffice->getState());
+}
+
+// Test ComOffice info display
+TEST_F(ComOfficeTest, DisplayBuildingInfo) {
+    comOffice->setJobCapacity(12);
+    testing::internal::CaptureStdout();
+    comOffice->displayBuildingInfo();
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_NE(output.find("Office with 12 jobs"), std::string::npos);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
