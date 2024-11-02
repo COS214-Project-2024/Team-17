@@ -140,6 +140,58 @@ TEST_F(ServSecurityTest, CallUtilities) {
     EXPECT_NO_THROW(securityService->callUtilities());
 }
 
+// Test fixture for ServEntertainment
+class ServEntertainmentTest : public ::testing::Test {
+protected:
+    ServEntertainment* entertainmentService;
+
+    void SetUp() override {
+        entertainmentService = new ServEntertainment();
+    }
+
+    void TearDown() override {
+        delete entertainmentService;
+    }
+};
+
+// Test entertainment service creation
+TEST_F(ServEntertainmentTest, CreateServEntertainment) {
+    ASSERT_NE(entertainmentService, nullptr);
+}
+
+// Test setting and getting visitors
+TEST_F(ServEntertainmentTest, SetAndGetVisitors) {
+    entertainmentService->setVisitors(30);
+    EXPECT_EQ(entertainmentService->getVisitors(), 30);
+    
+    entertainmentService->setVisitors(15);
+    EXPECT_EQ(entertainmentService->getVisitors(), 15);
+}
+
+// Test adding and removing employees
+TEST_F(ServEntertainmentTest, AddAndRemoveEmployee) {
+    Citizen* employee = new Citizen();
+    EXPECT_TRUE(entertainmentService->addEmployee(employee));
+    entertainmentService->removeEmployee(employee);
+    delete employee;
+}
+
+// Test state setting and getting
+TEST_F(ServEntertainmentTest, SetAndGetState) {
+    entertainmentService->setState(true);
+    EXPECT_TRUE(entertainmentService->getState());
+    
+    entertainmentService->setState(false);
+    EXPECT_FALSE(entertainmentService->getState());
+}
+
+// Test calling utilities
+TEST_F(ServEntertainmentTest, CallUtilities) {
+    // Assuming notifyUtilities is a method to check if utilities are called
+    EXPECT_NO_THROW(entertainmentService->callUtilities());
+}
+
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
