@@ -21,7 +21,7 @@ void TaxManager::listCommands() const {
       return;
     }
     for (const auto& [name, cmd] : commands) {
-        std::cout << name << std::endl;
+        std::cout << "- " << name << std::endl;
     }
 }
 bool TaxManager::executeCommand(const std::string& name) const {
