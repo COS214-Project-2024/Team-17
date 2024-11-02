@@ -1,6 +1,7 @@
 #include "ServEntertainment.h"
 
-ServEntertainment::ServEntertainment() {
+ServEntertainment::ServEntertainment()
+{
     cout << BLACK << "\t-->Entertainment service created" << RESET << endl;
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
@@ -12,55 +13,69 @@ ServEntertainment::ServEntertainment() {
     Resources::addIncome(cityIncome);
 }
 
-ServEntertainment::~ServEntertainment() {
+ServEntertainment::~ServEntertainment()
+{
     cout << BLACK << "\t-->Entertainment service destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happinessIncrease);
     Resources::removeIncome(cityIncome);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void ServEntertainment::displayBuildingInfo() {
+void ServEntertainment::displayBuildingInfo()
+{
     cout << "Entertainment service with " << this->visitors << " visitors\n";
 }
 
-int ServEntertainment::getVisitors() {
+int ServEntertainment::getVisitors()
+{
     return visitors;
 }
 
-void ServEntertainment::setVisitors(int visitors) {
+void ServEntertainment::setVisitors(int visitors)
+{
     this->visitors = visitors;
 }
 
-void ServEntertainment::callUtilities(){
+void ServEntertainment::callUtilities()
+{
     notifyUtilities();
 }
 
-bool ServEntertainment::getState(){
-        return operational;
+bool ServEntertainment::getState()
+{
+    return operational;
 }
 
-void ServEntertainment::setState(bool state){
-    if(operational!=state){
+void ServEntertainment::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-        cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-string ServEntertainment::getBuildingType(){
+string ServEntertainment::getBuildingType()
+{
     return type;
 }
 
-bool ServEntertainment::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool ServEntertainment::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
     }
@@ -70,12 +85,20 @@ bool ServEntertainment::addEmployee(Citizen* employee) {
     return true;
 }
 
-void ServEntertainment::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void ServEntertainment::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
         }
     }
+}
+
+bool ServEntertainment::hasJob()
+{
+    return employees.size() < jobCapacity;
 }

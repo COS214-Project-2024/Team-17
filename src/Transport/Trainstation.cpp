@@ -62,6 +62,11 @@ void Trainstation::removeEmployee(Citizen *employee)
 {
 }
 
+bool Trainstation::hasJob()
+{
+    return false;
+}
+
 bool Trainstation::moveIn(Citizen *resident)
 {
     return true;
@@ -70,4 +75,3 @@ bool Trainstation::moveIn(Citizen *resident)
 void Trainstation::moveOut(Citizen *resident)
 {
 }
-

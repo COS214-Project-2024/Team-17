@@ -3,37 +3,39 @@
 
 #include "Landmark.h"
 
-class LandCCenter : public Landmark {
+class LandCCenter : public Landmark
+{
 public:
-    LandCCenter();
+	LandCCenter();
 	~LandCCenter();
 
-    void displayBuildingInfo() override;
+	void displayBuildingInfo() override;
 
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
-	
+
 	bool checkBuildRequirements() override;
 
-	//Observer
-	void callUtilities();//call Utilities in Buildings
+	// Observer
+	void callUtilities(); // call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
 
 	string getBuildingType();
 
-	bool addEmployee(Citizen* employee);
-	void removeEmployee(Citizen* employee);
+	bool addEmployee(Citizen *employee);
+	void removeEmployee(Citizen *employee);
+	bool hasJob();
 
 private:
-	vector<Citizen*> employees;
+	vector<Citizen *> employees;
 
-	//Resources
+	// Resources
 
 	int cost = 2000;
 
-    int jobCapacity = 10;
-	
+	int jobCapacity = 10;
+
 	int woodCost = 20;
 	int concreteCost = 30;
 	int steelCost = 15;
@@ -44,8 +46,8 @@ private:
 	int happiness = 15;
 
 	int visitors;
-	string type="Landmark Community Center";
-	bool operational;//CS State
+	string type = "Landmark Community Center";
+	bool operational; // CS State
 };
 
 #endif

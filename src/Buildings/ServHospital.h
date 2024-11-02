@@ -22,6 +22,7 @@ public:
 	// Resources
 	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
+	bool hasJob();
 
 private:
 	int visitors;

@@ -1,6 +1,7 @@
 #include "IndFactory.h"
 
-IndFactory::IndFactory() {
+IndFactory::IndFactory()
+{
     cout << BLACK << "\t-->Factory created" << RESET << endl;
 
     Resources::removeMoney(woodCost);
@@ -12,55 +13,68 @@ IndFactory::IndFactory() {
     Resources::addWoodPerTick(woodProduction);
 }
 
-IndFactory::~IndFactory() {
+IndFactory::~IndFactory()
+{
     cout << BLACK << "\t-->Factory destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeWoodPerTick(woodProduction);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void IndFactory::displayBuildingInfo() {
+void IndFactory::displayBuildingInfo()
+{
     cout << "Factory with wood production capacity of " << this->woodProduction << " units\n";
 }
 
-int IndFactory::getProductionCapacity() {
+int IndFactory::getProductionCapacity()
+{
     return woodProduction;
 }
 
-void IndFactory::setProductionCapacity(int capacity) {
+void IndFactory::setProductionCapacity(int capacity)
+{
     this->woodProduction = capacity;
 }
 
-void IndFactory::callUtilities(){
+void IndFactory::callUtilities()
+{
     notifyUtilities();
 }
 
-bool IndFactory::getState(){
+bool IndFactory::getState()
+{
     return operational;
 }
 
-void IndFactory::setState(bool state){
-    if(operational!=state){
+void IndFactory::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-        cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-std::string IndFactory::getBuildingType(){
+std::string IndFactory::getBuildingType()
+{
     return type;
 }
 
-
-bool IndFactory::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool IndFactory::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
     }
@@ -70,12 +84,20 @@ bool IndFactory::addEmployee(Citizen* employee) {
     return true;
 }
 
-void IndFactory::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void IndFactory::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
         }
     }
+}
+
+bool IndFactory::hasJob()
+{
+    return employees.size() < jobCapacity;
 }

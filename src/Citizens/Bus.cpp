@@ -73,6 +73,7 @@ Bus::Bus(RoadComponent *start, int capacity) : Citizen(false)
     {
         currentLocation = road->getConnections()[0];
     }
+    currentLocation->addUser(this);
     this->capacity = capacity;
     busCount++;
     activity = Activity::Nothing;

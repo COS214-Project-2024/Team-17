@@ -10,8 +10,21 @@
 
 void Citizen::changeHappiness(int change)
 {
+	CitizenState *oldstate = state;
 	CitizenState *newState = state->handleChange(change);
-	setState(newState);
+
+	if (oldstate->getState() == newState->getState() && newState->getState() == "Upset")
+	{
+		if (activity != Activity::InTransitHome && activity != Activity::InTransitWork)
+		{
+			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+			ccm->handleCitizenEmigration(this);
+		}
+	}
+	else
+	{
+		setState(newState);
+	}
 }
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
@@ -54,12 +67,16 @@ CitizenState *Citizen::getState()
 
 void Citizen::notifyChange(std::string message)
 {
+	CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+
 	if (message == "Go_Home")
 	{
+		if (!home)
+			return;
+
 		std::cout << YELLOW << "Citizen " << name << " is going home" << RESET << std::endl;
 		if (!ownsCar)
 		{
-			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
 			if (workStation && homeStation)
@@ -74,13 +91,28 @@ void Citizen::notifyChange(std::string message)
 				activity = Activity::TryBusHome;
 			}
 		}
+		else
+		{
+			if (ccm->isReachableByRoad(home->getXCoordinate(), home->getYCoordinate()))
+			{
+				activity = Activity::InTransitHome;
+				route = ccm->calculateRoute(workplace->getXCoordinate(), workplace->getYCoordinate(), home->getXCoordinate(), home->getYCoordinate());
+				currentRoad = route.at(0);
+			}
+			else
+			{
+				changeHappiness(-1);
+			}
+		}
 	}
 	else if (message == "Go_Work")
 	{
+		if (!workplace)
+			return;
+
 		std::cout << YELLOW << "Citizen " << name << " is going to work" << RESET << std::endl;
 		if (!ownsCar)
 		{
-			CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
 			if (workStation && homeStation)
@@ -93,6 +125,26 @@ void Citizen::notifyChange(std::string message)
 			{
 				waitTimer = 3;
 				activity = Activity::TryBusWork;
+			}
+		}
+		else
+		{
+			if (ccm->isReachableByRoad(workplace->getXCoordinate(), workplace->getYCoordinate()))
+			{
+				activity = Activity::InTransitWork;
+				route = ccm->calculateRoute(home->getXCoordinate(), home->getYCoordinate(), workplace->getXCoordinate(), workplace->getYCoordinate());
+				std::cout << "Current location: " << currentLocation->getBuildingType() << std::endl;
+				std::cout << BLUE << "ROUTE: " << std::endl;
+				for (auto r : route)
+				{
+					r->displayInfo();
+				}
+				std::cout << RESET << std::endl;
+				currentRoad = route.at(0);
+			}
+			else
+			{
+				changeHappiness(-1);
 			}
 		}
 	}
@@ -112,6 +164,26 @@ void Citizen::notifyChange(std::string message)
 			changeHappiness(1);
 		}
 		myBus = nullptr;
+	}
+	else if (message == "Update_Job")
+	{
+		if (workplace == nullptr)
+		{
+			Building *job = ccm->requestJob();
+
+			if (!job)
+			{
+				changeHappiness(-1);
+				std::cout << RED << "Could not find job for citizen " << name << "!" << RESET << std::endl;
+			}
+			else
+			{
+				std::cout << GREEN << "Citizen " << name << " found a job!" << RESET << std::endl;
+				changeHappiness(1);
+				setWorkplace(job);
+				job->addEmployee(this);
+			}
+		}
 	}
 }
 
@@ -183,6 +255,42 @@ void Citizen::doSomething()
 		break;
 	case Activity::InTransitWork:
 		std::cout << "Citizen " << name << " is in transit to work" << std::endl;
+		if (ownsCar)
+		{
+			if (route.size() == 0)
+			{
+				// Handle errors
+				currentLocation = home;
+				activity = Activity::Rest;
+				std::cout << RED << "Route is empty!" << RESET << std::endl;
+				break;
+			}
+			if (route.at(0)->addUser(this))
+			{
+				currentRoad->removeUser(this);
+				currentRoad = route.at(0);
+				route.erase(route.begin());
+			}
+			else
+			{
+				if (waitTimer > 0)
+				{
+					waitTimer--;
+					break;
+				}
+				else
+				{
+					waitTimer = 5;
+					changeHappiness(-1);
+				}
+			}
+			if (currentRoad == ccm->getClosestRoad(workplace->getXCoordinate(), workplace->getYCoordinate()))
+			{
+				activity = Activity::Work;
+				currentLocation = workplace;
+				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
+			}
+		}
 		break;
 	case Activity::AwaitTransitWork:
 		std::cout << "Citizen " << name << " is awaiting transit to work" << std::endl;
@@ -195,6 +303,42 @@ void Citizen::doSomething()
 		break;
 	case Activity::InTransitHome:
 		std::cout << "Citizen " << name << " is in transit home" << std::endl;
+		if (ownsCar)
+		{
+			if (route.size() == 0)
+			{
+				// Handle errors
+				currentLocation = home;
+				activity = Activity::Rest;
+				std::cout << RED << "Route is empty!" << RESET << std::endl;
+				break;
+			}
+			if (route.at(0)->addUser(this))
+			{
+				currentRoad->removeUser(this);
+				currentRoad = route.at(0);
+				route.erase(route.begin());
+			}
+			else
+			{
+				if (waitTimer > 0)
+				{
+					waitTimer--;
+					break;
+				}
+				else
+				{
+					waitTimer = 5;
+					changeHappiness(-1);
+				}
+			}
+			if (currentRoad == ccm->getClosestRoad(home->getXCoordinate(), home->getYCoordinate()))
+			{
+				activity = Activity::Rest;
+				currentLocation = home;
+				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
+			}
+		}
 		break;
 	case Activity::AwaitTransitHome:
 		std::cout << "Citizen " << name << " is awaiting transit home" << std::endl;
@@ -338,9 +482,19 @@ int Citizen::getHappiness()
 	{
 		return 0;
 	}
+
+	return 0;
 }
 
 Citizen::~Citizen()
 {
+	if (state != nullptr)
+	{
+		delete state;
+	}
+	Resources::removePopulation(1);
+	if (workplace != nullptr)
+	{
+	}
 	std::cout << "Citizen " << name << " deleted" << std::endl;
 }

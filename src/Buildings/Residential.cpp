@@ -45,3 +45,8 @@ bool Residential::addEmployee(Citizen* employee){
 
 void Residential::removeEmployee(Citizen* employee){
 }
+
+bool Residential::hasJob()
+{
+    return false;
+}

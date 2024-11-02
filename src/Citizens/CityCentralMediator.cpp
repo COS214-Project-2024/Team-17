@@ -270,7 +270,6 @@ std::vector<RoadComponent *> CityCentralMediator::calculateRoute(RoadComponent *
 bool CityCentralMediator::isReachableByRoad(int x, int y)
 {
 	RoadComponent *road = getClosestRoad(x, y);
-	road->displayInfo();
 	if (road->calculateDistance(x, y) < BUILDING_ROAD_DISTANCE)
 	{
 		return true;
@@ -292,6 +291,18 @@ Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 	}
 
 	return closest;
+}
+
+Building *CityCentralMediator::requestJob()
+{
+	for (auto b : buildings)
+	{
+		if (b->hasJob())
+		{
+			return b;
+		}
+	}
+	return nullptr;
 }
 
 void CityCentralMediator::updateBuses()
@@ -412,5 +423,20 @@ void CityCentralMediator::updateCitizenSatisfaction()
 		}
 
 		c->setState(newState);
+	}
+}
+
+void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
+{
+	if (citizen != nullptr)
+	{
+		std::cout << "Citizen " << citizen->getName() << " is leaving due to being upset!" << std::endl;
+		// remove from citizens array
+		auto it = std::find(citizens.begin(), citizens.end(), citizen);
+		if (it != citizens.end())
+		{
+			citizens.erase(it);
+		}
+		delete citizen;
 	}
 }

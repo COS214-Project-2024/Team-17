@@ -22,6 +22,7 @@ public:
 
 	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
+	bool hasJob();
 
 private:
     vector<Citizen*> employees;

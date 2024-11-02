@@ -133,6 +133,8 @@ public:
 
 	Trainstation *trainstationInRange(int x, int y);
 
+	Building *requestJob();
+
 	void updateBuses();
 
 	void citizensDoSomething();
@@ -148,6 +150,8 @@ public:
 	void handleUtilityFailure();
 
 	void updateCitizenSatisfaction();
+
+	void handleCitizenEmigration(Citizen *citizen);
 };
 
 #endif
