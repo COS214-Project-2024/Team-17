@@ -6,6 +6,7 @@
 #include "./Government+Tax/AllocateTaxCommand.h"
 #include "./Government+Tax/CollectTaxCommand.h"
 #include "./Government+Tax/SetTaxRateCommand.h"
+#include "./Government+Tax/Law.h"
 class Game
 {
 public:

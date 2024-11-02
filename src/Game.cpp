@@ -35,7 +35,8 @@ void Game::updateJobs()
 
 void Game::updateCityGrowth()
 {
-    std::cout << "City growth updated" << std::endl;
+    this->gov.enactPolicies();
+    std::cout << "Policies/laws enacted\n";
 }
 
 std::string toLowerCase(const std::string& str) {
@@ -50,11 +51,39 @@ void Game::updateCityTax()
   this->gov.collectTaxes();
   while(true)
   {
-    std::cout << "What action do you want to do? (Policy,Nothing): ";
+    std::cout << "What action do you want to do? (Laws,Taxes,Nothing): ";
     std::cin >> input;
 
     input = toLowerCase(input);
-    if(input == "policy") 
+    if(input == "laws")
+    {
+      while(true)
+      {
+        std::cout << "What do you want to do? (Add,Remove,List): ";
+        std::cin >> input;
+        input = toLowerCase(input);
+        if(input == "add")
+        {
+          std::cout << "Give the name of the law you want to add: ";
+          std::cin >> input;
+          Policy* law = new Law(&this->gov);
+          this->gov.addPolicy(*law,input);
+          break;
+        }
+        else if(input == "remove")
+        {
+          std::cout << "Give the name of the law you want to remove: ";
+          std::cin >> input;
+          this->gov.removePolicy(input);
+          break;
+        }
+        else if(input == "list")
+        {
+          this->gov.listPolicies();
+        }
+      }
+    }
+    else if(input == "taxes") 
     {
       while(true)
       {
@@ -77,7 +106,7 @@ void Game::updateCityTax()
 
           if(input == "allocate")
           {
-            std::cout << "What name do you want to give to your new command?: ";
+            std::cout << "What name do you want to give to your new tax policy?: ";
             std::string name;
             std::cin >> name;
 
