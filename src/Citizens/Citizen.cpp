@@ -18,8 +18,10 @@ void Citizen::changeHappiness(int change)
 		CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
 		ccm->handleCitizenEmigration(this);
 	}
-
-	setState(newState);
+	else
+	{
+		setState(newState);
+	}
 }
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
@@ -355,9 +357,8 @@ Citizen::~Citizen()
 		delete state;
 	}
 	Resources::removePopulation(1);
-	if(workplace != nullptr)
+	if (workplace != nullptr)
 	{
-		
 	}
 	std::cout << "Citizen " << name << " deleted" << std::endl;
 }
