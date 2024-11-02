@@ -13,6 +13,7 @@ class RoadComponent;
 class RoadIterator;
 class Bus;
 class Trainstation;
+class TaxAndBudgetVisitor;
 
 class CityCentralMediator : public CityMediator
 {
@@ -150,6 +151,8 @@ public:
 	void handleUtilityFailure();
 
 	void updateCitizenSatisfaction();
+
+  double accept(TaxAndBudgetVisitor *visitor);
 
 	void handleCitizenEmigration(Citizen *citizen);
 };

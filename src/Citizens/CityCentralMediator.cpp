@@ -9,6 +9,7 @@
 #include <cmath>
 #include "Bus.h"
 #include "../Buildings/Residential.h"
+#include "../Government+Tax/TaxAndBudgetVisitor.h"
 
 static CityCentralMediator *instance = nullptr;
 
@@ -439,4 +440,17 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 		}
 		delete citizen;
 	}
+}
+
+double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
+{
+  double total = 0;
+  for(Building* building : buildings)
+  {
+    total += visitor->visit(building);
+  }
+  for(Citizen* citizen : citizens)
+  {
+    total += visitor->visit(citizen);
+  }
 }

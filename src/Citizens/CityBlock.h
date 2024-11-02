@@ -17,7 +17,7 @@ public:
 
 	virtual void notifyChange(std::string message) = 0;
 
-	virtual void accept(TaxAndBudgetVisitor *visitor) = 0;
+	double accept(TaxAndBudgetVisitor *visitor);
 };
 
 #endif

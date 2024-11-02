@@ -9,6 +9,7 @@ class RoadState;
 class Citizen;
 class Bus;
 class Trainstation;
+class TaxAndBudgetVisitor;
 
 class CityMediator
 {
@@ -28,6 +29,8 @@ public:
     virtual void notifyUtilityChange(UtilityManager *type, bool status, std::string message) = 0;
 
     virtual void notifyRoadChange(RoadState *status, std::string message) = 0;
+
+    virtual double accept(TaxAndBudgetVisitor *visitor) = 0;
 
     virtual ~CityMediator() {}
 };
