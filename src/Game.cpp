@@ -6,7 +6,7 @@
 #include <iostream>
 #include <algorithm>
 
-static constexpr int GAME_SPEED = 17;                   // millisecond timeout
+static constexpr int GAME_SPEED = 0;                    // millisecond timeout
 static constexpr int TRANSPORT_UPDATE_INTERVAL = 1;     // Every 10 minutes
 static constexpr int CONSTRUCTION_UPDATE_INTERVAL = 60; // Every 6 hours
 static constexpr int JOB_UPDATE_INTERVAL = 6;           // Every 1 hour
@@ -25,6 +25,7 @@ Game::Game()
   this->gov.addCity(*city);
   mediator->registerBuilding(new ResFlat());
   mediator->registerBuilding(new ResHouse());
+  initBuildingOptions();
 }
 
 void Game::updateTransport()
@@ -245,9 +246,77 @@ void Game::updateCityTax()
         }
       }
     }
+    else if ("build")
+    {
+      createBuilding();
+    }
     else
     {
       std::cout << "Invalid main action. Please try again.\n";
+    }
+  }
+}
+
+void Game::initBuildingOptions()
+{
+  buildingOptions = {
+      {"Residential", {"House", "Flats/apartments", "Townhouse", "Estate"}},
+      {"Commercial", {"Mall", "Shop", "Office"}},
+      {"Industrial", {"Warehouse", "Factory", "Plant"}},
+      {"Landmarks", {"Park", "Monument", "Community Center"}},
+      {"Services", {"Education", "Security", "Entertainment"}}};
+}
+
+void Game::createBuilding()
+{
+  int option, option2;
+  string buildingType;
+  int capacity;
+  int jobCapacity;
+
+  cout << "What Building Type do you want to build?" << endl;
+  cout << "Choose an option: " << endl;
+  for (int i = 0; i < buildingOptions.size(); ++i)
+  {
+    cout << i + 1 << ". " << buildingOptions[i].type << ":";
+    for (const auto &subtype : buildingOptions[i].subtypes)
+    {
+      cout << " " << subtype << ",";
+    }
+    cout << endl;
+  }
+
+  cout << "Enter your choice: ";
+  cin >> option;
+
+  if (option >= 1 && option <= buildingOptions.size())
+  {
+    const auto &selectedOption = buildingOptions[option - 1];
+    cout << "What kind of " << selectedOption.type << " Building?" << endl;
+    cout << "Choose an option: " << endl;
+    for (int i = 0; i < selectedOption.subtypes.size(); ++i)
+    {
+      cout << "\t" << i + 1 << ". " << selectedOption.subtypes[i] << endl;
+    }
+
+    cout << "Enter your choice: ";
+    cin >> option2;
+
+    if (option2 >= 1 && option2 <= selectedOption.subtypes.size())
+    {
+      buildingType = selectedOption.subtypes[option2 - 1];
+
+      if (selectedOption.type == "Residential")
+      {
+        cout << "Enter the capacity: ";
+        cin >> capacity;
+        FactoryBuilding *factory = new FactResidential();
+        Residential *building = factory->createResBuilding(buildingType);
+        building->setCapacity(capacity);
+        mediator->registerBuilding(building);
+        delete factory;
+      }
+      // Similar blocks for other building types...
     }
   }
 }
@@ -258,10 +327,10 @@ void Game::start()
   counter = 0;
   while (running)
   {
-    std::cout << "=======RUN=======" << std::endl;
+    // std::cout << "=======RUN=======" << std::endl;
     if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
     {
-      std::cout << "updateTransport" << std::endl;
+      // std::cout << "updateTransport" << std::endl;
 
       time_of_day++;
       if (time_of_day > 24)
@@ -272,19 +341,19 @@ void Game::start()
     }
     if (counter % JOB_UPDATE_INTERVAL == 0)
     {
-      std::cout << "updateJobs" << std::endl;
+      // std::cout << "updateJobs" << std::endl;
 
       updateJobs();
     }
     if (counter % CITY_GROWTH_INTERVAL == 0)
     {
-      std::cout << "updateCityGrowth" << std::endl;
+      // std::cout << "updateCityGrowth" << std::endl;
 
       updateCityGrowth();
     }
     if (counter % CITY_TAX_INTERVAL == 0)
     {
-      std::cout << "updateCityTax" << std::endl;
+      // std::cout << "updateCityTax" << std::endl;
 
       updateCityTax();
     }
