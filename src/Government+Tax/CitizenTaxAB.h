@@ -3,6 +3,9 @@
 
 #include "TaxAndBudgetVisitor.h"
 
+class citizen;
+class building;
+
 class CitizenTaxAB : public TaxAndBudgetVisitor
 {
 public:

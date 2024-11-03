@@ -41,40 +41,6 @@ void Government::setBudgetPolicy(BudgetPolicy &policy)
   this->budgetPolicy = &policy;
 }
 
-void Government::addPolicy(Policy &policy, std::string name)
-{
-  this->laws[name] = &policy;
-}
-
-void Government::removePolicy(std::string name)
-{
-  auto it = this->laws.find(name);
-  if (it != this->laws.end()) 
-  {
-    delete it->second;
-    it->second = nullptr;
-  }
-}
-
-void Government::enactPolicies()
-{
-  for(auto policy : laws)
-  {
-    if(policy.second)
-    {
-      policy.second->enact();
-    }
-  }
-}
-
-void Government::listPolicies()
-{
-  for(auto policy : laws)
-  {
-    std::cout << "- " << policy.first << std::endl;
-  }
-}
-
 void Government::setTaxRate(std::string category, double rate)
 {
   taxRates[category] = rate;
