@@ -86,8 +86,17 @@ void Citizen::notifyChange(std::string message)
 		std::cout << YELLOW << "Citizen " << name << " is going home" << RESET << std::endl;
 		if (!ownsCar)
 		{
+			if (workplace == nullptr)
+			{
+				std::cout << "Citizen " << name << " has no job" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = home;
+				return;
+			}
+
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+
 			if (workStation && homeStation)
 			{
 				std::cout << "Citizen " << name << " took the train home" << std::endl;
@@ -122,6 +131,14 @@ void Citizen::notifyChange(std::string message)
 		std::cout << YELLOW << "Citizen " << name << " is going to work" << RESET << std::endl;
 		if (!ownsCar)
 		{
+			if (home == nullptr)
+			{
+				std::cout << "Citizen " << name << " has no home" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = workplace;
+				return;
+			}
+
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
 			if (workStation && homeStation)
