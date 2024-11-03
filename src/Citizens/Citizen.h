@@ -24,6 +24,7 @@ protected:
 	CityMediator *mediator = nullptr;
 	Bus *myBus;
 	bool ownsCar;
+	bool scheduledForDeletion = false;
 	int waitTimer = 0;
 	enum Activity
 	{
@@ -75,8 +76,8 @@ public:
 
 	int getHappiness();
 
-  double getTax();
-  
+	double getTax();
+
 	~Citizen();
 };
 

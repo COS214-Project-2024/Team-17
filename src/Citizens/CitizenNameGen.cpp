@@ -216,8 +216,6 @@ CitizenNameGen::generateName()
     int firstIndex = rand() % 100;
     int lastIndex = rand() % 100;
 
-    std::cout << "Random nums" << std::endl;
-
     // Return the line at the index of the random number of the respective text file
     return firstNames[firstIndex] + " " + lastNames[lastIndex];
 }

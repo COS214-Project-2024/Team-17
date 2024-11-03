@@ -323,25 +323,24 @@ int main()
          << "\t     ┛                 " << RESET << endl
          << endl;
 
-    test1();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test2();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test3();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test4();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test5();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test6();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test7();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test8();
-    cout << YELLOW << "==============================" << RESET << endl;
-    test9();
-    cout << YELLOW << "==============================" << RESET << endl;
-
+    // test1();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test2();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test3();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test4();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test5();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test6();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test7();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test8();
+    // cout << YELLOW << "==============================" << RESET << endl;
+    // test9();
+    // cout << YELLOW << "==============================" << RESET << endl;
 
     Game game;
     game.start();
@@ -891,10 +890,12 @@ void test9()
     std::cout << " - Testing Jobs" << std::endl;
     citizen->getWorkplace()->displayBuildingInfo();
     mall->removeEmployee(citizen);
-    if(citizen->getWorkplace() == nullptr){
+    if (citizen->getWorkplace() == nullptr)
+    {
         std::cout << " - Citizen is unemployed" << std::endl;
     }
-    else{
+    else
+    {
         std::cout << " - Citizen is employed" << std::endl;
     }
 

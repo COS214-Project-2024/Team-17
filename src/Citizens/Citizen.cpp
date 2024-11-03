@@ -12,6 +12,10 @@
 
 void Citizen::changeHappiness(int change)
 {
+	if (scheduledForDeletion)
+	{
+		return;
+	}
 	CitizenState *oldstate = state;
 	CitizenState *newState = state->handleChange(change);
 
@@ -31,7 +35,7 @@ void Citizen::changeHappiness(int change)
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
-	name = "John Doe";
+	name = CitizenNameGen::generateName();
 	this->mediator = CityCentralMediator::getInstance();
 	if (autoRegister)
 	{
@@ -39,7 +43,6 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 	}
 	state = nullptr;
 	setState(new Indifferent());
-	name = CitizenNameGen::generateName();
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
@@ -50,6 +53,10 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 
 void Citizen::setState(CitizenState *newState)
 {
+	if (scheduledForDeletion)
+	{
+		return;
+	}
 	if (newState == nullptr)
 	{
 		return;
@@ -526,6 +533,7 @@ double Citizen::getTax()
 
 Citizen::~Citizen()
 {
+	scheduledForDeletion = true;
 	if (state != nullptr)
 	{
 		delete state;
