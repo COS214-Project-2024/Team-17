@@ -1,8 +1,10 @@
 #include "Government.h"
+#include "CitizenTaxAB.h"
 #include <iostream>
 
 void Government::processTaxes(CityStructure &city)
 {
+  city.accept(new CitizenTaxAB());
   double income = city.getIncome();
   double totalTax = 0;
 
@@ -17,9 +19,9 @@ void Government::processTaxes(CityStructure &city)
 
 void Government::applyBudget(CityStructure &city)
 {
-  if (policy)
+  if (budgetPolicy)
   {
-    this->policy->applyBudget(city, cityTaxes[city.getName()]);
+    this->budgetPolicy->applyBudget(city, cityTaxes[city.getName()]);
   }
   else
   {
@@ -34,21 +36,18 @@ void Government::applyBudget(CityStructure &city)
   }
 }
 
-void Government::setPolicy(Policy &policy)
+void Government::setBudgetPolicy(BudgetPolicy &policy)
 {
-  std::cout << "setting government policy\n";
-  this->policy = &policy;
+  this->budgetPolicy = &policy;
 }
 
 void Government::setTaxRate(std::string category, double rate)
 {
-  std::cout << "setting tax rate\n";
   taxRates[category] = rate;
 }
 
 void Government::collectTaxes()
 {
-  std::cout << "collecting taxes for all citystructures\n";
   for (CityStructure &citystructure : cities)
   {
     processTaxes(citystructure);
@@ -57,24 +56,10 @@ void Government::collectTaxes()
 
 void Government::addCity(CityStructure &city)
 {
-  std::cout << "added city\n";
   this->cities.push_back(city);
 }
 
 void Government::allocateTaxes(std::string department, double amount)
 {
-  std::cout << "allocated taxes to department\n";
   this->taxRates[department] = amount;
-}
-
-TaxHandler *Government::createTaxHandlerChain()
-{
-  std::cout << "creating tax handler\n";
-  TaxRateHandler *rateHandler = new TaxRateHandler();
-  TaxCollectionHandler *collectionHanlder = new TaxCollectionHandler();
-  TaxAllocationHandler *allocationHandler = new TaxAllocationHandler();
-
-  rateHandler->setNext(collectionHanlder);
-  collectionHanlder->setNext(allocationHandler);
-  return rateHandler;
 }

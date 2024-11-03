@@ -5,6 +5,7 @@
 #include "CityBlock.h"
 #include "CityMediator.h"
 #include <string>
+#include <vector>
 
 class Bus;
 class RoadComponent;
@@ -13,28 +14,34 @@ class Citizen : CityBlock
 {
 
 protected:
-	int population;
 	CitizenState *state;
 	std::string name;
 	Building *workplace;
 	Building *home;
 	Building *currentLocation;
 	RoadComponent *currentRoad;
-	CityMediator *mediator;
+	std::vector<RoadComponent *> route;
+	CityMediator *mediator = nullptr;
 	Bus *myBus;
 	bool ownsCar;
+	bool scheduledForDeletion = false;
+	int waitTimer = 0;
 	enum Activity
 	{
 		Rest,
 		Work,
+		TryBusWork,
 		InTransitWork,
 		AwaitTransitWork,
+		TryBusHome,
 		InTransitHome,
 		AwaitTransitHome,
 		Nothing
 	};
 
 	Activity activity;
+
+	void changeHappiness(int change);
 
 public:
 	Citizen(bool autoRegister = true);
@@ -66,6 +73,10 @@ public:
 	virtual void doSomething();
 
 	Building *getCurrentBuilding();
+
+	int getHappiness();
+
+	double getTax();
 
 	~Citizen();
 };

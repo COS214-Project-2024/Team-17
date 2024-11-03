@@ -7,7 +7,7 @@
 
 class RoadComponent;
 
-class Bus : Citizen
+class Bus : public Citizen
 {
 private:
     std::vector<std::pair<Citizen *, RoadComponent *>> passengers;

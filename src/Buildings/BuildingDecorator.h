@@ -3,17 +3,26 @@
 
 #include "Building.h"
 
-class BuildingDecorator : public Building {
+class BuildingDecorator : public Building
+{
 protected:
-    Building* building;
+    Building *building;
 
 public:
-    BuildingDecorator(Building* b);
+    BuildingDecorator(Building *b);
     virtual void displayBuildingInfo() override;
     virtual ~BuildingDecorator();
 
     bool checkBuildRequirements() override;
     bool getState() override;
+
+    virtual bool addEmployee(Citizen *employee);
+    virtual void removeEmployee(Citizen *employee);
+    virtual void notifyEmployeeLeft(Citizen *employee);
+    virtual bool hasJob();
+
+    virtual bool moveIn(Citizen *resident);
+    virtual void moveOut(Citizen *resident);
 };
 
 #endif

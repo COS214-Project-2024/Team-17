@@ -12,6 +12,9 @@ class RoadState;
 class RoadComponent;
 class RoadIterator;
 class Bus;
+class Trainstation;
+class Services;
+class TaxAndBudgetVisitor;
 
 class CityCentralMediator : public CityMediator
 {
@@ -36,9 +39,17 @@ private:
 	@brief Stores the array of citizens in the city.
 	*/
 	std::vector<Citizen *> citizens;
+
+	/*
+	@brief Stores the array of train stations in the city.
+	*/
+	std::vector<Trainstation *> trainStations;
+
 	RoadState *roadState;
 	std::vector<Bus *> buses;
 	std::vector<Bus *> busQueue;
+
+	void checkCitizenServiceSatisfaction();
 
 public:
 	RoadComponent *getClosestRoad(int x, int y);
@@ -77,6 +88,12 @@ public:
 	void registerRoad(RoadComponent *road);
 
 	/*
+	@brief Registers a train station with the mediator.
+	@param trainStation The train station to register.
+	*/
+	void registerTrainStation(Trainstation *trainStation);
+
+	/*
 	@brief Notifies all citizens of a building change.
 	@param building The building that changed.
 	@param message The message to send to the citizens.
@@ -92,16 +109,32 @@ public:
 	void notifyUtilityChange(UtilityManager *type, bool status, std::string message);
 
 	/*
+	@brief Notifies all citizens of a Services change.
+	@param type The services building that changed.
+	@param message The message to send to the citizens.
+	*/
+	void notifyServicesChange(Services *type, std::string message);
+
+	/*
 	@brief Notifies all citizens of a road status change.
 	@param status The road status that changed.
 	@param message The message to send to the citizens.
 	*/
 	void notifyRoadChange(RoadState *status, std::string message);
 
+	/*
+	@brief Notifies all citizens of a road status change.
+	@param status The road status that changed.
+	@param message The message to send to the citizens.
+	*/
+	void notifyPolicyChange(std::string message);
+
 	void notifyBusReady(Bus *bus);
 
 	/*
-
+	@brief Requests a bus for a citizen.
+	@param citizen The citizen requesting the bus.
+	@param location The location of the citizen.
 	*/
 	Bus *requestBus(Citizen *citizen, RoadComponent *location);
 
@@ -116,6 +149,10 @@ public:
 
 	bool isReachableByRoad(int x, int y);
 
+	Trainstation *trainstationInRange(int x, int y);
+
+	Building *requestJob();
+
 	void updateBuses();
 
 	void citizensDoSomething();
@@ -126,14 +163,15 @@ public:
 
 	~CityCentralMediator();
 
-private:
 	void handlePopulationGrowth();
 
 	void handleUtilityFailure();
 
-	void handleTrafficStatus(RoadState *status);
-
 	void updateCitizenSatisfaction();
+
+	double accept(TaxAndBudgetVisitor *visitor);
+
+	void handleCitizenEmigration(Citizen *citizen);
 };
 
 #endif

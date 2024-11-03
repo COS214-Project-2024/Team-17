@@ -6,9 +6,87 @@
 #include <queue>
 #include <unordered_map>
 #include <limits>
+#include <cmath>
 #include "Bus.h"
+#include "../Buildings/Residential.h"
+#include "../Buildings/ServEducation.h"
+#include "../Buildings/ServEntertainment.h"
+#include "../Buildings/ServHospital.h"
+#include "../Buildings/ServSecurity.h"
+#include "../Government+Tax/TaxAndBudgetVisitor.h"
 
 static CityCentralMediator *instance = nullptr;
+
+void CityCentralMediator::checkCitizenServiceSatisfaction()
+{
+	int education = 0;
+	int entertainment = 0;
+	int health = 0;
+	int security = 0;
+
+	for (auto b : buildings)
+	{
+		ServEducation *edu = dynamic_cast<ServEducation *>(b);
+		if (edu != nullptr)
+		{
+			education += edu->getCitizenServed();
+		}
+
+		ServEntertainment *ent = dynamic_cast<ServEntertainment *>(b);
+		if (ent != nullptr)
+		{
+			entertainment += ent->getCitizenServed();
+		}
+
+		ServHospital *hos = dynamic_cast<ServHospital *>(b);
+		if (hos != nullptr)
+		{
+			health += hos->getCitizenServed();
+		}
+
+		ServSecurity *sec = dynamic_cast<ServSecurity *>(b);
+
+		if (sec != nullptr)
+		{
+			security += sec->getCitizenServed();
+		}
+	}
+
+	int citizenCount = Resources::getPopulation();
+
+	std::cout << GREEN << "\nChecking citizen service satisfaction1" << RESET << std::endl;
+
+	if (education < citizenCount)
+	{
+		std::cout << RED << "Not enough education services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Education");
+	}
+
+	std::cout << GREEN << "\nChecking citizen service satisfaction2" << RESET << std::endl;
+
+	if (entertainment < citizenCount)
+	{
+		std::cout << RED << "Not enough entertainment services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Entertainment");
+	}
+
+	std::cout << GREEN << "\nChecking citizen service satisfaction3" << RESET << std::endl;
+
+	if (health < citizenCount)
+	{
+		std::cout << RED << "Not enough health services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Health");
+	}
+	std::cout << GREEN << "\nChecking citizen service satisfaction4" << RESET << std::endl;
+
+	if (security < citizenCount)
+	{
+		std::cout << RED << "Not enough security services for all citizens" << RESET << std::endl;
+		notifyServicesChange(nullptr, "No_Security");
+	}
+
+	std::cout << GREEN << "CHECKS DONE!" << RESET << std::endl;
+}
 
 RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 {
@@ -68,6 +146,14 @@ void CityCentralMediator::registerUtility(UtilityManager *util)
 
 void CityCentralMediator::registerCitizen(Citizen *citizen)
 {
+	for (auto c : citizens)
+	{
+		if (c->getName() == citizen->getName())
+		{
+			std::cout << "Citizen " << citizen->getName() << " already registered" << std::endl;
+			return;
+		}
+	}
 	citizens.push_back(citizen);
 	std::cout << "Citizen " << citizen->getName() << " registered" << std::endl;
 }
@@ -81,6 +167,12 @@ void CityCentralMediator::registerBus(Bus *bus)
 void CityCentralMediator::registerRoad(RoadComponent *road)
 {
 	roads.push_back(road);
+}
+
+void CityCentralMediator::registerTrainStation(Trainstation *trainStation)
+{
+	trainStations.push_back(trainStation);
+	std::cout << "Trainstation registered" << std::endl;
 }
 
 void CityCentralMediator::notifyBuildingChange(Building *building, std::string message = "")
@@ -99,7 +191,23 @@ void CityCentralMediator::notifyUtilityChange(UtilityManager *type, bool status,
 	}
 }
 
+void CityCentralMediator::notifyServicesChange(Services *type, std::string message)
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
 void CityCentralMediator::notifyRoadChange(RoadState *status, std::string message = "")
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
+void CityCentralMediator::notifyPolicyChange(std::string message)
 {
 	for (auto c : citizens)
 	{
@@ -262,7 +370,6 @@ std::vector<RoadComponent *> CityCentralMediator::calculateRoute(RoadComponent *
 bool CityCentralMediator::isReachableByRoad(int x, int y)
 {
 	RoadComponent *road = getClosestRoad(x, y);
-	road->displayInfo();
 	if (road->calculateDistance(x, y) < BUILDING_ROAD_DISTANCE)
 	{
 		return true;
@@ -270,8 +377,45 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 	return false;
 }
 
+Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
+{
+	std::cout << "test1.11\n";
+	Trainstation *closest = nullptr;
+	if (trainStations.empty())
+	{
+		return closest;
+	}
+	std::cout << "test1.12\n";
+	for (auto t : trainStations)
+	{
+		if (t->pointInRange(x, y))
+		{
+			closest = t;
+			break;
+		}
+	}
+
+	return closest;
+}
+
+Building *CityCentralMediator::requestJob()
+{
+	for (auto b : buildings)
+	{
+		if (b->hasJob())
+		{
+			return b;
+		}
+	}
+	return nullptr;
+}
+
 void CityCentralMediator::updateBuses()
 {
+	if (buses.size() < 1)
+	{
+		return;
+	}
 	for (auto b : buses)
 	{
 		b->doSomething();
@@ -280,9 +424,16 @@ void CityCentralMediator::updateBuses()
 
 void CityCentralMediator::citizensDoSomething()
 {
+	if (citizens.size() < 1)
+	{
+		return;
+	}
 	for (auto c : citizens)
 	{
-		c->doSomething();
+		if (c != NULL && c != nullptr)
+		{
+			c->doSomething();
+		}
 	}
 }
 
@@ -309,8 +460,48 @@ CityCentralMediator::~CityCentralMediator()
 
 void CityCentralMediator::handlePopulationGrowth()
 {
-	// TODO - implement CityCentralMediator::handlePopulationGrowth
-	throw "Not yet implemented";
+	int happiness = Resources::getHappiness();
+
+	std::cout << "Happiness: " << happiness << std::endl;
+
+	happiness = clamp(happiness, 0, 100);
+
+	int maxPop = Resources::getMaxPopulation();
+	int curPop = Resources::getPopulation();
+
+	float happinessRatio = 1.0 + happiness / 100.0;
+
+	std::cout << "Happiness ratio: " << happinessRatio << std::endl;
+
+	std::cout << "Max population: " << maxPop << std::endl;
+
+	int popDelta = maxPop - curPop;
+
+	int newPop = ceil(popDelta * 0.1 * happinessRatio);
+
+	std::cout << "New population: " << newPop << std::endl;
+
+	Resources::addPopulation(newPop);
+
+	for (int i = 0; i < newPop; i++)
+	{
+		std::cout << BLUE << "Creating a new citizen!" << RESET << std::endl;
+		Citizen *c = new Citizen(true);
+
+		for (auto b : buildings)
+		{
+			Residential *house = dynamic_cast<Residential *>(b);
+			if (house != nullptr)
+			{
+				if (house->moveIn(c))
+				{
+					std::cout << "Citizen " << c->getName() << " moved in!" << std::endl;
+					c->setHome(house);
+					break;
+				}
+			}
+		}
+	}
 }
 
 void CityCentralMediator::handleUtilityFailure()
@@ -319,41 +510,38 @@ void CityCentralMediator::handleUtilityFailure()
 	throw "Not yet implemented";
 }
 
-void CityCentralMediator::handleTrafficStatus(RoadState *status)
-{
-	// TODO - implement CityCentralMediator::handleTrafficStatus
-	throw "Not yet implemented";
-}
-
 void CityCentralMediator::updateCitizenSatisfaction()
 {
-	for (auto c : citizens)
+	checkCitizenServiceSatisfaction();
+}
+
+void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
+{
+	if (citizen != nullptr)
 	{
-		int random = rand() % 5;
-		CitizenState *newState = NULL;
-
-		switch (random)
+		std::cout << "Citizen " << citizen->getName() << " is leaving due to being upset!" << std::endl;
+		// remove from citizens array
+		auto it = std::find(citizens.begin(), citizens.end(), citizen);
+		if (it != citizens.end())
 		{
-		case 0:
-			newState = new Happy();
-			break;
-		case 1:
-			newState = new Content();
-			break;
-		case 2:
-			newState = new Indifferent();
-			break;
-		case 3:
-			newState = new Discontent();
-			break;
-		case 4:
-			newState = new Upset();
-			break;
-
-		default:
-			break;
+			std::cout << GREEN << "Citizen " << citizen->getName() << " removed from city" << RESET << std::endl;
+			citizens.erase(it);
+			std::cout << "Citizen count: " << citizens.size() << std::endl;
 		}
-
-		c->setState(newState);
+		delete citizen;
 	}
+}
+
+double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
+{
+	double total = 0;
+	for (Building *building : buildings)
+	{
+		total += visitor->visit(building);
+	}
+	for (Citizen *citizen : citizens)
+	{
+		total += visitor->visit(citizen);
+	}
+	return total;
 }

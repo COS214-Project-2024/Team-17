@@ -1,6 +1,7 @@
 #include "../src/Transport/TransportInclude.h"
 #include "../src/Citizens/CitizensIncludes.h"
 #include "../src/Buildings/ResFlat.h"
+#include "../src/Buildings/ComOffice.h"
 #include "../colours.h"
 #include <gtest/gtest.h>
 #include <cmath>
@@ -123,6 +124,80 @@ TEST(BuildingConnectionTest, CheckBuildingConnection)
 
     delete roadsComposite;
     delete building;
+    delete mediator;
+}
+
+TEST(CitizenCarTransport, CitizenCarTransport)
+{
+    CityCentralMediator *mediator = CityCentralMediator::getInstance();
+    RoadsComposite *roadsComposite = new RoadsComposite(0, 0, 500, 0, "highway");
+    Building *home = new ResFlat();
+    home->setXCoordinate(0);
+    home->setYCoordinate(CityCentralMediator::BUILDING_ROAD_DISTANCE - 1);
+
+    Building *workplace = new ComOffice();
+    workplace->setXCoordinate(500);
+    workplace->setYCoordinate(CityCentralMediator::BUILDING_ROAD_DISTANCE - 1);
+
+    Citizen *citizen = new Citizen();
+    citizen->setWorkplace(workplace);
+    citizen->setHome(home);
+
+    citizen->giveCar();
+
+    mediator->citizensStartWork();
+
+    for (int i = 0; i < 20; i++)
+    {
+        mediator->updateBuses();
+        mediator->citizensDoSomething();
+    }
+
+    EXPECT_EQ(citizen->getCurrentBuilding(), workplace);
+
+    delete roadsComposite;
+    delete home;
+    delete mediator;
+}
+
+TEST(TestBlockedRoads, TestBlockedRoads)
+{
+    CityCentralMediator *mediator = CityCentralMediator::getInstance();
+    RoadsComposite *roadsComposite = new RoadsComposite(0, 0, 500, 0, "residential");
+    Building *home = new ResFlat();
+    home->setXCoordinate(0);
+    home->setYCoordinate(0);
+    RoadComponent *homeRoad = mediator->getClosestRoad(home->getXCoordinate(), home->getYCoordinate());
+    std::cout << "Home road: ";
+    homeRoad->displayInfo();
+
+    Building *workplace = new ComOffice();
+    workplace->setXCoordinate(500);
+    workplace->setYCoordinate(0);
+
+    Citizen *citizen = new Citizen();
+    citizen->setWorkplace(workplace);
+    citizen->setHome(home);
+
+    citizen->giveCar();
+
+    mediator->citizensStartWork();
+
+    Bus *bus1 = new Bus(roadsComposite->getComponents()[2], 10);
+    Bus *bus2 = new Bus(roadsComposite->getComponents()[2], 10);
+
+    for (int i = 0; i < 10; i++)
+    {
+        mediator->updateBuses();
+        mediator->citizensDoSomething();
+    }
+
+    EXPECT_NE(citizen->getCurrentBuilding(), workplace);
+
+    delete bus1;
+    delete bus2;
+    delete roadsComposite;
+    delete home;
     delete mediator;
 }
 

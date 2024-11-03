@@ -1,16 +1,18 @@
 #include "CitizenTaxAB.h"
-#include <iostream>
+#include "../Citizens/Citizen.h"
+#include "../Buildings/Building.h"
 
 double CitizenTaxAB::visit(Citizen *citizen)
 {
-  std::cout << "Getting Tax from Citizen\n";
-  return 1;
-  // return citizen->getTax();
+  if(!citizen)
+  {
+    return 0;
+  }
+  return citizen->getTax();
 }
 
 double CitizenTaxAB::visit(Building *business)
 {
-  std::cout << "Getting Tax from Bussiness\n";
-  return 1;
   // return business->getTax();
+  return 0;
 }

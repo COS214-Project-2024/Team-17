@@ -22,16 +22,17 @@ public:
 
     std::string getBuildingType();
 
-    bool moveIn(Citizen* resident);
-    void moveOut(Citizen* resident);
+    void notifyEmployeeLeft(Citizen *employee);
+
+    bool moveIn(Citizen *resident);
+    void moveOut(Citizen *resident);
 
 private:
     int capacity;
     string type = "Residential House";
     bool operational; // CS State
 
-
-    vector<Citizen*> residents;
+    vector<Citizen *> residents;
     // Resources
     int cost = 2500;
 

@@ -3,6 +3,8 @@
 #include "CityCentralMediator.h"
 #include "../Transport/TransportInclude.h"
 #include <iostream>
+#include "../Policy.h"
+
 
 static int busCount = 0;
 
@@ -72,6 +74,10 @@ Bus::Bus(RoadComponent *start, int capacity) : Citizen(false)
     if (road != nullptr)
     {
         currentLocation = road->getConnections()[0];
+    }
+    if(!Policy::getBusLaw())
+    {
+      currentLocation->addUser(this);
     }
     this->capacity = capacity;
     busCount++;

@@ -1,13 +1,13 @@
 #ifndef POLICY_H
 #define POLICY_H
 
-#include "CityStructure.h"
+class Government;
 
-class Policy
-{
-public:
-  virtual void applyBudget(CityStructure &city, double budget) = 0;
-  virtual ~Policy() {}
+class Policy{
+  protected:
+    Government* gov;
+  public:
+    Policy(Government* government) : gov(government) {}
+    virtual void enact() = 0;
 };
-
 #endif
