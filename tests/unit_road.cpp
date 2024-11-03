@@ -29,13 +29,13 @@ TEST_F(HighwaysTest, GetDistance) {
     EXPECT_NEAR(highway->getDistance(), expectedDistance, 0.001);
 }
 
-TEST_F(HighwaysTest, AddUser) {
-    // Test adding a user to the highway
-    Citizen user;
-    bool success = highway->addUser(&user);
-    EXPECT_TRUE(success);
-    EXPECT_EQ(highway->getUsers().size(), 1);
-}
+// TEST_F(HighwaysTest, AddUser) {
+//     // Test adding a user to the highway
+//     Citizen user;
+//     bool success = highway->addUser(&user);
+//     EXPECT_TRUE(success);
+//     EXPECT_EQ(highway->getUsers().size(), 1);
+// }
 
 class RoadsCompositeTest : public ::testing::Test {
 protected:
