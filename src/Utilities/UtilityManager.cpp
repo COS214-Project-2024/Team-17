@@ -14,11 +14,7 @@
 //     }
 // }
 
-// void UtilityManager::notifyDevices() {
-// 	   for (Building* buildin : Buildings) {
-//         buildin->update(this);  
-//     }
-// }
+
 
 
 
