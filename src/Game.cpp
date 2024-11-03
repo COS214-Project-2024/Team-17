@@ -35,7 +35,6 @@ void Game::updateJobs()
 
 void Game::updateCityGrowth()
 {
-    this->gov.enactPolicies();
     std::cout << "Policies/laws enacted\n";
 }
 
@@ -81,28 +80,53 @@ void Game::updateCityTax()
         else if (input == "laws") 
         {
             while (true) {
-                std::cout << "What do you want to do in Laws? (Add, Remove, List, Back): ";
+                std::cout << "What do you want to do in Laws? (On, Off, List, Back): ";
                 std::cin >> input;
                 input = toLowerCase(input);
 
-                if (input == "add") 
+                if (input == "on") 
                 {
-                    std::cout << "Give the name of the law you want to add: ";
+                    std::cout << "Give the name of the law you want to enable (bus, happiness, money, notax, services): ";
                     std::cin >> input;
-                    // Policy* law = new Law(&this->gov);
-                    // this->gov.addPolicy(*law, input);
-                    std::cout << "Added law: " << input << "\n";
+                    input = toLowerCase(input);
+                                        
+                    if (input == "bus") 
+                    {
+                      Policy::setBusLaw(true);
+                    } 
+                    else if (input == "happiness") 
+                    {
+                      Policy::setHappinessLaw(true);
+                    } 
+                    else if (input == "money") 
+                    {
+                      Policy::setMoneyLaw(true);
+                    } 
+                    else if (input == "notax") 
+                    {
+                      Policy::setNoTaxLaw(true);
+                    } 
+                    else if (input == "services") 
+                    {
+                      Policy::setServicesLaw(true);
+                    } 
+                    else 
+                    {
+                      std::cout << "Unrecognized law name." << std::endl;
+                    }
+                    std::cout << "Enabled law: " << input << "\n";
                 } 
-                else if (input == "remove") 
+                else if (input == "off") 
                 {
-                    std::cout << "Give the name of the law you want to remove: ";
-                    std::cin >> input;
-                    this->gov.removePolicy(input);
-                    std::cout << "Removed law: " << input << "\n";
                 }
                 else if (input == "list") 
                 {
-                    this->gov.listPolicies();
+                    std::cout << "Policy Status:" << std::endl;
+                    std::cout << "- Bus Law: " << (Policy::getBusLaw() ? "Enabled" : "Disabled") << std::endl;
+                    std::cout << "- Happiness Law: " << (Policy::getHappinessLaw() ? "Enabled" : "Disabled") << std::endl;
+                    std::cout << "- Money Law: " << (Policy::getMoneyLaw() ? "Enabled" : "Disabled") << std::endl;
+                    std::cout << "- No Tax Law: " << (Policy::getNoTaxLaw() ? "Enabled" : "Disabled") << std::endl;
+                    std::cout << "- Services Law: " << (Policy::getServicesLaw() ? "Enabled" : "Disabled") << std::endl;
                 }
                 else if (input == "back") 
                 {
