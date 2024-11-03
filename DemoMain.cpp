@@ -293,6 +293,8 @@
 #include "./src/Utilities/UtilWasteMan.h"
 #include "./src/Utilities/UtilSewageSyst.h"
 
+#include "./src/Game.h"
+
 #include "./src/Citizens/CitizensIncludes.h"
 
 #include "./src/resources.h"
@@ -340,6 +342,9 @@ int main()
     test9();
     cout << YELLOW << "==============================" << RESET << endl;
 
+
+    Game game;
+    game.start();
     return 0;
 }
 
