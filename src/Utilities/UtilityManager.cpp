@@ -1,11 +1,6 @@
 #include "UtilityManager.h"
 #include <iostream>
 
-// void UtilityManager::addDevice(Building* buildin) {
-// 	Buildings.push_back(buildin);// Add building info below
-// 		std::cout<<"Building Constructed of type:"<<buildin<<std::endl;
-		
-// }
 
 // void UtilityManager::removeDevice(Building* buildin) {
 // 	 auto it = Buildings.begin();
