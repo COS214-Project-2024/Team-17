@@ -3,18 +3,19 @@
 
 #include "Landmark.h"
 
-class LandPark : public Landmark {
+class LandPark : public Landmark
+{
 public:
-    LandPark();
+	LandPark();
 	~LandPark();
 
-    void displayBuildingInfo() override;
+	void displayBuildingInfo() override;
 
 	int getVisitors() override;
 	void setVisitors(int visitors) override;
 
-	//Observer
-	void callUtilities();//call Utilities in Buildings
+	// Observer
+	void callUtilities(); // call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
 
@@ -30,13 +31,20 @@ public:
 	
 private:
 	vector<Citizen*> employees;
+	bool addEmployee(Citizen *employee);
+	void removeEmployee(Citizen *employee);
+	void notifyEmployeeLeft(Citizen *employee);
+	bool hasJob();
 
-	//Resources
+private:
+	vector<Citizen *> employees;
+
+	// Resources
 
 	int cost = 1000;
 
-    int jobCapacity = 10;
-	
+	int jobCapacity = 10;
+
 	int woodCost = 25;
 	int concreteCost = 5;
 	int steelCost = 10;
@@ -47,8 +55,8 @@ private:
 	int happiness = 5;
 
 	int visitors;
-	string type="Landmark Park";
-	bool operational;//CS State
+	string type = "Landmark Park";
+	bool operational; // CS State
 };
 
 #endif

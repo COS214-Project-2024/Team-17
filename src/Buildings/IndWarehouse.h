@@ -27,6 +27,8 @@ public:
 	int getWaterUsage();
 	int getCurCitizenCount();
 	
+	void notifyEmployeeLeft(Citizen* employee);
+	bool hasJob();
 
 private:
     vector<Citizen*> employees;

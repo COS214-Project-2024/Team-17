@@ -10,6 +10,7 @@ private:
 	std::vector<RoadComponent *> components;
 
 public:
+	static const int MAX_SECTION_DISTANCE = 100;
 	/*
 	 * @brief Constructor for RoadsComposite
 	 * @param sX - start x coordinate
@@ -42,6 +43,8 @@ public:
 	}
 
 	float calculateDistance(int x, int y);
+
+	RoadComponent *closestSection(int x, int y);
 
 	~RoadsComposite() {}
 };

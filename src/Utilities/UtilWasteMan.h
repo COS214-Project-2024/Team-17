@@ -1,6 +1,7 @@
 /**
  * @file UtilWasteMan.h
- * @brief Header file for the UtilWasteMan class which implements UtilWasteMan.
+ * @brief Header file for the UtilWasteMan class, implementing waste management services.
+ * @details Contains the declaration of the UtilWasteMan class, managing waste collection and disposal operations.
  * @author WORKONMYMACHINE TEAM Nic
  * @headerfile UtilWasteMan.h
  */
@@ -12,12 +13,13 @@
 using namespace std;
 /**
  * @class UtilWasteMan
- * @brief ...
+ * @brief Represents the waste management system.
+ * @details Handles waste collection and disposal operations for buildings.
  */
 class UtilWasteMan: public UtilityManager {
     private :
-	std::string type="Waste Dump";
-	bool operational;//Observer State
+    std::string type = "Waste Dump"; ///< Type of utility
+    bool operational; ///< Operational state of the Waste Management service
     // int capacity;
 
 	//Resources:
@@ -28,32 +30,32 @@ class UtilWasteMan: public UtilityManager {
 
     
 public:
-	/**
-     * @brief Constructor for UtilWasteMan.
+    /**
+     * @brief Constructs a new Waste Management utility.
      */
 	UtilWasteMan();
-	/**
-     * @brief Starts the Waste System service
+    /**
+     * @brief Starts the Waste Management service, making it operational.
      */
 	void startUtility();
-	/**
- 	* @brief Updates the operational state of the utility based on the building's current status.
-	 *@param[in] unit Pointer to the Building object that notifies this utility.
-	 */
+    /**
+     * @brief Updates the operational state based on the status of the specified building.
+     * @param[in] unit Pointer to the Building object that notifies this utility.
+     */
 	void update(Building* unit);
-	/**
-	 * @brief Returns the type of utility service
-	 * @return string
-	 */
+    /**
+     * @brief Retrieves the type of this utility.
+     * @return The type as a string ("Waste Dump").
+     */
 	std::string getType();
-	/**
-	 * @brief Returns the operational status of the utility service
-	 * @return bool
-	 */
+    /**
+     * @brief Checks if the Waste Management service is operational.
+     * @return True if operational; otherwise, false.
+     */
 	bool isOperational();
-	/**
-	 * @brief Shuts down the Waste System service
-	 */
+    /**
+     * @brief Shuts down the Waste Management service, making it non-operational.
+     */
 	void shutDown();
 };
 

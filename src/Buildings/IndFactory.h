@@ -3,39 +3,42 @@
 
 #include "Industrial.h"
 
-class IndFactory : public Industrial {
+class IndFactory : public Industrial
+{
 public:
-    IndFactory();
+	IndFactory();
 	~IndFactory();
 
-    void displayBuildingInfo() override;
+	void displayBuildingInfo() override;
 
-    int getProductionCapacity() override;
+	int getProductionCapacity() override;
 	void setProductionCapacity(int capacity) override;
 
-    //Observer
+	// Observer
 	void callUtilities();
 	bool getState();
 	void setState(bool state);
 
 	string getBuildingType() override;
-	
-	bool addEmployee(Citizen* employee);
-	void removeEmployee(Citizen* employee);
+
+	bool addEmployee(Citizen *employee);
+	void removeEmployee(Citizen *employee);
+	void notifyEmployeeLeft(Citizen *employee);
+	bool hasJob();
 	
 	int getElectricityUsage();
 	int getWaterUsage();
 	int getCurCitizenCount();
 	
 private:
-	vector<Citizen*> employees;
+	vector<Citizen *> employees;
 
-	//Resources
+	// Resources
 
 	int cost = 1500;
 
-    int jobCapacity = 10;
-	
+	int jobCapacity = 10;
+
 	int woodCost = 20;
 	int concreteCost = 10;
 	int steelCost = 10;
@@ -45,8 +48,8 @@ private:
 
 	int woodProduction = 5;
 
-    string type = "Industrial Factory";
-    bool operational;//CS State
+	string type = "Industrial Factory";
+	bool operational; // CS State
 };
 
 #endif

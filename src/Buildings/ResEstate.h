@@ -3,7 +3,8 @@
 
 #include "Residential.h"
 
-class ResEstate : public Residential {
+class ResEstate : public Residential
+{
 public:
     ResEstate();
     ~ResEstate();
@@ -13,11 +14,11 @@ public:
     int getCapacity() const override;
     void setCapacity(int capacity) override;
 
-    //Observer
-	void callUtilities();//call Utilities in Buildings
-	bool getState();
-	void setState(bool state);
-	std::string getBuildingType();
+    // Observer
+    void callUtilities(); // call Utilities in Buildings
+    bool getState();
+    void setState(bool state);
+    std::string getBuildingType();
 
     bool moveIn(Citizen* resident);
     void moveOut(Citizen* resident);
@@ -26,13 +27,16 @@ public:
 	int getWaterUsage();
 	int getCurCitizenCount();
 	
+    void notifyEmployeeLeft(Citizen *employee) override;
+    bool moveIn(Citizen *resident);
+    void moveOut(Citizen *resident);
+
 private:
     int capacity;
     string type = "Residential Estate";
-    bool operational;//CS State
+    bool operational; // CS State
 
-
-    vector<Citizen*> residents;
+    vector<Citizen *> residents;
     // Resources
     int cost = 4000;
 

@@ -38,3 +38,10 @@ void Landmark::notifyUtilities(){
         utility->update(this);
     }
 }
+
+bool Landmark::moveIn(Citizen* resident){
+    return true;
+}
+
+void Landmark::moveOut(Citizen* resident){
+}

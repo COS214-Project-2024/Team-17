@@ -3,39 +3,42 @@
 
 #include "Commercial.h"
 
-class ComMall : public Commercial {
+class ComMall : public Commercial
+{
 public:
-    ComMall();
+	ComMall();
 	~ComMall();
 
-    void displayBuildingInfo() override;
+	void displayBuildingInfo() override;
 
 	virtual int getJobCapacity() override;
 	virtual void setJobCapacity(int capacity) override;
 
 	// Observer
-	void callUtilities(); //call Utilities in Buildings
+	void callUtilities(); // call Utilities in Buildings
 	bool getState();
 	void setState(bool state);
-	
+
 	string getBuildingType();
 
-	bool addEmployee(Citizen* employee);
-	void removeEmployee(Citizen* employee);
+	bool addEmployee(Citizen *employee);
+	void removeEmployee(Citizen *employee);
+	void notifyEmployeeLeft(Citizen *employee);
+	bool hasJob();
 
 	int getElectricityUsage();
 	int getWaterUsage();
 	int getCurCitizenCount();
 
 private:
-	vector<Citizen*> employees;
+	vector<Citizen *> employees;
 
-	//Resources
+	// Resources
 
 	int cost = BuildingRequirements::mallBuildCost;
 
-    int jobCapacity = 100;
-	
+	int jobCapacity = 100;
+
 	int woodCost = BuildingRequirements::mallWoodCost;
 	int concreteCost = BuildingRequirements::mallConcreteCost;
 	int steelCost = BuildingRequirements::mallSteelCost;
@@ -46,7 +49,7 @@ private:
 	int income = 500;
 
 	string type = "Commercial Mall";
-	bool operational; //CS State
+	bool operational; // CS State
 };
 
 #endif

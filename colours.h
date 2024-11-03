@@ -19,12 +19,13 @@ const string CYAN = "\033[36m";
 
 const string BG_BLACK = "\033[40m";
 const string BG_WHITE = "\033[47m";
+
+const string BOLD = "\033[1m";
 // TESTING COLOURS
 
-enum class Colour {
+enum class Colour
+{
     // keep empty
 };
 
 #endif // COLOURS_H
-
-

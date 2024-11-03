@@ -1,6 +1,7 @@
 #include "ServEducation.h"
 
-ServEducation::ServEducation() {
+ServEducation::ServEducation() : Services(50)
+{
     cout << BLACK << "\t-->Education service created" << RESET << endl;
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
@@ -12,57 +13,81 @@ ServEducation::ServEducation() {
     Resources::addIncome(cityIncome);
 }
 
-ServEducation::~ServEducation() {
+ServEducation::~ServEducation()
+{
     cout << BLACK << "\t-->Education service destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happinessIncrease);
     Resources::removeIncome(cityIncome);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void ServEducation::displayBuildingInfo() {
+void ServEducation::displayBuildingInfo()
+{
     cout << "Education service with " << this->visitors << " visitors\n";
 }
 
-int ServEducation::getVisitors() {
+int ServEducation::getVisitors()
+{
     return visitors;
 }
 
-void ServEducation::setVisitors(int visitors) {
+void ServEducation::setVisitors(int visitors)
+{
     this->visitors = visitors;
 }
 
-void ServEducation::callUtilities(){
+void ServEducation::callUtilities()
+{
     notifyUtilities();
 }
 
-bool ServEducation::getState(){
+bool ServEducation::getState()
+{
     return operational;
 }
 
-void ServEducation::setState(bool state){
-    if(operational!=state){
+void ServEducation::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-        cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-string ServEducation::getBuildingType(){
+string ServEducation::getBuildingType()
+{
     return type;
 }
 
-bool ServEducation::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool ServEducation::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
+    }
+
+    // check if employee already works here
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            cout << "Employee already works here" << endl;
+            return false;
+        }
     }
 
     employees.push_back(employee);
@@ -70,9 +95,12 @@ bool ServEducation::addEmployee(Citizen* employee) {
     return true;
 }
 
-void ServEducation::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void ServEducation::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
@@ -90,4 +118,20 @@ int ServEducation::getWaterUsage() {
 
 int ServEducation::getCurCitizenCount() {
     return employees.size();
+}
+void ServEducation::notifyEmployeeLeft(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+}
+
+bool ServEducation::hasJob()
+{
+    return employees.size() < jobCapacity;
 }

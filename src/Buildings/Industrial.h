@@ -6,19 +6,20 @@
 
 class UtilityManager;
 
-class Industrial : public Building {
+class Industrial : public Building
+{
 public:
-	virtual int getProductionCapacity() = 0;
-	virtual void setProductionCapacity(int capacity) = 0;
+    virtual int getProductionCapacity() = 0;
+    virtual void setProductionCapacity(int capacity) = 0;
 
-	bool checkBuildRequirements() override;
+    bool checkBuildRequirements() override;
 
-	// Observer pattern
+    // Observer pattern
     virtual bool getState();
     virtual std::string getBuildingType();
-    void addUtility(UtilityManager* utility);//attach
-    void removeUtility(UtilityManager* utility);//detach
-    void notifyUtilities();//notify
+    void addUtility(UtilityManager *utility);    // attach
+    void removeUtility(UtilityManager *utility); // detach
+    void notifyUtilities();                      // notify
 
 	virtual int getElectricityUsage() = 0;
 	virtual int getWaterUsage() = 0;
@@ -27,10 +28,20 @@ public:
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual void increaseJobs() = 0;
 	// virtual void affectEmotionalState() = 0;
+    virtual bool addEmployee(Citizen *employee) = 0;
+    virtual void removeEmployee(Citizen *employee) = 0;
+    virtual void notifyEmployeeLeft(Citizen *employee) = 0;
+
+    virtual bool moveIn(Citizen *resident);
+    virtual void moveOut(Citizen *resident);
+
+    // virtual bool checkBuildRequirements() = 0;
+    // virtual void increaseJobs() = 0;
+    // virtual void affectEmotionalState() = 0;
 
 private:
-	bool operational;//state
-    vector<UtilityManager*> Utilities;
+    bool operational; // state
+    vector<UtilityManager *> Utilities;
 };
 
 #endif

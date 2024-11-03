@@ -6,19 +6,27 @@
 
 class UtilityManager;
 
-class Commercial : public Building {
+class Commercial : public Building
+{
 public:
 	virtual int getJobCapacity() = 0;
 	virtual void setJobCapacity(int capacity) = 0;
 
 	virtual bool getState();
-    virtual string getBuildingType();
+	virtual string getBuildingType();
 	bool checkBuildRequirements() override;
 
 	// Observer pattern
-    void addUtility(UtilityManager* utility);//attach
-    void removeUtility(UtilityManager* utility);//detach
-    void notifyUtilities();//notify
+	void addUtility(UtilityManager *utility);	 // attach
+	void removeUtility(UtilityManager *utility); // detach
+	void notifyUtilities();						 // notify
+
+	virtual bool addEmployee(Citizen *employee) = 0;
+	virtual void removeEmployee(Citizen *employee) = 0;
+	virtual void notifyEmployeeLeft(Citizen *employee) = 0;
+
+	virtual bool moveIn(Citizen *resident);
+	virtual void moveOut(Citizen *resident);
 
 	virtual int getElectricityUsage() = 0;
 	virtual int getWaterUsage() = 0;
@@ -33,7 +41,7 @@ public:
 
 private:
 	bool operational; // part of Observer
-    vector<UtilityManager*> Utilities;
+	vector<UtilityManager *> Utilities;
 };
 
 #endif

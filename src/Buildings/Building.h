@@ -28,7 +28,7 @@ public:
     virtual bool checkBuildRequirements() = 0;
 
     void notifyChange(std::string message);
-    void accept(TaxAndBudgetVisitor *visitor);
+    // void accept(TaxAndBudgetVisitor *visitor);
 
     int getXCoordinate();
     int getYCoordinate();
@@ -36,11 +36,17 @@ public:
     void setXCoordinate(int x);
     void setYCoordinate(int y);
 
+    virtual bool addEmployee(Citizen *employee) = 0;
+    virtual void removeEmployee(Citizen *employee) = 0;
+    virtual void notifyEmployeeLeft(Citizen *employee) = 0;
+    virtual bool hasJob() = 0;
     virtual int getElectricityUsage() = 0;
 	virtual int getWaterUsage() = 0;
 	virtual int getCurCitizenCount() = 0;
 
 
+    virtual bool moveIn(Citizen *resident) = 0;
+    virtual void moveOut(Citizen *resident) = 0;
 
 private:
     vector<UtilityManager *> utilities;
@@ -48,7 +54,7 @@ private:
     CityMediator *mediator;
     bool operational; // state
 
-    //Coordinates:
+    // Coordinates:
     int xCoordinate;
     int yCoordinate;
 };

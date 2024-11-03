@@ -64,3 +64,36 @@ std::vector<RoadComponent *> RoadComponent::getConnections()
 {
 	return connections;
 }
+
+bool RoadComponent::isFull()
+{
+	return users.size() == capacity;
+}
+
+bool RoadComponent::addUser(Citizen *user)
+{
+	if (users.size() < capacity)
+	{
+		users.push_back(user);
+		return true;
+	}
+	return false;
+}
+
+bool RoadComponent::removeUser(Citizen *user)
+{
+	for (auto it = users.begin(); it != users.end(); it++)
+	{
+		if (*it == user)
+		{
+			users.erase(it);
+			return true;
+		}
+	}
+	return false;
+}
+
+std::vector<Citizen *> RoadComponent::getUsers()
+{
+	return users;
+}

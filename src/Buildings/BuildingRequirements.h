@@ -17,6 +17,7 @@ struct BuildingRequirements{
         static bool checkLandmarkRequirements(string type);
         static bool checkServiceRequirements(string type);
         static bool checkUtilityRequirements(string type);
+        static bool checkRoadRequirements(string type);
         
         
         //residential
@@ -157,7 +158,6 @@ struct BuildingRequirements{
         static const int highwayWoodCost = 0;
         static const int highwayConcreteCost = 10;
         static const int highwaySteelCost = 5;
-
 };
 
 #endif

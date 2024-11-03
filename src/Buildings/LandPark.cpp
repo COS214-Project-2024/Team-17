@@ -1,8 +1,9 @@
 #include "LandPark.h"
 
-LandPark::LandPark() {
+LandPark::LandPark()
+{
     cout << BLACK << "\t-->Park created" << RESET << endl;
-    
+
     Resources::removeMoney(woodCost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
@@ -12,56 +13,79 @@ LandPark::LandPark() {
     Resources::addHappiness(happiness);
 }
 
-LandPark::~LandPark() {
+LandPark::~LandPark()
+{
     cout << BLACK << "\t-->Park destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happiness);
 
-    for (int i = 0; i < employees.size(); i++) {
+    for (int i = 0; i < employees.size(); i++)
+    {
         employees[i]->fired();
     }
 
     employees.clear();
 }
 
-void LandPark::displayBuildingInfo() {
+void LandPark::displayBuildingInfo()
+{
     cout << "Park with " << this->visitors << " visitors\n";
 }
 
-int LandPark::getVisitors() {
+int LandPark::getVisitors()
+{
     return visitors;
 }
 
-void LandPark::setVisitors(int visitors) {
+void LandPark::setVisitors(int visitors)
+{
     this->visitors = visitors;
 }
 
-void LandPark::callUtilities(){
+void LandPark::callUtilities()
+{
     notifyUtilities();
 }
 
-bool LandPark::getState(){
+bool LandPark::getState()
+{
     return operational;
 }
 
-void LandPark::setState(bool state){
-    if(operational!=state){
+void LandPark::setState(bool state)
+{
+    if (operational != state)
+    {
         operational = state;
-        callUtilities();}
-    else{
-        cout<<"No change in state"<<endl;
+        callUtilities();
+    }
+    else
+    {
+        cout << "No change in state" << endl;
     }
 }
 
-string LandPark::getBuildingType(){
+string LandPark::getBuildingType()
+{
     return type;
 }
 
-bool LandPark::addEmployee(Citizen* employee) {
-    if (employees.size() >= jobCapacity) {
+bool LandPark::addEmployee(Citizen *employee)
+{
+    if (employees.size() >= jobCapacity)
+    {
         cout << "Job capacity reached" << endl;
         return false;
+    }
+
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            cout << "Employee already works here" << endl;
+            return false;
+        }
     }
 
     employees.push_back(employee);
@@ -69,9 +93,12 @@ bool LandPark::addEmployee(Citizen* employee) {
     return true;
 }
 
-void LandPark::removeEmployee(Citizen* employee) {
-    for (int i = 0; i < employees.size(); i++) {
-        if (employees[i] == employee) {
+void LandPark::removeEmployee(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
             employees.erase(employees.begin() + i);
             employee->fired();
             break;
@@ -89,4 +116,20 @@ int LandPark::getWaterUsage() {
 
 int LandPark::getCurCitizenCount() {
     return employees.size();
+}
+void LandPark::notifyEmployeeLeft(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            employees.erase(employees.begin() + i);
+            break;
+        }
+    }
+}
+
+bool LandPark::hasJob()
+{
+    return employees.size() < jobCapacity;
 }

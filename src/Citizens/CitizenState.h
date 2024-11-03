@@ -6,7 +6,7 @@
 class CitizenState
 {
 public:
-    virtual void handleChange() = 0;
+    virtual CitizenState *handleChange(int change) = 0;
     virtual std::string getState() = 0;
     virtual ~CitizenState() {};
 };
