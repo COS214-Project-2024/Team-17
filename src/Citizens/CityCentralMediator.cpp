@@ -362,8 +362,13 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 
 Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 {
+  std::cout << "test1.11\n";
 	Trainstation *closest = nullptr;
-
+  if(trainStations.empty())
+  {
+    return closest;
+  }
+  std::cout << "test1.12\n";
 	for (auto t : trainStations)
 	{
 		if (t->pointInRange(x, y))
@@ -390,6 +395,10 @@ Building *CityCentralMediator::requestJob()
 
 void CityCentralMediator::updateBuses()
 {
+  if(buses.size() < 1)
+  {
+    return;
+  }
 	for (auto b : buses)
 	{
 		b->doSomething();
@@ -398,9 +407,16 @@ void CityCentralMediator::updateBuses()
 
 void CityCentralMediator::citizensDoSomething()
 {
+  if(citizens.size() < 1)
+  {
+    return;
+  }
 	for (auto c : citizens)
 	{
-		c->doSomething();
+    if(c != NULL && c != nullptr)
+    {
+      c->doSomething();
+    }
 	}
 }
 
@@ -507,4 +523,5 @@ double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
 	{
 		total += visitor->visit(citizen);
 	}
+  return total;
 }

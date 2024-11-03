@@ -1,5 +1,6 @@
 #include "CityBlock.h"
 #include "CityCentralMediator.h"
+#include <iostream>
 
 CityBlock::CityBlock()
 {
@@ -7,6 +8,9 @@ CityBlock::CityBlock()
 }
 
 double CityBlock::accept(TaxAndBudgetVisitor *visitor)
-{
-  return this->mediator->accept(visitor);
+{  
+  if(mediator)
+  {
+    return mediator->accept(visitor);
+  }
 }

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "resources.h"
 
 #include <chrono>
 #include <thread>
@@ -11,31 +12,52 @@ static constexpr int CONSTRUCTION_UPDATE_INTERVAL = 60; // Every 6 hours
 static constexpr int JOB_UPDATE_INTERVAL = 6;           // Every 1 hour
 static constexpr int CITY_GROWTH_INTERVAL = 240;        // Every 1 day
 static constexpr int CITY_TAX_INTERVAL = 240;           // Every 1 day
+int time_of_day = 0;
 
 Game::Game()
 {
+  Resources::removePopulation(Resources::getPopulation());
+  this->mediator = CityCentralMediator::getInstance();
+  delete mediator;
+  this->mediator = CityCentralMediator::getInstance();
   CityStructure* city = new CityStructure("Pretoria");
+  city->addBlock(new CityBlock());
   this->gov.addCity(*city);
+  mediator->registerBuilding(new ResFlat());
+  mediator->registerBuilding(new ResHouse());
 }
 
 void Game::updateTransport()
 {
-    std::cout << "Transport updated" << std::endl;
-}
-
-void Game::updateConstruction()
-{
-    std::cout << "Construction updated" << std::endl;
+  if(mediator)
+  {
+    mediator->updateBuses();
+  }
 }
 
 void Game::updateJobs()
 {
-    std::cout << "Jobs updated" << std::endl;
+  if(mediator)
+  {
+    if(time_of_day == 8)
+    {
+      mediator->citizensStartWork();
+    }
+    if(time_of_day == 17)
+    {
+      mediator->citizensEndWork();
+    }
+  }
 }
 
 void Game::updateCityGrowth()
 {
-    std::cout << "Policies/laws enacted\n";
+  if(mediator)
+  {
+    mediator->citizensDoSomething();
+    mediator->handlePopulationGrowth();
+    mediator->updateCitizenSatisfaction();
+  }
 }
 
 std::string toLowerCase(const std::string& str) 
@@ -225,12 +247,13 @@ void Game::start()
     while (running)
     {
         if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
-        {
-            updateTransport();
-        }
-        if (counter % CONSTRUCTION_UPDATE_INTERVAL == 0)
-        {
-            updateConstruction();
+        { 
+          time_of_day++;
+          if(time_of_day > 24)
+          {
+            time_of_day = 0;
+          }
+          updateTransport();
         }
         if (counter % JOB_UPDATE_INTERVAL == 0)
         {
