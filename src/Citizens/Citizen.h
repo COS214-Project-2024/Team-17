@@ -75,6 +75,8 @@ public:
 
 	int getHappiness();
 
+  double getTax();
+  
 	~Citizen();
 };
 

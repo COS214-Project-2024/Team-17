@@ -8,6 +8,8 @@
 #include "../Transport/RoadComponent.h"
 #include "Bus.h"
 
+#include "../Policy.h"
+
 void Citizen::changeHappiness(int change)
 {
 	CitizenState *oldstate = state;
@@ -500,6 +502,15 @@ int Citizen::getHappiness()
 	}
 
 	return 0;
+}
+
+double Citizen::getTax()
+{
+  if(!Policy::getNoTaxLaw())
+  {
+    return 10.0;
+  }
+  return 0;
 }
 
 Citizen::~Citizen()
