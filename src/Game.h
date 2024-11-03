@@ -18,6 +18,9 @@
 #include "resources.h"
 #include "Policy.h"
 #include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
 
 class Game
 {
@@ -35,6 +38,7 @@ private:
     void updateJobs();
     void updateCityGrowth();
     void updateCityTax();
+    bool isValidNumber(const string &input, int &number);
 
     struct BuildingOption
     {

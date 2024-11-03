@@ -54,38 +54,45 @@ void CityCentralMediator::checkCitizenServiceSatisfaction()
 
 	int citizenCount = Resources::getPopulation();
 
-	std::cout << GREEN << "\nChecking citizen service satisfaction1" << RESET << std::endl;
-
 	if (education < citizenCount)
 	{
 		std::cout << RED << "Not enough education services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Education");
 	}
-
-	std::cout << GREEN << "\nChecking citizen service satisfaction2" << RESET << std::endl;
+	else
+	{
+		std::cout << GREEN << "Enough education services for all citizens" << RESET << std::endl;
+	}
 
 	if (entertainment < citizenCount)
 	{
 		std::cout << RED << "Not enough entertainment services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Entertainment");
 	}
-
-	std::cout << GREEN << "\nChecking citizen service satisfaction3" << RESET << std::endl;
+	else
+	{
+		std::cout << GREEN << "Enough entertainment services for all citizens" << RESET << std::endl;
+	}
 
 	if (health < citizenCount)
 	{
 		std::cout << RED << "Not enough health services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Health");
 	}
-	std::cout << GREEN << "\nChecking citizen service satisfaction4" << RESET << std::endl;
+	else
+	{
+		std::cout << GREEN << "Enough health services for all citizens" << RESET << std::endl;
+	}
 
 	if (security < citizenCount)
 	{
 		std::cout << RED << "Not enough security services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Security");
 	}
-
-	std::cout << GREEN << "CHECKS DONE!" << RESET << std::endl;
+	else
+	{
+		std::cout << GREEN << "Enough security services for all citizens" << RESET << std::endl;
+	}
 }
 
 RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
@@ -502,6 +509,8 @@ void CityCentralMediator::handlePopulationGrowth()
 			}
 		}
 	}
+
+	std::cout << "Total population: " << Resources::getPopulation() << std::endl;
 }
 
 void CityCentralMediator::handleUtilityFailure()

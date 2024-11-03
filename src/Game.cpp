@@ -84,7 +84,7 @@ void Game::updateCityTax()
   {
     if (!paused)
     {
-      std::cout << "What action do you want to do? (Laws, Taxes, Pause, Skip): ";
+      std::cout << "What action do you want to do? (Build, Laws, Taxes, Pause, Skip, Quit): ";
       std::cin >> input;
       input = toLowerCase(input);
     }
@@ -92,6 +92,10 @@ void Game::updateCityTax()
     if (input == "skip")
     {
       break;
+    }
+    else if (input == "quit")
+    {
+      exit(0);
     }
     else if (input == "pause")
     {
@@ -257,6 +261,12 @@ void Game::updateCityTax()
   }
 }
 
+bool Game::isValidNumber(const string &input, int &number)
+{
+  stringstream ss(input);
+  return (ss >> number) && ss.eof();
+}
+
 void Game::initBuildingOptions()
 {
   buildingOptions = {
@@ -264,15 +274,15 @@ void Game::initBuildingOptions()
       {"Commercial", {"Mall", "Shop", "Office"}},
       {"Industrial", {"Warehouse", "Factory", "Plant"}},
       {"Landmarks", {"Park", "Monument", "Community Center"}},
-      {"Services", {"Education", "Security", "Entertainment"}}};
+      {"Services", {"Education", "Security", "Entertainment", "Hospital"}}};
 }
 
 void Game::createBuilding()
 {
+  string input;
   int option, option2;
   string buildingType;
   int capacity;
-  int jobCapacity;
 
   cout << "What Building Type do you want to build?" << endl;
   cout << "Choose an option: " << endl;
@@ -287,38 +297,80 @@ void Game::createBuilding()
   }
 
   cout << "Enter your choice: ";
-  cin >> option;
-
-  if (option >= 1 && option <= buildingOptions.size())
+  getline(cin >> ws, input);
+  if (!isValidNumber(input, option) || option < 1 || option > buildingOptions.size())
   {
-    const auto &selectedOption = buildingOptions[option - 1];
-    cout << "What kind of " << selectedOption.type << " Building?" << endl;
-    cout << "Choose an option: " << endl;
-    for (int i = 0; i < selectedOption.subtypes.size(); ++i)
-    {
-      cout << "\t" << i + 1 << ". " << selectedOption.subtypes[i] << endl;
-    }
-
-    cout << "Enter your choice: ";
-    cin >> option2;
-
-    if (option2 >= 1 && option2 <= selectedOption.subtypes.size())
-    {
-      buildingType = selectedOption.subtypes[option2 - 1];
-
-      if (selectedOption.type == "Residential")
-      {
-        cout << "Enter the capacity: ";
-        cin >> capacity;
-        FactoryBuilding *factory = new FactResidential();
-        Residential *building = factory->createResBuilding(buildingType);
-        building->setCapacity(capacity);
-        mediator->registerBuilding(building);
-        delete factory;
-      }
-      // Similar blocks for other building types...
-    }
+    cout << "Invalid building type selection." << endl;
+    return;
   }
+
+  const auto &selectedOption = buildingOptions[option - 1];
+  cout << "What kind of " << selectedOption.type << " Building?" << endl;
+  cout << "Choose an option: " << endl;
+  for (int i = 0; i < selectedOption.subtypes.size(); ++i)
+  {
+    cout << "\t" << i + 1 << ". " << selectedOption.subtypes[i] << endl;
+  }
+
+  cout << "Enter your choice: ";
+  getline(cin >> ws, input);
+  if (!isValidNumber(input, option2) || option2 < 1 || option2 > selectedOption.subtypes.size())
+  {
+    cout << "Invalid building subtype selection." << endl;
+    return;
+  }
+
+  buildingType = selectedOption.subtypes[option2 - 1];
+
+  if (selectedOption.type == "Residential")
+  {
+    cout << "Enter the capacity: ";
+    getline(cin >> ws, input);
+    if (!isValidNumber(input, capacity) || capacity < 0)
+    {
+      cout << "Invalid capacity value." << endl;
+      return;
+    }
+    FactoryBuilding *factory = new FactResidential();
+    Residential *building = factory->createResBuilding(buildingType);
+    building->setCapacity(capacity);
+    mediator->registerBuilding(building);
+    delete factory;
+  }
+  else if (selectedOption.type == "Commercial")
+  {
+    FactoryBuilding *factory = new FactCommercial();
+    Commercial *building = factory->createComBuilding(buildingType);
+    building->setJobCapacity(100); // Default value
+    mediator->registerBuilding(building);
+    delete factory;
+  }
+  else if (selectedOption.type == "Industrial")
+  {
+    FactoryBuilding *factory = new FactIndustrial();
+    Industrial *building = factory->createIndBuilding(buildingType);
+    building->setProductionCapacity(100); // Default value
+    mediator->registerBuilding(building);
+    delete factory;
+  }
+  else if (selectedOption.type == "Landmarks")
+  {
+    FactoryBuilding *factory = new FactLandmarks();
+    Landmark *building = factory->createLandmark(buildingType);
+    building->setVisitors(100); // Default value
+    mediator->registerBuilding(building);
+    delete factory;
+  }
+  else if (selectedOption.type == "Services")
+  {
+    FactoryBuilding *factory = new FactService();
+    Services *building = factory->createServiceBuilding(buildingType);
+    building->setVisitors(100); // Default value
+    mediator->registerBuilding(building);
+    delete factory;
+  }
+
+  cout << "Successfully created " << buildingType << " building!" << endl;
 }
 
 void Game::start()
@@ -327,6 +379,8 @@ void Game::start()
   counter = 0;
   while (running)
   {
+    // clear output
+    std::cout << "\033[2J\033[1;1H";
     // std::cout << "=======RUN=======" << std::endl;
     if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
     {
