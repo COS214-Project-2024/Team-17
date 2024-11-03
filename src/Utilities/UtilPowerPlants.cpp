@@ -9,7 +9,7 @@ UtilPowerPlants::UtilPowerPlants() {
     std::cout << "Power Plant Being Built!" << std::endl;
     type = "Power Plant";
     operational = false; // constructing
-    // Resources:
+// Resources:
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
