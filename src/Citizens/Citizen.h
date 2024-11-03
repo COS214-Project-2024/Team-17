@@ -21,7 +21,7 @@ protected:
 	Building *currentLocation;
 	RoadComponent *currentRoad;
 	std::vector<RoadComponent *> route;
-	CityMediator *mediator;
+	CityMediator *mediator = nullptr;
 	Bus *myBus;
 	bool ownsCar;
 	int waitTimer = 0;
