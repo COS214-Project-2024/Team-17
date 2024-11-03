@@ -79,3 +79,15 @@ void ComMall::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int ComMall::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ComMall::getWaterUsage() {
+    return waterUsage;
+}
+
+int ComMall::getCurCitizenCount() {
+    return employees.size();
+}

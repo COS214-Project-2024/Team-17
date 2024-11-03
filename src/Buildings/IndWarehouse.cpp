@@ -78,3 +78,15 @@ void IndWarehouse::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int IndWarehouse::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int IndWarehouse::getWaterUsage() {
+    return waterUsage;
+}
+
+int IndWarehouse::getCurCitizenCount() {
+    return employees.size();
+}

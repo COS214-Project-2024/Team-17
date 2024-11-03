@@ -22,6 +22,11 @@ public:
 	// Resources
 	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
+		
+	int getElectricityUsage();
+	int getWaterUsage();
+	int getCurCitizenCount();
+	
 
 private:
 	int visitors;

@@ -454,7 +454,9 @@ QComboBox::down-arrow {
 	width: 8px;
     height: 8px;
     image: url(:/images/arrow-down.png); /* Replace with down arrow icon if needed */
-}</string>
+}
+
+</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -573,12 +575,12 @@ QComboBox::down-arrow {
          </property>
          <item>
           <property name="text">
-           <string>Vertical</string>
+           <string>Horizontal</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Horizontal</string>
+           <string>Vertical</string>
           </property>
          </item>
         </widget>

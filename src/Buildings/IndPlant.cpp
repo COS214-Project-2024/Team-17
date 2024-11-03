@@ -78,3 +78,15 @@ void IndPlant::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int IndPlant::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int IndPlant::getWaterUsage() {
+    return waterUsage;
+}
+
+int IndPlant::getCurCitizenCount() {
+    return employees.size();
+}

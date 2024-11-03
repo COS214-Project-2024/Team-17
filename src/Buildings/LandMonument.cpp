@@ -78,3 +78,15 @@ void LandMonument::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int LandMonument::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int LandMonument::getWaterUsage() {
+    return waterUsage;
+}
+
+int LandMonument::getCurCitizenCount() {
+    return employees.size();
+}

@@ -22,7 +22,11 @@ public:
 	
 	bool addEmployee(Citizen* employee);
 	void removeEmployee(Citizen* employee);
-
+	
+	int getElectricityUsage();
+	int getWaterUsage();
+	int getCurCitizenCount();
+	
 private:
 	vector<Citizen*> employees;
 

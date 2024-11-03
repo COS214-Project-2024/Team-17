@@ -78,3 +78,15 @@ void ComOffice::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int ComOffice::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ComOffice::getWaterUsage() {
+    return waterUsage;
+}
+
+int ComOffice::getCurCitizenCount() {
+    return employees.size();
+}

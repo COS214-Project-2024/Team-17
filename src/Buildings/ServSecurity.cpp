@@ -79,3 +79,16 @@ void ServSecurity::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+
+int ServSecurity::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ServSecurity::getWaterUsage() {
+    return waterUsage;
+}
+
+int ServSecurity::getCurCitizenCount() {
+    return employees.size();
+}

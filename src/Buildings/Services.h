@@ -17,6 +17,10 @@ public:
     void removeUtility(UtilityManager* utility);//detach
     void notifyUtilities();//notify
 
+	virtual int getElectricityUsage() = 0;
+	virtual int getWaterUsage() = 0;
+	virtual int getCurCitizenCount() = 0;
+	
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual void createBuilding() = 0;
 	// virtual void affectEmotionalState() = 0;

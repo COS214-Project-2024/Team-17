@@ -73,3 +73,15 @@ void ResFlat::moveOut(Citizen* resident) {
         }
     }
 }
+
+int ResFlat::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ResFlat::getWaterUsage() {
+    return waterUsage;
+}
+
+int ResFlat::getCurCitizenCount() {
+    return residents.size();
+}

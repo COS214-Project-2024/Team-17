@@ -13,6 +13,7 @@ class DraggableRoad;
 #include "../src/Buildings/FactLandmarks.h"
 #include "../src/Buildings/FactService.h"
 #include "../src/Buildings/Building.h"
+#include "../src/Transport/TransportInclude.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,13 +28,16 @@ class HomePage : public QMainWindow
 public:
     HomePage(QWidget *parent = nullptr);
     void deleteBuilding(DraggableFrame* deleteMe);
+    void deleteRoad(DraggableRoad* deleteMe);
     ~HomePage();
     Ui::HomePage *ui;
     void CreateBuilding(QString buildingType, Building* link);
-    void CreateRoad(QString roadType);
+    void CreateRoad(QString roadType, RoadComponent *link);
     void updateInfoScreen();
 
     void resizeEvent(QResizeEvent *event);
+    QVector<DraggableFrame*> getBuildings();
+    QVector<DraggableRoad*> getRoads();
 
 private slots:
 
@@ -106,6 +110,10 @@ private slots:
     void on_spnRoadEditY_valueChanged(int arg1);
 
     void on_btnRoadRes_clicked();
+
+    void on_btnRoadMain_clicked();
+
+    void on_btnRoadHighway_clicked();
 
 private:
 

@@ -83,3 +83,15 @@ void LandCCenter::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int LandCCenter::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int LandCCenter::getWaterUsage() {
+    return waterUsage;
+}
+
+int LandCCenter::getCurCitizenCount() {
+    return employees.size();
+}

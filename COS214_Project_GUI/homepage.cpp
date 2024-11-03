@@ -12,6 +12,8 @@
 QVector<DraggableFrame *> buildings;
 QVector<DraggableRoad *> roads;
 
+QString type;
+
 DraggableFrame* frame;
 DraggableRoad* road;
 QLabel* BuildingType;
@@ -154,7 +156,7 @@ void HomePage::CreateBuilding(QString buildingType, Building* link)
 {
     ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
     ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
-    frame = new DraggableFrame(ui->scAreaMainMap, ui->spnBuildingEditX, ui->spnBuildingEditY, this);
+    frame = new DraggableFrame(ui->scAreaMainMap, ui->spnBuildingEditX, ui->spnBuildingEditY, this, link);
     frame->setFrameShape(QFrame::Box);  // Optional: set frame shape
     frame->setLineWidth(2);  // Optional: set border width
     frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
@@ -603,13 +605,22 @@ void HomePage::on_btnUtilWaste_clicked()
     ui->tabBuildCity->setEnabled(0);
 }
 
-void HomePage::CreateRoad(QString roadType){
+void HomePage::CreateRoad(QString roadType, RoadComponent *link){
     ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 120);
     ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 100);
-    road = new DraggableRoad(ui->scAreaMainMap, ui->spnRoadEditX, ui->spnRoadEditY, this, roads);
+    road = new DraggableRoad(ui->scAreaMainMap, ui->spnRoadEditX, ui->spnRoadEditY, this, roads, link);
     road->move(100, 50);
     road->show();
     roads.append(road);
+    if(roadType=="Res"){
+        road->setFixedHeight(10);
+    }
+    else if(roadType=="Main"){
+        road->setFixedHeight(15);
+    }
+    else if(roadType=="Highway"){
+        road->setFixedHeight(20);
+    }
     ui->scAreaMainMap->addToRoads(road);
     ui->spnRoadEditX->setValue(road->x());
     ui->spnRoadEditY->setValue(road->y());
@@ -618,16 +629,48 @@ void HomePage::CreateRoad(QString roadType){
     ui->frmEditRoadPos->raise();
 }
 
+void HomePage::deleteRoad(DraggableRoad* deleteMe){
+    deleteMe->setVisible(false);
+    roads.removeOne(deleteMe);
+    ui->scAreaMainMap->removeFromRoads(deleteMe);
+    deleteMe->deleteLater();
+    ui->frmEditRoadPos->hide();
+}
+
 
 void HomePage::on_btnRoadRes_clicked()
 {
-    CreateRoad("");
+    type="Res";
+    CreateRoad(type, nullptr);
+    ui->tabBuildCity->setEnabled(0);
+}
+
+void HomePage::on_btnRoadMain_clicked()
+{
+    type="Main";
+    CreateRoad(type, nullptr);
+    ui->tabBuildCity->setEnabled(0);
+}
+
+void HomePage::on_btnRoadHighway_clicked()
+{
+    type="Highway";
+    CreateRoad(type, nullptr);
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnBuildRoad_clicked()
 {
+    if(type=="Res"){
+        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "residential"));
+    }
+    else if(type=="Main"){
+        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "main"));
+    }
+    else if(type=="Highway"){
+        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "highway"));
+    }
     ui->frmEditRoadPos->hide();
     ui->frmInfo->show();
     road->editable=false;
@@ -652,12 +695,14 @@ void HomePage::on_cmbRoadOrientation_currentIndexChanged(int index)
 {
     if(road!=nullptr){
         if(ui->cmbRoadOrientation->currentIndex() == 0){
+            int temp = road->width();
             road->setFixedWidth(ui->spnRoadEditLength->value());
-            road->setFixedHeight(10);
+            road->setFixedHeight(temp);
         }
         else{
+            int temp = road->height();
             road->setFixedHeight(ui->spnRoadEditLength->value());
-            road->setFixedWidth(10);
+            road->setFixedWidth(temp);
         }
     }
 }
@@ -714,5 +759,12 @@ void HomePage::updateInfoScreen()
     ui->spnSteel->setValue(Resources::getSteel());
 }
 
+QVector<DraggableFrame*> HomePage::getBuildings(){
+    return buildings;
+}
+
+QVector<DraggableRoad*> HomePage::getRoads(){
+    return roads;
+}
 
 #endif // HOMEPAGE_CPP

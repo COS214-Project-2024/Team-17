@@ -72,3 +72,15 @@ void ResEstate::moveOut(Citizen* resident) {
         }
     }
 }
+
+int ResEstate::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ResEstate::getWaterUsage() {
+    return waterUsage;
+}
+
+int ResEstate::getCurCitizenCount() {
+    return residents.size();
+}

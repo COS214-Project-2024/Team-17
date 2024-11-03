@@ -36,6 +36,10 @@ public:
     void setXCoordinate(int x);
     void setYCoordinate(int y);
 
+    virtual int getElectricityUsage() = 0;
+	virtual int getWaterUsage() = 0;
+	virtual int getCurCitizenCount() = 0;
+
 
 
 private:

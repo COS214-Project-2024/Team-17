@@ -78,3 +78,15 @@ void LandPark::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int LandPark::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int LandPark::getWaterUsage() {
+    return waterUsage;
+}
+
+int LandPark::getCurCitizenCount() {
+    return employees.size();
+}

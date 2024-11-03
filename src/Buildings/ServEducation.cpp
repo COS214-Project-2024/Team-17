@@ -79,3 +79,15 @@ void ServEducation::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+int ServEducation::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ServEducation::getWaterUsage() {
+    return waterUsage;
+}
+
+int ServEducation::getCurCitizenCount() {
+    return employees.size();
+}

@@ -79,3 +79,16 @@ void ServEntertainment::removeEmployee(Citizen* employee) {
         }
     }
 }
+
+
+int ServEntertainment::getElectricityUsage() {
+    return electricityUsage;
+}
+
+int ServEntertainment::getWaterUsage() {
+    return waterUsage;
+}
+
+int ServEntertainment::getCurCitizenCount() {
+    return employees.size();
+}
