@@ -3,7 +3,6 @@
 
 #include "CityStructure.h"
 #include "BudgetPolicy.h"
-#include "Policy.h"
 #include <string>
 #include <map>
 #include <vector>
@@ -20,17 +19,12 @@ public:
   void collectTaxes();
   void allocateTaxes(std::string department, double amount);
   void addCity(CityStructure &city);
-  void addPolicy(Policy &policy , std::string name);
-  void removePolicy(std::string name);
-  void listPolicies();
   void setBudgetPolicy(BudgetPolicy &policy);
-  void enactPolicies();
 private:
   std::map<std::string, double> taxRates;
   std::map<std::string, double> cityTaxes;
   std::vector<CityStructure> cities;
   BudgetPolicy *budgetPolicy = nullptr;
-  std::map<std::string, Policy*> laws;
 };
 
 #endif
