@@ -80,6 +80,16 @@ bool ServSecurity::addEmployee(Citizen *employee)
         return false;
     }
 
+    // check if employee already works here
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            cout << "Employee already works here" << endl;
+            return false;
+        }
+    }
+
     employees.push_back(employee);
     employee->setWorkplace(this);
     return true;
@@ -93,6 +103,18 @@ void ServSecurity::removeEmployee(Citizen *employee)
         {
             employees.erase(employees.begin() + i);
             employee->fired();
+            break;
+        }
+    }
+}
+
+void ServSecurity::notifyEmployeeLeft(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            employees.erase(employees.begin() + i);
             break;
         }
     }

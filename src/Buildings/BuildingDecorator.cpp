@@ -38,6 +38,11 @@ void BuildingDecorator::removeEmployee(Citizen *employee)
     building->removeEmployee(employee);
 }
 
+void BuildingDecorator::notifyEmployeeLeft(Citizen *employee)
+{
+    building->notifyEmployeeLeft(employee);
+}
+
 bool BuildingDecorator::hasJob()
 {
     return building->hasJob();

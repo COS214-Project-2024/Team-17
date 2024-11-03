@@ -8,8 +8,14 @@
 #include "../Transport/RoadComponent.h"
 #include "Bus.h"
 
+#include "../Policy.h"
+
 void Citizen::changeHappiness(int change)
 {
+	if (scheduledForDeletion)
+	{
+		return;
+	}
 	CitizenState *oldstate = state;
 	CitizenState *newState = state->handleChange(change);
 
@@ -29,7 +35,7 @@ void Citizen::changeHappiness(int change)
 
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
-	name = "John Doe";
+	name = CitizenNameGen::generateName();
 	this->mediator = CityCentralMediator::getInstance();
 	if (autoRegister)
 	{
@@ -37,7 +43,6 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 	}
 	state = nullptr;
 	setState(new Indifferent());
-	name = CitizenNameGen::generateName();
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
@@ -48,6 +53,10 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 
 void Citizen::setState(CitizenState *newState)
 {
+	if (scheduledForDeletion)
+	{
+		return;
+	}
 	if (newState == nullptr)
 	{
 		return;
@@ -77,8 +86,17 @@ void Citizen::notifyChange(std::string message)
 		std::cout << YELLOW << "Citizen " << name << " is going home" << RESET << std::endl;
 		if (!ownsCar)
 		{
+			if (workplace == nullptr)
+			{
+				std::cout << "Citizen " << name << " has no job" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = home;
+				return;
+			}
+
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
+
 			if (workStation && homeStation)
 			{
 				std::cout << "Citizen " << name << " took the train home" << std::endl;
@@ -113,6 +131,14 @@ void Citizen::notifyChange(std::string message)
 		std::cout << YELLOW << "Citizen " << name << " is going to work" << RESET << std::endl;
 		if (!ownsCar)
 		{
+			if (home == nullptr)
+			{
+				std::cout << "Citizen " << name << " has no home" << std::endl;
+				activity = Activity::Rest;
+				currentLocation = workplace;
+				return;
+			}
+
 			Trainstation *workStation = ccm->trainstationInRange(workplace->getXCoordinate(), workplace->getYCoordinate());
 			Trainstation *homeStation = ccm->trainstationInRange(home->getXCoordinate(), home->getYCoordinate());
 			if (workStation && homeStation)
@@ -216,8 +242,13 @@ std::string Citizen::getName()
 
 void Citizen::setWorkplace(Building *workplace)
 {
+	if (workplace == this->workplace)
+	{
+		return;
+	}
 	this->workplace = workplace;
 	this->currentLocation = workplace;
+	workplace->addEmployee(this);
 }
 
 Building *Citizen::getWorkplace()
@@ -228,15 +259,21 @@ Building *Citizen::getWorkplace()
 void Citizen::fired()
 {
 	workplace = nullptr;
-	std::cout << "Citizen " << name << " was fired" << std::endl;
+	std::cout << RED << "Citizen " << name << " was fired" << RESET << std::endl;
 	changeHappiness(-1);
 }
 
-void Citizen::setHome(Building *home)
+void Citizen::setHome(Building *hom)
 {
-	this->home = home;
-	this->currentLocation = home;
+	if (hom == this->home)
+	{
+		return;
+	}
+	this->home = hom;
+	this->currentLocation = hom;
 	changeHappiness(1);
+	this->home->moveIn(this);
+	std::cout << "Citizen " << name << " moved into a new home" << std::endl;
 }
 
 Building *Citizen::getHome()
@@ -502,8 +539,18 @@ int Citizen::getHappiness()
 	return 0;
 }
 
+double Citizen::getTax()
+{
+	if (!Policy::getNoTaxLaw())
+	{
+		return 10.0;
+	}
+	return 0;
+}
+
 Citizen::~Citizen()
 {
+	scheduledForDeletion = true;
 	if (state != nullptr)
 	{
 		delete state;
@@ -511,6 +558,13 @@ Citizen::~Citizen()
 	Resources::removePopulation(1);
 	if (workplace != nullptr)
 	{
+		workplace->notifyEmployeeLeft(this);
+	}
+	if (home != nullptr)
+	{
+		std::cout << RED << "Citizen " << name << " is moving out of their home" << RESET << std::endl;
+		// home->moveOut(this);
+		home->notifyEmployeeLeft(this);
 	}
 	std::cout << "Citizen " << name << " deleted" << std::endl;
 }

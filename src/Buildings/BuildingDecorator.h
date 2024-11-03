@@ -18,6 +18,7 @@ public:
 
     virtual bool addEmployee(Citizen *employee);
     virtual void removeEmployee(Citizen *employee);
+    virtual void notifyEmployeeLeft(Citizen *employee);
     virtual bool hasJob();
 
     virtual bool moveIn(Citizen *resident);

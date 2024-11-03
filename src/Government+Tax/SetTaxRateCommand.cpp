@@ -9,6 +9,5 @@ SetTaxRateCommand::SetTaxRateCommand(Government *gov, double rate, std::string c
 
 void SetTaxRateCommand::execute()
 {
-  std::cout << "executing set tax rate\n";
   this->government->setTaxRate(this->category, this->taxRate);
 }

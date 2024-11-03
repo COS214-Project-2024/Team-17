@@ -2,15 +2,19 @@
 #define TAXMANAGER_H
 
 #include "TaxCommand.h"
+#include <map>
+#include <string>
+#include <memory>
 
 class TaxManager
 {
 private:
-	TaxCommand *command = nullptr;
-
+    std::map<std::string, TaxCommand*> commands;
 public:
-	void setCommand(TaxCommand *cmd);
-	void executeCommand();
+    void addCommand(const std::string& name, TaxCommand* cmd);
+    void removeCommand(const std::string& name);
+    void listCommands() const;
+    bool executeCommand(const std::string& name) const;
 };
 
 #endif

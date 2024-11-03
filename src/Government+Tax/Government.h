@@ -2,15 +2,12 @@
 #define GOVERNMENT_H
 
 #include "CityStructure.h"
-#include "TaxHandler.h"
-#include "TaxRateHandler.h"
-#include "TaxAllocationHandler.h"
-#include "TaxCollectionHandler.h"
-#include "Policy.h"
+#include "BudgetPolicy.h"
 #include <string>
 #include <map>
 #include <vector>
 
+class CitezenTaxAB;
 class Policy;
 
 class Government
@@ -22,14 +19,12 @@ public:
   void collectTaxes();
   void allocateTaxes(std::string department, double amount);
   void addCity(CityStructure &city);
-  void setPolicy(Policy &policy);
-  TaxHandler *createTaxHandlerChain();
-
+  void setBudgetPolicy(BudgetPolicy &policy);
 private:
   std::map<std::string, double> taxRates;
   std::map<std::string, double> cityTaxes;
   std::vector<CityStructure> cities;
-  Policy *policy = nullptr;
+  BudgetPolicy *budgetPolicy = nullptr;
 };
 
 #endif

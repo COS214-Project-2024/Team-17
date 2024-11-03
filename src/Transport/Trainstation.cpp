@@ -62,6 +62,10 @@ void Trainstation::removeEmployee(Citizen *employee)
 {
 }
 
+void Trainstation::notifyEmployeeLeft(Citizen *employee)
+{
+}
+
 bool Trainstation::hasJob()
 {
     return false;

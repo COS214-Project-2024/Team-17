@@ -85,6 +85,15 @@ bool LandCCenter::addEmployee(Citizen *employee)
         return false;
     }
 
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            cout << "Employee already works here" << endl;
+            return false;
+        }
+    }
+
     employees.push_back(employee);
     employee->setWorkplace(this);
     return true;
@@ -98,6 +107,18 @@ void LandCCenter::removeEmployee(Citizen *employee)
         {
             employees.erase(employees.begin() + i);
             employee->fired();
+            break;
+        }
+    }
+}
+
+void LandCCenter::notifyEmployeeLeft(Citizen *employee)
+{
+    for (int i = 0; i < employees.size(); i++)
+    {
+        if (employees[i] == employee)
+        {
+            employees.erase(employees.begin() + i);
             break;
         }
     }

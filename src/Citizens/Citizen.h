@@ -21,9 +21,10 @@ protected:
 	Building *currentLocation;
 	RoadComponent *currentRoad;
 	std::vector<RoadComponent *> route;
-	CityMediator *mediator;
+	CityMediator *mediator = nullptr;
 	Bus *myBus;
 	bool ownsCar;
+	bool scheduledForDeletion = false;
 	int waitTimer = 0;
 	enum Activity
 	{
@@ -74,6 +75,8 @@ public:
 	Building *getCurrentBuilding();
 
 	int getHappiness();
+
+	double getTax();
 
 	~Citizen();
 };

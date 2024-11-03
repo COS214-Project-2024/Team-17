@@ -13,6 +13,7 @@
 #include "../Buildings/ServEntertainment.h"
 #include "../Buildings/ServHospital.h"
 #include "../Buildings/ServSecurity.h"
+#include "../Government+Tax/TaxAndBudgetVisitor.h"
 
 static CityCentralMediator *instance = nullptr;
 
@@ -53,11 +54,15 @@ void CityCentralMediator::checkCitizenServiceSatisfaction()
 
 	int citizenCount = Resources::getPopulation();
 
+	std::cout << GREEN << "\nChecking citizen service satisfaction1" << RESET << std::endl;
+
 	if (education < citizenCount)
 	{
 		std::cout << RED << "Not enough education services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Education");
 	}
+
+	std::cout << GREEN << "\nChecking citizen service satisfaction2" << RESET << std::endl;
 
 	if (entertainment < citizenCount)
 	{
@@ -65,17 +70,22 @@ void CityCentralMediator::checkCitizenServiceSatisfaction()
 		notifyServicesChange(nullptr, "No_Entertainment");
 	}
 
+	std::cout << GREEN << "\nChecking citizen service satisfaction3" << RESET << std::endl;
+
 	if (health < citizenCount)
 	{
 		std::cout << RED << "Not enough health services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Health");
 	}
+	std::cout << GREEN << "\nChecking citizen service satisfaction4" << RESET << std::endl;
 
 	if (security < citizenCount)
 	{
 		std::cout << RED << "Not enough security services for all citizens" << RESET << std::endl;
 		notifyServicesChange(nullptr, "No_Security");
 	}
+
+	std::cout << GREEN << "CHECKS DONE!" << RESET << std::endl;
 }
 
 RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
@@ -136,6 +146,14 @@ void CityCentralMediator::registerUtility(UtilityManager *util)
 
 void CityCentralMediator::registerCitizen(Citizen *citizen)
 {
+	for (auto c : citizens)
+	{
+		if (c->getName() == citizen->getName())
+		{
+			std::cout << "Citizen " << citizen->getName() << " already registered" << std::endl;
+			return;
+		}
+	}
 	citizens.push_back(citizen);
 	std::cout << "Citizen " << citizen->getName() << " registered" << std::endl;
 }
@@ -182,6 +200,14 @@ void CityCentralMediator::notifyServicesChange(Services *type, std::string messa
 }
 
 void CityCentralMediator::notifyRoadChange(RoadState *status, std::string message = "")
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange(message);
+	}
+}
+
+void CityCentralMediator::notifyPolicyChange(std::string message)
 {
 	for (auto c : citizens)
 	{
@@ -353,8 +379,13 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 
 Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 {
+	std::cout << "test1.11\n";
 	Trainstation *closest = nullptr;
-
+	if (trainStations.empty())
+	{
+		return closest;
+	}
+	std::cout << "test1.12\n";
 	for (auto t : trainStations)
 	{
 		if (t->pointInRange(x, y))
@@ -381,6 +412,10 @@ Building *CityCentralMediator::requestJob()
 
 void CityCentralMediator::updateBuses()
 {
+	if (buses.size() < 1)
+	{
+		return;
+	}
 	for (auto b : buses)
 	{
 		b->doSomething();
@@ -389,9 +424,16 @@ void CityCentralMediator::updateBuses()
 
 void CityCentralMediator::citizensDoSomething()
 {
+	if (citizens.size() < 1)
+	{
+		return;
+	}
 	for (auto c : citizens)
 	{
-		c->doSomething();
+		if (c != NULL && c != nullptr)
+		{
+			c->doSomething();
+		}
 	}
 }
 
@@ -443,7 +485,8 @@ void CityCentralMediator::handlePopulationGrowth()
 
 	for (int i = 0; i < newPop; i++)
 	{
-		Citizen *c = new Citizen();
+		std::cout << BLUE << "Creating a new citizen!" << RESET << std::endl;
+		Citizen *c = new Citizen(true);
 
 		for (auto b : buildings)
 		{
@@ -481,8 +524,24 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 		auto it = std::find(citizens.begin(), citizens.end(), citizen);
 		if (it != citizens.end())
 		{
+			std::cout << GREEN << "Citizen " << citizen->getName() << " removed from city" << RESET << std::endl;
 			citizens.erase(it);
+			std::cout << "Citizen count: " << citizens.size() << std::endl;
 		}
 		delete citizen;
 	}
+}
+
+double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
+{
+	double total = 0;
+	for (Building *building : buildings)
+	{
+		total += visitor->visit(building);
+	}
+	for (Citizen *citizen : citizens)
+	{
+		total += visitor->visit(citizen);
+	}
+	return total;
 }

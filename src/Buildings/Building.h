@@ -28,7 +28,7 @@ public:
     virtual bool checkBuildRequirements() = 0;
 
     void notifyChange(std::string message);
-    void accept(TaxAndBudgetVisitor *visitor);
+    // void accept(TaxAndBudgetVisitor *visitor);
 
     int getXCoordinate();
     int getYCoordinate();
@@ -38,6 +38,7 @@ public:
 
     virtual bool addEmployee(Citizen *employee) = 0;
     virtual void removeEmployee(Citizen *employee) = 0;
+    virtual void notifyEmployeeLeft(Citizen *employee) = 0;
     virtual bool hasJob() = 0;
 
     virtual bool moveIn(Citizen *resident) = 0;

@@ -25,6 +25,7 @@ public:
 
 	bool addEmployee(Citizen *employee);
 	void removeEmployee(Citizen *employee);
+	void notifyEmployeeLeft(Citizen *employee);
 	bool hasJob();
 
 private:

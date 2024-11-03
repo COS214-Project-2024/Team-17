@@ -10,14 +10,12 @@ class CityBlock
 {
 
 protected:
-	CityMediator *mediator;
+	CityMediator *mediator = nullptr;
 
 public:
 	CityBlock();
 
-	virtual void notifyChange(std::string message) = 0;
-
-	virtual void accept(TaxAndBudgetVisitor *visitor) = 0;
+	double accept(TaxAndBudgetVisitor *visitor);
 };
 
 #endif
