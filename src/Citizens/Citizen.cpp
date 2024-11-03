@@ -218,8 +218,13 @@ std::string Citizen::getName()
 
 void Citizen::setWorkplace(Building *workplace)
 {
+	if (workplace == this->workplace)
+	{
+		return;
+	}
 	this->workplace = workplace;
 	this->currentLocation = workplace;
+	workplace->addEmployee(this);
 }
 
 Building *Citizen::getWorkplace()
@@ -230,15 +235,21 @@ Building *Citizen::getWorkplace()
 void Citizen::fired()
 {
 	workplace = nullptr;
-	std::cout << "Citizen " << name << " was fired" << std::endl;
+	std::cout << RED << "Citizen " << name << " was fired" << RESET << std::endl;
 	changeHappiness(-1);
 }
 
-void Citizen::setHome(Building *home)
+void Citizen::setHome(Building *hom)
 {
-	this->home = home;
-	this->currentLocation = home;
+	if (hom == this->home)
+	{
+		return;
+	}
+	this->home = hom;
+	this->currentLocation = hom;
 	changeHappiness(1);
+	this->home->moveIn(this);
+	std::cout << "Citizen " << name << " moved into a new home" << std::endl;
 }
 
 Building *Citizen::getHome()
@@ -506,11 +517,11 @@ int Citizen::getHappiness()
 
 double Citizen::getTax()
 {
-  if(!Policy::getNoTaxLaw())
-  {
-    return 10.0;
-  }
-  return 0;
+	if (!Policy::getNoTaxLaw())
+	{
+		return 10.0;
+	}
+	return 0;
 }
 
 Citizen::~Citizen()
@@ -522,6 +533,13 @@ Citizen::~Citizen()
 	Resources::removePopulation(1);
 	if (workplace != nullptr)
 	{
+		workplace->notifyEmployeeLeft(this);
+	}
+	if (home != nullptr)
+	{
+		std::cout << RED << "Citizen " << name << " is moving out of their home" << RESET << std::endl;
+		// home->moveOut(this);
+		home->notifyEmployeeLeft(this);
 	}
 	std::cout << "Citizen " << name << " deleted" << std::endl;
 }

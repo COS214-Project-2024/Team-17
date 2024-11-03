@@ -21,6 +21,7 @@ public:
 
 	virtual bool addEmployee(Citizen *employee) = 0;
 	virtual void removeEmployee(Citizen *employee) = 0;
+	virtual void notifyEmployeeLeft(Citizen *employee) = 0;
 
 	virtual bool moveIn(Citizen *resident);
 	virtual void moveOut(Citizen *resident);
