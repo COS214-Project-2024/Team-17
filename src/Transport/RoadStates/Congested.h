@@ -2,7 +2,7 @@
 #define CONGESTED_H
 
 #include "../RoadState.h"
-
+#include <string>
 /**
  * @class Congested
  * @brief Represents a congested state for a road component.
