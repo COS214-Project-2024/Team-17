@@ -30,7 +30,7 @@ Game::Game()
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
   city = new CityStructure("Pretoria"); // Need to deallocate
-  // city->addBlock(new CityBlock());
+  city->addBlock(new CityBlock());
   this->gov.addCity(city);
   initBuildingOptions();
   initRoadGrid();

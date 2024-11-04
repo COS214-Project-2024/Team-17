@@ -77,8 +77,6 @@ std::string CityStructure::getName()
 
 CityStructure::~CityStructure()
 {
-  std::cout << RED << "DELETING CITY STRUCTURE " << Name << blocks.size() << RESET << std::endl;
-
   while (!blocks.empty())
   {
     delete blocks.back();

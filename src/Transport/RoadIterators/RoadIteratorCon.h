@@ -15,7 +15,7 @@
 class RoadIteratorCon : public RoadIterator
 {
 private:
-    int current; ///< The current index in the vector of road components.
+    int current;                         ///< The current index in the vector of road components.
     std::vector<RoadComponent *> *roads; ///< Pointer to the vector containing road components.
 
 public:
@@ -46,6 +46,11 @@ public:
      * @return A pointer to the current RoadComponent.
      */
     virtual RoadComponent *currentRoad();
+
+    /**
+     * @brief Destructor for RoadIteratorCon.
+     */
+    virtual ~RoadIteratorCon();
 };
 
 #endif // ROADITERATORCON_H

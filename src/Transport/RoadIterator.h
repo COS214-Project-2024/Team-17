@@ -14,6 +14,8 @@ public:
 	virtual bool isDone() = 0;
 
 	virtual RoadComponent *currentRoad() = 0;
+
+	virtual ~RoadIterator() {}
 };
 
 #endif
