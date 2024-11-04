@@ -31,6 +31,7 @@ RoadComponent::RoadComponent(int sX, int sY, int eX, int eY) : CityBlock()
 	this->startY = sY;
 	this->endX = eX;
 	this->endY = eY;
+	state = nullptr;
 	mediator = CityCentralMediator::getInstance();
 }
 

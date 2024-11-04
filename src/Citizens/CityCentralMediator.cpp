@@ -129,6 +129,8 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 		}
 	}
 
+	delete seq;
+
 	return closest;
 }
 
@@ -470,49 +472,55 @@ void CityCentralMediator::citizensEndWork()
 
 CityCentralMediator::~CityCentralMediator()
 {
-	 // Clean up roads
-    for (auto road : roads) {
-        delete road;
-    }
-    roads.clear();
+	// Clean up roads
+	for (auto road : roads)
+	{
+		delete road;
+	}
+	roads.clear();
 
-    // Clean up buildings
-    for (auto building : buildings) {
-        delete building;
-    }
-    buildings.clear();
+	// Clean up buildings
+	for (auto building : buildings)
+	{
+		delete building;
+	}
+	buildings.clear();
 
-    // Clean up utilities
-    for (auto utility : utilities) {
-        delete utility;
-    }
-    utilities.clear();
+	// Clean up utilities
+	for (auto utility : utilities)
+	{
+		delete utility;
+	}
+	utilities.clear();
 
-    // Clean up citizens
-    for (auto citizen : citizens) {
-        delete citizen;
-    }
-    citizens.clear();
+	// Clean up citizens
+	for (auto citizen : citizens)
+	{
+		delete citizen;
+	}
+	citizens.clear();
 
-    // Clean up train stations
-    for (auto trainStation : trainStations) {
-        delete trainStation;
-    }
-    trainStations.clear();
+	// Clean up train stations
+	for (auto trainStation : trainStations)
+	{
+		delete trainStation;
+	}
+	trainStations.clear();
 
-    // Clean up buses and bus queue
-    for (auto bus : buses) {
-        delete bus;
-    }
-    buses.clear();
+	// Clean up buses and bus queue
+	for (auto bus : buses)
+	{
+		delete bus;
+	}
+	buses.clear();
 
-    busQueue.clear();  // Since busQueue does not own the buses, just clear the list
+	busQueue.clear(); // Since busQueue does not own the buses, just clear the list
 
-    // Clean up road state if dynamically allocated
-    delete roadState;
+	// Clean up road state if dynamically allocated
+	delete roadState;
 
-    // Reset the singleton instance pointer to ensure only one instance can be created again
-    instance = nullptr;
+	// Reset the singleton instance pointer to ensure only one instance can be created again
+	instance = nullptr;
 }
 
 void CityCentralMediator::handlePopulationGrowth()

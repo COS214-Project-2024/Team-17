@@ -13,7 +13,7 @@ CitizenState *Indifferent::handleChange(int change)
         return new Discontent();
     }
 
-    return new Indifferent();
+    return this;
 }
 
 std::string Indifferent::getState()

@@ -9,7 +9,7 @@ CitizenState *Upset::handleChange(int change)
     }
     else
     {
-        return new Upset();
+        return this;
     }
 }
 

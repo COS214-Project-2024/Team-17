@@ -13,7 +13,7 @@ CitizenState *Content::handleChange(int change)
         return new Indifferent();
     }
 
-    return new Content();
+    return this;
 }
 
 std::string Content::getState()
