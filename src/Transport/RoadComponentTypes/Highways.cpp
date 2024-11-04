@@ -3,7 +3,7 @@
 #include <cmath>
 #include <algorithm>
 #include "../RoadStates/RoadStatesIncludes.h"
-#include "../../Resources.h"
+#include "../../resources.h"
 #include "../../Buildings/BuildingRequirements.h"
 
 Highways::Highways(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX, eY)

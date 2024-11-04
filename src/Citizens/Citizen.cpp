@@ -558,7 +558,7 @@ Citizen::~Citizen()
 	Resources::removePopulation(1);
 	if (workplace != nullptr)
 	{
-		workplace->notifyEmployeeLeft(this);
+        workplace->notifyEmployeeLeft(this);
 	}
 	if (home != nullptr)
 	{

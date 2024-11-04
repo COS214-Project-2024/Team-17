@@ -10,7 +10,7 @@ IndWarehouse::IndWarehouse()
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addWoodPerTick(concreteProduction);
+    Resources::addConcretePerTick(concreteProduction);
 }
 
 IndWarehouse::~IndWarehouse()
@@ -18,7 +18,7 @@ IndWarehouse::~IndWarehouse()
     cout << BLACK << "\t-->Warehouse destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
-    Resources::removeWoodPerTick(concreteProduction);
+    Resources::removeConcretePerTick(concreteProduction);
 
     for (int i = 0; i < employees.size(); i++)
     {

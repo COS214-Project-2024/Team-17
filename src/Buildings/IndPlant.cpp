@@ -10,7 +10,7 @@ IndPlant::IndPlant()
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addWoodPerTick(steelProduction);
+    Resources::addSteelPerTick(steelProduction);
 }
 
 IndPlant::~IndPlant()
@@ -18,7 +18,7 @@ IndPlant::~IndPlant()
     cout << BLACK << "\t-->Plant destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
-    Resources::removeWoodPerTick(steelProduction);
+    Resources::removeSteelPerTick(steelProduction);
 
     for (int i = 0; i < employees.size(); i++)
     {

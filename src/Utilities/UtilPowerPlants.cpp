@@ -14,6 +14,7 @@ UtilPowerPlants::UtilPowerPlants() {
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
     Resources::removeConcrete(concreteCost);
+    Resources::addElectricityGenerated(1000);
 }
 
 

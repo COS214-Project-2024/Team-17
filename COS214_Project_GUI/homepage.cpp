@@ -10,7 +10,7 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 
-#include <QtConcurrent>
+#include <QTimer>
 
 QVector<DraggableFrame *> buildings;
 QVector<DraggableRoad *> roads;
@@ -20,12 +20,21 @@ QString type;
 DraggableFrame* frame;
 DraggableRoad* road;
 QLabel* BuildingType;
-CityCentralMediator *mediator;
+QTimer *timer;
 
 HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::HomePage)
 {
+
+    Resources::removePopulation(Resources::getPopulation());
+    this->mediator = CityCentralMediator::getInstance();
+    delete mediator;
+    this->mediator = CityCentralMediator::getInstance();
+    CityStructure *city = new CityStructure("Pretoria");
+    city->addBlock(new CityBlock());
+    this->gov.addCity(*city);
+
     Resources::addMoney(1000000);
     Resources::addWood(1000000);
     Resources::addConcrete(1000000);
@@ -38,7 +47,6 @@ HomePage::HomePage(QWidget *parent)
     ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 100);
     ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 20);
     updateInfoScreen();
-    mediator = CityCentralMediator::getInstance();
     //set all build costs
     ui->spnComMallCash->setValue(BuildingRequirements::mallBuildCost);
     ui->spnComOfficeCash->setValue(BuildingRequirements::officeBuildCost);
@@ -143,12 +151,14 @@ HomePage::HomePage(QWidget *parent)
     ui->spnRoadMainSteel->setValue(BuildingRequirements::mainRoadSteelCost);
     ui->spnRoadHighwaySteel->setValue(BuildingRequirements::highwaySteelCost);
 
-    //start game in async
-    Game game;
-    QtConcurrent::run([&game]() {
-        game.start();
-    });
 
+    timer = new QTimer(this);
+
+    // Connect the timer's timeout signal to the desired function
+    connect(timer, &QTimer::timeout, this, &HomePage::Tick);
+
+    // Start the timer with an interval of 3000 milliseconds (3 seconds)
+    timer->start(3000);
 
 }
 
@@ -169,6 +179,8 @@ void HomePage::CreateBuilding(QString buildingType, Building* link)
     frame->setFrameShape(QFrame::Box);  // Optional: set frame shape
     frame->setLineWidth(2);  // Optional: set border width
     frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
+
+    mediator->registerBuilding(link);
 
     BuildingType = new QLabel(frame);
     BuildingType->setText(buildingType);
@@ -852,6 +864,28 @@ void HomePage::updateInfoScreen()
     ui->spnWood->setValue(Resources::getWood());
     ui->spnConcrete->setValue(Resources::getConcrete());
     ui->spnSteel->setValue(Resources::getSteel());
+
+    ui->spnPopulation->setValue(Resources::getPopulation());
+
+    int Happiness = 0;
+    if(Resources::getPopulation()!=0){
+        Happiness = floor(static_cast<double>(Resources::getHappiness())/Resources::getPopulation())*20;
+    }
+    ui->progHappiness->setValue(Happiness);
+
+    double Electricity = 0;
+    if(Resources::getElectricityGenerated()!=0){
+        Electricity = static_cast<double>(Resources::getElectricityGenerated()-Resources::getElectricityUsage())/Resources::getElectricityGenerated()*100;
+    }
+    ui->progElectricity->setValue(Electricity);
+
+    double Water = 0;
+    int Usage = Resources::getWaterUsage();
+    int Generated = Resources::getWaterGenerated();
+    if(Generated!=0){
+        Water = (static_cast<double>(Generated - Usage) / Generated) * 100;
+    }
+    ui->progWater->setValue(Water);
 }
 
 QVector<DraggableFrame*> HomePage::getBuildings(){
@@ -861,5 +895,54 @@ QVector<DraggableFrame*> HomePage::getBuildings(){
 QVector<DraggableRoad*> HomePage::getRoads(){
     return roads;
 }
+
+void HomePage::updateTransport()
+{
+    if (mediator)
+    {
+        mediator->updateBuses();
+    }
+}
+
+void HomePage::updateJobs()
+{
+    // if (mediator)
+    // {
+    //     if (time_of_day == 8)
+    //     {
+    //         mediator->citizensStartWork();
+    //     }
+    //     if (time_of_day == 17)
+    //     {
+    //         mediator->citizensEndWork();
+    //     }
+    // }
+}
+
+void HomePage::updateCityGrowth()
+{
+    if (mediator)
+    {
+        mediator->citizensDoSomething();
+        mediator->handlePopulationGrowth();
+        mediator->updateCitizenSatisfaction();
+    }
+}
+
+void HomePage::Tick(){
+    Resources::addMoney(Resources::getIncome());
+    Resources::addWood(Resources::getWoodPerTick());
+    Resources::addConcrete(Resources::getConcretePerTick());
+    Resources::addSteel(Resources::getSteelPerTick());
+
+    updateTransport();
+    updateJobs();
+    updateCityGrowth();
+
+    updateInfoScreen();
+    timer->start(3000);
+}
+
+
 
 #endif // HOMEPAGE_CPP

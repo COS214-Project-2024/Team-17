@@ -745,7 +745,7 @@ QDoubleSpinBox:disabled{
           </rect>
          </property>
          <property name="value">
-          <number>50</number>
+          <number>100</number>
          </property>
          <property name="format">
           <string>%p%</string>

@@ -20,7 +20,15 @@ class DraggableRoad;
 #include "../src/Utilities/UtilSewageSyst.h"
 #include "../src/Utilities/UtilWasteMan.h"
 
-#include "../src/Game.h"
+
+
+#include "../src/Government+Tax/Government.h"
+#include "../src/Government+Tax/TaxManager.h"
+#include "../src/Government+Tax/AllocateTaxCommand.h"
+#include "../src/Government+Tax/CollectTaxCommand.h"
+#include "../src/Government+Tax/SetTaxRateCommand.h"
+#include "../src/Citizens/CityCentralMediator.h"
+#include "../src/Policy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -43,9 +51,19 @@ public:
     void CreateUtility(QString type, UtilityManager *link);
     void updateInfoScreen();
 
+    Government gov;
+    TaxManager taxManager;
+    CityCentralMediator* mediator = nullptr;
+
     void resizeEvent(QResizeEvent *event);
     QVector<DraggableFrame*> getBuildings();
     QVector<DraggableRoad*> getRoads();
+
+    void updateCityGrowth();
+    void updateTransport();
+    void updateJobs();
+
+    void Tick();
 
 private slots:
 
