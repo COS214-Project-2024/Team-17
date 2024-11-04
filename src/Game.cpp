@@ -22,6 +22,10 @@ int time_of_day = 0;
 Game::Game()
 {
   Resources::removePopulation(Resources::getPopulation());
+  Resources::addMoney(10000);
+  Resources::addWood(100);
+  Resources::addConcrete(100);
+  Resources::addSteel(100);
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
@@ -67,6 +71,31 @@ void Game::citizensGoToWork()
   {
     mediator->citizensStartWork();
   }
+}
+
+void Game::outputResources()
+{
+  cout << BOLD << BLUE << "Resources updated:" << RESET << endl;
+  cout << YELLOW << "Wood: " << RESET << Resources::getWood() << "(" << Resources::getWoodPerTick() << ")" << endl;
+  cout << YELLOW << "Steel: " << RESET << Resources::getSteel() << "(" << Resources::getSteelPerTick() << ")" << endl;
+  cout << YELLOW << "Concrete: " << RESET << Resources::getConcrete() << "(" << Resources::getConcretePerTick() << ")" << endl;
+  cout << YELLOW << "Money: " << RESET << Resources::getMoney() << "(" << Resources::getIncome() << ")" << endl
+       << endl;
+  cout << YELLOW << "Overall Happiness: " << RESET << Resources::getHappiness() << endl;
+  cout << YELLOW << "Electricity generated: " << RESET << Resources::getElectricityGenerated() << endl;
+  cout << YELLOW << "Electricity consumed: " << RESET << Resources::getElectricityUsage() << endl;
+  cout << YELLOW << "Water generated: " << RESET << Resources::getWaterGenerated() << endl;
+  cout << YELLOW << "Water consumed: " << RESET << Resources::getWaterUsage() << endl;
+}
+
+void Game::updateResources()
+{
+  Resources::addConcrete(Resources::getConcretePerTick());
+  Resources::addSteel(Resources::getSteelPerTick());
+  Resources::addWood(Resources::getWoodPerTick());
+  Resources::addMoney(Resources::getIncome());
+
+  outputResources();
 }
 
 void Game::citizensGoHome()
@@ -333,16 +362,7 @@ int Game::promptUserAction()
     }
     else if (input == "resources")
     {
-      cout << BOLD << BLUE << "Resources:" << RESET << endl;
-      cout << "Wood: " << Resources::getWood() << endl;
-      cout << "Concrete: " << Resources::getConcrete() << endl;
-      cout << "Steel: " << Resources::getSteel() << endl;
-      cout << "Overall Happiness: " << Resources::getHappiness() << endl;
-      cout << "Electricity generated: " << Resources::getElectricityGenerated() << endl;
-      cout << "Electricity consumed: " << Resources::getElectricityUsage() << endl;
-      cout << "Water generated: " << Resources::getWaterGenerated() << endl;
-      cout << "Water consumed: " << Resources::getWaterUsage() << endl;
-      cout << "Money: " << Resources::getMoney() << endl;
+      outputResources();
     }
     else
     {
@@ -407,6 +427,7 @@ void Game::start()
     {
       std::cout << "======= Citizens Going Home =======" << std::endl;
       citizensGoHome();
+      updateResources();
       skip = false;
     }
     if (time_of_day == TAX_COLLECTION_TIME)

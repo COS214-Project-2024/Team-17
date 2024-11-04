@@ -10,7 +10,7 @@ IndPlant::IndPlant()
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addWoodPerTick(steelProduction);
+    Resources::addSteel(steelProduction);
 }
 
 IndPlant::~IndPlant()

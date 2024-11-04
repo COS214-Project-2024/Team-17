@@ -10,7 +10,7 @@ IndWarehouse::IndWarehouse()
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
-    Resources::addWoodPerTick(concreteProduction);
+    Resources::addConcrete(concreteProduction);
 }
 
 IndWarehouse::~IndWarehouse()
