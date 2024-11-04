@@ -19,6 +19,11 @@ void Citizen::changeHappiness(int change)
 	CitizenState *oldstate = state;
 	CitizenState *newState = state->handleChange(change);
 
+	if (oldstate == newState)
+	{
+		return;
+	}
+
 	if (oldstate->getState() == newState->getState() && newState->getState() == "Upset")
 	{
 		if (activity != Activity::InTransitHome && activity != Activity::InTransitWork)
