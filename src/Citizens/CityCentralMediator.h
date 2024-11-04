@@ -16,6 +16,15 @@ class Trainstation;
 class Services;
 class TaxAndBudgetVisitor;
 
+/**
+ * @class CityCentralMediator
+ * @brief Mediator class that facilitates communication between various city components.
+ *
+ * The CityCentralMediator class acts as an intermediary, coordinating interactions
+ * between buildings, utilities, citizens, buses, and train stations.
+ * It ensures that all components can communicate and respond to changes
+ * within the city ecosystem.
+ */
 class CityCentralMediator : public CityMediator
 {
 

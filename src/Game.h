@@ -25,7 +25,15 @@
 class Game
 {
 public:
+    /**
+     * @brief Constructs the Game object and initializes necessary components.
+     */
     Game();
+    /**
+     * @brief Starts the game loop, allowing the simulation to run.
+     * 
+     * This method will continuously update the game state until the game is stopped.
+     */
     void start();
 
 private:
@@ -34,7 +42,17 @@ private:
     CityCentralMediator *mediator = nullptr;
     bool running;
     int counter = 0;
+    /**
+     * @brief Updates the transport systems within the city.
+     * 
+     * This method manages the state and efficiency of transport in the city.
+     */
     void updateTransport();
+    /**
+     * @brief Updates job availability and workforce dynamics in the city.
+     * 
+     * This method adjusts the job market based on city growth and citizen needs.
+     */
     void updateJobs();
     void citizensDoSomething();
     void updateCityTax();

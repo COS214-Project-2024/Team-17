@@ -7,7 +7,15 @@
 #include <string>
 
 using namespace std;
-
+/**
+ * @struct BuildingRequirements
+ * @brief Holds building requirements and costs for different building types.
+ *
+ * This structure defines the costs of various resources needed to build 
+ * different types of residential, commercial, industrial, landmark, 
+ * service, utility, and road buildings. It also provides methods to 
+ * check the building requirements for each category.
+ */
 struct BuildingRequirements{
     public:
         //check requirements

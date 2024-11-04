@@ -136,6 +136,11 @@ std::vector<RoadComponent *> RoadsComposite::getConnections()
 	return result;
 }
 
+const std::vector<RoadComponent *> &RoadsComposite::getComponents() const
+{
+	return components;
+}
+
 float RoadsComposite::calculateDistance(int x, int y)
 {
 	// Calculate the shortest distance from the point to the road
