@@ -39,6 +39,10 @@ private:
     void updateCityGrowth();
     void updateCityTax();
     bool isValidNumber(const string &input, int &number);
+    bool intersectionOccupied[20][20] = {false}; // Tracks occupied intersections
+    std::pair<int, int> findNextFreeIntersection();
+    int numBuildings = 0;
+    const int MAX_BUILDINGS = 380; // 20x19 intersections
 
     struct BuildingOption
     {

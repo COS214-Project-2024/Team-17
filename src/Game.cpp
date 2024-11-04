@@ -28,35 +28,6 @@ Game::Game()
   mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
   initRoadGrid();
-
-  // Create citizen test
-  Citizen *citizen = new Citizen();
-
-  // create reshouse at (0,0) intersection
-  FactoryBuilding *factory = new FactResidential();
-  Residential *building = factory->createResBuilding("House");
-  building->setCapacity(1);
-  citizen->setHome(building);
-  building->setXCoordinate(0);
-  building->setYCoordinate(0);
-
-  // create ComMall at (200,200) intersection
-  factory = new FactCommercial();
-  Commercial *building2 = factory->createComBuilding("Mall");
-  building2->setJobCapacity(1);
-  citizen->setWorkplace(building2);
-  building2->setXCoordinate(200);
-  building2->setYCoordinate(200);
-
-  citizen->giveCar();
-  citizen->notifyChange("Go_Home");
-
-  // Test pathing
-  for (int i = 0; i < 10; i++)
-  {
-    citizen->doSomething();
-  }
-  exit(0);
 }
 
 void Game::updateTransport()
@@ -80,6 +51,22 @@ void Game::updateJobs()
       mediator->citizensEndWork();
     }
   }
+}
+
+std::pair<int, int> Game::findNextFreeIntersection()
+{
+  for (int y = 0; y < 20; y++)
+  {
+    for (int x = 0; x < 19; x++)
+    {
+      if (!intersectionOccupied[y][x])
+      {
+        intersectionOccupied[y][x] = true;
+        return {x * 100, y * 100}; // Return grid coordinates
+      }
+    }
+  }
+  return {-1, -1}; // No free spots
 }
 
 void Game::updateCityGrowth()
@@ -375,8 +362,14 @@ void Game::initRoadGrid()
     }
   }
 }
-void Game::createBuilding()
+vvoid Game::createBuilding()
 {
+  if (numBuildings >= MAX_BUILDINGS)
+  {
+    cout << RED << "Maximum number of buildings reached!" << RESET << endl;
+    return;
+  }
+
   string input;
   int option, option2;
   string buildingType;
@@ -398,7 +391,7 @@ void Game::createBuilding()
   getline(cin >> ws, input);
   if (!isValidNumber(input, option) || option < 1 || option > buildingOptions.size())
   {
-    cout << "Invalid building type selection." << endl;
+    cout << RED << "Invalid building type selection." << RESET << endl;
     return;
   }
 
@@ -414,61 +407,76 @@ void Game::createBuilding()
   getline(cin >> ws, input);
   if (!isValidNumber(input, option2) || option2 < 1 || option2 > selectedOption.subtypes.size())
   {
-    cout << "Invalid building subtype selection." << endl;
+    cout << RED << "Invalid building subtype selection." << RESET << endl;
     return;
   }
 
   buildingType = selectedOption.subtypes[option2 - 1];
 
+  // Find next available intersection
+  auto [x, y] = findNextFreeIntersection();
+  if (x == -1)
+  {
+    cout << RED << "No free intersections available!" << RESET << endl;
+    return;
+  }
+
+  Building *building = nullptr;
   if (selectedOption.type == "Residential")
   {
     cout << "Enter the capacity: ";
     getline(cin >> ws, input);
     if (!isValidNumber(input, capacity) || capacity < 0)
     {
-      cout << "Invalid capacity value." << endl;
+      cout << RED << "Invalid capacity value." << RESET << endl;
       return;
     }
     FactoryBuilding *factory = new FactResidential();
-    Residential *building = factory->createResBuilding(buildingType);
-    building->setCapacity(capacity);
-    mediator->registerBuilding(building);
+    Residential *res = factory->createResBuilding(buildingType);
+    res->setCapacity(capacity);
+    building = res;
     delete factory;
   }
   else if (selectedOption.type == "Commercial")
   {
     FactoryBuilding *factory = new FactCommercial();
-    Commercial *building = factory->createComBuilding(buildingType);
-    building->setJobCapacity(100); // Default value
-    mediator->registerBuilding(building);
+    Commercial *com = factory->createComBuilding(buildingType);
+    com->setJobCapacity(100); // Default value
+    building = com;
     delete factory;
   }
   else if (selectedOption.type == "Industrial")
   {
     FactoryBuilding *factory = new FactIndustrial();
-    Industrial *building = factory->createIndBuilding(buildingType);
-    building->setProductionCapacity(100); // Default value
-    mediator->registerBuilding(building);
+    Industrial *ind = factory->createIndBuilding(buildingType);
+    ind->setProductionCapacity(100); // Default value
+    building = ind;
     delete factory;
   }
   else if (selectedOption.type == "Landmarks")
   {
     FactoryBuilding *factory = new FactLandmarks();
-    Landmark *building = factory->createLandmark(buildingType);
-    building->setVisitors(100); // Default value
-    mediator->registerBuilding(building);
+    Landmark *land = factory->createLandmark(buildingType);
+    building = land;
     delete factory;
   }
   else if (selectedOption.type == "Services")
   {
     FactoryBuilding *factory = new FactService();
-    Services *building = factory->createServiceBuilding(buildingType);
-    building->setVisitors(100); // Default value
-    mediator->registerBuilding(building);
+    Services *serv = factory->createServiceBuilding(buildingType);
+    building = serv;
     delete factory;
   }
 
-  cout << "Successfully created " << buildingType << " building!" << endl;
+  if (building)
+  {
+    building->setXCoordinate(x);
+    building->setYCoordinate(y);
+    mediator->registerBuilding(building);
+    numBuildings++;
+    cout << GREEN << "Created " << buildingType << " at intersection ("
+         << x / 100 << "," << y / 100 << ")" << RESET << endl;
+  }
 }
 
 void Game::start()
