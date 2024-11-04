@@ -675,7 +675,6 @@ void Game::createBuilding()
   {
     building->setXCoordinate(x);
     building->setYCoordinate(y);
-    mediator->registerBuilding(building);
     numBuildings++;
     cout << GREEN << "Created " << buildingType << " at intersection ("
          << x / 100 << "," << y / 100 << ")" << RESET << endl;

@@ -98,7 +98,7 @@ void CityCentralMediator::checkCitizenServiceSatisfaction()
 
 RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 {
-	std::unique_ptr<RoadIterator> seq = std::make_unique<RoadIteratorCon>(&roads);
+	RoadIterator *seq = new RoadIteratorCon(&roads);
 	seq->first();
 	RoadComponent *closest = seq->currentRoad();
 	float distance = INT32_MAX;
@@ -611,6 +611,10 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 
 double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
 {
+	if (visitor == nullptr)
+	{
+		return 0;
+	}
 	double total = 0;
 	for (Building *building : buildings)
 	{
