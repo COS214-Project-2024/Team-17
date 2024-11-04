@@ -83,6 +83,10 @@ public:
      * @param resident Pointer to the Citizen object representing the resident.
      */
     virtual void moveOut(Citizen *resident);
+
+    virtual int getElectricityUsage();
+    virtual int getWaterUsage();
+    virtual int getCurCitizenCount();
 };
 
 #endif // BUILDINGDECORATOR_H

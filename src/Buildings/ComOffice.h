@@ -40,7 +40,10 @@ public:
     void setJobCapacity(int capacity) override;
 
     // Observer methods
-
+	
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
     /**
      * @brief Calls utilities for the office.
      */

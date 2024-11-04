@@ -96,6 +96,11 @@ public:
      */
     virtual void moveOut(Citizen *resident);
 
+	virtual int getElectricityUsage() = 0;
+    virtual int getWaterUsage() = 0;
+    virtual int getCurCitizenCount() = 0;
+
+
 private:
     bool operational; ///< Operational state of the building (part of Observer).
     vector<UtilityManager *> Utilities; ///< List of attached utility managers.

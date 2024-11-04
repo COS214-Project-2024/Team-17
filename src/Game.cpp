@@ -21,11 +21,11 @@ int time_of_day = 0;
 
 Game::Game()
 {
-  Resources::removePopulation(Resources::getPopulation());
+  // Resources::removePopulation(Resources::getPopulation());
   Resources::addMoney(10000);
-  Resources::addWood(100);
-  Resources::addConcrete(100);
-  Resources::addSteel(100);
+  Resources::addWood(1000);
+  Resources::addConcrete(1000);
+  Resources::addSteel(1000);
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
@@ -612,7 +612,7 @@ void Game::createBuilding()
       return;
     }
     FactoryBuilding *factory = new FactResidential();
-    if (BuildingRequirements::checkResidentialRequirements(buildingType))
+    if (BuildingRequirements::checkResidentialRequirements("Estate"))
     {
       Residential *res = factory->createResBuilding(buildingType);
 

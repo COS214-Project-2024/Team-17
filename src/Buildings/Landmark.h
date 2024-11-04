@@ -96,6 +96,11 @@ public:
      */
     virtual void moveOut(Citizen *resident);
 
+    virtual int getElectricityUsage() = 0;
+    virtual int getWaterUsage() = 0;
+    virtual int getCurCitizenCount() = 0;
+
+
     // Optional methods to be implemented by derived classes
     // virtual bool checkBuildRequirements() = 0;
     // virtual void createBuilding() = 0;

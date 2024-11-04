@@ -38,7 +38,7 @@ int ResFlat::getCapacity() const
 
 void ResFlat::setCapacity(int capacity)
 {
-    this->capacity = capacity;
+    this->capacity = 5;
 }
 
 void ResFlat::callUtilities()
@@ -109,4 +109,19 @@ void ResFlat::moveOut(Citizen *resident)
             resident->evicted();
         }
     }
+}
+
+int ResFlat::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ResFlat::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ResFlat::getCurCitizenCount()
+{
+    return residents.size();
 }

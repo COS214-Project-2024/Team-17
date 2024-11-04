@@ -10,6 +10,7 @@ IndPlant::IndPlant()
     Resources::removeConcrete(concreteCost);
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
+    Resources::addSteelPerTick(steelProduction);
     Resources::addSteel(steelProduction);
 }
 
@@ -18,7 +19,7 @@ IndPlant::~IndPlant()
     cout << BLACK << "\t-->Plant destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
-    Resources::removeWoodPerTick(steelProduction);
+    Resources::removeSteelPerTick(steelProduction);
 
     for (int i = 0; i < employees.size(); i++)
     {
@@ -121,4 +122,19 @@ void IndPlant::notifyEmployeeLeft(Citizen *employee)
 bool IndPlant::hasJob()
 {
     return employees.size() < jobCapacity;
+}
+
+int IndPlant::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int IndPlant::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int IndPlant::getCurCitizenCount()
+{
+    return employees.size();
 }

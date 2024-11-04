@@ -85,6 +85,10 @@ public:
      */
     void moveOut(Citizen *resident);
 
+    int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     int capacity; ///< Maximum number of residents in the estate
     string type = "Residential Estate"; ///< Type of the building

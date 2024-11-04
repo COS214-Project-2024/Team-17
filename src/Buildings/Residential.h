@@ -40,6 +40,14 @@ public:
      */
     virtual bool getState() = 0;
 
+	virtual int getElectricityUsage() = 0;
+    virtual int getWaterUsage() = 0;
+    virtual int getCurCitizenCount() = 0;
+
+
+	// virtual bool checkBuildRequirements() = 0;
+	// virtual int increasePopulation() = 0;
+	// virtual void affectEmotionalState() = 0;
     /**
      * @brief Gets the type of residential building.
      * @return A string representing the type of building.

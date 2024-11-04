@@ -38,7 +38,7 @@ int ResEstate::getCapacity() const
 
 void ResEstate::setCapacity(int capacity)
 {
-    this->capacity = capacity;
+    this->capacity = 50;
 }
 
 void ResEstate::callUtilities()
@@ -110,4 +110,19 @@ void ResEstate::moveOut(Citizen *resident)
             resident->evicted();
         }
     }
+}
+
+int ResEstate::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ResEstate::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ResEstate::getCurCitizenCount()
+{
+    return residents.size();
 }

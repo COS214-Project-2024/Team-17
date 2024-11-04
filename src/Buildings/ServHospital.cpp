@@ -124,3 +124,18 @@ bool ServHospital::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int ServHospital::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ServHospital::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ServHospital::getCurCitizenCount()
+{
+    return employees.size();
+}

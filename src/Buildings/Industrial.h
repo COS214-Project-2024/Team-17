@@ -99,6 +99,14 @@ public:
      */
     virtual void moveOut(Citizen *resident);
 
+    virtual int getElectricityUsage() = 0;
+    virtual int getWaterUsage() = 0;
+    virtual int getCurCitizenCount() = 0;
+
+
+    // virtual bool checkBuildRequirements() = 0;
+    // virtual void increaseJobs() = 0;
+    // virtual void affectEmotionalState() = 0;
     // Additional methods can be added here
 
 private:

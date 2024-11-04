@@ -128,3 +128,22 @@ bool BuildingRequirements::checkUtilityRequirements(string type){
     }
     return false;
 }
+
+bool BuildingRequirements::checkRoadRequirements(string type){
+    if(type == "Residential"){
+        if(Resources::getMoney() >= residentialStreetBuildCost && Resources::getWood() >= residentialStreetWoodCost && Resources::getConcrete() >= residentialStreetConcreteCost && Resources::getSteel() >= residentialStreetSteelCost){
+            return true;
+        }
+    }
+    else if(type == "Main"){
+        if(Resources::getMoney() >= mainRoadBuildCost && Resources::getWood() >= mainRoadWoodCost && Resources::getConcrete() >= mainRoadConcreteCost && Resources::getSteel() >= mainRoadSteelCost){
+            return true;
+        }
+    }
+    else if(type == "Highway"){
+        if(Resources::getMoney() >= highwayBuildCost && Resources::getWood() >= highwayWoodCost && Resources::getConcrete() >= highwayConcreteCost && Resources::getSteel() >= highwaySteelCost){
+            return true;
+        }
+    }
+
+}

@@ -54,37 +54,8 @@ public:
 	 * @brief Shuts down the utility service
 	 */
 	virtual void shutDown()=0;
-	// virtual void restart()=0;
-	
 
-	// virtual bool getState()=0;
-	// void addDevice(Building* device);
-
-	// void removeDevice(Building* device);
-
-	// void notifyDevices();
-
-
-
-	// void supplyElectricity(Building& building);
-
-	// void provideWater(Building& building);
-
-	// void manageWaste(Building& building);
-
-	// void manageSewage(Building& building);
-
-	// void updateUtilities(Building& building);
-
-	// virtual void addObserver(Building* observer) = 0;
-
-	// virtual void removeObserver(Building* observer) = 0;
-
-	// virtual void notifyObservers() = 0;
-
-	// // void Utilities(CityMediator* mediator);
-
-	// void abstract_notifyChange();
+	virtual ~UtilityManager() = default;
 };
 
 #endif

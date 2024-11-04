@@ -91,6 +91,10 @@ public:
      */
     bool hasJob();
 
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     vector<Citizen *> employees; ///< List of employees working in the monument
 

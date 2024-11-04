@@ -121,3 +121,18 @@ bool ComShop::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int ComShop::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ComShop::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ComShop::getCurCitizenCount()
+{
+    return employees.size();
+}

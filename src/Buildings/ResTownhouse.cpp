@@ -39,7 +39,7 @@ int ResTownhouse::getCapacity() const
 
 void ResTownhouse::setCapacity(int capacity)
 {
-    this->capacity = capacity;
+    this->capacity = 10;
 }
 
 void ResTownhouse::callUtilities()
@@ -113,4 +113,19 @@ void ResTownhouse::moveOut(Citizen *resident)
             resident->evicted();
         }
     }
+}
+
+int ResTownhouse::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ResTownhouse::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ResTownhouse::getCurCitizenCount()
+{
+    return residents.size();
 }

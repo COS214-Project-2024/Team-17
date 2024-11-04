@@ -84,6 +84,10 @@ public:
      */
     bool hasJob();
 
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     vector<Citizen *> employees; ///< List of employees in the industrial factory
 

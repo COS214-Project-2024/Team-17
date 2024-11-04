@@ -532,7 +532,7 @@ CityCentralMediator::~CityCentralMediator()
 	busQueue.clear(); // Since busQueue does not own the buses, just clear the list
 
 	// Clean up road state if dynamically allocated
-	delete roadState;
+    // delete roadState;
 
 	// Reset the singleton instance pointer to ensure only one instance can be created again
 	instance = nullptr;

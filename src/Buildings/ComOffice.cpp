@@ -122,3 +122,19 @@ bool ComOffice::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+
+int ComOffice::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ComOffice::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ComOffice::getCurCitizenCount()
+{
+    return employees.size();
+}

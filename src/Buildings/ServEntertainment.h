@@ -81,6 +81,10 @@ public:
 	 */
 	bool hasJob();
 
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
 	int visitors;
 	string type = "Service Entertainment";

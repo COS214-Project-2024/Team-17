@@ -73,6 +73,10 @@ public:
      */
     void moveOut(Citizen *resident);
 
+    int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     int capacity;
     string type = "Residential Townhouse";

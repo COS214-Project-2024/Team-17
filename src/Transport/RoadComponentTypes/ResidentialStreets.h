@@ -2,6 +2,7 @@
 #define RESIDENTIALSTREETS_H
 
 #include "../RoadComponent.h"
+#include <iostream>
 
 /**
  * @class ResidentialStreets

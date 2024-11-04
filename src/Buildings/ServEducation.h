@@ -92,6 +92,10 @@ public:
      */
     bool hasJob();
 
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     int visitors; ///< Current number of visitors in the education facility
     string type = "Service Education"; ///< Type of service building

@@ -17,6 +17,7 @@ UtilWaterSupply::UtilWaterSupply()
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
     Resources::removeConcrete(concreteCost);
+    Resources::addWaterGenerated(1000); 
     CityCentralMediator::getInstance()->registerUtility(this);
 }
 

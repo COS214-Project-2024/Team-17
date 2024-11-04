@@ -57,3 +57,18 @@ void BuildingDecorator::moveOut(Citizen *resident)
 {
     building->moveOut(resident);
 }
+
+int BuildingDecorator::getElectricityUsage()
+{
+    return building->getElectricityUsage();
+}
+
+int BuildingDecorator::getWaterUsage()
+{
+    return building->getWaterUsage();
+}
+
+int BuildingDecorator::getCurCitizenCount()
+{
+    return building->getCurCitizenCount();
+}

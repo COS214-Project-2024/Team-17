@@ -122,3 +122,18 @@ bool ComMall::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int ComMall::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ComMall::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ComMall::getCurCitizenCount()
+{
+    return employees.size();
+}
