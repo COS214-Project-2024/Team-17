@@ -2,17 +2,17 @@
 #define HIGHWAYS_H
 
 #include "../RoadComponent.h"
-
 /**
  * @class Highways
  * @brief Represents a highway component in the road network.
  *
- * The Highways class is a derived class from RoadComponent and includes
- * methods to manage and interact with highway segments, including 
- * displaying information, calculating traffic, and managing connections.
+ * The Highways class inherits from RoadComponent and provides functionalities
+ * specific to highway segments, including traffic calculation, distance management,
+ * and information display.
  */
 class Highways : public RoadComponent
 {
+
 public:
     /**
      * @brief Constructs a Highways object with specified start and end coordinates.
@@ -21,49 +21,44 @@ public:
      * @param eX The ending X coordinate of the highway.
      * @param eY The ending Y coordinate of the highway.
      */
-    Highways(int sX, int sY, int eX, int eY);
-
+	Highways(int sX, int sY, int eX, int eY);
     /**
-     * @brief Displays information about the highway, such as its coordinates.
+     * @brief Displays information about the highway.
      */
-    void displayInfo();
-
+	void displayInfo();
     /**
-     * @brief Calculates the traffic on the highway based on certain parameters.
+     * @brief Calculates the traffic on the highway.
      */
-    void calculateTraffic();
-
+	void calculateTraffic();
     /**
-     * @brief Retrieves the distance of the highway segment.
-     * @return The distance of the highway as a float.
+     * @brief Gets the distance of the highway segment.
+     * @return The distance as a float.
      */
-    float getDistance();
-
+	float getDistance();
     /**
-     * @brief Notifies about changes related to the highway.
-     * @param message A string describing the nature of the change.
+     * @brief Notifies of changes related to the highway.
+     * @param message A string message detailing the change.
      */
-    void notifyChange(std::string message);
-
+	void notifyChange(std::string message);
     /**
      * @brief Adds a connection to another road component.
-     * @param connection A pointer to the RoadComponent to connect to.
-     * @param distance The distance to the connected road component.
+     * @param connection A pointer to the road component to connect.
+     * @param distance The distance to the connected component.
      */
-    void addConnection(RoadComponent *connection, float distance);
-
+	void addConnection(RoadComponent *connection, float distance);
     /**
-     * @brief Calculates the distance from a specified point to the highway.
+     * @brief Calculates the distance from a given point to the highway.
      * @param x The X coordinate of the point.
      * @param y The Y coordinate of the point.
-     * @return The distance to the highway as a float.
+     * @return The calculated distance as a float.
      */
-    float calculateDistance(int x, int y);
+	float calculateDistance(int x, int y);
 
+	
     /**
-     * @brief Destructor for the Highways class.
+     * @brief Destructor for cleanup.
      */
-    ~Highways() {}
+	~Highways() {}
 };
 
-#endif // HIGHWAYS_H
+#endif
