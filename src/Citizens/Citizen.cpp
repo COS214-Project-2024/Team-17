@@ -105,6 +105,7 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
+				std::cout << "Citizen " << name << " has no car" << std::endl;
 				waitTimer = 3;
 				activity = Activity::TryBusHome;
 			}
@@ -115,6 +116,11 @@ void Citizen::notifyChange(std::string message)
 			{
 				activity = Activity::InTransitHome;
 				route = ccm->calculateRoute(workplace->getXCoordinate(), workplace->getYCoordinate(), home->getXCoordinate(), home->getYCoordinate());
+				if (route.size() == 0)
+				{
+					changeHappiness(-1);
+					return;
+				}
 				currentRoad = route.at(0);
 			}
 			else
@@ -149,6 +155,7 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
+				std::cout << "Citizen " << name << " has no car" << std::endl;
 				waitTimer = 3;
 				activity = Activity::TryBusWork;
 			}
@@ -166,6 +173,11 @@ void Citizen::notifyChange(std::string message)
 					r->displayInfo();
 				}
 				std::cout << RESET << std::endl;
+				if (route.size() == 0)
+				{
+					changeHappiness(-1);
+					return;
+				}
 				currentRoad = route.at(0);
 			}
 			else
@@ -389,8 +401,11 @@ void Citizen::doSomething()
 			{
 				activity = Activity::Rest;
 				currentLocation = home;
-				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
+				std::cout << GREEN << "Arrived at home!" << RESET << std::endl;
 			}
+			cout << BLACK << "Current road: ";
+			currentRoad->displayInfo();
+			cout << RESET;
 		}
 		break;
 	case Activity::AwaitTransitHome:

@@ -5,6 +5,7 @@
 #include <thread>
 #include <iostream>
 #include <algorithm>
+#include "./Transport/TransportInclude.h"
 
 static constexpr int GAME_SPEED = 0;                    // millisecond timeout
 static constexpr int TRANSPORT_UPDATE_INTERVAL = 1;     // Every 10 minutes
@@ -26,6 +27,36 @@ Game::Game()
   mediator->registerBuilding(new ResFlat());
   mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
+  initRoadGrid();
+
+  // Create citizen test
+  Citizen *citizen = new Citizen();
+
+  // create reshouse at (0,0) intersection
+  FactoryBuilding *factory = new FactResidential();
+  Residential *building = factory->createResBuilding("House");
+  building->setCapacity(1);
+  citizen->setHome(building);
+  building->setXCoordinate(0);
+  building->setYCoordinate(0);
+
+  // create ComMall at (200,200) intersection
+  factory = new FactCommercial();
+  Commercial *building2 = factory->createComBuilding("Mall");
+  building2->setJobCapacity(1);
+  citizen->setWorkplace(building2);
+  building2->setXCoordinate(200);
+  building2->setYCoordinate(200);
+
+  citizen->giveCar();
+  citizen->notifyChange("Go_Home");
+
+  // Test pathing
+  for (int i = 0; i < 10; i++)
+  {
+    citizen->doSomething();
+  }
+  exit(0);
 }
 
 void Game::updateTransport()
@@ -277,6 +308,73 @@ void Game::initBuildingOptions()
       {"Services", {"Education", "Security", "Entertainment", "Hospital"}}};
 }
 
+void Game::initRoadGrid()
+{
+  RoadComponent *horizRoads[20][19];
+  RoadComponent *vertRoads[19][20];
+
+  // Create horizontal roads
+  for (int y = 0; y < 20; y++)
+  {
+    for (int x = 0; x < 19; x++)
+    {
+      horizRoads[y][x] = new RoadsComposite(
+          x * 100, y * 100,
+          (x + 1) * 100, y * 100,
+          "residential");
+      mediator->registerRoad(horizRoads[y][x]);
+    }
+  }
+
+  // Create vertical roads
+  for (int y = 0; y < 19; y++)
+  {
+    for (int x = 0; x < 20; x++)
+    {
+      vertRoads[y][x] = new RoadsComposite(
+          x * 100, y * 100,
+          x * 100, (y + 1) * 100,
+          "residential");
+      mediator->registerRoad(vertRoads[y][x]);
+    }
+  }
+
+  // Connect horizontal roads
+  for (int y = 0; y < 20; y++)
+  {
+    for (int x = 1; x < 19; x++)
+    {
+      float dist = 100; // Distance between road segments
+      horizRoads[y][x]->addConnection(horizRoads[y][x - 1], dist);
+      horizRoads[y][x - 1]->addConnection(horizRoads[y][x], dist);
+    }
+  }
+
+  // Connect vertical roads
+  for (int y = 1; y < 19; y++)
+  {
+    for (int x = 0; x < 20; x++)
+    {
+      float dist = 100;
+      vertRoads[y][x]->addConnection(vertRoads[y - 1][x], dist);
+      vertRoads[y - 1][x]->addConnection(vertRoads[y][x], dist);
+    }
+  }
+
+  // Connect intersections
+  for (int y = 0; y < 19; y++)
+  {
+    for (int x = 0; x < 19; x++)
+    {
+      float dist = 100;
+      vertRoads[y][x]->addConnection(horizRoads[y][x], dist);
+      horizRoads[y][x]->addConnection(vertRoads[y][x], dist);
+
+      vertRoads[y][x + 1]->addConnection(horizRoads[y][x], dist);
+      horizRoads[y][x]->addConnection(vertRoads[y][x + 1], dist);
+    }
+  }
+}
 void Game::createBuilding()
 {
   string input;

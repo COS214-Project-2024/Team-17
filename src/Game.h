@@ -48,6 +48,7 @@ private:
     void createBuilding();
     vector<BuildingOption> buildingOptions;
     void initBuildingOptions();
+    void initRoadGrid();
 };
 
 #endif // GAME_H
