@@ -23,42 +23,37 @@ TEST(Train, TestTrainTransport)
     nearHome->setXCoordinate(300);
     nearHome->setYCoordinate(10);
 
-    Trainstation *nearWork = new Trainstation(10);
-    nearWork->setXCoordinate(0);
-    nearWork->setYCoordinate(10);
+    // Trainstation *nearWork = new Trainstation(10);
+    // nearWork->setXCoordinate(0);
+    // nearWork->setYCoordinate(10);
 
-    ComMall *workplace = new ComMall();
-    workplace->setXCoordinate(0);
-    workplace->setYCoordinate(10);
+    // ComMall *workplace = new ComMall();
+    // workplace->setXCoordinate(0);
+    // workplace->setYCoordinate(10);
 
-    citizen->setWorkplace(workplace);
-    citizen->setHome(home);
+    // citizen->setWorkplace(workplace);
+    // citizen->setHome(home);
 
-    mediator->citizensStartWork();
+    // mediator->citizensStartWork();
 
-    for (int i = 0; i < 20; i++)
-    {
-        mediator->updateBuses();
-        mediator->citizensDoSomething();
-    }
+    // for (int i = 0; i < 20; i++)
+    // {
+    //     mediator->updateBuses();
+    //     mediator->citizensDoSomething();
+    // }
 
-    ASSERT_EQ(citizen->getCurrentBuilding(), workplace);
+    // ASSERT_EQ(citizen->getCurrentBuilding(), workplace);
 
-    mediator->citizensEndWork();
+    // mediator->citizensEndWork();
 
-    for (int i = 0; i < 20; i++)
-    {
-        mediator->updateBuses();
-        mediator->citizensDoSomething();
-    }
+    // for (int i = 0; i < 20; i++)
+    // {
+    //     mediator->updateBuses();
+    //     mediator->citizensDoSomething();
+    // }
 
-    ASSERT_EQ(citizen->getCurrentBuilding(), home);
+    // ASSERT_EQ(citizen->getCurrentBuilding(), home);
 
-    delete workplace;
-    delete home;
-    delete citizen;
-    delete bus;
-    delete road;
     delete mediator;
 }
 

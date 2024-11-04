@@ -13,7 +13,7 @@ CitizenState *Discontent::handleChange(int change)
         return new Upset();
     }
 
-    return new Discontent();
+    return this;
 }
 
 std::string Discontent::getState()

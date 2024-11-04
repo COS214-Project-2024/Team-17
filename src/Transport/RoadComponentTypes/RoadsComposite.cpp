@@ -174,3 +174,11 @@ RoadComponent *RoadsComposite::closestSection(int x, int y)
 
 	return closest;
 }
+
+RoadsComposite::~RoadsComposite()
+{
+	for (auto component : components)
+	{
+		delete component;
+	}
+}

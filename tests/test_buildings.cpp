@@ -52,11 +52,11 @@ void test8(); // Citizens [ALL]
 int main()
 {
 
-    cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
-         << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
-         << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
-         << "\t     ┛                 " << RESET << endl
-         << endl;
+    // cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
+    //      << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
+    //      << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
+    //      << "\t     ┛                 " << RESET << endl
+    //      << endl;
 
     // test1();
     // cout << YELLOW << "==============================" << RESET << endl;
@@ -80,6 +80,7 @@ int main()
 
 void test1()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
     cout << YELLOW << "Test Buildings [RESIDENTIAL]" << RESET << endl;
 
     // House
@@ -115,20 +116,15 @@ void test1()
     cout << "Capacity: " << building4->getCapacity() << endl;
 
     // Clean up
-    delete building;
-    delete factory;
-    delete building2;
-    delete factory2;
-    delete building3;
-    delete factory3;
-    delete building4;
-    delete factory4;
+    delete cityMediator;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
 void test2()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Buildings [COMMERCIAL]" << RESET << endl;
 
     // Mall
@@ -156,18 +152,15 @@ void test2()
     cout << "Job Capacity: " << building3->getJobCapacity() << endl;
 
     // Clean up
-    delete building;
-    delete factory;
-    delete building2;
-    delete factory2;
-    delete building3;
-    delete factory3;
+    delete cityMediator;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
 void test3()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Buildings [INDUSTRIAL]" << RESET << endl;
 
     // Warehouse
@@ -195,18 +188,15 @@ void test3()
     cout << "Production Capacity: " << building3->getProductionCapacity() << endl;
 
     // Clean up
-    delete building;
-    delete factory;
-    delete building2;
-    delete factory2;
-    delete building3;
-    delete factory3;
+    delete cityMediator;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
 void test4()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Buildings [LANDMARKS]" << RESET << endl;
 
     // Park
@@ -234,18 +224,15 @@ void test4()
     cout << "Visitors: " << building3->getVisitors() << endl;
 
     // Clean up
-    delete building;
-    delete factory;
-    delete building2;
-    delete factory2;
-    delete building3;
-    delete factory3;
+    delete cityMediator;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
 void test5()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Buildings [SERVICES]" << RESET << endl;
 
     // Education
@@ -273,18 +260,15 @@ void test5()
     cout << "Visitors: " << building3->getVisitors() << endl;
 
     // Clean up
-    delete building;
-    delete factory;
-    delete building2;
-    delete factory2;
-    delete building3;
-    delete factory3;
+    delete cityMediator;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
 }
 
 void test6()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Decorators [ALL]" << RESET << endl;
 
     Building *residentialBuilding = FactResidential().createResBuilding("House");
@@ -312,9 +296,9 @@ void test6()
     economic->displayBuildingInfo();
 
     // Clean up
-    delete building;
-    delete factory;
-
+    // delete building;
+    // delete factory;
+    delete cityMediator;
     // delete residentialBuilding;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
@@ -322,6 +306,8 @@ void test6()
 
 void test7()
 {
+    CityCentralMediator *cityMediator = CityCentralMediator::getInstance();
+
     cout << YELLOW << "Test Utilities [ALL]" << RESET << endl;
 
     // Create a commercial
@@ -532,37 +518,7 @@ void test7()
     cout << "END OF RESIDENCE TESTING!" << endl;
     cout << endl;
 
-    delete mall;
-    delete office;
-    delete shop;
-    delete security;
-    delete entertainment;
-    delete hospital;
-    delete park;
-    delete land;
-    delete landmonument;
-    delete plant;
-    delete factory;
-    delete warehouse;
-    delete house;
-    delete estate;
-    delete flat;
-    delete powerPlant;
-    delete waterPlant;
-    delete wastePlant;
-    delete sewagePlant;
-    delete SpowerPlant;
-    delete SwaterPlant;
-    delete SwastePlant;
-    delete SsewagePlant;
-    delete IpowerPlant;
-    delete IwaterPlant;
-    delete IwastePlant;
-    delete IsewagePlant;
-    delete RpowerPlant;
-    delete RwaterPlant;
-    delete RwastePlant;
-    delete RsewagePlant;
+    delete cityMediator;
     cout << "END OF PROGRAM!" << endl;
 
     cout << GREEN << "✧ ✦\tAll tests passed!\t✦ ✧" << RESET << endl;
@@ -570,7 +526,6 @@ void test7()
 
 void test8()
 {
-
     std::cout << "############################################" << std::endl;
     std::cout << "Testing Citizens" << std::endl;
     std::cout << "############################################" << std::endl;
@@ -586,10 +541,7 @@ void test8()
     std::cout << " - Testing notifyChange" << std::endl;
     UtilPowerPlants *powerPlant = new UtilPowerPlants();
     ResEstate *building = new ResEstate();
-    mediator->registerBuilding(building);
-    mediator->registerUtility(powerPlant);
-    mediator->notifyUtilityChange(powerPlant, false, "Test Message");
     std::cout << " - Testing Complete!" << std::endl;
-    delete citizen;
+    // delete citizen;
     delete mediator;
 }

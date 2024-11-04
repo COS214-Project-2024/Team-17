@@ -27,7 +27,7 @@ void Citizen::changeHappiness(int change)
 			ccm->handleCitizenEmigration(this);
 		}
 	}
-	else
+	else if (oldstate != newState)
 	{
 		setState(newState);
 	}
