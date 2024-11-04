@@ -29,6 +29,11 @@ public:
      * @brief Constructs the Game object and initializes necessary components.
      */
     Game();
+
+    /**
+     * @brief Destroys the Game object and cleans up any resources.
+     */
+    ~Game();
     /**
      * @brief Starts the game loop, allowing the simulation to run.
      * 

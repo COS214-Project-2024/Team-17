@@ -24,13 +24,20 @@ Game::Game()
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
-  CityStructure *city = new CityStructure("Pretoria");
+  CityStructure *city = new CityStructure("Pretoria");//Need to deallocate
   city->addBlock(new CityBlock());
   this->gov.addCity(*city);
   mediator->registerBuilding(new ResFlat());
   mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
   initRoadGrid();
+}
+
+Game::~Game()
+{
+  if(mediator){
+    delete mediator;
+  }
 }
 
 std::string toLowerCase(const std::string &str)
