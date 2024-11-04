@@ -1,10 +1,4 @@
-☰☰☰☰☰☰☰☰☰☰☰☰
-┏┓•     ┳┓  •┓ ┓    
-┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓
-┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛ 
-     ┛              
-☰☰☰☰☰☰☰☰☰☰☰☰
-
+# CityBuilder
 # Description
 This City Builder Simulation models the complex processes involved in managing a city, from infrastructure development to resource allocation and citizen satisfaction. The project focuses on creating scalable, maintainable, and flexible systems using object-oriented design and various design patterns.
 
