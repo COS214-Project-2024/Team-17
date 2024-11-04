@@ -24,9 +24,9 @@ Game::Game()
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
-  CityStructure *city = new CityStructure("Pretoria");//Need to deallocate
-  city->addBlock(new CityBlock());
-  this->gov.addCity(*city);// Might need to deallocate aka .remove city?
+  CityStructure city ("Pretoria");
+  city.addBlock(new CityBlock());
+  this->gov.addCity(city);
   mediator->registerBuilding(new ResFlat());
   mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
