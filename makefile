@@ -11,7 +11,7 @@ clean:
 
 # Define the valgrind rule
 val: main
-	valgrind --leak-check=full ./main
+	valgrind --leak-check=full ./build/Main
 
 # Clean Zone.Identifier files
 clean_zone:
