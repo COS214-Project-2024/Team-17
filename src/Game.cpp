@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include "./Transport/TransportInclude.h"
+#include "./Citizens/CitizensIncludes.h"
 
 static constexpr int GAME_SPEED = 20;               // millisecond timeout
 static constexpr int TURN_INTERVAL = 5;             // 5 minutes per turn
@@ -88,6 +89,49 @@ void Game::updateCityGrowth()
   }
 }
 
+void Game::handleTransport()
+{
+  // ask the user if they want to create or remove a bus
+  while (true)
+  {
+    std::string input;
+    std::cout << "What do you want to do in Transport? (Create, Remove, List, Back): ";
+    std::cin >> input;
+    input = toLowerCase(input);
+    if (input == "create")
+    {
+      RoadComponent *comp = mediator->getClosestRoad(0, 0);
+      // prompt user for bus capacity and validate input using isValidNumber()
+      int capacity;
+      std::cout << "Enter the bus capacity: ";
+      std::cin >> input;
+      if (!isValidNumber(input, capacity) || capacity < 0)
+      {
+        std::cout << RED << "Invalid capacity value." << RED << std::endl;
+        continue;
+      }
+
+      Bus *bus = new Bus(comp, capacity);
+    }
+    else if (input == "list")
+    {
+      std::cout << "There are " << RED << mediator->getBusCount() << RESET << " inactive buses in the city." << std::endl;
+    }
+    else if (input == "remove")
+    {
+      mediator->removeBus();
+    }
+    else if (input == "back")
+    {
+      return;
+    }
+    else
+    {
+      std::cout << "Invalid action. Please try again.\n";
+    }
+  }
+}
+
 void Game::citizensDoSomething()
 {
   std::cout << BLACK << "Simulating citizen activity..." << RESET << std::endl;
@@ -115,7 +159,7 @@ int Game::promptUserAction()
   {
     if (!paused)
     {
-      std::cout << "What action do you want to do? (Build, Laws, Taxes, Pause, Skip, Quit): ";
+      std::cout << "What action do you want to do? (Build, Laws, Taxes, Transport, Pause, Skip, Quit): ";
       std::cin >> input;
       input = toLowerCase(input);
     }
@@ -284,6 +328,10 @@ int Game::promptUserAction()
     else if (input == "build")
     {
       createBuilding();
+    }
+    else if (input == "transport")
+    {
+      handleTransport();
     }
     else
     {

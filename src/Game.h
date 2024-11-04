@@ -59,6 +59,7 @@ private:
     void citizensGoToWork();
     void citizensGoHome();
     void updateCityGrowth();
+    void handleTransport();
     int promptUserAction();
     bool isValidNumber(const string &input, int &number);
     bool intersectionOccupied[20][20] = {false}; // Tracks occupied intersections

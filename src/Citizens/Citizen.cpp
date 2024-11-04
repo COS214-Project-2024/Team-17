@@ -39,12 +39,12 @@ Citizen::Citizen(bool autoRegister) : CityBlock()
 	workplace = nullptr;
 	home = nullptr;
 	this->mediator = CityCentralMediator::getInstance();
+	state = nullptr;
 	if (autoRegister)
 	{
 		mediator->registerCitizen(this);
+		setState(new Indifferent());
 	}
-	state = nullptr;
-	setState(new Indifferent());
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
