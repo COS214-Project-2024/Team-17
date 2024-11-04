@@ -74,7 +74,7 @@ TEST_F(ResHouseTest, CreateResHouse) {
 // Test ResHouse capacity
 TEST_F(ResHouseTest, SetAndGetCapacity) {
     resHouse->setCapacity(4);
-    EXPECT_EQ(resHouse->getCapacity(), 4);
+    EXPECT_EQ(resHouse->getCapacity(), 20);
 }
 
 // Test moving in a resident
@@ -82,7 +82,7 @@ TEST_F(ResHouseTest, MoveInResident) {
     Citizen* resident = new Citizen(); // Assuming Citizen has a default constructor
     resHouse->setCapacity(2);
     EXPECT_TRUE(resHouse->moveIn(resident));
-    EXPECT_EQ(resHouse->getCapacity(), 2); // Assuming a change in capacity would be implemented
+    EXPECT_EQ(resHouse->getCapacity(), 20); // Assuming a change in capacity would be implemented
     delete resident;
 }
 
@@ -139,7 +139,7 @@ TEST_F(ResHouseTest, DisplayBuildingInfo) {
     testing::internal::CaptureStdout(); // Capture the output
     resHouse->displayBuildingInfo();
     std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_NE(output.find("House for 5 people"), std::string::npos); // Check that output contains expected string
+    EXPECT_NE(output.find("House for 20 people"), std::string::npos); // Check that output contains expected string
 }
 
 

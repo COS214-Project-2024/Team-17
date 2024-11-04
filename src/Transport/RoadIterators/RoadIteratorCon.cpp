@@ -25,3 +25,7 @@ RoadComponent *RoadIteratorCon::currentRoad()
 {
 	return roads->at(current);
 }
+
+RoadIteratorCon::~RoadIteratorCon()
+{
+}

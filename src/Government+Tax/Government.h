@@ -24,49 +24,50 @@ class Policy;
 class Government
 {
 public:
-    /**
-     * @brief Processes taxes for the specified city structure.
-     * @param city The city structure on which to process taxes.
-     */
-  void processTaxes(CityStructure &city);
-  /**
-     * @brief Applies the current budget policy to the specified city structure.
-     * @param city The city structure to which the budget is applied.
-     */
-  void applyBudget(CityStructure &city);
-  /**
-     * @brief Sets the tax rate for the specified category.
-     * @param category The category for which the tax rate is set.
-     * @param rate The tax rate to set.
-     */
-  void setTaxRate(std::string category, double rate);
-  /**
-     * @brief Collects taxes based on current tax rates.
-     */
-  void collectTaxes();
    /**
-     * @brief Allocates collected taxes to a specified department.
-     * @param department The department to receive the allocation.
-     * @param amount The amount to allocate.
-     */
-  void allocateTaxes(std::string department, double amount);
-  /**
-     * @brief Adds a city to the government’s management.
-     * @param city The CityStructure to add.
-     */
-  void addCity(CityStructure &city);
-  /**
-     * @brief Sets the current budget policy.
-     * @param policy The BudgetPolicy to set.
-     */
-  void setBudgetPolicy(BudgetPolicy &policy);
+    * @brief Processes taxes for the specified city structure.
+    * @param city The city structure on which to process taxes.
+    */
+   void processTaxes(CityStructure *city);
+   /**
+    * @brief Applies the current budget policy to the specified city structure.
+    * @param city The city structure to which the budget is applied.
+    */
+   void applyBudget(CityStructure *city);
+   /**
+    * @brief Sets the tax rate for the specified category.
+    * @param category The category for which the tax rate is set.
+    * @param rate The tax rate to set.
+    */
+   void setTaxRate(std::string category, double rate);
+   /**
+    * @brief Collects taxes based on current tax rates.
+    */
+   void collectTaxes();
+   /**
+    * @brief Allocates collected taxes to a specified department.
+    * @param department The department to receive the allocation.
+    * @param amount The amount to allocate.
+    */
+   void allocateTaxes(std::string department, double amount);
+   /**
+    * @brief Adds a city to the government’s management.
+    * @param city The CityStructure to add.
+    */
+   void addCity(CityStructure *city);
+   /**
+    * @brief Sets the current budget policy.
+    * @param policy The BudgetPolicy to set.
+    */
+   void setBudgetPolicy(BudgetPolicy &policy);
 
-  ~Government();
+   ~Government();
+
 private:
-  std::map<std::string, double> taxRates;
-  std::map<std::string, double> cityTaxes;
-  std::vector<CityStructure> cities;
-  BudgetPolicy *budgetPolicy = nullptr;
+   std::map<std::string, double> taxRates;
+   std::map<std::string, double> cityTaxes;
+   std::vector<CityStructure *> cities;
+   BudgetPolicy *budgetPolicy = nullptr;
 };
 
 #endif
