@@ -39,7 +39,7 @@ int ResHouse::getCapacity() const
 
 void ResHouse::setCapacity(int capacity)
 {
-    this->capacity = capacity;
+    this->capacity = 20;
 }
 
 void ResHouse::callUtilities()

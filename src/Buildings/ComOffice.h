@@ -40,11 +40,6 @@ public:
     void setJobCapacity(int capacity) override;
 
     // Observer methods
-
-	bool addEmployee(Citizen* employee);
-	void removeEmployee(Citizen* employee);
-	void notifyEmployeeLeft(Citizen* employee);
-	bool hasJob();
 	
 	int getElectricityUsage();
     int getWaterUsage();

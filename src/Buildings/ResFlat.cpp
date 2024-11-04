@@ -38,7 +38,7 @@ int ResFlat::getCapacity() const
 
 void ResFlat::setCapacity(int capacity)
 {
-    this->capacity = capacity;
+    this->capacity = 5;
 }
 
 void ResFlat::callUtilities()

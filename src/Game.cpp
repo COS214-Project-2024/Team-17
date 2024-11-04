@@ -232,80 +232,80 @@ int Game::promptUserAction()
         std::cin >> input;
         input = toLowerCase(input);
 
-  //       if (input == "on")
-  //       {
-  //         std::cout << "Give the name of the law you want to enable (bus, happiness, money, notax, services): ";
-  //         std::cin >> input;
-  //         input = toLowerCase(input);
+        if (input == "on")
+        {
+          std::cout << "Give the name of the law you want to enable (bus, happiness, money, notax, services): ";
+          std::cin >> input;
+          input = toLowerCase(input);
 
-  //         if (input == "bus")
-  //         {
-  //           Policy::setBusLaw(true);
-  //         }
-  //         else if (input == "happiness")
-  //         {
-  //           Policy::setHappinessLaw(true);
-  //         }
-  //         else if (input == "money")
-  //         {
-  //           Policy::setMoneyLaw(true);
-  //         }
-  //         else if (input == "notax")
-  //         {
-  //           Policy::setNoTaxLaw(true);
-  //         }
-  //         else if (input == "services")
-  //         {
-  //           Policy::setServicesLaw(true);
-  //         }
-  //         else
-  //         {
-  //           std::cout << "Unrecognized law name." << std::endl;
-  //         }
-  //         std::cout << "Enabled law: " << input << "\n";
-  //       }
-  //       else if (input == "off")
-  //       {
-  //       }
-  //       else if (input == "list")
-  //       {
-  //         std::cout << "Policy Status:" << std::endl;
-  //         std::cout << "- Bus Law: " << (Policy::getBusLaw() ? "Enabled" : "Disabled") << std::endl;
-  //         std::cout << "- Happiness Law: " << (Policy::getHappinessLaw() ? "Enabled" : "Disabled") << std::endl;
-  //         std::cout << "- Money Law: " << (Policy::getMoneyLaw() ? "Enabled" : "Disabled") << std::endl;
-  //         std::cout << "- No Tax Law: " << (Policy::getNoTaxLaw() ? "Enabled" : "Disabled") << std::endl;
-  //         std::cout << "- Services Law: " << (Policy::getServicesLaw() ? "Enabled" : "Disabled") << std::endl;
-  //       }
-  //       else if (input == "back")
-  //       {
-  //         break;
-  //       }
-  //       else
-  //       {
-  //         std::cout << "Invalid action. Please try again.\n";
-  //       }
-  //     }
-  //   }
-  //   else if (input == "taxes")
-  //   {
-  //     while (true)
-  //     {
-  //       std::cout << "What do you want to do in Taxes? (Execute, Add, Remove, List, Back): ";
-  //       std::cin >> input;
-  //       input = toLowerCase(input);
+          if (input == "bus")
+          {
+            Policy::setBusLaw(true);
+          }
+          else if (input == "happiness")
+          {
+            Policy::setHappinessLaw(true);
+          }
+          else if (input == "money")
+          {
+            Policy::setMoneyLaw(true);
+          }
+          else if (input == "notax")
+          {
+            Policy::setNoTaxLaw(true);
+          }
+          else if (input == "services")
+          {
+            Policy::setServicesLaw(true);
+          }
+          else
+          {
+            std::cout << "Unrecognized law name." << std::endl;
+          }
+          std::cout << "Enabled law: " << input << "\n";
+        }
+        else if (input == "off")
+        {
+        }
+        else if (input == "list")
+        {
+          std::cout << "Policy Status:" << std::endl;
+          std::cout << "- Bus Law: " << (Policy::getBusLaw() ? "Enabled" : "Disabled") << std::endl;
+          std::cout << "- Happiness Law: " << (Policy::getHappinessLaw() ? "Enabled" : "Disabled") << std::endl;
+          std::cout << "- Money Law: " << (Policy::getMoneyLaw() ? "Enabled" : "Disabled") << std::endl;
+          std::cout << "- No Tax Law: " << (Policy::getNoTaxLaw() ? "Enabled" : "Disabled") << std::endl;
+          std::cout << "- Services Law: " << (Policy::getServicesLaw() ? "Enabled" : "Disabled") << std::endl;
+        }
+        else if (input == "back")
+        {
+          break;
+        }
+        else
+        {
+          std::cout << "Invalid action. Please try again.\n";
+        }
+      }
+    }
+    else if (input == "taxes")
+    {
+      while (true)
+      {
+        std::cout << "What do you want to do in Taxes? (Execute, Add, Remove, List, Back): ";
+        std::cin >> input;
+        input = toLowerCase(input);
 
-  //       if (input == "execute")
-  //       {
-  //         std::cout << "Give the name of the policy you want to execute: ";
-  //         std::cin >> input;
-  //         if (this->taxManager.executeCommand(input))
-  //           std::cout << "Executed policy: " << input << "\n";
-  //       }
-  //       else if (input == "add")
-  //       {
-  //         std::cout << "What type of policy do you want to add? (Allocate, Collect, SetRate): ";
-  //         std::cin >> input;
-  //         input = toLowerCase(input);
+        if (input == "execute")
+        {
+          std::cout << "Give the name of the policy you want to execute: ";
+          std::cin >> input;
+          if (this->taxManager.executeCommand(input))
+            std::cout << "Executed policy: " << input << "\n";
+        }
+        else if (input == "add")
+        {
+          std::cout << "What type of policy do you want to add? (Allocate, Collect, SetRate): ";
+          std::cin >> input;
+          input = toLowerCase(input);
 
           if (input == "allocate")
           {

@@ -22,6 +22,8 @@ DraggableRoad* road;
 QLabel* BuildingType;
 QTimer *timer;
 
+int day = 0;
+
 HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::HomePage)
@@ -777,11 +779,16 @@ void HomePage::on_btnBuildRoad_clicked()
             cout<<"connection added"<<endl;
         }
     }
+
     ui->frmEditRoadPos->hide();
     ui->frmInfo->show();
     road->editable=false;
     road=nullptr;
     ui->tabBuildCity->setEnabled(1);
+    ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 100);
+    ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 20);
+    ui->spnRoadEditLength->setValue(120);
+    ui->cmbRoadOrientation->setCurrentIndex(0);
     updateInfoScreen();
 }
 
@@ -906,17 +913,18 @@ void HomePage::updateTransport()
 
 void HomePage::updateJobs()
 {
-    // if (mediator)
-    // {
-    //     if (time_of_day == 8)
-    //     {
-    //         mediator->citizensStartWork();
-    //     }
-    //     if (time_of_day == 17)
-    //     {
-    //         mediator->citizensEndWork();
-    //     }
-    // }
+    day++;
+    if (mediator)
+    {
+        if (day % 2 == 0)
+        {
+            mediator->citizensStartWork();
+        }
+        else
+        {
+            mediator->citizensEndWork();
+        }
+    }
 }
 
 void HomePage::updateCityGrowth()
@@ -940,7 +948,7 @@ void HomePage::Tick(){
     updateCityGrowth();
 
     updateInfoScreen();
-    timer->start(3000);
+    timer->start(100);
 }
 
 
