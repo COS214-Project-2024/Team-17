@@ -9,10 +9,6 @@
  */
 double CitizenTaxAB::visit(Citizen *citizen)
 {
-  if(!citizen)
-  {
-    return 0;
-  }
   return citizen->getTax();
 }
 /**
@@ -23,6 +19,5 @@ double CitizenTaxAB::visit(Citizen *citizen)
  */
 double CitizenTaxAB::visit(Building *business)
 {
-  // return business->getTax();
-  return 0;
+  return business->getTax();
 }
