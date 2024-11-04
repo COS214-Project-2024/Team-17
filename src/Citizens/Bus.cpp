@@ -92,24 +92,24 @@ bool Bus::isFull()
     return passengers.size() == capacity;
 }
 
-void Bus::addPassenger(Citizen *passenger, RoadComponent *destination)
+void Bus::addPassenger(std::unique_ptr<Citizen> passenger, RoadComponent* destination)
 {
     recalculateRoute(destination);
     if (passengers.size() < capacity)
     {
-        passengers.push_back(std::make_pair(passenger, destination));
+        passengers.push_back(std::make_pair(std::move(passenger), destination)); // Use std::move to transfer ownership
     }
 }
 
-void Bus::removePassenger(Citizen *passenger)
+void Bus::removePassenger(Citizen *passenger)//CHANGED!
 {
-    for (auto it = passengers.begin(); it != passengers.end(); it++)
-    {
-        if (it->first == passenger)
-        {
-            passengers.erase(it);
-            break;
-        }
+    auto it = std::find_if(passengers.begin(), passengers.end(),
+        [passenger](const auto& pair) { return pair.first.get() == passenger; });
+
+    if (it != passengers.end()) {
+        passengers.erase(it);
+    } else {
+        std::cout << "Passenger not found!" << std::endl; // Optional logging
     }
 }
 

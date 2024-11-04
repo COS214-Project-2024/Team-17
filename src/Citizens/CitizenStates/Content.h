@@ -2,7 +2,7 @@
 #define CONTENT_H
 
 #include "../CitizenState.h"
-
+#include <memory>
 /**
  * @class Content
  * @brief Represents the content state of a Citizen.
@@ -20,8 +20,7 @@ public:
      * @param change An integer representing the change that affects the citizen's state.
      * @return A pointer to the new CitizenState that results from the change.
      */
-    CitizenState *handleChange(int change) override;
-
+    std::unique_ptr<CitizenState> handleChange(int change) override;
     /**
      * @brief Retrieves the name of the current state.
      * @return A string representing the name of the content state.

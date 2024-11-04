@@ -1,13 +1,14 @@
 #include "Happy.h"
 #include "Content.h"
+#include <memory>
 
-CitizenState *Happy::handleChange(int change)
+std::unique_ptr<CitizenState> Happy::handleChange(int change)
 {
     if (change <= 0)
     {
-        return new Content();
+        return std::make_unique<Content>();
     }
-    return new Happy();
+    return std::make_unique<Happy>();
 }
 
 std::string Happy::getState()

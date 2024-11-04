@@ -1,19 +1,20 @@
 #include "Discontent.h"
-#include "Upset.h"
 #include "Indifferent.h"
+#include "Upset.h"
+#include <memory>
 
-CitizenState *Discontent::handleChange(int change)
+std::unique_ptr<CitizenState> Discontent::handleChange(int change)
 {
     if (change > 0)
     {
-        return new Indifferent();
+        return std::make_unique<Indifferent>();
     }
     else if (change < 0)
     {
-        return new Upset();
+        return std::make_unique<Upset>();
     }
 
-    return new Discontent();
+    return std::make_unique<Discontent>();
 }
 
 std::string Discontent::getState()

@@ -21,7 +21,7 @@ private:
      * @brief A vector of pairs, where each pair contains a pointer to a Citizen
      *        and their corresponding destination RoadComponent.
      */
-    std::vector<std::pair<Citizen *, RoadComponent *>> passengers;
+   std::vector<std::pair<std::unique_ptr<Citizen>, RoadComponent*>> passengers; // Change to unique_ptr
 
     /** The maximum number of passengers the bus can carry. */
     int capacity;
@@ -57,7 +57,7 @@ public:
      * @param passenger A pointer to the Citizen being added as a passenger.
      * @param destination A pointer to the RoadComponent representing the passenger's destination.
      */
-    void addPassenger(Citizen *passenger, RoadComponent *destination);
+    void addPassenger(std::unique_ptr<Citizen> passenger, RoadComponent *destination);
 
     /**
      * @brief Removes a passenger from the bus.

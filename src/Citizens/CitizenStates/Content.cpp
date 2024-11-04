@@ -1,19 +1,20 @@
 #include "Content.h"
 #include "Indifferent.h"
 #include "Happy.h"
+#include <memory>
 
-CitizenState *Content::handleChange(int change)
+std::unique_ptr<CitizenState> Content::handleChange(int change)
 {
     if (change > 0)
     {
-        return new Happy();
+        return std::make_unique<Happy>();
     }
     else if (change < 0)
     {
-        return new Indifferent();
+        return std::make_unique<Indifferent>();
     }
 
-    return new Content();
+    return std::make_unique<Content>();
 }
 
 std::string Content::getState()

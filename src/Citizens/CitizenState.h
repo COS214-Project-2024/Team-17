@@ -2,6 +2,7 @@
 #define CITIZENSTATE_H
 
 #include <string>
+#include <memory>
 
 /**
  * @class CitizenState
@@ -16,9 +17,9 @@ public:
     /**
      * @brief Handles a change in state based on an integer value.
      * @param change An integer representing the change to be handled.
-     * @return A pointer to the resulting CitizenState after handling the change.
+     * @return A unique_ptr to the resulting CitizenState after handling the change.
      */
-    virtual CitizenState *handleChange(int change) = 0;
+    virtual std::unique_ptr<CitizenState> handleChange(int change) = 0;
 
     /**
      * @brief Gets a string representation of the current state.
