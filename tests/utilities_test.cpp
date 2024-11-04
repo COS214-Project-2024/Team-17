@@ -4,16 +4,15 @@
 #include "../src/Utilities/UtilSewageSyst.h"
 #include "../src/Utilities/UtilWasteMan.h"
 #include "../src/Utilities/UtilWaterSupply.h"
-#include "../src/Buildings/ComMall.h"  // Assuming a basic Building class with getState() method
+#include "../src/Buildings/ComMall.h"
 
-// Test cases for UtilPowerPlants
 TEST(UtilPowerPlantsTest, StartsAndShutsDownCorrectly) {
     UtilPowerPlants powerPlant;
-    EXPECT_FALSE(powerPlant.isOperational());  // Initially should be non-operational
+    EXPECT_FALSE(powerPlant.isOperational()); 
     powerPlant.startUtility();
-    EXPECT_TRUE(powerPlant.isOperational());   // After starting, should be operational
+    EXPECT_TRUE(powerPlant.isOperational());
     powerPlant.shutDown();
-    EXPECT_FALSE(powerPlant.isOperational());  // After shutdown, should be non-operational
+    EXPECT_FALSE(powerPlant.isOperational());
 }
 
 TEST(UtilPowerPlantsTest, TypeIsCorrect) {
@@ -21,14 +20,13 @@ TEST(UtilPowerPlantsTest, TypeIsCorrect) {
     EXPECT_EQ(powerPlant.getType(), "Power Plant");
 }
 
-// Test cases for UtilSewageSyst
 TEST(UtilSewageSystTest, StartsAndShutsDownCorrectly) {
     UtilSewageSyst sewageSystem;
-    EXPECT_FALSE(sewageSystem.isOperational());  // Initially should be non-operational
+    EXPECT_FALSE(sewageSystem.isOperational());
     sewageSystem.startUtility();
-    EXPECT_TRUE(sewageSystem.isOperational());   // After starting, should be operational
+    EXPECT_TRUE(sewageSystem.isOperational());
     sewageSystem.shutDown();
-    EXPECT_FALSE(sewageSystem.isOperational());  // After shutdown, should be non-operational
+    EXPECT_FALSE(sewageSystem.isOperational());
 }
 
 TEST(UtilSewageSystTest, TypeIsCorrect) {
@@ -36,14 +34,13 @@ TEST(UtilSewageSystTest, TypeIsCorrect) {
     EXPECT_EQ(sewageSystem.getType(), "Sewage System");
 }
 
-// Test cases for UtilWasteMan
 TEST(UtilWasteManTest, StartsAndShutsDownCorrectly) {
     UtilWasteMan wasteManagement;
-    EXPECT_FALSE(wasteManagement.isOperational());  // Initially should be non-operational
+    EXPECT_FALSE(wasteManagement.isOperational()); 
     wasteManagement.startUtility();
-    EXPECT_TRUE(wasteManagement.isOperational());   // After starting, should be operational
+    EXPECT_TRUE(wasteManagement.isOperational());
     wasteManagement.shutDown();
-    EXPECT_FALSE(wasteManagement.isOperational());  // After shutdown, should be non-operational
+    EXPECT_FALSE(wasteManagement.isOperational());
 }
 
 TEST(UtilWasteManTest, TypeIsCorrect) {
@@ -51,14 +48,13 @@ TEST(UtilWasteManTest, TypeIsCorrect) {
     EXPECT_EQ(wasteManagement.getType(), "Waste Dump");
 }
 
-// Test cases for UtilWaterSupply
 TEST(UtilWaterSupplyTest, StartsAndShutsDownCorrectly) {
     UtilWaterSupply waterSupply;
-    EXPECT_FALSE(waterSupply.isOperational());  // Initially should be non-operational
+    EXPECT_FALSE(waterSupply.isOperational()); 
     waterSupply.startUtility();
-    EXPECT_TRUE(waterSupply.isOperational());   // After starting, should be operational
+    EXPECT_TRUE(waterSupply.isOperational());
     waterSupply.shutDown();
-    EXPECT_FALSE(waterSupply.isOperational());  // After shutdown, should be non-operational
+    EXPECT_FALSE(waterSupply.isOperational()); 
 }
 
 TEST(UtilWaterSupplyTest, TypeIsCorrect) {
@@ -74,10 +70,8 @@ TEST(UtilityTest, UpdatesAccordingToBuildingState) {
     UtilWasteMan wasteManagement;
     UtilWaterSupply waterSupply;
 
-    // Assuming Building starts off non-operational
     EXPECT_FALSE(building.getState());
 
-    // Update utilities and check if they start when building is non-operational
     powerPlant.update(&building);
     sewageSystem.update(&building);
     wasteManagement.update(&building);
@@ -88,8 +82,7 @@ TEST(UtilityTest, UpdatesAccordingToBuildingState) {
     EXPECT_TRUE(wasteManagement.isOperational());
     EXPECT_TRUE(waterSupply.isOperational());
 
-    // Change Building state to operational and update utilities again
-    building.setState(true);  // Assuming setState exists in Building
+    building.setState(true);
     powerPlant.update(&building);
     sewageSystem.update(&building);
     wasteManagement.update(&building);
@@ -101,7 +94,6 @@ TEST(UtilityTest, UpdatesAccordingToBuildingState) {
     EXPECT_TRUE(waterSupply.isOperational());
 }
 
-// Main function for running all tests
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
