@@ -8,7 +8,7 @@
 #include <iostream>
 /**
  * @brief Construct a new CityStructure object.
- * 
+ *
  * @param name Name of the city structure.
  */
 CityStructure::CityStructure(std::string name)
@@ -18,27 +18,36 @@ CityStructure::CityStructure(std::string name)
 }
 /**
  * @brief Accepts a visitor for the CityStructure.
- * 
+ *
  * @param visitor Pointer to the visitor object to be accepted.
  */
 void CityStructure::accept(TaxAndBudgetVisitor *visitor)
 {
-  for(CityBlock* block : blocks) {
+  for (CityBlock *block : blocks)
+  {
     this->income += block->accept(visitor);
   }
 }
 /**
  * @brief Adds a block to the CityStructure.
- * 
+ *
  * @param block Pointer to the CityBlock to add.
  */
 void CityStructure::addBlock(CityBlock *block)
 {
+  // check if block is already in the list
+  for (auto b : blocks)
+  {
+    if (b == block)
+    {
+      return;
+    }
+  }
   this->blocks.push_back(block);
 }
 /**
  * @brief Gets the income of the CityStructure.
- * 
+ *
  * @return Total income of the CityStructure.
  */
 double CityStructure::getIncome()
@@ -48,7 +57,7 @@ double CityStructure::getIncome()
 }
 /**
  * @brief Allocates a budget amount to a department.
- * 
+ *
  * @param department Name of the department.
  * @param amount Budget amount to allocate.
  */
@@ -58,10 +67,21 @@ void CityStructure::allocateBudget(std::string deparment, double amount)
 }
 /**
  * @brief Gets the name of the CityStructure.
- * 
+ *
  * @return Name of the CityStructure.
  */
 std::string CityStructure::getName()
 {
   return this->Name;
+}
+
+CityStructure::~CityStructure()
+{
+  while (!blocks.empty())
+  {
+    delete blocks.back();
+    blocks.pop_back();
+  }
+
+  blocks.clear();
 }

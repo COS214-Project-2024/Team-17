@@ -14,6 +14,7 @@
 #include "../Buildings/ServHospital.h"
 #include "../Buildings/ServSecurity.h"
 #include "../Government+Tax/TaxAndBudgetVisitor.h"
+#include <memory>
 
 static CityCentralMediator *instance = nullptr;
 
@@ -113,6 +114,8 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 		seq->next();
 	}
 
+	delete seq;
+
 	// Try cast to RoadsComposite
 	RoadsComposite *composite = dynamic_cast<RoadsComposite *>(closest);
 	if (composite != nullptr)
@@ -128,8 +131,6 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 			}
 		}
 	}
-
-	delete seq;
 
 	return closest;
 }
@@ -488,6 +489,7 @@ void CityCentralMediator::citizensEndWork()
 
 CityCentralMediator::~CityCentralMediator()
 {
+	std::cout << RED << "DELETE ROADS" << RESET << std::endl;
 	// Clean up roads
 	for (auto road : roads)
 	{
@@ -495,6 +497,7 @@ CityCentralMediator::~CityCentralMediator()
 	}
 	roads.clear();
 
+	std::cout << RED << "DELETE TRAINSTATIONS" << RESET << std::endl;
 	// Clean up buildings
 	for (auto building : buildings)
 	{
@@ -502,6 +505,7 @@ CityCentralMediator::~CityCentralMediator()
 	}
 	buildings.clear();
 
+	std::cout << RED << "DELETE TRAINSTATIONS" << RESET << std::endl;
 	// Clean up utilities
 	for (auto utility : utilities)
 	{
@@ -509,6 +513,7 @@ CityCentralMediator::~CityCentralMediator()
 	}
 	utilities.clear();
 
+	std::cout << RED << "DELETE CITIZENS" << RESET << std::endl;
 	// Clean up citizens
 	for (auto citizen : citizens)
 	{
@@ -516,6 +521,7 @@ CityCentralMediator::~CityCentralMediator()
 	}
 	citizens.clear();
 
+	std::cout << RED << "DELETE BUSES" << RESET << std::endl;
 	// Clean up buses and bus queue
 	for (auto bus : buses)
 	{
@@ -607,6 +613,10 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 
 double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
 {
+	if (visitor == nullptr)
+	{
+		return 0;
+	}
 	double total = 0;
 	for (Building *building : buildings)
 	{

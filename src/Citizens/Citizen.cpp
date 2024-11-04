@@ -316,12 +316,11 @@ void Citizen::giveCar()
 
 void Citizen::doSomething()
 {
-  if(Policy::getHappinessLaw())
-  {
-    this->changeHappiness(1);
-  }
+	if (Policy::getHappinessLaw())
+	{
+		this->changeHappiness(1);
+	}
 	CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
-
 	switch (activity)
 	{
 	case Activity::Rest:
@@ -433,6 +432,8 @@ void Citizen::doSomething()
 		std::cout << "Citizen " << name << " is doing nothing" << std::endl;
 		break;
 	case Activity::TryBusWork:
+		std::cout << ccm << std::endl;
+		ccm->accept(nullptr);
 		currentRoad = ccm->getClosestRoad(currentLocation->getXCoordinate(), currentLocation->getYCoordinate());
 		if (currentRoad)
 		{
@@ -568,10 +569,10 @@ int Citizen::getHappiness()
 
 double Citizen::getTax()
 {
-  if (!Policy::getNoTaxLaw())
+	if (!Policy::getNoTaxLaw())
 	{
-    this->changeHappiness(-1);
-  }
+		this->changeHappiness(-1);
+	}
 	return 10.0;
 }
 

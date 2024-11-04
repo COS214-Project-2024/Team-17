@@ -42,6 +42,7 @@ public:
     void start();
 
 private:
+    CityStructure *city;
     Government gov;
     TaxManager taxManager;
     CityCentralMediator *mediator = nullptr;
