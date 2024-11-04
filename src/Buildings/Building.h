@@ -131,6 +131,11 @@ public:
      */
     virtual void moveOut(Citizen *resident) = 0;
 
+    /**
+     * @brief Get tax from a building.
+     */
+    double getTax() { return 20; };
+
 private:
     vector<UtilityManager *> utilities; ///< List of utility managers associated with the building.
     string name; ///< Name of the building.

@@ -134,6 +134,24 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 	return closest;
 }
 
+int CityCentralMediator::getBusCount()
+{
+	return busQueue.size();
+}
+
+void CityCentralMediator::removeBus()
+{
+	if (busQueue.size() > 0)
+	{
+		busQueue.erase(busQueue.begin());
+		std::cout << GREEN << "Removed inactive bus!" << RESET << std::endl;
+	}
+	else
+	{
+		std::cout << GREEN << "No inactive buses to remove" << RESET << std::endl;
+	}
+}
+
 CityCentralMediator *CityCentralMediator::getInstance()
 {
 	if (instance == nullptr)
@@ -388,13 +406,11 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 
 Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 {
-	std::cout << "test1.11\n";
 	Trainstation *closest = nullptr;
 	if (trainStations.empty())
 	{
 		return closest;
 	}
-	std::cout << "test1.12\n";
 	for (auto t : trainStations)
 	{
 		if (t->pointInRange(x, y))

@@ -2,6 +2,7 @@
 #define TAXMANAGER_H
 
 #include "TaxCommand.h"
+#include "CollectTaxCommand.h"
 #include <map>
 #include <string>
 #include <memory>
@@ -15,6 +16,7 @@ public:
     void removeCommand(const std::string& name);
     void listCommands() const;
     bool executeCommand(const std::string& name) const;
+    bool executeCollect() const;
 };
 
 #endif

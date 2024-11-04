@@ -34,3 +34,17 @@ bool TaxManager::executeCommand(const std::string& name) const {
         return false;
     }
 }
+
+
+bool TaxManager::executeCollect() const
+{
+  for (const auto& [name, cmd] : commands) 
+  {
+    if(dynamic_cast<CollectTaxCommand*>(cmd))
+    {
+      cmd->execute();
+      return true;
+    }
+  }
+  return false;
+}
