@@ -28,8 +28,6 @@ Game::Game()
   CityStructure *city = new CityStructure("Pretoria");
   city->addBlock(new CityBlock());
   this->gov.addCity(*city);
-  mediator->registerBuilding(new ResFlat());
-  mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
   initRoadGrid();
 }
@@ -159,7 +157,7 @@ int Game::promptUserAction()
   {
     if (!paused)
     {
-      std::cout << "What action do you want to do? (Build, Laws, Taxes, Transport, Pause, Skip, Quit): ";
+      std::cout << "What action do you want to do? (Build, Laws, Taxes, Transport, Resources, Pause, Skip, Quit): ";
       std::cin >> input;
       input = toLowerCase(input);
     }
@@ -332,6 +330,19 @@ int Game::promptUserAction()
     else if (input == "transport")
     {
       handleTransport();
+    }
+    else if (input == "resources")
+    {
+      cout << BOLD << BLUE << "Resources:" << RESET << endl;
+      cout << "Wood: " << Resources::getWood() << endl;
+      cout << "Concrete: " << Resources::getConcrete() << endl;
+      cout << "Steel: " << Resources::getSteel() << endl;
+      cout << "Overall Happiness: " << Resources::getHappiness() << endl;
+      cout << "Electricity generated: " << Resources::getElectricityGenerated() << endl;
+      cout << "Electricity consumed: " << Resources::getElectricityUsage() << endl;
+      cout << "Water generated: " << Resources::getWaterGenerated() << endl;
+      cout << "Water consumed: " << Resources::getWaterUsage() << endl;
+      cout << "Money: " << Resources::getMoney() << endl;
     }
     else
     {
@@ -565,25 +576,47 @@ void Game::createBuilding()
       return;
     }
     FactoryBuilding *factory = new FactResidential();
-    Residential *res = factory->createResBuilding(buildingType);
-    res->setCapacity(capacity);
-    building = res;
+    if (BuildingRequirements::checkResidentialRequirements(buildingType))
+    {
+      Residential *res = factory->createResBuilding(buildingType);
+
+      res->setCapacity(capacity);
+      building = res;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Commercial")
   {
     FactoryBuilding *factory = new FactCommercial();
-    Commercial *com = factory->createComBuilding(buildingType);
-    com->setJobCapacity(100); // Default value
-    building = com;
+    if (BuildingRequirements::checkCommercialRequirements(buildingType))
+    {
+      Commercial *com = factory->createComBuilding(buildingType);
+      com->setJobCapacity(100); // Default value
+      building = com;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Industrial")
   {
     FactoryBuilding *factory = new FactIndustrial();
-    Industrial *ind = factory->createIndBuilding(buildingType);
-    ind->setProductionCapacity(100); // Default value
-    building = ind;
+    if (BuildingRequirements::checkIndustrialRequirements(buildingType))
+    {
+      Industrial *ind = factory->createIndBuilding(buildingType);
+      ind->setProductionCapacity(100); // Default value
+      building = ind;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Landmarks")
@@ -596,8 +629,11 @@ void Game::createBuilding()
   else if (selectedOption.type == "Services")
   {
     FactoryBuilding *factory = new FactService();
-    Services *serv = factory->createServiceBuilding(buildingType);
-    building = serv;
+    if (BuildingRequirements::checkServiceRequirements(buildingType))
+    {
+      Services *serv = factory->createServiceBuilding(buildingType);
+      building = serv;
+    }
     delete factory;
   }
 
