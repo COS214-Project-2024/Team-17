@@ -372,7 +372,7 @@ void Game::start()
 void Game::initBuildingOptions()
 {
   buildingOptions = {
-      {"Residential", {"House", "Flats/apartments", "Townhouse", "Estate"}},
+      {"Residential", {"House", "Flat", "Townhouse", "Estate"}},
       {"Commercial", {"Mall", "Shop", "Office"}},
       {"Industrial", {"Warehouse", "Factory", "Plant"}},
       {"Landmarks", {"Park", "Monument", "Community Center"}},
