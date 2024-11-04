@@ -4,6 +4,7 @@
 #include "CitizenStates/CitizenStatesIncludes.h"
 #include "CityBlock.h"
 #include "CityMediator.h"
+#include "../Policy.h"
 #include <string>
 #include <vector>
 

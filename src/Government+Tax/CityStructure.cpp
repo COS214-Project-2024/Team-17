@@ -24,7 +24,7 @@ CityStructure::CityStructure(std::string name)
 void CityStructure::accept(TaxAndBudgetVisitor *visitor)
 {
   for(CityBlock* block : blocks) {
-    block->accept(visitor);
+    this->income += block->accept(visitor);
   }
 }
 /**

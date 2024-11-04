@@ -310,6 +310,10 @@ void Citizen::giveCar()
 
 void Citizen::doSomething()
 {
+  if(Policy::getHappinessLaw())
+  {
+    this->changeHappiness(1);
+  }
 	CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
 
 	switch (activity)
@@ -558,11 +562,11 @@ int Citizen::getHappiness()
 
 double Citizen::getTax()
 {
-	if (!Policy::getNoTaxLaw())
+  if (!Policy::getNoTaxLaw())
 	{
-		return 10.0;
-	}
-	return 0;
+    this->changeHappiness(-1);
+  }
+	return 10.0;
 }
 
 Citizen::~Citizen()

@@ -386,13 +386,11 @@ bool CityCentralMediator::isReachableByRoad(int x, int y)
 
 Trainstation *CityCentralMediator::trainstationInRange(int x, int y)
 {
-	std::cout << "test1.11\n";
 	Trainstation *closest = nullptr;
 	if (trainStations.empty())
 	{
 		return closest;
 	}
-	std::cout << "test1.12\n";
 	for (auto t : trainStations)
 	{
 		if (t->pointInRange(x, y))
