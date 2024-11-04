@@ -17,19 +17,6 @@ protected:
     }
 };
 
-class ServHospitalTest : public ::testing::Test {
-protected:
-    ServHospital* hospital;
-
-    void SetUp() override {
-        hospital = new ServHospital();
-    }
-
-    void TearDown() override {
-        delete hospital;
-    }
-};
-
 TEST_F(ServHospitalTest, CreateServHospital) {
     ASSERT_NE(hospital, nullptr);
 }

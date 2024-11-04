@@ -78,7 +78,13 @@ CitizenState *Citizen::getState()
 
 void Citizen::notifyChange(std::string message)
 {
-	CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
+    CityCentralMediator *ccm;
+    if(mediator!=nullptr){
+        ccm = dynamic_cast<CityCentralMediator *>(mediator);
+    }
+    else{
+        return;
+    }
 
 	if (message == "Go_Home")
 	{

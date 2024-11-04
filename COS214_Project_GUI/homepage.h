@@ -62,6 +62,8 @@ public:
     void updateCityGrowth();
     void updateTransport();
     void updateJobs();
+    void updateCityTax();
+
 
     void Tick();
 
@@ -140,6 +142,8 @@ private slots:
     void on_btnRoadMain_clicked();
 
     void on_btnRoadHighway_clicked();
+
+    void on_btnEnactLaw_clicked();
 
 private:
 

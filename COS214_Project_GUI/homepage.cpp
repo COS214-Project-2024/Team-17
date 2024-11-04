@@ -12,6 +12,8 @@
 
 #include <QTimer>
 
+#include "textbrowserstream.h"
+
 QVector<DraggableFrame *> buildings;
 QVector<DraggableRoad *> roads;
 
@@ -153,6 +155,11 @@ HomePage::HomePage(QWidget *parent)
     ui->spnRoadMainSteel->setValue(BuildingRequirements::mainRoadSteelCost);
     ui->spnRoadHighwaySteel->setValue(BuildingRequirements::highwaySteelCost);
 
+    TextBrowserStream* textStream;
+    std::streambuf* oldCoutBuffer;
+    textStream = new TextBrowserStream(ui->tbConsoleOut);
+    oldCoutBuffer = std::cout.rdbuf(textStream);
+
 
     timer = new QTimer(this);
 
@@ -181,8 +188,6 @@ void HomePage::CreateBuilding(QString buildingType, Building* link)
     frame->setFrameShape(QFrame::Box);  // Optional: set frame shape
     frame->setLineWidth(2);  // Optional: set border width
     frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
-
-    mediator->registerBuilding(link);
 
     BuildingType = new QLabel(frame);
     BuildingType->setText(buildingType);
@@ -218,6 +223,8 @@ void HomePage::on_btnBuildBuilding_clicked()
 {
     ui->frmEditBuildingPos->hide();
     ui->frmInfo->show();
+    frame->link->setXCoordinate(frame->x());
+    frame->link->setYCoordinate(frame->y());
     frame->editable=false;
     frame=nullptr;
     ui->tabBuildCity->setEnabled(1);
@@ -247,7 +254,7 @@ void HomePage::on_spnBuildingEditY_valueChanged(int arg1)
 void HomePage::on_btnCancelBuilding_clicked()
 {
     frame->setVisible(false);
-    frame->deleteLater();
+    // frame->deleteLater();
     buildings.removeOne(frame);
     ui->scAreaMainMap->removeFromBuildings(frame);
     ui->frmEditBuildingPos->hide();
@@ -283,7 +290,7 @@ void HomePage::deleteBuilding(DraggableFrame* deleteMe){
     deleteMe->setVisible(false);
     buildings.removeOne(deleteMe);
     ui->scAreaMainMap->removeFromBuildings(deleteMe);
-    deleteMe->deleteLater();
+    // deleteMe->deleteLater();
     ui->frmEditBuildingPos->hide();
 }
 
@@ -726,7 +733,7 @@ void HomePage::deleteRoad(DraggableRoad* deleteMe){
     deleteMe->setVisible(false);
     roads.removeOne(deleteMe);
     ui->scAreaMainMap->removeFromRoads(deleteMe);
-    deleteMe->deleteLater();
+    // deleteMe->deleteLater();
     ui->frmEditRoadPos->hide();
 }
 
@@ -734,29 +741,54 @@ void HomePage::deleteRoad(DraggableRoad* deleteMe){
 void HomePage::on_btnRoadRes_clicked()
 {
     type="Res";
-    CreateRoad(type, nullptr);
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkRoadRequirements("Residential")){
+        CreateRoad(type, nullptr);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Residential Street");
+        msgBox.exec();
+    }
 }
 
 void HomePage::on_btnRoadMain_clicked()
 {
     type="Main";
-    CreateRoad(type, nullptr);
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkRoadRequirements("Main")){
+        CreateRoad(type, nullptr);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Main Road");
+        msgBox.exec();
+    }
 }
 
 void HomePage::on_btnRoadHighway_clicked()
 {
     type="Highway";
-    CreateRoad(type, nullptr);
-    ui->tabBuildCity->setEnabled(0);
+    if(BuildingRequirements::checkRoadRequirements("Highway")){
+        CreateRoad(type, nullptr);
+        ui->tabBuildCity->setEnabled(0);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Highway");
+        msgBox.exec();
+    }
 }
 
 
 void HomePage::on_btnBuildRoad_clicked()
 {
+    int input1 = road->x()+road->width();
+    int input2 = road->y()+road->height();
+
     if(type=="Res"){
-        RoadComponent *residentialStreet = new RoadsComposite(road->x(), 0, road->y(), 0, "residential");
+
+        RoadComponent *residentialStreet = new RoadsComposite(road->x(), road->y(), input1, input2, "residential");
         if(road->connectedRoad!=nullptr){
             residentialStreet->addConnection(road->connectedRoad, 0);
             cout<<"connection added"<<endl;
@@ -764,7 +796,7 @@ void HomePage::on_btnBuildRoad_clicked()
         road->setLink(residentialStreet);
     }
     else if(type=="Main"){
-        RoadComponent *mainRoad = new RoadsComposite(road->x(), 0, road->y(), 0, "main");
+        RoadComponent *mainRoad = new RoadsComposite(road->x(), road->y(), input1, input2, "main");
         road->setLink(mainRoad);
         if(road->connectedRoad!=nullptr){
             mainRoad->addConnection(road->connectedRoad, 0);
@@ -772,7 +804,7 @@ void HomePage::on_btnBuildRoad_clicked()
         }
     }
     else if(type=="Highway"){
-        RoadComponent *highway = new RoadsComposite(road->x(), 0, road->y(), 0, "highway");
+        RoadComponent *highway = new RoadsComposite(road->x(), road->y(), input1, input2, "highway");
         road->setLink(highway);
         if(road->connectedRoad!=nullptr){
             highway->addConnection(road->connectedRoad, 0);
@@ -796,7 +828,7 @@ void HomePage::on_btnBuildRoad_clicked()
 void HomePage::on_btnCancelRoad_clicked()
 {
     road->setVisible(false);
-    road->deleteLater();
+    // road->deleteLater();
     roads.removeOne(road);
     ui->scAreaMainMap->removeFromRoads(road);
     ui->frmEditRoadPos->hide();
@@ -874,11 +906,11 @@ void HomePage::updateInfoScreen()
 
     ui->spnPopulation->setValue(Resources::getPopulation());
 
-    int Happiness = 0;
-    if(Resources::getPopulation()!=0){
-        Happiness = floor(static_cast<double>(Resources::getHappiness())/Resources::getPopulation())*20;
-    }
-    ui->progHappiness->setValue(Happiness);
+    int happiness = Resources::getHappiness();
+
+    happiness = clamp(happiness, 0, 100);
+
+    ui->progHappiness->setValue(happiness);
 
     double Electricity = 0;
     if(Resources::getElectricityGenerated()!=0){
@@ -937,7 +969,18 @@ void HomePage::updateCityGrowth()
     }
 }
 
+void HomePage::updateCityTax()
+{
+    if (mediator)
+    {
+        cout << "Collecting taxes..." << endl
+             << endl;
+        // mediator->collectTaxes();
+    }
+}
+
 void HomePage::Tick(){
+    ui->tbConsoleOut->clear();
     Resources::addMoney(Resources::getIncome());
     Resources::addWood(Resources::getWoodPerTick());
     Resources::addConcrete(Resources::getConcretePerTick());
@@ -954,3 +997,23 @@ void HomePage::Tick(){
 
 
 #endif // HOMEPAGE_CPP
+
+void HomePage::on_btnEnactLaw_clicked()
+{
+    if(ui->cmbLawType->currentIndex()==0){
+        Policy::setMoneyLaw(!Policy::getMoneyLaw());
+    }
+    else if(ui->cmbLawType->currentIndex()==1){
+        Policy::setHappinessLaw(!Policy::getHappinessLaw());
+    }
+    else if(ui->cmbLawType->currentIndex()==2){
+        Policy::setBusLaw(!Policy::getBusLaw());
+    }
+    else if(ui->cmbLawType->currentIndex()==3){
+        Policy::setNoTaxLaw(!Policy::getNoTaxLaw());
+    }
+    else if(ui->cmbLawType->currentIndex()==4){
+        Policy::setServicesLaw(!Policy::getServicesLaw());
+    }
+}
+

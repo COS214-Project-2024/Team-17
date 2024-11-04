@@ -25,10 +25,10 @@ public:
     }
     ~DraggableFrame(){
         if(link!=nullptr){
-            delete link;
+            // delete link;
         }
         if(utilLink!=nullptr){
-            delete utilLink;
+            // delete utilLink;
         }
 
     }
@@ -37,6 +37,7 @@ public:
     bool editMode = false;
     bool showingInfo = false;
     QFrame *frame;
+    Building *link;
 
 protected:
     void mousePressEvent(QMouseEvent *event) override {
@@ -205,6 +206,5 @@ private:
     QSpinBox *EditXpos;
     QSpinBox *EditYpos;
     HomePage *homePage;
-    Building *link;
     UtilityManager *utilLink;
 };
