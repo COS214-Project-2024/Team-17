@@ -18,7 +18,7 @@ TEST(PopulationGrowth, IncreasePopulation)
 
     // ASSERT_EQ(Resources::getPopulation(), 2);
 
-    delete building;
+    // delete building;
     delete mediator;
 }
 
@@ -39,10 +39,11 @@ TEST(PopulationGrowth, DecreasePopulation)
     citizen->fired();
     citizen->fired();
     citizen->fired();
+    citizen->fired();
 
     ASSERT_EQ(Resources::getPopulation(), 0);
 
-    delete building;
+    // delete building;
     delete mediator;
 }
 
