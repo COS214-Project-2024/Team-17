@@ -66,7 +66,7 @@ protected:
                     PopUpY = y()+height();
                 }
 
-                frame->setGeometry(PopUpX, PopUpY, 150, 70);
+                frame->setGeometry(PopUpX, PopUpY, 155, 70);
 
 
 
@@ -77,7 +77,7 @@ protected:
                 // Create the labels within the frame
 
                 QLabel *labelElectricityUsage = new QLabel("Electricity usage: " + QString::number(link->getElectricityUsage()) + " per tick", frame);
-                labelElectricityUsage->setGeometry(10, 10, 130, 16);
+                labelElectricityUsage->setGeometry(10, 10, 140, 16);
 
                 QLabel *labelIncome = new QLabel("Water usage: " + QString::number(link->getWaterUsage()) + " per tick", frame);
                 labelIncome->setGeometry(10, 30, 130, 16);

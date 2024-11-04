@@ -39,10 +39,10 @@ HomePage::HomePage(QWidget *parent)
     city->addBlock(new CityBlock());
     this->gov.addCity(*city);
 
-    Resources::addMoney(1000000);
-    Resources::addWood(1000000);
-    Resources::addConcrete(1000000);
-    Resources::addSteel(1000000);
+    Resources::addMoney(10000);
+    Resources::addWood(200);
+    Resources::addConcrete(200);
+    Resources::addSteel(200);
     ui->setupUi(this);
     ui->frmEditBuildingPos->hide();
     ui->frmEditRoadPos->hide();
@@ -223,8 +223,10 @@ void HomePage::on_btnBuildBuilding_clicked()
 {
     ui->frmEditBuildingPos->hide();
     ui->frmInfo->show();
-    frame->link->setXCoordinate(frame->x());
-    frame->link->setYCoordinate(frame->y());
+    if(frame->link!=nullptr){
+        frame->link->setXCoordinate(frame->x());
+        frame->link->setYCoordinate(frame->y());
+    }
     frame->editable=false;
     frame=nullptr;
     ui->tabBuildCity->setEnabled(1);
@@ -530,7 +532,7 @@ void HomePage::on_btnLandMonument_clicked()
 
 void HomePage::on_btnLandCCenter_clicked()
 {
-    if(BuildingRequirements::checkLandmarkRequirements("Community Center")){
+    if(BuildingRequirements::checkLandmarkRequirements("CommunityCenter")){
         FactoryBuilding *factory = new FactLandmarks();
         Landmark *newBuilding = factory->createLandmark("Community Center");
         CreateBuilding("Community Center", newBuilding);
@@ -989,9 +991,10 @@ void HomePage::Tick(){
     updateTransport();
     updateJobs();
     updateCityGrowth();
+    updateCityTax();
 
     updateInfoScreen();
-    timer->start(100);
+    timer->start(10000);
 }
 
 
