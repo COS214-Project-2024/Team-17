@@ -2,7 +2,7 @@
 #define UNDERCONSTRUCTION_H
 
 #include "../RoadState.h"
-
+#include <string>
 /**
  * @class UnderConstruction
  * @brief Represents a road state indicating that the road is under construction.
