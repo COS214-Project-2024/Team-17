@@ -343,7 +343,7 @@ int main()
     // cout << YELLOW << "==============================" << RESET << endl;
 
     Game game;
-    game.start();
+    // game.start();
     return 0;
 }
 

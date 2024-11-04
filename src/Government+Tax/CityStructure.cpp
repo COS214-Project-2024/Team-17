@@ -35,6 +35,14 @@ void CityStructure::accept(TaxAndBudgetVisitor *visitor)
  */
 void CityStructure::addBlock(CityBlock *block)
 {
+  // check if block is already in the list
+  for (auto b : blocks)
+  {
+    if (b == block)
+    {
+      return;
+    }
+  }
   this->blocks.push_back(block);
 }
 /**
@@ -69,9 +77,13 @@ std::string CityStructure::getName()
 
 CityStructure::~CityStructure()
 {
-  // for (CityBlock *block : blocks)
-  // {
-  //   delete block;
-  // }
+  std::cout << RED << "DELETING CITY STRUCTURE " << Name << blocks.size() << RESET << std::endl;
+
+  while (!blocks.empty())
+  {
+    delete blocks.back();
+    blocks.pop_back();
+  }
+
   blocks.clear();
 }
