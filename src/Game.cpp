@@ -26,14 +26,14 @@ Game::Game()
   this->mediator = CityCentralMediator::getInstance();
   CityStructure *city = new CityStructure("Pretoria");//Need to deallocate
   city->addBlock(new CityBlock());
-  this->gov.addCity(*city);
+  this->gov.addCity(*city);// Might need to deallocate aka .remove city?
   mediator->registerBuilding(new ResFlat());
   mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
   initRoadGrid();
 }
 
-Game::~Game()
+Game::~Game()//Need to deallocate 28 pointers
 {
   if(mediator){
     delete mediator;
@@ -246,7 +246,7 @@ int Game::promptUserAction()
             std::cin >> amount;
             std::cout << "Enter department for allocation: ";
             std::cin >> department;
-            TaxCommand *command = new AllocateTaxCommand(&this->gov, amount, department);
+            TaxCommand *command = new AllocateTaxCommand(&this->gov, amount, department);//Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added allocation command: " << name << "\n";
           }
@@ -255,7 +255,7 @@ int Game::promptUserAction()
             std::string name;
             std::cout << "Enter name for the collection command: ";
             std::cin >> name;
-            TaxCommand *command = new CollectTaxCommand(&this->gov);
+            TaxCommand *command = new CollectTaxCommand(&this->gov);//Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added collection command: " << name << "\n";
           }
@@ -269,7 +269,7 @@ int Game::promptUserAction()
             std::cin >> rate;
             std::cout << "Enter category for the rate: ";
             std::cin >> category;
-            TaxCommand *command = new SetTaxRateCommand(&this->gov, rate, category);
+            TaxCommand *command = new SetTaxRateCommand(&this->gov, rate, category);//Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added rate command: " << name << "\n";
           }
@@ -388,8 +388,8 @@ void Game::initBuildingOptions()
 
 void Game::initRoadGrid()
 {
-  RoadComponent *horizRoads[20][19];
-  RoadComponent *vertRoads[19][20];
+  RoadComponent *horizRoads[20][19];//Need to deallocate
+  RoadComponent *vertRoads[19][20];//Need to deallocate
 
   // Create horizontal roads
   for (int y = 0; y < 20; y++)
