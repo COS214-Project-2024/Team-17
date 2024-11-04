@@ -9,15 +9,19 @@
 #include "./Citizens/CityCentralMediator.h"
 #include "./Buildings/ResFlat.h"
 #include "./Buildings/ResHouse.h"
+#include "./Buildings/FactoryBuilding.h"
+#include "./Buildings/FactResidential.h"
+#include "./Buildings/FactCommercial.h"
+#include "./Buildings/FactIndustrial.h"
+#include "./Buildings/FactLandmarks.h"
+#include "./Buildings/FactService.h"
 #include "resources.h"
 #include "Policy.h"
-/**
- * @class Game
- * @brief Represents the main game logic and management for the simulation.
- *
- * The Game class is responsible for initializing and running the simulation,
- * managing government functions, tax collection, and updates to city dynamics.
- */
+#include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
+
 class Game
 {
 public:
@@ -35,7 +39,7 @@ public:
 private:
     Government gov;
     TaxManager taxManager;
-    CityCentralMediator* mediator = nullptr;
+    CityCentralMediator *mediator = nullptr;
     bool running;
     int counter = 0;
     /**
@@ -50,18 +54,27 @@ private:
      * This method adjusts the job market based on city growth and citizen needs.
      */
     void updateJobs();
-    /**
-     * @brief Updates the growth metrics of the city.
-     * 
-     * This method manages population and infrastructure growth within the simulation.
-     */
-    void updateCityGrowth();
-    /**
-     * @brief Updates the city's tax system based on current economic conditions.
-     * 
-     * This method collects taxes and adjusts tax rates as necessary.
-     */
+    void citizensDoSomething();
     void updateCityTax();
+    void citizensGoToWork();
+    void citizensGoHome();
+    void updateCityGrowth();
+    int promptUserAction();
+    bool isValidNumber(const string &input, int &number);
+    bool intersectionOccupied[20][20] = {false}; // Tracks occupied intersections
+    std::pair<int, int> findNextFreeIntersection();
+    int numBuildings = 0;
+    const int MAX_BUILDINGS = 380; // 20x19 intersections
+
+    struct BuildingOption
+    {
+        string type;
+        vector<string> subtypes;
+    };
+    void createBuilding();
+    vector<BuildingOption> buildingOptions;
+    void initBuildingOptions();
+    void initRoadGrid();
 };
 
 #endif // GAME_H

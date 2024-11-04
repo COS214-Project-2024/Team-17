@@ -168,6 +168,8 @@ public:
 
 	void citizensStartWork();
 
+	void updateJobs();
+
 	void citizensEndWork();
 
 	~CityCentralMediator();

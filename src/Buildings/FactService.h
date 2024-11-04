@@ -5,6 +5,7 @@
 #include "ServEducation.h"
 #include "ServSecurity.h"
 #include "ServEntertainment.h"
+#include "ServHospital.h"
 
 /**
  * @class FactService
