@@ -35,10 +35,12 @@ Game::Game()
 
 Game::~Game()
 {
-  if(mediator){
-    delete mediator;
-  }
+    // Delete mediator if exists
+    if (mediator) {
+        delete mediator;
+    }
 }
+
 
 std::string toLowerCase(const std::string &str)
 {
