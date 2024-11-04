@@ -1,3 +1,14 @@
+/**
+ * @file AllocateTaxCommand.h
+ * @brief Header file for the AllocateTaxCommand class, which allocates tax funds to a specified department.
+ * @details This file defines the AllocateTaxCommand class, inheriting from TaxCommand, to allocate a specified
+ * amount of tax funds to a department within the government structure. The command encapsulates the logic
+ * for tax allocation, enhancing modularity in the Government's fiscal operations.
+ * @see TaxCommand for the base command interface this class inherits.
+ * @see Government for the entity that executes this command to manage departmental funds.
+ * @see CityStructure for the city-level structure that receives the tax allocation.
+ * @author WORKONMYMACHINE TEAM
+ */
 #ifndef ALLOCATETAXCOMMAND_H
 #define ALLOCATETAXCOMMAND_H
 

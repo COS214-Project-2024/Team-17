@@ -1,3 +1,14 @@
+/**
+ * @file BudgetPolicy.h
+ * @brief Header file for the BudgetPolicy class, defining the base interface for city budget policies.
+ * @details This file declares the BudgetPolicy class, an abstract base class for creating budget allocation
+ * policies. Derived classes implement specific strategies for allocating a budget across different city
+ * departments, allowing flexible policy implementations.
+ * @see CityStructure for the class receiving the budget allocations.
+ * @see Government for the entity that applies these policies in city management.
+ * @note Derived policies include HealthPolicy, InfrastructureBudgetPolicy, and others for targeted budget strategies.
+ * @author WORKONMYMACHINE TEAM
+ */
 #ifndef BUDGETPOLICY_H
 #define BUDGETPOLICY_H
 

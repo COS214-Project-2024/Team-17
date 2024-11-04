@@ -1,3 +1,15 @@
+/**
+ * @file CitizenTaxAB.h
+ * @brief Header file for the CitizenTaxAB class, which calculates tax for citizens and buildings.
+ * @details This file defines the CitizenTaxAB class, implementing the TaxAndBudgetVisitor interface
+ * to compute taxes for both Citizen and Building objects. The class provides a concrete visitor that
+ * allows differentiated tax calculations for various city entities.
+ * @see TaxAndBudgetVisitor for the base visitor interface this class implements.
+ * @see Citizen for the class representing individual citizens.
+ * @see Building for the class representing business buildings within the city.
+ * @note This visitor is utilized in the Government tax collection process to aggregate city income.
+ * @author WORKONMYMACHINE TEAM
+ */
 #ifndef CITIZENTAXAB_H
 #define CITIZENTAXAB_H
 

@@ -1,3 +1,11 @@
+/**
+ * @file CityStructure.h
+ * @brief Header file for the CityStructure class, representing a city with blocks and departments for budget allocation.
+ * @details This file defines the CityStructure class, which models a city’s structure, including its blocks and departments.
+ * It supports tax processing and budget allocation to various departments, integrating with visitor classes for tax and budget management.
+ * The CityStructure class interacts with Government and policy classes to apply city-specific budgeting rules.
+ * @author WORKONMYMACHINE TEAM
+ */
 #ifndef CITYSTRUCTURE_H
 #define CITYSTRUCTURE_H
 

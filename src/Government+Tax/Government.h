@@ -1,3 +1,11 @@
+/**
+ * @file Government.h
+ * @brief Header file for the Government class, which manages tax collection and budget allocation for cities.
+ * @details This file defines the Government class, responsible for collecting taxes from various city structures,
+ * managing budget policies, and allocating funds to different departments within each city.
+ * The class allows setting specific tax rates for categories and applying budget policies for optimal resource distribution.
+ * @author WORKONMYMACHINE TEAM
+ */
 #ifndef GOVERNMENT_H
 #define GOVERNMENT_H
 
