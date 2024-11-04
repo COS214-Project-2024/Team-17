@@ -539,9 +539,8 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 		auto it = std::find(citizens.begin(), citizens.end(), citizen);
 		if (it != citizens.end())
 		{
-			std::cout << GREEN << "Citizen " << citizen->getName() << " removed from city" << RESET << std::endl;
+			std::cout << YELLOW << "Citizen " << citizen->getName() << " removed from city" << RESET << std::endl;
 			citizens.erase(it);
-			std::cout << "Citizen count: " << citizens.size() << std::endl;
 		}
 		delete citizen;
 	}
