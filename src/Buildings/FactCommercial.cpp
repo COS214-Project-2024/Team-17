@@ -1,5 +1,12 @@
 #include "FactCommercial.h"
-
+/**
+ * @class FactCommercial
+ * @brief Factory class for creating various commercial buildings.
+ *
+ * This class implements a factory pattern to create instances of different types of commercial buildings,
+ * such as malls, shops, and offices. It also provides empty implementations for residential,
+ * industrial, landmark, and service buildings.
+ */
 FactCommercial::FactCommercial() {
     cout << BLACK << "\t->Commercial factory created" << RESET << endl;
 }
