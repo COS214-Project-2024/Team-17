@@ -1,0 +1,1 @@
+Originally we had an issue uploading the entire Doxygen folder, so we had to compress it.
