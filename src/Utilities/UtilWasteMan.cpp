@@ -10,6 +10,7 @@ UtilWasteMan::UtilWasteMan() {
     std::cout << "Waste Dump Being Built!" << std::endl;
     type = "Waste Dump";
     operational = false; // constructing
+//Recources:
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);

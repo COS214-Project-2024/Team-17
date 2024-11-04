@@ -10,6 +10,7 @@ UtilSewageSyst::UtilSewageSyst() {
     std::cout << "Sewage System Being Built!" << std::endl;
     type = "Sewage System";
     operational = false; // constructing
+//Recources:
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
