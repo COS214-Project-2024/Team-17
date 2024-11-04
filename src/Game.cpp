@@ -21,7 +21,7 @@ int time_of_day = 0;
 
 Game::Game()
 {
-  // Resources::removePopulation(Resources::getPopulation());
+  Resources::removePopulation(Resources::getPopulation());
   Resources::addMoney(86000);
   Resources::addWood(1000);
   Resources::addConcrete(4800);
