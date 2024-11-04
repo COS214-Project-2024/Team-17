@@ -7,10 +7,11 @@
 #include <algorithm>
 #include "./Transport/TransportInclude.h"
 
-static constexpr int GAME_SPEED = 0;                // millisecond timeout
+static constexpr int GAME_SPEED = 20;               // millisecond timeout
 static constexpr int TURN_INTERVAL = 5;             // 5 minutes per turn
 static constexpr int TRANSPORT_UPDATE_INTERVAL = 1; // Every turn (5 minutes)
 static constexpr int CITIZEN_UPDATE_INTERVAL = 2;   // Every 10 minutes (2 turns)
+static constexpr int CITIZEN_GROWTH_TIME = 7;       // 8 AM
 static constexpr int JOB_UPDATE_TIME = 8;           // 8 AM
 static constexpr int WORK_START_TIME = 9;           // 9 AM
 static constexpr int WORK_END_TIME = 17;            // 5 PM
@@ -41,6 +42,7 @@ std::string toLowerCase(const std::string &str)
 
 void Game::updateTransport()
 {
+  std::cout << BLACK << "Simulating traffic..." << RESET << std::endl;
   if (mediator)
   {
     mediator->updateBuses();
@@ -49,14 +51,19 @@ void Game::updateTransport()
 
 void Game::updateJobs()
 {
+  cout << "Updating jobs for " << Resources::getPopulation() << " citzens:" << endl;
   if (mediator)
   {
     mediator->updateJobs();
   }
+  cout << GREEN << "Jobs updated!" << RESET << endl
+       << endl;
 }
 
 void Game::citizensGoToWork()
 {
+  cout << GREEN << "Notified " << Resources::getPopulation() << " citzens that it's time for work!" << RESET << endl
+       << endl;
   if (mediator)
   {
     mediator->citizensStartWork();
@@ -65,6 +72,8 @@ void Game::citizensGoToWork()
 
 void Game::citizensGoHome()
 {
+  cout << GREEN << "Notified " << Resources::getPopulation() << " citzens that it's time to go home!" << RESET << endl
+       << endl;
   if (mediator)
   {
     mediator->citizensEndWork();
@@ -75,6 +84,15 @@ void Game::updateCityGrowth()
 {
   if (mediator)
   {
+    mediator->handlePopulationGrowth();
+  }
+}
+
+void Game::citizensDoSomething()
+{
+  std::cout << BLACK << "Simulating citizen activity..." << RESET << std::endl;
+  if (mediator)
+  {
     mediator->citizensDoSomething();
   }
 }
@@ -83,12 +101,13 @@ void Game::updateCityTax()
 {
   if (mediator)
   {
-    cout << "Collecting taxes..." << endl;
+    cout << "Collecting taxes..." << endl
+         << endl;
     // mediator->collectTaxes();
   }
 }
 
-void Game::promptUserAction()
+int Game::promptUserAction()
 {
   std::string input;
   bool paused = false;
@@ -103,7 +122,7 @@ void Game::promptUserAction()
 
     if (input == "skip")
     {
-      break;
+      return 1;
     }
     else if (input == "quit")
     {
@@ -262,7 +281,7 @@ void Game::promptUserAction()
         }
       }
     }
-    else if ("build")
+    else if (input == "build")
     {
       createBuilding();
     }
@@ -271,24 +290,28 @@ void Game::promptUserAction()
       std::cout << "Invalid main action. Please try again.\n";
     }
   }
+  return 0;
 }
 
 void Game::start()
 {
   running = true;
   counter = 0;
+  bool skip = false;
+  // clear screen
+  std::cout << "\033[2J\033[1;1H";
+  cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
+       << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
+       << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
+       << "\t     ┛                 " << RESET << endl
+       << endl;
   while (running)
   {
     // clear output
-    std::cout << "\033[2J\033[1;1H";
-    cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
-         << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
-         << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
-         << "\t     ┛                 " << RESET << endl
-         << endl;
-
-    // Prompt user for action at the start of each turn
-    promptUserAction();
+    if (!skip)
+    {
+      skip = promptUserAction() == 1;
+    }
 
     // Update transport every turn (5 minutes)
     if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
@@ -299,29 +322,39 @@ void Game::start()
     // Update citizens every 10 minutes (2 turns)
     if (counter % CITIZEN_UPDATE_INTERVAL == 0)
     {
-      updateCityGrowth();
+      citizensDoSomething();
     }
 
     // Specific time-based events
+    if (time_of_day == CITIZEN_GROWTH_TIME)
+    {
+      std::cout << "======= City Growth =======" << std::endl;
+      updateCityGrowth();
+      skip = false;
+    }
     if (time_of_day == JOB_UPDATE_TIME)
     {
       std::cout << "======= Jobs Updating =======" << std::endl;
       updateJobs();
+      skip = false;
     }
     if (time_of_day == WORK_START_TIME)
     {
       std::cout << "======= Citizens Going to Work =======" << std::endl;
       citizensGoToWork();
+      skip = false;
     }
     if (time_of_day == WORK_END_TIME)
     {
       std::cout << "======= Citizens Going Home =======" << std::endl;
       citizensGoHome();
+      skip = false;
     }
     if (time_of_day == TAX_COLLECTION_TIME)
     {
       std::cout << "======= Tax Collected =======" << std::endl;
       updateCityTax();
+      skip = false;
     }
 
     // Increment time of day and counter

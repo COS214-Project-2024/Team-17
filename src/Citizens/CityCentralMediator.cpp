@@ -496,8 +496,6 @@ void CityCentralMediator::handlePopulationGrowth()
 
 	std::cout << "New population: " << newPop << std::endl;
 
-	Resources::addPopulation(newPop);
-
 	for (int i = 0; i < newPop; i++)
 	{
 		std::cout << BLUE << "Creating a new citizen!" << RESET << std::endl;
