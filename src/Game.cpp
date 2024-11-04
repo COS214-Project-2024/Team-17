@@ -32,6 +32,13 @@ Game::Game()
   initRoadGrid();
 }
 
+std::string toLowerCase(const std::string &str)
+{
+  std::string lowerStr = str;
+  std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
+  return lowerStr;
+}
+
 void Game::updateTransport()
 {
   if (mediator)
@@ -264,13 +271,6 @@ void Game::promptUserAction()
       std::cout << "Invalid main action. Please try again.\n";
     }
   }
-}
-
-std::string toLowerCase(const std::string &str)
-{
-  std::string lowerStr = str;
-  std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
-  return lowerStr;
 }
 
 void Game::start()
