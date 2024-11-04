@@ -3,6 +3,7 @@
 
 #include "CityMediator.h"
 #include <string>
+#include <memory> // Include for smart pointers
 
 class TaxAndBudgetVisitor;
 
@@ -16,15 +17,14 @@ class TaxAndBudgetVisitor;
  */
 class CityBlock
 {
-
 protected:
-    CityMediator *mediator = nullptr; ///< Pointer to the CityMediator managing this block.
+    std::shared_ptr<CityMediator> mediator; ///< Smart pointer to the CityMediator managing this block.
 
 public:
     /**
      * @brief Constructor for the CityBlock class.
      */
-    CityBlock();
+    CityBlock() : mediator(nullptr) {} // Initialize mediator to nullptr
 
     /**
      * @brief Accepts a TaxAndBudgetVisitor to perform operations on this city block.

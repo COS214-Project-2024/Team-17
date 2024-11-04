@@ -591,11 +591,11 @@ void CityCentralMediator::handleCitizenEmigration(Citizen *citizen)
 double CityCentralMediator::accept(TaxAndBudgetVisitor *visitor)
 {
 	double total = 0;
-	for (Building *building : buildings)
+	for (auto building : buildings)
 	{
 		total += visitor->visit(building);
 	}
-	for (Citizen *citizen : citizens)
+	for (auto citizen : citizens)
 	{
 		total += visitor->visit(citizen);
 	}
