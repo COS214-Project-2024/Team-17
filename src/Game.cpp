@@ -410,45 +410,45 @@ void Game::start()
     // Update transport every turn (5 minutes)
     if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
     {
-      // updateTransport();
+      updateTransport();
     }
 
     // Update citizens every 10 minutes (2 turns)
     if (counter % CITIZEN_UPDATE_INTERVAL == 0)
     {
-      // citizensDoSomething();
+      citizensDoSomething();
     }
 
     // Specific time-based events
     if (time_of_day == CITIZEN_GROWTH_TIME)
     {
       std::cout << "======= City Growth =======" << std::endl;
-      // updateCityGrowth();
+      updateCityGrowth();
       skip = false;
     }
     if (time_of_day == JOB_UPDATE_TIME)
     {
       std::cout << "======= Jobs Updating =======" << std::endl;
-      // updateJobs();
+      updateJobs();
       skip = false;
     }
     if (time_of_day == WORK_START_TIME)
     {
       std::cout << "======= Citizens Going to Work =======" << std::endl;
-      // citizensGoToWork();
+      citizensGoToWork();
       skip = false;
     }
     if (time_of_day == WORK_END_TIME)
     {
       std::cout << "======= Citizens Going Home =======" << std::endl;
-      // citizensGoHome();
-      // updateResources();
+      citizensGoHome();
+      updateResources();
       skip = false;
     }
     if (time_of_day == TAX_COLLECTION_TIME)
     {
       std::cout << "======= Tax Collected =======" << std::endl;
-      // updateCityTax();
+      updateCityTax();
       skip = false;
     }
 
