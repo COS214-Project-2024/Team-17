@@ -7,12 +7,14 @@
 #include <algorithm>
 #include "./Transport/TransportInclude.h"
 
-static constexpr int GAME_SPEED = 0;                    // millisecond timeout
-static constexpr int TRANSPORT_UPDATE_INTERVAL = 1;     // Every 10 minutes
-static constexpr int CONSTRUCTION_UPDATE_INTERVAL = 60; // Every 6 hours
-static constexpr int JOB_UPDATE_INTERVAL = 6;           // Every 1 hour
-static constexpr int CITY_GROWTH_INTERVAL = 240;        // Every 1 day
-static constexpr int CITY_TAX_INTERVAL = 240;           // Every 1 day
+static constexpr int GAME_SPEED = 0;                // millisecond timeout
+static constexpr int TURN_INTERVAL = 5;             // 5 minutes per turn
+static constexpr int TRANSPORT_UPDATE_INTERVAL = 1; // Every turn (5 minutes)
+static constexpr int CITIZEN_UPDATE_INTERVAL = 2;   // Every 10 minutes (2 turns)
+static constexpr int JOB_UPDATE_TIME = 8;           // 8 AM
+static constexpr int WORK_START_TIME = 9;           // 9 AM
+static constexpr int WORK_END_TIME = 17;            // 5 PM
+static constexpr int TAX_COLLECTION_TIME = 18;      // 6 PM
 int time_of_day = 0;
 
 Game::Game()
@@ -42,59 +44,44 @@ void Game::updateJobs()
 {
   if (mediator)
   {
-    if (time_of_day == 8)
-    {
-      mediator->citizensStartWork();
-    }
-    if (time_of_day == 17)
-    {
-      mediator->citizensEndWork();
-    }
+    mediator->updateJobs();
   }
 }
 
-std::pair<int, int> Game::findNextFreeIntersection()
+void Game::citizensGoToWork()
 {
-  for (int y = 0; y < 20; y++)
+  if (mediator)
   {
-    for (int x = 0; x < 19; x++)
-    {
-      if (!intersectionOccupied[y][x])
-      {
-        intersectionOccupied[y][x] = true;
-        return {x * 100, y * 100}; // Return grid coordinates
-      }
-    }
+    mediator->citizensStartWork();
   }
-  return {-1, -1}; // No free spots
+}
+
+void Game::citizensGoHome()
+{
+  if (mediator)
+  {
+    mediator->citizensEndWork();
+  }
 }
 
 void Game::updateCityGrowth()
 {
   if (mediator)
   {
-    std::cout << "=======citizensDoSomething=======" << std::endl;
-
     mediator->citizensDoSomething();
-    std::cout << "=======handlePopulationGrowth=======" << std::endl;
-
-    mediator->handlePopulationGrowth();
-    std::cout << "=======updateSatisfaction=======" << std::endl;
-
-    mediator->updateCitizenSatisfaction();
-
-    std::cout << "all done" << std::endl;
   }
 }
 
-std::string toLowerCase(const std::string &str)
+void Game::updateCityTax()
 {
-  std::string lowerStr = str;
-  std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
-  return lowerStr;
+  if (mediator)
+  {
+    cout << "Collecting taxes..." << endl;
+    // mediator->collectTaxes();
+  }
 }
 
-void Game::updateCityTax()
+void Game::promptUserAction()
 {
   std::string input;
   bool paused = false;
@@ -279,10 +266,69 @@ void Game::updateCityTax()
   }
 }
 
-bool Game::isValidNumber(const string &input, int &number)
+std::string toLowerCase(const std::string &str)
 {
-  stringstream ss(input);
-  return (ss >> number) && ss.eof();
+  std::string lowerStr = str;
+  std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
+  return lowerStr;
+}
+
+void Game::start()
+{
+  running = true;
+  counter = 0;
+  while (running)
+  {
+    // clear output
+    std::cout << "\033[2J\033[1;1H";
+
+    // Prompt user for action at the start of each turn
+    promptUserAction();
+
+    // Update transport every turn (5 minutes)
+    if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
+    {
+      updateTransport();
+    }
+
+    // Update citizens every 10 minutes (2 turns)
+    if (counter % CITIZEN_UPDATE_INTERVAL == 0)
+    {
+      updateCityGrowth();
+    }
+
+    // Specific time-based events
+    if (time_of_day == JOB_UPDATE_TIME)
+    {
+      std::cout << "======= Jobs Updating =======" << std::endl;
+      updateJobs();
+    }
+    if (time_of_day == WORK_START_TIME)
+    {
+      std::cout << "======= Citizens Going to Work =======" << std::endl;
+      citizensGoToWork();
+    }
+    if (time_of_day == WORK_END_TIME)
+    {
+      std::cout << "======= Citizens Going Home =======" << std::endl;
+      citizensGoHome();
+    }
+    if (time_of_day == TAX_COLLECTION_TIME)
+    {
+      std::cout << "======= Tax Collected =======" << std::endl;
+      updateCityTax();
+    }
+
+    // Increment time of day and counter
+    time_of_day++;
+    if (time_of_day >= 24)
+    {
+      time_of_day = 0;
+    }
+    counter++;
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(GAME_SPEED));
+  }
 }
 
 void Game::initBuildingOptions()
@@ -480,45 +526,24 @@ void Game::createBuilding()
   }
 }
 
-void Game::start()
+std::pair<int, int> Game::findNextFreeIntersection()
 {
-  running = true;
-  counter = 0;
-  while (running)
+  for (int y = 0; y < 20; y++)
   {
-    // clear output
-    std::cout << "\033[2J\033[1;1H";
-    // std::cout << "=======RUN=======" << std::endl;
-    if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
+    for (int x = 0; x < 19; x++)
     {
-      // std::cout << "updateTransport" << std::endl;
-
-      time_of_day++;
-      if (time_of_day > 24)
+      if (!intersectionOccupied[y][x])
       {
-        time_of_day = 0;
+        intersectionOccupied[y][x] = true;
+        return {x * 100, y * 100}; // Return grid coordinates
       }
-      updateTransport();
     }
-    if (counter % JOB_UPDATE_INTERVAL == 0)
-    {
-      // std::cout << "updateJobs" << std::endl;
-
-      updateJobs();
-    }
-    if (counter % CITY_GROWTH_INTERVAL == 0)
-    {
-      // std::cout << "updateCityGrowth" << std::endl;
-
-      updateCityGrowth();
-    }
-    if (counter % CITY_TAX_INTERVAL == 0)
-    {
-      // std::cout << "updateCityTax" << std::endl;
-
-      updateCityTax();
-    }
-    counter++;
-    std::this_thread::sleep_for(std::chrono::milliseconds(GAME_SPEED));
   }
+  return {-1, -1}; // No free spots
+}
+
+bool Game::isValidNumber(const string &input, int &number)
+{
+  stringstream ss(input);
+  return (ss >> number) && ss.eof();
 }

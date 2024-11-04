@@ -38,6 +38,9 @@ private:
     void updateJobs();
     void updateCityGrowth();
     void updateCityTax();
+    void citizensGoToWork();
+    void citizensGoHome();
+    void promptUserAction();
     bool isValidNumber(const string &input, int &number);
     bool intersectionOccupied[20][20] = {false}; // Tracks occupied intersections
     std::pair<int, int> findNextFreeIntersection();

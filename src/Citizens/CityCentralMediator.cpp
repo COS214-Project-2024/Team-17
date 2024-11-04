@@ -452,6 +452,14 @@ void CityCentralMediator::citizensStartWork()
 	}
 }
 
+void CityCentralMediator::updateJobs()
+{
+	for (auto c : citizens)
+	{
+		c->notifyChange("Update_Job");
+	}
+}
+
 void CityCentralMediator::citizensEndWork()
 {
 	for (auto c : citizens)

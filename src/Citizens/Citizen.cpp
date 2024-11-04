@@ -36,6 +36,8 @@ void Citizen::changeHappiness(int change)
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
 	name = CitizenNameGen::generateName();
+	workplace = nullptr;
+	home = nullptr;
 	this->mediator = CityCentralMediator::getInstance();
 	if (autoRegister)
 	{
@@ -565,16 +567,25 @@ double Citizen::getTax()
 
 Citizen::~Citizen()
 {
+	std::cout << "A\n";
 	scheduledForDeletion = true;
 	if (state != nullptr)
 	{
 		delete state;
 	}
+	std::cout << "B\n";
+
 	Resources::removePopulation(1);
+
+	std::cout << "C\n";
+
 	if (workplace != nullptr)
 	{
+		std::cout << RED << "Citizen " << name << " is quitting work" << RESET << std::endl;
 		workplace->notifyEmployeeLeft(this);
 	}
+
+	std::cout << "D\n";
 	if (home != nullptr)
 	{
 		std::cout << RED << "Citizen " << name << " is moving out of their home" << RESET << std::endl;
