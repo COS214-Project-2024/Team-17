@@ -281,6 +281,11 @@ void Game::start()
   {
     // clear output
     std::cout << "\033[2J\033[1;1H";
+    cout << YELLOW << "\t┏┓•     ┳┓  •┓ ┓      " << endl
+         << "\t┃ ┓╋┓┏  ┣┫┓┏┓┃┏┫┏┓┏┓  " << endl
+         << "\t┗┛┗┗┗┫  ┻┛┗┻┗┗┗┻┗ ┛   " << endl
+         << "\t     ┛                 " << RESET << endl
+         << endl;
 
     // Prompt user for action at the start of each turn
     promptUserAction();
