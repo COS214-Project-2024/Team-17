@@ -567,17 +567,13 @@ double Citizen::getTax()
 
 Citizen::~Citizen()
 {
-	std::cout << "A\n";
 	scheduledForDeletion = true;
 	if (state != nullptr)
 	{
 		delete state;
 	}
-	std::cout << "B\n";
 
 	Resources::removePopulation(1);
-
-	std::cout << "C\n";
 
 	if (workplace != nullptr)
 	{
@@ -585,7 +581,6 @@ Citizen::~Citizen()
 		workplace->notifyEmployeeLeft(this);
 	}
 
-	std::cout << "D\n";
 	if (home != nullptr)
 	{
 		std::cout << RED << "Citizen " << name << " is moving out of their home" << RESET << std::endl;
