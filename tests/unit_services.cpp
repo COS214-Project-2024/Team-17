@@ -17,18 +17,28 @@ protected:
     }
 };
 
-// Test ServHospital creation
+class ServHospitalTest : public ::testing::Test {
+protected:
+    ServHospital* hospital;
+
+    void SetUp() override {
+        hospital = new ServHospital();
+    }
+
+    void TearDown() override {
+        delete hospital;
+    }
+};
+
 TEST_F(ServHospitalTest, CreateServHospital) {
     ASSERT_NE(hospital, nullptr);
 }
 
-// Test setting and getting visitors
 TEST_F(ServHospitalTest, SetAndGetVisitors) {
     hospital->setVisitors(10);
     EXPECT_EQ(hospital->getVisitors(), 10);
 }
 
-// Test operational state
 TEST_F(ServHospitalTest, SetAndGetState) {
     hospital->setState(true);
     EXPECT_TRUE(hospital->getState());
@@ -36,27 +46,23 @@ TEST_F(ServHospitalTest, SetAndGetState) {
     EXPECT_FALSE(hospital->getState());
 }
 
-// Test adding employees
 TEST_F(ServHospitalTest, AddEmployee) {
-    Citizen* employee = new Citizen(); // Assuming Citizen has a default constructor
+    Citizen* employee = new Citizen();
     EXPECT_TRUE(hospital->addEmployee(employee));
     delete employee;
 }
 
-// Test removing employees
 TEST_F(ServHospitalTest, RemoveEmployee) {
     Citizen* employee = new Citizen();
     hospital->addEmployee(employee);
-    hospital->removeEmployee(employee); // Remove should succeed
+    hospital->removeEmployee(employee);
     delete employee;
 }
 
-// Test calling utilities
 TEST_F(ServHospitalTest, CallUtilities) {
     EXPECT_NO_THROW(hospital->callUtilities());
 }
 
-// Test fixture for ServEducation
 class ServEducationTest : public ::testing::Test {
 protected:
     ServEducation* education;
@@ -70,18 +76,15 @@ protected:
     }
 };
 
-// Test education service creation
 TEST_F(ServEducationTest, CreateServEducation) {
     ASSERT_NE(education, nullptr);
 }
 
-// Test setting and getting visitors
 TEST_F(ServEducationTest, SetAndGetVisitors) {
     education->setVisitors(20);
     EXPECT_EQ(education->getVisitors(), 20);
 }
 
-// Test adding and removing employees
 TEST_F(ServEducationTest, AddAndRemoveEmployee) {
     Citizen* employee = new Citizen();
     EXPECT_TRUE(education->addEmployee(employee));
@@ -89,7 +92,6 @@ TEST_F(ServEducationTest, AddAndRemoveEmployee) {
     delete employee;
 }
 
-// Test fixture for ServSecurity
 class ServSecurityTest : public ::testing::Test {
 protected:
     ServSecurity* securityService;
@@ -103,12 +105,10 @@ protected:
     }
 };
 
-// Test security service creation
 TEST_F(ServSecurityTest, CreateServSecurity) {
     ASSERT_NE(securityService, nullptr);
 }
 
-// Test setting and getting visitors
 TEST_F(ServSecurityTest, SetAndGetVisitors) {
     securityService->setVisitors(25);
     EXPECT_EQ(securityService->getVisitors(), 25);
@@ -117,7 +117,6 @@ TEST_F(ServSecurityTest, SetAndGetVisitors) {
     EXPECT_EQ(securityService->getVisitors(), 10);
 }
 
-// Test adding and removing employees
 TEST_F(ServSecurityTest, AddAndRemoveEmployee) {
     Citizen* employee = new Citizen();
     EXPECT_TRUE(securityService->addEmployee(employee));
@@ -125,7 +124,6 @@ TEST_F(ServSecurityTest, AddAndRemoveEmployee) {
     delete employee;
 }
 
-// Test state setting and getting
 TEST_F(ServSecurityTest, SetAndGetState) {
     securityService->setState(true);
     EXPECT_TRUE(securityService->getState());
@@ -134,13 +132,10 @@ TEST_F(ServSecurityTest, SetAndGetState) {
     EXPECT_FALSE(securityService->getState());
 }
 
-// Test calling utilities
 TEST_F(ServSecurityTest, CallUtilities) {
-    // Assuming notifyUtilities is a method to check if utilities are called
     EXPECT_NO_THROW(securityService->callUtilities());
 }
 
-// Test fixture for ServEntertainment
 class ServEntertainmentTest : public ::testing::Test {
 protected:
     ServEntertainment* entertainmentService;
@@ -154,12 +149,10 @@ protected:
     }
 };
 
-// Test entertainment service creation
 TEST_F(ServEntertainmentTest, CreateServEntertainment) {
     ASSERT_NE(entertainmentService, nullptr);
 }
 
-// Test setting and getting visitors
 TEST_F(ServEntertainmentTest, SetAndGetVisitors) {
     entertainmentService->setVisitors(30);
     EXPECT_EQ(entertainmentService->getVisitors(), 30);
@@ -168,7 +161,6 @@ TEST_F(ServEntertainmentTest, SetAndGetVisitors) {
     EXPECT_EQ(entertainmentService->getVisitors(), 15);
 }
 
-// Test adding and removing employees
 TEST_F(ServEntertainmentTest, AddAndRemoveEmployee) {
     Citizen* employee = new Citizen();
     EXPECT_TRUE(entertainmentService->addEmployee(employee));
@@ -176,7 +168,6 @@ TEST_F(ServEntertainmentTest, AddAndRemoveEmployee) {
     delete employee;
 }
 
-// Test state setting and getting
 TEST_F(ServEntertainmentTest, SetAndGetState) {
     entertainmentService->setState(true);
     EXPECT_TRUE(entertainmentService->getState());
@@ -185,9 +176,7 @@ TEST_F(ServEntertainmentTest, SetAndGetState) {
     EXPECT_FALSE(entertainmentService->getState());
 }
 
-// Test calling utilities
 TEST_F(ServEntertainmentTest, CallUtilities) {
-    // Assuming notifyUtilities is a method to check if utilities are called
     EXPECT_NO_THROW(entertainmentService->callUtilities());
 }
 

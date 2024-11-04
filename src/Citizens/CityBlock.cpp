@@ -13,4 +13,5 @@ double CityBlock::accept(TaxAndBudgetVisitor *visitor)
   {
     return mediator->accept(visitor);
   }
+  return 0;
 }

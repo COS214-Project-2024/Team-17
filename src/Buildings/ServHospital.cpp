@@ -2,7 +2,7 @@
 #include <iostream>
 ServHospital::ServHospital() : Services(100)
 {
-    cout << BLACK << "\t-->Security service created" << RESET << endl;
+    cout << BLACK << "\t-->Hospital service created" << RESET << endl;
     Resources::removeMoney(cost);
     Resources::removeWood(woodCost);
     Resources::removeSteel(steelCost);
@@ -15,7 +15,7 @@ ServHospital::ServHospital() : Services(100)
 
 ServHospital::~ServHospital()
 {
-    cout << BLACK << "\t-->Security service destroyed" << RESET << endl;
+    cout << BLACK << "\t-->Hospital service destroyed" << RESET << endl;
     Resources::removeElectricityUsage(electricityUsage);
     Resources::removeWaterUsage(waterUsage);
     Resources::removeHappiness(happinessIncrease);
@@ -31,7 +31,7 @@ ServHospital::~ServHospital()
 
 void ServHospital::displayBuildingInfo()
 {
-    cout << "Security service with " << this->visitors << " visitors\n";
+    cout << "Hospital service with " << this->visitors << " visitors\n";
 }
 
 int ServHospital::getVisitors()

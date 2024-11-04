@@ -4,12 +4,20 @@
 #include "CitizenStates/CitizenStatesIncludes.h"
 #include "CityBlock.h"
 #include "CityMediator.h"
+#include "../Policy.h"
 #include <string>
 #include <vector>
 
 class Bus;
 class RoadComponent;
-
+/**
+ * @class Citizen
+ * @brief Represents a citizen in the city simulation.
+ *
+ * The Citizen class extends CityBlock and encapsulates the properties and
+ * behaviors of a citizen, including their state, location, workplace,
+ * and activities.
+ */
 class Citizen : CityBlock
 {
 
@@ -40,45 +48,115 @@ protected:
 	};
 
 	Activity activity;
-
+    /**
+     * @brief Changes the happiness level of the citizen.
+     * @param change The amount to change happiness by (positive or negative).
+     */
 	void changeHappiness(int change);
 
 public:
-	Citizen(bool autoRegister = true);
+    /**
+     * @brief Constructs a Citizen and optionally registers them automatically.
+     * @param autoRegister Indicates whether the citizen should be auto-registered.
+     */
+    Citizen(bool autoRegister = true);
 
-	void setState(CitizenState *newState);
+    /**
+     * @brief Sets the state of the citizen.
+     * @param newState A pointer to the new CitizenState to be assigned.
+     */
+    void setState(CitizenState *newState);
 
-	CitizenState *getState();
+    /**
+     * @brief Gets the current state of the citizen.
+     * @return A pointer to the current CitizenState.
+     */
+    CitizenState *getState();
 
-	void notifyChange(std::string message);
+    /**
+     * @brief Notifies the citizen of a change in the environment or situation.
+     * @param message A string containing information about the change.
+     */
+    void notifyChange(std::string message);
 
-	void accept(TaxAndBudgetVisitor *visitor);
+    /**
+     * @brief Accepts a visitor for tax and budget operations.
+     * @param visitor A pointer to the TaxAndBudgetVisitor.
+     */
+    void accept(TaxAndBudgetVisitor *visitor);
 
-	std::string getName();
+    /**
+     * @brief Gets the name of the citizen.
+     * @return The name of the citizen as a string.
+     */
+    std::string getName();
 
-	void setWorkplace(Building *workplace);
+    /**
+     * @brief Sets the citizen's workplace.
+     * @param workplace A pointer to the Building representing the workplace.
+     */
+    void setWorkplace(Building *workplace);
 
-	Building *getWorkplace();
+    /**
+     * @brief Gets the citizen's workplace.
+     * @return A pointer to the Building representing the workplace.
+     */
+    Building *getWorkplace();
 
-	void fired();
+    /**
+     * @brief Handles the event of the citizen being fired from their job.
+     */
+    void fired();
 
-	void setHome(Building *home);
+    /**
+     * @brief Sets the citizen's home.
+     * @param home A pointer to the Building representing the home.
+     */
+    void setHome(Building *home);
 
-	Building *getHome();
+    /**
+     * @brief Gets the citizen's home.
+     * @return A pointer to the Building representing the home.
+     */
+    Building *getHome();
 
-	void evicted();
+    /**
+     * @brief Handles the event of the citizen being evicted.
+     */
+    void evicted();
 
-	void giveCar();
+    /**
+     * @brief Gives a car to the citizen.
+     */
+    void giveCar();
 
-	virtual void doSomething();
+    /**
+     * @brief Performs the citizen's actions for the current iteration.
+     */
+    virtual void doSomething();
 
-	Building *getCurrentBuilding();
+    /**
+     * @brief Gets the current building where the citizen is located.
+     * @return A pointer to the Building where the citizen currently is.
+     */
+    Building *getCurrentBuilding();
 
-	int getHappiness();
+    /**
+     * @brief Gets the happiness level of the citizen.
+     * @return The happiness level as an integer.
+     */
+    int getHappiness();
 
-	double getTax();
+    /**
+     * @brief Gets the tax obligations of the citizen.
+     * @return The tax amount as a double.
+     */
+    double getTax();
 
-	~Citizen();
+    /**
+     * @brief Destructor for the Citizen class.
+     */
+    ~Citizen();
 };
 
-#endif
+#endif // CITIZEN_H

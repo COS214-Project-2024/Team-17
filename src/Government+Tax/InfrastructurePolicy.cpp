@@ -1,5 +1,13 @@
 #include "InfrastructurePolicy.h"
 #include <iostream>
+/**
+ * @brief Apply a Infrastructure-focused budget allocation to a city.
+ * 
+ * Allocates 30% of the budget to health, 20% to education, and 50% to infrastructure.
+ * 
+ * @param city The city to apply the budget to.
+ * @param budget The total budget to distribute.
+ */
 void InfrastructurePolicy::applyBudget(CityStructure &city, double budget)
 {
   double budgetHealth = budget * 0.3;

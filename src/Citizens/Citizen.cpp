@@ -36,13 +36,15 @@ void Citizen::changeHappiness(int change)
 Citizen::Citizen(bool autoRegister) : CityBlock()
 {
 	name = CitizenNameGen::generateName();
+	workplace = nullptr;
+	home = nullptr;
 	this->mediator = CityCentralMediator::getInstance();
+	state = nullptr;
 	if (autoRegister)
 	{
 		mediator->registerCitizen(this);
+		setState(new Indifferent());
 	}
-	state = nullptr;
-	setState(new Indifferent());
 	Resources::addPopulation(1);
 	activity = Activity::Nothing;
 	currentLocation = nullptr;
@@ -105,6 +107,7 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
+				std::cout << "Citizen " << name << " has no car" << std::endl;
 				waitTimer = 3;
 				activity = Activity::TryBusHome;
 			}
@@ -115,6 +118,11 @@ void Citizen::notifyChange(std::string message)
 			{
 				activity = Activity::InTransitHome;
 				route = ccm->calculateRoute(workplace->getXCoordinate(), workplace->getYCoordinate(), home->getXCoordinate(), home->getYCoordinate());
+				if (route.size() == 0)
+				{
+					changeHappiness(-1);
+					return;
+				}
 				currentRoad = route.at(0);
 			}
 			else
@@ -149,6 +157,7 @@ void Citizen::notifyChange(std::string message)
 			}
 			else
 			{
+				std::cout << "Citizen " << name << " has no car" << std::endl;
 				waitTimer = 3;
 				activity = Activity::TryBusWork;
 			}
@@ -166,6 +175,11 @@ void Citizen::notifyChange(std::string message)
 					r->displayInfo();
 				}
 				std::cout << RESET << std::endl;
+				if (route.size() == 0)
+				{
+					changeHappiness(-1);
+					return;
+				}
 				currentRoad = route.at(0);
 			}
 			else
@@ -296,6 +310,10 @@ void Citizen::giveCar()
 
 void Citizen::doSomething()
 {
+  if(Policy::getHappinessLaw())
+  {
+    this->changeHappiness(1);
+  }
 	CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(mediator);
 
 	switch (activity)
@@ -389,8 +407,11 @@ void Citizen::doSomething()
 			{
 				activity = Activity::Rest;
 				currentLocation = home;
-				std::cout << GREEN << "Arrived at work!" << RESET << std::endl;
+				std::cout << GREEN << "Arrived at home!" << RESET << std::endl;
 			}
+			cout << BLACK << "Current road: ";
+			currentRoad->displayInfo();
+			cout << RESET;
 		}
 		break;
 	case Activity::AwaitTransitHome:
@@ -541,11 +562,11 @@ int Citizen::getHappiness()
 
 double Citizen::getTax()
 {
-	if (!Policy::getNoTaxLaw())
+  if (!Policy::getNoTaxLaw())
 	{
-		return 10.0;
-	}
-	return 0;
+    this->changeHappiness(-1);
+  }
+	return 10.0;
 }
 
 Citizen::~Citizen()
@@ -555,11 +576,15 @@ Citizen::~Citizen()
 	{
 		delete state;
 	}
+
 	Resources::removePopulation(1);
+
 	if (workplace != nullptr)
 	{
-        workplace->notifyEmployeeLeft(this);
+		std::cout << RED << "Citizen " << name << " is quitting work" << RESET << std::endl;
+		workplace->notifyEmployeeLeft(this);
 	}
+
 	if (home != nullptr)
 	{
 		std::cout << RED << "Citizen " << name << " is moving out of their home" << RESET << std::endl;

@@ -11,6 +11,7 @@ IndPlant::IndPlant()
     Resources::addElectricityUsage(electricityUsage);
     Resources::addWaterUsage(waterUsage);
     Resources::addSteelPerTick(steelProduction);
+    Resources::addSteel(steelProduction);
 }
 
 IndPlant::~IndPlant()
