@@ -1,4 +1,11 @@
 #include "ComMall.h"
+/**
+ * @class ComMall
+ * @brief Represents a commercial mall building with specific resource requirements, utility usage, and job management.
+ *
+ * This class manages resources upon construction and destruction, maintains a list of employees, 
+ * and interacts with utility services when its operational state changes.
+ */
 
 ComMall::ComMall()
 {

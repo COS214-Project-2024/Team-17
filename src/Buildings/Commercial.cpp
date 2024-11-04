@@ -1,5 +1,13 @@
 #include "Commercial.h"
 
+/**
+ * @class Commercial
+ * @brief Represents a commercial building that utilizes various utilities and manages operational state.
+ *
+ * This class defines basic properties for a commercial building, including methods to check build requirements, 
+ * manage utility connections, and notify utilities about changes in the building’s state.
+ */
+
 bool Commercial::getState(){
     //  cout<<"commercial state"<<endl;
     return operational;

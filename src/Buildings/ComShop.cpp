@@ -1,5 +1,11 @@
 #include "ComShop.h"
-
+/**
+ * @class ComShop
+ * @brief Represents a commercial shop building with specific resource requirements, utility usage, and job management.
+ *
+ * This class manages resources upon creation and destruction, maintains a list of employees,
+ * and interacts with utility services when its operational state changes.
+ */
 ComShop::ComShop()
 {
     cout << BLACK << "\t-->Shop created" << RESET << endl;
