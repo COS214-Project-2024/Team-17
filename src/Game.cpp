@@ -180,11 +180,13 @@ void Game::citizensDoSomething()
 
 void Game::updateCityTax()
 {
-  if (mediator)
+  if(this->taxManager.executeCollect())
   {
-    cout << "Collecting taxes..." << endl
-         << endl;
-    // mediator->collectTaxes();
+    std::cout << "Collecting taxes" << endl;
+  }
+  else
+  {
+    std::cout << "No policy to collect taxes has been set" << endl;
   }
 }
 
