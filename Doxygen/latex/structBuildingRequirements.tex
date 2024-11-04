@@ -1,0 +1,858 @@
+\hypertarget{structBuildingRequirements}{}\doxysection{Building\+Requirements Struct Reference}
+\label{structBuildingRequirements}\index{BuildingRequirements@{BuildingRequirements}}
+
+
+Holds building requirements and costs for different building types.  
+
+
+
+
+{\ttfamily \#include $<$Building\+Requirements.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_a9cf869b1895f1fa72b869ed8b47b2c88}{check\+Residential\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_a7b9f092b76ed2b7e1dbf82b097b1f3a7}{check\+Commercial\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_a965356003b2888c1dff96cb13e3bb133}{check\+Industrial\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_a15cd33f0d308654feab38dc99a94e226}{check\+Landmark\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_ae9597c1d5e48ebbc6f740bbaf33b589e}{check\+Service\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_a6cd0b85b55a0be15b2130dbd06403dcc}{check\+Utility\+Requirements}} (string type)
+\item 
+static bool \mbox{\hyperlink{structBuildingRequirements_ad6366062d1fbf358963a80aab5383cb2}{check\+Road\+Requirements}} (string type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2a0e2cf5d4c4e9b5b033db89ff3703b2}{flat\+Build\+Cost}} = 1000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a8671e6de52d5a13a21e2ce4ad06b5057}{flat\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_acd12b253992f35a1d2b54534622da066}{flat\+Concrete\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ad5384870befc8687f7cfaa216e54b277}{flat\+Steel\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a3db6191d8a877b0b9a97aa47e5a7516d}{townhouse\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ae51cced3ac0b9641898e01064997327f}{townhouse\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a81a1e4e9cc42d60163b93ab39cfb95d0}{townhouse\+Concrete\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9b0965b8980e4a579c1f1fbc66405322}{townhouse\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aefdfb38e480d42e898ab89164efb2e1e}{house\+Build\+Cost}} = 2500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ace75ae83a936d7b48c14aa2ee0fb4490}{house\+Wood\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a877ec896d8ef4a138b5efb30beb7dc93}{house\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a96554494e0ff3ed30088f58d998aef47}{house\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_af6acaa8f3cdbcabd979f0abfcf318c4c}{estate\+Build\+Cost}} = 4000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9f3b2cd8317abbe172e3ecd80b453a9c}{estate\+Wood\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ab25f4162810df8f9899ce487606bc1ec}{estate\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ae77d07f25baef94d265e8e3b5bdd7959}{estate\+Steel\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_afb7f0770231098606842e1e9dab853eb}{shop\+Build\+Cost}} = 1000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aad9fd732ef631e235e6147f6b30259f6}{shop\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ae1565404c535bab49310a24515db0948}{shop\+Concrete\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_abe2dc6110af1def4dcd40d8fa8708f84}{shop\+Steel\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a8bdc06d11659c80f598cc614c1f3de09}{office\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a33b28fb97e0eea0ebb80ab346ce2d188}{office\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac9de36eb1ae71420235bb3731896914d}{office\+Concrete\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9366a0a5759e88f3a1d3a55aaf95cb81}{office\+Steel\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a34cc3488ccfa4fee2b4ecc008db01d65}{mall\+Build\+Cost}} = 5000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a7f40bdd5fa72079136cbf76d8fca8103}{mall\+Wood\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a5bdfa6fd358ba5776eaf82d67f240e59}{mall\+Concrete\+Cost}} = 25
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2e455875b48b29b4dfdd774d35590fc6}{mall\+Steel\+Cost}} = 25
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9ebdeed3353e4de458fde4fbc6a05bdc}{factory\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ab51cd027755afb5613aa3c614d52f25d}{factory\+Wood\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ab8b8e2b1bbc07a6353b3904a2eadeed3}{factory\+Concrete\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2fb3c2d2696b1b775d987619eff7299d}{factory\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac246cbd1adb8921727299f8771820b6f}{warehouse\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aafec7f78225c8da647bfc34cbfe916e4}{warehouse\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a627ac9dbda71e5800e6dae93240c3390}{warehouse\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a6a370cb8f2fb3787ddac1c9e2d71cd2c}{warehouse\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aa09bbcc3d0e5b3dbb74177ee7aecb30e}{plant\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a398f8b9a8b569c0d730031b5efeb7d8e}{plant\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_afd9294bd6b8ebc5d587daa8ada074ee6}{plant\+Concrete\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a8079a98f3a87703ee94e316b51e73804}{plant\+Steel\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a1f34269b2f620af3a42e67b844f5c7d8}{park\+Build\+Cost}} = 1000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a33e804cf6d49abf4a4f1f0921d63ef2f}{park\+Wood\+Cost}} = 25
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ab72cc49e1ed27821a6c73b0239eddc90}{park\+Concrete\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aaf08d7c0ad357858bafd783c22173c06}{park\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a3871fbf9b0e9e621fc25397137bddeec}{monument\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a265f70ad43c4bb3ede7c62d9d90a06a1}{monument\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aad6812e4170f8fb4a06d6f0683de4c24}{monument\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aefc84f4e40de3405775190d6747e32cc}{monument\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ab6caed3bfdf7d05ba41685c27bed6448}{community\+Center\+Build\+Cost}} = 2000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aaee45f89cbba685a4f1d07b113a8052a}{community\+Center\+Wood\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ad0441c9c67bd66e30dc3ee0d9d65d112}{community\+Center\+Concrete\+Cost}} = 30
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac411ff3cb59b3f1ce37dad55dcf27376}{community\+Center\+Steel\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a5c439a913465f07b83debdd2acca3bd9}{hospital\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2f0a1ef8798cf8baed514a47f08d3414}{hospital\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a41a1c479ef173b510ba7edcfa5bf980d}{hospital\+Concrete\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ad3a5e44cfac8501e028372b8bf57bb23}{hospital\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a6c3d385a3281182229dde6c499d383df}{education\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a38fd7a0cac90ce01083cc243779c97e5}{education\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9b5df11ccb9bcb4c051d2a1aa64107b5}{education\+Concrete\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_acc7eadd2a75107e542b4d70e69de1942}{education\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_af2c56eb8c527f3db662b5aa0e0e506b8}{security\+Build\+Cost}} = 1500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_afafb68bba4626aef7d4551c519d16258}{security\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac7b43acc48273fa7a11a23d48b083c1f}{security\+Concrete\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_abc291324e7fe748626e6305ed56c717d}{security\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a0f18eb8d38bf116f96fcd204c9bb76f5}{entertainment\+Build\+Cost}} = 2000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a43f01bfbb00609a83df2d19e67ddd63b}{entertainment\+Wood\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a5bfc571aa6b783fbd0291f238b905269}{entertainment\+Concrete\+Cost}} = 15
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a601ec7162cc41b4527e811cdc762b7c1}{entertainment\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a09ab11f08402dfa5607c46db198b1654}{power\+Plant\+Build\+Cost}} = 2000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9f08734ce7b5020259a7844da281b47b}{power\+Plant\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_afcdc4e29899bc43d9736c04ec980ebb7}{power\+Plant\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2884014a9e1362701088101543c6fc57}{power\+Plant\+Steel\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9c3dcef130c753dff5575f8fb1de8c2c}{water\+Supply\+Build\+Cost}} = 2000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a037e0303c323582a9d48eb36bc639105}{water\+Supply\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac21fa883394742bf4b47be2037ab8b1b}{water\+Supply\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9423f66ca9979b350ed90f52167b17de}{water\+Supply\+Steel\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_afbbf1a1f03ed2d555bad2027781ec483}{waste\+Management\+Build\+Cost}} = 3000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a4903dec48adb80eda4f652bdde712969}{waste\+Management\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ae9df42661c583d1dad1b107d3281a382}{waste\+Management\+Concrete\+Cost}} = 30
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a2cb9e94efa6d4927112650cd8885e6ab}{waste\+Management\+Steel\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a028a2ab593747d1a6f1e6551ad8d0670}{sewage\+System\+Build\+Cost}} = 3000
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a9a502582c2a3b04d57b4e20eb04fa458}{sewage\+System\+Wood\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a0d7c6072c77e735d430003aeeacc1bac}{sewage\+System\+Concrete\+Cost}} = 20
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a0ab3bfff6c1590e24d22338fbb3d792b}{sewage\+System\+Steel\+Cost}} = 30
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a3e1259be008ca98b77639c4315148576}{residential\+Street\+Build\+Cost}} = 100
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a6eb264918f97a56f4307c8d2337c2cec}{residential\+Street\+Wood\+Cost}} = 0
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a6c230203de8727a42e2ef757f15223bb}{residential\+Street\+Concrete\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a7fe9af7b263971bfb7af38580e6f5cdf}{residential\+Street\+Steel\+Cost}} = 0
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a89de39c85c56f3463354742a2140e3fb}{main\+Road\+Build\+Cost}} = 200
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac9ed0c56aad14097e3ee3e03d7e96a5f}{main\+Road\+Wood\+Cost}} = 0
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_acef2b1ab90d09544d3a02a8671527b00}{main\+Road\+Concrete\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aa1ecddb54910fdbd50a7421695324fbc}{main\+Road\+Steel\+Cost}} = 5
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a5e2345bfa37cb4918b8d7c24d8cee025}{highway\+Build\+Cost}} = 500
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_aab2a3bf46193fba2efb4b97ee95a59d8}{highway\+Wood\+Cost}} = 0
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_a1eb0920c39efeae514f0d07779c4a80f}{highway\+Concrete\+Cost}} = 10
+\item 
+static const int \mbox{\hyperlink{structBuildingRequirements_ac21b23f0efb44566b213a43e06ec89df}{highway\+Steel\+Cost}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds building requirements and costs for different building types. 
+
+This structure defines the costs of various resources needed to build different types of residential, commercial, industrial, landmark, service, utility, and road buildings. It also provides methods to check the building requirements for each category. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structBuildingRequirements_a7b9f092b76ed2b7e1dbf82b097b1f3a7}\label{structBuildingRequirements_a7b9f092b76ed2b7e1dbf82b097b1f3a7}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkCommercialRequirements@{checkCommercialRequirements}}
+\index{checkCommercialRequirements@{checkCommercialRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkCommercialRequirements()}{checkCommercialRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Commercial\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a965356003b2888c1dff96cb13e3bb133}\label{structBuildingRequirements_a965356003b2888c1dff96cb13e3bb133}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkIndustrialRequirements@{checkIndustrialRequirements}}
+\index{checkIndustrialRequirements@{checkIndustrialRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkIndustrialRequirements()}{checkIndustrialRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Industrial\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a15cd33f0d308654feab38dc99a94e226}\label{structBuildingRequirements_a15cd33f0d308654feab38dc99a94e226}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkLandmarkRequirements@{checkLandmarkRequirements}}
+\index{checkLandmarkRequirements@{checkLandmarkRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkLandmarkRequirements()}{checkLandmarkRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Landmark\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9cf869b1895f1fa72b869ed8b47b2c88}\label{structBuildingRequirements_a9cf869b1895f1fa72b869ed8b47b2c88}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkResidentialRequirements@{checkResidentialRequirements}}
+\index{checkResidentialRequirements@{checkResidentialRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkResidentialRequirements()}{checkResidentialRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Residential\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ad6366062d1fbf358963a80aab5383cb2}\label{structBuildingRequirements_ad6366062d1fbf358963a80aab5383cb2}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkRoadRequirements@{checkRoadRequirements}}
+\index{checkRoadRequirements@{checkRoadRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkRoadRequirements()}{checkRoadRequirements()}}
+{\footnotesize\ttfamily static bool Building\+Requirements\+::check\+Road\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ae9597c1d5e48ebbc6f740bbaf33b589e}\label{structBuildingRequirements_ae9597c1d5e48ebbc6f740bbaf33b589e}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkServiceRequirements@{checkServiceRequirements}}
+\index{checkServiceRequirements@{checkServiceRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkServiceRequirements()}{checkServiceRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Service\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a6cd0b85b55a0be15b2130dbd06403dcc}\label{structBuildingRequirements_a6cd0b85b55a0be15b2130dbd06403dcc}} 
+\index{BuildingRequirements@{BuildingRequirements}!checkUtilityRequirements@{checkUtilityRequirements}}
+\index{checkUtilityRequirements@{checkUtilityRequirements}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{checkUtilityRequirements()}{checkUtilityRequirements()}}
+{\footnotesize\ttfamily bool Building\+Requirements\+::check\+Utility\+Requirements (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structBuildingRequirements_ab6caed3bfdf7d05ba41685c27bed6448}\label{structBuildingRequirements_ab6caed3bfdf7d05ba41685c27bed6448}} 
+\index{BuildingRequirements@{BuildingRequirements}!communityCenterBuildCost@{communityCenterBuildCost}}
+\index{communityCenterBuildCost@{communityCenterBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{communityCenterBuildCost}{communityCenterBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::community\+Center\+Build\+Cost = 2000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ad0441c9c67bd66e30dc3ee0d9d65d112}\label{structBuildingRequirements_ad0441c9c67bd66e30dc3ee0d9d65d112}} 
+\index{BuildingRequirements@{BuildingRequirements}!communityCenterConcreteCost@{communityCenterConcreteCost}}
+\index{communityCenterConcreteCost@{communityCenterConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{communityCenterConcreteCost}{communityCenterConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::community\+Center\+Concrete\+Cost = 30\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac411ff3cb59b3f1ce37dad55dcf27376}\label{structBuildingRequirements_ac411ff3cb59b3f1ce37dad55dcf27376}} 
+\index{BuildingRequirements@{BuildingRequirements}!communityCenterSteelCost@{communityCenterSteelCost}}
+\index{communityCenterSteelCost@{communityCenterSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{communityCenterSteelCost}{communityCenterSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::community\+Center\+Steel\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aaee45f89cbba685a4f1d07b113a8052a}\label{structBuildingRequirements_aaee45f89cbba685a4f1d07b113a8052a}} 
+\index{BuildingRequirements@{BuildingRequirements}!communityCenterWoodCost@{communityCenterWoodCost}}
+\index{communityCenterWoodCost@{communityCenterWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{communityCenterWoodCost}{communityCenterWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::community\+Center\+Wood\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a6c3d385a3281182229dde6c499d383df}\label{structBuildingRequirements_a6c3d385a3281182229dde6c499d383df}} 
+\index{BuildingRequirements@{BuildingRequirements}!educationBuildCost@{educationBuildCost}}
+\index{educationBuildCost@{educationBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{educationBuildCost}{educationBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::education\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9b5df11ccb9bcb4c051d2a1aa64107b5}\label{structBuildingRequirements_a9b5df11ccb9bcb4c051d2a1aa64107b5}} 
+\index{BuildingRequirements@{BuildingRequirements}!educationConcreteCost@{educationConcreteCost}}
+\index{educationConcreteCost@{educationConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{educationConcreteCost}{educationConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::education\+Concrete\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_acc7eadd2a75107e542b4d70e69de1942}\label{structBuildingRequirements_acc7eadd2a75107e542b4d70e69de1942}} 
+\index{BuildingRequirements@{BuildingRequirements}!educationSteelCost@{educationSteelCost}}
+\index{educationSteelCost@{educationSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{educationSteelCost}{educationSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::education\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a38fd7a0cac90ce01083cc243779c97e5}\label{structBuildingRequirements_a38fd7a0cac90ce01083cc243779c97e5}} 
+\index{BuildingRequirements@{BuildingRequirements}!educationWoodCost@{educationWoodCost}}
+\index{educationWoodCost@{educationWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{educationWoodCost}{educationWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::education\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a0f18eb8d38bf116f96fcd204c9bb76f5}\label{structBuildingRequirements_a0f18eb8d38bf116f96fcd204c9bb76f5}} 
+\index{BuildingRequirements@{BuildingRequirements}!entertainmentBuildCost@{entertainmentBuildCost}}
+\index{entertainmentBuildCost@{entertainmentBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{entertainmentBuildCost}{entertainmentBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::entertainment\+Build\+Cost = 2000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a5bfc571aa6b783fbd0291f238b905269}\label{structBuildingRequirements_a5bfc571aa6b783fbd0291f238b905269}} 
+\index{BuildingRequirements@{BuildingRequirements}!entertainmentConcreteCost@{entertainmentConcreteCost}}
+\index{entertainmentConcreteCost@{entertainmentConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{entertainmentConcreteCost}{entertainmentConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::entertainment\+Concrete\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a601ec7162cc41b4527e811cdc762b7c1}\label{structBuildingRequirements_a601ec7162cc41b4527e811cdc762b7c1}} 
+\index{BuildingRequirements@{BuildingRequirements}!entertainmentSteelCost@{entertainmentSteelCost}}
+\index{entertainmentSteelCost@{entertainmentSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{entertainmentSteelCost}{entertainmentSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::entertainment\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a43f01bfbb00609a83df2d19e67ddd63b}\label{structBuildingRequirements_a43f01bfbb00609a83df2d19e67ddd63b}} 
+\index{BuildingRequirements@{BuildingRequirements}!entertainmentWoodCost@{entertainmentWoodCost}}
+\index{entertainmentWoodCost@{entertainmentWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{entertainmentWoodCost}{entertainmentWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::entertainment\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_af6acaa8f3cdbcabd979f0abfcf318c4c}\label{structBuildingRequirements_af6acaa8f3cdbcabd979f0abfcf318c4c}} 
+\index{BuildingRequirements@{BuildingRequirements}!estateBuildCost@{estateBuildCost}}
+\index{estateBuildCost@{estateBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{estateBuildCost}{estateBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::estate\+Build\+Cost = 4000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ab25f4162810df8f9899ce487606bc1ec}\label{structBuildingRequirements_ab25f4162810df8f9899ce487606bc1ec}} 
+\index{BuildingRequirements@{BuildingRequirements}!estateConcreteCost@{estateConcreteCost}}
+\index{estateConcreteCost@{estateConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{estateConcreteCost}{estateConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::estate\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ae77d07f25baef94d265e8e3b5bdd7959}\label{structBuildingRequirements_ae77d07f25baef94d265e8e3b5bdd7959}} 
+\index{BuildingRequirements@{BuildingRequirements}!estateSteelCost@{estateSteelCost}}
+\index{estateSteelCost@{estateSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{estateSteelCost}{estateSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::estate\+Steel\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9f3b2cd8317abbe172e3ecd80b453a9c}\label{structBuildingRequirements_a9f3b2cd8317abbe172e3ecd80b453a9c}} 
+\index{BuildingRequirements@{BuildingRequirements}!estateWoodCost@{estateWoodCost}}
+\index{estateWoodCost@{estateWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{estateWoodCost}{estateWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::estate\+Wood\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9ebdeed3353e4de458fde4fbc6a05bdc}\label{structBuildingRequirements_a9ebdeed3353e4de458fde4fbc6a05bdc}} 
+\index{BuildingRequirements@{BuildingRequirements}!factoryBuildCost@{factoryBuildCost}}
+\index{factoryBuildCost@{factoryBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{factoryBuildCost}{factoryBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::factory\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ab8b8e2b1bbc07a6353b3904a2eadeed3}\label{structBuildingRequirements_ab8b8e2b1bbc07a6353b3904a2eadeed3}} 
+\index{BuildingRequirements@{BuildingRequirements}!factoryConcreteCost@{factoryConcreteCost}}
+\index{factoryConcreteCost@{factoryConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{factoryConcreteCost}{factoryConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::factory\+Concrete\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2fb3c2d2696b1b775d987619eff7299d}\label{structBuildingRequirements_a2fb3c2d2696b1b775d987619eff7299d}} 
+\index{BuildingRequirements@{BuildingRequirements}!factorySteelCost@{factorySteelCost}}
+\index{factorySteelCost@{factorySteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{factorySteelCost}{factorySteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::factory\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ab51cd027755afb5613aa3c614d52f25d}\label{structBuildingRequirements_ab51cd027755afb5613aa3c614d52f25d}} 
+\index{BuildingRequirements@{BuildingRequirements}!factoryWoodCost@{factoryWoodCost}}
+\index{factoryWoodCost@{factoryWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{factoryWoodCost}{factoryWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::factory\+Wood\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2a0e2cf5d4c4e9b5b033db89ff3703b2}\label{structBuildingRequirements_a2a0e2cf5d4c4e9b5b033db89ff3703b2}} 
+\index{BuildingRequirements@{BuildingRequirements}!flatBuildCost@{flatBuildCost}}
+\index{flatBuildCost@{flatBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{flatBuildCost}{flatBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::flat\+Build\+Cost = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_acd12b253992f35a1d2b54534622da066}\label{structBuildingRequirements_acd12b253992f35a1d2b54534622da066}} 
+\index{BuildingRequirements@{BuildingRequirements}!flatConcreteCost@{flatConcreteCost}}
+\index{flatConcreteCost@{flatConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{flatConcreteCost}{flatConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::flat\+Concrete\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ad5384870befc8687f7cfaa216e54b277}\label{structBuildingRequirements_ad5384870befc8687f7cfaa216e54b277}} 
+\index{BuildingRequirements@{BuildingRequirements}!flatSteelCost@{flatSteelCost}}
+\index{flatSteelCost@{flatSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{flatSteelCost}{flatSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::flat\+Steel\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a8671e6de52d5a13a21e2ce4ad06b5057}\label{structBuildingRequirements_a8671e6de52d5a13a21e2ce4ad06b5057}} 
+\index{BuildingRequirements@{BuildingRequirements}!flatWoodCost@{flatWoodCost}}
+\index{flatWoodCost@{flatWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{flatWoodCost}{flatWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::flat\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a5e2345bfa37cb4918b8d7c24d8cee025}\label{structBuildingRequirements_a5e2345bfa37cb4918b8d7c24d8cee025}} 
+\index{BuildingRequirements@{BuildingRequirements}!highwayBuildCost@{highwayBuildCost}}
+\index{highwayBuildCost@{highwayBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{highwayBuildCost}{highwayBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::highway\+Build\+Cost = 500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a1eb0920c39efeae514f0d07779c4a80f}\label{structBuildingRequirements_a1eb0920c39efeae514f0d07779c4a80f}} 
+\index{BuildingRequirements@{BuildingRequirements}!highwayConcreteCost@{highwayConcreteCost}}
+\index{highwayConcreteCost@{highwayConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{highwayConcreteCost}{highwayConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::highway\+Concrete\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac21b23f0efb44566b213a43e06ec89df}\label{structBuildingRequirements_ac21b23f0efb44566b213a43e06ec89df}} 
+\index{BuildingRequirements@{BuildingRequirements}!highwaySteelCost@{highwaySteelCost}}
+\index{highwaySteelCost@{highwaySteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{highwaySteelCost}{highwaySteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::highway\+Steel\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aab2a3bf46193fba2efb4b97ee95a59d8}\label{structBuildingRequirements_aab2a3bf46193fba2efb4b97ee95a59d8}} 
+\index{BuildingRequirements@{BuildingRequirements}!highwayWoodCost@{highwayWoodCost}}
+\index{highwayWoodCost@{highwayWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{highwayWoodCost}{highwayWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::highway\+Wood\+Cost = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a5c439a913465f07b83debdd2acca3bd9}\label{structBuildingRequirements_a5c439a913465f07b83debdd2acca3bd9}} 
+\index{BuildingRequirements@{BuildingRequirements}!hospitalBuildCost@{hospitalBuildCost}}
+\index{hospitalBuildCost@{hospitalBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{hospitalBuildCost}{hospitalBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::hospital\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a41a1c479ef173b510ba7edcfa5bf980d}\label{structBuildingRequirements_a41a1c479ef173b510ba7edcfa5bf980d}} 
+\index{BuildingRequirements@{BuildingRequirements}!hospitalConcreteCost@{hospitalConcreteCost}}
+\index{hospitalConcreteCost@{hospitalConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{hospitalConcreteCost}{hospitalConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::hospital\+Concrete\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ad3a5e44cfac8501e028372b8bf57bb23}\label{structBuildingRequirements_ad3a5e44cfac8501e028372b8bf57bb23}} 
+\index{BuildingRequirements@{BuildingRequirements}!hospitalSteelCost@{hospitalSteelCost}}
+\index{hospitalSteelCost@{hospitalSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{hospitalSteelCost}{hospitalSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::hospital\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2f0a1ef8798cf8baed514a47f08d3414}\label{structBuildingRequirements_a2f0a1ef8798cf8baed514a47f08d3414}} 
+\index{BuildingRequirements@{BuildingRequirements}!hospitalWoodCost@{hospitalWoodCost}}
+\index{hospitalWoodCost@{hospitalWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{hospitalWoodCost}{hospitalWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::hospital\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aefdfb38e480d42e898ab89164efb2e1e}\label{structBuildingRequirements_aefdfb38e480d42e898ab89164efb2e1e}} 
+\index{BuildingRequirements@{BuildingRequirements}!houseBuildCost@{houseBuildCost}}
+\index{houseBuildCost@{houseBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{houseBuildCost}{houseBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::house\+Build\+Cost = 2500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a877ec896d8ef4a138b5efb30beb7dc93}\label{structBuildingRequirements_a877ec896d8ef4a138b5efb30beb7dc93}} 
+\index{BuildingRequirements@{BuildingRequirements}!houseConcreteCost@{houseConcreteCost}}
+\index{houseConcreteCost@{houseConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{houseConcreteCost}{houseConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::house\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a96554494e0ff3ed30088f58d998aef47}\label{structBuildingRequirements_a96554494e0ff3ed30088f58d998aef47}} 
+\index{BuildingRequirements@{BuildingRequirements}!houseSteelCost@{houseSteelCost}}
+\index{houseSteelCost@{houseSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{houseSteelCost}{houseSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::house\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ace75ae83a936d7b48c14aa2ee0fb4490}\label{structBuildingRequirements_ace75ae83a936d7b48c14aa2ee0fb4490}} 
+\index{BuildingRequirements@{BuildingRequirements}!houseWoodCost@{houseWoodCost}}
+\index{houseWoodCost@{houseWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{houseWoodCost}{houseWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::house\+Wood\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a89de39c85c56f3463354742a2140e3fb}\label{structBuildingRequirements_a89de39c85c56f3463354742a2140e3fb}} 
+\index{BuildingRequirements@{BuildingRequirements}!mainRoadBuildCost@{mainRoadBuildCost}}
+\index{mainRoadBuildCost@{mainRoadBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mainRoadBuildCost}{mainRoadBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::main\+Road\+Build\+Cost = 200\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_acef2b1ab90d09544d3a02a8671527b00}\label{structBuildingRequirements_acef2b1ab90d09544d3a02a8671527b00}} 
+\index{BuildingRequirements@{BuildingRequirements}!mainRoadConcreteCost@{mainRoadConcreteCost}}
+\index{mainRoadConcreteCost@{mainRoadConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mainRoadConcreteCost}{mainRoadConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::main\+Road\+Concrete\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aa1ecddb54910fdbd50a7421695324fbc}\label{structBuildingRequirements_aa1ecddb54910fdbd50a7421695324fbc}} 
+\index{BuildingRequirements@{BuildingRequirements}!mainRoadSteelCost@{mainRoadSteelCost}}
+\index{mainRoadSteelCost@{mainRoadSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mainRoadSteelCost}{mainRoadSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::main\+Road\+Steel\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac9ed0c56aad14097e3ee3e03d7e96a5f}\label{structBuildingRequirements_ac9ed0c56aad14097e3ee3e03d7e96a5f}} 
+\index{BuildingRequirements@{BuildingRequirements}!mainRoadWoodCost@{mainRoadWoodCost}}
+\index{mainRoadWoodCost@{mainRoadWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mainRoadWoodCost}{mainRoadWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::main\+Road\+Wood\+Cost = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a34cc3488ccfa4fee2b4ecc008db01d65}\label{structBuildingRequirements_a34cc3488ccfa4fee2b4ecc008db01d65}} 
+\index{BuildingRequirements@{BuildingRequirements}!mallBuildCost@{mallBuildCost}}
+\index{mallBuildCost@{mallBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mallBuildCost}{mallBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::mall\+Build\+Cost = 5000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a5bdfa6fd358ba5776eaf82d67f240e59}\label{structBuildingRequirements_a5bdfa6fd358ba5776eaf82d67f240e59}} 
+\index{BuildingRequirements@{BuildingRequirements}!mallConcreteCost@{mallConcreteCost}}
+\index{mallConcreteCost@{mallConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mallConcreteCost}{mallConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::mall\+Concrete\+Cost = 25\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2e455875b48b29b4dfdd774d35590fc6}\label{structBuildingRequirements_a2e455875b48b29b4dfdd774d35590fc6}} 
+\index{BuildingRequirements@{BuildingRequirements}!mallSteelCost@{mallSteelCost}}
+\index{mallSteelCost@{mallSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mallSteelCost}{mallSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::mall\+Steel\+Cost = 25\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a7f40bdd5fa72079136cbf76d8fca8103}\label{structBuildingRequirements_a7f40bdd5fa72079136cbf76d8fca8103}} 
+\index{BuildingRequirements@{BuildingRequirements}!mallWoodCost@{mallWoodCost}}
+\index{mallWoodCost@{mallWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{mallWoodCost}{mallWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::mall\+Wood\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a3871fbf9b0e9e621fc25397137bddeec}\label{structBuildingRequirements_a3871fbf9b0e9e621fc25397137bddeec}} 
+\index{BuildingRequirements@{BuildingRequirements}!monumentBuildCost@{monumentBuildCost}}
+\index{monumentBuildCost@{monumentBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{monumentBuildCost}{monumentBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::monument\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aad6812e4170f8fb4a06d6f0683de4c24}\label{structBuildingRequirements_aad6812e4170f8fb4a06d6f0683de4c24}} 
+\index{BuildingRequirements@{BuildingRequirements}!monumentConcreteCost@{monumentConcreteCost}}
+\index{monumentConcreteCost@{monumentConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{monumentConcreteCost}{monumentConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::monument\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aefc84f4e40de3405775190d6747e32cc}\label{structBuildingRequirements_aefc84f4e40de3405775190d6747e32cc}} 
+\index{BuildingRequirements@{BuildingRequirements}!monumentSteelCost@{monumentSteelCost}}
+\index{monumentSteelCost@{monumentSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{monumentSteelCost}{monumentSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::monument\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a265f70ad43c4bb3ede7c62d9d90a06a1}\label{structBuildingRequirements_a265f70ad43c4bb3ede7c62d9d90a06a1}} 
+\index{BuildingRequirements@{BuildingRequirements}!monumentWoodCost@{monumentWoodCost}}
+\index{monumentWoodCost@{monumentWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{monumentWoodCost}{monumentWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::monument\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a8bdc06d11659c80f598cc614c1f3de09}\label{structBuildingRequirements_a8bdc06d11659c80f598cc614c1f3de09}} 
+\index{BuildingRequirements@{BuildingRequirements}!officeBuildCost@{officeBuildCost}}
+\index{officeBuildCost@{officeBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{officeBuildCost}{officeBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::office\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac9de36eb1ae71420235bb3731896914d}\label{structBuildingRequirements_ac9de36eb1ae71420235bb3731896914d}} 
+\index{BuildingRequirements@{BuildingRequirements}!officeConcreteCost@{officeConcreteCost}}
+\index{officeConcreteCost@{officeConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{officeConcreteCost}{officeConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::office\+Concrete\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9366a0a5759e88f3a1d3a55aaf95cb81}\label{structBuildingRequirements_a9366a0a5759e88f3a1d3a55aaf95cb81}} 
+\index{BuildingRequirements@{BuildingRequirements}!officeSteelCost@{officeSteelCost}}
+\index{officeSteelCost@{officeSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{officeSteelCost}{officeSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::office\+Steel\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a33b28fb97e0eea0ebb80ab346ce2d188}\label{structBuildingRequirements_a33b28fb97e0eea0ebb80ab346ce2d188}} 
+\index{BuildingRequirements@{BuildingRequirements}!officeWoodCost@{officeWoodCost}}
+\index{officeWoodCost@{officeWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{officeWoodCost}{officeWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::office\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a1f34269b2f620af3a42e67b844f5c7d8}\label{structBuildingRequirements_a1f34269b2f620af3a42e67b844f5c7d8}} 
+\index{BuildingRequirements@{BuildingRequirements}!parkBuildCost@{parkBuildCost}}
+\index{parkBuildCost@{parkBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{parkBuildCost}{parkBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::park\+Build\+Cost = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ab72cc49e1ed27821a6c73b0239eddc90}\label{structBuildingRequirements_ab72cc49e1ed27821a6c73b0239eddc90}} 
+\index{BuildingRequirements@{BuildingRequirements}!parkConcreteCost@{parkConcreteCost}}
+\index{parkConcreteCost@{parkConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{parkConcreteCost}{parkConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::park\+Concrete\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aaf08d7c0ad357858bafd783c22173c06}\label{structBuildingRequirements_aaf08d7c0ad357858bafd783c22173c06}} 
+\index{BuildingRequirements@{BuildingRequirements}!parkSteelCost@{parkSteelCost}}
+\index{parkSteelCost@{parkSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{parkSteelCost}{parkSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::park\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a33e804cf6d49abf4a4f1f0921d63ef2f}\label{structBuildingRequirements_a33e804cf6d49abf4a4f1f0921d63ef2f}} 
+\index{BuildingRequirements@{BuildingRequirements}!parkWoodCost@{parkWoodCost}}
+\index{parkWoodCost@{parkWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{parkWoodCost}{parkWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::park\+Wood\+Cost = 25\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aa09bbcc3d0e5b3dbb74177ee7aecb30e}\label{structBuildingRequirements_aa09bbcc3d0e5b3dbb74177ee7aecb30e}} 
+\index{BuildingRequirements@{BuildingRequirements}!plantBuildCost@{plantBuildCost}}
+\index{plantBuildCost@{plantBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{plantBuildCost}{plantBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::plant\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_afd9294bd6b8ebc5d587daa8ada074ee6}\label{structBuildingRequirements_afd9294bd6b8ebc5d587daa8ada074ee6}} 
+\index{BuildingRequirements@{BuildingRequirements}!plantConcreteCost@{plantConcreteCost}}
+\index{plantConcreteCost@{plantConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{plantConcreteCost}{plantConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::plant\+Concrete\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a8079a98f3a87703ee94e316b51e73804}\label{structBuildingRequirements_a8079a98f3a87703ee94e316b51e73804}} 
+\index{BuildingRequirements@{BuildingRequirements}!plantSteelCost@{plantSteelCost}}
+\index{plantSteelCost@{plantSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{plantSteelCost}{plantSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::plant\+Steel\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a398f8b9a8b569c0d730031b5efeb7d8e}\label{structBuildingRequirements_a398f8b9a8b569c0d730031b5efeb7d8e}} 
+\index{BuildingRequirements@{BuildingRequirements}!plantWoodCost@{plantWoodCost}}
+\index{plantWoodCost@{plantWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{plantWoodCost}{plantWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::plant\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a09ab11f08402dfa5607c46db198b1654}\label{structBuildingRequirements_a09ab11f08402dfa5607c46db198b1654}} 
+\index{BuildingRequirements@{BuildingRequirements}!powerPlantBuildCost@{powerPlantBuildCost}}
+\index{powerPlantBuildCost@{powerPlantBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{powerPlantBuildCost}{powerPlantBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::power\+Plant\+Build\+Cost = 2000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_afcdc4e29899bc43d9736c04ec980ebb7}\label{structBuildingRequirements_afcdc4e29899bc43d9736c04ec980ebb7}} 
+\index{BuildingRequirements@{BuildingRequirements}!powerPlantConcreteCost@{powerPlantConcreteCost}}
+\index{powerPlantConcreteCost@{powerPlantConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{powerPlantConcreteCost}{powerPlantConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::power\+Plant\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2884014a9e1362701088101543c6fc57}\label{structBuildingRequirements_a2884014a9e1362701088101543c6fc57}} 
+\index{BuildingRequirements@{BuildingRequirements}!powerPlantSteelCost@{powerPlantSteelCost}}
+\index{powerPlantSteelCost@{powerPlantSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{powerPlantSteelCost}{powerPlantSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::power\+Plant\+Steel\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9f08734ce7b5020259a7844da281b47b}\label{structBuildingRequirements_a9f08734ce7b5020259a7844da281b47b}} 
+\index{BuildingRequirements@{BuildingRequirements}!powerPlantWoodCost@{powerPlantWoodCost}}
+\index{powerPlantWoodCost@{powerPlantWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{powerPlantWoodCost}{powerPlantWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::power\+Plant\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a3e1259be008ca98b77639c4315148576}\label{structBuildingRequirements_a3e1259be008ca98b77639c4315148576}} 
+\index{BuildingRequirements@{BuildingRequirements}!residentialStreetBuildCost@{residentialStreetBuildCost}}
+\index{residentialStreetBuildCost@{residentialStreetBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{residentialStreetBuildCost}{residentialStreetBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::residential\+Street\+Build\+Cost = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a6c230203de8727a42e2ef757f15223bb}\label{structBuildingRequirements_a6c230203de8727a42e2ef757f15223bb}} 
+\index{BuildingRequirements@{BuildingRequirements}!residentialStreetConcreteCost@{residentialStreetConcreteCost}}
+\index{residentialStreetConcreteCost@{residentialStreetConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{residentialStreetConcreteCost}{residentialStreetConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::residential\+Street\+Concrete\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a7fe9af7b263971bfb7af38580e6f5cdf}\label{structBuildingRequirements_a7fe9af7b263971bfb7af38580e6f5cdf}} 
+\index{BuildingRequirements@{BuildingRequirements}!residentialStreetSteelCost@{residentialStreetSteelCost}}
+\index{residentialStreetSteelCost@{residentialStreetSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{residentialStreetSteelCost}{residentialStreetSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::residential\+Street\+Steel\+Cost = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a6eb264918f97a56f4307c8d2337c2cec}\label{structBuildingRequirements_a6eb264918f97a56f4307c8d2337c2cec}} 
+\index{BuildingRequirements@{BuildingRequirements}!residentialStreetWoodCost@{residentialStreetWoodCost}}
+\index{residentialStreetWoodCost@{residentialStreetWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{residentialStreetWoodCost}{residentialStreetWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::residential\+Street\+Wood\+Cost = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_af2c56eb8c527f3db662b5aa0e0e506b8}\label{structBuildingRequirements_af2c56eb8c527f3db662b5aa0e0e506b8}} 
+\index{BuildingRequirements@{BuildingRequirements}!securityBuildCost@{securityBuildCost}}
+\index{securityBuildCost@{securityBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{securityBuildCost}{securityBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::security\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac7b43acc48273fa7a11a23d48b083c1f}\label{structBuildingRequirements_ac7b43acc48273fa7a11a23d48b083c1f}} 
+\index{BuildingRequirements@{BuildingRequirements}!securityConcreteCost@{securityConcreteCost}}
+\index{securityConcreteCost@{securityConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{securityConcreteCost}{securityConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::security\+Concrete\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_abc291324e7fe748626e6305ed56c717d}\label{structBuildingRequirements_abc291324e7fe748626e6305ed56c717d}} 
+\index{BuildingRequirements@{BuildingRequirements}!securitySteelCost@{securitySteelCost}}
+\index{securitySteelCost@{securitySteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{securitySteelCost}{securitySteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::security\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_afafb68bba4626aef7d4551c519d16258}\label{structBuildingRequirements_afafb68bba4626aef7d4551c519d16258}} 
+\index{BuildingRequirements@{BuildingRequirements}!securityWoodCost@{securityWoodCost}}
+\index{securityWoodCost@{securityWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{securityWoodCost}{securityWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::security\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a028a2ab593747d1a6f1e6551ad8d0670}\label{structBuildingRequirements_a028a2ab593747d1a6f1e6551ad8d0670}} 
+\index{BuildingRequirements@{BuildingRequirements}!sewageSystemBuildCost@{sewageSystemBuildCost}}
+\index{sewageSystemBuildCost@{sewageSystemBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{sewageSystemBuildCost}{sewageSystemBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::sewage\+System\+Build\+Cost = 3000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a0d7c6072c77e735d430003aeeacc1bac}\label{structBuildingRequirements_a0d7c6072c77e735d430003aeeacc1bac}} 
+\index{BuildingRequirements@{BuildingRequirements}!sewageSystemConcreteCost@{sewageSystemConcreteCost}}
+\index{sewageSystemConcreteCost@{sewageSystemConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{sewageSystemConcreteCost}{sewageSystemConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::sewage\+System\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a0ab3bfff6c1590e24d22338fbb3d792b}\label{structBuildingRequirements_a0ab3bfff6c1590e24d22338fbb3d792b}} 
+\index{BuildingRequirements@{BuildingRequirements}!sewageSystemSteelCost@{sewageSystemSteelCost}}
+\index{sewageSystemSteelCost@{sewageSystemSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{sewageSystemSteelCost}{sewageSystemSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::sewage\+System\+Steel\+Cost = 30\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9a502582c2a3b04d57b4e20eb04fa458}\label{structBuildingRequirements_a9a502582c2a3b04d57b4e20eb04fa458}} 
+\index{BuildingRequirements@{BuildingRequirements}!sewageSystemWoodCost@{sewageSystemWoodCost}}
+\index{sewageSystemWoodCost@{sewageSystemWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{sewageSystemWoodCost}{sewageSystemWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::sewage\+System\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_afb7f0770231098606842e1e9dab853eb}\label{structBuildingRequirements_afb7f0770231098606842e1e9dab853eb}} 
+\index{BuildingRequirements@{BuildingRequirements}!shopBuildCost@{shopBuildCost}}
+\index{shopBuildCost@{shopBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{shopBuildCost}{shopBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::shop\+Build\+Cost = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ae1565404c535bab49310a24515db0948}\label{structBuildingRequirements_ae1565404c535bab49310a24515db0948}} 
+\index{BuildingRequirements@{BuildingRequirements}!shopConcreteCost@{shopConcreteCost}}
+\index{shopConcreteCost@{shopConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{shopConcreteCost}{shopConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::shop\+Concrete\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_abe2dc6110af1def4dcd40d8fa8708f84}\label{structBuildingRequirements_abe2dc6110af1def4dcd40d8fa8708f84}} 
+\index{BuildingRequirements@{BuildingRequirements}!shopSteelCost@{shopSteelCost}}
+\index{shopSteelCost@{shopSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{shopSteelCost}{shopSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::shop\+Steel\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aad9fd732ef631e235e6147f6b30259f6}\label{structBuildingRequirements_aad9fd732ef631e235e6147f6b30259f6}} 
+\index{BuildingRequirements@{BuildingRequirements}!shopWoodCost@{shopWoodCost}}
+\index{shopWoodCost@{shopWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{shopWoodCost}{shopWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::shop\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a3db6191d8a877b0b9a97aa47e5a7516d}\label{structBuildingRequirements_a3db6191d8a877b0b9a97aa47e5a7516d}} 
+\index{BuildingRequirements@{BuildingRequirements}!townhouseBuildCost@{townhouseBuildCost}}
+\index{townhouseBuildCost@{townhouseBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{townhouseBuildCost}{townhouseBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::townhouse\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a81a1e4e9cc42d60163b93ab39cfb95d0}\label{structBuildingRequirements_a81a1e4e9cc42d60163b93ab39cfb95d0}} 
+\index{BuildingRequirements@{BuildingRequirements}!townhouseConcreteCost@{townhouseConcreteCost}}
+\index{townhouseConcreteCost@{townhouseConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{townhouseConcreteCost}{townhouseConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::townhouse\+Concrete\+Cost = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9b0965b8980e4a579c1f1fbc66405322}\label{structBuildingRequirements_a9b0965b8980e4a579c1f1fbc66405322}} 
+\index{BuildingRequirements@{BuildingRequirements}!townhouseSteelCost@{townhouseSteelCost}}
+\index{townhouseSteelCost@{townhouseSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{townhouseSteelCost}{townhouseSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::townhouse\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ae51cced3ac0b9641898e01064997327f}\label{structBuildingRequirements_ae51cced3ac0b9641898e01064997327f}} 
+\index{BuildingRequirements@{BuildingRequirements}!townhouseWoodCost@{townhouseWoodCost}}
+\index{townhouseWoodCost@{townhouseWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{townhouseWoodCost}{townhouseWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::townhouse\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac246cbd1adb8921727299f8771820b6f}\label{structBuildingRequirements_ac246cbd1adb8921727299f8771820b6f}} 
+\index{BuildingRequirements@{BuildingRequirements}!warehouseBuildCost@{warehouseBuildCost}}
+\index{warehouseBuildCost@{warehouseBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{warehouseBuildCost}{warehouseBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::warehouse\+Build\+Cost = 1500\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a627ac9dbda71e5800e6dae93240c3390}\label{structBuildingRequirements_a627ac9dbda71e5800e6dae93240c3390}} 
+\index{BuildingRequirements@{BuildingRequirements}!warehouseConcreteCost@{warehouseConcreteCost}}
+\index{warehouseConcreteCost@{warehouseConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{warehouseConcreteCost}{warehouseConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::warehouse\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a6a370cb8f2fb3787ddac1c9e2d71cd2c}\label{structBuildingRequirements_a6a370cb8f2fb3787ddac1c9e2d71cd2c}} 
+\index{BuildingRequirements@{BuildingRequirements}!warehouseSteelCost@{warehouseSteelCost}}
+\index{warehouseSteelCost@{warehouseSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{warehouseSteelCost}{warehouseSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::warehouse\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_aafec7f78225c8da647bfc34cbfe916e4}\label{structBuildingRequirements_aafec7f78225c8da647bfc34cbfe916e4}} 
+\index{BuildingRequirements@{BuildingRequirements}!warehouseWoodCost@{warehouseWoodCost}}
+\index{warehouseWoodCost@{warehouseWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{warehouseWoodCost}{warehouseWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::warehouse\+Wood\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_afbbf1a1f03ed2d555bad2027781ec483}\label{structBuildingRequirements_afbbf1a1f03ed2d555bad2027781ec483}} 
+\index{BuildingRequirements@{BuildingRequirements}!wasteManagementBuildCost@{wasteManagementBuildCost}}
+\index{wasteManagementBuildCost@{wasteManagementBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{wasteManagementBuildCost}{wasteManagementBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::waste\+Management\+Build\+Cost = 3000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ae9df42661c583d1dad1b107d3281a382}\label{structBuildingRequirements_ae9df42661c583d1dad1b107d3281a382}} 
+\index{BuildingRequirements@{BuildingRequirements}!wasteManagementConcreteCost@{wasteManagementConcreteCost}}
+\index{wasteManagementConcreteCost@{wasteManagementConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{wasteManagementConcreteCost}{wasteManagementConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::waste\+Management\+Concrete\+Cost = 30\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a2cb9e94efa6d4927112650cd8885e6ab}\label{structBuildingRequirements_a2cb9e94efa6d4927112650cd8885e6ab}} 
+\index{BuildingRequirements@{BuildingRequirements}!wasteManagementSteelCost@{wasteManagementSteelCost}}
+\index{wasteManagementSteelCost@{wasteManagementSteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{wasteManagementSteelCost}{wasteManagementSteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::waste\+Management\+Steel\+Cost = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a4903dec48adb80eda4f652bdde712969}\label{structBuildingRequirements_a4903dec48adb80eda4f652bdde712969}} 
+\index{BuildingRequirements@{BuildingRequirements}!wasteManagementWoodCost@{wasteManagementWoodCost}}
+\index{wasteManagementWoodCost@{wasteManagementWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{wasteManagementWoodCost}{wasteManagementWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::waste\+Management\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9c3dcef130c753dff5575f8fb1de8c2c}\label{structBuildingRequirements_a9c3dcef130c753dff5575f8fb1de8c2c}} 
+\index{BuildingRequirements@{BuildingRequirements}!waterSupplyBuildCost@{waterSupplyBuildCost}}
+\index{waterSupplyBuildCost@{waterSupplyBuildCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{waterSupplyBuildCost}{waterSupplyBuildCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::water\+Supply\+Build\+Cost = 2000\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_ac21fa883394742bf4b47be2037ab8b1b}\label{structBuildingRequirements_ac21fa883394742bf4b47be2037ab8b1b}} 
+\index{BuildingRequirements@{BuildingRequirements}!waterSupplyConcreteCost@{waterSupplyConcreteCost}}
+\index{waterSupplyConcreteCost@{waterSupplyConcreteCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{waterSupplyConcreteCost}{waterSupplyConcreteCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::water\+Supply\+Concrete\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a9423f66ca9979b350ed90f52167b17de}\label{structBuildingRequirements_a9423f66ca9979b350ed90f52167b17de}} 
+\index{BuildingRequirements@{BuildingRequirements}!waterSupplySteelCost@{waterSupplySteelCost}}
+\index{waterSupplySteelCost@{waterSupplySteelCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{waterSupplySteelCost}{waterSupplySteelCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::water\+Supply\+Steel\+Cost = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structBuildingRequirements_a037e0303c323582a9d48eb36bc639105}\label{structBuildingRequirements_a037e0303c323582a9d48eb36bc639105}} 
+\index{BuildingRequirements@{BuildingRequirements}!waterSupplyWoodCost@{waterSupplyWoodCost}}
+\index{waterSupplyWoodCost@{waterSupplyWoodCost}!BuildingRequirements@{BuildingRequirements}}
+\doxysubsubsection{\texorpdfstring{waterSupplyWoodCost}{waterSupplyWoodCost}}
+{\footnotesize\ttfamily const int Building\+Requirements\+::water\+Supply\+Wood\+Cost = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{BuildingRequirements_8h}{Building\+Requirements.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{BuildingRequirements_8cpp}{Building\+Requirements.\+cpp}}\end{DoxyCompactItemize}

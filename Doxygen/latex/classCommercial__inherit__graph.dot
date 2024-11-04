@@ -1,0 +1,17 @@
+digraph "Commercial"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Commercial",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class representing a commercial building."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Building",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBuilding.html",tooltip="Abstract base class representing a building in the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityBlock",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityBlock.html",tooltip="Base class representing a block within the city."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ComMall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classComMall.html",tooltip="Represents a commercial mall, extending the Commercial class."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ComOffice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classComOffice.html",tooltip="Represents a commercial office building."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ComShop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classComShop.html",tooltip="Represents a commercial shop building."];
+}

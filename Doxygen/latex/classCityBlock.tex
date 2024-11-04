@@ -1,0 +1,89 @@
+\hypertarget{classCityBlock}{}\doxysection{City\+Block Class Reference}
+\label{classCityBlock}\index{CityBlock@{CityBlock}}
+
+
+Base class representing a block within the city.  
+
+
+
+
+{\ttfamily \#include $<$City\+Block.\+h$>$}
+
+
+
+Inheritance diagram for City\+Block\+:
+% FIG 0
+
+
+Collaboration diagram for City\+Block\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCityBlock_a5781a91202b59cae1db0e0f287299f09}{City\+Block}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classCityBlock}{City\+Block}} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCityBlock_abff8ab780ea76505f9d35ed58c5dc586}{accept}} (\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$visitor)
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} to perform operations on this city block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCityMediator}{City\+Mediator}} $\ast$ \mbox{\hyperlink{classCityBlock_ac87ddf69e4c008e598ce01d1fc90f244}{mediator}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the \mbox{\hyperlink{classCityMediator}{City\+Mediator}} managing this block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class representing a block within the city. 
+
+The \mbox{\hyperlink{classCityBlock}{City\+Block}} class serves as a base for various types of city blocks, providing a mechanism to interact with the \mbox{\hyperlink{classCityMediator}{City\+Mediator}} and accept visitors that perform operations such as tax and budget assessments. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityBlock_a5781a91202b59cae1db0e0f287299f09}\label{classCityBlock_a5781a91202b59cae1db0e0f287299f09}} 
+\index{CityBlock@{CityBlock}!CityBlock@{CityBlock}}
+\index{CityBlock@{CityBlock}!CityBlock@{CityBlock}}
+\doxysubsubsection{\texorpdfstring{CityBlock()}{CityBlock()}}
+{\footnotesize\ttfamily City\+Block\+::\+City\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classCityBlock}{City\+Block}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityBlock_abff8ab780ea76505f9d35ed58c5dc586}\label{classCityBlock_abff8ab780ea76505f9d35ed58c5dc586}} 
+\index{CityBlock@{CityBlock}!accept@{accept}}
+\index{accept@{accept}!CityBlock@{CityBlock}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily double City\+Block\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption})}
+
+
+
+Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} to perform operations on this city block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & A pointer to the visitor that will perform operations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A double representing the result of the visitor\textquotesingle{}s operation. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCityBlock_ac87ddf69e4c008e598ce01d1fc90f244}\label{classCityBlock_ac87ddf69e4c008e598ce01d1fc90f244}} 
+\index{CityBlock@{CityBlock}!mediator@{mediator}}
+\index{mediator@{mediator}!CityBlock@{CityBlock}}
+\doxysubsubsection{\texorpdfstring{mediator}{mediator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityMediator}{City\+Mediator}}$\ast$ City\+Block\+::mediator = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the \mbox{\hyperlink{classCityMediator}{City\+Mediator}} managing this block. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\mbox{\hyperlink{CityBlock_8h}{City\+Block.\+h}}\item 
+src/\+Citizens/\mbox{\hyperlink{CityBlock_8cpp}{City\+Block.\+cpp}}\end{DoxyCompactItemize}

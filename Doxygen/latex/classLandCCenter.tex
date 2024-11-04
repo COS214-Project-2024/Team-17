@@ -1,0 +1,291 @@
+\hypertarget{classLandCCenter}{}\doxysection{Land\+CCenter Class Reference}
+\label{classLandCCenter}\index{LandCCenter@{LandCCenter}}
+
+
+Represents a community center landmark building.  
+
+
+
+
+{\ttfamily \#include $<$Land\+CCenter.\+h$>$}
+
+
+
+Inheritance diagram for Land\+CCenter\+:
+% FIG 0
+
+
+Collaboration diagram for Land\+CCenter\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandCCenter_a8fb76ef91cc34d6c8b9e597b3f969539}{Land\+CCenter}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classLandCCenter}{Land\+CCenter}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandCCenter_a32f783ffb16814a81a3c69df32c68144}{$\sim$\+Land\+CCenter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classLandCCenter}{Land\+CCenter}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_a29244595ffed4aa9ac08948f804de1d0}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the community center building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandCCenter_ae7c5af71925e59b9973840cc5f721aa8}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the number of visitors currently in the community center. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_aaf5c3e0c1498b5af3b931bff72dc91d3}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors in the community center. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandCCenter_a1132a3af10eace92257ee56968395653}{check\+Build\+Requirements}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the community center meets the requirements for construction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_a04f4c15e1018b6ae26b6d9f8803ecd34}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls the utilities for the community center. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandCCenter_ae1690186796b4b83740836ed2c71078d}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the community center. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_ae32c687aeab89d4cd1def627858b4899}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the community center. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLandCCenter_a14e11bb29f90e08de4cc1cd547dc479d}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandCCenter_a046d45f2198cb8175159940f9fbb8ce5}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the community center. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_a32393357e502bf0a3f89ee6ff5023d93}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the community center. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandCCenter_a91384550ffe5714457d2aa15275488a3}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the community center that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandCCenter_ad836028332c7cb475a5522c249db63c5}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are available jobs in the community center. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a community center landmark building. 
+
+The \mbox{\hyperlink{classLandCCenter}{Land\+CCenter}} class inherits from the \mbox{\hyperlink{classLandmark}{Landmark}} class and provides specific implementations for managing visitors, resources, and employee interactions at a community center. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandCCenter_a8fb76ef91cc34d6c8b9e597b3f969539}\label{classLandCCenter_a8fb76ef91cc34d6c8b9e597b3f969539}} 
+\index{LandCCenter@{LandCCenter}!LandCCenter@{LandCCenter}}
+\index{LandCCenter@{LandCCenter}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{LandCCenter()}{LandCCenter()}}
+{\footnotesize\ttfamily Land\+CCenter\+::\+Land\+CCenter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classLandCCenter}{Land\+CCenter}}. 
+
+\mbox{\Hypertarget{classLandCCenter_a32f783ffb16814a81a3c69df32c68144}\label{classLandCCenter_a32f783ffb16814a81a3c69df32c68144}} 
+\index{LandCCenter@{LandCCenter}!````~LandCCenter@{$\sim$LandCCenter}}
+\index{````~LandCCenter@{$\sim$LandCCenter}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{$\sim$LandCCenter()}{~LandCCenter()}}
+{\footnotesize\ttfamily Land\+CCenter\+::$\sim$\+Land\+CCenter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classLandCCenter}{Land\+CCenter}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandCCenter_a046d45f2198cb8175159940f9fbb8ce5}\label{classLandCCenter_a046d45f2198cb8175159940f9fbb8ce5}} 
+\index{LandCCenter@{LandCCenter}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Land\+CCenter\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the community center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a3a75309da527b4e2b75ec026c245b001}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_a04f4c15e1018b6ae26b6d9f8803ecd34}\label{classLandCCenter_a04f4c15e1018b6ae26b6d9f8803ecd34}} 
+\index{LandCCenter@{LandCCenter}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the utilities for the community center. 
+
+\mbox{\Hypertarget{classLandCCenter_a1132a3af10eace92257ee56968395653}\label{classLandCCenter_a1132a3af10eace92257ee56968395653}} 
+\index{LandCCenter@{LandCCenter}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily bool Land\+CCenter\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the community center meets the requirements for construction. 
+
+\begin{DoxyReturn}{Returns}
+True if build requirements are met, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{Building}}.
+
+\mbox{\Hypertarget{classLandCCenter_a29244595ffed4aa9ac08948f804de1d0}\label{classLandCCenter_a29244595ffed4aa9ac08948f804de1d0}} 
+\index{LandCCenter@{LandCCenter}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the community center building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classLandCCenter_a14e11bb29f90e08de4cc1cd547dc479d}\label{classLandCCenter_a14e11bb29f90e08de4cc1cd547dc479d}} 
+\index{LandCCenter@{LandCCenter}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Land\+CCenter\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a7fcc3f5dd4506e16fa89eeceb0fddd26}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_ae1690186796b4b83740836ed2c71078d}\label{classLandCCenter_ae1690186796b4b83740836ed2c71078d}} 
+\index{LandCCenter@{LandCCenter}!getState@{getState}}
+\index{getState@{getState}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Land\+CCenter\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the community center. 
+
+\begin{DoxyReturn}{Returns}
+True if the community center is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a03bbfc9b0211b81529c12df9edc708f3}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_ae7c5af71925e59b9973840cc5f721aa8}\label{classLandCCenter_ae7c5af71925e59b9973840cc5f721aa8}} 
+\index{LandCCenter@{LandCCenter}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Land\+CCenter\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of visitors currently in the community center. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a033ed33a708e891d82dbc3934d917259}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_ad836028332c7cb475a5522c249db63c5}\label{classLandCCenter_ad836028332c7cb475a5522c249db63c5}} 
+\index{LandCCenter@{LandCCenter}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Land\+CCenter\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are available jobs in the community center. 
+
+\begin{DoxyReturn}{Returns}
+True if there are jobs available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classLandCCenter_a91384550ffe5714457d2aa15275488a3}\label{classLandCCenter_a91384550ffe5714457d2aa15275488a3}} 
+\index{LandCCenter@{LandCCenter}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the community center that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_ac20fccbc1b3b5e88193ba9aefc70671e}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_a32393357e502bf0a3f89ee6ff5023d93}\label{classLandCCenter_a32393357e502bf0a3f89ee6ff5023d93}} 
+\index{LandCCenter@{LandCCenter}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the community center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_a2effb53f0f04d6f95ab7efbdb6c4ef61}{Landmark}}.
+
+\mbox{\Hypertarget{classLandCCenter_ae32c687aeab89d4cd1def627858b4899}\label{classLandCCenter_ae32c687aeab89d4cd1def627858b4899}} 
+\index{LandCCenter@{LandCCenter}!setState@{setState}}
+\index{setState@{setState}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the community center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLandCCenter_aaf5c3e0c1498b5af3b931bff72dc91d3}\label{classLandCCenter_aaf5c3e0c1498b5af3b931bff72dc91d3}} 
+\index{LandCCenter@{LandCCenter}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!LandCCenter@{LandCCenter}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Land\+CCenter\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors in the community center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_af658720084ef36321092055b57acc7df}{Landmark}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{LandCCenter_8h}{Land\+CCenter.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{LandCCenter_8cpp}{Land\+CCenter.\+cpp}}\end{DoxyCompactItemize}

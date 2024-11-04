@@ -1,0 +1,253 @@
+\hypertarget{classResFlat}{}\doxysection{Res\+Flat Class Reference}
+\label{classResFlat}\index{ResFlat@{ResFlat}}
+
+
+Class representing a residential flat.  
+
+
+
+
+{\ttfamily \#include $<$Res\+Flat.\+h$>$}
+
+
+
+Inheritance diagram for Res\+Flat\+:
+% FIG 0
+
+
+Collaboration diagram for Res\+Flat\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResFlat_a83a070ff48f58e1187738fc1324cef36}{Res\+Flat}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classResFlat}{Res\+Flat}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResFlat_a8193a1dacc6d7fac8db7fc0dc323889d}{$\sim$\+Res\+Flat}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classResFlat}{Res\+Flat}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_a0829fe120622dd5f679ef7a7b91b5f64}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the residential flat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResFlat_accfac70285933b554683f6885f44f2c7}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the residential flat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_a3e2de5e90a683ff419aeb4422fd4c305}{set\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the residential flat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_a7341628ead20cf185ba4d5f9fc29b79d}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities related to the residential flat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResFlat_a9e157781be1200bd27cb6a5ea38811d2}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the residential flat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_a98bc59d38cd33b256cccf61d459fb0ca}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the residential flat. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classResFlat_a6d67b9e20f9fa9533fea6bb3205fc790}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of residential building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_acc3eaf56938d1902b706a9822a6ed494}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the residential flat that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResFlat_ac0771aac848a2f86ac829445cc7ce4b9}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident into the residential flat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResFlat_a7984db105c3ad9ecb2cda5f1ad154e7c}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the residential flat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class representing a residential flat. 
+
+The \mbox{\hyperlink{classResFlat}{Res\+Flat}} class inherits from the \mbox{\hyperlink{classResidential}{Residential}} class and provides implementations for managing a residential flat\textquotesingle{}s capacity, state, utilities, and residents. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResFlat_a83a070ff48f58e1187738fc1324cef36}\label{classResFlat_a83a070ff48f58e1187738fc1324cef36}} 
+\index{ResFlat@{ResFlat}!ResFlat@{ResFlat}}
+\index{ResFlat@{ResFlat}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{ResFlat()}{ResFlat()}}
+{\footnotesize\ttfamily Res\+Flat\+::\+Res\+Flat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classResFlat}{Res\+Flat}}. 
+
+\mbox{\Hypertarget{classResFlat_a8193a1dacc6d7fac8db7fc0dc323889d}\label{classResFlat_a8193a1dacc6d7fac8db7fc0dc323889d}} 
+\index{ResFlat@{ResFlat}!````~ResFlat@{$\sim$ResFlat}}
+\index{````~ResFlat@{$\sim$ResFlat}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResFlat()}{~ResFlat()}}
+{\footnotesize\ttfamily Res\+Flat\+::$\sim$\+Res\+Flat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classResFlat}{Res\+Flat}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResFlat_a7341628ead20cf185ba4d5f9fc29b79d}\label{classResFlat_a7341628ead20cf185ba4d5f9fc29b79d}} 
+\index{ResFlat@{ResFlat}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Res\+Flat\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities related to the residential flat. 
+
+Call Utilities in Buildings \mbox{\Hypertarget{classResFlat_a0829fe120622dd5f679ef7a7b91b5f64}\label{classResFlat_a0829fe120622dd5f679ef7a7b91b5f64}} 
+\index{ResFlat@{ResFlat}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Res\+Flat\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the residential flat. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classResFlat_a6d67b9e20f9fa9533fea6bb3205fc790}\label{classResFlat_a6d67b9e20f9fa9533fea6bb3205fc790}} 
+\index{ResFlat@{ResFlat}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Res\+Flat\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of residential building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_accfac70285933b554683f6885f44f2c7}\label{classResFlat_accfac70285933b554683f6885f44f2c7}} 
+\index{ResFlat@{ResFlat}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Res\+Flat\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the capacity of the residential flat. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of residents that can occupy the flat. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_a9e157781be1200bd27cb6a5ea38811d2}\label{classResFlat_a9e157781be1200bd27cb6a5ea38811d2}} 
+\index{ResFlat@{ResFlat}!getState@{getState}}
+\index{getState@{getState}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Res\+Flat\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the residential flat. 
+
+\begin{DoxyReturn}{Returns}
+True if the flat is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_ac0771aac848a2f86ac829445cc7ce4b9}\label{classResFlat_ac0771aac848a2f86ac829445cc7ce4b9}} 
+\index{ResFlat@{ResFlat}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Res\+Flat\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident into the residential flat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resident was successfully moved in, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a731dd372679eba6f8c88f6b43aef8618}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_a7984db105c3ad9ecb2cda5f1ad154e7c}\label{classResFlat_a7984db105c3ad9ecb2cda5f1ad154e7c}} 
+\index{ResFlat@{ResFlat}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Res\+Flat\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident out of the residential flat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved out. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a98e71673e6bd3903469e30ae2a89e482}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_acc3eaf56938d1902b706a9822a6ed494}\label{classResFlat_acc3eaf56938d1902b706a9822a6ed494}} 
+\index{ResFlat@{ResFlat}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Res\+Flat\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the residential flat that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_a3e2de5e90a683ff419aeb4422fd4c305}\label{classResFlat_a3e2de5e90a683ff419aeb4422fd4c305}} 
+\index{ResFlat@{ResFlat}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily void Res\+Flat\+::set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the capacity of the residential flat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of residents to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}{Residential}}.
+
+\mbox{\Hypertarget{classResFlat_a98bc59d38cd33b256cccf61d459fb0ca}\label{classResFlat_a98bc59d38cd33b256cccf61d459fb0ca}} 
+\index{ResFlat@{ResFlat}!setState@{setState}}
+\index{setState@{setState}!ResFlat@{ResFlat}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Res\+Flat\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the residential flat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ResFlat_8h}{Res\+Flat.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ResFlat_8cpp}{Res\+Flat.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{classWorkingNoIssues}{}\doxysection{Working\+No\+Issues Class Reference}
+\label{classWorkingNoIssues}\index{WorkingNoIssues@{WorkingNoIssues}}
+
+
+Represents a road state indicating that the road is operational without any issues.  
+
+
+
+
+{\ttfamily \#include $<$Working\+No\+Issues.\+h$>$}
+
+
+
+Inheritance diagram for Working\+No\+Issues\+:
+% FIG 0
+
+
+Collaboration diagram for Working\+No\+Issues\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classWorkingNoIssues_a9b961e04a7cddea66b23bda32393bc04}{handle\+Traffic}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$road)
+\begin{DoxyCompactList}\small\item\em Handles traffic for a road that is operational with no issues. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classWorkingNoIssues_a2685ea226cf04b38eb0cf8ee06cb04a5}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the status of the road state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a road state indicating that the road is operational without any issues. 
+
+The \mbox{\hyperlink{classWorkingNoIssues}{Working\+No\+Issues}} class implements the \mbox{\hyperlink{classRoadState}{Road\+State}} interface, providing specific behavior for handling traffic when a road is functioning normally. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWorkingNoIssues_a2685ea226cf04b38eb0cf8ee06cb04a5}\label{classWorkingNoIssues_a2685ea226cf04b38eb0cf8ee06cb04a5}} 
+\index{WorkingNoIssues@{WorkingNoIssues}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!WorkingNoIssues@{WorkingNoIssues}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Working\+No\+Issues\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the status of the road state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current status of the road (e.\+g., \char`\"{}\+Working No Issues\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadState_a5d8cdd6b7292f23472a670a31cbe57f1}{Road\+State}}.
+
+\mbox{\Hypertarget{classWorkingNoIssues_a9b961e04a7cddea66b23bda32393bc04}\label{classWorkingNoIssues_a9b961e04a7cddea66b23bda32393bc04}} 
+\index{WorkingNoIssues@{WorkingNoIssues}!handleTraffic@{handleTraffic}}
+\index{handleTraffic@{handleTraffic}!WorkingNoIssues@{WorkingNoIssues}}
+\doxysubsubsection{\texorpdfstring{handleTraffic()}{handleTraffic()}}
+{\footnotesize\ttfamily void Working\+No\+Issues\+::handle\+Traffic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{road }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles traffic for a road that is operational with no issues. 
+
+This method implements the logic for managing traffic on a road component that is currently functioning without any problems.
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & Pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} that is operational. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadState_a6f4099e3a6a7983625ca9602271d8fcd}{Road\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{WorkingNoIssues_8h}{Working\+No\+Issues.\+h}}\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{WorkingNoIssues_8cpp}{Working\+No\+Issues.\+cpp}}\end{DoxyCompactItemize}

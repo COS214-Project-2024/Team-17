@@ -1,0 +1,253 @@
+\hypertarget{classResEstate}{}\doxysection{Res\+Estate Class Reference}
+\label{classResEstate}\index{ResEstate@{ResEstate}}
+
+
+Class representing a residential estate.  
+
+
+
+
+{\ttfamily \#include $<$Res\+Estate.\+h$>$}
+
+
+
+Inheritance diagram for Res\+Estate\+:
+% FIG 0
+
+
+Collaboration diagram for Res\+Estate\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResEstate_a638f21ca3aa0f576f91ea2960c8d56ad}{Res\+Estate}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classResEstate}{Res\+Estate}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResEstate_a95f83d3f4ac56f88e471932871ebf16d}{$\sim$\+Res\+Estate}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classResEstate}{Res\+Estate}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_a9006f451c6183811e80dd0a4f126d172}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the residential estate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResEstate_a2fd031430394ca2c6ff29e652e8b4724}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the residential estate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_a99c2b8110e37e2da9a59b44946e788a1}{set\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the residential estate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_ad740ea8d0e11861e69e0d0a6b18d9fbd}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities related to the residential estate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResEstate_ad03438bee7a1009f7e7412d6a06d5d1c}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the residential estate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_a3ffd4b0dd9d6e36b02804a264e3f942f}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the residential estate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classResEstate_ab3231586244bb402a29d7c7303cbc029}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of residential building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_ac85c8c11be3b97c1234245f763d720d1}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee) override
+\begin{DoxyCompactList}\small\item\em Notifies the residential estate that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResEstate_a27678111da7d99003a29f1e19d6b720f}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident into the residential estate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResEstate_a7c1a1a9e4711b7dcecb5e1c8cac2b9e8}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the residential estate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class representing a residential estate. 
+
+The \mbox{\hyperlink{classResEstate}{Res\+Estate}} class inherits from the \mbox{\hyperlink{classResidential}{Residential}} class and provides implementations for managing a residential estate\textquotesingle{}s capacity, state, utilities, and residents. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResEstate_a638f21ca3aa0f576f91ea2960c8d56ad}\label{classResEstate_a638f21ca3aa0f576f91ea2960c8d56ad}} 
+\index{ResEstate@{ResEstate}!ResEstate@{ResEstate}}
+\index{ResEstate@{ResEstate}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{ResEstate()}{ResEstate()}}
+{\footnotesize\ttfamily Res\+Estate\+::\+Res\+Estate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classResEstate}{Res\+Estate}}. 
+
+\mbox{\Hypertarget{classResEstate_a95f83d3f4ac56f88e471932871ebf16d}\label{classResEstate_a95f83d3f4ac56f88e471932871ebf16d}} 
+\index{ResEstate@{ResEstate}!````~ResEstate@{$\sim$ResEstate}}
+\index{````~ResEstate@{$\sim$ResEstate}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResEstate()}{~ResEstate()}}
+{\footnotesize\ttfamily Res\+Estate\+::$\sim$\+Res\+Estate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classResEstate}{Res\+Estate}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResEstate_ad740ea8d0e11861e69e0d0a6b18d9fbd}\label{classResEstate_ad740ea8d0e11861e69e0d0a6b18d9fbd}} 
+\index{ResEstate@{ResEstate}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Res\+Estate\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities related to the residential estate. 
+
+Call Utilities in Buildings \mbox{\Hypertarget{classResEstate_a9006f451c6183811e80dd0a4f126d172}\label{classResEstate_a9006f451c6183811e80dd0a4f126d172}} 
+\index{ResEstate@{ResEstate}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Res\+Estate\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the residential estate. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classResEstate_ab3231586244bb402a29d7c7303cbc029}\label{classResEstate_ab3231586244bb402a29d7c7303cbc029}} 
+\index{ResEstate@{ResEstate}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Res\+Estate\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of residential building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_a2fd031430394ca2c6ff29e652e8b4724}\label{classResEstate_a2fd031430394ca2c6ff29e652e8b4724}} 
+\index{ResEstate@{ResEstate}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Res\+Estate\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the capacity of the residential estate. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of residents that can occupy the estate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_ad03438bee7a1009f7e7412d6a06d5d1c}\label{classResEstate_ad03438bee7a1009f7e7412d6a06d5d1c}} 
+\index{ResEstate@{ResEstate}!getState@{getState}}
+\index{getState@{getState}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Res\+Estate\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the residential estate. 
+
+\begin{DoxyReturn}{Returns}
+True if the estate is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_a27678111da7d99003a29f1e19d6b720f}\label{classResEstate_a27678111da7d99003a29f1e19d6b720f}} 
+\index{ResEstate@{ResEstate}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Res\+Estate\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident into the residential estate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resident was successfully moved in, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a731dd372679eba6f8c88f6b43aef8618}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_a7c1a1a9e4711b7dcecb5e1c8cac2b9e8}\label{classResEstate_a7c1a1a9e4711b7dcecb5e1c8cac2b9e8}} 
+\index{ResEstate@{ResEstate}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Res\+Estate\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident out of the residential estate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved out. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a98e71673e6bd3903469e30ae2a89e482}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_ac85c8c11be3b97c1234245f763d720d1}\label{classResEstate_ac85c8c11be3b97c1234245f763d720d1}} 
+\index{ResEstate@{ResEstate}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Res\+Estate\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies the residential estate that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_a99c2b8110e37e2da9a59b44946e788a1}\label{classResEstate_a99c2b8110e37e2da9a59b44946e788a1}} 
+\index{ResEstate@{ResEstate}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily void Res\+Estate\+::set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the capacity of the residential estate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of residents to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}{Residential}}.
+
+\mbox{\Hypertarget{classResEstate_a3ffd4b0dd9d6e36b02804a264e3f942f}\label{classResEstate_a3ffd4b0dd9d6e36b02804a264e3f942f}} 
+\index{ResEstate@{ResEstate}!setState@{setState}}
+\index{setState@{setState}!ResEstate@{ResEstate}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Res\+Estate\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the residential estate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ResEstate_8h}{Res\+Estate.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ResEstate_8cpp}{Res\+Estate.\+cpp}}\end{DoxyCompactItemize}

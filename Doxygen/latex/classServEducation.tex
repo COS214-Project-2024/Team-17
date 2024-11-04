@@ -1,0 +1,274 @@
+\hypertarget{classServEducation}{}\doxysection{Serv\+Education Class Reference}
+\label{classServEducation}\index{ServEducation@{ServEducation}}
+
+
+Represents an education service in the city.  
+
+
+
+
+{\ttfamily \#include $<$Serv\+Education.\+h$>$}
+
+
+
+Inheritance diagram for Serv\+Education\+:
+% FIG 0
+
+
+Collaboration diagram for Serv\+Education\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServEducation_aa7fccc12eb5d663bc9e5ea95c6be781f}{Serv\+Education}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServEducation}{Serv\+Education}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServEducation_a430879d21a52412351e78f265069cbe5}{$\sim$\+Serv\+Education}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classServEducation}{Serv\+Education}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_ac40f16cedbc5211897497fa38aa2e584}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the education building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServEducation_ae82717f1101eeacee91a253261451afa}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the number of visitors currently in the education facility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_a2726a7b5658db2bb60f435a58de00d62}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors in the education facility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_a101c058722859bdfaafaac601493a82d}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities in the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEducation_a9342b1f7b15689c17fd1fd92f0112ece}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the education service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_ac7539d69fcda08dd386ed10142127beb}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the education service. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classServEducation_a3cfd0b56823306dd6ecc28b4a8a4c422}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEducation_a76c3a202a06fb66fd9b2a7d6515bd146}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the education service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_ade75c7e479715e9c9726cecb0116073b}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the education service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEducation_aa18b869221fcf2ebf05301701a020f8f}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the education service that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEducation_ad1e7e77f240aec37d6b00397b30ce5b1}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are job openings in the education service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an education service in the city. 
+
+Represents an education service building.
+
+The \mbox{\hyperlink{classServEducation}{Serv\+Education}} class manages educational operations, employee management, and visitor information, inheriting from the \mbox{\hyperlink{classServices}{Services}} base class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServEducation_aa7fccc12eb5d663bc9e5ea95c6be781f}\label{classServEducation_aa7fccc12eb5d663bc9e5ea95c6be781f}} 
+\index{ServEducation@{ServEducation}!ServEducation@{ServEducation}}
+\index{ServEducation@{ServEducation}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{ServEducation()}{ServEducation()}}
+{\footnotesize\ttfamily Serv\+Education\+::\+Serv\+Education (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classServEducation}{Serv\+Education}} object. 
+
+\mbox{\Hypertarget{classServEducation_a430879d21a52412351e78f265069cbe5}\label{classServEducation_a430879d21a52412351e78f265069cbe5}} 
+\index{ServEducation@{ServEducation}!````~ServEducation@{$\sim$ServEducation}}
+\index{````~ServEducation@{$\sim$ServEducation}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServEducation()}{~ServEducation()}}
+{\footnotesize\ttfamily Serv\+Education\+::$\sim$\+Serv\+Education (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{classServEducation}{Serv\+Education}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServEducation_a76c3a202a06fb66fd9b2a7d6515bd146}\label{classServEducation_a76c3a202a06fb66fd9b2a7d6515bd146}} 
+\index{ServEducation@{ServEducation}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Serv\+Education\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the education service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_a101c058722859bdfaafaac601493a82d}\label{classServEducation_a101c058722859bdfaafaac601493a82d}} 
+\index{ServEducation@{ServEducation}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Serv\+Education\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities in the building. 
+
+Notify utilities of changes in the education service \mbox{\Hypertarget{classServEducation_ac40f16cedbc5211897497fa38aa2e584}\label{classServEducation_ac40f16cedbc5211897497fa38aa2e584}} 
+\index{ServEducation@{ServEducation}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Serv\+Education\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the education building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classServEducation_a3cfd0b56823306dd6ecc28b4a8a4c422}\label{classServEducation_a3cfd0b56823306dd6ecc28b4a8a4c422}} 
+\index{ServEducation@{ServEducation}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Serv\+Education\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_a9342b1f7b15689c17fd1fd92f0112ece}\label{classServEducation_a9342b1f7b15689c17fd1fd92f0112ece}} 
+\index{ServEducation@{ServEducation}!getState@{getState}}
+\index{getState@{getState}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Serv\+Education\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the education service. 
+
+\begin{DoxyReturn}{Returns}
+True if the education service is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_ae82717f1101eeacee91a253261451afa}\label{classServEducation_ae82717f1101eeacee91a253261451afa}} 
+\index{ServEducation@{ServEducation}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Serv\+Education\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of visitors currently in the education facility. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a6f30c52bb657da639ae4b61c06a0476a}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_ad1e7e77f240aec37d6b00397b30ce5b1}\label{classServEducation_ad1e7e77f240aec37d6b00397b30ce5b1}} 
+\index{ServEducation@{ServEducation}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Serv\+Education\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are job openings in the education service. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classServEducation_aa18b869221fcf2ebf05301701a020f8f}\label{classServEducation_aa18b869221fcf2ebf05301701a020f8f}} 
+\index{ServEducation@{ServEducation}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Serv\+Education\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the education service that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_ade75c7e479715e9c9726cecb0116073b}\label{classServEducation_ade75c7e479715e9c9726cecb0116073b}} 
+\index{ServEducation@{ServEducation}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Serv\+Education\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the education service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{Services}}.
+
+\mbox{\Hypertarget{classServEducation_ac7539d69fcda08dd386ed10142127beb}\label{classServEducation_ac7539d69fcda08dd386ed10142127beb}} 
+\index{ServEducation@{ServEducation}!setState@{setState}}
+\index{setState@{setState}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Serv\+Education\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the education service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServEducation_a2726a7b5658db2bb60f435a58de00d62}\label{classServEducation_a2726a7b5658db2bb60f435a58de00d62}} 
+\index{ServEducation@{ServEducation}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!ServEducation@{ServEducation}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Serv\+Education\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors in the education facility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a0e64154e9a9e89adcf294af6ee269b49}{Services}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ServEducation_8h}{Serv\+Education.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ServEducation_8cpp}{Serv\+Education.\+cpp}}\end{DoxyCompactItemize}

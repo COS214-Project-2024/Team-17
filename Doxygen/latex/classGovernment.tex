@@ -1,0 +1,187 @@
+\hypertarget{classGovernment}{}\doxysection{Government Class Reference}
+\label{classGovernment}\index{Government@{Government}}
+
+
+Represents a government entity responsible for managing taxes and budgets for cities.  
+
+
+
+
+{\ttfamily \#include $<$Government.\+h$>$}
+
+
+
+Inheritance diagram for Government\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGovernment_afe4f1ceedfe7d91eccb270272b3803dd}{process\+Taxes}} (\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&city)
+\begin{DoxyCompactList}\small\item\em Processes taxes for the specified city structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_adda5d8ed6f5ff5df40d01d58d0836729}{apply\+Budget}} (\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&city)
+\begin{DoxyCompactList}\small\item\em Applies the current budget policy to the specified city structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_ae3a492f7410671074319a4061a2c0696}{set\+Tax\+Rate}} (std\+::string category, double rate)
+\begin{DoxyCompactList}\small\item\em Sets the tax rate for the specified category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}{collect\+Taxes}} ()
+\begin{DoxyCompactList}\small\item\em Collects taxes based on current tax rates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a5f38bde4edf8521d285847ab9e6915f8}{allocate\+Taxes}} (std\+::string department, double amount)
+\begin{DoxyCompactList}\small\item\em Allocates collected taxes to a specified department. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a7bb6689230f8db0516afaac6f3eb38f1}{add\+City}} (\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&city)
+\begin{DoxyCompactList}\small\item\em Adds a city to the government’s management. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a90f1aab77fcb8e505662b42a3faaf43a}{set\+Budget\+Policy}} (\mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} \&policy)
+\begin{DoxyCompactList}\small\item\em Sets the current budget policy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}{$\sim$\+Government}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a government entity responsible for managing taxes and budgets for cities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}\label{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}} 
+\index{Government@{Government}!````~Government@{$\sim$Government}}
+\index{````~Government@{$\sim$Government}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{$\sim$Government()}{~Government()}}
+{\footnotesize\ttfamily Government\+::$\sim$\+Government (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGovernment_a7bb6689230f8db0516afaac6f3eb38f1}\label{classGovernment_a7bb6689230f8db0516afaac6f3eb38f1}} 
+\index{Government@{Government}!addCity@{addCity}}
+\index{addCity@{addCity}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{addCity()}{addCity()}}
+{\footnotesize\ttfamily void Government\+::add\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&}]{city }\end{DoxyParamCaption})}
+
+
+
+Adds a city to the government’s management. 
+
+Adds a city to the government’s jurisdiction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The \mbox{\hyperlink{classCityStructure}{City\+Structure}} to add.\\
+\hline
+{\em city} & Reference to the \mbox{\hyperlink{classCityStructure}{City\+Structure}} to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a5f38bde4edf8521d285847ab9e6915f8}\label{classGovernment_a5f38bde4edf8521d285847ab9e6915f8}} 
+\index{Government@{Government}!allocateTaxes@{allocateTaxes}}
+\index{allocateTaxes@{allocateTaxes}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{allocateTaxes()}{allocateTaxes()}}
+{\footnotesize\ttfamily void Government\+::allocate\+Taxes (\begin{DoxyParamCaption}\item[{std\+::string}]{department,  }\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Allocates collected taxes to a specified department. 
+
+Allocates a specified tax amount to a department.
+
+
+\begin{DoxyParams}{Parameters}
+{\em department} & The department to receive the allocation. \\
+\hline
+{\em amount} & The amount to allocate.\\
+\hline
+{\em department} & The department to allocate taxes to. \\
+\hline
+{\em amount} & The amount of taxes to allocate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_adda5d8ed6f5ff5df40d01d58d0836729}\label{classGovernment_adda5d8ed6f5ff5df40d01d58d0836729}} 
+\index{Government@{Government}!applyBudget@{applyBudget}}
+\index{applyBudget@{applyBudget}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{applyBudget()}{applyBudget()}}
+{\footnotesize\ttfamily void Government\+::apply\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&}]{city }\end{DoxyParamCaption})}
+
+
+
+Applies the current budget policy to the specified city structure. 
+
+Applies the budget policy to a city or allocates default budgets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city structure to which the budget is applied.\\
+\hline
+{\em city} & The city to apply the budget to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}\label{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}} 
+\index{Government@{Government}!collectTaxes@{collectTaxes}}
+\index{collectTaxes@{collectTaxes}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{collectTaxes()}{collectTaxes()}}
+{\footnotesize\ttfamily void Government\+::collect\+Taxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collects taxes based on current tax rates. 
+
+Collects taxes for all cities managed by the government. \mbox{\Hypertarget{classGovernment_afe4f1ceedfe7d91eccb270272b3803dd}\label{classGovernment_afe4f1ceedfe7d91eccb270272b3803dd}} 
+\index{Government@{Government}!processTaxes@{processTaxes}}
+\index{processTaxes@{processTaxes}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{processTaxes()}{processTaxes()}}
+{\footnotesize\ttfamily void Government\+::process\+Taxes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&}]{city }\end{DoxyParamCaption})}
+
+
+
+Processes taxes for the specified city structure. 
+
+Processes taxes for a specified city.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city structure on which to process taxes.\\
+\hline
+{\em city} & The city to process taxes for. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a90f1aab77fcb8e505662b42a3faaf43a}\label{classGovernment_a90f1aab77fcb8e505662b42a3faaf43a}} 
+\index{Government@{Government}!setBudgetPolicy@{setBudgetPolicy}}
+\index{setBudgetPolicy@{setBudgetPolicy}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setBudgetPolicy()}{setBudgetPolicy()}}
+{\footnotesize\ttfamily void Government\+::set\+Budget\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} \&}]{policy }\end{DoxyParamCaption})}
+
+
+
+Sets the current budget policy. 
+
+Sets the budget policy for the government.
+
+
+\begin{DoxyParams}{Parameters}
+{\em policy} & The \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} to set.\\
+\hline
+{\em policy} & Reference to the new budget policy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_ae3a492f7410671074319a4061a2c0696}\label{classGovernment_ae3a492f7410671074319a4061a2c0696}} 
+\index{Government@{Government}!setTaxRate@{setTaxRate}}
+\index{setTaxRate@{setTaxRate}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{setTaxRate()}{setTaxRate()}}
+{\footnotesize\ttfamily void Government\+::set\+Tax\+Rate (\begin{DoxyParamCaption}\item[{std\+::string}]{category,  }\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Sets the tax rate for the specified category. 
+
+Sets the tax rate for a specific category.
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category for which the tax rate is set. \\
+\hline
+{\em rate} & The tax rate to set.\\
+\hline
+{\em category} & Name of the tax category. \\
+\hline
+{\em rate} & Tax rate to set for the category. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{Government_8h}{Government.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{Government_8cpp}{Government.\+cpp}}\end{DoxyCompactItemize}

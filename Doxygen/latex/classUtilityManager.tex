@@ -1,0 +1,120 @@
+\hypertarget{classUtilityManager}{}\doxysection{Utility\+Manager Class Reference}
+\label{classUtilityManager}\index{UtilityManager@{UtilityManager}}
+
+
+Abstract base class for all concrete utilities in the system.  
+
+
+
+
+{\ttfamily \#include $<$Utility\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for Utility\+Manager\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}{start\+Utility}} ()=0
+\begin{DoxyCompactList}\small\item\em Starts the utility service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}{update}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$unit)=0
+\begin{DoxyCompactList}\small\item\em Updates the operational state of the utility based on a building\textquotesingle{}s status. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}{get\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the type of utility service. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}{is\+Operational}} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if the utility service is operational. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}{shut\+Down}} ()=0
+\begin{DoxyCompactList}\small\item\em Shuts down the utility service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all concrete utilities in the system. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}\label{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}} 
+\index{UtilityManager@{UtilityManager}!getType@{getType}}
+\index{getType@{getType}!UtilityManager@{UtilityManager}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily virtual string Utility\+Manager\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the type of utility service. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUtilWaterSupply_ad35b2eaa2b24022908336905dd8fa069}{Util\+Water\+Supply}}, \mbox{\hyperlink{classUtilWasteMan_a0faadb5129a08b2add271c6ce518602f}{Util\+Waste\+Man}}, \mbox{\hyperlink{classUtilSewageSyst_aca5a7eda56cc930e9bd893c8e643de27}{Util\+Sewage\+Syst}}, and \mbox{\hyperlink{classUtilPowerPlants_a118d0dc657ad83d274fe557f6bd373f0}{Util\+Power\+Plants}}.
+
+\mbox{\Hypertarget{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}\label{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}} 
+\index{UtilityManager@{UtilityManager}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilityManager@{UtilityManager}}
+\doxysubsubsection{\texorpdfstring{isOperational()}{isOperational()}}
+{\footnotesize\ttfamily virtual bool Utility\+Manager\+::is\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the utility service is operational. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUtilWaterSupply_a6d0724b32de997c99167b7e87cba8df5}{Util\+Water\+Supply}}, \mbox{\hyperlink{classUtilWasteMan_afab2edbba027813796bb03af4cd83089}{Util\+Waste\+Man}}, \mbox{\hyperlink{classUtilSewageSyst_a045bd4e6e33557511b6b06cf6d07353d}{Util\+Sewage\+Syst}}, and \mbox{\hyperlink{classUtilPowerPlants_a37c91cd4337e42ac7875bbb1ff775ba1}{Util\+Power\+Plants}}.
+
+\mbox{\Hypertarget{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}\label{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}} 
+\index{UtilityManager@{UtilityManager}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!UtilityManager@{UtilityManager}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily virtual void Utility\+Manager\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Shuts down the utility service. 
+
+
+
+Implemented in \mbox{\hyperlink{classUtilWaterSupply_a1e05296a6b7ee9c323690f7fa3d798ff}{Util\+Water\+Supply}}, \mbox{\hyperlink{classUtilWasteMan_a56340946c2e07e03bbf5ed83e7069d34}{Util\+Waste\+Man}}, \mbox{\hyperlink{classUtilSewageSyst_a30c4f8b002e55209bea6b05fcd9eb7b5}{Util\+Sewage\+Syst}}, and \mbox{\hyperlink{classUtilPowerPlants_ad92e5226a9c66fcd845e47e4ef13a499}{Util\+Power\+Plants}}.
+
+\mbox{\Hypertarget{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}\label{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}} 
+\index{UtilityManager@{UtilityManager}!startUtility@{startUtility}}
+\index{startUtility@{startUtility}!UtilityManager@{UtilityManager}}
+\doxysubsubsection{\texorpdfstring{startUtility()}{startUtility()}}
+{\footnotesize\ttfamily virtual void Utility\+Manager\+::start\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Starts the utility service. 
+
+
+
+Implemented in \mbox{\hyperlink{classUtilWaterSupply_a8c157555183c4fda463c882e15068c81}{Util\+Water\+Supply}}, \mbox{\hyperlink{classUtilWasteMan_a2b64625ae2edee0ab2e447c95f9bf77f}{Util\+Waste\+Man}}, \mbox{\hyperlink{classUtilSewageSyst_ac971a1a0a38404a279f8bbdc474bd2a7}{Util\+Sewage\+Syst}}, and \mbox{\hyperlink{classUtilPowerPlants_a58a685b7e0d0e003cc49c9d5f35e8815}{Util\+Power\+Plants}}.
+
+\mbox{\Hypertarget{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}\label{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}} 
+\index{UtilityManager@{UtilityManager}!update@{update}}
+\index{update@{update}!UtilityManager@{UtilityManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Utility\+Manager\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the operational state of the utility based on a building\textquotesingle{}s status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object notifying this utility of a change. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUtilWaterSupply_a675d260ff0d840b534a965461300a460}{Util\+Water\+Supply}}, \mbox{\hyperlink{classUtilWasteMan_af3c9efac54630a71534f322b4400c501}{Util\+Waste\+Man}}, \mbox{\hyperlink{classUtilSewageSyst_a3e5dabd3a9940d307f33cd10bbb4c77d}{Util\+Sewage\+Syst}}, and \mbox{\hyperlink{classUtilPowerPlants_ac10a1c0b88a132a529ed40c39ec356b5}{Util\+Power\+Plants}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utilities/\mbox{\hyperlink{UtilityManager_8h}{Utility\+Manager.\+h}}\end{DoxyCompactItemize}

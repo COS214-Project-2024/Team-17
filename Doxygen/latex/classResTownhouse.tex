@@ -1,0 +1,251 @@
+\hypertarget{classResTownhouse}{}\doxysection{Res\+Townhouse Class Reference}
+\label{classResTownhouse}\index{ResTownhouse@{ResTownhouse}}
+
+
+Represents a residential townhouse building.  
+
+
+
+
+{\ttfamily \#include $<$Res\+Townhouse.\+h$>$}
+
+
+
+Inheritance diagram for Res\+Townhouse\+:
+% FIG 0
+
+
+Collaboration diagram for Res\+Townhouse\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResTownhouse_aa8cbfa380a3d37b1271a4baedd3a3303}{Res\+Townhouse}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classResTownhouse}{Res\+Townhouse}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResTownhouse_a19bfec6333a71ac7a56e24cbec2dbbc9}{$\sim$\+Res\+Townhouse}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classResTownhouse}{Res\+Townhouse}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_a4388aa4471f4ce47b7d967c8f0b7b2de}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the townhouse building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classResTownhouse_ab0da177ad4aa1433a0aed832056c3c24}{get\+Capacity}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the townhouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_adbecccf70862502897577d90a9cd5939}{set\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the townhouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_a9b7553139f9f205ebe18e6890474c398}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls associated utility managers for the townhouse. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResTownhouse_a0af16e2ad4713f33e45352a4fe84c202}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the townhouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_a40a798acc05b4cc6eed508593b2cedef}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the townhouse. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classResTownhouse_a2df6c72337e2f999c022f119a2b17825}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the building type as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_acf90f5e2ebda55c078a98c5abdb5ac07}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies when an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResTownhouse_aa20c3f1e9fecb76e532189c19da5dca9}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves in a resident to the townhouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResTownhouse_a0b827c696811168dbd8157ff9b4973c5}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves out a resident from the townhouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a residential townhouse building. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResTownhouse_aa8cbfa380a3d37b1271a4baedd3a3303}\label{classResTownhouse_aa8cbfa380a3d37b1271a4baedd3a3303}} 
+\index{ResTownhouse@{ResTownhouse}!ResTownhouse@{ResTownhouse}}
+\index{ResTownhouse@{ResTownhouse}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{ResTownhouse()}{ResTownhouse()}}
+{\footnotesize\ttfamily Res\+Townhouse\+::\+Res\+Townhouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classResTownhouse}{Res\+Townhouse}} object. 
+
+\mbox{\Hypertarget{classResTownhouse_a19bfec6333a71ac7a56e24cbec2dbbc9}\label{classResTownhouse_a19bfec6333a71ac7a56e24cbec2dbbc9}} 
+\index{ResTownhouse@{ResTownhouse}!````~ResTownhouse@{$\sim$ResTownhouse}}
+\index{````~ResTownhouse@{$\sim$ResTownhouse}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResTownhouse()}{~ResTownhouse()}}
+{\footnotesize\ttfamily Res\+Townhouse\+::$\sim$\+Res\+Townhouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{classResTownhouse}{Res\+Townhouse}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResTownhouse_a9b7553139f9f205ebe18e6890474c398}\label{classResTownhouse_a9b7553139f9f205ebe18e6890474c398}} 
+\index{ResTownhouse@{ResTownhouse}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls associated utility managers for the townhouse. 
+
+\mbox{\Hypertarget{classResTownhouse_a4388aa4471f4ce47b7d967c8f0b7b2de}\label{classResTownhouse_a4388aa4471f4ce47b7d967c8f0b7b2de}} 
+\index{ResTownhouse@{ResTownhouse}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the townhouse building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classResTownhouse_a2df6c72337e2f999c022f119a2b17825}\label{classResTownhouse_a2df6c72337e2f999c022f119a2b17825}} 
+\index{ResTownhouse@{ResTownhouse}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Res\+Townhouse\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the building type as a string. 
+
+\begin{DoxyReturn}{Returns}
+The building type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_ab0da177ad4aa1433a0aed832056c3c24}\label{classResTownhouse_ab0da177ad4aa1433a0aed832056c3c24}} 
+\index{ResTownhouse@{ResTownhouse}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Res\+Townhouse\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the capacity of the townhouse. 
+
+\begin{DoxyReturn}{Returns}
+The capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_a0af16e2ad4713f33e45352a4fe84c202}\label{classResTownhouse_a0af16e2ad4713f33e45352a4fe84c202}} 
+\index{ResTownhouse@{ResTownhouse}!getState@{getState}}
+\index{getState@{getState}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Res\+Townhouse\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the townhouse. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_aa20c3f1e9fecb76e532189c19da5dca9}\label{classResTownhouse_aa20c3f1e9fecb76e532189c19da5dca9}} 
+\index{ResTownhouse@{ResTownhouse}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Res\+Townhouse\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves in a resident to the townhouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the resident to move in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classResidential_a731dd372679eba6f8c88f6b43aef8618}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_a0b827c696811168dbd8157ff9b4973c5}\label{classResTownhouse_a0b827c696811168dbd8157ff9b4973c5}} 
+\index{ResTownhouse@{ResTownhouse}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves out a resident from the townhouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the resident to move out. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a98e71673e6bd3903469e30ae2a89e482}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_acf90f5e2ebda55c078a98c5abdb5ac07}\label{classResTownhouse_acf90f5e2ebda55c078a98c5abdb5ac07}} 
+\index{ResTownhouse@{ResTownhouse}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies when an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the employee who left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_adbecccf70862502897577d90a9cd5939}\label{classResTownhouse_adbecccf70862502897577d90a9cd5939}} 
+\index{ResTownhouse@{ResTownhouse}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the capacity of the townhouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}{Residential}}.
+
+\mbox{\Hypertarget{classResTownhouse_a40a798acc05b4cc6eed508593b2cedef}\label{classResTownhouse_a40a798acc05b4cc6eed508593b2cedef}} 
+\index{ResTownhouse@{ResTownhouse}!setState@{setState}}
+\index{setState@{setState}!ResTownhouse@{ResTownhouse}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Res\+Townhouse\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the townhouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ResTownhouse_8h}{Res\+Townhouse.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ResTownhouse_8cpp}{Res\+Townhouse.\+cpp}}\end{DoxyCompactItemize}

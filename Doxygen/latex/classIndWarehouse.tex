@@ -1,0 +1,272 @@
+\hypertarget{classIndWarehouse}{}\doxysection{Ind\+Warehouse Class Reference}
+\label{classIndWarehouse}\index{IndWarehouse@{IndWarehouse}}
+
+
+Represents an industrial warehouse building.  
+
+
+
+
+{\ttfamily \#include $<$Ind\+Warehouse.\+h$>$}
+
+
+
+Inheritance diagram for Ind\+Warehouse\+:
+% FIG 0
+
+
+Collaboration diagram for Ind\+Warehouse\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndWarehouse_a13b113e9f958e70c099e992ae4924833}{Ind\+Warehouse}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classIndWarehouse}{Ind\+Warehouse}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndWarehouse_a0c2f35db8474f17afce40d3b5a95025c}{$\sim$\+Ind\+Warehouse}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classIndWarehouse}{Ind\+Warehouse}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_aab22750c6ef6c095747cbd0a0d784f9f}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the industrial warehouse building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndWarehouse_a56c43103bbd201d48b7325b97fa33234}{get\+Production\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the production capacity of the warehouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_ae129942985ae803970ff0746cefe0dd7}{set\+Production\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the production capacity of the warehouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_a3267fe55f4ced790b2963db2ec4272cb}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls the utilities for the industrial warehouse. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndWarehouse_afa4281ac77b6259f838b7d91d28ec120}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the warehouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_adac0d3d9727a5c79da3f3ddb8dca44fb}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the warehouse. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classIndWarehouse_a904df0ea283315c9074be077dc144f84}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndWarehouse_afd91c4c33e84c5e2e1b00a40b0a0d1f5}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the industrial warehouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_a44fd8e035c41d9dc4da48ba60d15fd9e}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the industrial warehouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndWarehouse_a226ef35a6f81e1334b033c8a1c4ab401}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the industrial warehouse that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndWarehouse_a406dd7f25761475d209a9827eda09804}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are available jobs in the industrial warehouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an industrial warehouse building. 
+
+The \mbox{\hyperlink{classIndWarehouse}{Ind\+Warehouse}} class inherits from the \mbox{\hyperlink{classIndustrial}{Industrial}} class and provides specific implementations for managing production capacity, resources, and employee interactions at a warehouse facility. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndWarehouse_a13b113e9f958e70c099e992ae4924833}\label{classIndWarehouse_a13b113e9f958e70c099e992ae4924833}} 
+\index{IndWarehouse@{IndWarehouse}!IndWarehouse@{IndWarehouse}}
+\index{IndWarehouse@{IndWarehouse}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{IndWarehouse()}{IndWarehouse()}}
+{\footnotesize\ttfamily Ind\+Warehouse\+::\+Ind\+Warehouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classIndWarehouse}{Ind\+Warehouse}}. 
+
+\mbox{\Hypertarget{classIndWarehouse_a0c2f35db8474f17afce40d3b5a95025c}\label{classIndWarehouse_a0c2f35db8474f17afce40d3b5a95025c}} 
+\index{IndWarehouse@{IndWarehouse}!````~IndWarehouse@{$\sim$IndWarehouse}}
+\index{````~IndWarehouse@{$\sim$IndWarehouse}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{$\sim$IndWarehouse()}{~IndWarehouse()}}
+{\footnotesize\ttfamily Ind\+Warehouse\+::$\sim$\+Ind\+Warehouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classIndWarehouse}{Ind\+Warehouse}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndWarehouse_afd91c4c33e84c5e2e1b00a40b0a0d1f5}\label{classIndWarehouse_afd91c4c33e84c5e2e1b00a40b0a0d1f5}} 
+\index{IndWarehouse@{IndWarehouse}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Ind\+Warehouse\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the industrial warehouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a3cde67af0ebf46df5168323a5f8ecc4d}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a3267fe55f4ced790b2963db2ec4272cb}\label{classIndWarehouse_a3267fe55f4ced790b2963db2ec4272cb}} 
+\index{IndWarehouse@{IndWarehouse}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the utilities for the industrial warehouse. 
+
+\mbox{\Hypertarget{classIndWarehouse_aab22750c6ef6c095747cbd0a0d784f9f}\label{classIndWarehouse_aab22750c6ef6c095747cbd0a0d784f9f}} 
+\index{IndWarehouse@{IndWarehouse}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the industrial warehouse building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a904df0ea283315c9074be077dc144f84}\label{classIndWarehouse_a904df0ea283315c9074be077dc144f84}} 
+\index{IndWarehouse@{IndWarehouse}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Ind\+Warehouse\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a26789dd4a131a1bb959e07db91e12ecb}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a56c43103bbd201d48b7325b97fa33234}\label{classIndWarehouse_a56c43103bbd201d48b7325b97fa33234}} 
+\index{IndWarehouse@{IndWarehouse}!getProductionCapacity@{getProductionCapacity}}
+\index{getProductionCapacity@{getProductionCapacity}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{getProductionCapacity()}{getProductionCapacity()}}
+{\footnotesize\ttfamily int Ind\+Warehouse\+::get\+Production\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the production capacity of the warehouse. 
+
+\begin{DoxyReturn}{Returns}
+The production capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a2bfdedfb41a3439ae0ce80f08eb6c6c8}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_afa4281ac77b6259f838b7d91d28ec120}\label{classIndWarehouse_afa4281ac77b6259f838b7d91d28ec120}} 
+\index{IndWarehouse@{IndWarehouse}!getState@{getState}}
+\index{getState@{getState}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Ind\+Warehouse\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the warehouse. 
+
+\begin{DoxyReturn}{Returns}
+True if the warehouse is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a25f2c781fc9bd9f9585f8a29befb9f71}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a406dd7f25761475d209a9827eda09804}\label{classIndWarehouse_a406dd7f25761475d209a9827eda09804}} 
+\index{IndWarehouse@{IndWarehouse}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Ind\+Warehouse\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are available jobs in the industrial warehouse. 
+
+\begin{DoxyReturn}{Returns}
+True if there are jobs available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a226ef35a6f81e1334b033c8a1c4ab401}\label{classIndWarehouse_a226ef35a6f81e1334b033c8a1c4ab401}} 
+\index{IndWarehouse@{IndWarehouse}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the industrial warehouse that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a08c257c3dae028ec6663ee52374e84fa}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_a44fd8e035c41d9dc4da48ba60d15fd9e}\label{classIndWarehouse_a44fd8e035c41d9dc4da48ba60d15fd9e}} 
+\index{IndWarehouse@{IndWarehouse}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the industrial warehouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a5d1770e238b01a6fa017e577e867f5e2}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_ae129942985ae803970ff0746cefe0dd7}\label{classIndWarehouse_ae129942985ae803970ff0746cefe0dd7}} 
+\index{IndWarehouse@{IndWarehouse}!setProductionCapacity@{setProductionCapacity}}
+\index{setProductionCapacity@{setProductionCapacity}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{setProductionCapacity()}{setProductionCapacity()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::set\+Production\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the production capacity of the warehouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The production capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_aed48857b5e18bc9f47cf8f4e3f3ae33e}{Industrial}}.
+
+\mbox{\Hypertarget{classIndWarehouse_adac0d3d9727a5c79da3f3ddb8dca44fb}\label{classIndWarehouse_adac0d3d9727a5c79da3f3ddb8dca44fb}} 
+\index{IndWarehouse@{IndWarehouse}!setState@{setState}}
+\index{setState@{setState}!IndWarehouse@{IndWarehouse}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Ind\+Warehouse\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the warehouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{IndWarehouse_8h}{Ind\+Warehouse.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{IndWarehouse_8cpp}{Ind\+Warehouse.\+cpp}}\end{DoxyCompactItemize}

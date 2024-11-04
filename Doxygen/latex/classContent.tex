@@ -1,0 +1,94 @@
+\hypertarget{classContent}{}\doxysection{Content Class Reference}
+\label{classContent}\index{Content@{Content}}
+
+
+Represents the content state of a \mbox{\hyperlink{classCitizen}{Citizen}}.  
+
+
+
+
+{\ttfamily \#include $<$Content.\+h$>$}
+
+
+
+Inheritance diagram for Content\+:
+% FIG 0
+
+
+Collaboration diagram for Content\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classContent_acb03e626d8b629ee022f5f4da1709552}{handle\+Change}} (int change) override
+\begin{DoxyCompactList}\small\item\em Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classContent_a4b2cadebd9188376be5dc18d3e4c17c6}{get\+State}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classContent_aa28dc7ed5866fb0c22dc13c2a1fdb495}{$\sim$\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classContent}{Content}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the content state of a \mbox{\hyperlink{classCitizen}{Citizen}}. 
+
+This class is a concrete implementation of the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} interface, indicating that a citizen is in a content emotional state. It handles transitions to other states based on changes in the citizen\textquotesingle{}s situation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classContent_aa28dc7ed5866fb0c22dc13c2a1fdb495}\label{classContent_aa28dc7ed5866fb0c22dc13c2a1fdb495}} 
+\index{Content@{Content}!````~Content@{$\sim$Content}}
+\index{````~Content@{$\sim$Content}!Content@{Content}}
+\doxysubsubsection{\texorpdfstring{$\sim$Content()}{~Content()}}
+{\footnotesize\ttfamily Content\+::$\sim$\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classContent}{Content}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContent_a4b2cadebd9188376be5dc18d3e4c17c6}\label{classContent_a4b2cadebd9188376be5dc18d3e4c17c6}} 
+\index{Content@{Content}!getState@{getState}}
+\index{getState@{getState}!Content@{Content}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Content\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the content state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}{Citizen\+State}}.
+
+\mbox{\Hypertarget{classContent_acb03e626d8b629ee022f5f4da1709552}\label{classContent_acb03e626d8b629ee022f5f4da1709552}} 
+\index{Content@{Content}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Content@{Content}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ Content\+::handle\+Change (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & An integer representing the change that affects the citizen\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new \mbox{\hyperlink{classCitizenState}{Citizen\+State}} that results from the change. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}{Citizen\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Content_8h}{Content.\+h}}\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Content_8cpp}{Content.\+cpp}}\end{DoxyCompactItemize}

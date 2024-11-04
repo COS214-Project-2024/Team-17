@@ -1,0 +1,152 @@
+\hypertarget{classUtilPowerPlants}{}\doxysection{Util\+Power\+Plants Class Reference}
+\label{classUtilPowerPlants}\index{UtilPowerPlants@{UtilPowerPlants}}
+
+
+Represents the Power Plant utility within the system.  
+
+
+
+
+{\ttfamily \#include $<$Util\+Power\+Plants.\+h$>$}
+
+
+
+Inheritance diagram for Util\+Power\+Plants\+:
+% FIG 0
+
+
+Collaboration diagram for Util\+Power\+Plants\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilPowerPlants_a49db11ac6f8d6b48e016b254584b4734}{Util\+Power\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new Power Plant utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilPowerPlants_a58a685b7e0d0e003cc49c9d5f35e8815}{start\+Utility}} ()
+\begin{DoxyCompactList}\small\item\em Starts the Power Plant service, making it operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilPowerPlants_ac10a1c0b88a132a529ed40c39ec356b5}{update}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Updates the operational state based on the status of the specified building. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilPowerPlants_a118d0dc657ad83d274fe557f6bd373f0}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the type of this utility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilPowerPlants_a37c91cd4337e42ac7875bbb1ff775ba1}{is\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Power Plant is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilPowerPlants_ad92e5226a9c66fcd845e47e4ef13a499}{shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the Power Plant, making it non-\/operational. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the Power Plant utility within the system. 
+
+Inherits from \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} and provides specific functionality for managing power supply. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilPowerPlants_a49db11ac6f8d6b48e016b254584b4734}\label{classUtilPowerPlants_a49db11ac6f8d6b48e016b254584b4734}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!UtilPowerPlants@{UtilPowerPlants}}
+\index{UtilPowerPlants@{UtilPowerPlants}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{UtilPowerPlants()}{UtilPowerPlants()}}
+{\footnotesize\ttfamily Util\+Power\+Plants\+::\+Util\+Power\+Plants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new Power Plant utility. 
+
+Constructor for the \mbox{\hyperlink{classUtilPowerPlants}{Util\+Power\+Plants}} class. Initializes the Power Plant utility as non-\/operational and sets the type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilPowerPlants_a118d0dc657ad83d274fe557f6bd373f0}\label{classUtilPowerPlants_a118d0dc657ad83d274fe557f6bd373f0}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!getType@{getType}}
+\index{getType@{getType}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Util\+Power\+Plants\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the type of this utility. 
+
+Gets the type of utility service provided by this class.
+
+\begin{DoxyReturn}{Returns}
+The type as a string (\char`\"{}\+Power Plant\char`\"{}).
+
+The type as a string, e.\+g., \char`\"{}\+Power Plant\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilPowerPlants_a37c91cd4337e42ac7875bbb1ff775ba1}\label{classUtilPowerPlants_a37c91cd4337e42ac7875bbb1ff775ba1}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{isOperational()}{isOperational()}}
+{\footnotesize\ttfamily bool Util\+Power\+Plants\+::is\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the Power Plant is operational. 
+
+\begin{DoxyReturn}{Returns}
+True if operational; otherwise, false.
+
+True if the Power Plant is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilPowerPlants_ad92e5226a9c66fcd845e47e4ef13a499}\label{classUtilPowerPlants_ad92e5226a9c66fcd845e47e4ef13a499}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily void Util\+Power\+Plants\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Shuts down the Power Plant, making it non-\/operational. 
+
+Shuts down the Power Plant service, setting it to non-\/operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilPowerPlants_a58a685b7e0d0e003cc49c9d5f35e8815}\label{classUtilPowerPlants_a58a685b7e0d0e003cc49c9d5f35e8815}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!startUtility@{startUtility}}
+\index{startUtility@{startUtility}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{startUtility()}{startUtility()}}
+{\footnotesize\ttfamily void Util\+Power\+Plants\+::start\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the Power Plant service, making it operational. 
+
+Starts the Power Plant service and sets it to operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilPowerPlants_ac10a1c0b88a132a529ed40c39ec356b5}\label{classUtilPowerPlants_ac10a1c0b88a132a529ed40c39ec356b5}} 
+\index{UtilPowerPlants@{UtilPowerPlants}!update@{update}}
+\index{update@{update}!UtilPowerPlants@{UtilPowerPlants}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Util\+Power\+Plants\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the operational state based on the status of the specified building. 
+
+Updates the operational status of the Power Plant based on the building\textquotesingle{}s status.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object that notifies this utility.\\
+\hline
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object notifying this utility. If the Power Plant is not operational, it will be started. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}{Utility\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utilities/\mbox{\hyperlink{UtilPowerPlants_8h}{Util\+Power\+Plants.\+h}}\item 
+src/\+Utilities/\mbox{\hyperlink{UtilPowerPlants_8cpp}{Util\+Power\+Plants.\+cpp}}\end{DoxyCompactItemize}

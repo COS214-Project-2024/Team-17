@@ -1,0 +1,277 @@
+\hypertarget{unit__residential_8cpp}{}\doxysection{tests/unit\+\_\+residential.cpp File Reference}
+\label{unit__residential_8cpp}\index{tests/unit\_residential.cpp@{tests/unit\_residential.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../src/\+Buildings/\+Res\+House.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/\+Buildings/\+Res\+Townhouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/\+Buildings/\+Res\+Flat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/\+Buildings/\+Res\+Estate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/\+Utilities/\+Util\+Power\+Plants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/\+Citizens/\+Citizen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../src/resources.\+h\char`\"{}}\newline
+Include dependency graph for unit\+\_\+residential.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}
+\item 
+class \mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}
+\item 
+class \mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}
+\item 
+class \mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ab2183567b42b486f24e62c0ddde55f70}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, Resource\+Usage\+On\+Creation\+And\+Destruction)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a91369c12368a6474d18865e721eb8f4c}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, Move\+In\+Resident\+Within\+Capacity)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a3bebee91233e3229e6963de6c093a202}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, Move\+Out\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a7ba1dac5d54a130a187197156ac05dc2}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, State\+Change\+Triggers\+Utility\+Call)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ad39c207003d165a36d74cad9e27e6601}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, Building\+Type\+Is\+Correct)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a1c4f864f3a1722448f972f1bae84ea8c}{TEST\+\_\+F}} (\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}, Display\+Building\+Info\+Output)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a6f85e3d9f595429f06c7a4f2b2c447cb}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Create\+Res\+Townhouse)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_aab20e6543dc75fe2c66ef1886b0cbf00}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Set\+And\+Get\+Capacity)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ab52f9ef289490127a516d45cdbfffe66}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Move\+In\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a45ae276862940f71b206893fd64099be}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Move\+Out\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_afe2942c2e9d82be7cfeafeb84d13ac59}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Add\+Utility)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a356bd0dfcc567a3ac177413654e69ef6}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Set\+And\+Get\+State)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ab3ba42900596bcc1430985cedb45d456}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Display\+Building\+Info)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a0c906d3c68e292065c917be0073cf6d1}{TEST\+\_\+F}} (\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}, Get\+Building\+Type)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_adb6e89d5e15cf280db753437a9218737}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Create\+Res\+Flat)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a8bbe87e2ae0e6bf72354af833ebca068}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Set\+And\+Get\+Capacity)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ae4fc2f6eb0f19d4fb1bb2e0f74f0cc03}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Move\+In\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ab663eb61b4a25bada367c1e0e9711d23}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Move\+Out\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a4b7ec52d0d10e279988c19b462015010}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Add\+Utility)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a62e495f6086d1f8b79b416f90726d0e4}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Set\+And\+Get\+State)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a8e657b60d22915b66a764a645227038d}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Display\+Building\+Info)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a3381fc6da818d52088504b22eb0a1e2a}{TEST\+\_\+F}} (\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}, Get\+Building\+Type)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ae45e96b9778a965d2929f9853abd7c69}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Create\+Res\+Estate)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ad82366b2e82bf069b1d9060b9f65bc41}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Set\+And\+Get\+Capacity)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a01c607094ca794542fee3b3cda883112}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Move\+In\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_aad8deac0af76b9fc5c0ba1687eb89581}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Move\+Out\+Resident)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a1248ea63d016090ae5fa8c506ee897df}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Add\+Utility)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ac71407c88981d470824818a514fdc1a2}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Set\+And\+Get\+State)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_ad3b8f9068101079e7b830351bf867d92}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Display\+Building\+Info)
+\item 
+\mbox{\hyperlink{unit__residential_8cpp_a119ae782575b17cc5c4ebe1f27b8cd5c}{TEST\+\_\+F}} (\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}, Get\+Building\+Type)
+\item 
+int \mbox{\hyperlink{unit__residential_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unit__residential_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{unit__residential_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!main@{main}}
+\index{main@{main}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a1248ea63d016090ae5fa8c506ee897df}\label{unit__residential_8cpp_a1248ea63d016090ae5fa8c506ee897df}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Add\+Utility}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ae45e96b9778a965d2929f9853abd7c69}\label{unit__residential_8cpp_ae45e96b9778a965d2929f9853abd7c69}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Create\+Res\+Estate}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ad3b8f9068101079e7b830351bf867d92}\label{unit__residential_8cpp_ad3b8f9068101079e7b830351bf867d92}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Display\+Building\+Info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a119ae782575b17cc5c4ebe1f27b8cd5c}\label{unit__residential_8cpp_a119ae782575b17cc5c4ebe1f27b8cd5c}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Get\+Building\+Type}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a01c607094ca794542fee3b3cda883112}\label{unit__residential_8cpp_a01c607094ca794542fee3b3cda883112}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [5/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Move\+In\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_aad8deac0af76b9fc5c0ba1687eb89581}\label{unit__residential_8cpp_aad8deac0af76b9fc5c0ba1687eb89581}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [6/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Move\+Out\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ad82366b2e82bf069b1d9060b9f65bc41}\label{unit__residential_8cpp_ad82366b2e82bf069b1d9060b9f65bc41}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [7/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Set\+And\+Get\+Capacity}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ac71407c88981d470824818a514fdc1a2}\label{unit__residential_8cpp_ac71407c88981d470824818a514fdc1a2}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [8/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResEstateTest}{Res\+Estate\+Test}}}]{,  }\item[{Set\+And\+Get\+State}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a4b7ec52d0d10e279988c19b462015010}\label{unit__residential_8cpp_a4b7ec52d0d10e279988c19b462015010}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [9/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Add\+Utility}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_adb6e89d5e15cf280db753437a9218737}\label{unit__residential_8cpp_adb6e89d5e15cf280db753437a9218737}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [10/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Create\+Res\+Flat}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a8e657b60d22915b66a764a645227038d}\label{unit__residential_8cpp_a8e657b60d22915b66a764a645227038d}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [11/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Display\+Building\+Info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a3381fc6da818d52088504b22eb0a1e2a}\label{unit__residential_8cpp_a3381fc6da818d52088504b22eb0a1e2a}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [12/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Get\+Building\+Type}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ae4fc2f6eb0f19d4fb1bb2e0f74f0cc03}\label{unit__residential_8cpp_ae4fc2f6eb0f19d4fb1bb2e0f74f0cc03}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [13/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Move\+In\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ab663eb61b4a25bada367c1e0e9711d23}\label{unit__residential_8cpp_ab663eb61b4a25bada367c1e0e9711d23}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [14/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Move\+Out\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a8bbe87e2ae0e6bf72354af833ebca068}\label{unit__residential_8cpp_a8bbe87e2ae0e6bf72354af833ebca068}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [15/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Set\+And\+Get\+Capacity}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a62e495f6086d1f8b79b416f90726d0e4}\label{unit__residential_8cpp_a62e495f6086d1f8b79b416f90726d0e4}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [16/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResFlatTest}{Res\+Flat\+Test}}}]{,  }\item[{Set\+And\+Get\+State}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ad39c207003d165a36d74cad9e27e6601}\label{unit__residential_8cpp_ad39c207003d165a36d74cad9e27e6601}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [17/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{Building\+Type\+Is\+Correct}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a1c4f864f3a1722448f972f1bae84ea8c}\label{unit__residential_8cpp_a1c4f864f3a1722448f972f1bae84ea8c}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [18/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{Display\+Building\+Info\+Output}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a91369c12368a6474d18865e721eb8f4c}\label{unit__residential_8cpp_a91369c12368a6474d18865e721eb8f4c}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [19/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{Move\+In\+Resident\+Within\+Capacity}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a3bebee91233e3229e6963de6c093a202}\label{unit__residential_8cpp_a3bebee91233e3229e6963de6c093a202}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [20/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{Move\+Out\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ab2183567b42b486f24e62c0ddde55f70}\label{unit__residential_8cpp_ab2183567b42b486f24e62c0ddde55f70}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [21/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{Resource\+Usage\+On\+Creation\+And\+Destruction}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a7ba1dac5d54a130a187197156ac05dc2}\label{unit__residential_8cpp_a7ba1dac5d54a130a187197156ac05dc2}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [22/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResHouseTest}{Res\+House\+Test}}}]{,  }\item[{State\+Change\+Triggers\+Utility\+Call}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_afe2942c2e9d82be7cfeafeb84d13ac59}\label{unit__residential_8cpp_afe2942c2e9d82be7cfeafeb84d13ac59}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [23/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Add\+Utility}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a6f85e3d9f595429f06c7a4f2b2c447cb}\label{unit__residential_8cpp_a6f85e3d9f595429f06c7a4f2b2c447cb}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [24/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Create\+Res\+Townhouse}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ab3ba42900596bcc1430985cedb45d456}\label{unit__residential_8cpp_ab3ba42900596bcc1430985cedb45d456}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [25/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Display\+Building\+Info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a0c906d3c68e292065c917be0073cf6d1}\label{unit__residential_8cpp_a0c906d3c68e292065c917be0073cf6d1}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [26/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Get\+Building\+Type}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_ab52f9ef289490127a516d45cdbfffe66}\label{unit__residential_8cpp_ab52f9ef289490127a516d45cdbfffe66}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [27/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Move\+In\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a45ae276862940f71b206893fd64099be}\label{unit__residential_8cpp_a45ae276862940f71b206893fd64099be}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [28/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Move\+Out\+Resident}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_aab20e6543dc75fe2c66ef1886b0cbf00}\label{unit__residential_8cpp_aab20e6543dc75fe2c66ef1886b0cbf00}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [29/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Set\+And\+Get\+Capacity}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__residential_8cpp_a356bd0dfcc567a3ac177413654e69ef6}\label{unit__residential_8cpp_a356bd0dfcc567a3ac177413654e69ef6}} 
+\index{unit\_residential.cpp@{unit\_residential.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!unit\_residential.cpp@{unit\_residential.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [30/30]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classResTownhouseTest}{Res\+Townhouse\+Test}}}]{,  }\item[{Set\+And\+Get\+State}]{ }\end{DoxyParamCaption})}
+

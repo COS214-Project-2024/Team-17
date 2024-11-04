@@ -1,0 +1,33 @@
+\hypertarget{BudgetPolicy_8h}{}\doxysection{src/\+Government+\+Tax/\+Budget\+Policy.h File Reference}
+\label{BudgetPolicy_8h}\index{src/Government+Tax/BudgetPolicy.h@{src/Government+Tax/BudgetPolicy.h}}
+
+
+Header file for the \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} class, defining the base interface for city budget policies.  
+
+
+{\ttfamily \#include \char`\"{}City\+Structure.\+h\char`\"{}}\newline
+Include dependency graph for Budget\+Policy.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for budget policies in a city structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} class, defining the base interface for city budget policies. 
+
+This file declares the \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} class, an abstract base class for creating budget allocation policies. Derived classes implement specific strategies for allocating a budget across different city departments, allowing flexible policy implementations. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCityStructure}{City\+Structure}} for the class receiving the budget allocations. 
+
+\mbox{\hyperlink{classGovernment}{Government}} for the entity that applies these policies in city management. 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Derived policies include \mbox{\hyperlink{classHealthPolicy}{Health\+Policy}}, \mbox{\hyperlink{classInfrastructureBudgetPolicy}{Infrastructure\+Budget\+Policy}}, and others for targeted budget strategies. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+WORKONMYMACHINE TEAM 
+\end{DoxyAuthor}

@@ -1,0 +1,65 @@
+\hypertarget{classInfrastructurePolicy}{}\doxysection{Infrastructure\+Policy Class Reference}
+\label{classInfrastructurePolicy}\index{InfrastructurePolicy@{InfrastructurePolicy}}
+
+
+\mbox{\hyperlink{classPolicy}{Policy}} class for handling budgets related to infrastructure.  
+
+
+
+
+{\ttfamily \#include $<$Infrastructure\+Policy.\+h$>$}
+
+
+
+Inheritance diagram for Infrastructure\+Policy\+:
+% FIG 0
+
+
+Collaboration diagram for Infrastructure\+Policy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInfrastructurePolicy_a883f78d4777834a88f9eaf30a8119906}{apply\+Budget}} (\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&city, double budget)
+\begin{DoxyCompactList}\small\item\em Applies an infrastructure-\/related budget to a city structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classPolicy}{Policy}} class for handling budgets related to infrastructure. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInfrastructurePolicy_a883f78d4777834a88f9eaf30a8119906}\label{classInfrastructurePolicy_a883f78d4777834a88f9eaf30a8119906}} 
+\index{InfrastructurePolicy@{InfrastructurePolicy}!applyBudget@{applyBudget}}
+\index{applyBudget@{applyBudget}!InfrastructurePolicy@{InfrastructurePolicy}}
+\doxysubsubsection{\texorpdfstring{applyBudget()}{applyBudget()}}
+{\footnotesize\ttfamily void Infrastructure\+Policy\+::apply\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&}]{city,  }\item[{double}]{budget }\end{DoxyParamCaption})}
+
+
+
+Applies an infrastructure-\/related budget to a city structure. 
+
+Apply a Infrastructure-\/focused budget allocation to a city.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city structure receiving the budget. \\
+\hline
+{\em budget} & The budget amount to allocate to infrastructure.\\
+\hline
+\end{DoxyParams}
+Allocates 30\% of the budget to health, 20\% to education, and 50\% to infrastructure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city to apply the budget to. \\
+\hline
+{\em budget} & The total budget to distribute. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{InfrastructurePolicy_8h}{Infrastructure\+Policy.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{InfrastructurePolicy_8cpp}{Infrastructure\+Policy.\+cpp}}\end{DoxyCompactItemize}

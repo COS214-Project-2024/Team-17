@@ -1,0 +1,272 @@
+\hypertarget{classComOffice}{}\doxysection{Com\+Office Class Reference}
+\label{classComOffice}\index{ComOffice@{ComOffice}}
+
+
+Represents a commercial office building.  
+
+
+
+
+{\ttfamily \#include $<$Com\+Office.\+h$>$}
+
+
+
+Inheritance diagram for Com\+Office\+:
+% FIG 0
+
+
+Collaboration diagram for Com\+Office\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classComOffice_ae05a6bd1362fefebc78489ef0e9eab26}{Com\+Office}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classComOffice}{Com\+Office}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComOffice_ac19477295275ae4575538032881a7701}{$\sim$\+Com\+Office}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classComOffice}{Com\+Office}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_a4df2fcb6365cfc5490458f43d68277ad}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classComOffice_a1417fc450dee4117ce591063a6d3f654}{get\+Job\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the job capacity of the office. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_a225ffb0af6103b22f56e4248064f022c}{set\+Job\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the job capacity of the office. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_a7098c01221c8c5ce2207d86b9a5f9ec5}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities for the office. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComOffice_a635fcc8d6b2d21d3f4f4a09686c7444f}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the office. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_a22c7279eca3148b21b1732d66f040141}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the office. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classComOffice_a152a7a30d3cab299b0f65774974ffa78}{get\+Building\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComOffice_a5283f3a82c215196ea7ca19331d7309b}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the office. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_aaf204d3692776d16a91eda3621412088}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the office. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComOffice_a4ab3a99ce7a957cd58e2c805f9c63bfa}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the office. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComOffice_a175e0462a18e23677ea2e10c211c9af7}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the office has a job available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial office building. 
+
+The \mbox{\hyperlink{classComOffice}{Com\+Office}} class is a concrete implementation of the \mbox{\hyperlink{classCommercial}{Commercial}} class, providing specific functionality and resources related to an office. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classComOffice_ae05a6bd1362fefebc78489ef0e9eab26}\label{classComOffice_ae05a6bd1362fefebc78489ef0e9eab26}} 
+\index{ComOffice@{ComOffice}!ComOffice@{ComOffice}}
+\index{ComOffice@{ComOffice}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{ComOffice()}{ComOffice()}}
+{\footnotesize\ttfamily Com\+Office\+::\+Com\+Office (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classComOffice}{Com\+Office}}. 
+
+\mbox{\Hypertarget{classComOffice_ac19477295275ae4575538032881a7701}\label{classComOffice_ac19477295275ae4575538032881a7701}} 
+\index{ComOffice@{ComOffice}!````~ComOffice@{$\sim$ComOffice}}
+\index{````~ComOffice@{$\sim$ComOffice}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{$\sim$ComOffice()}{~ComOffice()}}
+{\footnotesize\ttfamily Com\+Office\+::$\sim$\+Com\+Office (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classComOffice}{Com\+Office}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classComOffice_a5283f3a82c215196ea7ca19331d7309b}\label{classComOffice_a5283f3a82c215196ea7ca19331d7309b}} 
+\index{ComOffice@{ComOffice}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Com\+Office\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the office. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a7098c01221c8c5ce2207d86b9a5f9ec5}\label{classComOffice_a7098c01221c8c5ce2207d86b9a5f9ec5}} 
+\index{ComOffice@{ComOffice}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Com\+Office\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities for the office. 
+
+\mbox{\Hypertarget{classComOffice_a4df2fcb6365cfc5490458f43d68277ad}\label{classComOffice_a4df2fcb6365cfc5490458f43d68277ad}} 
+\index{ComOffice@{ComOffice}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Com\+Office\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classComOffice_a152a7a30d3cab299b0f65774974ffa78}\label{classComOffice_a152a7a30d3cab299b0f65774974ffa78}} 
+\index{ComOffice@{ComOffice}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Com\+Office\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a3100daec90c3af597268edd84d53269f}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a1417fc450dee4117ce591063a6d3f654}\label{classComOffice_a1417fc450dee4117ce591063a6d3f654}} 
+\index{ComOffice@{ComOffice}!getJobCapacity@{getJobCapacity}}
+\index{getJobCapacity@{getJobCapacity}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{getJobCapacity()}{getJobCapacity()}}
+{\footnotesize\ttfamily int Com\+Office\+::get\+Job\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the job capacity of the office. 
+
+\begin{DoxyReturn}{Returns}
+The number of jobs the office can accommodate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a366f76041acdacf0b0e961139d2a075a}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a635fcc8d6b2d21d3f4f4a09686c7444f}\label{classComOffice_a635fcc8d6b2d21d3f4f4a09686c7444f}} 
+\index{ComOffice@{ComOffice}!getState@{getState}}
+\index{getState@{getState}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Com\+Office\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the office. 
+
+\begin{DoxyReturn}{Returns}
+True if the office is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a175e0462a18e23677ea2e10c211c9af7}\label{classComOffice_a175e0462a18e23677ea2e10c211c9af7}} 
+\index{ComOffice@{ComOffice}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Com\+Office\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the office has a job available. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a job available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classComOffice_a4ab3a99ce7a957cd58e2c805f9c63bfa}\label{classComOffice_a4ab3a99ce7a957cd58e2c805f9c63bfa}} 
+\index{ComOffice@{ComOffice}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Com\+Office\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies that an employee has left the office. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_aaf204d3692776d16a91eda3621412088}\label{classComOffice_aaf204d3692776d16a91eda3621412088}} 
+\index{ComOffice@{ComOffice}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Com\+Office\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the office. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a225ffb0af6103b22f56e4248064f022c}\label{classComOffice_a225ffb0af6103b22f56e4248064f022c}} 
+\index{ComOffice@{ComOffice}!setJobCapacity@{setJobCapacity}}
+\index{setJobCapacity@{setJobCapacity}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{setJobCapacity()}{setJobCapacity()}}
+{\footnotesize\ttfamily void Com\+Office\+::set\+Job\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the job capacity of the office. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The new job capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}{Commercial}}.
+
+\mbox{\Hypertarget{classComOffice_a22c7279eca3148b21b1732d66f040141}\label{classComOffice_a22c7279eca3148b21b1732d66f040141}} 
+\index{ComOffice@{ComOffice}!setState@{setState}}
+\index{setState@{setState}!ComOffice@{ComOffice}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Com\+Office\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the office. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ComOffice_8h}{Com\+Office.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ComOffice_8cpp}{Com\+Office.\+cpp}}\end{DoxyCompactItemize}

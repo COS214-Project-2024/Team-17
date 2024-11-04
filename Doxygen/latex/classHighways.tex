@@ -1,0 +1,192 @@
+\hypertarget{classHighways}{}\doxysection{Highways Class Reference}
+\label{classHighways}\index{Highways@{Highways}}
+
+
+Represents a highway component in the road network.  
+
+
+
+
+{\ttfamily \#include $<$Highways.\+h$>$}
+
+
+
+Inheritance diagram for Highways\+:
+% FIG 0
+
+
+Collaboration diagram for Highways\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHighways_aab8a4f0334503c5fb0e6fdfa7343cc72}{Highways}} (int sX, int sY, int eX, int eY)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classHighways}{Highways}} object with specified start and end coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighways_a55cc851fc5054149117d7ff546a37433}{display\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays information about the highway. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighways_ac3e998e7d300fb2cf48cf0ab63cdfbd4}{calculate\+Traffic}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the traffic on the highway. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHighways_adc9efe4bc0cb48ce10639913a719c351}{get\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the distance of the highway segment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighways_a1748966cc663157f291dd4e1fe57d8ad}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies of changes related to the highway. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighways_a752d02171886f53b00dfb4bfcfb07a35}{add\+Connection}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$connection, float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}})
+\begin{DoxyCompactList}\small\item\em Adds a connection to another road component. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHighways_a9eafacea42b11c2ce9dae2e7f6fc2bff}{calculate\+Distance}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Calculates the distance from a given point to the highway. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHighways_ab7281049423228efb2cee5a5f062fa4e}{$\sim$\+Highways}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a highway component in the road network. 
+
+The \mbox{\hyperlink{classHighways}{Highways}} class inherits from \mbox{\hyperlink{classRoadComponent}{Road\+Component}} and provides functionalities specific to highway segments, including traffic calculation, distance management, and information display. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHighways_aab8a4f0334503c5fb0e6fdfa7343cc72}\label{classHighways_aab8a4f0334503c5fb0e6fdfa7343cc72}} 
+\index{Highways@{Highways}!Highways@{Highways}}
+\index{Highways@{Highways}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{Highways()}{Highways()}}
+{\footnotesize\ttfamily Highways\+::\+Highways (\begin{DoxyParamCaption}\item[{int}]{sX,  }\item[{int}]{sY,  }\item[{int}]{eX,  }\item[{int}]{eY }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classHighways}{Highways}} object with specified start and end coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sX} & The starting X coordinate of the highway. \\
+\hline
+{\em sY} & The starting Y coordinate of the highway. \\
+\hline
+{\em eX} & The ending X coordinate of the highway. \\
+\hline
+{\em eY} & The ending Y coordinate of the highway. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighways_ab7281049423228efb2cee5a5f062fa4e}\label{classHighways_ab7281049423228efb2cee5a5f062fa4e}} 
+\index{Highways@{Highways}!````~Highways@{$\sim$Highways}}
+\index{````~Highways@{$\sim$Highways}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{$\sim$Highways()}{~Highways()}}
+{\footnotesize\ttfamily Highways\+::$\sim$\+Highways (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for cleanup. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHighways_a752d02171886f53b00dfb4bfcfb07a35}\label{classHighways_a752d02171886f53b00dfb4bfcfb07a35}} 
+\index{Highways@{Highways}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily void Highways\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{connection,  }\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a connection to another road component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & A pointer to the road component to connect. \\
+\hline
+{\em distance} & The distance to the connected component. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}{Road\+Component}}.
+
+\mbox{\Hypertarget{classHighways_a9eafacea42b11c2ce9dae2e7f6fc2bff}\label{classHighways_a9eafacea42b11c2ce9dae2e7f6fc2bff}} 
+\index{Highways@{Highways}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily float Highways\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the distance from a given point to the highway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the point. \\
+\hline
+{\em y} & The Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated distance as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}{Road\+Component}}.
+
+\mbox{\Hypertarget{classHighways_ac3e998e7d300fb2cf48cf0ab63cdfbd4}\label{classHighways_ac3e998e7d300fb2cf48cf0ab63cdfbd4}} 
+\index{Highways@{Highways}!calculateTraffic@{calculateTraffic}}
+\index{calculateTraffic@{calculateTraffic}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{calculateTraffic()}{calculateTraffic()}}
+{\footnotesize\ttfamily void Highways\+::calculate\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the traffic on the highway. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}{Road\+Component}}.
+
+\mbox{\Hypertarget{classHighways_a55cc851fc5054149117d7ff546a37433}\label{classHighways_a55cc851fc5054149117d7ff546a37433}} 
+\index{Highways@{Highways}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Highways\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays information about the highway. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a14f7f982767020220f4bb841f4c321df}{Road\+Component}}.
+
+\mbox{\Hypertarget{classHighways_adc9efe4bc0cb48ce10639913a719c351}\label{classHighways_adc9efe4bc0cb48ce10639913a719c351}} 
+\index{Highways@{Highways}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily float Highways\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the distance of the highway segment. 
+
+\begin{DoxyReturn}{Returns}
+The distance as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}{Road\+Component}}.
+
+\mbox{\Hypertarget{classHighways_a1748966cc663157f291dd4e1fe57d8ad}\label{classHighways_a1748966cc663157f291dd4e1fe57d8ad}} 
+\index{Highways@{Highways}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!Highways@{Highways}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Highways\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies of changes related to the highway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string message detailing the change. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{Highways_8h}{Highways.\+h}}\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{Highways_8cpp}{Highways.\+cpp}}\end{DoxyCompactItemize}

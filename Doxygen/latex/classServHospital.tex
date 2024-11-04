@@ -1,0 +1,272 @@
+\hypertarget{classServHospital}{}\doxysection{Serv\+Hospital Class Reference}
+\label{classServHospital}\index{ServHospital@{ServHospital}}
+
+
+Represents a hospital service in the city.  
+
+
+
+
+{\ttfamily \#include $<$Serv\+Hospital.\+h$>$}
+
+
+
+Inheritance diagram for Serv\+Hospital\+:
+% FIG 0
+
+
+Collaboration diagram for Serv\+Hospital\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServHospital_aacba58b3ffbd47e9c8cc2f8a4c505eb4}{Serv\+Hospital}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServHospital}{Serv\+Hospital}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServHospital_ac1d7ffe1fbf7be3ae6df3263d0fde2e3}{$\sim$\+Serv\+Hospital}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classServHospital}{Serv\+Hospital}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_af5efbcc43cc87cc005a82632ed629cb3}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the hospital building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServHospital_a5b44afe667921c3a68124d001715e09f}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the number of visitors currently in the hospital. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_a8dfc73d457708eb8da2539a5719f564c}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors in the hospital. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_a6cabd9db739c0a70cc6ae7faad3507d1}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities in the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServHospital_a8f93d1937e5a51d7d5f14d63d08beb40}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the hospital. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_a852b34e0963e07f676f3c6ce30c14f52}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the hospital. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classServHospital_a9c9cdabc38d95dce7477e1bc02966e9d}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServHospital_a3021ac7aaea66732c34f867429a2155d}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the hospital. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_a356803919b62eb6e03f5923c44de4e63}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the hospital. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServHospital_aba1c01927667bb5515b89a0fd7e9c065}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the hospital that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServHospital_ab12f92333692eb71aba9f4c64361209d}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are job openings in the hospital. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a hospital service in the city. 
+
+The \mbox{\hyperlink{classServHospital}{Serv\+Hospital}} class manages hospital operations, employee management, and visitor information, inheriting from the \mbox{\hyperlink{classServices}{Services}} base class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServHospital_aacba58b3ffbd47e9c8cc2f8a4c505eb4}\label{classServHospital_aacba58b3ffbd47e9c8cc2f8a4c505eb4}} 
+\index{ServHospital@{ServHospital}!ServHospital@{ServHospital}}
+\index{ServHospital@{ServHospital}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{ServHospital()}{ServHospital()}}
+{\footnotesize\ttfamily Serv\+Hospital\+::\+Serv\+Hospital (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classServHospital}{Serv\+Hospital}} object. 
+
+\mbox{\Hypertarget{classServHospital_ac1d7ffe1fbf7be3ae6df3263d0fde2e3}\label{classServHospital_ac1d7ffe1fbf7be3ae6df3263d0fde2e3}} 
+\index{ServHospital@{ServHospital}!````~ServHospital@{$\sim$ServHospital}}
+\index{````~ServHospital@{$\sim$ServHospital}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServHospital()}{~ServHospital()}}
+{\footnotesize\ttfamily Serv\+Hospital\+::$\sim$\+Serv\+Hospital (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{classServHospital}{Serv\+Hospital}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServHospital_a3021ac7aaea66732c34f867429a2155d}\label{classServHospital_a3021ac7aaea66732c34f867429a2155d}} 
+\index{ServHospital@{ServHospital}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Serv\+Hospital\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the hospital. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_a6cabd9db739c0a70cc6ae7faad3507d1}\label{classServHospital_a6cabd9db739c0a70cc6ae7faad3507d1}} 
+\index{ServHospital@{ServHospital}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities in the building. 
+
+Notify utilities of changes in the hospital \mbox{\Hypertarget{classServHospital_af5efbcc43cc87cc005a82632ed629cb3}\label{classServHospital_af5efbcc43cc87cc005a82632ed629cb3}} 
+\index{ServHospital@{ServHospital}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the hospital building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classServHospital_a9c9cdabc38d95dce7477e1bc02966e9d}\label{classServHospital_a9c9cdabc38d95dce7477e1bc02966e9d}} 
+\index{ServHospital@{ServHospital}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Serv\+Hospital\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_a8f93d1937e5a51d7d5f14d63d08beb40}\label{classServHospital_a8f93d1937e5a51d7d5f14d63d08beb40}} 
+\index{ServHospital@{ServHospital}!getState@{getState}}
+\index{getState@{getState}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Serv\+Hospital\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the hospital. 
+
+\begin{DoxyReturn}{Returns}
+True if the hospital is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_a5b44afe667921c3a68124d001715e09f}\label{classServHospital_a5b44afe667921c3a68124d001715e09f}} 
+\index{ServHospital@{ServHospital}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Serv\+Hospital\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of visitors currently in the hospital. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a6f30c52bb657da639ae4b61c06a0476a}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_ab12f92333692eb71aba9f4c64361209d}\label{classServHospital_ab12f92333692eb71aba9f4c64361209d}} 
+\index{ServHospital@{ServHospital}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Serv\+Hospital\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are job openings in the hospital. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classServHospital_aba1c01927667bb5515b89a0fd7e9c065}\label{classServHospital_aba1c01927667bb5515b89a0fd7e9c065}} 
+\index{ServHospital@{ServHospital}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the hospital that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_a356803919b62eb6e03f5923c44de4e63}\label{classServHospital_a356803919b62eb6e03f5923c44de4e63}} 
+\index{ServHospital@{ServHospital}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the hospital. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{Services}}.
+
+\mbox{\Hypertarget{classServHospital_a852b34e0963e07f676f3c6ce30c14f52}\label{classServHospital_a852b34e0963e07f676f3c6ce30c14f52}} 
+\index{ServHospital@{ServHospital}!setState@{setState}}
+\index{setState@{setState}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the hospital. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServHospital_a8dfc73d457708eb8da2539a5719f564c}\label{classServHospital_a8dfc73d457708eb8da2539a5719f564c}} 
+\index{ServHospital@{ServHospital}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!ServHospital@{ServHospital}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Serv\+Hospital\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors in the hospital. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a0e64154e9a9e89adcf294af6ee269b49}{Services}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ServHospital_8h}{Serv\+Hospital.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ServHospital_8cpp}{Serv\+Hospital.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,171 @@
+\hypertarget{classFactService}{}\doxysection{Fact\+Service Class Reference}
+\label{classFactService}\index{FactService@{FactService}}
+
+
+Represents a factory that creates various service buildings.  
+
+
+
+
+{\ttfamily \#include $<$Fact\+Service.\+h$>$}
+
+
+
+Inheritance diagram for Fact\+Service\+:
+% FIG 0
+
+
+Collaboration diagram for Fact\+Service\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFactService_a5e9ec4b1305c96355af9ec69c7b85d43}{Fact\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classFactService}{Fact\+Service}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServices}{Services}} $\ast$ \mbox{\hyperlink{classFactService_afc7c6739d25d9327384844606cb65b4b}{create\+Service\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a service building of a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResidential}{Residential}} $\ast$ \mbox{\hyperlink{classFactService_a4d41de700b7a7beae1728f1afb7030a3}{create\+Res\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a residential building of a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommercial}{Commercial}} $\ast$ \mbox{\hyperlink{classFactService_ae3c00a32d2678c14d17e412de843d877}{create\+Com\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a commercial building of a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndustrial}{Industrial}} $\ast$ \mbox{\hyperlink{classFactService_a416ccec48b6fbd14327417089f56e76a}{create\+Ind\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates an industrial building of a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandmark}{Landmark}} $\ast$ \mbox{\hyperlink{classFactService_a12e345e98d206ae36af3685b858ab4a4}{create\+Landmark}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a landmark of a specified type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a factory that creates various service buildings. 
+
+The \mbox{\hyperlink{classFactService}{Fact\+Service}} class inherits from the \mbox{\hyperlink{classFactoryBuilding}{Factory\+Building}} class and implements methods for creating different types of service buildings such as educational, security, and entertainment services, as well as residential, commercial, industrial, and landmark buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFactService_a5e9ec4b1305c96355af9ec69c7b85d43}\label{classFactService_a5e9ec4b1305c96355af9ec69c7b85d43}} 
+\index{FactService@{FactService}!FactService@{FactService}}
+\index{FactService@{FactService}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{FactService()}{FactService()}}
+{\footnotesize\ttfamily Fact\+Service\+::\+Fact\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{classFactService}{Fact\+Service}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFactService_ae3c00a32d2678c14d17e412de843d877}\label{classFactService_ae3c00a32d2678c14d17e412de843d877}} 
+\index{FactService@{FactService}!createComBuilding@{createComBuilding}}
+\index{createComBuilding@{createComBuilding}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{createComBuilding()}{createComBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommercial}{Commercial}} $\ast$ Fact\+Service\+::create\+Com\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a commercial building of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of commercial building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classCommercial}{Commercial}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a7756f26129982423333482bf574f5b67}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactService_a416ccec48b6fbd14327417089f56e76a}\label{classFactService_a416ccec48b6fbd14327417089f56e76a}} 
+\index{FactService@{FactService}!createIndBuilding@{createIndBuilding}}
+\index{createIndBuilding@{createIndBuilding}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{createIndBuilding()}{createIndBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIndustrial}{Industrial}} $\ast$ Fact\+Service\+::create\+Ind\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an industrial building of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of industrial building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classIndustrial}{Industrial}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_ac70b1f127fb07c46a2d7baf5ac771cea}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactService_a12e345e98d206ae36af3685b858ab4a4}\label{classFactService_a12e345e98d206ae36af3685b858ab4a4}} 
+\index{FactService@{FactService}!createLandmark@{createLandmark}}
+\index{createLandmark@{createLandmark}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{createLandmark()}{createLandmark()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLandmark}{Landmark}} $\ast$ Fact\+Service\+::create\+Landmark (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a landmark of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of landmark to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classLandmark}{Landmark}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a84e7896b914f3812c2b93bbfc4041069}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactService_a4d41de700b7a7beae1728f1afb7030a3}\label{classFactService_a4d41de700b7a7beae1728f1afb7030a3}} 
+\index{FactService@{FactService}!createResBuilding@{createResBuilding}}
+\index{createResBuilding@{createResBuilding}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{createResBuilding()}{createResBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classResidential}{Residential}} $\ast$ Fact\+Service\+::create\+Res\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a residential building of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of residential building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classResidential}{Residential}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a3e369a556e99d5b85b7e2a01bd5888f4}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactService_afc7c6739d25d9327384844606cb65b4b}\label{classFactService_afc7c6739d25d9327384844606cb65b4b}} 
+\index{FactService@{FactService}!createServiceBuilding@{createServiceBuilding}}
+\index{createServiceBuilding@{createServiceBuilding}!FactService@{FactService}}
+\doxysubsubsection{\texorpdfstring{createServiceBuilding()}{createServiceBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classServices}{Services}} $\ast$ Fact\+Service\+::create\+Service\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a service building of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of service building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classServices}{Services}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_add4ea50142e0e0bbb6bd71eef54a85a5}{Factory\+Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{FactService_8h}{Fact\+Service.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{FactService_8cpp}{Fact\+Service.\+cpp}}\end{DoxyCompactItemize}

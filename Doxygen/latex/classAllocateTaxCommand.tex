@@ -1,0 +1,88 @@
+\hypertarget{classAllocateTaxCommand}{}\doxysection{Allocate\+Tax\+Command Class Reference}
+\label{classAllocateTaxCommand}\index{AllocateTaxCommand@{AllocateTaxCommand}}
+
+
+A command to allocate a specific amount of tax to a government department.  
+
+
+
+
+{\ttfamily \#include $<$Allocate\+Tax\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Allocate\+Tax\+Command\+:
+% FIG 0
+
+
+Collaboration diagram for Allocate\+Tax\+Command\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAllocateTaxCommand_ac86425f4411ec1ac4e7ecbfbb65bcb2b}{Allocate\+Tax\+Command}} (\mbox{\hyperlink{classGovernment}{Government}} $\ast$gov, double amt, std\+::string dept)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classAllocateTaxCommand}{Allocate\+Tax\+Command}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateTaxCommand_a22b0759e34de14084d3da92ade242f7b}{execute}} ()
+\begin{DoxyCompactList}\small\item\em Executes the tax allocation command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A command to allocate a specific amount of tax to a government department. 
+
+This class inherits from \mbox{\hyperlink{classTaxCommand}{Tax\+Command}} and is responsible for executing an allocation of tax funds to a specified department within a government entity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAllocateTaxCommand_ac86425f4411ec1ac4e7ecbfbb65bcb2b}\label{classAllocateTaxCommand_ac86425f4411ec1ac4e7ecbfbb65bcb2b}} 
+\index{AllocateTaxCommand@{AllocateTaxCommand}!AllocateTaxCommand@{AllocateTaxCommand}}
+\index{AllocateTaxCommand@{AllocateTaxCommand}!AllocateTaxCommand@{AllocateTaxCommand}}
+\doxysubsubsection{\texorpdfstring{AllocateTaxCommand()}{AllocateTaxCommand()}}
+{\footnotesize\ttfamily Allocate\+Tax\+Command\+::\+Allocate\+Tax\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGovernment}{Government}} $\ast$}]{gov,  }\item[{double}]{amt,  }\item[{std\+::string}]{dept }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classAllocateTaxCommand}{Allocate\+Tax\+Command}}. 
+
+Construct a new Allocate Tax Command object.
+
+Initializes a new instance of the \mbox{\hyperlink{classAllocateTaxCommand}{Allocate\+Tax\+Command}} with a target government, allocation amount, and department.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gov} & Pointer to the \mbox{\hyperlink{classGovernment}{Government}} instance where the tax is allocated. \\
+\hline
+{\em amt} & The amount of tax funds to allocate. \\
+\hline
+{\em dept} & The name of the department receiving the funds.\\
+\hline
+{\em gov} & Pointer to the government instance to which this command applies. \\
+\hline
+{\em amt} & The amount of tax to allocate. \\
+\hline
+{\em dept} & The department to which the tax will be allocated. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAllocateTaxCommand_a22b0759e34de14084d3da92ade242f7b}\label{classAllocateTaxCommand_a22b0759e34de14084d3da92ade242f7b}} 
+\index{AllocateTaxCommand@{AllocateTaxCommand}!execute@{execute}}
+\index{execute@{execute}!AllocateTaxCommand@{AllocateTaxCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Allocate\+Tax\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the tax allocation command. 
+
+Execute the allocate tax command, which allocates taxes to a specified department in the government.
+
+Allocates the specified amount of tax funds to the designated department within the government. 
+
+Implements \mbox{\hyperlink{classTaxCommand_acff9526b0efe1904d613cd19d1148e61}{Tax\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{AllocateTaxCommand_8h}{Allocate\+Tax\+Command.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{AllocateTaxCommand_8cpp}{Allocate\+Tax\+Command.\+cpp}}\end{DoxyCompactItemize}

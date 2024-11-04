@@ -1,0 +1,504 @@
+\hypertarget{classCitizen}{}\doxysection{Citizen Class Reference}
+\label{classCitizen}\index{Citizen@{Citizen}}
+
+
+Represents a citizen in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Citizen.\+h$>$}
+
+
+
+Inheritance diagram for Citizen\+:
+% FIG 0
+
+
+Collaboration diagram for Citizen\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizen_aac553194ba27133d710c85595d0e8163}{Citizen}} (bool auto\+Register=true)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classCitizen}{Citizen}} and optionally registers them automatically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a15d0c1993fab1ae6831a136240ab9bce}{set\+State}} (\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$new\+State)
+\begin{DoxyCompactList}\small\item\em Sets the state of the citizen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classCitizen_aa9924c476c7642d211284f9803aff789}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current state of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a80b9595888f5c8ec3ca8de6b0dde258d}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies the citizen of a change in the environment or situation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_ac24072fdb83b61746c0b9b1b5c38d224}{accept}} (\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$visitor)
+\begin{DoxyCompactList}\small\item\em Accepts a visitor for tax and budget operations. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCitizen_a6cb8c93c800efcb4abbfe25e63c68317}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a2d9ab1d3caafb92d05f258842bcb75da}{set\+Workplace}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$\mbox{\hyperlink{classCitizen_a3d9aa7848e11bb00b162c4a451dee106}{workplace}})
+\begin{DoxyCompactList}\small\item\em Sets the citizen\textquotesingle{}s workplace. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_ac256c0075c76886fa7053aabf7cd27c1}{get\+Workplace}} ()
+\begin{DoxyCompactList}\small\item\em Gets the citizen\textquotesingle{}s workplace. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a9cc4e1d39ac5096f4b8dcc68be33c831}{fired}} ()
+\begin{DoxyCompactList}\small\item\em Handles the event of the citizen being fired from their job. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a55c40db898d30e27c5e0730f4bdc0bfe}{set\+Home}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$\mbox{\hyperlink{classCitizen_a0616cff353f6817dc0e47a8a8a2fb87b}{home}})
+\begin{DoxyCompactList}\small\item\em Sets the citizen\textquotesingle{}s home. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_ac2a47200090dc1abd4cc418384414475}{get\+Home}} ()
+\begin{DoxyCompactList}\small\item\em Gets the citizen\textquotesingle{}s home. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a7e427cf56f1d1cdbe0c4b45ef51e901b}{evicted}} ()
+\begin{DoxyCompactList}\small\item\em Handles the event of the citizen being evicted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_ab1c1c1eb91e289a9f2a67c69c6d9d0a9}{give\+Car}} ()
+\begin{DoxyCompactList}\small\item\em Gives a car to the citizen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCitizen_ac20c2895fd099e31d4abe759fba56ec4}{do\+Something}} ()
+\begin{DoxyCompactList}\small\item\em Performs the citizen\textquotesingle{}s actions for the current iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_a998e8a76bc68ba3259a3307f6b102d25}{get\+Current\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current building where the citizen is located. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCitizen_a9812fb4f64ebd9e993d11422e71dd073}{get\+Happiness}} ()
+\begin{DoxyCompactList}\small\item\em Gets the happiness level of the citizen. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCitizen_a02b0efe00dfb5f93a4a7c5fed86b573e}{get\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tax obligations of the citizen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}{$\sim$\+Citizen}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classCitizen}{Citizen}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}{Activity}} \{ \newline
+\mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a291459a8560127efa7ecc3c189aec153}{Rest}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4a0cd6a32eb49b75dce566eedf773e4}{Work}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ae47eea4dfdf107f7817f3f4859a48c62}{Try\+Bus\+Work}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a3499cb8a3603db128aeb6d3900eb8643}{In\+Transit\+Work}}
+, \newline
+\mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a26e81c1282a2ca2fc8125c6e2aa31168}{Await\+Transit\+Work}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a6fa017d7bf55a2ac0357e7c34b06e198}{Try\+Bus\+Home}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092aaaac09bd8a3651129dff14f57eaf4eaf}{In\+Transit\+Home}}
+, \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4b93f97f1b5bf244f0e0d4da430ba1d}{Await\+Transit\+Home}}
+, \newline
+\mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ad66e8c697a499d0c51774de997265de6}{Nothing}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCitizen_a2defe8e6f473b5486df0c94f8bf97b25}{change\+Happiness}} (int change)
+\begin{DoxyCompactList}\small\item\em Changes the happiness level of the citizen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classCitizen_a01f87ad90932f69101c93a3b04f9fda6}{state}}
+\item 
+std\+::string \mbox{\hyperlink{classCitizen_abca3f4db1b069d530bf26bb681d55e3e}{name}}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_a3d9aa7848e11bb00b162c4a451dee106}{workplace}}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_a0616cff353f6817dc0e47a8a8a2fb87b}{home}}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCitizen_a5b5b196898a02394666acc09c3ca307d}{current\+Location}}
+\item 
+\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ \mbox{\hyperlink{classCitizen_a18cf908fe35b0e4698b557935493eddb}{current\+Road}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \mbox{\hyperlink{classCitizen_a62548d6bdec1402be964c0319007219e}{route}}
+\item 
+\mbox{\hyperlink{classCityMediator}{City\+Mediator}} $\ast$ \mbox{\hyperlink{classCitizen_aa1b8edbd731354d58ca5447a6801752a}{mediator}} = nullptr
+\item 
+\mbox{\hyperlink{classBus}{Bus}} $\ast$ \mbox{\hyperlink{classCitizen_ad0291d780c39a95ad739ac7e9161842c}{my\+Bus}}
+\item 
+bool \mbox{\hyperlink{classCitizen_ae84922bd6d49bd051098a2e05bc25384}{owns\+Car}}
+\item 
+bool \mbox{\hyperlink{classCitizen_ae97782ef3382f56b9887aedc32b80c63}{scheduled\+For\+Deletion}} = false
+\item 
+int \mbox{\hyperlink{classCitizen_a17caa14223ccb7eea64de7db999a0b6e}{wait\+Timer}} = 0
+\item 
+\mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}{Activity}} \mbox{\hyperlink{classCitizen_a7670aab85546cc107f96d6dce2ee1e9f}{activity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a citizen in the city simulation. 
+
+The \mbox{\hyperlink{classCitizen}{Citizen}} class extends \mbox{\hyperlink{classCityBlock}{City\+Block}} and encapsulates the properties and behaviors of a citizen, including their state, location, workplace, and activities. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}} 
+\index{Citizen@{Citizen}!Activity@{Activity}}
+\index{Activity@{Activity}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{Activity}{Activity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}{Citizen\+::\+Activity}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rest@{Rest}!Citizen@{Citizen}}\index{Citizen@{Citizen}!Rest@{Rest}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a291459a8560127efa7ecc3c189aec153}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a291459a8560127efa7ecc3c189aec153}} 
+Rest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Work@{Work}!Citizen@{Citizen}}\index{Citizen@{Citizen}!Work@{Work}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4a0cd6a32eb49b75dce566eedf773e4}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4a0cd6a32eb49b75dce566eedf773e4}} 
+Work&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TryBusWork@{TryBusWork}!Citizen@{Citizen}}\index{Citizen@{Citizen}!TryBusWork@{TryBusWork}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ae47eea4dfdf107f7817f3f4859a48c62}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ae47eea4dfdf107f7817f3f4859a48c62}} 
+Try\+Bus\+Work&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InTransitWork@{InTransitWork}!Citizen@{Citizen}}\index{Citizen@{Citizen}!InTransitWork@{InTransitWork}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a3499cb8a3603db128aeb6d3900eb8643}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a3499cb8a3603db128aeb6d3900eb8643}} 
+In\+Transit\+Work&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AwaitTransitWork@{AwaitTransitWork}!Citizen@{Citizen}}\index{Citizen@{Citizen}!AwaitTransitWork@{AwaitTransitWork}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a26e81c1282a2ca2fc8125c6e2aa31168}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a26e81c1282a2ca2fc8125c6e2aa31168}} 
+Await\+Transit\+Work&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TryBusHome@{TryBusHome}!Citizen@{Citizen}}\index{Citizen@{Citizen}!TryBusHome@{TryBusHome}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a6fa017d7bf55a2ac0357e7c34b06e198}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092a6fa017d7bf55a2ac0357e7c34b06e198}} 
+Try\+Bus\+Home&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InTransitHome@{InTransitHome}!Citizen@{Citizen}}\index{Citizen@{Citizen}!InTransitHome@{InTransitHome}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092aaaac09bd8a3651129dff14f57eaf4eaf}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092aaaac09bd8a3651129dff14f57eaf4eaf}} 
+In\+Transit\+Home&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AwaitTransitHome@{AwaitTransitHome}!Citizen@{Citizen}}\index{Citizen@{Citizen}!AwaitTransitHome@{AwaitTransitHome}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4b93f97f1b5bf244f0e0d4da430ba1d}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ac4b93f97f1b5bf244f0e0d4da430ba1d}} 
+Await\+Transit\+Home&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Nothing@{Nothing}!Citizen@{Citizen}}\index{Citizen@{Citizen}!Nothing@{Nothing}}}\mbox{\Hypertarget{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ad66e8c697a499d0c51774de997265de6}\label{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092ad66e8c697a499d0c51774de997265de6}} 
+Nothing&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCitizen_aac553194ba27133d710c85595d0e8163}\label{classCitizen_aac553194ba27133d710c85595d0e8163}} 
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{Citizen()}{Citizen()}}
+{\footnotesize\ttfamily Citizen\+::\+Citizen (\begin{DoxyParamCaption}\item[{bool}]{auto\+Register = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classCitizen}{Citizen}} and optionally registers them automatically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Register} & Indicates whether the citizen should be auto-\/registered. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}\label{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}} 
+\index{Citizen@{Citizen}!````~Citizen@{$\sim$Citizen}}
+\index{````~Citizen@{$\sim$Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Citizen()}{~Citizen()}}
+{\footnotesize\ttfamily Citizen\+::$\sim$\+Citizen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classCitizen}{Citizen}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCitizen_ac24072fdb83b61746c0b9b1b5c38d224}\label{classCitizen_ac24072fdb83b61746c0b9b1b5c38d224}} 
+\index{Citizen@{Citizen}!accept@{accept}}
+\index{accept@{accept}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Citizen\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption})}
+
+
+
+Accepts a visitor for tax and budget operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & A pointer to the \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a2defe8e6f473b5486df0c94f8bf97b25}\label{classCitizen_a2defe8e6f473b5486df0c94f8bf97b25}} 
+\index{Citizen@{Citizen}!changeHappiness@{changeHappiness}}
+\index{changeHappiness@{changeHappiness}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{changeHappiness()}{changeHappiness()}}
+{\footnotesize\ttfamily void Citizen\+::change\+Happiness (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Changes the happiness level of the citizen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & The amount to change happiness by (positive or negative). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_ac20c2895fd099e31d4abe759fba56ec4}\label{classCitizen_ac20c2895fd099e31d4abe759fba56ec4}} 
+\index{Citizen@{Citizen}!doSomething@{doSomething}}
+\index{doSomething@{doSomething}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{doSomething()}{doSomething()}}
+{\footnotesize\ttfamily void Citizen\+::do\+Something (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs the citizen\textquotesingle{}s actions for the current iteration. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classBus_a8a53ec6de748727347176835a3549fdf}{Bus}}.
+
+\mbox{\Hypertarget{classCitizen_a7e427cf56f1d1cdbe0c4b45ef51e901b}\label{classCitizen_a7e427cf56f1d1cdbe0c4b45ef51e901b}} 
+\index{Citizen@{Citizen}!evicted@{evicted}}
+\index{evicted@{evicted}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{evicted()}{evicted()}}
+{\footnotesize\ttfamily void Citizen\+::evicted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the event of the citizen being evicted. 
+
+\mbox{\Hypertarget{classCitizen_a9cc4e1d39ac5096f4b8dcc68be33c831}\label{classCitizen_a9cc4e1d39ac5096f4b8dcc68be33c831}} 
+\index{Citizen@{Citizen}!fired@{fired}}
+\index{fired@{fired}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{fired()}{fired()}}
+{\footnotesize\ttfamily void Citizen\+::fired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the event of the citizen being fired from their job. 
+
+\mbox{\Hypertarget{classCitizen_a998e8a76bc68ba3259a3307f6b102d25}\label{classCitizen_a998e8a76bc68ba3259a3307f6b102d25}} 
+\index{Citizen@{Citizen}!getCurrentBuilding@{getCurrentBuilding}}
+\index{getCurrentBuilding@{getCurrentBuilding}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getCurrentBuilding()}{getCurrentBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Citizen\+::get\+Current\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current building where the citizen is located. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classBuilding}{Building}} where the citizen currently is. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a9812fb4f64ebd9e993d11422e71dd073}\label{classCitizen_a9812fb4f64ebd9e993d11422e71dd073}} 
+\index{Citizen@{Citizen}!getHappiness@{getHappiness}}
+\index{getHappiness@{getHappiness}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHappiness()}{getHappiness()}}
+{\footnotesize\ttfamily int Citizen\+::get\+Happiness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the happiness level of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+The happiness level as an integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_ac2a47200090dc1abd4cc418384414475}\label{classCitizen_ac2a47200090dc1abd4cc418384414475}} 
+\index{Citizen@{Citizen}!getHome@{getHome}}
+\index{getHome@{getHome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHome()}{getHome()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Citizen\+::get\+Home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the citizen\textquotesingle{}s home. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classBuilding}{Building}} representing the home. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a6cb8c93c800efcb4abbfe25e63c68317}\label{classCitizen_a6cb8c93c800efcb4abbfe25e63c68317}} 
+\index{Citizen@{Citizen}!getName@{getName}}
+\index{getName@{getName}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Citizen\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+The name of the citizen as a string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_aa9924c476c7642d211284f9803aff789}\label{classCitizen_aa9924c476c7642d211284f9803aff789}} 
+\index{Citizen@{Citizen}!getState@{getState}}
+\index{getState@{getState}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ Citizen\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current state of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the current \mbox{\hyperlink{classCitizenState}{Citizen\+State}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a02b0efe00dfb5f93a4a7c5fed86b573e}\label{classCitizen_a02b0efe00dfb5f93a4a7c5fed86b573e}} 
+\index{Citizen@{Citizen}!getTax@{getTax}}
+\index{getTax@{getTax}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getTax()}{getTax()}}
+{\footnotesize\ttfamily double Citizen\+::get\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the tax obligations of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+The tax amount as a double. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_ac256c0075c76886fa7053aabf7cd27c1}\label{classCitizen_ac256c0075c76886fa7053aabf7cd27c1}} 
+\index{Citizen@{Citizen}!getWorkplace@{getWorkplace}}
+\index{getWorkplace@{getWorkplace}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getWorkplace()}{getWorkplace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Citizen\+::get\+Workplace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the citizen\textquotesingle{}s workplace. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classBuilding}{Building}} representing the workplace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_ab1c1c1eb91e289a9f2a67c69c6d9d0a9}\label{classCitizen_ab1c1c1eb91e289a9f2a67c69c6d9d0a9}} 
+\index{Citizen@{Citizen}!giveCar@{giveCar}}
+\index{giveCar@{giveCar}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{giveCar()}{giveCar()}}
+{\footnotesize\ttfamily void Citizen\+::give\+Car (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gives a car to the citizen. 
+
+\mbox{\Hypertarget{classCitizen_a80b9595888f5c8ec3ca8de6b0dde258d}\label{classCitizen_a80b9595888f5c8ec3ca8de6b0dde258d}} 
+\index{Citizen@{Citizen}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Citizen\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies the citizen of a change in the environment or situation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string containing information about the change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a55c40db898d30e27c5e0730f4bdc0bfe}\label{classCitizen_a55c40db898d30e27c5e0730f4bdc0bfe}} 
+\index{Citizen@{Citizen}!setHome@{setHome}}
+\index{setHome@{setHome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setHome()}{setHome()}}
+{\footnotesize\ttfamily void Citizen\+::set\+Home (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{home }\end{DoxyParamCaption})}
+
+
+
+Sets the citizen\textquotesingle{}s home. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & A pointer to the \mbox{\hyperlink{classBuilding}{Building}} representing the home. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a15d0c1993fab1ae6831a136240ab9bce}\label{classCitizen_a15d0c1993fab1ae6831a136240ab9bce}} 
+\index{Citizen@{Citizen}!setState@{setState}}
+\index{setState@{setState}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Citizen\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the citizen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & A pointer to the new \mbox{\hyperlink{classCitizenState}{Citizen\+State}} to be assigned. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a2d9ab1d3caafb92d05f258842bcb75da}\label{classCitizen_a2d9ab1d3caafb92d05f258842bcb75da}} 
+\index{Citizen@{Citizen}!setWorkplace@{setWorkplace}}
+\index{setWorkplace@{setWorkplace}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setWorkplace()}{setWorkplace()}}
+{\footnotesize\ttfamily void Citizen\+::set\+Workplace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{workplace }\end{DoxyParamCaption})}
+
+
+
+Sets the citizen\textquotesingle{}s workplace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em workplace} & A pointer to the \mbox{\hyperlink{classBuilding}{Building}} representing the workplace. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCitizen_a7670aab85546cc107f96d6dce2ee1e9f}\label{classCitizen_a7670aab85546cc107f96d6dce2ee1e9f}} 
+\index{Citizen@{Citizen}!activity@{activity}}
+\index{activity@{activity}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{activity}{activity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizen_a4ad8ec854e95e9cb2dd2e95c9e5fa092}{Activity}} Citizen\+::activity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a5b5b196898a02394666acc09c3ca307d}\label{classCitizen_a5b5b196898a02394666acc09c3ca307d}} 
+\index{Citizen@{Citizen}!currentLocation@{currentLocation}}
+\index{currentLocation@{currentLocation}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{currentLocation}{currentLocation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}}$\ast$ Citizen\+::current\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a18cf908fe35b0e4698b557935493eddb}\label{classCitizen_a18cf908fe35b0e4698b557935493eddb}} 
+\index{Citizen@{Citizen}!currentRoad@{currentRoad}}
+\index{currentRoad@{currentRoad}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{currentRoad}{currentRoad}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRoadComponent}{Road\+Component}}$\ast$ Citizen\+::current\+Road\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a0616cff353f6817dc0e47a8a8a2fb87b}\label{classCitizen_a0616cff353f6817dc0e47a8a8a2fb87b}} 
+\index{Citizen@{Citizen}!home@{home}}
+\index{home@{home}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{home}{home}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}}$\ast$ Citizen\+::home\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_aa1b8edbd731354d58ca5447a6801752a}\label{classCitizen_aa1b8edbd731354d58ca5447a6801752a}} 
+\index{Citizen@{Citizen}!mediator@{mediator}}
+\index{mediator@{mediator}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{mediator}{mediator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityMediator}{City\+Mediator}}$\ast$ Citizen\+::mediator = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_ad0291d780c39a95ad739ac7e9161842c}\label{classCitizen_ad0291d780c39a95ad739ac7e9161842c}} 
+\index{Citizen@{Citizen}!myBus@{myBus}}
+\index{myBus@{myBus}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{myBus}{myBus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBus}{Bus}}$\ast$ Citizen\+::my\+Bus\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_abca3f4db1b069d530bf26bb681d55e3e}\label{classCitizen_abca3f4db1b069d530bf26bb681d55e3e}} 
+\index{Citizen@{Citizen}!name@{name}}
+\index{name@{name}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Citizen\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_ae84922bd6d49bd051098a2e05bc25384}\label{classCitizen_ae84922bd6d49bd051098a2e05bc25384}} 
+\index{Citizen@{Citizen}!ownsCar@{ownsCar}}
+\index{ownsCar@{ownsCar}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{ownsCar}{ownsCar}}
+{\footnotesize\ttfamily bool Citizen\+::owns\+Car\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a62548d6bdec1402be964c0319007219e}\label{classCitizen_a62548d6bdec1402be964c0319007219e}} 
+\index{Citizen@{Citizen}!route@{route}}
+\index{route@{route}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{route}{route}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$$>$ Citizen\+::route\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_ae97782ef3382f56b9887aedc32b80c63}\label{classCitizen_ae97782ef3382f56b9887aedc32b80c63}} 
+\index{Citizen@{Citizen}!scheduledForDeletion@{scheduledForDeletion}}
+\index{scheduledForDeletion@{scheduledForDeletion}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{scheduledForDeletion}{scheduledForDeletion}}
+{\footnotesize\ttfamily bool Citizen\+::scheduled\+For\+Deletion = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a01f87ad90932f69101c93a3b04f9fda6}\label{classCitizen_a01f87ad90932f69101c93a3b04f9fda6}} 
+\index{Citizen@{Citizen}!state@{state}}
+\index{state@{state}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}}$\ast$ Citizen\+::state\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a17caa14223ccb7eea64de7db999a0b6e}\label{classCitizen_a17caa14223ccb7eea64de7db999a0b6e}} 
+\index{Citizen@{Citizen}!waitTimer@{waitTimer}}
+\index{waitTimer@{waitTimer}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{waitTimer}{waitTimer}}
+{\footnotesize\ttfamily int Citizen\+::wait\+Timer = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCitizen_a3d9aa7848e11bb00b162c4a451dee106}\label{classCitizen_a3d9aa7848e11bb00b162c4a451dee106}} 
+\index{Citizen@{Citizen}!workplace@{workplace}}
+\index{workplace@{workplace}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{workplace}{workplace}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}}$\ast$ Citizen\+::workplace\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\mbox{\hyperlink{Citizen_8h}{Citizen.\+h}}\item 
+src/\+Citizens/\mbox{\hyperlink{Citizen_8cpp}{Citizen.\+cpp}}\end{DoxyCompactItemize}

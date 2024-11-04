@@ -1,0 +1,365 @@
+\hypertarget{classBuilding}{}\doxysection{Building Class Reference}
+\label{classBuilding}\index{Building@{Building}}
+
+
+Abstract base class representing a building in the city.  
+
+
+
+
+{\ttfamily \#include $<$Building.\+h$>$}
+
+
+
+Inheritance diagram for Building\+:
+% FIG 0
+
+
+Collaboration diagram for Building\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding_a56f4f3575c3d6628976b328464dd790f}{Building}} (string type=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classBuilding}{Building}} with an optional type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{display\+Building\+Info}} ()=0
+\begin{DoxyCompactList}\small\item\em Displays information about the building. This method is pure virtual and must be implemented by derived classes. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classBuilding_aa4ec82761f9415e6a5e7087d14096c51}{$\sim$\+Building}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classBuilding}{Building}} class. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the building. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classBuilding_a82c020b9610147026c72ccec7ac35a57}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{check\+Build\+Requirements}} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if the building meets construction requirements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBuilding_a0814c727ffd0b3620917a1188c0f7404}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies changes to the building state or status. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBuilding_aef15c2175409c84888ac6f9ac6648a6b}{get\+XCoordinate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the X coordinate of the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBuilding_a7ad99aac764ea2fdbba2eb8f73f5a144}{get\+YCoordinate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Y coordinate of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBuilding_a0c47aae3f2fbed6564b76fc51edc1330}{set\+XCoordinate}} (int x)
+\begin{DoxyCompactList}\small\item\em Sets the X coordinate of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBuilding_a67c5d56023ae377142a3643ea07a24d1}{set\+YCoordinate}} (int y)
+\begin{DoxyCompactList}\small\item\em Sets the Y coordinate of the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Adds an employee to the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Removes an employee from the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{has\+Job}} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if there are jobs available in the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)=0
+\begin{DoxyCompactList}\small\item\em Moves a resident into the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBuilding_a1b6930e08058e572f9b4670dc284f213}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)=0
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the building. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classBuilding_a4a4570a100b09ace90651f45ac0392c0}{get\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Get tax from a building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a building in the city. 
+
+This class defines the interface for all buildings, including properties and behaviors such as employee management, state checking, and coordinate handling. It serves as a base class for specific building types (e.\+g., residential, commercial). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBuilding_a56f4f3575c3d6628976b328464dd790f}\label{classBuilding_a56f4f3575c3d6628976b328464dd790f}} 
+\index{Building@{Building}!Building@{Building}}
+\index{Building@{Building}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{Building()}{Building()}}
+{\footnotesize\ttfamily Building\+::\+Building (\begin{DoxyParamCaption}\item[{string}]{type = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classBuilding}{Building}} with an optional type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the building (default is an empty string). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBuilding_aa4ec82761f9415e6a5e7087d14096c51}\label{classBuilding_aa4ec82761f9415e6a5e7087d14096c51}} 
+\index{Building@{Building}!````~Building@{$\sim$Building}}
+\index{````~Building@{$\sim$Building}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{$\sim$Building()}{~Building()}}
+{\footnotesize\ttfamily virtual Building\+::$\sim$\+Building (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classBuilding}{Building}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}\label{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}} 
+\index{Building@{Building}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily virtual bool Building\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds an employee to the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee is added successfully, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{Services}}, \mbox{\hyperlink{classLandmark_a3a75309da527b4e2b75ec026c245b001}{Landmark}}, \mbox{\hyperlink{classIndustrial_a3cde67af0ebf46df5168323a5f8ecc4d}{Industrial}}, \mbox{\hyperlink{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}{Commercial}}, \mbox{\hyperlink{classTrainstation_a8fa08f075bb56d296e02e5d2f520088c}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a953aeb9c1af323aeb50c6fb3031d421c}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a3021ac7aaea66732c34f867429a2155d}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a747ffd5502c5ab32f941cb7b14c56924}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_a76c3a202a06fb66fd9b2a7d6515bd146}{Serv\+Education}}, \mbox{\hyperlink{classResidential_a879e51f5068f07c64931bccf6e820b96}{Residential}}, \mbox{\hyperlink{classLandPark_a739943d1ff3221ab9076e1ad5ae46ba5}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_a36ce431de48931b9de9835128fbd631a}{Land\+Monument}}, \mbox{\hyperlink{classLandCCenter_a046d45f2198cb8175159940f9fbb8ce5}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_afd91c4c33e84c5e2e1b00a40b0a0d1f5}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndPlant_a56c87e7b64e4baa8401c7870b7cf42ea}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_adbf1f93c2c612bb60362b8484ae362cd}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_afec7730e363e2f48bb0aea3c1837fa9d}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a5283f3a82c215196ea7ca19331d7309b}{Com\+Office}}, \mbox{\hyperlink{classComMall_a6a3c60105198a6228a11e5a5fb58f672}{Com\+Mall}}, and \mbox{\hyperlink{classBuildingDecorator_a4b7fa91310872ac265f09efd789986c6}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}\label{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}} 
+\index{Building@{Building}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily virtual bool Building\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the building meets construction requirements. 
+
+\begin{DoxyReturn}{Returns}
+True if requirements are met, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServices_a24ab44598883312cdb7e7de2d4eacd6d}{Services}}, \mbox{\hyperlink{classResidential_ae26745fea16fabe41e53298f042dd7c6}{Residential}}, \mbox{\hyperlink{classLandmark_a23defcea637bb86e319dae15408be25b}{Landmark}}, \mbox{\hyperlink{classLandCCenter_a1132a3af10eace92257ee56968395653}{Land\+CCenter}}, \mbox{\hyperlink{classIndustrial_a77229de3ac477ce7a99734f3b6206939}{Industrial}}, \mbox{\hyperlink{classCommercial_ae103d2b4151183bd250b1344d2d15fca}{Commercial}}, \mbox{\hyperlink{classBuildingDecorator_a754a87bb50d12f0576531324f7d909bc}{Building\+Decorator}}, and \mbox{\hyperlink{classTrainstation_a884c9b33d95c6fabbc6d81e377e58309}{Trainstation}}.
+
+\mbox{\Hypertarget{classBuilding_a220f94b025d6396f5944a1866028da13}\label{classBuilding_a220f94b025d6396f5944a1866028da13}} 
+\index{Building@{Building}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily virtual void Building\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Displays information about the building. This method is pure virtual and must be implemented by derived classes. 
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a72631b97f99d52fdef6b0b94e041d144}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_af5efbcc43cc87cc005a82632ed629cb3}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_ab1809047f875c349a31d27af49a31eb0}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_ac40f16cedbc5211897497fa38aa2e584}{Serv\+Education}}, \mbox{\hyperlink{classResTownhouse_a4388aa4471f4ce47b7d967c8f0b7b2de}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a0be6dfbac5086351c793e1e5aabfdab0}{Res\+House}}, \mbox{\hyperlink{classResFlat_a0829fe120622dd5f679ef7a7b91b5f64}{Res\+Flat}}, \mbox{\hyperlink{classResEstate_a9006f451c6183811e80dd0a4f126d172}{Res\+Estate}}, \mbox{\hyperlink{classLandPark_aa34104f4477a3a55a39bc23ed2a0d939}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_af61f48755fc54545a716603f7b9d31a7}{Land\+Monument}}, \mbox{\hyperlink{classLandCCenter_a29244595ffed4aa9ac08948f804de1d0}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_aab22750c6ef6c095747cbd0a0d784f9f}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndPlant_a50d39b215c0b4464a319b8d2c5e84d88}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_aedb2fcc355f50e16b62e202931b8f10e}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_a6307f1051b4b61a198d5a0d2fe7f9454}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a4df2fcb6365cfc5490458f43d68277ad}{Com\+Office}}, \mbox{\hyperlink{classComMall_a2288370321826ecbd3eb8a6c2dcb9bc0}{Com\+Mall}}, \mbox{\hyperlink{classBuildingDecorator_a8f701449790704f6cc7864a84b2fad3d}{Building\+Decorator}}, \mbox{\hyperlink{classBuildDecorUpgrade_a547e0c28ea5b19e94ccd468ae9b21448}{Build\+Decor\+Upgrade}}, \mbox{\hyperlink{classBuildDecorRepair_af60f83b292a28df034cdcea6c7adb75e}{Build\+Decor\+Repair}}, \mbox{\hyperlink{classBuildDecorEconomic_a8c912dbf9c08dab97c412cbbb6502065}{Build\+Decor\+Economic}}, and \mbox{\hyperlink{classTrainstation_a5acdbc4af7bee0c12f354390659c88a7}{Trainstation}}.
+
+\mbox{\Hypertarget{classBuilding_a82c020b9610147026c72ccec7ac35a57}\label{classBuilding_a82c020b9610147026c72ccec7ac35a57}} 
+\index{Building@{Building}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Building\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+The type of the building as a string. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{Services}}, \mbox{\hyperlink{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}{Residential}}, \mbox{\hyperlink{classIndFactory_a2035ea4f9ad7262db37cfc55bdbf0f66}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_a95c8ee058e7995e3d04af90fe40ead41}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a152a7a30d3cab299b0f65774974ffa78}{Com\+Office}}, \mbox{\hyperlink{classTrainstation_a659656f3603916d381ce4a7bbc739f5b}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a42d8d743cfd4c84a9215034810ba3dc6}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a9c9cdabc38d95dce7477e1bc02966e9d}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a0ad0dc5966f31725a5c8d98deea9f128}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_a3cfd0b56823306dd6ecc28b4a8a4c422}{Serv\+Education}}, \mbox{\hyperlink{classResTownhouse_a2df6c72337e2f999c022f119a2b17825}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a12384354287031878252dd97664eefd8}{Res\+House}}, \mbox{\hyperlink{classResFlat_a6d67b9e20f9fa9533fea6bb3205fc790}{Res\+Flat}}, \mbox{\hyperlink{classResEstate_ab3231586244bb402a29d7c7303cbc029}{Res\+Estate}}, \mbox{\hyperlink{classLandPark_a61f7e51b38da5f6156a396b9cfb997c0}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_aca5b3615085d12b4a9f20857cb5a8ffd}{Land\+Monument}}, \mbox{\hyperlink{classLandmark_a7fcc3f5dd4506e16fa89eeceb0fddd26}{Landmark}}, \mbox{\hyperlink{classLandCCenter_a14e11bb29f90e08de4cc1cd547dc479d}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_a904df0ea283315c9074be077dc144f84}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndustrial_a26789dd4a131a1bb959e07db91e12ecb}{Industrial}}, \mbox{\hyperlink{classIndPlant_a846b5b2c1fb79ae64c730b1376a22b37}{Ind\+Plant}}, \mbox{\hyperlink{classCommercial_a3100daec90c3af597268edd84d53269f}{Commercial}}, and \mbox{\hyperlink{classComMall_aea8fe56f800035f4e0ba15ae9d6087b7}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}\label{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}} 
+\index{Building@{Building}!getState@{getState}}
+\index{getState@{getState}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily virtual bool Building\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the operational state of the building. 
+
+\begin{DoxyReturn}{Returns}
+True if the building is operational, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{Services}}, \mbox{\hyperlink{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}{Residential}}, \mbox{\hyperlink{classBuildingDecorator_a18bc4bb515cb3d29d09037759166676a}{Building\+Decorator}}, \mbox{\hyperlink{classTrainstation_ac51e0a459adec3cb92afaff5247e6ea1}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a354c9d869cf73975e608d22c36aeb106}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a8f93d1937e5a51d7d5f14d63d08beb40}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a1ec1f9820d86d4d3efc93ed64df8738e}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_a9342b1f7b15689c17fd1fd92f0112ece}{Serv\+Education}}, \mbox{\hyperlink{classResTownhouse_a0af16e2ad4713f33e45352a4fe84c202}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_ae24eeaa3883d653e9bf457dc3bbf8ae2}{Res\+House}}, \mbox{\hyperlink{classResFlat_a9e157781be1200bd27cb6a5ea38811d2}{Res\+Flat}}, \mbox{\hyperlink{classResEstate_ad03438bee7a1009f7e7412d6a06d5d1c}{Res\+Estate}}, \mbox{\hyperlink{classLandPark_a72ddb1c6b7e2b5d6b97d05915565c982}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_a2019ebdcb79929158ae7e3bd6028b697}{Land\+Monument}}, \mbox{\hyperlink{classLandmark_a03bbfc9b0211b81529c12df9edc708f3}{Landmark}}, \mbox{\hyperlink{classLandCCenter_ae1690186796b4b83740836ed2c71078d}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_afa4281ac77b6259f838b7d91d28ec120}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndustrial_a25f2c781fc9bd9f9585f8a29befb9f71}{Industrial}}, \mbox{\hyperlink{classIndPlant_a12b489e197d3b8349ab2d09c0bd5a3de}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_ad6ef9179c83a601df3fc004d45886168}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_a77a0eed363f9263f72338681fa10729e}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a635fcc8d6b2d21d3f4f4a09686c7444f}{Com\+Office}}, \mbox{\hyperlink{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}{Commercial}}, and \mbox{\hyperlink{classComMall_a778f0520b6c13c66d52f78d476bd5880}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classBuilding_a4a4570a100b09ace90651f45ac0392c0}\label{classBuilding_a4a4570a100b09ace90651f45ac0392c0}} 
+\index{Building@{Building}!getTax@{getTax}}
+\index{getTax@{getTax}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getTax()}{getTax()}}
+{\footnotesize\ttfamily double Building\+::get\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get tax from a building. 
+
+\mbox{\Hypertarget{classBuilding_aef15c2175409c84888ac6f9ac6648a6b}\label{classBuilding_aef15c2175409c84888ac6f9ac6648a6b}} 
+\index{Building@{Building}!getXCoordinate@{getXCoordinate}}
+\index{getXCoordinate@{getXCoordinate}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getXCoordinate()}{getXCoordinate()}}
+{\footnotesize\ttfamily int Building\+::get\+XCoordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the X coordinate of the building. 
+
+\begin{DoxyReturn}{Returns}
+The X coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBuilding_a7ad99aac764ea2fdbba2eb8f73f5a144}\label{classBuilding_a7ad99aac764ea2fdbba2eb8f73f5a144}} 
+\index{Building@{Building}!getYCoordinate@{getYCoordinate}}
+\index{getYCoordinate@{getYCoordinate}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getYCoordinate()}{getYCoordinate()}}
+{\footnotesize\ttfamily int Building\+::get\+YCoordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the Y coordinate of the building. 
+
+\begin{DoxyReturn}{Returns}
+The Y coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBuilding_abb8e8913b366c28ca64df66639e080b7}\label{classBuilding_abb8e8913b366c28ca64df66639e080b7}} 
+\index{Building@{Building}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily virtual bool Building\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if there are jobs available in the building. 
+
+\begin{DoxyReturn}{Returns}
+True if jobs are available, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTrainstation_a1d1fa88f74cb1a84df1559de82380c3e}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a0bfceee5f023b58e04d56f662506accb}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_ab12f92333692eb71aba9f4c64361209d}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_ac100496f971ce63329147fb6c624e5dd}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_ad1e7e77f240aec37d6b00397b30ce5b1}{Serv\+Education}}, \mbox{\hyperlink{classResidential_a74b58880de39649910606ba05c94f9d9}{Residential}}, \mbox{\hyperlink{classLandPark_ad41c7e78b9c554876a7b8bbfb8d1511a}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_a6c0e7f65774f0c4d7d4599ccc2487169}{Land\+Monument}}, \mbox{\hyperlink{classLandCCenter_ad836028332c7cb475a5522c249db63c5}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_a406dd7f25761475d209a9827eda09804}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndPlant_ab427830064902acb85998703650f3aa6}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_a8576cb74bcb0415bb8053ff8bc5c984a}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_afac959632d301b1e56275ef7b7fabc85}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a175e0462a18e23677ea2e10c211c9af7}{Com\+Office}}, \mbox{\hyperlink{classComMall_af826a80de2214f9829399f264226dfeb}{Com\+Mall}}, and \mbox{\hyperlink{classBuildingDecorator_a7f203ff22dba5dc3603cf88157454979}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}\label{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}} 
+\index{Building@{Building}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily virtual bool Building\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves a resident into the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the resident. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the move is successful, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classResidential_a731dd372679eba6f8c88f6b43aef8618}{Residential}}, \mbox{\hyperlink{classTrainstation_ad024122c1bee3ce96feadbcba41c94b0}{Trainstation}}, \mbox{\hyperlink{classServices_a305074cad05a07be35f66a7a8a26ca3a}{Services}}, \mbox{\hyperlink{classResTownhouse_aa20c3f1e9fecb76e532189c19da5dca9}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a1fb94e286b14e4c7680faf45a8b1f4f6}{Res\+House}}, \mbox{\hyperlink{classResFlat_ac0771aac848a2f86ac829445cc7ce4b9}{Res\+Flat}}, \mbox{\hyperlink{classResEstate_a27678111da7d99003a29f1e19d6b720f}{Res\+Estate}}, \mbox{\hyperlink{classLandmark_a84c751b190c711b2c07683a2dcbb958b}{Landmark}}, \mbox{\hyperlink{classIndustrial_a525ba6c82bd27e8d70eece1450ae6cb5}{Industrial}}, \mbox{\hyperlink{classCommercial_aefce5c973f343814ecb00f0538ba85e7}{Commercial}}, and \mbox{\hyperlink{classBuildingDecorator_a38e0599eb6b77a99b489b1f8ffa0dbfa}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_a1b6930e08058e572f9b4670dc284f213}\label{classBuilding_a1b6930e08058e572f9b4670dc284f213}} 
+\index{Building@{Building}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily virtual void Building\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves a resident out of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the resident. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classResidential_a98e71673e6bd3903469e30ae2a89e482}{Residential}}, \mbox{\hyperlink{classTrainstation_a27f8881b0a533cff87839ab80eaac398}{Trainstation}}, \mbox{\hyperlink{classServices_add9e9a7d452c359643ef9052e21ccbd5}{Services}}, \mbox{\hyperlink{classResTownhouse_a0b827c696811168dbd8157ff9b4973c5}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_aeb7389a8cdae53a1856117bfc60eac60}{Res\+House}}, \mbox{\hyperlink{classResFlat_a7984db105c3ad9ecb2cda5f1ad154e7c}{Res\+Flat}}, \mbox{\hyperlink{classResEstate_a7c1a1a9e4711b7dcecb5e1c8cac2b9e8}{Res\+Estate}}, \mbox{\hyperlink{classLandmark_ae3b005b3c1bea073a21c96378cccb611}{Landmark}}, \mbox{\hyperlink{classIndustrial_a92fc23242537eee7f449d00e5c331254}{Industrial}}, \mbox{\hyperlink{classCommercial_a125f6c8d24f23e104d3e25376ab15a49}{Commercial}}, and \mbox{\hyperlink{classBuildingDecorator_a65e796b3fe58d48d16afa0e169c3df04}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_a0814c727ffd0b3620917a1188c0f7404}\label{classBuilding_a0814c727ffd0b3620917a1188c0f7404}} 
+\index{Building@{Building}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Building\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies changes to the building state or status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message describing the change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}\label{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}} 
+\index{Building@{Building}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily virtual void Building\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies that an employee has left the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{Services}}, \mbox{\hyperlink{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}{Residential}}, \mbox{\hyperlink{classLandmark_ac20fccbc1b3b5e88193ba9aefc70671e}{Landmark}}, \mbox{\hyperlink{classIndustrial_a08c257c3dae028ec6663ee52374e84fa}{Industrial}}, \mbox{\hyperlink{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}{Commercial}}, \mbox{\hyperlink{classResEstate_ac85c8c11be3b97c1234245f763d720d1}{Res\+Estate}}, \mbox{\hyperlink{classTrainstation_a6f7c5e627e33ce58ae9de4cfba6953a4}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a1a8aa6e91f9d309ce8c1b9de41cd08e1}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_aba1c01927667bb5515b89a0fd7e9c065}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a14135c2655bb9a3c7786a0fdbad673b4}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_aa18b869221fcf2ebf05301701a020f8f}{Serv\+Education}}, \mbox{\hyperlink{classResTownhouse_acf90f5e2ebda55c078a98c5abdb5ac07}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a0473b106b5bdab7d1e27986fdf58a50a}{Res\+House}}, \mbox{\hyperlink{classResFlat_acc3eaf56938d1902b706a9822a6ed494}{Res\+Flat}}, \mbox{\hyperlink{classLandPark_a3b5c54902ab1aa868a0177fcbe46fcb8}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_a951f2b355d12c5b24b4ff500ae0997dd}{Land\+Monument}}, \mbox{\hyperlink{classLandCCenter_a91384550ffe5714457d2aa15275488a3}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_a226ef35a6f81e1334b033c8a1c4ab401}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndPlant_ab55977f6ba7333bf55f1ed92494b84b2}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_ad87c6a8afd1f8b128e0abe9fdb0228b8}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_ab62f7201fbeeef5bd50db8684092a615}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a4ab3a99ce7a957cd58e2c805f9c63bfa}{Com\+Office}}, \mbox{\hyperlink{classComMall_ac24b884899b4c119118ad4e980725a70}{Com\+Mall}}, and \mbox{\hyperlink{classBuildingDecorator_a52909f47ce21bb1ac08b0d128b92e959}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}\label{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}} 
+\index{Building@{Building}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily virtual void Building\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes an employee from the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{Services}}, \mbox{\hyperlink{classLandmark_a2effb53f0f04d6f95ab7efbdb6c4ef61}{Landmark}}, \mbox{\hyperlink{classIndustrial_a5d1770e238b01a6fa017e577e867f5e2}{Industrial}}, \mbox{\hyperlink{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}{Commercial}}, \mbox{\hyperlink{classTrainstation_a183ad427bda4c394caa795dd50c67ec8}{Trainstation}}, \mbox{\hyperlink{classServSecurity_a6ac5b8e448077d3c844f5fefc0f9ade5}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a356803919b62eb6e03f5923c44de4e63}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_af79954f85f12d602ef7f887490601176}{Serv\+Entertainment}}, \mbox{\hyperlink{classServEducation_ade75c7e479715e9c9726cecb0116073b}{Serv\+Education}}, \mbox{\hyperlink{classResidential_ac725a68d51be41d8dda8498f0b41435d}{Residential}}, \mbox{\hyperlink{classLandPark_a637b6606bba6ccbbfdd6e60af5d57a38}{Land\+Park}}, \mbox{\hyperlink{classLandMonument_ae3ceb72844135b97cc6be39ee128cea9}{Land\+Monument}}, \mbox{\hyperlink{classLandCCenter_a32393357e502bf0a3f89ee6ff5023d93}{Land\+CCenter}}, \mbox{\hyperlink{classIndWarehouse_a44fd8e035c41d9dc4da48ba60d15fd9e}{Ind\+Warehouse}}, \mbox{\hyperlink{classIndPlant_a85c956c20134a784f63d3f9ef6b6c7f2}{Ind\+Plant}}, \mbox{\hyperlink{classIndFactory_aff6e3cf4b91b4239888fdb1d5b45ea5a}{Ind\+Factory}}, \mbox{\hyperlink{classComShop_aec381bf88c2f65a12170d8315ad4b124}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_aaf204d3692776d16a91eda3621412088}{Com\+Office}}, \mbox{\hyperlink{classComMall_a9b2413abc871c625354810362be5aba5}{Com\+Mall}}, and \mbox{\hyperlink{classBuildingDecorator_ae64b21ee54577c39cd6f5c47140cd9cb}{Building\+Decorator}}.
+
+\mbox{\Hypertarget{classBuilding_a0c47aae3f2fbed6564b76fc51edc1330}\label{classBuilding_a0c47aae3f2fbed6564b76fc51edc1330}} 
+\index{Building@{Building}!setXCoordinate@{setXCoordinate}}
+\index{setXCoordinate@{setXCoordinate}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{setXCoordinate()}{setXCoordinate()}}
+{\footnotesize\ttfamily void Building\+::set\+XCoordinate (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Sets the X coordinate of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new X coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBuilding_a67c5d56023ae377142a3643ea07a24d1}\label{classBuilding_a67c5d56023ae377142a3643ea07a24d1}} 
+\index{Building@{Building}!setYCoordinate@{setYCoordinate}}
+\index{setYCoordinate@{setYCoordinate}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{setYCoordinate()}{setYCoordinate()}}
+{\footnotesize\ttfamily void Building\+::set\+YCoordinate (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the Y coordinate of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new Y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{Building_8h}{Building.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{Building_8cpp}{Building.\+cpp}}\end{DoxyCompactItemize}

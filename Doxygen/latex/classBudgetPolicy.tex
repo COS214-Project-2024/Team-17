@@ -1,0 +1,69 @@
+\hypertarget{classBudgetPolicy}{}\doxysection{Budget\+Policy Class Reference}
+\label{classBudgetPolicy}\index{BudgetPolicy@{BudgetPolicy}}
+
+
+Abstract base class for budget policies in a city structure.  
+
+
+
+
+{\ttfamily \#include $<$Budget\+Policy.\+h$>$}
+
+
+
+Inheritance diagram for Budget\+Policy\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classBudgetPolicy_a204cdf440b571a0d18f469e795c1b9fa}{apply\+Budget}} (\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&city, double budget)=0
+\begin{DoxyCompactList}\small\item\em Applies the budget to a city structure. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classBudgetPolicy_adea94931ea2fbec6d9779e083388acdc}{$\sim$\+Budget\+Policy}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for budget policies in a city structure. 
+
+This class provides an interface for applying budget policies. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBudgetPolicy_adea94931ea2fbec6d9779e083388acdc}\label{classBudgetPolicy_adea94931ea2fbec6d9779e083388acdc}} 
+\index{BudgetPolicy@{BudgetPolicy}!````~BudgetPolicy@{$\sim$BudgetPolicy}}
+\index{````~BudgetPolicy@{$\sim$BudgetPolicy}!BudgetPolicy@{BudgetPolicy}}
+\doxysubsubsection{\texorpdfstring{$\sim$BudgetPolicy()}{~BudgetPolicy()}}
+{\footnotesize\ttfamily virtual Budget\+Policy\+::$\sim$\+Budget\+Policy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classBudgetPolicy}{Budget\+Policy}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBudgetPolicy_a204cdf440b571a0d18f469e795c1b9fa}\label{classBudgetPolicy_a204cdf440b571a0d18f469e795c1b9fa}} 
+\index{BudgetPolicy@{BudgetPolicy}!applyBudget@{applyBudget}}
+\index{applyBudget@{applyBudget}!BudgetPolicy@{BudgetPolicy}}
+\doxysubsubsection{\texorpdfstring{applyBudget()}{applyBudget()}}
+{\footnotesize\ttfamily virtual void Budget\+Policy\+::apply\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityStructure}{City\+Structure}} \&}]{city,  }\item[{double}]{budget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies the budget to a city structure. 
+
+This function is meant to be implemented by derived classes to apply specific budget allocations. 
+\begin{DoxyParams}{Parameters}
+{\em city} & The \mbox{\hyperlink{classCityStructure}{City\+Structure}} instance to which the budget is applied. \\
+\hline
+{\em budget} & The budget amount to be allocated. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classInfrastructureBudgetPolicy_a7a96a11c4fc616328c1280a74e1b86cf}{Infrastructure\+Budget\+Policy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{BudgetPolicy_8h}{Budget\+Policy.\+h}}\end{DoxyCompactItemize}

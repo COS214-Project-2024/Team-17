@@ -1,0 +1,298 @@
+\hypertarget{classRoadsComposite}{}\doxysection{Roads\+Composite Class Reference}
+\label{classRoadsComposite}\index{RoadsComposite@{RoadsComposite}}
+
+
+Represents a composite road component consisting of multiple road sections.  
+
+
+
+
+{\ttfamily \#include $<$Roads\+Composite.\+h$>$}
+
+
+
+Inheritance diagram for Roads\+Composite\+:
+% FIG 0
+
+
+Collaboration diagram for Roads\+Composite\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoadsComposite_a921a9e83b7065e59b84bcc85e557d38b}{Roads\+Composite}} (int sX, int sY, int eX, int eY, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classRoadsComposite}{Roads\+Composite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_afeb08457ec74d2e7b681d71a226a1b99}{display\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays information about the composite road and its sections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_aedab943041c12dc2931e4eb7b16245c5}{calculate\+Traffic}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the traffic for the composite road based on its sections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_acb213cc4b814018c30c18d310956ffef}{add}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$component)
+\begin{DoxyCompactList}\small\item\em Adds a road component to the composite road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_ae13cd8449e12ad592a8f564d9f6b954b}{remove}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$component)
+\begin{DoxyCompactList}\small\item\em Removes a road component from the composite road. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRoadsComposite_a9ac6e04a9ae19b5be24ed8bad4c1bbf2}{get\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the total distance of the composite road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_aca432c37d0f1a46f3b88b19f919bef84}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies about changes related to the composite road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRoadsComposite_a8f5173374ef5d91567aeae4dddf17599}{add\+Connection}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$connection, float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}})
+\begin{DoxyCompactList}\small\item\em Adds a connection to another road component. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \mbox{\hyperlink{classRoadsComposite_ab37dd7028cab2314485c686dec323bfa}{get\+Connections}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all connections to other road components. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \& \mbox{\hyperlink{classRoadsComposite_addfcce05864d56a5c0447e0c1a1d6e46}{get\+Components}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves a constant reference to the components of the composite road. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRoadsComposite_ab676f479c9307e9430dd1fed1bfe5ec1}{calculate\+Distance}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Calculates the distance from a specified point to the composite road. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ \mbox{\hyperlink{classRoadsComposite_aaca10697e8e03b931d7a9d434f81fcd1}{closest\+Section}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Finds the closest road section to a specified point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRoadsComposite_ac76ef3ae9e3a59013bc1351fa9891841}{$\sim$\+Roads\+Composite}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classRoadsComposite}{Roads\+Composite}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classRoadsComposite_ade32b01d8c8ab6fee4f3d7156f349713}{MAX\+\_\+\+SECTION\+\_\+\+DISTANCE}} = 100
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a composite road component consisting of multiple road sections. 
+
+The \mbox{\hyperlink{classRoadsComposite}{Roads\+Composite}} class allows for the management of a collection of \mbox{\hyperlink{classRoadComponent}{Road\+Component}} objects, enabling operations like adding, removing, and calculating traffic for a composite road section. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRoadsComposite_a921a9e83b7065e59b84bcc85e557d38b}\label{classRoadsComposite_a921a9e83b7065e59b84bcc85e557d38b}} 
+\index{RoadsComposite@{RoadsComposite}!RoadsComposite@{RoadsComposite}}
+\index{RoadsComposite@{RoadsComposite}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{RoadsComposite()}{RoadsComposite()}}
+{\footnotesize\ttfamily Roads\+Composite\+::\+Roads\+Composite (\begin{DoxyParamCaption}\item[{int}]{sX,  }\item[{int}]{sY,  }\item[{int}]{eX,  }\item[{int}]{eY,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classRoadsComposite}{Roads\+Composite}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sX} & The starting X coordinate of the composite road. \\
+\hline
+{\em sY} & The starting Y coordinate of the composite road. \\
+\hline
+{\em eX} & The ending X coordinate of the composite road. \\
+\hline
+{\em eY} & The ending Y coordinate of the composite road. \\
+\hline
+{\em type} & The type of road (e.\+g., highway, main road, residential). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRoadsComposite_ac76ef3ae9e3a59013bc1351fa9891841}\label{classRoadsComposite_ac76ef3ae9e3a59013bc1351fa9891841}} 
+\index{RoadsComposite@{RoadsComposite}!````~RoadsComposite@{$\sim$RoadsComposite}}
+\index{````~RoadsComposite@{$\sim$RoadsComposite}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{$\sim$RoadsComposite()}{~RoadsComposite()}}
+{\footnotesize\ttfamily Roads\+Composite\+::$\sim$\+Roads\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classRoadsComposite}{Roads\+Composite}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoadsComposite_acb213cc4b814018c30c18d310956ffef}\label{classRoadsComposite_acb213cc4b814018c30c18d310956ffef}} 
+\index{RoadsComposite@{RoadsComposite}!add@{add}}
+\index{add@{add}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+
+
+Adds a road component to the composite road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRoadsComposite_a8f5173374ef5d91567aeae4dddf17599}\label{classRoadsComposite_a8f5173374ef5d91567aeae4dddf17599}} 
+\index{RoadsComposite@{RoadsComposite}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{connection,  }\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a connection to another road component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} to connect to. \\
+\hline
+{\em distance} & The distance to the connected road component. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_ab676f479c9307e9430dd1fed1bfe5ec1}\label{classRoadsComposite_ab676f479c9307e9430dd1fed1bfe5ec1}} 
+\index{RoadsComposite@{RoadsComposite}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily float Roads\+Composite\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the distance from a specified point to the composite road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the point. \\
+\hline
+{\em y} & The Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the composite road as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_aedab943041c12dc2931e4eb7b16245c5}\label{classRoadsComposite_aedab943041c12dc2931e4eb7b16245c5}} 
+\index{RoadsComposite@{RoadsComposite}!calculateTraffic@{calculateTraffic}}
+\index{calculateTraffic@{calculateTraffic}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{calculateTraffic()}{calculateTraffic()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::calculate\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the traffic for the composite road based on its sections. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_aaca10697e8e03b931d7a9d434f81fcd1}\label{classRoadsComposite_aaca10697e8e03b931d7a9d434f81fcd1}} 
+\index{RoadsComposite@{RoadsComposite}!closestSection@{closestSection}}
+\index{closestSection@{closestSection}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{closestSection()}{closestSection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ Roads\+Composite\+::closest\+Section (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Finds the closest road section to a specified point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the point. \\
+\hline
+{\em y} & The Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the closest \mbox{\hyperlink{classRoadComponent}{Road\+Component}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRoadsComposite_afeb08457ec74d2e7b681d71a226a1b99}\label{classRoadsComposite_afeb08457ec74d2e7b681d71a226a1b99}} 
+\index{RoadsComposite@{RoadsComposite}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays information about the composite road and its sections. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a14f7f982767020220f4bb841f4c321df}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_addfcce05864d56a5c0447e0c1a1d6e46}\label{classRoadsComposite_addfcce05864d56a5c0447e0c1a1d6e46}} 
+\index{RoadsComposite@{RoadsComposite}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \& Roads\+Composite\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a constant reference to the components of the composite road. 
+
+\begin{DoxyReturn}{Returns}
+A constant vector of pointers to \mbox{\hyperlink{classRoadComponent}{Road\+Component}} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRoadsComposite_ab37dd7028cab2314485c686dec323bfa}\label{classRoadsComposite_ab37dd7028cab2314485c686dec323bfa}} 
+\index{RoadsComposite@{RoadsComposite}!getConnections@{getConnections}}
+\index{getConnections@{getConnections}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{getConnections()}{getConnections()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ Roads\+Composite\+::get\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves all connections to other road components. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to connected \mbox{\hyperlink{classRoadComponent}{Road\+Component}} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classRoadComponent_a3505ebe2ac9228a7a6693a8b66948db8}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_a9ac6e04a9ae19b5be24ed8bad4c1bbf2}\label{classRoadsComposite_a9ac6e04a9ae19b5be24ed8bad4c1bbf2}} 
+\index{RoadsComposite@{RoadsComposite}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily float Roads\+Composite\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the total distance of the composite road. 
+
+\begin{DoxyReturn}{Returns}
+The total distance as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}{Road\+Component}}.
+
+\mbox{\Hypertarget{classRoadsComposite_aca432c37d0f1a46f3b88b19f919bef84}\label{classRoadsComposite_aca432c37d0f1a46f3b88b19f919bef84}} 
+\index{RoadsComposite@{RoadsComposite}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies about changes related to the composite road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string describing the nature of the change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRoadsComposite_ae13cd8449e12ad592a8f564d9f6b954b}\label{classRoadsComposite_ae13cd8449e12ad592a8f564d9f6b954b}} 
+\index{RoadsComposite@{RoadsComposite}!remove@{remove}}
+\index{remove@{remove}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Roads\+Composite\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+
+
+Removes a road component from the composite road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} to remove. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRoadsComposite_ade32b01d8c8ab6fee4f3d7156f349713}\label{classRoadsComposite_ade32b01d8c8ab6fee4f3d7156f349713}} 
+\index{RoadsComposite@{RoadsComposite}!MAX\_SECTION\_DISTANCE@{MAX\_SECTION\_DISTANCE}}
+\index{MAX\_SECTION\_DISTANCE@{MAX\_SECTION\_DISTANCE}!RoadsComposite@{RoadsComposite}}
+\doxysubsubsection{\texorpdfstring{MAX\_SECTION\_DISTANCE}{MAX\_SECTION\_DISTANCE}}
+{\footnotesize\ttfamily const int Roads\+Composite\+::\+MAX\+\_\+\+SECTION\+\_\+\+DISTANCE = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{RoadsComposite_8h}{Roads\+Composite.\+h}}\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{RoadsComposite_8cpp}{Roads\+Composite.\+cpp}}\end{DoxyCompactItemize}

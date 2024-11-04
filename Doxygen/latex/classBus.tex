@@ -1,0 +1,170 @@
+\hypertarget{classBus}{}\doxysection{Bus Class Reference}
+\label{classBus}\index{Bus@{Bus}}
+
+
+Represents a bus that transports citizens between locations.  
+
+
+
+
+{\ttfamily \#include $<$Bus.\+h$>$}
+
+
+
+Inheritance diagram for Bus\+:
+% FIG 0
+
+
+Collaboration diagram for Bus\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBus_a5ae13fbf8a43960ce424cabb231ae27a}{Bus}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$start, int capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classBus}{Bus}} with a starting location and capacity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBus_a263f4d032f49762dc9fc4e06b103bef2}{is\+Full}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the bus is full. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBus_a190c15f557fee6cf11203f0ad4a8c441}{add\+Passenger}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$passenger, \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Adds a passenger to the bus and sets their destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBus_a665b7dcda23308cbc23abca7a26b90a0}{remove\+Passenger}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$passenger)
+\begin{DoxyCompactList}\small\item\em Removes a passenger from the bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBus_a8a53ec6de748727347176835a3549fdf}{do\+Something}} ()
+\begin{DoxyCompactList}\small\item\em Executes the bus\textquotesingle{}s actions (e.\+g., moving, picking up passengers). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBus_afa804e3439e15ffbbf90e8725a8d814a}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies the bus of a change in state or status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ \mbox{\hyperlink{classBus_a9e705a24e524d13754aa9cce153be7dd}{get\+Current\+Location}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current location of the bus. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBus_aab6194602b6a5a4fa87987f7c1adf35d}{$\sim$\+Bus}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classBus}{Bus}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a bus that transports citizens between locations. 
+
+The \mbox{\hyperlink{classBus}{Bus}} class extends the \mbox{\hyperlink{classCitizen}{Citizen}} class and manages a list of passengers, their destinations, and the route taken by the bus. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBus_a5ae13fbf8a43960ce424cabb231ae27a}\label{classBus_a5ae13fbf8a43960ce424cabb231ae27a}} 
+\index{Bus@{Bus}!Bus@{Bus}}
+\index{Bus@{Bus}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{Bus()}{Bus()}}
+{\footnotesize\ttfamily Bus\+::\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{start,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classBus}{Bus}} with a starting location and capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & A pointer to the initial \mbox{\hyperlink{classRoadComponent}{Road\+Component}} where the bus starts. \\
+\hline
+{\em capacity} & The maximum number of passengers the bus can hold. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBus_aab6194602b6a5a4fa87987f7c1adf35d}\label{classBus_aab6194602b6a5a4fa87987f7c1adf35d}} 
+\index{Bus@{Bus}!````~Bus@{$\sim$Bus}}
+\index{````~Bus@{$\sim$Bus}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{$\sim$Bus()}{~Bus()}}
+{\footnotesize\ttfamily Bus\+::$\sim$\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classBus}{Bus}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBus_a190c15f557fee6cf11203f0ad4a8c441}\label{classBus_a190c15f557fee6cf11203f0ad4a8c441}} 
+\index{Bus@{Bus}!addPassenger@{addPassenger}}
+\index{addPassenger@{addPassenger}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{addPassenger()}{addPassenger()}}
+{\footnotesize\ttfamily void Bus\+::add\+Passenger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{passenger,  }\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+
+
+Adds a passenger to the bus and sets their destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passenger} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} being added as a passenger. \\
+\hline
+{\em destination} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} representing the passenger\textquotesingle{}s destination. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBus_a8a53ec6de748727347176835a3549fdf}\label{classBus_a8a53ec6de748727347176835a3549fdf}} 
+\index{Bus@{Bus}!doSomething@{doSomething}}
+\index{doSomething@{doSomething}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{doSomething()}{doSomething()}}
+{\footnotesize\ttfamily void Bus\+::do\+Something (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the bus\textquotesingle{}s actions (e.\+g., moving, picking up passengers). 
+
+
+
+Reimplemented from \mbox{\hyperlink{classCitizen_ac20c2895fd099e31d4abe759fba56ec4}{Citizen}}.
+
+\mbox{\Hypertarget{classBus_a9e705a24e524d13754aa9cce153be7dd}\label{classBus_a9e705a24e524d13754aa9cce153be7dd}} 
+\index{Bus@{Bus}!getCurrentLocation@{getCurrentLocation}}
+\index{getCurrentLocation@{getCurrentLocation}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{getCurrentLocation()}{getCurrentLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ Bus\+::get\+Current\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current location of the bus. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} where the bus is currently located. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBus_a263f4d032f49762dc9fc4e06b103bef2}\label{classBus_a263f4d032f49762dc9fc4e06b103bef2}} 
+\index{Bus@{Bus}!isFull@{isFull}}
+\index{isFull@{isFull}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily bool Bus\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the bus is full. 
+
+\begin{DoxyReturn}{Returns}
+True if the bus is at capacity; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBus_afa804e3439e15ffbbf90e8725a8d814a}\label{classBus_afa804e3439e15ffbbf90e8725a8d814a}} 
+\index{Bus@{Bus}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Bus\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies the bus of a change in state or status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string containing information about the change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBus_a665b7dcda23308cbc23abca7a26b90a0}\label{classBus_a665b7dcda23308cbc23abca7a26b90a0}} 
+\index{Bus@{Bus}!removePassenger@{removePassenger}}
+\index{removePassenger@{removePassenger}!Bus@{Bus}}
+\doxysubsubsection{\texorpdfstring{removePassenger()}{removePassenger()}}
+{\footnotesize\ttfamily void Bus\+::remove\+Passenger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{passenger }\end{DoxyParamCaption})}
+
+
+
+Removes a passenger from the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passenger} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} being removed from the bus. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\mbox{\hyperlink{Bus_8h}{Bus.\+h}}\item 
+src/\+Citizens/\mbox{\hyperlink{Bus_8cpp}{Bus.\+cpp}}\end{DoxyCompactItemize}

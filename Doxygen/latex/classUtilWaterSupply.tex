@@ -1,0 +1,154 @@
+\hypertarget{classUtilWaterSupply}{}\doxysection{Util\+Water\+Supply Class Reference}
+\label{classUtilWaterSupply}\index{UtilWaterSupply@{UtilWaterSupply}}
+
+
+Represents the water supply system.  
+
+
+
+
+{\ttfamily \#include $<$Util\+Water\+Supply.\+h$>$}
+
+
+
+Inheritance diagram for Util\+Water\+Supply\+:
+% FIG 0
+
+
+Collaboration diagram for Util\+Water\+Supply\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilWaterSupply_ac39ecf467bf3ca88eb6cf1afffcce4a3}{Util\+Water\+Supply}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new Water Supply utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWaterSupply_a8c157555183c4fda463c882e15068c81}{start\+Utility}} ()
+\begin{DoxyCompactList}\small\item\em Starts the Water Supply service, making it operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWaterSupply_a675d260ff0d840b534a965461300a460}{update}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Updates the operational state based on the status of the specified building. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilWaterSupply_ad35b2eaa2b24022908336905dd8fa069}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the type of this utility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilWaterSupply_a6d0724b32de997c99167b7e87cba8df5}{is\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Water Supply service is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWaterSupply_a1e05296a6b7ee9c323690f7fa3d798ff}{shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the Water Supply service, making it non-\/operational. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the water supply system. 
+
+Manages water distribution operations to ensure a consistent supply to buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilWaterSupply_ac39ecf467bf3ca88eb6cf1afffcce4a3}\label{classUtilWaterSupply_ac39ecf467bf3ca88eb6cf1afffcce4a3}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!UtilWaterSupply@{UtilWaterSupply}}
+\index{UtilWaterSupply@{UtilWaterSupply}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{UtilWaterSupply()}{UtilWaterSupply()}}
+{\footnotesize\ttfamily Util\+Water\+Supply\+::\+Util\+Water\+Supply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new Water Supply utility. 
+
+Constructor for the \mbox{\hyperlink{classUtilWaterSupply}{Util\+Water\+Supply}} class. Initializes the Water Supply utility as non-\/operational and sets the type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilWaterSupply_ad35b2eaa2b24022908336905dd8fa069}\label{classUtilWaterSupply_ad35b2eaa2b24022908336905dd8fa069}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!getType@{getType}}
+\index{getType@{getType}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Util\+Water\+Supply\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the type of this utility. 
+
+Gets the type of utility service provided by this class.
+
+\begin{DoxyReturn}{Returns}
+The type as a string (\char`\"{}\+Water Supply\char`\"{}).
+
+The type as a string, e.\+g., \char`\"{}\+Water Supply\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWaterSupply_a6d0724b32de997c99167b7e87cba8df5}\label{classUtilWaterSupply_a6d0724b32de997c99167b7e87cba8df5}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{isOperational()}{isOperational()}}
+{\footnotesize\ttfamily bool Util\+Water\+Supply\+::is\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the Water Supply service is operational. 
+
+Checks if the Water Supply is operational.
+
+\begin{DoxyReturn}{Returns}
+True if operational; otherwise, false.
+
+True if the Water Supply is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWaterSupply_a1e05296a6b7ee9c323690f7fa3d798ff}\label{classUtilWaterSupply_a1e05296a6b7ee9c323690f7fa3d798ff}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily void Util\+Water\+Supply\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Shuts down the Water Supply service, making it non-\/operational. 
+
+Shuts down the Water Supply service, setting it to non-\/operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWaterSupply_a8c157555183c4fda463c882e15068c81}\label{classUtilWaterSupply_a8c157555183c4fda463c882e15068c81}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!startUtility@{startUtility}}
+\index{startUtility@{startUtility}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{startUtility()}{startUtility()}}
+{\footnotesize\ttfamily void Util\+Water\+Supply\+::start\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the Water Supply service, making it operational. 
+
+Starts the Water Supply service and sets it to operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWaterSupply_a675d260ff0d840b534a965461300a460}\label{classUtilWaterSupply_a675d260ff0d840b534a965461300a460}} 
+\index{UtilWaterSupply@{UtilWaterSupply}!update@{update}}
+\index{update@{update}!UtilWaterSupply@{UtilWaterSupply}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Util\+Water\+Supply\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the operational state based on the status of the specified building. 
+
+Updates the operational status of the Water Supply based on the building\textquotesingle{}s status.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object that notifies this utility.\\
+\hline
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object notifying this utility. If the Water Supply is not operational, it will be started. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}{Utility\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utilities/\mbox{\hyperlink{UtilWaterSupply_8h}{Util\+Water\+Supply.\+h}}\item 
+src/\+Utilities/\mbox{\hyperlink{UtilWaterSupplly_8cpp}{Util\+Water\+Supplly.\+cpp}}\end{DoxyCompactItemize}

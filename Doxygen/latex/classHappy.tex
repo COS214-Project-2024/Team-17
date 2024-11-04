@@ -1,0 +1,94 @@
+\hypertarget{classHappy}{}\doxysection{Happy Class Reference}
+\label{classHappy}\index{Happy@{Happy}}
+
+
+Represents the happy state of a \mbox{\hyperlink{classCitizen}{Citizen}}.  
+
+
+
+
+{\ttfamily \#include $<$Happy.\+h$>$}
+
+
+
+Inheritance diagram for Happy\+:
+% FIG 0
+
+
+Collaboration diagram for Happy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classHappy_a84ab0f032ceb77cebc1fb0bc60edf037}{handle\+Change}} (int change) override
+\begin{DoxyCompactList}\small\item\em Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHappy_a0f378f2d655f89052145f621dc2ff658}{get\+State}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHappy_ad7847eacaedd7cd018f11e8af6c0adb9}{$\sim$\+Happy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classHappy}{Happy}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the happy state of a \mbox{\hyperlink{classCitizen}{Citizen}}. 
+
+This class is a concrete implementation of the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} interface, indicating that a citizen is in a happy emotional state. It manages transitions to other states based on changes in the citizen\textquotesingle{}s situation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHappy_ad7847eacaedd7cd018f11e8af6c0adb9}\label{classHappy_ad7847eacaedd7cd018f11e8af6c0adb9}} 
+\index{Happy@{Happy}!````~Happy@{$\sim$Happy}}
+\index{````~Happy@{$\sim$Happy}!Happy@{Happy}}
+\doxysubsubsection{\texorpdfstring{$\sim$Happy()}{~Happy()}}
+{\footnotesize\ttfamily Happy\+::$\sim$\+Happy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classHappy}{Happy}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHappy_a0f378f2d655f89052145f621dc2ff658}\label{classHappy_a0f378f2d655f89052145f621dc2ff658}} 
+\index{Happy@{Happy}!getState@{getState}}
+\index{getState@{getState}!Happy@{Happy}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Happy\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the happy state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}{Citizen\+State}}.
+
+\mbox{\Hypertarget{classHappy_a84ab0f032ceb77cebc1fb0bc60edf037}\label{classHappy_a84ab0f032ceb77cebc1fb0bc60edf037}} 
+\index{Happy@{Happy}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Happy@{Happy}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ Happy\+::handle\+Change (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & An integer representing the change that affects the citizen\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new \mbox{\hyperlink{classCitizenState}{Citizen\+State}} that results from the change. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}{Citizen\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Happy_8h}{Happy.\+h}}\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Happy_8cpp}{Happy.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Policy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPolicy.html",tooltip="Holds the various laws and policies affecting the simulation."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="HealthPolicy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHealthPolicy.html",tooltip="Policy class for applying a budget specifically to health-related departments."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="InfrastructurePolicy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classInfrastructurePolicy.html",tooltip="Policy class for handling budgets related to infrastructure."];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Law",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classLaw.html",tooltip="Represents a legal policy that can be enacted by the government."];
+}

@@ -1,0 +1,28 @@
+digraph "src/Buildings/IndPlant.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/Buildings/IndPlant.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="DemoMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DemoMain_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/Buildings/FactIndustrial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactIndustrial_8h.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/Buildings/FactIndustrial.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactIndustrial_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/Game.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Game_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/Game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Game_8cpp.html",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="tests/test_buildings.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__buildings_8cpp.html",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="tests/unit_factory.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$unit__factory_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="src/Buildings/IndPlant.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$IndPlant_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="tests/unit_industrial.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$unit__industrial_8cpp.html",tooltip=" "];
+}

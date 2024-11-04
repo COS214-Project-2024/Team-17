@@ -1,0 +1,246 @@
+\hypertarget{classCityMediator}{}\doxysection{City\+Mediator Class Reference}
+\label{classCityMediator}\index{CityMediator@{CityMediator}}
+
+
+Mediator class that facilitates communication between various city components.  
+
+
+
+
+{\ttfamily \#include $<$City\+Mediator.\+h$>$}
+
+
+
+Inheritance diagram for City\+Mediator\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classCityMediator_ac0bb2bc0ce9846c27319f3fd67983d38}{register\+Building}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$building)=0
+\begin{DoxyCompactList}\small\item\em Registers a building with the city mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_aa76e97cd53fca9d8d80c34e95547c97c}{register\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$util)=0
+\begin{DoxyCompactList}\small\item\em Registers a utility manager with the city mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_afdb57464bb93afe7aa4b5bf4e2952dac}{register\+Citizen}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)=0
+\begin{DoxyCompactList}\small\item\em Registers a citizen with the city mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_a182d1972fb6fd971375b2b62437f0f05}{register\+Bus}} (\mbox{\hyperlink{classBus}{Bus}} $\ast$bus)=0
+\begin{DoxyCompactList}\small\item\em Registers a bus with the city mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_a82202df90e81b982431f1e6c422b72d7}{register\+Train\+Station}} (\mbox{\hyperlink{classTrainstation}{Trainstation}} $\ast$train\+Station)=0
+\begin{DoxyCompactList}\small\item\em Registers a train station with the city mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_a316febcedd86dd7285c7dbbd8bfaf18e}{notify\+Building\+Change}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$building, std\+::string message)=0
+\begin{DoxyCompactList}\small\item\em Notifies the mediator of changes in a building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_adab153bff4f87e7b952a01e07b20e9b7}{notify\+Utility\+Change}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$type, bool status, std\+::string message)=0
+\begin{DoxyCompactList}\small\item\em Notifies the mediator of changes in a utility. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCityMediator_a76a1ad15c279e49b8eb17a0a914edec6}{notify\+Road\+Change}} (\mbox{\hyperlink{classRoadState}{Road\+State}} $\ast$status, std\+::string message)=0
+\begin{DoxyCompactList}\small\item\em Notifies the mediator of changes in road state. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classCityMediator_ac39919fabeb88722ba4100c32c9f34b2}{accept}} (\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$visitor)=0
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} to perform operations. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCityMediator_ab29aed1040f17636a3b6014c17eb309f}{$\sim$\+City\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mediator class that facilitates communication between various city components. 
+
+The \mbox{\hyperlink{classCityMediator}{City\+Mediator}} class acts as an intermediary, coordinating interactions between buildings, utilities, citizens, buses, and train stations. It ensures that all components can communicate and respond to changes within the city ecosystem. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityMediator_ab29aed1040f17636a3b6014c17eb309f}\label{classCityMediator_ab29aed1040f17636a3b6014c17eb309f}} 
+\index{CityMediator@{CityMediator}!````~CityMediator@{$\sim$CityMediator}}
+\index{````~CityMediator@{$\sim$CityMediator}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{$\sim$CityMediator()}{~CityMediator()}}
+{\footnotesize\ttfamily virtual City\+Mediator\+::$\sim$\+City\+Mediator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for cleanup in derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityMediator_ac39919fabeb88722ba4100c32c9f34b2}\label{classCityMediator_ac39919fabeb88722ba4100c32c9f34b2}} 
+\index{CityMediator@{CityMediator}!accept@{accept}}
+\index{accept@{accept}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily virtual double City\+Mediator\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} to perform operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & A pointer to the visitor that will perform operations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A double representing the result of the visitor\textquotesingle{}s operation. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a714e19df5b4d9d880d774559729da595}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_a316febcedd86dd7285c7dbbd8bfaf18e}\label{classCityMediator_a316febcedd86dd7285c7dbbd8bfaf18e}} 
+\index{CityMediator@{CityMediator}!notifyBuildingChange@{notifyBuildingChange}}
+\index{notifyBuildingChange@{notifyBuildingChange}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{notifyBuildingChange()}{notifyBuildingChange()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::notify\+Building\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{building,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the mediator of changes in a building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building that has changed. \\
+\hline
+{\em message} & A string message detailing the change. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_aa0e25f2a7b2440bdff0051e456a62103}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_a76a1ad15c279e49b8eb17a0a914edec6}\label{classCityMediator_a76a1ad15c279e49b8eb17a0a914edec6}} 
+\index{CityMediator@{CityMediator}!notifyRoadChange@{notifyRoadChange}}
+\index{notifyRoadChange@{notifyRoadChange}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{notifyRoadChange()}{notifyRoadChange()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::notify\+Road\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadState}{Road\+State}} $\ast$}]{status,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the mediator of changes in road state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & A pointer to the road state that has changed. \\
+\hline
+{\em message} & A string message detailing the change. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_ace474117bd1754bbdab05aa73b48450b}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_adab153bff4f87e7b952a01e07b20e9b7}\label{classCityMediator_adab153bff4f87e7b952a01e07b20e9b7}} 
+\index{CityMediator@{CityMediator}!notifyUtilityChange@{notifyUtilityChange}}
+\index{notifyUtilityChange@{notifyUtilityChange}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{notifyUtilityChange()}{notifyUtilityChange()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::notify\+Utility\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{type,  }\item[{bool}]{status,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the mediator of changes in a utility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A pointer to the utility manager type that has changed. \\
+\hline
+{\em status} & The new status of the utility. \\
+\hline
+{\em message} & A string message detailing the change. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a046db0a58836a8296b1f3998097996e9}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_ac0bb2bc0ce9846c27319f3fd67983d38}\label{classCityMediator_ac0bb2bc0ce9846c27319f3fd67983d38}} 
+\index{CityMediator@{CityMediator}!registerBuilding@{registerBuilding}}
+\index{registerBuilding@{registerBuilding}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{registerBuilding()}{registerBuilding()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::register\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{building }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a building with the city mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & A pointer to the building to register. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a3bb8f4373b6b77f2df123746f794ed7a}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_a182d1972fb6fd971375b2b62437f0f05}\label{classCityMediator_a182d1972fb6fd971375b2b62437f0f05}} 
+\index{CityMediator@{CityMediator}!registerBus@{registerBus}}
+\index{registerBus@{registerBus}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{registerBus()}{registerBus()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::register\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBus}{Bus}} $\ast$}]{bus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a bus with the city mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & A pointer to the bus to register. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_ac57cee9bd26fb4260c805e75242e5551}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_afdb57464bb93afe7aa4b5bf4e2952dac}\label{classCityMediator_afdb57464bb93afe7aa4b5bf4e2952dac}} 
+\index{CityMediator@{CityMediator}!registerCitizen@{registerCitizen}}
+\index{registerCitizen@{registerCitizen}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{registerCitizen()}{registerCitizen()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::register\+Citizen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{citizen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a citizen with the city mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & A pointer to the citizen to register. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a8194f0dec566b2078e87956bbcfa0299}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_a82202df90e81b982431f1e6c422b72d7}\label{classCityMediator_a82202df90e81b982431f1e6c422b72d7}} 
+\index{CityMediator@{CityMediator}!registerTrainStation@{registerTrainStation}}
+\index{registerTrainStation@{registerTrainStation}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{registerTrainStation()}{registerTrainStation()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::register\+Train\+Station (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTrainstation}{Trainstation}} $\ast$}]{train\+Station }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a train station with the city mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em train\+Station} & A pointer to the train station to register. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a2934654fc04043793eb3af773e190919}{City\+Central\+Mediator}}.
+
+\mbox{\Hypertarget{classCityMediator_aa76e97cd53fca9d8d80c34e95547c97c}\label{classCityMediator_aa76e97cd53fca9d8d80c34e95547c97c}} 
+\index{CityMediator@{CityMediator}!registerUtility@{registerUtility}}
+\index{registerUtility@{registerUtility}!CityMediator@{CityMediator}}
+\doxysubsubsection{\texorpdfstring{registerUtility()}{registerUtility()}}
+{\footnotesize\ttfamily virtual void City\+Mediator\+::register\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{util }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a utility manager with the city mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em util} & A pointer to the utility manager to register. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCityCentralMediator_a4b87193bebc238c4a6e31cab08786f52}{City\+Central\+Mediator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\mbox{\hyperlink{CityMediator_8h}{City\+Mediator.\+h}}\end{DoxyCompactItemize}

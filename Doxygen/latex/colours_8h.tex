@@ -1,0 +1,126 @@
+\hypertarget{colours_8h}{}\doxysection{colours.\+h File Reference}
+\label{colours_8h}\index{colours.h@{colours.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for colours.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{colours_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}} 
+\begin{DoxyCompactList}\small\item\em Enum class representing color options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{colours_8h_a9a31596d4859c8ad599295239748e3dc}{RESET}} = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape codes for terminal text colors. \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{colours_8h_abb21f63a6ab9c6a1840c572b477d9217}{BLACK}} = \char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_ab84a8b06714421dcae7acf288a7b61a0}{RED}} = \char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a6549a333ff1f3c45c95ec71167e8880e}{GREEN}} = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a1f7a26bd4f473d811093b8b0be1ca753}{YELLOW}} = \char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a99c5c15cb598940d80f857dba62040a5}{BLUE}} = \char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a12873b5cac405723e859c63dedcbf8c3}{PURPLE}} = \char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a9d1a2e31c30e2e054682627a6e40ed59}{CYAN}} = \char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a3ef64c0c0882556176e18b718d55b26d}{BG\+\_\+\+BLACK}} = \char`\"{}\textbackslash{}033\mbox{[}40m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_a5094e61b2e9905c2278e37099575506e}{BG\+\_\+\+WHITE}} = \char`\"{}\textbackslash{}033\mbox{[}47m\char`\"{}
+\item 
+const string \mbox{\hyperlink{colours_8h_ac32dcda04e8d51eb8ce1941343eac22d}{BOLD}} = \char`\"{}\textbackslash{}033\mbox{[}1m\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{colours_8h_a7dae1270b9f323383fd77c3160a9927d}\label{colours_8h_a7dae1270b9f323383fd77c3160a9927d}} 
+\index{colours.h@{colours.h}!Colour@{Colour}}
+\index{Colour@{Colour}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{Colour}{Colour}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{colours_8h_a7dae1270b9f323383fd77c3160a9927d}{Colour}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum class representing color options. 
+
+Currently empty, but can be expanded for specific color definitions or usage within the application. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{colours_8h_a3ef64c0c0882556176e18b718d55b26d}\label{colours_8h_a3ef64c0c0882556176e18b718d55b26d}} 
+\index{colours.h@{colours.h}!BG\_BLACK@{BG\_BLACK}}
+\index{BG\_BLACK@{BG\_BLACK}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{BG\_BLACK}{BG\_BLACK}}
+{\footnotesize\ttfamily const string BG\+\_\+\+BLACK = \char`\"{}\textbackslash{}033\mbox{[}40m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a5094e61b2e9905c2278e37099575506e}\label{colours_8h_a5094e61b2e9905c2278e37099575506e}} 
+\index{colours.h@{colours.h}!BG\_WHITE@{BG\_WHITE}}
+\index{BG\_WHITE@{BG\_WHITE}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{BG\_WHITE}{BG\_WHITE}}
+{\footnotesize\ttfamily const string BG\+\_\+\+WHITE = \char`\"{}\textbackslash{}033\mbox{[}47m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_abb21f63a6ab9c6a1840c572b477d9217}\label{colours_8h_abb21f63a6ab9c6a1840c572b477d9217}} 
+\index{colours.h@{colours.h}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily const string BLACK = \char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a99c5c15cb598940d80f857dba62040a5}\label{colours_8h_a99c5c15cb598940d80f857dba62040a5}} 
+\index{colours.h@{colours.h}!BLUE@{BLUE}}
+\index{BLUE@{BLUE}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
+{\footnotesize\ttfamily const string BLUE = \char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_ac32dcda04e8d51eb8ce1941343eac22d}\label{colours_8h_ac32dcda04e8d51eb8ce1941343eac22d}} 
+\index{colours.h@{colours.h}!BOLD@{BOLD}}
+\index{BOLD@{BOLD}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{BOLD}{BOLD}}
+{\footnotesize\ttfamily const string BOLD = \char`\"{}\textbackslash{}033\mbox{[}1m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a9d1a2e31c30e2e054682627a6e40ed59}\label{colours_8h_a9d1a2e31c30e2e054682627a6e40ed59}} 
+\index{colours.h@{colours.h}!CYAN@{CYAN}}
+\index{CYAN@{CYAN}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{CYAN}{CYAN}}
+{\footnotesize\ttfamily const string CYAN = \char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a6549a333ff1f3c45c95ec71167e8880e}\label{colours_8h_a6549a333ff1f3c45c95ec71167e8880e}} 
+\index{colours.h@{colours.h}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily const string GREEN = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a12873b5cac405723e859c63dedcbf8c3}\label{colours_8h_a12873b5cac405723e859c63dedcbf8c3}} 
+\index{colours.h@{colours.h}!PURPLE@{PURPLE}}
+\index{PURPLE@{PURPLE}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{PURPLE}{PURPLE}}
+{\footnotesize\ttfamily const string PURPLE = \char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_ab84a8b06714421dcae7acf288a7b61a0}\label{colours_8h_ab84a8b06714421dcae7acf288a7b61a0}} 
+\index{colours.h@{colours.h}!RED@{RED}}
+\index{RED@{RED}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily const string RED = \char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}}
+
+\mbox{\Hypertarget{colours_8h_a9a31596d4859c8ad599295239748e3dc}\label{colours_8h_a9a31596d4859c8ad599295239748e3dc}} 
+\index{colours.h@{colours.h}!RESET@{RESET}}
+\index{RESET@{RESET}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily const string RESET = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+
+
+ANSI escape codes for terminal text colors. 
+
+These constants can be used to change the color of text output in the terminal. \mbox{\Hypertarget{colours_8h_a1f7a26bd4f473d811093b8b0be1ca753}\label{colours_8h_a1f7a26bd4f473d811093b8b0be1ca753}} 
+\index{colours.h@{colours.h}!YELLOW@{YELLOW}}
+\index{YELLOW@{YELLOW}!colours.h@{colours.h}}
+\doxysubsubsection{\texorpdfstring{YELLOW}{YELLOW}}
+{\footnotesize\ttfamily const string YELLOW = \char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}}
+

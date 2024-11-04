@@ -1,0 +1,94 @@
+\hypertarget{classUpset}{}\doxysection{Upset Class Reference}
+\label{classUpset}\index{Upset@{Upset}}
+
+
+Represents the upset state of a \mbox{\hyperlink{classCitizen}{Citizen}}.  
+
+
+
+
+{\ttfamily \#include $<$Upset.\+h$>$}
+
+
+
+Inheritance diagram for Upset\+:
+% FIG 0
+
+
+Collaboration diagram for Upset\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classUpset_a5e08dc3b7f65a0938a50eafa085fcae4}{handle\+Change}} (int change) override
+\begin{DoxyCompactList}\small\item\em Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUpset_ab82340cee98f4ae0b1d155d824d0c5ae}{get\+State}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUpset_a85a1edaabb00230a866eccd267bf30c2}{$\sim$\+Upset}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classUpset}{Upset}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the upset state of a \mbox{\hyperlink{classCitizen}{Citizen}}. 
+
+This class is a concrete implementation of the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} interface, indicating that a citizen is in an upset emotional state. It manages transitions to other states based on changes in the citizen\textquotesingle{}s situation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUpset_a85a1edaabb00230a866eccd267bf30c2}\label{classUpset_a85a1edaabb00230a866eccd267bf30c2}} 
+\index{Upset@{Upset}!````~Upset@{$\sim$Upset}}
+\index{````~Upset@{$\sim$Upset}!Upset@{Upset}}
+\doxysubsubsection{\texorpdfstring{$\sim$Upset()}{~Upset()}}
+{\footnotesize\ttfamily Upset\+::$\sim$\+Upset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classUpset}{Upset}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUpset_ab82340cee98f4ae0b1d155d824d0c5ae}\label{classUpset_ab82340cee98f4ae0b1d155d824d0c5ae}} 
+\index{Upset@{Upset}!getState@{getState}}
+\index{getState@{getState}!Upset@{Upset}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Upset\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the upset state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}{Citizen\+State}}.
+
+\mbox{\Hypertarget{classUpset_a5e08dc3b7f65a0938a50eafa085fcae4}\label{classUpset_a5e08dc3b7f65a0938a50eafa085fcae4}} 
+\index{Upset@{Upset}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Upset@{Upset}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ Upset\+::handle\+Change (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & An integer representing the change that affects the citizen\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new \mbox{\hyperlink{classCitizenState}{Citizen\+State}} that results from the change. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}{Citizen\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Upset_8h}{Upset.\+h}}\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Upset_8cpp}{Upset.\+cpp}}\end{DoxyCompactItemize}

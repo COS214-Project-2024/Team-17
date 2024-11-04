@@ -1,0 +1,25 @@
+digraph "src/Government+Tax/CitizenTaxAB.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/Government+Tax\l/CitizenTaxAB.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for the CitizenTaxAB class, which calculates tax for citizens and buildings."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="TaxAndBudgetVisitor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TaxAndBudgetVisitor_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Government.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Government_8h.html",tooltip="Header file for the Government class, which manages tax collection and budget allocation for cities."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="CityStructure.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CityStructure_8h.html",tooltip="Header file for the CityStructure class, representing a city with blocks and departments for budget a..."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="BudgetPolicy.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$BudgetPolicy_8h.html",tooltip="Header file for the BudgetPolicy class, defining the base interface for city budget policies."];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+}

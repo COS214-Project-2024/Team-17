@@ -1,0 +1,236 @@
+\hypertarget{classPolicy}{}\doxysection{Policy Struct Reference}
+\label{classPolicy}\index{Policy@{Policy}}
+
+
+Holds the various laws and policies affecting the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Policy.\+h$>$}
+
+
+
+Inheritance diagram for Policy\+:
+% FIG 0
+
+
+Collaboration diagram for Policy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPolicy_a23ecc74557867c29439c3d14f194d66d}{Policy}} (\mbox{\hyperlink{classGovernment}{Government}} $\ast$government)
+\item 
+virtual void \mbox{\hyperlink{classPolicy_a4e7bedba8c568a332ce8e1ba201b9710}{enact}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classPolicy_a12e5dfdf76ac07e125a77112cf4f867f}{set\+Bus\+Law}} (bool)
+\begin{DoxyCompactList}\small\item\em Sets the status of the bus lane law. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPolicy_a43b49fe8a8465eae3b6c13653dc5efad}{get\+Bus\+Law}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the bus lane law. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPolicy_ad50eb94e7afe564c7be94b0de1b7fb24}{set\+Happiness\+Law}} (bool)
+\begin{DoxyCompactList}\small\item\em Sets the status of the happiness law. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPolicy_a6968a8e75564da3451303b97ae9e7ac3}{get\+Happiness\+Law}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the happiness law. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPolicy_aaf0c32e4cb4fc3631bade12100dcca47}{set\+Money\+Law}} (bool)
+\begin{DoxyCompactList}\small\item\em Sets the status of the money law. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPolicy_ae06290b7a8d75881869d670faba72fa7}{get\+Money\+Law}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the money law. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPolicy_a8595580b9bd049ffd94b42e9e908f50f}{set\+No\+Tax\+Law}} (bool)
+\begin{DoxyCompactList}\small\item\em Sets the status of the no tax law. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPolicy_a6211be0c671c4c205fc0167c6a830b60}{get\+No\+Tax\+Law}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the no tax law. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPolicy_a43ac6c86966d97120cffc4c9c455cd55}{set\+Services\+Law}} (bool)
+\begin{DoxyCompactList}\small\item\em Sets the status of the services law. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPolicy_a18bd6cb6e15083c41f0119d4e8644b38}{get\+Services\+Law}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the services law. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGovernment}{Government}} $\ast$ \mbox{\hyperlink{classPolicy_a926bbf9206b7957b6c548217cc2eaa8a}{gov}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the various laws and policies affecting the simulation. 
+
+This struct manages laws that influence the city\textquotesingle{}s operations, including laws related to transport, happiness, finance, and services. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPolicy_a23ecc74557867c29439c3d14f194d66d}\label{classPolicy_a23ecc74557867c29439c3d14f194d66d}} 
+\index{Policy@{Policy}!Policy@{Policy}}
+\index{Policy@{Policy}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{Policy()}{Policy()}}
+{\footnotesize\ttfamily Policy\+::\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGovernment}{Government}} $\ast$}]{government }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPolicy_a4e7bedba8c568a332ce8e1ba201b9710}\label{classPolicy_a4e7bedba8c568a332ce8e1ba201b9710}} 
+\index{Policy@{Policy}!enact@{enact}}
+\index{enact@{enact}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{enact()}{enact()}}
+{\footnotesize\ttfamily virtual void Policy\+::enact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classLaw_ab76ec056fc78fce8037120e7038780a1}{Law}}.
+
+\mbox{\Hypertarget{classPolicy_a43b49fe8a8465eae3b6c13653dc5efad}\label{classPolicy_a43b49fe8a8465eae3b6c13653dc5efad}} 
+\index{Policy@{Policy}!getBusLaw@{getBusLaw}}
+\index{getBusLaw@{getBusLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{getBusLaw()}{getBusLaw()}}
+{\footnotesize\ttfamily bool Policy\+::get\+Bus\+Law (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the status of the bus lane law. 
+
+\begin{DoxyReturn}{Returns}
+Current status of the bus lane law. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPolicy_a6968a8e75564da3451303b97ae9e7ac3}\label{classPolicy_a6968a8e75564da3451303b97ae9e7ac3}} 
+\index{Policy@{Policy}!getHappinessLaw@{getHappinessLaw}}
+\index{getHappinessLaw@{getHappinessLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{getHappinessLaw()}{getHappinessLaw()}}
+{\footnotesize\ttfamily bool Policy\+::get\+Happiness\+Law (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the status of the happiness law. 
+
+\begin{DoxyReturn}{Returns}
+Current status of the happiness law. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPolicy_ae06290b7a8d75881869d670faba72fa7}\label{classPolicy_ae06290b7a8d75881869d670faba72fa7}} 
+\index{Policy@{Policy}!getMoneyLaw@{getMoneyLaw}}
+\index{getMoneyLaw@{getMoneyLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{getMoneyLaw()}{getMoneyLaw()}}
+{\footnotesize\ttfamily bool Policy\+::get\+Money\+Law (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the status of the money law. 
+
+\begin{DoxyReturn}{Returns}
+Current status of the money law. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPolicy_a6211be0c671c4c205fc0167c6a830b60}\label{classPolicy_a6211be0c671c4c205fc0167c6a830b60}} 
+\index{Policy@{Policy}!getNoTaxLaw@{getNoTaxLaw}}
+\index{getNoTaxLaw@{getNoTaxLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{getNoTaxLaw()}{getNoTaxLaw()}}
+{\footnotesize\ttfamily bool Policy\+::get\+No\+Tax\+Law (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the status of the no tax law. 
+
+\begin{DoxyReturn}{Returns}
+Current status of the no tax law. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPolicy_a18bd6cb6e15083c41f0119d4e8644b38}\label{classPolicy_a18bd6cb6e15083c41f0119d4e8644b38}} 
+\index{Policy@{Policy}!getServicesLaw@{getServicesLaw}}
+\index{getServicesLaw@{getServicesLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{getServicesLaw()}{getServicesLaw()}}
+{\footnotesize\ttfamily bool Policy\+::get\+Services\+Law (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the status of the services law. 
+
+\begin{DoxyReturn}{Returns}
+Current status of the services law. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPolicy_a12e5dfdf76ac07e125a77112cf4f867f}\label{classPolicy_a12e5dfdf76ac07e125a77112cf4f867f}} 
+\index{Policy@{Policy}!setBusLaw@{setBusLaw}}
+\index{setBusLaw@{setBusLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{setBusLaw()}{setBusLaw()}}
+{\footnotesize\ttfamily void Policy\+::set\+Bus\+Law (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the status of the bus lane law. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & New status for the bus lane law. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPolicy_ad50eb94e7afe564c7be94b0de1b7fb24}\label{classPolicy_ad50eb94e7afe564c7be94b0de1b7fb24}} 
+\index{Policy@{Policy}!setHappinessLaw@{setHappinessLaw}}
+\index{setHappinessLaw@{setHappinessLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{setHappinessLaw()}{setHappinessLaw()}}
+{\footnotesize\ttfamily void Policy\+::set\+Happiness\+Law (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the status of the happiness law. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & New status for the happiness law. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPolicy_aaf0c32e4cb4fc3631bade12100dcca47}\label{classPolicy_aaf0c32e4cb4fc3631bade12100dcca47}} 
+\index{Policy@{Policy}!setMoneyLaw@{setMoneyLaw}}
+\index{setMoneyLaw@{setMoneyLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{setMoneyLaw()}{setMoneyLaw()}}
+{\footnotesize\ttfamily void Policy\+::set\+Money\+Law (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the status of the money law. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & New status for the money law. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPolicy_a8595580b9bd049ffd94b42e9e908f50f}\label{classPolicy_a8595580b9bd049ffd94b42e9e908f50f}} 
+\index{Policy@{Policy}!setNoTaxLaw@{setNoTaxLaw}}
+\index{setNoTaxLaw@{setNoTaxLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{setNoTaxLaw()}{setNoTaxLaw()}}
+{\footnotesize\ttfamily void Policy\+::set\+No\+Tax\+Law (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the status of the no tax law. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & New status for the no tax law. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPolicy_a43ac6c86966d97120cffc4c9c455cd55}\label{classPolicy_a43ac6c86966d97120cffc4c9c455cd55}} 
+\index{Policy@{Policy}!setServicesLaw@{setServicesLaw}}
+\index{setServicesLaw@{setServicesLaw}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{setServicesLaw()}{setServicesLaw()}}
+{\footnotesize\ttfamily void Policy\+::set\+Services\+Law (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the status of the services law. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & New status for the services law. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPolicy_a926bbf9206b7957b6c548217cc2eaa8a}\label{classPolicy_a926bbf9206b7957b6c548217cc2eaa8a}} 
+\index{Policy@{Policy}!gov@{gov}}
+\index{gov@{gov}!Policy@{Policy}}
+\doxysubsubsection{\texorpdfstring{gov}{gov}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGovernment}{Government}}$\ast$ Policy\+::gov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{Government_09Tax_2Policy_8h}{Policy.\+h}}\item 
+src/\mbox{\hyperlink{Policy_8cpp}{Policy.\+cpp}}\end{DoxyCompactItemize}

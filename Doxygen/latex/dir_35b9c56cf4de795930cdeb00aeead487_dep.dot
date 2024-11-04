@@ -1,0 +1,9 @@
+digraph "src/Citizens/CitizenStates" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b3280085a459050633bb0b3bfa44e340 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Citizens" fontname="Helvetica", fontsize="10", URL="dir_b3280085a459050633bb0b3bfa44e340.html"]
+  dir_35b9c56cf4de795930cdeb00aeead487 [shape=box, label="CitizenStates", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_35b9c56cf4de795930cdeb00aeead487.html"];
+  }
+}

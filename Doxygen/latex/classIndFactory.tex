@@ -1,0 +1,264 @@
+\hypertarget{classIndFactory}{}\doxysection{Ind\+Factory Class Reference}
+\label{classIndFactory}\index{IndFactory@{IndFactory}}
+
+
+Represents an industrial factory building.  
+
+
+
+
+{\ttfamily \#include $<$Ind\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Ind\+Factory\+:
+% FIG 0
+
+
+Collaboration diagram for Ind\+Factory\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndFactory_ac4543e8d708f51d172ed8264154c6e2b}{Ind\+Factory}} ()
+\item 
+\mbox{\hyperlink{classIndFactory_a4b16eb4f5f1d85864b2ee0664c0859ae}{$\sim$\+Ind\+Factory}} ()
+\item 
+void \mbox{\hyperlink{classIndFactory_aedb2fcc355f50e16b62e202931b8f10e}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the industrial factory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndFactory_a0dbe58ad3eb8f546f5926399988817cf}{get\+Production\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the production capacity of the industrial factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndFactory_abae40fce01ea5466337383c9842e2030}{set\+Production\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the production capacity of the industrial factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndFactory_ac0911df8949eb7b1d9cf581065b61e68}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls the utility managers associated with this industrial factory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndFactory_ad6ef9179c83a601df3fc004d45886168}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the industrial factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndFactory_aaf5a9c4ec74aa64909812925f1f90fa8}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the industrial factory. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classIndFactory_a2035ea4f9ad7262db37cfc55bdbf0f66}{get\+Building\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Gets the type of industrial building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndFactory_adbf1f93c2c612bb60362b8484ae362cd}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the industrial factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndFactory_aff6e3cf4b91b4239888fdb1d5b45ea5a}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the industrial factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndFactory_ad87c6a8afd1f8b128e0abe9fdb0228b8}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the industrial factory that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndFactory_a8576cb74bcb0415bb8053ff8bc5c984a}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the industrial factory has job openings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an industrial factory building. 
+
+The \mbox{\hyperlink{classIndFactory}{Ind\+Factory}} class inherits from the \mbox{\hyperlink{classIndustrial}{Industrial}} class and implements the functionality specific to an industrial factory, including production capacity, employee management, and utility management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndFactory_ac4543e8d708f51d172ed8264154c6e2b}\label{classIndFactory_ac4543e8d708f51d172ed8264154c6e2b}} 
+\index{IndFactory@{IndFactory}!IndFactory@{IndFactory}}
+\index{IndFactory@{IndFactory}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{IndFactory()}{IndFactory()}}
+{\footnotesize\ttfamily Ind\+Factory\+::\+Ind\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIndFactory_a4b16eb4f5f1d85864b2ee0664c0859ae}\label{classIndFactory_a4b16eb4f5f1d85864b2ee0664c0859ae}} 
+\index{IndFactory@{IndFactory}!````~IndFactory@{$\sim$IndFactory}}
+\index{````~IndFactory@{$\sim$IndFactory}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$IndFactory()}{~IndFactory()}}
+{\footnotesize\ttfamily Ind\+Factory\+::$\sim$\+Ind\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndFactory_adbf1f93c2c612bb60362b8484ae362cd}\label{classIndFactory_adbf1f93c2c612bb60362b8484ae362cd}} 
+\index{IndFactory@{IndFactory}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Ind\+Factory\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the industrial factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a3cde67af0ebf46df5168323a5f8ecc4d}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_ac0911df8949eb7b1d9cf581065b61e68}\label{classIndFactory_ac0911df8949eb7b1d9cf581065b61e68}} 
+\index{IndFactory@{IndFactory}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the utility managers associated with this industrial factory. 
+
+\mbox{\Hypertarget{classIndFactory_aedb2fcc355f50e16b62e202931b8f10e}\label{classIndFactory_aedb2fcc355f50e16b62e202931b8f10e}} 
+\index{IndFactory@{IndFactory}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the industrial factory. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classIndFactory_a2035ea4f9ad7262db37cfc55bdbf0f66}\label{classIndFactory_a2035ea4f9ad7262db37cfc55bdbf0f66}} 
+\index{IndFactory@{IndFactory}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Ind\+Factory\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of industrial building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a26789dd4a131a1bb959e07db91e12ecb}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_a0dbe58ad3eb8f546f5926399988817cf}\label{classIndFactory_a0dbe58ad3eb8f546f5926399988817cf}} 
+\index{IndFactory@{IndFactory}!getProductionCapacity@{getProductionCapacity}}
+\index{getProductionCapacity@{getProductionCapacity}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{getProductionCapacity()}{getProductionCapacity()}}
+{\footnotesize\ttfamily int Ind\+Factory\+::get\+Production\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the production capacity of the industrial factory. 
+
+\begin{DoxyReturn}{Returns}
+The production capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a2bfdedfb41a3439ae0ce80f08eb6c6c8}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_ad6ef9179c83a601df3fc004d45886168}\label{classIndFactory_ad6ef9179c83a601df3fc004d45886168}} 
+\index{IndFactory@{IndFactory}!getState@{getState}}
+\index{getState@{getState}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Ind\+Factory\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the industrial factory. 
+
+\begin{DoxyReturn}{Returns}
+True if the factory is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a25f2c781fc9bd9f9585f8a29befb9f71}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_a8576cb74bcb0415bb8053ff8bc5c984a}\label{classIndFactory_a8576cb74bcb0415bb8053ff8bc5c984a}} 
+\index{IndFactory@{IndFactory}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Ind\+Factory\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the industrial factory has job openings. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classIndFactory_ad87c6a8afd1f8b128e0abe9fdb0228b8}\label{classIndFactory_ad87c6a8afd1f8b128e0abe9fdb0228b8}} 
+\index{IndFactory@{IndFactory}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the industrial factory that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a08c257c3dae028ec6663ee52374e84fa}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_aff6e3cf4b91b4239888fdb1d5b45ea5a}\label{classIndFactory_aff6e3cf4b91b4239888fdb1d5b45ea5a}} 
+\index{IndFactory@{IndFactory}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the industrial factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a5d1770e238b01a6fa017e577e867f5e2}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_abae40fce01ea5466337383c9842e2030}\label{classIndFactory_abae40fce01ea5466337383c9842e2030}} 
+\index{IndFactory@{IndFactory}!setProductionCapacity@{setProductionCapacity}}
+\index{setProductionCapacity@{setProductionCapacity}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{setProductionCapacity()}{setProductionCapacity()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::set\+Production\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the production capacity of the industrial factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The production capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_aed48857b5e18bc9f47cf8f4e3f3ae33e}{Industrial}}.
+
+\mbox{\Hypertarget{classIndFactory_aaf5a9c4ec74aa64909812925f1f90fa8}\label{classIndFactory_aaf5a9c4ec74aa64909812925f1f90fa8}} 
+\index{IndFactory@{IndFactory}!setState@{setState}}
+\index{setState@{setState}!IndFactory@{IndFactory}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Ind\+Factory\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the industrial factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{IndFactory_8h}{Ind\+Factory.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{IndFactory_8cpp}{Ind\+Factory.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{classCongested}{}\doxysection{Congested Class Reference}
+\label{classCongested}\index{Congested@{Congested}}
+
+
+Represents a congested state for a road component.  
+
+
+
+
+{\ttfamily \#include $<$Congested.\+h$>$}
+
+
+
+Inheritance diagram for Congested\+:
+% FIG 0
+
+
+Collaboration diagram for Congested\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classCongested_a1c8e2b4bd81ab2c3a9bb595294d51d6b}{handle\+Traffic}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$road)
+\begin{DoxyCompactList}\small\item\em Handles traffic for the congested road. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCongested_afec7a88f50ae15673169a83d264d6be3}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the status of the road state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a congested state for a road component. 
+
+The \mbox{\hyperlink{classCongested}{Congested}} class implements the \mbox{\hyperlink{classRoadState}{Road\+State}} interface, providing specific behavior for handling traffic when a road is congested. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCongested_afec7a88f50ae15673169a83d264d6be3}\label{classCongested_afec7a88f50ae15673169a83d264d6be3}} 
+\index{Congested@{Congested}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Congested@{Congested}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Congested\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the status of the road state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current status of the road (e.\+g., \char`\"{}\+Congested\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadState_a5d8cdd6b7292f23472a670a31cbe57f1}{Road\+State}}.
+
+\mbox{\Hypertarget{classCongested_a1c8e2b4bd81ab2c3a9bb595294d51d6b}\label{classCongested_a1c8e2b4bd81ab2c3a9bb595294d51d6b}} 
+\index{Congested@{Congested}!handleTraffic@{handleTraffic}}
+\index{handleTraffic@{handleTraffic}!Congested@{Congested}}
+\doxysubsubsection{\texorpdfstring{handleTraffic()}{handleTraffic()}}
+{\footnotesize\ttfamily void Congested\+::handle\+Traffic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{road }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles traffic for the congested road. 
+
+This method implements the logic for managing traffic on a road component that is currently in a congested state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & Pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} that is congested. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadState_a6f4099e3a6a7983625ca9602271d8fcd}{Road\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{Congested_8h}{Congested.\+h}}\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{Congested_8cpp}{Congested.\+cpp}}\end{DoxyCompactItemize}

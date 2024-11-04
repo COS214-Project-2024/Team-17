@@ -1,0 +1,31 @@
+digraph "src/Government+Tax/TaxRateHandler.cpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/Government+Tax\l/TaxRateHandler.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="TaxRateHandler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TaxRateHandler_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="TaxHandler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TaxHandler_8h.html",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="TaxCommand.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TaxCommand_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Government.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Government_8h.html",tooltip="Header file for the Government class, which manages tax collection and budget allocation for cities."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CityStructure.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CityStructure_8h.html",tooltip="Header file for the CityStructure class, representing a city with blocks and departments for budget a..."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="BudgetPolicy.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$BudgetPolicy_8h.html",tooltip="Header file for the BudgetPolicy class, defining the base interface for city budget policies."];
+  Node10 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,763 @@
+\hypertarget{structResources}{}\doxysection{Resources Struct Reference}
+\label{structResources}\index{Resources@{Resources}}
+
+
+Manages the city\textquotesingle{}s resources, including materials, utilities, and finances.  
+
+
+
+
+{\ttfamily \#include $<$resources.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{structResources_a898768173eebb814bdb6203475ba3081}{get\+Wood}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of wood. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_af05e78b69e028ae3105d723b2a8163f9}{get\+Wood\+Per\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Gets the amount of wood generated per tick. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a66a0a6780aae3f408d1c369db267d527}{get\+Steel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of steel. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_ae6dd56b3ef9341931e1ca2353d5e6513}{get\+Steel\+Per\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Gets the amount of steel generated per tick. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_aded2dbd8784d128253a3ff905ad9ec88}{get\+Concrete}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of concrete. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_ace1e49e7d0ff85929ffe018f29bd6ce7}{get\+Concrete\+Per\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Gets the amount of concrete generated per tick. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a1b696fdd0d7c8086d4e1b30524ae6001}{get\+Electricity\+Usage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total electricity usage. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_ae378099c836e84e95ef0abab267d2b4e}{get\+Electricity\+Generated}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total electricity generated. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_aa7c75601f8ec291c483ae5e87998bcf5}{get\+Water\+Usage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total water usage. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a8aaba469f8b5f52b8965b3383ea93fe1}{get\+Water\+Generated}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total water generated. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{structResources_aa2043344283f5958113806dce778a111}{get\+Money}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of money. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{structResources_a94e0242ee53375a20255af5bc21300bc}{get\+Income}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total income generated. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a2a57d81844a2dad011d648d530ad0758}{get\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current population. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a19a45c412cb6a1cb9cebd8c108e598ad}{get\+Max\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum population capacity. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{structResources_a5bb908a0e3f3b4d1587de303cd413d64}{get\+Happiness}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current happiness level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a2be9b3cb369142f77d5418086c993552}{add\+Wood}} (int wood)
+\begin{DoxyCompactList}\small\item\em Adds wood to the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a71524fa596a0bf3c8e0250daadf92b50}{add\+Wood\+Per\+Tick}} (int wood)
+\begin{DoxyCompactList}\small\item\em Adds to the wood generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a7a991afe0e7c4870294cc3f51defd185}{add\+Steel}} (int steel)
+\begin{DoxyCompactList}\small\item\em Adds steel to the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a59cec6664dfd1c91c647dd65049e337f}{add\+Steel\+Per\+Tick}} (int steel)
+\begin{DoxyCompactList}\small\item\em Adds to the steel generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a1503c4d09d766018dc81bde86365d81f}{add\+Concrete}} (int concrete)
+\begin{DoxyCompactList}\small\item\em Adds concrete to the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a1f07cb78e787a39e61cdcdc34f0f83e6}{add\+Concrete\+Per\+Tick}} (int concrete)
+\begin{DoxyCompactList}\small\item\em Adds to the concrete generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a4283d1146cb0753a8ff4e740beebf9b4}{add\+Electricity\+Usage}} (int electricity)
+\begin{DoxyCompactList}\small\item\em Adds to the electricity usage. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a8ee6b8e1ff047dc16d404042842fb220}{add\+Electricity\+Generated}} (int electricity)
+\begin{DoxyCompactList}\small\item\em Adds to the electricity generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a0f59b6eb50f404064473852d530e6273}{add\+Water\+Usage}} (int water)
+\begin{DoxyCompactList}\small\item\em Adds to the water usage. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a4c565faaf188a7aae193f7b3f0f8b96b}{add\+Water\+Generated}} (int water)
+\begin{DoxyCompactList}\small\item\em Adds to the water generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a58e724ac3f16891699de676dcd20f075}{add\+Money}} (double Addedmoney)
+\begin{DoxyCompactList}\small\item\em Adds to the total money available. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a9090db0e69742297a4b5d9ed2dbde58b}{add\+Income}} (double income)
+\begin{DoxyCompactList}\small\item\em Adds to the total income generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a0decbd8a36ba015b289ffdc175ec2103}{add\+Population}} (int population)
+\begin{DoxyCompactList}\small\item\em Adds to the current population. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a7531c58588f2a615351749fa3639ce5d}{add\+To\+Max\+Population}} (int population)
+\begin{DoxyCompactList}\small\item\em Increases the maximum population capacity. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a357a4bce26741abd5e095aa940027172}{add\+Happiness}} (int happiness)
+\begin{DoxyCompactList}\small\item\em Adds to the current happiness level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_ab48eed79a2c4fd0d8330f2ab2a4b8989}{remove\+Wood}} (int wood)
+\begin{DoxyCompactList}\small\item\em Removes wood from the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a6ecc937b3191fb445f5a6f6ac2769379}{remove\+Wood\+Per\+Tick}} (int wood)
+\begin{DoxyCompactList}\small\item\em Removes from the wood generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a2671d5a5f73d047bb6ef03aba2e649af}{remove\+Steel}} (int steel)
+\begin{DoxyCompactList}\small\item\em Removes steel from the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a2cc9452a5cb69eba4627f2d58d4f81b4}{remove\+Steel\+Per\+Tick}} (int steel)
+\begin{DoxyCompactList}\small\item\em Removes from the steel generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a3fb66aa877d6fca24f5f7d6d839a9166}{remove\+Concrete}} (int concrete)
+\begin{DoxyCompactList}\small\item\em Removes concrete from the total amount. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a083b221f19970c6f5fc064e4a30cbfc2}{remove\+Concrete\+Per\+Tick}} (int concrete)
+\begin{DoxyCompactList}\small\item\em Removes from the concrete generated per tick. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_ad9b288c495da2effdab18c610bb00242}{remove\+Electricity\+Usage}} (int electricity)
+\begin{DoxyCompactList}\small\item\em Removes from the total electricity usage. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a24ab0efd3de5173427a520da01429fab}{remove\+Electricity\+Generated}} (int electricity)
+\begin{DoxyCompactList}\small\item\em Removes from the total electricity generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a7e2a71b0485d2cbc25f661e2b4290397}{remove\+Water\+Usage}} (int water)
+\begin{DoxyCompactList}\small\item\em Removes from the total water usage. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_ac679282e29ce97267da327aa5f7babc6}{remove\+Water\+Generated}} (int water)
+\begin{DoxyCompactList}\small\item\em Removes from the total water generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_ad7d9dab4f71b56ab20ebc12a61bd0ad6}{remove\+Money}} (double Addedmoney)
+\begin{DoxyCompactList}\small\item\em Removes from the total amount of money available. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a03dc996753fda87540315eb274b3583e}{remove\+Income}} (double income)
+\begin{DoxyCompactList}\small\item\em Removes from the total income generated. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a3c097f4bbd7c7cc8529b174df0211c53}{remove\+Population}} (int population)
+\begin{DoxyCompactList}\small\item\em Removes from the current population. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_a5dc68f91e230bd8654c2a6f6c5a6ee04}{remove\+From\+Max\+Population}} (int population)
+\begin{DoxyCompactList}\small\item\em Decreases the maximum population capacity. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structResources_aa31ef517387b847edc59ac3b687522a7}{remove\+Happiness}} (int happiness)
+\begin{DoxyCompactList}\small\item\em Removes from the current happiness level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the city\textquotesingle{}s resources, including materials, utilities, and finances. 
+
+This struct provides static methods to get and modify various resources such as wood, steel, concrete, electricity, water, money, and population. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structResources_a1503c4d09d766018dc81bde86365d81f}\label{structResources_a1503c4d09d766018dc81bde86365d81f}} 
+\index{Resources@{Resources}!addConcrete@{addConcrete}}
+\index{addConcrete@{addConcrete}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addConcrete()}{addConcrete()}}
+{\footnotesize\ttfamily void Resources\+::add\+Concrete (\begin{DoxyParamCaption}\item[{int}]{concrete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds concrete to the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em concrete} & Amount of concrete to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a1f07cb78e787a39e61cdcdc34f0f83e6}\label{structResources_a1f07cb78e787a39e61cdcdc34f0f83e6}} 
+\index{Resources@{Resources}!addConcretePerTick@{addConcretePerTick}}
+\index{addConcretePerTick@{addConcretePerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addConcretePerTick()}{addConcretePerTick()}}
+{\footnotesize\ttfamily void Resources\+::add\+Concrete\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{concrete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the concrete generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em concrete} & Amount of concrete to add per tick. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a8ee6b8e1ff047dc16d404042842fb220}\label{structResources_a8ee6b8e1ff047dc16d404042842fb220}} 
+\index{Resources@{Resources}!addElectricityGenerated@{addElectricityGenerated}}
+\index{addElectricityGenerated@{addElectricityGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addElectricityGenerated()}{addElectricityGenerated()}}
+{\footnotesize\ttfamily void Resources\+::add\+Electricity\+Generated (\begin{DoxyParamCaption}\item[{int}]{electricity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the electricity generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em electricity} & Amount of electricity to add to generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a4283d1146cb0753a8ff4e740beebf9b4}\label{structResources_a4283d1146cb0753a8ff4e740beebf9b4}} 
+\index{Resources@{Resources}!addElectricityUsage@{addElectricityUsage}}
+\index{addElectricityUsage@{addElectricityUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addElectricityUsage()}{addElectricityUsage()}}
+{\footnotesize\ttfamily void Resources\+::add\+Electricity\+Usage (\begin{DoxyParamCaption}\item[{int}]{electricity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the electricity usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em electricity} & Amount of electricity to add to usage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a357a4bce26741abd5e095aa940027172}\label{structResources_a357a4bce26741abd5e095aa940027172}} 
+\index{Resources@{Resources}!addHappiness@{addHappiness}}
+\index{addHappiness@{addHappiness}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addHappiness()}{addHappiness()}}
+{\footnotesize\ttfamily void Resources\+::add\+Happiness (\begin{DoxyParamCaption}\item[{int}]{happiness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the current happiness level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em happiness} & Amount of happiness to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a9090db0e69742297a4b5d9ed2dbde58b}\label{structResources_a9090db0e69742297a4b5d9ed2dbde58b}} 
+\index{Resources@{Resources}!addIncome@{addIncome}}
+\index{addIncome@{addIncome}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addIncome()}{addIncome()}}
+{\footnotesize\ttfamily void Resources\+::add\+Income (\begin{DoxyParamCaption}\item[{double}]{income }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the total income generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em income} & Amount of income to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a58e724ac3f16891699de676dcd20f075}\label{structResources_a58e724ac3f16891699de676dcd20f075}} 
+\index{Resources@{Resources}!addMoney@{addMoney}}
+\index{addMoney@{addMoney}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addMoney()}{addMoney()}}
+{\footnotesize\ttfamily void Resources\+::add\+Money (\begin{DoxyParamCaption}\item[{double}]{Addedmoney }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the total money available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addedmoney} & Amount of money to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a0decbd8a36ba015b289ffdc175ec2103}\label{structResources_a0decbd8a36ba015b289ffdc175ec2103}} 
+\index{Resources@{Resources}!addPopulation@{addPopulation}}
+\index{addPopulation@{addPopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addPopulation()}{addPopulation()}}
+{\footnotesize\ttfamily void Resources\+::add\+Population (\begin{DoxyParamCaption}\item[{int}]{population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the current population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & Amount of population to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a7a991afe0e7c4870294cc3f51defd185}\label{structResources_a7a991afe0e7c4870294cc3f51defd185}} 
+\index{Resources@{Resources}!addSteel@{addSteel}}
+\index{addSteel@{addSteel}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addSteel()}{addSteel()}}
+{\footnotesize\ttfamily void Resources\+::add\+Steel (\begin{DoxyParamCaption}\item[{int}]{steel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds steel to the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steel} & Amount of steel to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a59cec6664dfd1c91c647dd65049e337f}\label{structResources_a59cec6664dfd1c91c647dd65049e337f}} 
+\index{Resources@{Resources}!addSteelPerTick@{addSteelPerTick}}
+\index{addSteelPerTick@{addSteelPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addSteelPerTick()}{addSteelPerTick()}}
+{\footnotesize\ttfamily void Resources\+::add\+Steel\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{steel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the steel generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steel} & Amount of steel to add per tick. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a7531c58588f2a615351749fa3639ce5d}\label{structResources_a7531c58588f2a615351749fa3639ce5d}} 
+\index{Resources@{Resources}!addToMaxPopulation@{addToMaxPopulation}}
+\index{addToMaxPopulation@{addToMaxPopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addToMaxPopulation()}{addToMaxPopulation()}}
+{\footnotesize\ttfamily void Resources\+::add\+To\+Max\+Population (\begin{DoxyParamCaption}\item[{int}]{population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Increases the maximum population capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & Amount to add to the max population. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a4c565faaf188a7aae193f7b3f0f8b96b}\label{structResources_a4c565faaf188a7aae193f7b3f0f8b96b}} 
+\index{Resources@{Resources}!addWaterGenerated@{addWaterGenerated}}
+\index{addWaterGenerated@{addWaterGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addWaterGenerated()}{addWaterGenerated()}}
+{\footnotesize\ttfamily void Resources\+::add\+Water\+Generated (\begin{DoxyParamCaption}\item[{int}]{water }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the water generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Amount of water to add to generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a0f59b6eb50f404064473852d530e6273}\label{structResources_a0f59b6eb50f404064473852d530e6273}} 
+\index{Resources@{Resources}!addWaterUsage@{addWaterUsage}}
+\index{addWaterUsage@{addWaterUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addWaterUsage()}{addWaterUsage()}}
+{\footnotesize\ttfamily void Resources\+::add\+Water\+Usage (\begin{DoxyParamCaption}\item[{int}]{water }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the water usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Amount of water to add to usage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a2be9b3cb369142f77d5418086c993552}\label{structResources_a2be9b3cb369142f77d5418086c993552}} 
+\index{Resources@{Resources}!addWood@{addWood}}
+\index{addWood@{addWood}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addWood()}{addWood()}}
+{\footnotesize\ttfamily void Resources\+::add\+Wood (\begin{DoxyParamCaption}\item[{int}]{wood }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds wood to the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wood} & Amount of wood to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a71524fa596a0bf3c8e0250daadf92b50}\label{structResources_a71524fa596a0bf3c8e0250daadf92b50}} 
+\index{Resources@{Resources}!addWoodPerTick@{addWoodPerTick}}
+\index{addWoodPerTick@{addWoodPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{addWoodPerTick()}{addWoodPerTick()}}
+{\footnotesize\ttfamily void Resources\+::add\+Wood\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{wood }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to the wood generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wood} & Amount of wood to add per tick. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_aded2dbd8784d128253a3ff905ad9ec88}\label{structResources_aded2dbd8784d128253a3ff905ad9ec88}} 
+\index{Resources@{Resources}!getConcrete@{getConcrete}}
+\index{getConcrete@{getConcrete}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getConcrete()}{getConcrete()}}
+{\footnotesize\ttfamily int Resources\+::get\+Concrete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current amount of concrete. 
+
+\begin{DoxyReturn}{Returns}
+The current amount of concrete. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_ace1e49e7d0ff85929ffe018f29bd6ce7}\label{structResources_ace1e49e7d0ff85929ffe018f29bd6ce7}} 
+\index{Resources@{Resources}!getConcretePerTick@{getConcretePerTick}}
+\index{getConcretePerTick@{getConcretePerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getConcretePerTick()}{getConcretePerTick()}}
+{\footnotesize\ttfamily int Resources\+::get\+Concrete\+Per\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the amount of concrete generated per tick. 
+
+\begin{DoxyReturn}{Returns}
+The amount of concrete generated per tick. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_ae378099c836e84e95ef0abab267d2b4e}\label{structResources_ae378099c836e84e95ef0abab267d2b4e}} 
+\index{Resources@{Resources}!getElectricityGenerated@{getElectricityGenerated}}
+\index{getElectricityGenerated@{getElectricityGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getElectricityGenerated()}{getElectricityGenerated()}}
+{\footnotesize\ttfamily int Resources\+::get\+Electricity\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total electricity generated. 
+
+\begin{DoxyReturn}{Returns}
+The total electricity generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a1b696fdd0d7c8086d4e1b30524ae6001}\label{structResources_a1b696fdd0d7c8086d4e1b30524ae6001}} 
+\index{Resources@{Resources}!getElectricityUsage@{getElectricityUsage}}
+\index{getElectricityUsage@{getElectricityUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getElectricityUsage()}{getElectricityUsage()}}
+{\footnotesize\ttfamily int Resources\+::get\+Electricity\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total electricity usage. 
+
+\begin{DoxyReturn}{Returns}
+The total electricity usage. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a5bb908a0e3f3b4d1587de303cd413d64}\label{structResources_a5bb908a0e3f3b4d1587de303cd413d64}} 
+\index{Resources@{Resources}!getHappiness@{getHappiness}}
+\index{getHappiness@{getHappiness}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getHappiness()}{getHappiness()}}
+{\footnotesize\ttfamily int Resources\+::get\+Happiness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current happiness level. 
+
+\begin{DoxyReturn}{Returns}
+The current happiness level. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a94e0242ee53375a20255af5bc21300bc}\label{structResources_a94e0242ee53375a20255af5bc21300bc}} 
+\index{Resources@{Resources}!getIncome@{getIncome}}
+\index{getIncome@{getIncome}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getIncome()}{getIncome()}}
+{\footnotesize\ttfamily double Resources\+::get\+Income (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total income generated. 
+
+\begin{DoxyReturn}{Returns}
+The total income generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a19a45c412cb6a1cb9cebd8c108e598ad}\label{structResources_a19a45c412cb6a1cb9cebd8c108e598ad}} 
+\index{Resources@{Resources}!getMaxPopulation@{getMaxPopulation}}
+\index{getMaxPopulation@{getMaxPopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getMaxPopulation()}{getMaxPopulation()}}
+{\footnotesize\ttfamily int Resources\+::get\+Max\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the maximum population capacity. 
+
+\begin{DoxyReturn}{Returns}
+The maximum population capacity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_aa2043344283f5958113806dce778a111}\label{structResources_aa2043344283f5958113806dce778a111}} 
+\index{Resources@{Resources}!getMoney@{getMoney}}
+\index{getMoney@{getMoney}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getMoney()}{getMoney()}}
+{\footnotesize\ttfamily double Resources\+::get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current amount of money. 
+
+\begin{DoxyReturn}{Returns}
+The current amount of money. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a2a57d81844a2dad011d648d530ad0758}\label{structResources_a2a57d81844a2dad011d648d530ad0758}} 
+\index{Resources@{Resources}!getPopulation@{getPopulation}}
+\index{getPopulation@{getPopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getPopulation()}{getPopulation()}}
+{\footnotesize\ttfamily int Resources\+::get\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current population. 
+
+\begin{DoxyReturn}{Returns}
+The current population. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a66a0a6780aae3f408d1c369db267d527}\label{structResources_a66a0a6780aae3f408d1c369db267d527}} 
+\index{Resources@{Resources}!getSteel@{getSteel}}
+\index{getSteel@{getSteel}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getSteel()}{getSteel()}}
+{\footnotesize\ttfamily int Resources\+::get\+Steel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current amount of steel. 
+
+\begin{DoxyReturn}{Returns}
+The current amount of steel. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_ae6dd56b3ef9341931e1ca2353d5e6513}\label{structResources_ae6dd56b3ef9341931e1ca2353d5e6513}} 
+\index{Resources@{Resources}!getSteelPerTick@{getSteelPerTick}}
+\index{getSteelPerTick@{getSteelPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getSteelPerTick()}{getSteelPerTick()}}
+{\footnotesize\ttfamily int Resources\+::get\+Steel\+Per\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the amount of steel generated per tick. 
+
+\begin{DoxyReturn}{Returns}
+The amount of steel generated per tick. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a8aaba469f8b5f52b8965b3383ea93fe1}\label{structResources_a8aaba469f8b5f52b8965b3383ea93fe1}} 
+\index{Resources@{Resources}!getWaterGenerated@{getWaterGenerated}}
+\index{getWaterGenerated@{getWaterGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getWaterGenerated()}{getWaterGenerated()}}
+{\footnotesize\ttfamily int Resources\+::get\+Water\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total water generated. 
+
+\begin{DoxyReturn}{Returns}
+The total water generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_aa7c75601f8ec291c483ae5e87998bcf5}\label{structResources_aa7c75601f8ec291c483ae5e87998bcf5}} 
+\index{Resources@{Resources}!getWaterUsage@{getWaterUsage}}
+\index{getWaterUsage@{getWaterUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getWaterUsage()}{getWaterUsage()}}
+{\footnotesize\ttfamily int Resources\+::get\+Water\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total water usage. 
+
+\begin{DoxyReturn}{Returns}
+The total water usage. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a898768173eebb814bdb6203475ba3081}\label{structResources_a898768173eebb814bdb6203475ba3081}} 
+\index{Resources@{Resources}!getWood@{getWood}}
+\index{getWood@{getWood}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getWood()}{getWood()}}
+{\footnotesize\ttfamily int Resources\+::get\+Wood (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current amount of wood. 
+
+\begin{DoxyReturn}{Returns}
+The current amount of wood. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_af05e78b69e028ae3105d723b2a8163f9}\label{structResources_af05e78b69e028ae3105d723b2a8163f9}} 
+\index{Resources@{Resources}!getWoodPerTick@{getWoodPerTick}}
+\index{getWoodPerTick@{getWoodPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{getWoodPerTick()}{getWoodPerTick()}}
+{\footnotesize\ttfamily int Resources\+::get\+Wood\+Per\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the amount of wood generated per tick. 
+
+\begin{DoxyReturn}{Returns}
+The amount of wood generated per tick. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structResources_a3fb66aa877d6fca24f5f7d6d839a9166}\label{structResources_a3fb66aa877d6fca24f5f7d6d839a9166}} 
+\index{Resources@{Resources}!removeConcrete@{removeConcrete}}
+\index{removeConcrete@{removeConcrete}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeConcrete()}{removeConcrete()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Concrete (\begin{DoxyParamCaption}\item[{int}]{concrete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes concrete from the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em concrete} & Amount of concrete to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a083b221f19970c6f5fc064e4a30cbfc2}\label{structResources_a083b221f19970c6f5fc064e4a30cbfc2}} 
+\index{Resources@{Resources}!removeConcretePerTick@{removeConcretePerTick}}
+\index{removeConcretePerTick@{removeConcretePerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeConcretePerTick()}{removeConcretePerTick()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Concrete\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{concrete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the concrete generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em concrete} & Amount of concrete to remove from per tick generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a24ab0efd3de5173427a520da01429fab}\label{structResources_a24ab0efd3de5173427a520da01429fab}} 
+\index{Resources@{Resources}!removeElectricityGenerated@{removeElectricityGenerated}}
+\index{removeElectricityGenerated@{removeElectricityGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeElectricityGenerated()}{removeElectricityGenerated()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Electricity\+Generated (\begin{DoxyParamCaption}\item[{int}]{electricity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total electricity generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em electricity} & Amount of electricity to remove from generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_ad9b288c495da2effdab18c610bb00242}\label{structResources_ad9b288c495da2effdab18c610bb00242}} 
+\index{Resources@{Resources}!removeElectricityUsage@{removeElectricityUsage}}
+\index{removeElectricityUsage@{removeElectricityUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeElectricityUsage()}{removeElectricityUsage()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Electricity\+Usage (\begin{DoxyParamCaption}\item[{int}]{electricity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total electricity usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em electricity} & Amount of electricity to remove from usage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a5dc68f91e230bd8654c2a6f6c5a6ee04}\label{structResources_a5dc68f91e230bd8654c2a6f6c5a6ee04}} 
+\index{Resources@{Resources}!removeFromMaxPopulation@{removeFromMaxPopulation}}
+\index{removeFromMaxPopulation@{removeFromMaxPopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeFromMaxPopulation()}{removeFromMaxPopulation()}}
+{\footnotesize\ttfamily void Resources\+::remove\+From\+Max\+Population (\begin{DoxyParamCaption}\item[{int}]{population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decreases the maximum population capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & Amount to remove from the max population. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_aa31ef517387b847edc59ac3b687522a7}\label{structResources_aa31ef517387b847edc59ac3b687522a7}} 
+\index{Resources@{Resources}!removeHappiness@{removeHappiness}}
+\index{removeHappiness@{removeHappiness}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeHappiness()}{removeHappiness()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Happiness (\begin{DoxyParamCaption}\item[{int}]{happiness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the current happiness level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em happiness} & Amount of happiness to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a03dc996753fda87540315eb274b3583e}\label{structResources_a03dc996753fda87540315eb274b3583e}} 
+\index{Resources@{Resources}!removeIncome@{removeIncome}}
+\index{removeIncome@{removeIncome}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeIncome()}{removeIncome()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Income (\begin{DoxyParamCaption}\item[{double}]{income }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total income generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em income} & Amount of income to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_ad7d9dab4f71b56ab20ebc12a61bd0ad6}\label{structResources_ad7d9dab4f71b56ab20ebc12a61bd0ad6}} 
+\index{Resources@{Resources}!removeMoney@{removeMoney}}
+\index{removeMoney@{removeMoney}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeMoney()}{removeMoney()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Money (\begin{DoxyParamCaption}\item[{double}]{Addedmoney }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total amount of money available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addedmoney} & Amount of money to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a3c097f4bbd7c7cc8529b174df0211c53}\label{structResources_a3c097f4bbd7c7cc8529b174df0211c53}} 
+\index{Resources@{Resources}!removePopulation@{removePopulation}}
+\index{removePopulation@{removePopulation}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removePopulation()}{removePopulation()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Population (\begin{DoxyParamCaption}\item[{int}]{population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the current population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & Amount of population to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a2671d5a5f73d047bb6ef03aba2e649af}\label{structResources_a2671d5a5f73d047bb6ef03aba2e649af}} 
+\index{Resources@{Resources}!removeSteel@{removeSteel}}
+\index{removeSteel@{removeSteel}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeSteel()}{removeSteel()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Steel (\begin{DoxyParamCaption}\item[{int}]{steel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes steel from the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steel} & Amount of steel to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a2cc9452a5cb69eba4627f2d58d4f81b4}\label{structResources_a2cc9452a5cb69eba4627f2d58d4f81b4}} 
+\index{Resources@{Resources}!removeSteelPerTick@{removeSteelPerTick}}
+\index{removeSteelPerTick@{removeSteelPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeSteelPerTick()}{removeSteelPerTick()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Steel\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{steel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the steel generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steel} & Amount of steel to remove from per tick generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_ac679282e29ce97267da327aa5f7babc6}\label{structResources_ac679282e29ce97267da327aa5f7babc6}} 
+\index{Resources@{Resources}!removeWaterGenerated@{removeWaterGenerated}}
+\index{removeWaterGenerated@{removeWaterGenerated}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeWaterGenerated()}{removeWaterGenerated()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Water\+Generated (\begin{DoxyParamCaption}\item[{int}]{water }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total water generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Amount of water to remove from generation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a7e2a71b0485d2cbc25f661e2b4290397}\label{structResources_a7e2a71b0485d2cbc25f661e2b4290397}} 
+\index{Resources@{Resources}!removeWaterUsage@{removeWaterUsage}}
+\index{removeWaterUsage@{removeWaterUsage}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeWaterUsage()}{removeWaterUsage()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Water\+Usage (\begin{DoxyParamCaption}\item[{int}]{water }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the total water usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em water} & Amount of water to remove from usage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_ab48eed79a2c4fd0d8330f2ab2a4b8989}\label{structResources_ab48eed79a2c4fd0d8330f2ab2a4b8989}} 
+\index{Resources@{Resources}!removeWood@{removeWood}}
+\index{removeWood@{removeWood}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeWood()}{removeWood()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Wood (\begin{DoxyParamCaption}\item[{int}]{wood }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes wood from the total amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wood} & Amount of wood to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structResources_a6ecc937b3191fb445f5a6f6ac2769379}\label{structResources_a6ecc937b3191fb445f5a6f6ac2769379}} 
+\index{Resources@{Resources}!removeWoodPerTick@{removeWoodPerTick}}
+\index{removeWoodPerTick@{removeWoodPerTick}!Resources@{Resources}}
+\doxysubsubsection{\texorpdfstring{removeWoodPerTick()}{removeWoodPerTick()}}
+{\footnotesize\ttfamily void Resources\+::remove\+Wood\+Per\+Tick (\begin{DoxyParamCaption}\item[{int}]{wood }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes from the wood generated per tick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wood} & Amount of wood to remove from per tick generation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{resources_8h}{resources.\+h}}\item 
+src/\mbox{\hyperlink{resources_8cpp}{resources.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,262 @@
+\hypertarget{classServEntertainment}{}\doxysection{Serv\+Entertainment Class Reference}
+\label{classServEntertainment}\index{ServEntertainment@{ServEntertainment}}
+
+
+{\ttfamily \#include $<$Serv\+Entertainment.\+h$>$}
+
+
+
+Inheritance diagram for Serv\+Entertainment\+:
+% FIG 0
+
+
+Collaboration diagram for Serv\+Entertainment\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServEntertainment_a0faf7e3146c6bca4ac5ee99039330c74}{Serv\+Entertainment}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an education service building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServEntertainment_a4ff29bb649f4ea833e4ed2ec21406a81}{$\sim$\+Serv\+Entertainment}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the education service building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_ab1809047f875c349a31d27af49a31eb0}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServEntertainment_a18f36e4eaef20bdcf5c91ab02e38feff}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the current number of visitors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_ab0abf83c274e29f856a1c6dec6858bb0}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_ab76a946a2fc2c095399a17b1b79346b3}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls associated utility managers for the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEntertainment_a1ec1f9820d86d4d3efc93ed64df8738e}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_a320533a78b0bf9d097f107a044f4c9cd}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the building. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classServEntertainment_a0ad0dc5966f31725a5c8d98deea9f128}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the building type as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEntertainment_a747ffd5502c5ab32f941cb7b14c56924}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_af79954f85f12d602ef7f887490601176}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServEntertainment_a14135c2655bb9a3c7786a0fdbad673b4}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies when an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServEntertainment_ac100496f971ce63329147fb6c624e5dd}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the building has a job. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServEntertainment_a0faf7e3146c6bca4ac5ee99039330c74}\label{classServEntertainment_a0faf7e3146c6bca4ac5ee99039330c74}} 
+\index{ServEntertainment@{ServEntertainment}!ServEntertainment@{ServEntertainment}}
+\index{ServEntertainment@{ServEntertainment}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{ServEntertainment()}{ServEntertainment()}}
+{\footnotesize\ttfamily Serv\+Entertainment\+::\+Serv\+Entertainment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an education service building. 
+
+\mbox{\Hypertarget{classServEntertainment_a4ff29bb649f4ea833e4ed2ec21406a81}\label{classServEntertainment_a4ff29bb649f4ea833e4ed2ec21406a81}} 
+\index{ServEntertainment@{ServEntertainment}!````~ServEntertainment@{$\sim$ServEntertainment}}
+\index{````~ServEntertainment@{$\sim$ServEntertainment}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServEntertainment()}{~ServEntertainment()}}
+{\footnotesize\ttfamily Serv\+Entertainment\+::$\sim$\+Serv\+Entertainment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the education service building. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServEntertainment_a747ffd5502c5ab32f941cb7b14c56924}\label{classServEntertainment_a747ffd5502c5ab32f941cb7b14c56924}} 
+\index{ServEntertainment@{ServEntertainment}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Serv\+Entertainment\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & The employee to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_ab76a946a2fc2c095399a17b1b79346b3}\label{classServEntertainment_ab76a946a2fc2c095399a17b1b79346b3}} 
+\index{ServEntertainment@{ServEntertainment}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls associated utility managers for the building. 
+
+\mbox{\Hypertarget{classServEntertainment_ab1809047f875c349a31d27af49a31eb0}\label{classServEntertainment_ab1809047f875c349a31d27af49a31eb0}} 
+\index{ServEntertainment@{ServEntertainment}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classServEntertainment_a0ad0dc5966f31725a5c8d98deea9f128}\label{classServEntertainment_a0ad0dc5966f31725a5c8d98deea9f128}} 
+\index{ServEntertainment@{ServEntertainment}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Serv\+Entertainment\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the building type as a string. 
+
+\begin{DoxyReturn}{Returns}
+The building type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_a1ec1f9820d86d4d3efc93ed64df8738e}\label{classServEntertainment_a1ec1f9820d86d4d3efc93ed64df8738e}} 
+\index{ServEntertainment@{ServEntertainment}!getState@{getState}}
+\index{getState@{getState}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Serv\+Entertainment\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the building. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_a18f36e4eaef20bdcf5c91ab02e38feff}\label{classServEntertainment_a18f36e4eaef20bdcf5c91ab02e38feff}} 
+\index{ServEntertainment@{ServEntertainment}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Serv\+Entertainment\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current number of visitors. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a6f30c52bb657da639ae4b61c06a0476a}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_ac100496f971ce63329147fb6c624e5dd}\label{classServEntertainment_ac100496f971ce63329147fb6c624e5dd}} 
+\index{ServEntertainment@{ServEntertainment}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Serv\+Entertainment\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the building has a job. 
+
+\begin{DoxyReturn}{Returns}
+True if the building has a job, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classServEntertainment_a14135c2655bb9a3c7786a0fdbad673b4}\label{classServEntertainment_a14135c2655bb9a3c7786a0fdbad673b4}} 
+\index{ServEntertainment@{ServEntertainment}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies when an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the employee who left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_af79954f85f12d602ef7f887490601176}\label{classServEntertainment_af79954f85f12d602ef7f887490601176}} 
+\index{ServEntertainment@{ServEntertainment}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & The employee to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{Services}}.
+
+\mbox{\Hypertarget{classServEntertainment_a320533a78b0bf9d097f107a044f4c9cd}\label{classServEntertainment_a320533a78b0bf9d097f107a044f4c9cd}} 
+\index{ServEntertainment@{ServEntertainment}!setState@{setState}}
+\index{setState@{setState}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServEntertainment_ab0abf83c274e29f856a1c6dec6858bb0}\label{classServEntertainment_ab0abf83c274e29f856a1c6dec6858bb0}} 
+\index{ServEntertainment@{ServEntertainment}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!ServEntertainment@{ServEntertainment}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Serv\+Entertainment\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a0e64154e9a9e89adcf294af6ee269b49}{Services}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ServEntertainment_8h}{Serv\+Entertainment.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ServEntertainment_8cpp}{Serv\+Entertainment.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,265 @@
+\hypertarget{classTrainstation}{}\doxysection{Trainstation Class Reference}
+\label{classTrainstation}\index{Trainstation@{Trainstation}}
+
+
+{\ttfamily \#include $<$Trainstation.\+h$>$}
+
+
+
+Inheritance diagram for Trainstation\+:
+% FIG 0
+
+
+Collaboration diagram for Trainstation\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrainstation_a83b2d116f5b517b92798f09c104a5510}{Trainstation}} (int serve\+Range)
+\item 
+void \mbox{\hyperlink{classTrainstation_a5acdbc4af7bee0c12f354390659c88a7}{display\+Building\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays information about the building. This method is pure virtual and must be implemented by derived classes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrainstation_a2b3696a683241a86e2dc1dbe9878b2e0}{$\sim$\+Trainstation}} ()
+\item 
+bool \mbox{\hyperlink{classTrainstation_ac51e0a459adec3cb92afaff5247e6ea1}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the building. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classTrainstation_a659656f3603916d381ce4a7bbc739f5b}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTrainstation_a294f28a5db9a5c5e055b1e50ff705401}{building\+In\+Range}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$building)
+\item 
+bool \mbox{\hyperlink{classTrainstation_a0b957ccb08136f25fe369830401a204d}{point\+In\+Range}} (int x, int y)
+\item 
+bool \mbox{\hyperlink{classTrainstation_a884c9b33d95c6fabbc6d81e377e58309}{check\+Build\+Requirements}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the building meets construction requirements. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTrainstation_a8fa08f075bb56d296e02e5d2f520088c}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTrainstation_a183ad427bda4c394caa795dd50c67ec8}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTrainstation_a6f7c5e627e33ce58ae9de4cfba6953a4}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTrainstation_a1d1fa88f74cb1a84df1559de82380c3e}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are jobs available in the building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTrainstation_ad024122c1bee3ce96feadbcba41c94b0}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident into the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTrainstation_a27f8881b0a533cff87839ab80eaac398}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrainstation_a83b2d116f5b517b92798f09c104a5510}\label{classTrainstation_a83b2d116f5b517b92798f09c104a5510}} 
+\index{Trainstation@{Trainstation}!Trainstation@{Trainstation}}
+\index{Trainstation@{Trainstation}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{Trainstation()}{Trainstation()}}
+{\footnotesize\ttfamily Trainstation\+::\+Trainstation (\begin{DoxyParamCaption}\item[{int}]{serve\+Range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTrainstation_a2b3696a683241a86e2dc1dbe9878b2e0}\label{classTrainstation_a2b3696a683241a86e2dc1dbe9878b2e0}} 
+\index{Trainstation@{Trainstation}!````~Trainstation@{$\sim$Trainstation}}
+\index{````~Trainstation@{$\sim$Trainstation}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{$\sim$Trainstation()}{~Trainstation()}}
+{\footnotesize\ttfamily Trainstation\+::$\sim$\+Trainstation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrainstation_a8fa08f075bb56d296e02e5d2f520088c}\label{classTrainstation_a8fa08f075bb56d296e02e5d2f520088c}} 
+\index{Trainstation@{Trainstation}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Trainstation\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee is added successfully, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a294f28a5db9a5c5e055b1e50ff705401}\label{classTrainstation_a294f28a5db9a5c5e055b1e50ff705401}} 
+\index{Trainstation@{Trainstation}!buildingInRange@{buildingInRange}}
+\index{buildingInRange@{buildingInRange}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{buildingInRange()}{buildingInRange()}}
+{\footnotesize\ttfamily bool Trainstation\+::building\+In\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{building }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTrainstation_a884c9b33d95c6fabbc6d81e377e58309}\label{classTrainstation_a884c9b33d95c6fabbc6d81e377e58309}} 
+\index{Trainstation@{Trainstation}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily bool Trainstation\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the building meets construction requirements. 
+
+\begin{DoxyReturn}{Returns}
+True if requirements are met, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a5acdbc4af7bee0c12f354390659c88a7}\label{classTrainstation_a5acdbc4af7bee0c12f354390659c88a7}} 
+\index{Trainstation@{Trainstation}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Trainstation\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays information about the building. This method is pure virtual and must be implemented by derived classes. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a659656f3603916d381ce4a7bbc739f5b}\label{classTrainstation_a659656f3603916d381ce4a7bbc739f5b}} 
+\index{Trainstation@{Trainstation}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Trainstation\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+The type of the building as a string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBuilding_a82c020b9610147026c72ccec7ac35a57}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_ac51e0a459adec3cb92afaff5247e6ea1}\label{classTrainstation_ac51e0a459adec3cb92afaff5247e6ea1}} 
+\index{Trainstation@{Trainstation}!getState@{getState}}
+\index{getState@{getState}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Trainstation\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the building. 
+
+\begin{DoxyReturn}{Returns}
+True if the building is operational, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a1d1fa88f74cb1a84df1559de82380c3e}\label{classTrainstation_a1d1fa88f74cb1a84df1559de82380c3e}} 
+\index{Trainstation@{Trainstation}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Trainstation\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are jobs available in the building. 
+
+\begin{DoxyReturn}{Returns}
+True if jobs are available, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_ad024122c1bee3ce96feadbcba41c94b0}\label{classTrainstation_ad024122c1bee3ce96feadbcba41c94b0}} 
+\index{Trainstation@{Trainstation}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Trainstation\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident into the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the resident. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the move is successful, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a27f8881b0a533cff87839ab80eaac398}\label{classTrainstation_a27f8881b0a533cff87839ab80eaac398}} 
+\index{Trainstation@{Trainstation}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Trainstation\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident out of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the resident. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a1b6930e08058e572f9b4670dc284f213}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a6f7c5e627e33ce58ae9de4cfba6953a4}\label{classTrainstation_a6f7c5e627e33ce58ae9de4cfba6953a4}} 
+\index{Trainstation@{Trainstation}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Trainstation\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies that an employee has left the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}{Building}}.
+
+\mbox{\Hypertarget{classTrainstation_a0b957ccb08136f25fe369830401a204d}\label{classTrainstation_a0b957ccb08136f25fe369830401a204d}} 
+\index{Trainstation@{Trainstation}!pointInRange@{pointInRange}}
+\index{pointInRange@{pointInRange}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{pointInRange()}{pointInRange()}}
+{\footnotesize\ttfamily bool Trainstation\+::point\+In\+Range (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTrainstation_a183ad427bda4c394caa795dd50c67ec8}\label{classTrainstation_a183ad427bda4c394caa795dd50c67ec8}} 
+\index{Trainstation@{Trainstation}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!Trainstation@{Trainstation}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Trainstation\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\mbox{\hyperlink{Trainstation_8h}{Trainstation.\+h}}\item 
+src/\+Transport/\mbox{\hyperlink{Trainstation_8cpp}{Trainstation.\+cpp}}\end{DoxyCompactItemize}

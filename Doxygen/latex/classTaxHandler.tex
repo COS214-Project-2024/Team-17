@@ -1,0 +1,79 @@
+\hypertarget{classTaxHandler}{}\doxysection{Tax\+Handler Class Reference}
+\label{classTaxHandler}\index{TaxHandler@{TaxHandler}}
+
+
+{\ttfamily \#include $<$Tax\+Handler.\+h$>$}
+
+
+
+Inheritance diagram for Tax\+Handler\+:
+% FIG 0
+
+
+Collaboration diagram for Tax\+Handler\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTaxHandler_a60329e20b563622a5bdb73615811ef88}{Tax\+Handler}} ()
+\item 
+void \mbox{\hyperlink{classTaxHandler_a66a82afdd4373aefdf687fdcd7f6df42}{set\+Next}} (\mbox{\hyperlink{classTaxHandler}{Tax\+Handler}} $\ast$next)
+\item 
+virtual void \mbox{\hyperlink{classTaxHandler_a1d2ed203360419e4add78cb06b59ffa4}{handle\+Request}} (\mbox{\hyperlink{classTaxCommand}{Tax\+Command}} $\ast$command)
+\item 
+virtual \mbox{\hyperlink{classTaxHandler_ab15246757ce014bd0bd1e33fb0c70411}{$\sim$\+Tax\+Handler}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTaxHandler}{Tax\+Handler}} $\ast$ \mbox{\hyperlink{classTaxHandler_ab821bb17237200d5718083e71eb739c9}{next\+Handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTaxHandler_a60329e20b563622a5bdb73615811ef88}\label{classTaxHandler_a60329e20b563622a5bdb73615811ef88}} 
+\index{TaxHandler@{TaxHandler}!TaxHandler@{TaxHandler}}
+\index{TaxHandler@{TaxHandler}!TaxHandler@{TaxHandler}}
+\doxysubsubsection{\texorpdfstring{TaxHandler()}{TaxHandler()}}
+{\footnotesize\ttfamily Tax\+Handler\+::\+Tax\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTaxHandler_ab15246757ce014bd0bd1e33fb0c70411}\label{classTaxHandler_ab15246757ce014bd0bd1e33fb0c70411}} 
+\index{TaxHandler@{TaxHandler}!````~TaxHandler@{$\sim$TaxHandler}}
+\index{````~TaxHandler@{$\sim$TaxHandler}!TaxHandler@{TaxHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$TaxHandler()}{~TaxHandler()}}
+{\footnotesize\ttfamily virtual Tax\+Handler\+::$\sim$\+Tax\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTaxHandler_a1d2ed203360419e4add78cb06b59ffa4}\label{classTaxHandler_a1d2ed203360419e4add78cb06b59ffa4}} 
+\index{TaxHandler@{TaxHandler}!handleRequest@{handleRequest}}
+\index{handleRequest@{handleRequest}!TaxHandler@{TaxHandler}}
+\doxysubsubsection{\texorpdfstring{handleRequest()}{handleRequest()}}
+{\footnotesize\ttfamily void Tax\+Handler\+::handle\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxCommand}{Tax\+Command}} $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classTaxRateHandler_afa9f93f3855a6544e98ecda6df409719}{Tax\+Rate\+Handler}}, \mbox{\hyperlink{classTaxCollectionHandler_a2f3c898f4a12f56cb72f07d7128674e5}{Tax\+Collection\+Handler}}, and \mbox{\hyperlink{classTaxAllocationHandler_a664b52447c501860a7ecf7b2782a3dc9}{Tax\+Allocation\+Handler}}.
+
+\mbox{\Hypertarget{classTaxHandler_a66a82afdd4373aefdf687fdcd7f6df42}\label{classTaxHandler_a66a82afdd4373aefdf687fdcd7f6df42}} 
+\index{TaxHandler@{TaxHandler}!setNext@{setNext}}
+\index{setNext@{setNext}!TaxHandler@{TaxHandler}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily void Tax\+Handler\+::set\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxHandler}{Tax\+Handler}} $\ast$}]{next }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTaxHandler_ab821bb17237200d5718083e71eb739c9}\label{classTaxHandler_ab821bb17237200d5718083e71eb739c9}} 
+\index{TaxHandler@{TaxHandler}!nextHandler@{nextHandler}}
+\index{nextHandler@{nextHandler}!TaxHandler@{TaxHandler}}
+\doxysubsubsection{\texorpdfstring{nextHandler}{nextHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTaxHandler}{Tax\+Handler}}$\ast$ Tax\+Handler\+::next\+Handler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{TaxHandler_8h}{Tax\+Handler.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{TaxHandler_8cpp}{Tax\+Handler.\+cpp}}\end{DoxyCompactItemize}

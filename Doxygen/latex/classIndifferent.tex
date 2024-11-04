@@ -1,0 +1,94 @@
+\hypertarget{classIndifferent}{}\doxysection{Indifferent Class Reference}
+\label{classIndifferent}\index{Indifferent@{Indifferent}}
+
+
+Represents the indifferent state of a \mbox{\hyperlink{classCitizen}{Citizen}}.  
+
+
+
+
+{\ttfamily \#include $<$Indifferent.\+h$>$}
+
+
+
+Inheritance diagram for Indifferent\+:
+% FIG 0
+
+
+Collaboration diagram for Indifferent\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classIndifferent_a07b7b2a0bd162502da02023046a4071a}{handle\+Change}} (int change) override
+\begin{DoxyCompactList}\small\item\em Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classIndifferent_ab27cd5c51a5204c3820c01aa910a49d5}{get\+State}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndifferent_adc465430cb565427c5507851a0752a7b}{$\sim$\+Indifferent}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classIndifferent}{Indifferent}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the indifferent state of a \mbox{\hyperlink{classCitizen}{Citizen}}. 
+
+This class is a concrete implementation of the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} interface, indicating that a citizen is in an indifferent emotional state. It manages transitions to other states based on changes in the citizen\textquotesingle{}s situation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndifferent_adc465430cb565427c5507851a0752a7b}\label{classIndifferent_adc465430cb565427c5507851a0752a7b}} 
+\index{Indifferent@{Indifferent}!````~Indifferent@{$\sim$Indifferent}}
+\index{````~Indifferent@{$\sim$Indifferent}!Indifferent@{Indifferent}}
+\doxysubsubsection{\texorpdfstring{$\sim$Indifferent()}{~Indifferent()}}
+{\footnotesize\ttfamily Indifferent\+::$\sim$\+Indifferent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classIndifferent}{Indifferent}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndifferent_ab27cd5c51a5204c3820c01aa910a49d5}\label{classIndifferent_ab27cd5c51a5204c3820c01aa910a49d5}} 
+\index{Indifferent@{Indifferent}!getState@{getState}}
+\index{getState@{getState}!Indifferent@{Indifferent}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Indifferent\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the indifferent state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}{Citizen\+State}}.
+
+\mbox{\Hypertarget{classIndifferent_a07b7b2a0bd162502da02023046a4071a}\label{classIndifferent_a07b7b2a0bd162502da02023046a4071a}} 
+\index{Indifferent@{Indifferent}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Indifferent@{Indifferent}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ Indifferent\+::handle\+Change (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles a change in the citizen\textquotesingle{}s situation, potentially transitioning to a different state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & An integer representing the change that affects the citizen\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new \mbox{\hyperlink{classCitizenState}{Citizen\+State}} that results from the change. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}{Citizen\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Indifferent_8h}{Indifferent.\+h}}\item 
+src/\+Citizens/\+Citizen\+States/\mbox{\hyperlink{Indifferent_8cpp}{Indifferent.\+cpp}}\end{DoxyCompactItemize}

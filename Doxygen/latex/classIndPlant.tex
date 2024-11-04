@@ -1,0 +1,264 @@
+\hypertarget{classIndPlant}{}\doxysection{Ind\+Plant Class Reference}
+\label{classIndPlant}\index{IndPlant@{IndPlant}}
+
+
+Represents an industrial plant building.  
+
+
+
+
+{\ttfamily \#include $<$Ind\+Plant.\+h$>$}
+
+
+
+Inheritance diagram for Ind\+Plant\+:
+% FIG 0
+
+
+Collaboration diagram for Ind\+Plant\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndPlant_a86732a0c9e18601314e77dc0910b3503}{Ind\+Plant}} ()
+\item 
+\mbox{\hyperlink{classIndPlant_ab3cef3e01c0dba4acf4dbab61d0a03b0}{$\sim$\+Ind\+Plant}} ()
+\item 
+void \mbox{\hyperlink{classIndPlant_a50d39b215c0b4464a319b8d2c5e84d88}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the industrial plant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndPlant_a2e5c6394fa7225abdcb2c874c495d126}{get\+Production\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the production capacity of the industrial plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndPlant_a378256daf6c9b75c00ff194f73e1be88}{set\+Production\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the production capacity of the industrial plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndPlant_a0df2f50bf93f223084eaacbfc55ebd29}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls the utility managers associated with this industrial plant. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndPlant_a12b489e197d3b8349ab2d09c0bd5a3de}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the industrial plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndPlant_a76ba8ec8b0ccdf6b71ada1332b2b8873}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the industrial plant. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classIndPlant_a846b5b2c1fb79ae64c730b1376a22b37}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of industrial building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndPlant_a56c87e7b64e4baa8401c7870b7cf42ea}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the industrial plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndPlant_a85c956c20134a784f63d3f9ef6b6c7f2}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the industrial plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndPlant_ab55977f6ba7333bf55f1ed92494b84b2}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the industrial plant that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndPlant_ab427830064902acb85998703650f3aa6}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the industrial plant has job openings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an industrial plant building. 
+
+The \mbox{\hyperlink{classIndPlant}{Ind\+Plant}} class inherits from the \mbox{\hyperlink{classIndustrial}{Industrial}} class and implements the functionality specific to an industrial plant, including production capacity, employee management, and utility management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndPlant_a86732a0c9e18601314e77dc0910b3503}\label{classIndPlant_a86732a0c9e18601314e77dc0910b3503}} 
+\index{IndPlant@{IndPlant}!IndPlant@{IndPlant}}
+\index{IndPlant@{IndPlant}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{IndPlant()}{IndPlant()}}
+{\footnotesize\ttfamily Ind\+Plant\+::\+Ind\+Plant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIndPlant_ab3cef3e01c0dba4acf4dbab61d0a03b0}\label{classIndPlant_ab3cef3e01c0dba4acf4dbab61d0a03b0}} 
+\index{IndPlant@{IndPlant}!````~IndPlant@{$\sim$IndPlant}}
+\index{````~IndPlant@{$\sim$IndPlant}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{$\sim$IndPlant()}{~IndPlant()}}
+{\footnotesize\ttfamily Ind\+Plant\+::$\sim$\+Ind\+Plant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndPlant_a56c87e7b64e4baa8401c7870b7cf42ea}\label{classIndPlant_a56c87e7b64e4baa8401c7870b7cf42ea}} 
+\index{IndPlant@{IndPlant}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Ind\+Plant\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the industrial plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a3cde67af0ebf46df5168323a5f8ecc4d}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a0df2f50bf93f223084eaacbfc55ebd29}\label{classIndPlant_a0df2f50bf93f223084eaacbfc55ebd29}} 
+\index{IndPlant@{IndPlant}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the utility managers associated with this industrial plant. 
+
+\mbox{\Hypertarget{classIndPlant_a50d39b215c0b4464a319b8d2c5e84d88}\label{classIndPlant_a50d39b215c0b4464a319b8d2c5e84d88}} 
+\index{IndPlant@{IndPlant}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the industrial plant. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classIndPlant_a846b5b2c1fb79ae64c730b1376a22b37}\label{classIndPlant_a846b5b2c1fb79ae64c730b1376a22b37}} 
+\index{IndPlant@{IndPlant}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Ind\+Plant\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of industrial building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a26789dd4a131a1bb959e07db91e12ecb}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a2e5c6394fa7225abdcb2c874c495d126}\label{classIndPlant_a2e5c6394fa7225abdcb2c874c495d126}} 
+\index{IndPlant@{IndPlant}!getProductionCapacity@{getProductionCapacity}}
+\index{getProductionCapacity@{getProductionCapacity}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{getProductionCapacity()}{getProductionCapacity()}}
+{\footnotesize\ttfamily int Ind\+Plant\+::get\+Production\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the production capacity of the industrial plant. 
+
+\begin{DoxyReturn}{Returns}
+The production capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a2bfdedfb41a3439ae0ce80f08eb6c6c8}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a12b489e197d3b8349ab2d09c0bd5a3de}\label{classIndPlant_a12b489e197d3b8349ab2d09c0bd5a3de}} 
+\index{IndPlant@{IndPlant}!getState@{getState}}
+\index{getState@{getState}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Ind\+Plant\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the industrial plant. 
+
+\begin{DoxyReturn}{Returns}
+True if the plant is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIndustrial_a25f2c781fc9bd9f9585f8a29befb9f71}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_ab427830064902acb85998703650f3aa6}\label{classIndPlant_ab427830064902acb85998703650f3aa6}} 
+\index{IndPlant@{IndPlant}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Ind\+Plant\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the industrial plant has job openings. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classIndPlant_ab55977f6ba7333bf55f1ed92494b84b2}\label{classIndPlant_ab55977f6ba7333bf55f1ed92494b84b2}} 
+\index{IndPlant@{IndPlant}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the industrial plant that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a08c257c3dae028ec6663ee52374e84fa}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a85c956c20134a784f63d3f9ef6b6c7f2}\label{classIndPlant_a85c956c20134a784f63d3f9ef6b6c7f2}} 
+\index{IndPlant@{IndPlant}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the industrial plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_a5d1770e238b01a6fa017e577e867f5e2}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a378256daf6c9b75c00ff194f73e1be88}\label{classIndPlant_a378256daf6c9b75c00ff194f73e1be88}} 
+\index{IndPlant@{IndPlant}!setProductionCapacity@{setProductionCapacity}}
+\index{setProductionCapacity@{setProductionCapacity}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{setProductionCapacity()}{setProductionCapacity()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::set\+Production\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the production capacity of the industrial plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The production capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIndustrial_aed48857b5e18bc9f47cf8f4e3f3ae33e}{Industrial}}.
+
+\mbox{\Hypertarget{classIndPlant_a76ba8ec8b0ccdf6b71ada1332b2b8873}\label{classIndPlant_a76ba8ec8b0ccdf6b71ada1332b2b8873}} 
+\index{IndPlant@{IndPlant}!setState@{setState}}
+\index{setState@{setState}!IndPlant@{IndPlant}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Ind\+Plant\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the industrial plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{IndPlant_8h}{Ind\+Plant.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{IndPlant_8cpp}{Ind\+Plant.\+cpp}}\end{DoxyCompactItemize}

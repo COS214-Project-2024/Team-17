@@ -1,0 +1,272 @@
+\hypertarget{classServSecurity}{}\doxysection{Serv\+Security Class Reference}
+\label{classServSecurity}\index{ServSecurity@{ServSecurity}}
+
+
+Class representing a Security Service in a building.  
+
+
+
+
+{\ttfamily \#include $<$Serv\+Security.\+h$>$}
+
+
+
+Inheritance diagram for Serv\+Security\+:
+% FIG 0
+
+
+Collaboration diagram for Serv\+Security\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServSecurity_ab3ec27ef0b8aef6646737c3f11fd40cb}{Serv\+Security}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classServSecurity}{Serv\+Security}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServSecurity_ae0bf16a87437694918cd5e4c4430183f}{$\sim$\+Serv\+Security}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classServSecurity}{Serv\+Security}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_a72631b97f99d52fdef6b0b94e041d144}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServSecurity_a20d88c11ff841c27de2908e34ee440b7}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the current number of visitors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_ad425523b4a8e6b04ca9d144c8f04d07a}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_a16516dc3e5e2de38c8d8392778932e2a}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls the Utilities service in the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServSecurity_a354c9d869cf73975e608d22c36aeb106}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the security service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_a5fbcfa940e5c2037c876f2f2e59f2a1e}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the security service. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classServSecurity_a42d8d743cfd4c84a9215034810ba3dc6}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServSecurity_a953aeb9c1af323aeb50c6fb3031d421c}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the security service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_a6ac5b8e448077d3c844f5fefc0f9ade5}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the security service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServSecurity_a1a8aa6e91f9d309ce8c1b9de41cd08e1}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the service that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServSecurity_a0bfceee5f023b58e04d56f662506accb}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are available job positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class representing a Security Service in a building. 
+
+This class extends the \mbox{\hyperlink{classServices}{Services}} class and provides functionality for managing visitors, employees, and operational state specific to security services. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServSecurity_ab3ec27ef0b8aef6646737c3f11fd40cb}\label{classServSecurity_ab3ec27ef0b8aef6646737c3f11fd40cb}} 
+\index{ServSecurity@{ServSecurity}!ServSecurity@{ServSecurity}}
+\index{ServSecurity@{ServSecurity}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{ServSecurity()}{ServSecurity()}}
+{\footnotesize\ttfamily Serv\+Security\+::\+Serv\+Security (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classServSecurity}{Serv\+Security}}. 
+
+\mbox{\Hypertarget{classServSecurity_ae0bf16a87437694918cd5e4c4430183f}\label{classServSecurity_ae0bf16a87437694918cd5e4c4430183f}} 
+\index{ServSecurity@{ServSecurity}!````~ServSecurity@{$\sim$ServSecurity}}
+\index{````~ServSecurity@{$\sim$ServSecurity}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServSecurity()}{~ServSecurity()}}
+{\footnotesize\ttfamily Serv\+Security\+::$\sim$\+Serv\+Security (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classServSecurity}{Serv\+Security}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServSecurity_a953aeb9c1af323aeb50c6fb3031d421c}\label{classServSecurity_a953aeb9c1af323aeb50c6fb3031d421c}} 
+\index{ServSecurity@{ServSecurity}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Serv\+Security\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the security service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a16516dc3e5e2de38c8d8392778932e2a}\label{classServSecurity_a16516dc3e5e2de38c8d8392778932e2a}} 
+\index{ServSecurity@{ServSecurity}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Serv\+Security\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls the Utilities service in the building. 
+
+This method interacts with the Utilities class to perform necessary actions. \mbox{\Hypertarget{classServSecurity_a72631b97f99d52fdef6b0b94e041d144}\label{classServSecurity_a72631b97f99d52fdef6b0b94e041d144}} 
+\index{ServSecurity@{ServSecurity}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Serv\+Security\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the building. 
+
+This method overrides the display\+Building\+Info method from the \mbox{\hyperlink{classServices}{Services}} class. 
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classServSecurity_a42d8d743cfd4c84a9215034810ba3dc6}\label{classServSecurity_a42d8d743cfd4c84a9215034810ba3dc6}} 
+\index{ServSecurity@{ServSecurity}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily std\+::string Serv\+Security\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of building. 
+
+\begin{DoxyReturn}{Returns}
+The building type as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a354c9d869cf73975e608d22c36aeb106}\label{classServSecurity_a354c9d869cf73975e608d22c36aeb106}} 
+\index{ServSecurity@{ServSecurity}!getState@{getState}}
+\index{getState@{getState}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Serv\+Security\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the security service. 
+
+\begin{DoxyReturn}{Returns}
+True if operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a20d88c11ff841c27de2908e34ee440b7}\label{classServSecurity_a20d88c11ff841c27de2908e34ee440b7}} 
+\index{ServSecurity@{ServSecurity}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Serv\+Security\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current number of visitors. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors currently in the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classServices_a6f30c52bb657da639ae4b61c06a0476a}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a0bfceee5f023b58e04d56f662506accb}\label{classServSecurity_a0bfceee5f023b58e04d56f662506accb}} 
+\index{ServSecurity@{ServSecurity}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Serv\+Security\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are available job positions. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a job available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classServSecurity_a1a8aa6e91f9d309ce8c1b9de41cd08e1}\label{classServSecurity_a1a8aa6e91f9d309ce8c1b9de41cd08e1}} 
+\index{ServSecurity@{ServSecurity}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Serv\+Security\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the service that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a6ac5b8e448077d3c844f5fefc0f9ade5}\label{classServSecurity_a6ac5b8e448077d3c844f5fefc0f9ade5}} 
+\index{ServSecurity@{ServSecurity}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Serv\+Security\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the security service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} object representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{Services}}.
+
+\mbox{\Hypertarget{classServSecurity_a5fbcfa940e5c2037c876f2f2e59f2a1e}\label{classServSecurity_a5fbcfa940e5c2037c876f2f2e59f2a1e}} 
+\index{ServSecurity@{ServSecurity}!setState@{setState}}
+\index{setState@{setState}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Serv\+Security\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the security service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The state to set (true for operational, false for not). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServSecurity_ad425523b4a8e6b04ca9d144c8f04d07a}\label{classServSecurity_ad425523b4a8e6b04ca9d144c8f04d07a}} 
+\index{ServSecurity@{ServSecurity}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!ServSecurity@{ServSecurity}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Serv\+Security\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classServices_a0e64154e9a9e89adcf294af6ee269b49}{Services}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ServSecurity_8h}{Serv\+Security.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ServSecurity_8cpp}{Serv\+Security.\+cpp}}\end{DoxyCompactItemize}

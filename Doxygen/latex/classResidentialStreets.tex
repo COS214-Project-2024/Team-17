@@ -1,0 +1,192 @@
+\hypertarget{classResidentialStreets}{}\doxysection{Residential\+Streets Class Reference}
+\label{classResidentialStreets}\index{ResidentialStreets@{ResidentialStreets}}
+
+
+Represents a residential street component in the road network.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Streets.\+h$>$}
+
+
+
+Inheritance diagram for Residential\+Streets\+:
+% FIG 0
+
+
+Collaboration diagram for Residential\+Streets\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResidentialStreets_a14d67f5fb1467bf4b96e50216eafd962}{Residential\+Streets}} (int sX, int sY, int eX, int eY)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classResidentialStreets}{Residential\+Streets}} object with specified start and end coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialStreets_ac312422447e156d65c8e43715c04f8bf}{display\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays information about the residential street, such as its coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialStreets_acfe4eb0451a75cded814517f6a98dc71}{calculate\+Traffic}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the traffic on the residential street based on certain parameters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classResidentialStreets_a18db9835b6a8b8c7c728d93d41c601ce}{get\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the distance of the residential street segment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialStreets_a4dc86471b78a127e0a7452ae293390b5}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies about changes related to the residential street. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidentialStreets_ac4fe70922a7a4f23b56071be2d8e0a2c}{add\+Connection}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$connection, float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}})
+\begin{DoxyCompactList}\small\item\em Adds a connection to another road component. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classResidentialStreets_a669c6fa66c551753ce0396813193cb78}{calculate\+Distance}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Calculates the distance from a specified point to the residential street. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResidentialStreets_a7bddd3eeb2d85e1bf4296eed9cbd47c2}{$\sim$\+Residential\+Streets}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classResidentialStreets}{Residential\+Streets}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a residential street component in the road network. 
+
+The \mbox{\hyperlink{classResidentialStreets}{Residential\+Streets}} class is derived from the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} class and provides functionality for managing and interacting with residential street segments, including displaying information, calculating traffic, and managing connections to other road components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classResidentialStreets_a14d67f5fb1467bf4b96e50216eafd962}\label{classResidentialStreets_a14d67f5fb1467bf4b96e50216eafd962}} 
+\index{ResidentialStreets@{ResidentialStreets}!ResidentialStreets@{ResidentialStreets}}
+\index{ResidentialStreets@{ResidentialStreets}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{ResidentialStreets()}{ResidentialStreets()}}
+{\footnotesize\ttfamily Residential\+Streets\+::\+Residential\+Streets (\begin{DoxyParamCaption}\item[{int}]{sX,  }\item[{int}]{sY,  }\item[{int}]{eX,  }\item[{int}]{eY }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classResidentialStreets}{Residential\+Streets}} object with specified start and end coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sX} & The starting X coordinate of the residential street. \\
+\hline
+{\em sY} & The starting Y coordinate of the residential street. \\
+\hline
+{\em eX} & The ending X coordinate of the residential street. \\
+\hline
+{\em eY} & The ending Y coordinate of the residential street. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classResidentialStreets_a7bddd3eeb2d85e1bf4296eed9cbd47c2}\label{classResidentialStreets_a7bddd3eeb2d85e1bf4296eed9cbd47c2}} 
+\index{ResidentialStreets@{ResidentialStreets}!````~ResidentialStreets@{$\sim$ResidentialStreets}}
+\index{````~ResidentialStreets@{$\sim$ResidentialStreets}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResidentialStreets()}{~ResidentialStreets()}}
+{\footnotesize\ttfamily Residential\+Streets\+::$\sim$\+Residential\+Streets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classResidentialStreets}{Residential\+Streets}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResidentialStreets_ac4fe70922a7a4f23b56071be2d8e0a2c}\label{classResidentialStreets_ac4fe70922a7a4f23b56071be2d8e0a2c}} 
+\index{ResidentialStreets@{ResidentialStreets}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily void Residential\+Streets\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{connection,  }\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a connection to another road component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} to connect to. \\
+\hline
+{\em distance} & The distance to the connected road component. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}{Road\+Component}}.
+
+\mbox{\Hypertarget{classResidentialStreets_a669c6fa66c551753ce0396813193cb78}\label{classResidentialStreets_a669c6fa66c551753ce0396813193cb78}} 
+\index{ResidentialStreets@{ResidentialStreets}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily float Residential\+Streets\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the distance from a specified point to the residential street. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the point. \\
+\hline
+{\em y} & The Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the residential street as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}{Road\+Component}}.
+
+\mbox{\Hypertarget{classResidentialStreets_acfe4eb0451a75cded814517f6a98dc71}\label{classResidentialStreets_acfe4eb0451a75cded814517f6a98dc71}} 
+\index{ResidentialStreets@{ResidentialStreets}!calculateTraffic@{calculateTraffic}}
+\index{calculateTraffic@{calculateTraffic}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{calculateTraffic()}{calculateTraffic()}}
+{\footnotesize\ttfamily void Residential\+Streets\+::calculate\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the traffic on the residential street based on certain parameters. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}{Road\+Component}}.
+
+\mbox{\Hypertarget{classResidentialStreets_ac312422447e156d65c8e43715c04f8bf}\label{classResidentialStreets_ac312422447e156d65c8e43715c04f8bf}} 
+\index{ResidentialStreets@{ResidentialStreets}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Residential\+Streets\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays information about the residential street, such as its coordinates. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a14f7f982767020220f4bb841f4c321df}{Road\+Component}}.
+
+\mbox{\Hypertarget{classResidentialStreets_a18db9835b6a8b8c7c728d93d41c601ce}\label{classResidentialStreets_a18db9835b6a8b8c7c728d93d41c601ce}} 
+\index{ResidentialStreets@{ResidentialStreets}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily float Residential\+Streets\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the distance of the residential street segment. 
+
+\begin{DoxyReturn}{Returns}
+The distance of the residential street as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}{Road\+Component}}.
+
+\mbox{\Hypertarget{classResidentialStreets_a4dc86471b78a127e0a7452ae293390b5}\label{classResidentialStreets_a4dc86471b78a127e0a7452ae293390b5}} 
+\index{ResidentialStreets@{ResidentialStreets}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!ResidentialStreets@{ResidentialStreets}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Residential\+Streets\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies about changes related to the residential street. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string describing the nature of the change. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{ResidentialStreets_8h}{Residential\+Streets.\+h}}\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{ResidentialStreets_8cpp}{Residential\+Streets.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,272 @@
+\hypertarget{classLandPark}{}\doxysection{Land\+Park Class Reference}
+\label{classLandPark}\index{LandPark@{LandPark}}
+
+
+Class representing a park landmark.  
+
+
+
+
+{\ttfamily \#include $<$Land\+Park.\+h$>$}
+
+
+
+Inheritance diagram for Land\+Park\+:
+% FIG 0
+
+
+Collaboration diagram for Land\+Park\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandPark_ab60d5395da3815f534f084e870fe7e7c}{Land\+Park}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classLandPark}{Land\+Park}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandPark_a24d51ed987c90d420cddc6d7dff1cd87}{$\sim$\+Land\+Park}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classLandPark}{Land\+Park}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_aa34104f4477a3a55a39bc23ed2a0d939}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the park landmark. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandPark_a03a11aa34dccf8828d5cddcc27b12d4c}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the number of visitors currently in the park. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_a213890b846bcd30c1f79653e6f6bec40}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors in the park. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_af7adf0bd1d8591911bea8c90472263b0}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities related to the park landmark. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandPark_a72ddb1c6b7e2b5d6b97d05915565c982}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the park. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_a2153477bfada9ac9cdb7d787fe31c3c0}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the park. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLandPark_a61f7e51b38da5f6156a396b9cfb997c0}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of landmark. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandPark_a739943d1ff3221ab9076e1ad5ae46ba5}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the park. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_a637b6606bba6ccbbfdd6e60af5d57a38}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the park. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandPark_a3b5c54902ab1aa868a0177fcbe46fcb8}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the park that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandPark_ad41c7e78b9c554876a7b8bbfb8d1511a}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are available jobs in the park. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class representing a park landmark. 
+
+The \mbox{\hyperlink{classLandPark}{Land\+Park}} class inherits from the \mbox{\hyperlink{classLandmark}{Landmark}} class and provides implementations for managing park-\/related operations, including visitor management, utilities, and employee handling. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandPark_ab60d5395da3815f534f084e870fe7e7c}\label{classLandPark_ab60d5395da3815f534f084e870fe7e7c}} 
+\index{LandPark@{LandPark}!LandPark@{LandPark}}
+\index{LandPark@{LandPark}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{LandPark()}{LandPark()}}
+{\footnotesize\ttfamily Land\+Park\+::\+Land\+Park (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classLandPark}{Land\+Park}}. 
+
+\mbox{\Hypertarget{classLandPark_a24d51ed987c90d420cddc6d7dff1cd87}\label{classLandPark_a24d51ed987c90d420cddc6d7dff1cd87}} 
+\index{LandPark@{LandPark}!````~LandPark@{$\sim$LandPark}}
+\index{````~LandPark@{$\sim$LandPark}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{$\sim$LandPark()}{~LandPark()}}
+{\footnotesize\ttfamily Land\+Park\+::$\sim$\+Land\+Park (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classLandPark}{Land\+Park}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandPark_a739943d1ff3221ab9076e1ad5ae46ba5}\label{classLandPark_a739943d1ff3221ab9076e1ad5ae46ba5}} 
+\index{LandPark@{LandPark}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Land\+Park\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the park. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a3a75309da527b4e2b75ec026c245b001}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_af7adf0bd1d8591911bea8c90472263b0}\label{classLandPark_af7adf0bd1d8591911bea8c90472263b0}} 
+\index{LandPark@{LandPark}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Land\+Park\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities related to the park landmark. 
+
+Call Utilities in Buildings \mbox{\Hypertarget{classLandPark_aa34104f4477a3a55a39bc23ed2a0d939}\label{classLandPark_aa34104f4477a3a55a39bc23ed2a0d939}} 
+\index{LandPark@{LandPark}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Land\+Park\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the park landmark. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classLandPark_a61f7e51b38da5f6156a396b9cfb997c0}\label{classLandPark_a61f7e51b38da5f6156a396b9cfb997c0}} 
+\index{LandPark@{LandPark}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Land\+Park\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of landmark. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a7fcc3f5dd4506e16fa89eeceb0fddd26}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_a72ddb1c6b7e2b5d6b97d05915565c982}\label{classLandPark_a72ddb1c6b7e2b5d6b97d05915565c982}} 
+\index{LandPark@{LandPark}!getState@{getState}}
+\index{getState@{getState}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Land\+Park\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the park. 
+
+\begin{DoxyReturn}{Returns}
+True if the park is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a03bbfc9b0211b81529c12df9edc708f3}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_a03a11aa34dccf8828d5cddcc27b12d4c}\label{classLandPark_a03a11aa34dccf8828d5cddcc27b12d4c}} 
+\index{LandPark@{LandPark}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Land\+Park\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of visitors currently in the park. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a033ed33a708e891d82dbc3934d917259}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_ad41c7e78b9c554876a7b8bbfb8d1511a}\label{classLandPark_ad41c7e78b9c554876a7b8bbfb8d1511a}} 
+\index{LandPark@{LandPark}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Land\+Park\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are available jobs in the park. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classLandPark_a3b5c54902ab1aa868a0177fcbe46fcb8}\label{classLandPark_a3b5c54902ab1aa868a0177fcbe46fcb8}} 
+\index{LandPark@{LandPark}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Land\+Park\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the park that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_ac20fccbc1b3b5e88193ba9aefc70671e}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_a637b6606bba6ccbbfdd6e60af5d57a38}\label{classLandPark_a637b6606bba6ccbbfdd6e60af5d57a38}} 
+\index{LandPark@{LandPark}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Land\+Park\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the park. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_a2effb53f0f04d6f95ab7efbdb6c4ef61}{Landmark}}.
+
+\mbox{\Hypertarget{classLandPark_a2153477bfada9ac9cdb7d787fe31c3c0}\label{classLandPark_a2153477bfada9ac9cdb7d787fe31c3c0}} 
+\index{LandPark@{LandPark}!setState@{setState}}
+\index{setState@{setState}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Land\+Park\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the park. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLandPark_a213890b846bcd30c1f79653e6f6bec40}\label{classLandPark_a213890b846bcd30c1f79653e6f6bec40}} 
+\index{LandPark@{LandPark}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!LandPark@{LandPark}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Land\+Park\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors in the park. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_af658720084ef36321092055b57acc7df}{Landmark}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{LandPark_8h}{Land\+Park.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{LandPark_8cpp}{Land\+Park.\+cpp}}\end{DoxyCompactItemize}

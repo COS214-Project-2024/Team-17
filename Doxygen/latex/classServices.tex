@@ -1,0 +1,346 @@
+\hypertarget{classServices}{}\doxysection{Services Class Reference}
+\label{classServices}\index{Services@{Services}}
+
+
+Abstract base class representing a service building.  
+
+
+
+
+{\ttfamily \#include $<$Services.\+h$>$}
+
+
+
+Inheritance diagram for Services\+:
+% FIG 0
+
+
+Collaboration diagram for Services\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServices_a9846e801f65d4aed76ca053194b03248}{Services}} (int citizens\+Served)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServices}{Services}} object. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classServices_a6f30c52bb657da639ae4b61c06a0476a}{get\+Visitors}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the number of visitors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classServices_a0e64154e9a9e89adcf294af6ee269b49}{set\+Visitors}} (int visitors)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to set the number of visitors. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServices_a24ab44598883312cdb7e7de2d4eacd6d}{check\+Build\+Requirements}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the building meets the necessary requirements for construction. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the operational state of the service. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}{get\+Building\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the type of building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServices_a0980ce92d147a19265ec75a6323ed578}{add\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Attaches a utility manager to the service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServices_afaeb4489e23a48bd471665b8338d8109}{remove\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Detaches a utility manager from the service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServices_a79ade8f6a7c3c6cf7d0d506ac108d98e}{notify\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached utilities of a change in state. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classServices_aa1a8f2d3ece5f1def957ccd35885362a}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to add an employee to the service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classServices_a12b6d64292c87def19686280e875f74e}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to remove an employee from the service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classServices_a64849e69dd07f2f77075ad920c70318a}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Notifies the service that an employee has left. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classServices_a305074cad05a07be35f66a7a8a26ca3a}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident into the service. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classServices_add9e9a7d452c359643ef9052e21ccbd5}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the service. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServices_aced3ffb6c627fc73c1fb9dd790c40fee}{get\+Citizen\+Served}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of citizens served by this service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a service building. 
+
+This class serves as a base for all service types, providing functionality to manage citizens, utilities, and operational state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServices_a9846e801f65d4aed76ca053194b03248}\label{classServices_a9846e801f65d4aed76ca053194b03248}} 
+\index{Services@{Services}!Services@{Services}}
+\index{Services@{Services}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{Services()}{Services()}}
+{\footnotesize\ttfamily Services\+::\+Services (\begin{DoxyParamCaption}\item[{int}]{citizens\+Served }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classServices}{Services}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizens\+Served} & The number of citizens this service can accommodate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServices_aa1a8f2d3ece5f1def957ccd35885362a}\label{classServices_aa1a8f2d3ece5f1def957ccd35885362a}} 
+\index{Services@{Services}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily virtual bool Services\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to add an employee to the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a953aeb9c1af323aeb50c6fb3031d421c}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a3021ac7aaea66732c34f867429a2155d}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a747ffd5502c5ab32f941cb7b14c56924}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_a76c3a202a06fb66fd9b2a7d6515bd146}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_a0980ce92d147a19265ec75a6323ed578}\label{classServices_a0980ce92d147a19265ec75a6323ed578}} 
+\index{Services@{Services}!addUtility@{addUtility}}
+\index{addUtility@{addUtility}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{addUtility()}{addUtility()}}
+{\footnotesize\ttfamily void Services\+::add\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Attaches a utility manager to the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to be attached. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServices_a24ab44598883312cdb7e7de2d4eacd6d}\label{classServices_a24ab44598883312cdb7e7de2d4eacd6d}} 
+\index{Services@{Services}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily bool Services\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the building meets the necessary requirements for construction. 
+
+\begin{DoxyReturn}{Returns}
+True if the requirements are met, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{Building}}.
+
+\mbox{\Hypertarget{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}\label{classServices_ae21c965f2a6425ac7f80415f1b6cff6a}} 
+\index{Services@{Services}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Services\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the type of building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBuilding_a82c020b9610147026c72ccec7ac35a57}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a42d8d743cfd4c84a9215034810ba3dc6}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a9c9cdabc38d95dce7477e1bc02966e9d}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a0ad0dc5966f31725a5c8d98deea9f128}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_a3cfd0b56823306dd6ecc28b4a8a4c422}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_aced3ffb6c627fc73c1fb9dd790c40fee}\label{classServices_aced3ffb6c627fc73c1fb9dd790c40fee}} 
+\index{Services@{Services}!getCitizenServed@{getCitizenServed}}
+\index{getCitizenServed@{getCitizenServed}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{getCitizenServed()}{getCitizenServed()}}
+{\footnotesize\ttfamily int Services\+::get\+Citizen\+Served (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of citizens served by this service. 
+
+\begin{DoxyReturn}{Returns}
+The number of citizens served. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}\label{classServices_a45ec4e09d358307b5afb9b4d3a8145e1}} 
+\index{Services@{Services}!getState@{getState}}
+\index{getState@{getState}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Services\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the operational state of the service. 
+
+\begin{DoxyReturn}{Returns}
+True if the service is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a354c9d869cf73975e608d22c36aeb106}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a8f93d1937e5a51d7d5f14d63d08beb40}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a1ec1f9820d86d4d3efc93ed64df8738e}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_a9342b1f7b15689c17fd1fd92f0112ece}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_a6f30c52bb657da639ae4b61c06a0476a}\label{classServices_a6f30c52bb657da639ae4b61c06a0476a}} 
+\index{Services@{Services}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily virtual int Services\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the number of visitors. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors currently in the service. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a20d88c11ff841c27de2908e34ee440b7}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a5b44afe667921c3a68124d001715e09f}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a18f36e4eaef20bdcf5c91ab02e38feff}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_ae82717f1101eeacee91a253261451afa}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_a305074cad05a07be35f66a7a8a26ca3a}\label{classServices_a305074cad05a07be35f66a7a8a26ca3a}} 
+\index{Services@{Services}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Services\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident into the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} moving in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resident moved in successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}{Building}}.
+
+\mbox{\Hypertarget{classServices_add9e9a7d452c359643ef9052e21ccbd5}\label{classServices_add9e9a7d452c359643ef9052e21ccbd5}} 
+\index{Services@{Services}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Services\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident out of the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} moving out. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a1b6930e08058e572f9b4670dc284f213}{Building}}.
+
+\mbox{\Hypertarget{classServices_a64849e69dd07f2f77075ad920c70318a}\label{classServices_a64849e69dd07f2f77075ad920c70318a}} 
+\index{Services@{Services}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily virtual void Services\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the service that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a1a8aa6e91f9d309ce8c1b9de41cd08e1}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_aba1c01927667bb5515b89a0fd7e9c065}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_a14135c2655bb9a3c7786a0fdbad673b4}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_aa18b869221fcf2ebf05301701a020f8f}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_a79ade8f6a7c3c6cf7d0d506ac108d98e}\label{classServices_a79ade8f6a7c3c6cf7d0d506ac108d98e}} 
+\index{Services@{Services}!notifyUtilities@{notifyUtilities}}
+\index{notifyUtilities@{notifyUtilities}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{notifyUtilities()}{notifyUtilities()}}
+{\footnotesize\ttfamily void Services\+::notify\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all attached utilities of a change in state. 
+
+\mbox{\Hypertarget{classServices_a12b6d64292c87def19686280e875f74e}\label{classServices_a12b6d64292c87def19686280e875f74e}} 
+\index{Services@{Services}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily virtual void Services\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to remove an employee from the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_a6ac5b8e448077d3c844f5fefc0f9ade5}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a356803919b62eb6e03f5923c44de4e63}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_af79954f85f12d602ef7f887490601176}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_ade75c7e479715e9c9726cecb0116073b}{Serv\+Education}}.
+
+\mbox{\Hypertarget{classServices_afaeb4489e23a48bd471665b8338d8109}\label{classServices_afaeb4489e23a48bd471665b8338d8109}} 
+\index{Services@{Services}!removeUtility@{removeUtility}}
+\index{removeUtility@{removeUtility}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{removeUtility()}{removeUtility()}}
+{\footnotesize\ttfamily void Services\+::remove\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Detaches a utility manager from the service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to be detached. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServices_a0e64154e9a9e89adcf294af6ee269b49}\label{classServices_a0e64154e9a9e89adcf294af6ee269b49}} 
+\index{Services@{Services}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!Services@{Services}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily virtual void Services\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to set the number of visitors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classServSecurity_ad425523b4a8e6b04ca9d144c8f04d07a}{Serv\+Security}}, \mbox{\hyperlink{classServHospital_a8dfc73d457708eb8da2539a5719f564c}{Serv\+Hospital}}, \mbox{\hyperlink{classServEntertainment_ab0abf83c274e29f856a1c6dec6858bb0}{Serv\+Entertainment}}, and \mbox{\hyperlink{classServEducation_a2726a7b5658db2bb60f435a58de00d62}{Serv\+Education}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{Services_8h}{Services.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{Services_8cpp}{Services.\+cpp}}\end{DoxyCompactItemize}

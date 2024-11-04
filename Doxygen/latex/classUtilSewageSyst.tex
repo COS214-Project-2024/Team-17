@@ -1,0 +1,152 @@
+\hypertarget{classUtilSewageSyst}{}\doxysection{Util\+Sewage\+Syst Class Reference}
+\label{classUtilSewageSyst}\index{UtilSewageSyst@{UtilSewageSyst}}
+
+
+Represents the sewage management system.  
+
+
+
+
+{\ttfamily \#include $<$Util\+Sewage\+Syst.\+h$>$}
+
+
+
+Inheritance diagram for Util\+Sewage\+Syst\+:
+% FIG 0
+
+
+Collaboration diagram for Util\+Sewage\+Syst\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilSewageSyst_a61a727f202c8afd6bb8150031e32e0ac}{Util\+Sewage\+Syst}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new Sewage System utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilSewageSyst_ac971a1a0a38404a279f8bbdc474bd2a7}{start\+Utility}} ()
+\begin{DoxyCompactList}\small\item\em Starts the Sewage System service, making it operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilSewageSyst_a3e5dabd3a9940d307f33cd10bbb4c77d}{update}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Updates the operational state based on the status of the specified building. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilSewageSyst_aca5a7eda56cc930e9bd893c8e643de27}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the type of this utility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilSewageSyst_a045bd4e6e33557511b6b06cf6d07353d}{is\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Sewage System is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilSewageSyst_a30c4f8b002e55209bea6b05fcd9eb7b5}{shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the Sewage System, making it non-\/operational. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the sewage management system. 
+
+Handles sewage disposal operations for buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilSewageSyst_a61a727f202c8afd6bb8150031e32e0ac}\label{classUtilSewageSyst_a61a727f202c8afd6bb8150031e32e0ac}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!UtilSewageSyst@{UtilSewageSyst}}
+\index{UtilSewageSyst@{UtilSewageSyst}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{UtilSewageSyst()}{UtilSewageSyst()}}
+{\footnotesize\ttfamily Util\+Sewage\+Syst\+::\+Util\+Sewage\+Syst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new Sewage System utility. 
+
+Constructor for the \mbox{\hyperlink{classUtilSewageSyst}{Util\+Sewage\+Syst}} class. Initializes the Sewage System utility as non-\/operational and sets the type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilSewageSyst_aca5a7eda56cc930e9bd893c8e643de27}\label{classUtilSewageSyst_aca5a7eda56cc930e9bd893c8e643de27}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!getType@{getType}}
+\index{getType@{getType}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Util\+Sewage\+Syst\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the type of this utility. 
+
+Gets the type of utility service provided by this class.
+
+\begin{DoxyReturn}{Returns}
+The type as a string (\char`\"{}\+Sewage System\char`\"{}).
+
+The type as a string, e.\+g., \char`\"{}\+Sewage System\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilSewageSyst_a045bd4e6e33557511b6b06cf6d07353d}\label{classUtilSewageSyst_a045bd4e6e33557511b6b06cf6d07353d}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{isOperational()}{isOperational()}}
+{\footnotesize\ttfamily bool Util\+Sewage\+Syst\+::is\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the Sewage System is operational. 
+
+\begin{DoxyReturn}{Returns}
+True if operational; otherwise, false.
+
+True if the Sewage System is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilSewageSyst_a30c4f8b002e55209bea6b05fcd9eb7b5}\label{classUtilSewageSyst_a30c4f8b002e55209bea6b05fcd9eb7b5}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily void Util\+Sewage\+Syst\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Shuts down the Sewage System, making it non-\/operational. 
+
+Shuts down the Sewage System service, setting it to non-\/operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilSewageSyst_ac971a1a0a38404a279f8bbdc474bd2a7}\label{classUtilSewageSyst_ac971a1a0a38404a279f8bbdc474bd2a7}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!startUtility@{startUtility}}
+\index{startUtility@{startUtility}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{startUtility()}{startUtility()}}
+{\footnotesize\ttfamily void Util\+Sewage\+Syst\+::start\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the Sewage System service, making it operational. 
+
+Starts the Sewage System service and sets it to operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilSewageSyst_a3e5dabd3a9940d307f33cd10bbb4c77d}\label{classUtilSewageSyst_a3e5dabd3a9940d307f33cd10bbb4c77d}} 
+\index{UtilSewageSyst@{UtilSewageSyst}!update@{update}}
+\index{update@{update}!UtilSewageSyst@{UtilSewageSyst}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Util\+Sewage\+Syst\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the operational state based on the status of the specified building. 
+
+Updates the operational status of the Sewage System based on the building\textquotesingle{}s status.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object that notifies this utility.\\
+\hline
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object notifying this utility. If the Sewage System is not operational, it will be started. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}{Utility\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utilities/\mbox{\hyperlink{UtilSewageSyst_8h}{Util\+Sewage\+Syst.\+h}}\item 
+src/\+Utilities/\mbox{\hyperlink{UtilSewageSyst_8cpp}{Util\+Sewage\+Syst.\+cpp}}\end{DoxyCompactItemize}

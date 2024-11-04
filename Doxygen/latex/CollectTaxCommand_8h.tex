@@ -1,0 +1,36 @@
+\hypertarget{CollectTaxCommand_8h}{}\doxysection{src/\+Government+\+Tax/\+Collect\+Tax\+Command.h File Reference}
+\label{CollectTaxCommand_8h}\index{src/Government+Tax/CollectTaxCommand.h@{src/Government+Tax/CollectTaxCommand.h}}
+
+
+Header file for the \mbox{\hyperlink{classCollectTaxCommand}{Collect\+Tax\+Command}} class, which encapsulates the tax collection command.  
+
+
+{\ttfamily \#include \char`\"{}Tax\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Government.\+h\char`\"{}}\newline
+Include dependency graph for Collect\+Tax\+Command.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCollectTaxCommand}{Collect\+Tax\+Command}}
+\begin{DoxyCompactList}\small\item\em Command for collecting taxes from a government entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \mbox{\hyperlink{classCollectTaxCommand}{Collect\+Tax\+Command}} class, which encapsulates the tax collection command. 
+
+This file defines the \mbox{\hyperlink{classCollectTaxCommand}{Collect\+Tax\+Command}} class, used to trigger the collection of taxes by the \mbox{\hyperlink{classGovernment}{Government}}. It implements the Command design pattern, allowing the \mbox{\hyperlink{classGovernment}{Government}} to collect taxes from all associated cities in response to a specific command execution. \begin{DoxyNote}{Note}
+\mbox{\hyperlink{classCollectTaxCommand}{Collect\+Tax\+Command}} is part of a set of commands available to the \mbox{\hyperlink{classGovernment}{Government}} for various tax and budget actions. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGovernment}{Government}} for the class that executes this command. 
+
+Command for the base command interface this class implements (if Command is an existing base class/interface). 
+
+\mbox{\hyperlink{classAllocateTaxCommand}{Allocate\+Tax\+Command}} for a related command that handles tax allocation rather than collection. 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+WORKONMYMACHINE TEAM 
+\end{DoxyAuthor}

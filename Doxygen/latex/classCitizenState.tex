@@ -1,0 +1,89 @@
+\hypertarget{classCitizenState}{}\doxysection{Citizen\+State Class Reference}
+\label{classCitizenState}\index{CitizenState@{CitizenState}}
+
+
+Abstract base class representing the state of a citizen.  
+
+
+
+
+{\ttfamily \#include $<$Citizen\+State.\+h$>$}
+
+
+
+Inheritance diagram for Citizen\+State\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCitizenState}{Citizen\+State}} $\ast$ \mbox{\hyperlink{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}{handle\+Change}} (int change)=0
+\begin{DoxyCompactList}\small\item\em Handles a change in state based on an integer value. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets a string representation of the current state. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCitizenState_a072320cab55672bb165598abc204fc03}{$\sim$\+Citizen\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} class. Ensures proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing the state of a citizen. 
+
+The \mbox{\hyperlink{classCitizenState}{Citizen\+State}} class serves as an interface for different states that a citizen can have. Derived classes should implement specific state behaviors and transitions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCitizenState_a072320cab55672bb165598abc204fc03}\label{classCitizenState_a072320cab55672bb165598abc204fc03}} 
+\index{CitizenState@{CitizenState}!````~CitizenState@{$\sim$CitizenState}}
+\index{````~CitizenState@{$\sim$CitizenState}!CitizenState@{CitizenState}}
+\doxysubsubsection{\texorpdfstring{$\sim$CitizenState()}{~CitizenState()}}
+{\footnotesize\ttfamily virtual Citizen\+State\+::$\sim$\+Citizen\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classCitizenState}{Citizen\+State}} class. Ensures proper cleanup of derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}\label{classCitizenState_a2fbac8b74f1df18cf92a3ea59d1d49a0}} 
+\index{CitizenState@{CitizenState}!getState@{getState}}
+\index{getState@{getState}!CitizenState@{CitizenState}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily virtual std\+::string Citizen\+State\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a string representation of the current state. 
+
+\begin{DoxyReturn}{Returns}
+The name of the current state as a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUpset_ab82340cee98f4ae0b1d155d824d0c5ae}{Upset}}, \mbox{\hyperlink{classIndifferent_ab27cd5c51a5204c3820c01aa910a49d5}{Indifferent}}, \mbox{\hyperlink{classHappy_a0f378f2d655f89052145f621dc2ff658}{Happy}}, \mbox{\hyperlink{classDiscontent_a18a16b0fec972754311762cd102f75f3}{Discontent}}, and \mbox{\hyperlink{classContent_a4b2cadebd9188376be5dc18d3e4c17c6}{Content}}.
+
+\mbox{\Hypertarget{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}\label{classCitizenState_a561816aefa5dfcfed1ff9fffc886b94e}} 
+\index{CitizenState@{CitizenState}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!CitizenState@{CitizenState}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classCitizenState}{Citizen\+State}}$\ast$ Citizen\+State\+::handle\+Change (\begin{DoxyParamCaption}\item[{int}]{change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles a change in state based on an integer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & An integer representing the change to be handled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the resulting \mbox{\hyperlink{classCitizenState}{Citizen\+State}} after handling the change. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUpset_a5e08dc3b7f65a0938a50eafa085fcae4}{Upset}}, \mbox{\hyperlink{classIndifferent_a07b7b2a0bd162502da02023046a4071a}{Indifferent}}, \mbox{\hyperlink{classHappy_a84ab0f032ceb77cebc1fb0bc60edf037}{Happy}}, \mbox{\hyperlink{classDiscontent_adb8fff95788ff10f2f0158c580ac4c18}{Discontent}}, and \mbox{\hyperlink{classContent_acb03e626d8b629ee022f5f4da1709552}{Content}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Citizens/\mbox{\hyperlink{CitizenState_8h}{Citizen\+State.\+h}}\end{DoxyCompactItemize}

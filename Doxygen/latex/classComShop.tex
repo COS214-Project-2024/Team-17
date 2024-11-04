@@ -1,0 +1,272 @@
+\hypertarget{classComShop}{}\doxysection{Com\+Shop Class Reference}
+\label{classComShop}\index{ComShop@{ComShop}}
+
+
+Represents a commercial shop building.  
+
+
+
+
+{\ttfamily \#include $<$Com\+Shop.\+h$>$}
+
+
+
+Inheritance diagram for Com\+Shop\+:
+% FIG 0
+
+
+Collaboration diagram for Com\+Shop\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classComShop_a7c6ed362789dddbe5cbd7f070a6c869a}{Com\+Shop}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classComShop}{Com\+Shop}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComShop_a34c9cabc9fde36e73f9f20ebaa3ea166}{$\sim$\+Com\+Shop}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classComShop}{Com\+Shop}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComShop_a6307f1051b4b61a198d5a0d2fe7f9454}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classComShop_a69faa2655149d24a23ca47bc12ba7fc8}{get\+Job\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the job capacity of the shop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComShop_a49357f7329cb1f502e29cf72d9c968fa}{set\+Job\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the job capacity of the shop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComShop_a18ea0a8e9d9156a257eaa58bfe96b829}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities for the shop. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComShop_a77a0eed363f9263f72338681fa10729e}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the shop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComShop_a5ab5bc27c2567e2188ecf0025afb1070}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the shop. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classComShop_a95c8ee058e7995e3d04af90fe40ead41}{get\+Building\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComShop_afec7730e363e2f48bb0aea3c1837fa9d}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the shop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComShop_aec381bf88c2f65a12170d8315ad4b124}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the shop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComShop_ab62f7201fbeeef5bd50db8684092a615}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the shop. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComShop_afac959632d301b1e56275ef7b7fabc85}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the shop has a job available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial shop building. 
+
+The \mbox{\hyperlink{classComShop}{Com\+Shop}} class is a concrete implementation of the \mbox{\hyperlink{classCommercial}{Commercial}} class, providing specific functionality and resources related to a shop. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classComShop_a7c6ed362789dddbe5cbd7f070a6c869a}\label{classComShop_a7c6ed362789dddbe5cbd7f070a6c869a}} 
+\index{ComShop@{ComShop}!ComShop@{ComShop}}
+\index{ComShop@{ComShop}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{ComShop()}{ComShop()}}
+{\footnotesize\ttfamily Com\+Shop\+::\+Com\+Shop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classComShop}{Com\+Shop}}. 
+
+\mbox{\Hypertarget{classComShop_a34c9cabc9fde36e73f9f20ebaa3ea166}\label{classComShop_a34c9cabc9fde36e73f9f20ebaa3ea166}} 
+\index{ComShop@{ComShop}!````~ComShop@{$\sim$ComShop}}
+\index{````~ComShop@{$\sim$ComShop}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{$\sim$ComShop()}{~ComShop()}}
+{\footnotesize\ttfamily Com\+Shop\+::$\sim$\+Com\+Shop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classComShop}{Com\+Shop}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classComShop_afec7730e363e2f48bb0aea3c1837fa9d}\label{classComShop_afec7730e363e2f48bb0aea3c1837fa9d}} 
+\index{ComShop@{ComShop}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Com\+Shop\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the shop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_a18ea0a8e9d9156a257eaa58bfe96b829}\label{classComShop_a18ea0a8e9d9156a257eaa58bfe96b829}} 
+\index{ComShop@{ComShop}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Com\+Shop\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities for the shop. 
+
+\mbox{\Hypertarget{classComShop_a6307f1051b4b61a198d5a0d2fe7f9454}\label{classComShop_a6307f1051b4b61a198d5a0d2fe7f9454}} 
+\index{ComShop@{ComShop}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Com\+Shop\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the building. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classComShop_a95c8ee058e7995e3d04af90fe40ead41}\label{classComShop_a95c8ee058e7995e3d04af90fe40ead41}} 
+\index{ComShop@{ComShop}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Com\+Shop\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a3100daec90c3af597268edd84d53269f}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_a69faa2655149d24a23ca47bc12ba7fc8}\label{classComShop_a69faa2655149d24a23ca47bc12ba7fc8}} 
+\index{ComShop@{ComShop}!getJobCapacity@{getJobCapacity}}
+\index{getJobCapacity@{getJobCapacity}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{getJobCapacity()}{getJobCapacity()}}
+{\footnotesize\ttfamily int Com\+Shop\+::get\+Job\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the job capacity of the shop. 
+
+\begin{DoxyReturn}{Returns}
+The number of jobs the shop can accommodate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a366f76041acdacf0b0e961139d2a075a}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_a77a0eed363f9263f72338681fa10729e}\label{classComShop_a77a0eed363f9263f72338681fa10729e}} 
+\index{ComShop@{ComShop}!getState@{getState}}
+\index{getState@{getState}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Com\+Shop\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the shop. 
+
+\begin{DoxyReturn}{Returns}
+True if the shop is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_afac959632d301b1e56275ef7b7fabc85}\label{classComShop_afac959632d301b1e56275ef7b7fabc85}} 
+\index{ComShop@{ComShop}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Com\+Shop\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the shop has a job available. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a job available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classComShop_ab62f7201fbeeef5bd50db8684092a615}\label{classComShop_ab62f7201fbeeef5bd50db8684092a615}} 
+\index{ComShop@{ComShop}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Com\+Shop\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies that an employee has left the shop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_aec381bf88c2f65a12170d8315ad4b124}\label{classComShop_aec381bf88c2f65a12170d8315ad4b124}} 
+\index{ComShop@{ComShop}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Com\+Shop\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the shop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_a49357f7329cb1f502e29cf72d9c968fa}\label{classComShop_a49357f7329cb1f502e29cf72d9c968fa}} 
+\index{ComShop@{ComShop}!setJobCapacity@{setJobCapacity}}
+\index{setJobCapacity@{setJobCapacity}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{setJobCapacity()}{setJobCapacity()}}
+{\footnotesize\ttfamily void Com\+Shop\+::set\+Job\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the job capacity of the shop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The new job capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}{Commercial}}.
+
+\mbox{\Hypertarget{classComShop_a5ab5bc27c2567e2188ecf0025afb1070}\label{classComShop_a5ab5bc27c2567e2188ecf0025afb1070}} 
+\index{ComShop@{ComShop}!setState@{setState}}
+\index{setState@{setState}!ComShop@{ComShop}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Com\+Shop\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the shop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ComShop_8h}{Com\+Shop.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ComShop_8cpp}{Com\+Shop.\+cpp}}\end{DoxyCompactItemize}

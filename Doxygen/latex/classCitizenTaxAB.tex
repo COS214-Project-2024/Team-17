@@ -1,0 +1,104 @@
+\hypertarget{classCitizenTaxAB}{}\doxysection{Citizen\+Tax\+AB Class Reference}
+\label{classCitizenTaxAB}\index{CitizenTaxAB@{CitizenTaxAB}}
+
+
+Concrete visitor for calculating tax on citizens and buildings.  
+
+
+
+
+{\ttfamily \#include $<$Citizen\+Tax\+AB.\+h$>$}
+
+
+
+Inheritance diagram for Citizen\+Tax\+AB\+:
+% FIG 0
+
+
+Collaboration diagram for Citizen\+Tax\+AB\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classCitizenTaxAB_a31556e256880b0cce44cd76efd117ac4}{visit}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)
+\begin{DoxyCompactList}\small\item\em Visits a \mbox{\hyperlink{classCitizen}{Citizen}} object and calculates the tax. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCitizenTaxAB_a6007c53fd5fdaf8917d236e096e97e2a}{visit}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$business)
+\begin{DoxyCompactList}\small\item\em Visits a \mbox{\hyperlink{classBuilding}{Building}} object and calculates the tax. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete visitor for calculating tax on citizens and buildings. 
+
+This class implements the \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} interface to calculate taxes for citizens and buildings. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCitizenTaxAB_a6007c53fd5fdaf8917d236e096e97e2a}\label{classCitizenTaxAB_a6007c53fd5fdaf8917d236e096e97e2a}} 
+\index{CitizenTaxAB@{CitizenTaxAB}!visit@{visit}}
+\index{visit@{visit}!CitizenTaxAB@{CitizenTaxAB}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Citizen\+Tax\+AB\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{business }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visits a \mbox{\hyperlink{classBuilding}{Building}} object and calculates the tax. 
+
+Visit a \mbox{\hyperlink{classBuilding}{Building}} and calculate the tax.
+
+
+\begin{DoxyParams}{Parameters}
+{\em business} & The \mbox{\hyperlink{classBuilding}{Building}} object being visited. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated tax amount.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em business} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} being visited. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tax amount for the given building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTaxAndBudgetVisitor_ac9de286762a9a3d4a3402932c6095d31}{Tax\+And\+Budget\+Visitor}}.
+
+\mbox{\Hypertarget{classCitizenTaxAB_a31556e256880b0cce44cd76efd117ac4}\label{classCitizenTaxAB_a31556e256880b0cce44cd76efd117ac4}} 
+\index{CitizenTaxAB@{CitizenTaxAB}!visit@{visit}}
+\index{visit@{visit}!CitizenTaxAB@{CitizenTaxAB}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Citizen\+Tax\+AB\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{citizen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visits a \mbox{\hyperlink{classCitizen}{Citizen}} object and calculates the tax. 
+
+Visit a \mbox{\hyperlink{classCitizen}{Citizen}} and calculate the tax.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The \mbox{\hyperlink{classCitizen}{Citizen}} object being visited. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated tax amount.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} being visited. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tax amount for the given citizen. Returns 0 if the citizen is null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTaxAndBudgetVisitor_a6c3eee8337b1df74bee423bb0cc4bbef}{Tax\+And\+Budget\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{CitizenTaxAB_8h}{Citizen\+Tax\+AB.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{CitizenTaxAB_8cpp}{Citizen\+Tax\+AB.\+cpp}}\end{DoxyCompactItemize}

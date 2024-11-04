@@ -1,0 +1,155 @@
+\hypertarget{classCityStructure}{}\doxysection{City\+Structure Class Reference}
+\label{classCityStructure}\index{CityStructure@{CityStructure}}
+
+
+Represents a city\textquotesingle{}s structure, containing blocks, departments, and income information.  
+
+
+
+
+{\ttfamily \#include $<$City\+Structure.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCityStructure_a36a10d65662b66d7f00cbd58630a8779}{City\+Structure}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classCityStructure}{City\+Structure}} with the given name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityStructure_a9068f16bc9b45d9a68844bfa32e88a57}{accept}} (\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$visitor)
+\begin{DoxyCompactList}\small\item\em Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} for processing taxes or budgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityStructure_aeb0a18af44ff62a8175787a1d3f50cdc}{add\+Block}} (\mbox{\hyperlink{classCityBlock}{City\+Block}} $\ast$block)
+\begin{DoxyCompactList}\small\item\em Adds a city block to the structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCityStructure_a9cd300d8a0690bfaff49ca7245cad2bf}{allocate\+Budget}} (std\+::string dept, double amount)
+\begin{DoxyCompactList}\small\item\em Allocates a specified budget to a department. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCityStructure_a90dfe3f47f902fc18bdc1cd083634d72}{get\+Income}} ()
+\begin{DoxyCompactList}\small\item\em Gets the income of the city structure. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCityStructure_a75ebe1c8fc6ff12170ef5489d1e4ee9c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the city structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a city\textquotesingle{}s structure, containing blocks, departments, and income information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCityStructure_a36a10d65662b66d7f00cbd58630a8779}\label{classCityStructure_a36a10d65662b66d7f00cbd58630a8779}} 
+\index{CityStructure@{CityStructure}!CityStructure@{CityStructure}}
+\index{CityStructure@{CityStructure}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{CityStructure()}{CityStructure()}}
+{\footnotesize\ttfamily City\+Structure\+::\+City\+Structure (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classCityStructure}{City\+Structure}} with the given name. 
+
+Construct a new \mbox{\hyperlink{classCityStructure}{City\+Structure}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the city structure.\\
+\hline
+{\em name} & Name of the city structure. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCityStructure_a9068f16bc9b45d9a68844bfa32e88a57}\label{classCityStructure_a9068f16bc9b45d9a68844bfa32e88a57}} 
+\index{CityStructure@{CityStructure}!accept@{accept}}
+\index{accept@{accept}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void City\+Structure\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption})}
+
+
+
+Accepts a \mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} for processing taxes or budgets. 
+
+Accepts a visitor for the \mbox{\hyperlink{classCityStructure}{City\+Structure}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & The visitor used for processing.\\
+\hline
+{\em visitor} & Pointer to the visitor object to be accepted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityStructure_aeb0a18af44ff62a8175787a1d3f50cdc}\label{classCityStructure_aeb0a18af44ff62a8175787a1d3f50cdc}} 
+\index{CityStructure@{CityStructure}!addBlock@{addBlock}}
+\index{addBlock@{addBlock}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{addBlock()}{addBlock()}}
+{\footnotesize\ttfamily void City\+Structure\+::add\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityBlock}{City\+Block}} $\ast$}]{block }\end{DoxyParamCaption})}
+
+
+
+Adds a city block to the structure. 
+
+Adds a block to the \mbox{\hyperlink{classCityStructure}{City\+Structure}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The \mbox{\hyperlink{classCityBlock}{City\+Block}} to add.\\
+\hline
+{\em block} & Pointer to the \mbox{\hyperlink{classCityBlock}{City\+Block}} to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityStructure_a9cd300d8a0690bfaff49ca7245cad2bf}\label{classCityStructure_a9cd300d8a0690bfaff49ca7245cad2bf}} 
+\index{CityStructure@{CityStructure}!allocateBudget@{allocateBudget}}
+\index{allocateBudget@{allocateBudget}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{allocateBudget()}{allocateBudget()}}
+{\footnotesize\ttfamily void City\+Structure\+::allocate\+Budget (\begin{DoxyParamCaption}\item[{std\+::string}]{deparment,  }\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Allocates a specified budget to a department. 
+
+Allocates a budget amount to a department.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dept} & The department name. \\
+\hline
+{\em amount} & The amount to allocate.\\
+\hline
+{\em department} & Name of the department. \\
+\hline
+{\em amount} & Budget amount to allocate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCityStructure_a90dfe3f47f902fc18bdc1cd083634d72}\label{classCityStructure_a90dfe3f47f902fc18bdc1cd083634d72}} 
+\index{CityStructure@{CityStructure}!getIncome@{getIncome}}
+\index{getIncome@{getIncome}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{getIncome()}{getIncome()}}
+{\footnotesize\ttfamily double City\+Structure\+::get\+Income (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the income of the city structure. 
+
+Gets the income of the \mbox{\hyperlink{classCityStructure}{City\+Structure}}.
+
+\begin{DoxyReturn}{Returns}
+The income of the city.
+
+Total income of the \mbox{\hyperlink{classCityStructure}{City\+Structure}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCityStructure_a75ebe1c8fc6ff12170ef5489d1e4ee9c}\label{classCityStructure_a75ebe1c8fc6ff12170ef5489d1e4ee9c}} 
+\index{CityStructure@{CityStructure}!getName@{getName}}
+\index{getName@{getName}!CityStructure@{CityStructure}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string City\+Structure\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the city structure. 
+
+Gets the name of the \mbox{\hyperlink{classCityStructure}{City\+Structure}}.
+
+\begin{DoxyReturn}{Returns}
+The name of the city.
+
+Name of the \mbox{\hyperlink{classCityStructure}{City\+Structure}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{CityStructure_8h}{City\+Structure.\+h}}\item 
+src/\+Government+\+Tax/\mbox{\hyperlink{CityStructure_8cpp}{City\+Structure.\+cpp}}\end{DoxyCompactItemize}

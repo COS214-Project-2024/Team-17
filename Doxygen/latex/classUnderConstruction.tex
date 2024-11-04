@@ -1,0 +1,78 @@
+\hypertarget{classUnderConstruction}{}\doxysection{Under\+Construction Class Reference}
+\label{classUnderConstruction}\index{UnderConstruction@{UnderConstruction}}
+
+
+Represents a road state indicating that the road is under construction.  
+
+
+
+
+{\ttfamily \#include $<$Under\+Construction.\+h$>$}
+
+
+
+Inheritance diagram for Under\+Construction\+:
+% FIG 0
+
+
+Collaboration diagram for Under\+Construction\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUnderConstruction_a6917da07ba3ff288a71d891a3c4e3831}{handle\+Traffic}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$road)
+\begin{DoxyCompactList}\small\item\em Handles traffic for the road that is under construction. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classUnderConstruction_aa56faa510187435b4d53b449e67442a4}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the status of the road state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a road state indicating that the road is under construction. 
+
+The \mbox{\hyperlink{classUnderConstruction}{Under\+Construction}} class implements the \mbox{\hyperlink{classRoadState}{Road\+State}} interface, providing specific behavior for handling traffic when a road is currently under construction. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUnderConstruction_aa56faa510187435b4d53b449e67442a4}\label{classUnderConstruction_aa56faa510187435b4d53b449e67442a4}} 
+\index{UnderConstruction@{UnderConstruction}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Under\+Construction\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the status of the road state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current status of the road (e.\+g., \char`\"{}\+Under Construction\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadState_a5d8cdd6b7292f23472a670a31cbe57f1}{Road\+State}}.
+
+\mbox{\Hypertarget{classUnderConstruction_a6917da07ba3ff288a71d891a3c4e3831}\label{classUnderConstruction_a6917da07ba3ff288a71d891a3c4e3831}} 
+\index{UnderConstruction@{UnderConstruction}!handleTraffic@{handleTraffic}}
+\index{handleTraffic@{handleTraffic}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{handleTraffic()}{handleTraffic()}}
+{\footnotesize\ttfamily void Under\+Construction\+::handle\+Traffic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{road }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles traffic for the road that is under construction. 
+
+This method implements the logic for managing traffic on a road component that is currently in an under construction state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & Pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} that is under construction. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadState_a6f4099e3a6a7983625ca9602271d8fcd}{Road\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{UnderConstruction_8h}{Under\+Construction.\+h}}\item 
+src/\+Transport/\+Road\+States/\mbox{\hyperlink{UnderConstruction_8cpp}{Under\+Construction.\+cpp}}\end{DoxyCompactItemize}

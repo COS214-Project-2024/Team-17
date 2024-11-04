@@ -1,0 +1,192 @@
+\hypertarget{classMainRoads}{}\doxysection{Main\+Roads Class Reference}
+\label{classMainRoads}\index{MainRoads@{MainRoads}}
+
+
+Represents a main road component in the road network.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Roads.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Roads\+:
+% FIG 0
+
+
+Collaboration diagram for Main\+Roads\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainRoads_a4ffce72ac744643f5d290537eec018f5}{Main\+Roads}} (int sX, int sY, int eX, int eY)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classMainRoads}{Main\+Roads}} object with specified start and end coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainRoads_ab544a83b117e40a0fbd1233f63db6af0}{display\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays information about the main road, such as its coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainRoads_a8b693dbdd6f23a9c6dc08688b2983605}{calculate\+Traffic}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the traffic on the main road based on certain parameters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMainRoads_a0c5722604159b146040c402231be8080}{get\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the distance of the main road segment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainRoads_af732e7b6f98ac50253b16fe906fbdd53}{notify\+Change}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notifies about changes related to the main road. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainRoads_a4aa57d819287001829e8dadb9e8fd555}{add\+Connection}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$connection, float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}})
+\begin{DoxyCompactList}\small\item\em Adds a connection to another road component. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMainRoads_a348c829d638f2d505ceca558b52dc136}{calculate\+Distance}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Calculates the distance from a specified point to the main road. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMainRoads_abe3598df3f50bb40930731f1d5ca587b}{$\sim$\+Main\+Roads}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classMainRoads}{Main\+Roads}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a main road component in the road network. 
+
+The \mbox{\hyperlink{classMainRoads}{Main\+Roads}} class is derived from the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} class and provides functionality for managing and interacting with main road segments, including displaying information, calculating traffic, and managing connections to other road components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainRoads_a4ffce72ac744643f5d290537eec018f5}\label{classMainRoads_a4ffce72ac744643f5d290537eec018f5}} 
+\index{MainRoads@{MainRoads}!MainRoads@{MainRoads}}
+\index{MainRoads@{MainRoads}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{MainRoads()}{MainRoads()}}
+{\footnotesize\ttfamily Main\+Roads\+::\+Main\+Roads (\begin{DoxyParamCaption}\item[{int}]{sX,  }\item[{int}]{sY,  }\item[{int}]{eX,  }\item[{int}]{eY }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classMainRoads}{Main\+Roads}} object with specified start and end coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sX} & The starting X coordinate of the main road. \\
+\hline
+{\em sY} & The starting Y coordinate of the main road. \\
+\hline
+{\em eX} & The ending X coordinate of the main road. \\
+\hline
+{\em eY} & The ending Y coordinate of the main road. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainRoads_abe3598df3f50bb40930731f1d5ca587b}\label{classMainRoads_abe3598df3f50bb40930731f1d5ca587b}} 
+\index{MainRoads@{MainRoads}!````~MainRoads@{$\sim$MainRoads}}
+\index{````~MainRoads@{$\sim$MainRoads}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainRoads()}{~MainRoads()}}
+{\footnotesize\ttfamily Main\+Roads\+::$\sim$\+Main\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classMainRoads}{Main\+Roads}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainRoads_a4aa57d819287001829e8dadb9e8fd555}\label{classMainRoads_a4aa57d819287001829e8dadb9e8fd555}} 
+\index{MainRoads@{MainRoads}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily void Main\+Roads\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{connection,  }\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a connection to another road component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & A pointer to the \mbox{\hyperlink{classRoadComponent}{Road\+Component}} to connect to. \\
+\hline
+{\em distance} & The distance to the connected road component. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}{Road\+Component}}.
+
+\mbox{\Hypertarget{classMainRoads_a348c829d638f2d505ceca558b52dc136}\label{classMainRoads_a348c829d638f2d505ceca558b52dc136}} 
+\index{MainRoads@{MainRoads}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily float Main\+Roads\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the distance from a specified point to the main road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the point. \\
+\hline
+{\em y} & The Y coordinate of the point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the main road as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}{Road\+Component}}.
+
+\mbox{\Hypertarget{classMainRoads_a8b693dbdd6f23a9c6dc08688b2983605}\label{classMainRoads_a8b693dbdd6f23a9c6dc08688b2983605}} 
+\index{MainRoads@{MainRoads}!calculateTraffic@{calculateTraffic}}
+\index{calculateTraffic@{calculateTraffic}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{calculateTraffic()}{calculateTraffic()}}
+{\footnotesize\ttfamily void Main\+Roads\+::calculate\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the traffic on the main road based on certain parameters. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}{Road\+Component}}.
+
+\mbox{\Hypertarget{classMainRoads_ab544a83b117e40a0fbd1233f63db6af0}\label{classMainRoads_ab544a83b117e40a0fbd1233f63db6af0}} 
+\index{MainRoads@{MainRoads}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Main\+Roads\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays information about the main road, such as its coordinates. 
+
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a14f7f982767020220f4bb841f4c321df}{Road\+Component}}.
+
+\mbox{\Hypertarget{classMainRoads_a0c5722604159b146040c402231be8080}\label{classMainRoads_a0c5722604159b146040c402231be8080}} 
+\index{MainRoads@{MainRoads}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily float Main\+Roads\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the distance of the main road segment. 
+
+\begin{DoxyReturn}{Returns}
+The distance of the main road as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}{Road\+Component}}.
+
+\mbox{\Hypertarget{classMainRoads_af732e7b6f98ac50253b16fe906fbdd53}\label{classMainRoads_af732e7b6f98ac50253b16fe906fbdd53}} 
+\index{MainRoads@{MainRoads}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!MainRoads@{MainRoads}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Main\+Roads\+::notify\+Change (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Notifies about changes related to the main road. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string describing the nature of the change. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{MainRoads_8h}{Main\+Roads.\+h}}\item 
+src/\+Transport/\+Road\+Component\+Types/\mbox{\hyperlink{MainRoads_8cpp}{Main\+Roads.\+cpp}}\end{DoxyCompactItemize}

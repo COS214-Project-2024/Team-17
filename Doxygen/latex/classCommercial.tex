@@ -1,0 +1,311 @@
+\hypertarget{classCommercial}{}\doxysection{Commercial Class Reference}
+\label{classCommercial}\index{Commercial@{Commercial}}
+
+
+Abstract base class representing a commercial building.  
+
+
+
+
+{\ttfamily \#include $<$Commercial.\+h$>$}
+
+
+
+Inheritance diagram for Commercial\+:
+% FIG 0
+
+
+Collaboration diagram for Commercial\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classCommercial_a366f76041acdacf0b0e961139d2a075a}{get\+Job\+Capacity}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the job capacity of the commercial building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}{set\+Job\+Capacity}} (int capacity)=0
+\begin{DoxyCompactList}\small\item\em Sets the job capacity of the commercial building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the commercial building. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classCommercial_a3100daec90c3af597268edd84d53269f}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCommercial_ae103d2b4151183bd250b1344d2d15fca}{check\+Build\+Requirements}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the building meets the requirements for construction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercial_ac98dde7aa9692398d6f71f25c63de95f}{add\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Attaches a utility manager to the commercial building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercial_abfbf3cc31277e2fff49fb6b241108c06}{remove\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Detaches a utility manager from the commercial building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercial_aca09862ac0867b42671da029896364df}{notify\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached utility managers of a change. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Adds an employee to the commercial building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Removes an employee from the commercial building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the commercial building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCommercial_aefce5c973f343814ecb00f0538ba85e7}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident into the commercial building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommercial_a125f6c8d24f23e104d3e25376ab15a49}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the commercial building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a commercial building. 
+
+The \mbox{\hyperlink{classCommercial}{Commercial}} class extends the \mbox{\hyperlink{classBuilding}{Building}} class and provides an interface for specific types of commercial buildings. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}\label{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}} 
+\index{Commercial@{Commercial}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily virtual bool Commercial\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds an employee to the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classComShop_afec7730e363e2f48bb0aea3c1837fa9d}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a5283f3a82c215196ea7ca19331d7309b}{Com\+Office}}, and \mbox{\hyperlink{classComMall_a6a3c60105198a6228a11e5a5fb58f672}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_ac98dde7aa9692398d6f71f25c63de95f}\label{classCommercial_ac98dde7aa9692398d6f71f25c63de95f}} 
+\index{Commercial@{Commercial}!addUtility@{addUtility}}
+\index{addUtility@{addUtility}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{addUtility()}{addUtility()}}
+{\footnotesize\ttfamily void Commercial\+::add\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Attaches a utility manager to the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & A pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to attach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercial_ae103d2b4151183bd250b1344d2d15fca}\label{classCommercial_ae103d2b4151183bd250b1344d2d15fca}} 
+\index{Commercial@{Commercial}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily bool Commercial\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the building meets the requirements for construction. 
+
+\begin{DoxyReturn}{Returns}
+True if the building meets the requirements, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_a3100daec90c3af597268edd84d53269f}\label{classCommercial_a3100daec90c3af597268edd84d53269f}} 
+\index{Commercial@{Commercial}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Commercial\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of the building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBuilding_a82c020b9610147026c72ccec7ac35a57}{Building}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classComShop_a95c8ee058e7995e3d04af90fe40ead41}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a152a7a30d3cab299b0f65774974ffa78}{Com\+Office}}, and \mbox{\hyperlink{classComMall_aea8fe56f800035f4e0ba15ae9d6087b7}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_a366f76041acdacf0b0e961139d2a075a}\label{classCommercial_a366f76041acdacf0b0e961139d2a075a}} 
+\index{Commercial@{Commercial}!getJobCapacity@{getJobCapacity}}
+\index{getJobCapacity@{getJobCapacity}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{getJobCapacity()}{getJobCapacity()}}
+{\footnotesize\ttfamily virtual int Commercial\+::get\+Job\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the job capacity of the commercial building. 
+
+\begin{DoxyReturn}{Returns}
+The number of jobs the building can accommodate. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classComShop_a69faa2655149d24a23ca47bc12ba7fc8}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a1417fc450dee4117ce591063a6d3f654}{Com\+Office}}, and \mbox{\hyperlink{classComMall_a9bd391f561947ed228d3a5f6babafddc}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}\label{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}} 
+\index{Commercial@{Commercial}!getState@{getState}}
+\index{getState@{getState}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Commercial\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the commercial building. 
+
+\begin{DoxyReturn}{Returns}
+True if the building is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}{Building}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classComShop_a77a0eed363f9263f72338681fa10729e}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a635fcc8d6b2d21d3f4f4a09686c7444f}{Com\+Office}}, and \mbox{\hyperlink{classComMall_a778f0520b6c13c66d52f78d476bd5880}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_aefce5c973f343814ecb00f0538ba85e7}\label{classCommercial_aefce5c973f343814ecb00f0538ba85e7}} 
+\index{Commercial@{Commercial}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily bool Commercial\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident into the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the resident. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resident moved in successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_a125f6c8d24f23e104d3e25376ab15a49}\label{classCommercial_a125f6c8d24f23e104d3e25376ab15a49}} 
+\index{Commercial@{Commercial}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily void Commercial\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves a resident out of the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the resident. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a1b6930e08058e572f9b4670dc284f213}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}\label{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}} 
+\index{Commercial@{Commercial}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily virtual void Commercial\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies that an employee has left the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classComShop_ab62f7201fbeeef5bd50db8684092a615}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a4ab3a99ce7a957cd58e2c805f9c63bfa}{Com\+Office}}, and \mbox{\hyperlink{classComMall_ac24b884899b4c119118ad4e980725a70}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_aca09862ac0867b42671da029896364df}\label{classCommercial_aca09862ac0867b42671da029896364df}} 
+\index{Commercial@{Commercial}!notifyUtilities@{notifyUtilities}}
+\index{notifyUtilities@{notifyUtilities}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{notifyUtilities()}{notifyUtilities()}}
+{\footnotesize\ttfamily void Commercial\+::notify\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all attached utility managers of a change. 
+
+\mbox{\Hypertarget{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}\label{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}} 
+\index{Commercial@{Commercial}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily virtual void Commercial\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes an employee from the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classComShop_aec381bf88c2f65a12170d8315ad4b124}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_aaf204d3692776d16a91eda3621412088}{Com\+Office}}, and \mbox{\hyperlink{classComMall_a9b2413abc871c625354810362be5aba5}{Com\+Mall}}.
+
+\mbox{\Hypertarget{classCommercial_abfbf3cc31277e2fff49fb6b241108c06}\label{classCommercial_abfbf3cc31277e2fff49fb6b241108c06}} 
+\index{Commercial@{Commercial}!removeUtility@{removeUtility}}
+\index{removeUtility@{removeUtility}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{removeUtility()}{removeUtility()}}
+{\footnotesize\ttfamily void Commercial\+::remove\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Detaches a utility manager from the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & A pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to detach. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}\label{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}} 
+\index{Commercial@{Commercial}!setJobCapacity@{setJobCapacity}}
+\index{setJobCapacity@{setJobCapacity}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{setJobCapacity()}{setJobCapacity()}}
+{\footnotesize\ttfamily virtual void Commercial\+::set\+Job\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the job capacity of the commercial building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The new job capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classComShop_a49357f7329cb1f502e29cf72d9c968fa}{Com\+Shop}}, \mbox{\hyperlink{classComOffice_a225ffb0af6103b22f56e4248064f022c}{Com\+Office}}, and \mbox{\hyperlink{classComMall_a05ad01f4e387a60b7584949d10bd5bb4}{Com\+Mall}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{Commercial_8h}{Commercial.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{Commercial_8cpp}{Commercial.\+cpp}}\end{DoxyCompactItemize}

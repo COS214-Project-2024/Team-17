@@ -1,0 +1,330 @@
+\hypertarget{classResidential}{}\doxysection{Residential Class Reference}
+\label{classResidential}\index{Residential@{Residential}}
+
+
+Abstract class representing a residential building in the city.  
+
+
+
+
+{\ttfamily \#include $<$Residential.\+h$>$}
+
+
+
+Inheritance diagram for Residential\+:
+% FIG 0
+
+
+Collaboration diagram for Residential\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}{get\+Capacity}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the residential building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}{set\+Capacity}} (int capacity)=0
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the residential building. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResidential_ae26745fea16fabe41e53298f042dd7c6}{check\+Build\+Requirements}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the building meets construction requirements. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the residential building. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}{get\+Building\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the type of residential building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidential_ad63de485bfd073a7f0c8a6ec824f0d42}{add\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Attaches a utility manager to the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidential_aebe0fc38b9ae20152123943fecc436a7}{remove\+Utility}} (\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$utility)
+\begin{DoxyCompactList}\small\item\em Detaches a utility manager from the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResidential_a2c854a762e89258d48fc0bae4df428f6}{notify\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached utilities of a change in the residential building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classResidential_a879e51f5068f07c64931bccf6e820b96}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the residential building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResidential_ac725a68d51be41d8dda8498f0b41435d}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the residential building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)=0
+\begin{DoxyCompactList}\small\item\em Notifies the residential building that an employee has left. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classResidential_a74b58880de39649910606ba05c94f9d9}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are job openings in the residential building. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classResidential_a731dd372679eba6f8c88f6b43aef8618}{move\+In}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)=0
+\begin{DoxyCompactList}\small\item\em Moves a resident into the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classResidential_a98e71673e6bd3903469e30ae2a89e482}{move\+Out}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$resident)=0
+\begin{DoxyCompactList}\small\item\em Moves a resident out of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a residential building in the city. 
+
+The \mbox{\hyperlink{classResidential}{Residential}} class defines the interface for residential buildings, including methods for managing capacity, residents, utilities, and operational state. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResidential_a879e51f5068f07c64931bccf6e820b96}\label{classResidential_a879e51f5068f07c64931bccf6e820b96}} 
+\index{Residential@{Residential}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Residential\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the residential building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a174e439aeef42e2f839e9ad9cac4abf3}{Building}}.
+
+\mbox{\Hypertarget{classResidential_ad63de485bfd073a7f0c8a6ec824f0d42}\label{classResidential_ad63de485bfd073a7f0c8a6ec824f0d42}} 
+\index{Residential@{Residential}!addUtility@{addUtility}}
+\index{addUtility@{addUtility}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{addUtility()}{addUtility()}}
+{\footnotesize\ttfamily void Residential\+::add\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Attaches a utility manager to the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to attach. Attach a utility manager. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classResidential_ae26745fea16fabe41e53298f042dd7c6}\label{classResidential_ae26745fea16fabe41e53298f042dd7c6}} 
+\index{Residential@{Residential}!checkBuildRequirements@{checkBuildRequirements}}
+\index{checkBuildRequirements@{checkBuildRequirements}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{checkBuildRequirements()}{checkBuildRequirements()}}
+{\footnotesize\ttfamily bool Residential\+::check\+Build\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the building meets construction requirements. 
+
+\begin{DoxyReturn}{Returns}
+True if requirements are met, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ac1ab906b8479e0596c66e4d82b0e346a}{Building}}.
+
+\mbox{\Hypertarget{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}\label{classResidential_afc2cac63a95cd00af7c5017c9c9876d4}} 
+\index{Residential@{Residential}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Residential\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the type of residential building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBuilding_a82c020b9610147026c72ccec7ac35a57}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_a2df6c72337e2f999c022f119a2b17825}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a12384354287031878252dd97664eefd8}{Res\+House}}, \mbox{\hyperlink{classResFlat_a6d67b9e20f9fa9533fea6bb3205fc790}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_ab3231586244bb402a29d7c7303cbc029}{Res\+Estate}}.
+
+\mbox{\Hypertarget{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}\label{classResidential_a0c3dc5a6fbf04c5e85108c80d199efa6}} 
+\index{Residential@{Residential}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily virtual int Residential\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the capacity of the residential building. 
+
+\begin{DoxyReturn}{Returns}
+The maximum number of residents that can occupy the building. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_ab0da177ad4aa1433a0aed832056c3c24}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a93d09348a34c56c45df8241d45dc3736}{Res\+House}}, \mbox{\hyperlink{classResFlat_accfac70285933b554683f6885f44f2c7}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_a2fd031430394ca2c6ff29e652e8b4724}{Res\+Estate}}.
+
+\mbox{\Hypertarget{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}\label{classResidential_aad20d0f6beb47acab1cd0837a573f3b1}} 
+\index{Residential@{Residential}!getState@{getState}}
+\index{getState@{getState}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Residential\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the operational state of the residential building. 
+
+\begin{DoxyReturn}{Returns}
+True if the building is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a18a7d8189d980f4f90e2dfb9d3b84ae1}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_a0af16e2ad4713f33e45352a4fe84c202}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_ae24eeaa3883d653e9bf457dc3bbf8ae2}{Res\+House}}, \mbox{\hyperlink{classResFlat_a9e157781be1200bd27cb6a5ea38811d2}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_ad03438bee7a1009f7e7412d6a06d5d1c}{Res\+Estate}}.
+
+\mbox{\Hypertarget{classResidential_a74b58880de39649910606ba05c94f9d9}\label{classResidential_a74b58880de39649910606ba05c94f9d9}} 
+\index{Residential@{Residential}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Residential\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are job openings in the residential building. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classResidential_a731dd372679eba6f8c88f6b43aef8618}\label{classResidential_a731dd372679eba6f8c88f6b43aef8618}} 
+\index{Residential@{Residential}!moveIn@{moveIn}}
+\index{moveIn@{moveIn}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{moveIn()}{moveIn()}}
+{\footnotesize\ttfamily virtual bool Residential\+::move\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves a resident into the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the resident was successfully moved in, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_ad069920e7bce1b393ff7023f051c4c6b}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_aa20c3f1e9fecb76e532189c19da5dca9}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a1fb94e286b14e4c7680faf45a8b1f4f6}{Res\+House}}, \mbox{\hyperlink{classResFlat_ac0771aac848a2f86ac829445cc7ce4b9}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_a27678111da7d99003a29f1e19d6b720f}{Res\+Estate}}.
+
+\mbox{\Hypertarget{classResidential_a98e71673e6bd3903469e30ae2a89e482}\label{classResidential_a98e71673e6bd3903469e30ae2a89e482}} 
+\index{Residential@{Residential}!moveOut@{moveOut}}
+\index{moveOut@{moveOut}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{moveOut()}{moveOut()}}
+{\footnotesize\ttfamily virtual void Residential\+::move\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{resident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves a resident out of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resident} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be moved out. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a1b6930e08058e572f9b4670dc284f213}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_a0b827c696811168dbd8157ff9b4973c5}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_aeb7389a8cdae53a1856117bfc60eac60}{Res\+House}}, \mbox{\hyperlink{classResFlat_a7984db105c3ad9ecb2cda5f1ad154e7c}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_a7c1a1a9e4711b7dcecb5e1c8cac2b9e8}{Res\+Estate}}.
+
+\mbox{\Hypertarget{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}\label{classResidential_abf29f2b74bc3e081dbbb8d398c122b10}} 
+\index{Residential@{Residential}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily virtual void Residential\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the residential building that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_ade2f151b92b04cacd18c757ea37ddb85}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classResEstate_ac85c8c11be3b97c1234245f763d720d1}{Res\+Estate}}, \mbox{\hyperlink{classResTownhouse_acf90f5e2ebda55c078a98c5abdb5ac07}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a0473b106b5bdab7d1e27986fdf58a50a}{Res\+House}}, and \mbox{\hyperlink{classResFlat_acc3eaf56938d1902b706a9822a6ed494}{Res\+Flat}}.
+
+\mbox{\Hypertarget{classResidential_a2c854a762e89258d48fc0bae4df428f6}\label{classResidential_a2c854a762e89258d48fc0bae4df428f6}} 
+\index{Residential@{Residential}!notifyUtilities@{notifyUtilities}}
+\index{notifyUtilities@{notifyUtilities}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{notifyUtilities()}{notifyUtilities()}}
+{\footnotesize\ttfamily void Residential\+::notify\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all attached utilities of a change in the residential building. 
+
+Notify attached utilities. \mbox{\Hypertarget{classResidential_ac725a68d51be41d8dda8498f0b41435d}\label{classResidential_ac725a68d51be41d8dda8498f0b41435d}} 
+\index{Residential@{Residential}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Residential\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the residential building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBuilding_a9ee1ad8a886e25dd1fa75b47bec67627}{Building}}.
+
+\mbox{\Hypertarget{classResidential_aebe0fc38b9ae20152123943fecc436a7}\label{classResidential_aebe0fc38b9ae20152123943fecc436a7}} 
+\index{Residential@{Residential}!removeUtility@{removeUtility}}
+\index{removeUtility@{removeUtility}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{removeUtility()}{removeUtility()}}
+{\footnotesize\ttfamily void Residential\+::remove\+Utility (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} $\ast$}]{utility }\end{DoxyParamCaption})}
+
+
+
+Detaches a utility manager from the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utility} & Pointer to the \mbox{\hyperlink{classUtilityManager}{Utility\+Manager}} to detach. Detach a utility manager. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}\label{classResidential_a7761ccd3b08809aa496d8b6d3ebc3609}} 
+\index{Residential@{Residential}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!Residential@{Residential}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily virtual void Residential\+::set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the capacity of the residential building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of residents to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classResTownhouse_adbecccf70862502897577d90a9cd5939}{Res\+Townhouse}}, \mbox{\hyperlink{classResHouse_a0b1a5bdaa86f37089c0eff11fe3b2bae}{Res\+House}}, \mbox{\hyperlink{classResFlat_a3e2de5e90a683ff419aeb4422fd4c305}{Res\+Flat}}, and \mbox{\hyperlink{classResEstate_a99c2b8110e37e2da9a59b44946e788a1}{Res\+Estate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{Residential_8h}{Residential.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{Residential_8cpp}{Residential.\+cpp}}\end{DoxyCompactItemize}

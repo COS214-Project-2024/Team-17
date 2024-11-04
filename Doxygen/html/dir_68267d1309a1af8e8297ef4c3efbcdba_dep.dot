@@ -1,0 +1,25 @@
+digraph "src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
+    dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+  dir_72e3e6afd7dac6edbd74222a41943123 [shape=box label="Buildings" fillcolor="white" style="filled" URL="dir_72e3e6afd7dac6edbd74222a41943123.html"];
+  dir_b3280085a459050633bb0b3bfa44e340 [shape=box label="Citizens" fillcolor="white" style="filled" color="red" URL="dir_b3280085a459050633bb0b3bfa44e340.html"];
+  dir_d8bd213551b1cdf5fbc485b578c9f921 [shape=box label="Government+Tax" fillcolor="white" style="filled" URL="dir_d8bd213551b1cdf5fbc485b578c9f921.html"];
+  dir_a424be9c04c54fb66361ff8db17b7a64 [shape=box label="Transport" fillcolor="white" style="filled" color="red" URL="dir_a424be9c04c54fb66361ff8db17b7a64.html"];
+  dir_ff383ddf1aa4eab0c4ce7910366d05a5 [shape=box label="Utilities" fillcolor="white" style="filled" URL="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html"];
+  }
+  dir_a424be9c04c54fb66361ff8db17b7a64->dir_72e3e6afd7dac6edbd74222a41943123 [headlabel="4", labeldistance=1.5 headhref="dir_000225_000221.html"];
+  dir_a424be9c04c54fb66361ff8db17b7a64->dir_b3280085a459050633bb0b3bfa44e340 [headlabel="6", labeldistance=1.5 headhref="dir_000225_000222.html"];
+  dir_b3280085a459050633bb0b3bfa44e340->dir_72e3e6afd7dac6edbd74222a41943123 [headlabel="6", labeldistance=1.5 headhref="dir_000222_000221.html"];
+  dir_b3280085a459050633bb0b3bfa44e340->dir_a424be9c04c54fb66361ff8db17b7a64 [headlabel="3", labeldistance=1.5 headhref="dir_000222_000225.html"];
+  dir_b3280085a459050633bb0b3bfa44e340->dir_d8bd213551b1cdf5fbc485b578c9f921 [headlabel="1", labeldistance=1.5 headhref="dir_000222_000224.html"];
+  dir_d8bd213551b1cdf5fbc485b578c9f921->dir_72e3e6afd7dac6edbd74222a41943123 [headlabel="2", labeldistance=1.5 headhref="dir_000224_000221.html"];
+  dir_d8bd213551b1cdf5fbc485b578c9f921->dir_b3280085a459050633bb0b3bfa44e340 [headlabel="3", labeldistance=1.5 headhref="dir_000224_000222.html"];
+  dir_ff383ddf1aa4eab0c4ce7910366d05a5->dir_72e3e6afd7dac6edbd74222a41943123 [headlabel="4", labeldistance=1.5 headhref="dir_000229_000221.html"];
+  dir_ff383ddf1aa4eab0c4ce7910366d05a5->dir_b3280085a459050633bb0b3bfa44e340 [headlabel="4", labeldistance=1.5 headhref="dir_000229_000222.html"];
+  dir_72e3e6afd7dac6edbd74222a41943123->dir_b3280085a459050633bb0b3bfa44e340 [headlabel="4", labeldistance=1.5 headhref="dir_000221_000222.html"];
+  dir_72e3e6afd7dac6edbd74222a41943123->dir_ff383ddf1aa4eab0c4ce7910366d05a5 [headlabel="4", labeldistance=1.5 headhref="dir_000221_000229.html"];
+}

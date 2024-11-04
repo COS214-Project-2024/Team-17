@@ -1,0 +1,272 @@
+\hypertarget{classComMall}{}\doxysection{Com\+Mall Class Reference}
+\label{classComMall}\index{ComMall@{ComMall}}
+
+
+Represents a commercial mall, extending the \mbox{\hyperlink{classCommercial}{Commercial}} class.  
+
+
+
+
+{\ttfamily \#include $<$Com\+Mall.\+h$>$}
+
+
+
+Inheritance diagram for Com\+Mall\+:
+% FIG 0
+
+
+Collaboration diagram for Com\+Mall\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classComMall_a489fb9326cea8cf79ea6ab594d91838c}{Com\+Mall}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classComMall}{Com\+Mall}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComMall_a1372cf89d4c460d314551a54d5e5a049}{$\sim$\+Com\+Mall}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classComMall}{Com\+Mall}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComMall_a2288370321826ecbd3eb8a6c2dcb9bc0}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the commercial mall. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classComMall_a9bd391f561947ed228d3a5f6babafddc}{get\+Job\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the job capacity of the commercial mall. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComMall_a05ad01f4e387a60b7584949d10bd5bb4}{set\+Job\+Capacity}} (int capacity) override
+\begin{DoxyCompactList}\small\item\em Sets the job capacity of the commercial mall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComMall_a77a9c243a56ce7511f3dbd6b786b85a5}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities for the commercial mall. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComMall_a778f0520b6c13c66d52f78d476bd5880}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the commercial mall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComMall_a1f9c79338e35c81fc9b6c2178b609fbb}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the commercial mall. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classComMall_aea8fe56f800035f4e0ba15ae9d6087b7}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the commercial mall. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComMall_a6a3c60105198a6228a11e5a5fb58f672}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the commercial mall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComMall_a9b2413abc871c625354810362be5aba5}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the commercial mall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComMall_ac24b884899b4c119118ad4e980725a70}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies that an employee has left the commercial mall. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComMall_af826a80de2214f9829399f264226dfeb}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are jobs available in the mall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial mall, extending the \mbox{\hyperlink{classCommercial}{Commercial}} class. 
+
+The \mbox{\hyperlink{classComMall}{Com\+Mall}} class provides implementation for a mall building, including details about its resources, operational state, and employee management. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classComMall_a489fb9326cea8cf79ea6ab594d91838c}\label{classComMall_a489fb9326cea8cf79ea6ab594d91838c}} 
+\index{ComMall@{ComMall}!ComMall@{ComMall}}
+\index{ComMall@{ComMall}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{ComMall()}{ComMall()}}
+{\footnotesize\ttfamily Com\+Mall\+::\+Com\+Mall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classComMall}{Com\+Mall}}. 
+
+\mbox{\Hypertarget{classComMall_a1372cf89d4c460d314551a54d5e5a049}\label{classComMall_a1372cf89d4c460d314551a54d5e5a049}} 
+\index{ComMall@{ComMall}!````~ComMall@{$\sim$ComMall}}
+\index{````~ComMall@{$\sim$ComMall}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{$\sim$ComMall()}{~ComMall()}}
+{\footnotesize\ttfamily Com\+Mall\+::$\sim$\+Com\+Mall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classComMall}{Com\+Mall}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classComMall_a6a3c60105198a6228a11e5a5fb58f672}\label{classComMall_a6a3c60105198a6228a11e5a5fb58f672}} 
+\index{ComMall@{ComMall}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Com\+Mall\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the commercial mall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was added successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a2bbb88b0497d08951f6d8acf3f6bc296}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a77a9c243a56ce7511f3dbd6b786b85a5}\label{classComMall_a77a9c243a56ce7511f3dbd6b786b85a5}} 
+\index{ComMall@{ComMall}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Com\+Mall\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities for the commercial mall. 
+
+\mbox{\Hypertarget{classComMall_a2288370321826ecbd3eb8a6c2dcb9bc0}\label{classComMall_a2288370321826ecbd3eb8a6c2dcb9bc0}} 
+\index{ComMall@{ComMall}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Com\+Mall\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the commercial mall. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classComMall_aea8fe56f800035f4e0ba15ae9d6087b7}\label{classComMall_aea8fe56f800035f4e0ba15ae9d6087b7}} 
+\index{ComMall@{ComMall}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Com\+Mall\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of the commercial mall. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the building type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a3100daec90c3af597268edd84d53269f}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a9bd391f561947ed228d3a5f6babafddc}\label{classComMall_a9bd391f561947ed228d3a5f6babafddc}} 
+\index{ComMall@{ComMall}!getJobCapacity@{getJobCapacity}}
+\index{getJobCapacity@{getJobCapacity}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{getJobCapacity()}{getJobCapacity()}}
+{\footnotesize\ttfamily int Com\+Mall\+::get\+Job\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the job capacity of the commercial mall. 
+
+\begin{DoxyReturn}{Returns}
+The number of jobs the mall can accommodate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommercial_a366f76041acdacf0b0e961139d2a075a}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a778f0520b6c13c66d52f78d476bd5880}\label{classComMall_a778f0520b6c13c66d52f78d476bd5880}} 
+\index{ComMall@{ComMall}!getState@{getState}}
+\index{getState@{getState}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Com\+Mall\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the commercial mall. 
+
+\begin{DoxyReturn}{Returns}
+True if the mall is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCommercial_a2e3de487ba5d720a6977ca4bbaaf8c3f}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_af826a80de2214f9829399f264226dfeb}\label{classComMall_af826a80de2214f9829399f264226dfeb}} 
+\index{ComMall@{ComMall}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Com\+Mall\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are jobs available in the mall. 
+
+\begin{DoxyReturn}{Returns}
+True if there are available jobs, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classComMall_ac24b884899b4c119118ad4e980725a70}\label{classComMall_ac24b884899b4c119118ad4e980725a70}} 
+\index{ComMall@{ComMall}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Com\+Mall\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies that an employee has left the commercial mall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a1881e42343eb3a90b78cdf6a8474b8eb}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a9b2413abc871c625354810362be5aba5}\label{classComMall_a9b2413abc871c625354810362be5aba5}} 
+\index{ComMall@{ComMall}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Com\+Mall\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the commercial mall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & A pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} representing the employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a5df2e5807ab3796b38acf5c9d2e18c9c}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a05ad01f4e387a60b7584949d10bd5bb4}\label{classComMall_a05ad01f4e387a60b7584949d10bd5bb4}} 
+\index{ComMall@{ComMall}!setJobCapacity@{setJobCapacity}}
+\index{setJobCapacity@{setJobCapacity}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{setJobCapacity()}{setJobCapacity()}}
+{\footnotesize\ttfamily void Com\+Mall\+::set\+Job\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the job capacity of the commercial mall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The new job capacity to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommercial_a8da779ef5b68673adcb631656a2ccf1f}{Commercial}}.
+
+\mbox{\Hypertarget{classComMall_a1f9c79338e35c81fc9b6c2178b609fbb}\label{classComMall_a1f9c79338e35c81fc9b6c2178b609fbb}} 
+\index{ComMall@{ComMall}!setState@{setState}}
+\index{setState@{setState}!ComMall@{ComMall}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Com\+Mall\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the commercial mall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{ComMall_8h}{Com\+Mall.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{ComMall_8cpp}{Com\+Mall.\+cpp}}\end{DoxyCompactItemize}

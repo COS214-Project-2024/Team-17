@@ -1,0 +1,259 @@
+\hypertarget{classRoadComponent}{}\doxysection{Road\+Component Class Reference}
+\label{classRoadComponent}\index{RoadComponent@{RoadComponent}}
+
+
+{\ttfamily \#include $<$Road\+Component.\+h$>$}
+
+
+
+Inheritance diagram for Road\+Component\+:
+% FIG 0
+
+
+Collaboration diagram for Road\+Component\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classRoadComponent_a14f7f982767020220f4bb841f4c321df}{display\+Info}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}{calculate\+Traffic}} ()=0
+\item 
+virtual float \mbox{\hyperlink{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}{get\+Distance}} ()=0
+\item 
+\mbox{\hyperlink{classRoadIterator}{Road\+Iterator}} $\ast$ \mbox{\hyperlink{classRoadComponent_a66be708b61f6aba603f31461db344bd6}{create\+Iterator}} ()
+\item 
+void \mbox{\hyperlink{classRoadComponent_aced844248f54507b90db462d63000214}{set\+State}} (\mbox{\hyperlink{classRoadState}{Road\+State}} $\ast$new\+State)
+\item 
+void \mbox{\hyperlink{classRoadComponent_ae53f64dbe67cb8be9ec91629b8e5c8dc}{handle\+Traffic}} ()
+\item 
+\mbox{\hyperlink{classRoadComponent_a8254dae4b368b0584c885c200bd6b4fc}{Road\+Component}} (int \mbox{\hyperlink{classRoadComponent_a83c1fbf32e82a5cb7e6681188cc813ff}{startX}}, int \mbox{\hyperlink{classRoadComponent_a37859adb61795945164203977f9ac49b}{startY}}, int \mbox{\hyperlink{classRoadComponent_ac9d8ff400c1ff047dba8705216222e80}{endX}}, int \mbox{\hyperlink{classRoadComponent_a4b09ec850043c8a6615c2a64899908d3}{endY}})
+\item 
+virtual void \mbox{\hyperlink{classRoadComponent_a7770f8642dec422ce25edf448bd3c36f}{notify\+Change}} ()
+\item 
+virtual void \mbox{\hyperlink{classRoadComponent_a6f8ea55f5b78b41f383ed1cb11465674}{accept}} (\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$visitor)
+\item 
+virtual \mbox{\hyperlink{classRoadComponent_a5ed564d7e28ada0a5213598801d4b36a}{$\sim$\+Road\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}{add\+Connection}} (\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$connection, float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}})=0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \mbox{\hyperlink{classRoadComponent_a3505ebe2ac9228a7a6693a8b66948db8}{get\+Connections}} ()
+\item 
+virtual bool \mbox{\hyperlink{classRoadComponent_ae604840eb1377b5dfa20b18db3b0109f}{is\+Full}} ()
+\item 
+virtual bool \mbox{\hyperlink{classRoadComponent_a2c2a006bf6225df071214c7da1860d72}{add\+User}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$user)
+\item 
+virtual bool \mbox{\hyperlink{classRoadComponent_abb73a5d6c8c631d1f8e7d0ad8f147b8e}{remove\+User}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$user)
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $\ast$ $>$ \mbox{\hyperlink{classRoadComponent_a1538926a79e23903252150c09dd71bf3}{get\+Users}} ()
+\item 
+virtual float \mbox{\hyperlink{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}{calculate\+Distance}} (int x, int y)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classRoadComponent_ad6d36b8bfb8c3ccee99f26d0ea824abd}{capacity}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $\ast$ $>$ \mbox{\hyperlink{classRoadComponent_aa5d5c5ec30033082a20ae5ce0ffddee8}{users}}
+\item 
+float \mbox{\hyperlink{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}{distance}}
+\item 
+int \mbox{\hyperlink{classRoadComponent_a83c1fbf32e82a5cb7e6681188cc813ff}{startX}}
+\item 
+int \mbox{\hyperlink{classRoadComponent_a37859adb61795945164203977f9ac49b}{startY}}
+\item 
+int \mbox{\hyperlink{classRoadComponent_ac9d8ff400c1ff047dba8705216222e80}{endX}}
+\item 
+int \mbox{\hyperlink{classRoadComponent_a4b09ec850043c8a6615c2a64899908d3}{endY}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ \mbox{\hyperlink{classRoadComponent_a1d3fb3cfd5950219ba63c3056e72bf66}{connections}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRoadComponent_a8254dae4b368b0584c885c200bd6b4fc}\label{classRoadComponent_a8254dae4b368b0584c885c200bd6b4fc}} 
+\index{RoadComponent@{RoadComponent}!RoadComponent@{RoadComponent}}
+\index{RoadComponent@{RoadComponent}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{RoadComponent()}{RoadComponent()}}
+{\footnotesize\ttfamily Road\+Component\+::\+Road\+Component (\begin{DoxyParamCaption}\item[{int}]{startX,  }\item[{int}]{startY,  }\item[{int}]{endX,  }\item[{int}]{endY }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRoadComponent_a5ed564d7e28ada0a5213598801d4b36a}\label{classRoadComponent_a5ed564d7e28ada0a5213598801d4b36a}} 
+\index{RoadComponent@{RoadComponent}!````~RoadComponent@{$\sim$RoadComponent}}
+\index{````~RoadComponent@{$\sim$RoadComponent}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$RoadComponent()}{~RoadComponent()}}
+{\footnotesize\ttfamily Road\+Component\+::$\sim$\+Road\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoadComponent_a6f8ea55f5b78b41f383ed1cb11465674}\label{classRoadComponent_a6f8ea55f5b78b41f383ed1cb11465674}} 
+\index{RoadComponent@{RoadComponent}!accept@{accept}}
+\index{accept@{accept}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Road\+Component\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTaxAndBudgetVisitor}{Tax\+And\+Budget\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}\label{classRoadComponent_adfcb51f90d20dd25926d914901a6f47f}} 
+\index{RoadComponent@{RoadComponent}!addConnection@{addConnection}}
+\index{addConnection@{addConnection}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{addConnection()}{addConnection()}}
+{\footnotesize\ttfamily virtual void Road\+Component\+::add\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$}]{connection,  }\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRoadsComposite_a8f5173374ef5d91567aeae4dddf17599}{Roads\+Composite}}, \mbox{\hyperlink{classResidentialStreets_ac4fe70922a7a4f23b56071be2d8e0a2c}{Residential\+Streets}}, \mbox{\hyperlink{classMainRoads_a4aa57d819287001829e8dadb9e8fd555}{Main\+Roads}}, and \mbox{\hyperlink{classHighways_a752d02171886f53b00dfb4bfcfb07a35}{Highways}}.
+
+\mbox{\Hypertarget{classRoadComponent_a2c2a006bf6225df071214c7da1860d72}\label{classRoadComponent_a2c2a006bf6225df071214c7da1860d72}} 
+\index{RoadComponent@{RoadComponent}!addUser@{addUser}}
+\index{addUser@{addUser}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{addUser()}{addUser()}}
+{\footnotesize\ttfamily bool Road\+Component\+::add\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}\label{classRoadComponent_a429f87131c3e7187e2db5dfd0a0f0dcd}} 
+\index{RoadComponent@{RoadComponent}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily virtual float Road\+Component\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRoadsComposite_ab676f479c9307e9430dd1fed1bfe5ec1}{Roads\+Composite}}, \mbox{\hyperlink{classResidentialStreets_a669c6fa66c551753ce0396813193cb78}{Residential\+Streets}}, \mbox{\hyperlink{classMainRoads_a348c829d638f2d505ceca558b52dc136}{Main\+Roads}}, and \mbox{\hyperlink{classHighways_a9eafacea42b11c2ce9dae2e7f6fc2bff}{Highways}}.
+
+\mbox{\Hypertarget{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}\label{classRoadComponent_a46d2a72bfc28e9e40abf61c1e93ecf5c}} 
+\index{RoadComponent@{RoadComponent}!calculateTraffic@{calculateTraffic}}
+\index{calculateTraffic@{calculateTraffic}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{calculateTraffic()}{calculateTraffic()}}
+{\footnotesize\ttfamily virtual void Road\+Component\+::calculate\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRoadsComposite_aedab943041c12dc2931e4eb7b16245c5}{Roads\+Composite}}, \mbox{\hyperlink{classResidentialStreets_acfe4eb0451a75cded814517f6a98dc71}{Residential\+Streets}}, \mbox{\hyperlink{classMainRoads_a8b693dbdd6f23a9c6dc08688b2983605}{Main\+Roads}}, and \mbox{\hyperlink{classHighways_ac3e998e7d300fb2cf48cf0ab63cdfbd4}{Highways}}.
+
+\mbox{\Hypertarget{classRoadComponent_a66be708b61f6aba603f31461db344bd6}\label{classRoadComponent_a66be708b61f6aba603f31461db344bd6}} 
+\index{RoadComponent@{RoadComponent}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRoadIterator}{Road\+Iterator}} $\ast$ Road\+Component\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRoadComponent_a14f7f982767020220f4bb841f4c321df}\label{classRoadComponent_a14f7f982767020220f4bb841f4c321df}} 
+\index{RoadComponent@{RoadComponent}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily virtual void Road\+Component\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRoadsComposite_afeb08457ec74d2e7b681d71a226a1b99}{Roads\+Composite}}, \mbox{\hyperlink{classResidentialStreets_ac312422447e156d65c8e43715c04f8bf}{Residential\+Streets}}, \mbox{\hyperlink{classMainRoads_ab544a83b117e40a0fbd1233f63db6af0}{Main\+Roads}}, and \mbox{\hyperlink{classHighways_a55cc851fc5054149117d7ff546a37433}{Highways}}.
+
+\mbox{\Hypertarget{classRoadComponent_a3505ebe2ac9228a7a6693a8b66948db8}\label{classRoadComponent_a3505ebe2ac9228a7a6693a8b66948db8}} 
+\index{RoadComponent@{RoadComponent}!getConnections@{getConnections}}
+\index{getConnections@{getConnections}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{getConnections()}{getConnections()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$ $>$ Road\+Component\+::get\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classRoadsComposite_ab37dd7028cab2314485c686dec323bfa}{Roads\+Composite}}.
+
+\mbox{\Hypertarget{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}\label{classRoadComponent_a80356b3877aa26f25e182aa6d7ac5b60}} 
+\index{RoadComponent@{RoadComponent}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily virtual float Road\+Component\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRoadsComposite_a9ac6e04a9ae19b5be24ed8bad4c1bbf2}{Roads\+Composite}}, \mbox{\hyperlink{classResidentialStreets_a18db9835b6a8b8c7c728d93d41c601ce}{Residential\+Streets}}, \mbox{\hyperlink{classMainRoads_a0c5722604159b146040c402231be8080}{Main\+Roads}}, and \mbox{\hyperlink{classHighways_adc9efe4bc0cb48ce10639913a719c351}{Highways}}.
+
+\mbox{\Hypertarget{classRoadComponent_a1538926a79e23903252150c09dd71bf3}\label{classRoadComponent_a1538926a79e23903252150c09dd71bf3}} 
+\index{RoadComponent@{RoadComponent}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $\ast$ $>$ Road\+Component\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_ae53f64dbe67cb8be9ec91629b8e5c8dc}\label{classRoadComponent_ae53f64dbe67cb8be9ec91629b8e5c8dc}} 
+\index{RoadComponent@{RoadComponent}!handleTraffic@{handleTraffic}}
+\index{handleTraffic@{handleTraffic}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{handleTraffic()}{handleTraffic()}}
+{\footnotesize\ttfamily void Road\+Component\+::handle\+Traffic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRoadComponent_ae604840eb1377b5dfa20b18db3b0109f}\label{classRoadComponent_ae604840eb1377b5dfa20b18db3b0109f}} 
+\index{RoadComponent@{RoadComponent}!isFull@{isFull}}
+\index{isFull@{isFull}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily bool Road\+Component\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_a7770f8642dec422ce25edf448bd3c36f}\label{classRoadComponent_a7770f8642dec422ce25edf448bd3c36f}} 
+\index{RoadComponent@{RoadComponent}!notifyChange@{notifyChange}}
+\index{notifyChange@{notifyChange}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{notifyChange()}{notifyChange()}}
+{\footnotesize\ttfamily void Road\+Component\+::notify\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_abb73a5d6c8c631d1f8e7d0ad8f147b8e}\label{classRoadComponent_abb73a5d6c8c631d1f8e7d0ad8f147b8e}} 
+\index{RoadComponent@{RoadComponent}!removeUser@{removeUser}}
+\index{removeUser@{removeUser}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{removeUser()}{removeUser()}}
+{\footnotesize\ttfamily bool Road\+Component\+::remove\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRoadComponent_aced844248f54507b90db462d63000214}\label{classRoadComponent_aced844248f54507b90db462d63000214}} 
+\index{RoadComponent@{RoadComponent}!setState@{setState}}
+\index{setState@{setState}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Road\+Component\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoadState}{Road\+State}} $\ast$}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRoadComponent_ad6d36b8bfb8c3ccee99f26d0ea824abd}\label{classRoadComponent_ad6d36b8bfb8c3ccee99f26d0ea824abd}} 
+\index{RoadComponent@{RoadComponent}!capacity@{capacity}}
+\index{capacity@{capacity}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily int Road\+Component\+::capacity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_a1d3fb3cfd5950219ba63c3056e72bf66}\label{classRoadComponent_a1d3fb3cfd5950219ba63c3056e72bf66}} 
+\index{RoadComponent@{RoadComponent}!connections@{connections}}
+\index{connections@{connections}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{connections}{connections}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classRoadComponent}{Road\+Component}} $\ast$$>$ Road\+Component\+::connections\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}\label{classRoadComponent_a344f555a8c54aa01c36c6061874f6230}} 
+\index{RoadComponent@{RoadComponent}!distance@{distance}}
+\index{distance@{distance}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily float Road\+Component\+::distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_ac9d8ff400c1ff047dba8705216222e80}\label{classRoadComponent_ac9d8ff400c1ff047dba8705216222e80}} 
+\index{RoadComponent@{RoadComponent}!endX@{endX}}
+\index{endX@{endX}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{endX}{endX}}
+{\footnotesize\ttfamily int Road\+Component\+::endX\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_a4b09ec850043c8a6615c2a64899908d3}\label{classRoadComponent_a4b09ec850043c8a6615c2a64899908d3}} 
+\index{RoadComponent@{RoadComponent}!endY@{endY}}
+\index{endY@{endY}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{endY}{endY}}
+{\footnotesize\ttfamily int Road\+Component\+::endY\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_a83c1fbf32e82a5cb7e6681188cc813ff}\label{classRoadComponent_a83c1fbf32e82a5cb7e6681188cc813ff}} 
+\index{RoadComponent@{RoadComponent}!startX@{startX}}
+\index{startX@{startX}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{startX}{startX}}
+{\footnotesize\ttfamily int Road\+Component\+::startX\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_a37859adb61795945164203977f9ac49b}\label{classRoadComponent_a37859adb61795945164203977f9ac49b}} 
+\index{RoadComponent@{RoadComponent}!startY@{startY}}
+\index{startY@{startY}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{startY}{startY}}
+{\footnotesize\ttfamily int Road\+Component\+::startY\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRoadComponent_aa5d5c5ec30033082a20ae5ce0ffddee8}\label{classRoadComponent_aa5d5c5ec30033082a20ae5ce0ffddee8}} 
+\index{RoadComponent@{RoadComponent}!users@{users}}
+\index{users@{users}!RoadComponent@{RoadComponent}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$$>$ Road\+Component\+::users\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Transport/\mbox{\hyperlink{RoadComponent_8h}{Road\+Component.\+h}}\item 
+src/\+Transport/\mbox{\hyperlink{RoadComponent_8cpp}{Road\+Component.\+cpp}}\end{DoxyCompactItemize}

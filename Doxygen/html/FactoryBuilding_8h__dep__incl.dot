@@ -1,0 +1,56 @@
+digraph "src/Buildings/FactoryBuilding.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/Buildings/FactoryBuilding.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DemoMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DemoMain_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/Buildings/FactCommercial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactCommercial_8h.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/Buildings/FactCommercial.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactCommercial_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/Game.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Game_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/Game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Game_8cpp.html",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="tests/test_buildings.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__buildings_8cpp.html",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="tests/unit_factory.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$unit__factory_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/Buildings/FactIndustrial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactIndustrial_8h.html",tooltip=" "];
+  Node9 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="src/Buildings/FactIndustrial.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactIndustrial_8cpp.html",tooltip=" "];
+  Node9 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="src/Buildings/FactLandmarks.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactLandmarks_8h.html",tooltip=" "];
+  Node11 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="src/Buildings/FactLandmarks.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactLandmarks_8cpp.html",tooltip=" "];
+  Node11 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="src/Buildings/FactResidential.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactResidential_8h.html",tooltip=" "];
+  Node13 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="src/Buildings/FactResidential.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactResidential_8cpp.html",tooltip=" "];
+  Node13 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="src/Buildings/FactService.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactService_8h.html",tooltip=" "];
+  Node15 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="src/Buildings/FactService.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FactService_8cpp.html",tooltip=" "];
+  Node15 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

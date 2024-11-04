@@ -1,0 +1,154 @@
+\hypertarget{classUtilWasteMan}{}\doxysection{Util\+Waste\+Man Class Reference}
+\label{classUtilWasteMan}\index{UtilWasteMan@{UtilWasteMan}}
+
+
+Represents the waste management system.  
+
+
+
+
+{\ttfamily \#include $<$Util\+Waste\+Man.\+h$>$}
+
+
+
+Inheritance diagram for Util\+Waste\+Man\+:
+% FIG 0
+
+
+Collaboration diagram for Util\+Waste\+Man\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtilWasteMan_aa923c3150cd7c53c17f6ff02f6cf5577}{Util\+Waste\+Man}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new Waste Management utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWasteMan_a2b64625ae2edee0ab2e447c95f9bf77f}{start\+Utility}} ()
+\begin{DoxyCompactList}\small\item\em Starts the Waste Management service, making it operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWasteMan_af3c9efac54630a71534f322b4400c501}{update}} (\mbox{\hyperlink{classBuilding}{Building}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Updates the operational state based on the status of the specified building. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtilWasteMan_a0faadb5129a08b2add271c6ce518602f}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the type of this utility. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtilWasteMan_afab2edbba027813796bb03af4cd83089}{is\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Waste Management service is operational. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtilWasteMan_a56340946c2e07e03bbf5ed83e7069d34}{shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the Waste Management service, making it non-\/operational. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the waste management system. 
+
+Handles waste collection and disposal operations for buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilWasteMan_aa923c3150cd7c53c17f6ff02f6cf5577}\label{classUtilWasteMan_aa923c3150cd7c53c17f6ff02f6cf5577}} 
+\index{UtilWasteMan@{UtilWasteMan}!UtilWasteMan@{UtilWasteMan}}
+\index{UtilWasteMan@{UtilWasteMan}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{UtilWasteMan()}{UtilWasteMan()}}
+{\footnotesize\ttfamily Util\+Waste\+Man\+::\+Util\+Waste\+Man (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new Waste Management utility. 
+
+Constructor for the \mbox{\hyperlink{classUtilWasteMan}{Util\+Waste\+Man}} class. Initializes the Waste Dump utility as non-\/operational and sets the type. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilWasteMan_a0faadb5129a08b2add271c6ce518602f}\label{classUtilWasteMan_a0faadb5129a08b2add271c6ce518602f}} 
+\index{UtilWasteMan@{UtilWasteMan}!getType@{getType}}
+\index{getType@{getType}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Util\+Waste\+Man\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the type of this utility. 
+
+Gets the type of utility service provided by this class.
+
+\begin{DoxyReturn}{Returns}
+The type as a string (\char`\"{}\+Waste Dump\char`\"{}).
+
+The type as a string, e.\+g., \char`\"{}\+Waste Dump\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a03b2ba979e1bdabae8c5c4f3e70fbd05}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWasteMan_afab2edbba027813796bb03af4cd83089}\label{classUtilWasteMan_afab2edbba027813796bb03af4cd83089}} 
+\index{UtilWasteMan@{UtilWasteMan}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{isOperational()}{isOperational()}}
+{\footnotesize\ttfamily bool Util\+Waste\+Man\+::is\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the Waste Management service is operational. 
+
+Checks if the Waste Dump is operational.
+
+\begin{DoxyReturn}{Returns}
+True if operational; otherwise, false.
+
+True if the Waste Dump is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_a1350a7ed6598ed3481b3abf9591c2456}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWasteMan_a56340946c2e07e03bbf5ed83e7069d34}\label{classUtilWasteMan_a56340946c2e07e03bbf5ed83e7069d34}} 
+\index{UtilWasteMan@{UtilWasteMan}!shutDown@{shutDown}}
+\index{shutDown@{shutDown}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{shutDown()}{shutDown()}}
+{\footnotesize\ttfamily void Util\+Waste\+Man\+::shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Shuts down the Waste Management service, making it non-\/operational. 
+
+Shuts down the Waste Dump service, setting it to non-\/operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a8a43aaaffd5500310a7658d71f674c24}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWasteMan_a2b64625ae2edee0ab2e447c95f9bf77f}\label{classUtilWasteMan_a2b64625ae2edee0ab2e447c95f9bf77f}} 
+\index{UtilWasteMan@{UtilWasteMan}!startUtility@{startUtility}}
+\index{startUtility@{startUtility}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{startUtility()}{startUtility()}}
+{\footnotesize\ttfamily void Util\+Waste\+Man\+::start\+Utility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the Waste Management service, making it operational. 
+
+Starts the Waste Dump service and sets it to operational. 
+
+Implements \mbox{\hyperlink{classUtilityManager_a33ca72cb5b06e745d6f1b78520c3fd86}{Utility\+Manager}}.
+
+\mbox{\Hypertarget{classUtilWasteMan_af3c9efac54630a71534f322b4400c501}\label{classUtilWasteMan_af3c9efac54630a71534f322b4400c501}} 
+\index{UtilWasteMan@{UtilWasteMan}!update@{update}}
+\index{update@{update}!UtilWasteMan@{UtilWasteMan}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Util\+Waste\+Man\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuilding}{Building}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the operational state based on the status of the specified building. 
+
+Updates the operational status of the Waste Dump based on the building\textquotesingle{}s status.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object that notifies this utility.\\
+\hline
+\mbox{\texttt{ in}}  & {\em unit} & Pointer to the \mbox{\hyperlink{classBuilding}{Building}} object notifying this utility. If the Waste Dump is not operational, it will be started. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtilityManager_aa7e7cd672f3d71aec2769575f30a39e8}{Utility\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utilities/\mbox{\hyperlink{UtilWasteMan_8h}{Util\+Waste\+Man.\+h}}\item 
+src/\+Utilities/\mbox{\hyperlink{UtilWasteMan_8cpp}{Util\+Waste\+Man.\+cpp}}\end{DoxyCompactItemize}

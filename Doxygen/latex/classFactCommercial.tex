@@ -1,0 +1,171 @@
+\hypertarget{classFactCommercial}{}\doxysection{Fact\+Commercial Class Reference}
+\label{classFactCommercial}\index{FactCommercial@{FactCommercial}}
+
+
+Factory class for creating commercial buildings.  
+
+
+
+
+{\ttfamily \#include $<$Fact\+Commercial.\+h$>$}
+
+
+
+Inheritance diagram for Fact\+Commercial\+:
+% FIG 0
+
+
+Collaboration diagram for Fact\+Commercial\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFactCommercial_aaaa29f9484415c308337cbd2f020743f}{Fact\+Commercial}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFactCommercial}{Fact\+Commercial}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommercial}{Commercial}} $\ast$ \mbox{\hyperlink{classFactCommercial_aadb7558cd08c71a8644c6598068eab0e}{create\+Com\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a commercial building of a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResidential}{Residential}} $\ast$ \mbox{\hyperlink{classFactCommercial_a2b8f6cef98463357ae9f5b00b450d46d}{create\+Res\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a residential building (not implemented in this factory). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndustrial}{Industrial}} $\ast$ \mbox{\hyperlink{classFactCommercial_aa667e704618b074f4b6d1c58be3e96ca}{create\+Ind\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates an industrial building (not implemented in this factory). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandmark}{Landmark}} $\ast$ \mbox{\hyperlink{classFactCommercial_a5d112b5e0f752eb5c2f6f6bf0f5ac1c1}{create\+Landmark}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a landmark building (not implemented in this factory). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServices}{Services}} $\ast$ \mbox{\hyperlink{classFactCommercial_abbe796556021d2485cc7e50fd4021cee}{create\+Service\+Building}} (string type) override
+\begin{DoxyCompactList}\small\item\em Creates a service building (not implemented in this factory). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating commercial buildings. 
+
+The \mbox{\hyperlink{classFactCommercial}{Fact\+Commercial}} class is a concrete implementation of the \mbox{\hyperlink{classFactoryBuilding}{Factory\+Building}} interface that provides methods to create various types of commercial buildings, such as malls, shops, and offices. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFactCommercial_aaaa29f9484415c308337cbd2f020743f}\label{classFactCommercial_aaaa29f9484415c308337cbd2f020743f}} 
+\index{FactCommercial@{FactCommercial}!FactCommercial@{FactCommercial}}
+\index{FactCommercial@{FactCommercial}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{FactCommercial()}{FactCommercial()}}
+{\footnotesize\ttfamily Fact\+Commercial\+::\+Fact\+Commercial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classFactCommercial}{Fact\+Commercial}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFactCommercial_aadb7558cd08c71a8644c6598068eab0e}\label{classFactCommercial_aadb7558cd08c71a8644c6598068eab0e}} 
+\index{FactCommercial@{FactCommercial}!createComBuilding@{createComBuilding}}
+\index{createComBuilding@{createComBuilding}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{createComBuilding()}{createComBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommercial}{Commercial}} $\ast$ Fact\+Commercial\+::create\+Com\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a commercial building of a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of commercial building to create (e.\+g., \char`\"{}\+Mall\char`\"{}, \char`\"{}\+Shop\char`\"{}, \char`\"{}\+Office\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classCommercial}{Commercial}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a7756f26129982423333482bf574f5b67}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactCommercial_aa667e704618b074f4b6d1c58be3e96ca}\label{classFactCommercial_aa667e704618b074f4b6d1c58be3e96ca}} 
+\index{FactCommercial@{FactCommercial}!createIndBuilding@{createIndBuilding}}
+\index{createIndBuilding@{createIndBuilding}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{createIndBuilding()}{createIndBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIndustrial}{Industrial}} $\ast$ Fact\+Commercial\+::create\+Ind\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an industrial building (not implemented in this factory). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of industrial building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns nullptr as this factory does not create industrial buildings. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_ac70b1f127fb07c46a2d7baf5ac771cea}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactCommercial_a5d112b5e0f752eb5c2f6f6bf0f5ac1c1}\label{classFactCommercial_a5d112b5e0f752eb5c2f6f6bf0f5ac1c1}} 
+\index{FactCommercial@{FactCommercial}!createLandmark@{createLandmark}}
+\index{createLandmark@{createLandmark}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{createLandmark()}{createLandmark()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLandmark}{Landmark}} $\ast$ Fact\+Commercial\+::create\+Landmark (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a landmark building (not implemented in this factory). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of landmark building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns nullptr as this factory does not create landmark buildings. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a84e7896b914f3812c2b93bbfc4041069}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactCommercial_a2b8f6cef98463357ae9f5b00b450d46d}\label{classFactCommercial_a2b8f6cef98463357ae9f5b00b450d46d}} 
+\index{FactCommercial@{FactCommercial}!createResBuilding@{createResBuilding}}
+\index{createResBuilding@{createResBuilding}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{createResBuilding()}{createResBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classResidential}{Residential}} $\ast$ Fact\+Commercial\+::create\+Res\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a residential building (not implemented in this factory). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of residential building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns nullptr as this factory does not create residential buildings. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_a3e369a556e99d5b85b7e2a01bd5888f4}{Factory\+Building}}.
+
+\mbox{\Hypertarget{classFactCommercial_abbe796556021d2485cc7e50fd4021cee}\label{classFactCommercial_abbe796556021d2485cc7e50fd4021cee}} 
+\index{FactCommercial@{FactCommercial}!createServiceBuilding@{createServiceBuilding}}
+\index{createServiceBuilding@{createServiceBuilding}!FactCommercial@{FactCommercial}}
+\doxysubsubsection{\texorpdfstring{createServiceBuilding()}{createServiceBuilding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classServices}{Services}} $\ast$ Fact\+Commercial\+::create\+Service\+Building (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a service building (not implemented in this factory). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of service building to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns nullptr as this factory does not create service buildings. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFactoryBuilding_add4ea50142e0e0bbb6bd71eef54a85a5}{Factory\+Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{FactCommercial_8h}{Fact\+Commercial.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{FactCommercial_8cpp}{Fact\+Commercial.\+cpp}}\end{DoxyCompactItemize}

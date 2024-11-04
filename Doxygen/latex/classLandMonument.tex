@@ -1,0 +1,272 @@
+\hypertarget{classLandMonument}{}\doxysection{Land\+Monument Class Reference}
+\label{classLandMonument}\index{LandMonument@{LandMonument}}
+
+
+Class representing a monument landmark.  
+
+
+
+
+{\ttfamily \#include $<$Land\+Monument.\+h$>$}
+
+
+
+Inheritance diagram for Land\+Monument\+:
+% FIG 0
+
+
+Collaboration diagram for Land\+Monument\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandMonument_af74d55a1a1aa25dc7579a10d30e455ee}{Land\+Monument}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classLandMonument}{Land\+Monument}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandMonument_ac3cbfc210e8a37ae86c033d5fa1e3c7f}{$\sim$\+Land\+Monument}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classLandMonument}{Land\+Monument}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_af61f48755fc54545a716603f7b9d31a7}{display\+Building\+Info}} () override
+\begin{DoxyCompactList}\small\item\em Displays information about the monument landmark. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandMonument_a1418b6bb8c8abd294271c2f1b911d04f}{get\+Visitors}} () override
+\begin{DoxyCompactList}\small\item\em Gets the number of visitors currently in the monument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_a2abc12cdd276a681174055a0e092ada4}{set\+Visitors}} (int visitors) override
+\begin{DoxyCompactList}\small\item\em Sets the number of visitors in the monument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_a843ea6d07b9ce089a7009adfc241c00f}{call\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Calls utilities related to the monument landmark. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandMonument_a2019ebdcb79929158ae7e3bd6028b697}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the operational state of the monument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_ad7a87df5068ad78e6139cded8cae30c3}{set\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the operational state of the monument. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classLandMonument_aca5b3615085d12b4a9f20857cb5a8ffd}{get\+Building\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of landmark. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandMonument_a36ce431de48931b9de9835128fbd631a}{add\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Adds an employee to the monument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_ae3ceb72844135b97cc6be39ee128cea9}{remove\+Employee}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Removes an employee from the monument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandMonument_a951f2b355d12c5b24b4ff500ae0997dd}{notify\+Employee\+Left}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$employee)
+\begin{DoxyCompactList}\small\item\em Notifies the monument that an employee has left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLandMonument_a6c0e7f65774f0c4d7d4599ccc2487169}{has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are available jobs in the monument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class representing a monument landmark. 
+
+The \mbox{\hyperlink{classLandMonument}{Land\+Monument}} class inherits from the \mbox{\hyperlink{classLandmark}{Landmark}} class and provides implementations for managing monument-\/related operations, including visitor management, utilities, and employee handling. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandMonument_af74d55a1a1aa25dc7579a10d30e455ee}\label{classLandMonument_af74d55a1a1aa25dc7579a10d30e455ee}} 
+\index{LandMonument@{LandMonument}!LandMonument@{LandMonument}}
+\index{LandMonument@{LandMonument}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{LandMonument()}{LandMonument()}}
+{\footnotesize\ttfamily Land\+Monument\+::\+Land\+Monument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classLandMonument}{Land\+Monument}}. 
+
+\mbox{\Hypertarget{classLandMonument_ac3cbfc210e8a37ae86c033d5fa1e3c7f}\label{classLandMonument_ac3cbfc210e8a37ae86c033d5fa1e3c7f}} 
+\index{LandMonument@{LandMonument}!````~LandMonument@{$\sim$LandMonument}}
+\index{````~LandMonument@{$\sim$LandMonument}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{$\sim$LandMonument()}{~LandMonument()}}
+{\footnotesize\ttfamily Land\+Monument\+::$\sim$\+Land\+Monument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classLandMonument}{Land\+Monument}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandMonument_a36ce431de48931b9de9835128fbd631a}\label{classLandMonument_a36ce431de48931b9de9835128fbd631a}} 
+\index{LandMonument@{LandMonument}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily bool Land\+Monument\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds an employee to the monument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be added as an employee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the employee was successfully added, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a3a75309da527b4e2b75ec026c245b001}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_a843ea6d07b9ce089a7009adfc241c00f}\label{classLandMonument_a843ea6d07b9ce089a7009adfc241c00f}} 
+\index{LandMonument@{LandMonument}!callUtilities@{callUtilities}}
+\index{callUtilities@{callUtilities}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{callUtilities()}{callUtilities()}}
+{\footnotesize\ttfamily void Land\+Monument\+::call\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls utilities related to the monument landmark. 
+
+Call Utilities in Buildings \mbox{\Hypertarget{classLandMonument_af61f48755fc54545a716603f7b9d31a7}\label{classLandMonument_af61f48755fc54545a716603f7b9d31a7}} 
+\index{LandMonument@{LandMonument}!displayBuildingInfo@{displayBuildingInfo}}
+\index{displayBuildingInfo@{displayBuildingInfo}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{displayBuildingInfo()}{displayBuildingInfo()}}
+{\footnotesize\ttfamily void Land\+Monument\+::display\+Building\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays information about the monument landmark. 
+
+
+
+Implements \mbox{\hyperlink{classBuilding_a220f94b025d6396f5944a1866028da13}{Building}}.
+
+\mbox{\Hypertarget{classLandMonument_aca5b3615085d12b4a9f20857cb5a8ffd}\label{classLandMonument_aca5b3615085d12b4a9f20857cb5a8ffd}} 
+\index{LandMonument@{LandMonument}!getBuildingType@{getBuildingType}}
+\index{getBuildingType@{getBuildingType}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{getBuildingType()}{getBuildingType()}}
+{\footnotesize\ttfamily string Land\+Monument\+::get\+Building\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of landmark. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a7fcc3f5dd4506e16fa89eeceb0fddd26}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_a2019ebdcb79929158ae7e3bd6028b697}\label{classLandMonument_a2019ebdcb79929158ae7e3bd6028b697}} 
+\index{LandMonument@{LandMonument}!getState@{getState}}
+\index{getState@{getState}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily bool Land\+Monument\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the operational state of the monument. 
+
+\begin{DoxyReturn}{Returns}
+True if the monument is operational, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLandmark_a03bbfc9b0211b81529c12df9edc708f3}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_a1418b6bb8c8abd294271c2f1b911d04f}\label{classLandMonument_a1418b6bb8c8abd294271c2f1b911d04f}} 
+\index{LandMonument@{LandMonument}!getVisitors@{getVisitors}}
+\index{getVisitors@{getVisitors}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{getVisitors()}{getVisitors()}}
+{\footnotesize\ttfamily int Land\+Monument\+::get\+Visitors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of visitors currently in the monument. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLandmark_a033ed33a708e891d82dbc3934d917259}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_a6c0e7f65774f0c4d7d4599ccc2487169}\label{classLandMonument_a6c0e7f65774f0c4d7d4599ccc2487169}} 
+\index{LandMonument@{LandMonument}!hasJob@{hasJob}}
+\index{hasJob@{hasJob}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{hasJob()}{hasJob()}}
+{\footnotesize\ttfamily bool Land\+Monument\+::has\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if there are available jobs in the monument. 
+
+\begin{DoxyReturn}{Returns}
+True if there are job openings, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_abb8e8913b366c28ca64df66639e080b7}{Building}}.
+
+\mbox{\Hypertarget{classLandMonument_a951f2b355d12c5b24b4ff500ae0997dd}\label{classLandMonument_a951f2b355d12c5b24b4ff500ae0997dd}} 
+\index{LandMonument@{LandMonument}!notifyEmployeeLeft@{notifyEmployeeLeft}}
+\index{notifyEmployeeLeft@{notifyEmployeeLeft}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{notifyEmployeeLeft()}{notifyEmployeeLeft()}}
+{\footnotesize\ttfamily void Land\+Monument\+::notify\+Employee\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the monument that an employee has left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} who has left. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_ac20fccbc1b3b5e88193ba9aefc70671e}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_ae3ceb72844135b97cc6be39ee128cea9}\label{classLandMonument_ae3ceb72844135b97cc6be39ee128cea9}} 
+\index{LandMonument@{LandMonument}!removeEmployee@{removeEmployee}}
+\index{removeEmployee@{removeEmployee}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{removeEmployee()}{removeEmployee()}}
+{\footnotesize\ttfamily void Land\+Monument\+::remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{employee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an employee from the monument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee} & Pointer to the \mbox{\hyperlink{classCitizen}{Citizen}} to be removed as an employee. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_a2effb53f0f04d6f95ab7efbdb6c4ef61}{Landmark}}.
+
+\mbox{\Hypertarget{classLandMonument_ad7a87df5068ad78e6139cded8cae30c3}\label{classLandMonument_ad7a87df5068ad78e6139cded8cae30c3}} 
+\index{LandMonument@{LandMonument}!setState@{setState}}
+\index{setState@{setState}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Land\+Monument\+::set\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the operational state of the monument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The operational state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLandMonument_a2abc12cdd276a681174055a0e092ada4}\label{classLandMonument_a2abc12cdd276a681174055a0e092ada4}} 
+\index{LandMonument@{LandMonument}!setVisitors@{setVisitors}}
+\index{setVisitors@{setVisitors}!LandMonument@{LandMonument}}
+\doxysubsubsection{\texorpdfstring{setVisitors()}{setVisitors()}}
+{\footnotesize\ttfamily void Land\+Monument\+::set\+Visitors (\begin{DoxyParamCaption}\item[{int}]{visitors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the number of visitors in the monument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitors} & The number of visitors to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLandmark_af658720084ef36321092055b57acc7df}{Landmark}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Buildings/\mbox{\hyperlink{LandMonument_8h}{Land\+Monument.\+h}}\item 
+src/\+Buildings/\mbox{\hyperlink{LandMonument_8cpp}{Land\+Monument.\+cpp}}\end{DoxyCompactItemize}

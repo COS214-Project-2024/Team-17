@@ -1,0 +1,19 @@
+digraph "Services"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Services",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class representing a service building."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Building",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBuilding.html",tooltip="Abstract base class representing a building in the city."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CityBlock",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityBlock.html",tooltip="Base class representing a block within the city."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ServEducation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServEducation.html",tooltip="Represents an education service in the city."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ServEntertainment",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServEntertainment.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ServHospital",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServHospital.html",tooltip="Represents a hospital service in the city."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ServSecurity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServSecurity.html",tooltip="Class representing a Security Service in a building."];
+}

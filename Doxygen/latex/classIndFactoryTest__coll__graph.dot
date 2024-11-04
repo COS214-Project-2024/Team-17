@@ -1,0 +1,19 @@
+digraph "IndFactoryTest"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="IndFactoryTest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="testing::Test",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" indFactory" ];
+  Node3 [label="IndFactory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIndFactory.html",tooltip="Represents an industrial factory building."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Industrial",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIndustrial.html",tooltip="Abstract base class for industrial buildings."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Building",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBuilding.html",tooltip="Abstract base class representing a building in the city."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CityBlock",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityBlock.html",tooltip="Base class representing a block within the city."];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mediator" ];
+  Node7 [label="CityMediator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCityMediator.html",tooltip="Mediator class that facilitates communication between various city components."];
+}
