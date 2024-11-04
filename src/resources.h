@@ -41,7 +41,7 @@ struct Resources{
      */
         static int getConcrete();
     /**
-     * @brief Gets the amount of concryete generated per tick.
+     * @brief Gets the amount of concrete generated per tick.
      * @return The amount of concrete generated per tick.
      */
         static int getConcretePerTick();
