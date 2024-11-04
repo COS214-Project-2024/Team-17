@@ -2,6 +2,7 @@
 #define HIGHWAYS_H
 
 #include "../RoadComponent.h"
+
 /**
  * @class Highways
  * @brief Represents a highway component in the road network.
@@ -10,10 +11,12 @@
  * specific to highway segments, including traffic calculation, distance management,
  * and information display.
  */
+
 class Highways : public RoadComponent
 {
 
 public:
+
     /**
      * @brief Constructs a Highways object with specified start and end coordinates.
      * @param sX The starting X coordinate of the highway.

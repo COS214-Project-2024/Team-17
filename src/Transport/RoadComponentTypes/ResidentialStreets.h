@@ -2,6 +2,7 @@
 #define RESIDENTIALSTREETS_H
 
 #include "../RoadComponent.h"
+
 /**
  * @class ResidentialStreets
  * @brief Represents a residential street component in the road network.
@@ -15,6 +16,7 @@ class ResidentialStreets : public RoadComponent
 {
 
 public:
+
     /**
      * @brief Constructs a ResidentialStreets object with specified start and end coordinates.
      * @param sX The starting X coordinate of the residential street.

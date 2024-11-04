@@ -2,6 +2,7 @@
 #define MAINROADS_H
 
 #include "../RoadComponent.h"
+
 /**
  * @class MainRoads
  * @brief Represents a main road component in the road network.
@@ -15,6 +16,7 @@ class MainRoads : public RoadComponent
 {
 
 public:
+
     /**
      * @brief Constructs a MainRoads object with specified start and end coordinates.
      * @param sX The starting X coordinate of the main road.

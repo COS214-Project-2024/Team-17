@@ -3,6 +3,7 @@
 
 #include "../RoadComponent.h"
 #include <vector>
+
 /**
  * @class RoadsComposite
  * @brief Represents a composite road component consisting of multiple road sections.
@@ -18,6 +19,7 @@ private:
 
 public:
 	static const int MAX_SECTION_DISTANCE = 100;
+
     /**
      * @brief Constructor for RoadsComposite.
      * @param sX The starting X coordinate of the composite road.
@@ -74,6 +76,7 @@ public:
 	{
 		return components;
 	}
+
     /**
      * @brief Calculates the distance from a specified point to the composite road.
      * @param x The X coordinate of the point.
