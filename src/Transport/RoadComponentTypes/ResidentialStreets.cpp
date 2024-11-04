@@ -2,6 +2,8 @@
 #include <iostream>
 #include "../RoadStates/RoadStatesIncludes.h"
 #include <cmath>
+#include "../../resources.h"
+#include "../../Buildings/BuildingRequirements.h"
 
 ResidentialStreets::ResidentialStreets(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX, eY)
 {

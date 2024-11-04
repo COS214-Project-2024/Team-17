@@ -3,6 +3,7 @@
 #include "../src/Citizens/CitizensIncludes.h"
 #include "../src/Transport/TransportInclude.h"
 #include "../src/Buildings/ResFlat.h"
+#include "../src/Buildings/ComMall.h"
 
 TEST(Train, TestTrainTransport)
 {
@@ -26,7 +27,7 @@ TEST(Train, TestTrainTransport)
     nearWork->setXCoordinate(0);
     nearWork->setYCoordinate(10);
 
-    ResFlat *workplace = new ResFlat();
+    ComMall *workplace = new ComMall();
     workplace->setXCoordinate(0);
     workplace->setYCoordinate(10);
 
