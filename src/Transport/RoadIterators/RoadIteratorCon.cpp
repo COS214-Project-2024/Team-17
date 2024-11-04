@@ -28,5 +28,4 @@ RoadComponent *RoadIteratorCon::currentRoad()
 
 RoadIteratorCon::~RoadIteratorCon()
 {
-	roads->clear();
 }

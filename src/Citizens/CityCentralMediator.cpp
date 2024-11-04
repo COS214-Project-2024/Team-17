@@ -114,6 +114,8 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 		seq->next();
 	}
 
+	delete seq;
+
 	// Try cast to RoadsComposite
 	RoadsComposite *composite = dynamic_cast<RoadsComposite *>(closest);
 	if (composite != nullptr)
