@@ -1,28 +1,33 @@
 #include "CitizenTaxAB.h"
 #include "../Citizens/Citizen.h"
 #include "../Buildings/Building.h"
+
 /**
  * @brief Visit a Citizen and calculate the tax.
  * 
- * @param citizen Pointer to the Citizen being visited.
+ * @param citizen Shared pointer to the Citizen being visited.
  * @return Tax amount for the given citizen. Returns 0 if the citizen is null.
  */
-double CitizenTaxAB::visit(Citizen *citizen)
+double CitizenTaxAB::visit(std::shared_ptr<Citizen> citizen)
 {
-  if(!citizen)
-  {
-    return 0;
-  }
-  return citizen->getTax();
+    if (!citizen) // Check if the shared pointer is valid
+    {
+        return 0;
+    }
+    return citizen->getTax(); // Call getTax() on the Citizen instance
 }
+
 /**
  * @brief Visit a Building and calculate the tax.
  * 
- * @param business Pointer to the Building being visited.
+ * @param business Shared pointer to the Building being visited.
  * @return Tax amount for the given building.
  */
-double CitizenTaxAB::visit(Building *business)
+double CitizenTaxAB::visit(std::shared_ptr<Building> business)
 {
-  // return business->getTax();
-  return 0;
+    if (!business) // Check if the shared pointer is valid
+    {
+        return 0;
+    }
+    return business->getTax(); // Call getTax() on the Building instance
 }

@@ -9,12 +9,14 @@
 #ifndef CITYSTRUCTURE_H
 #define CITYSTRUCTURE_H
 
-class TaxAndBudgetVisitor;
-
-class CityBlock;
-#include <vector>
 #include <string>
+#include <vector>
 #include <map>
+#include <memory>
+
+class TaxAndBudgetVisitor;
+class CityBlock;
+
 /**
  * @class CityStructure
  * @brief Represents a city's structure, containing blocks, departments, and income information.
@@ -22,44 +24,48 @@ class CityBlock;
 class CityStructure
 {
 private:
-  std::string Name;
-  std::vector<CityBlock *> blocks;
-  std::map<std::string, double> departments;
-  double income;
+    std::string Name;
+    std::vector<std::shared_ptr<CityBlock>> blocks; // Use smart pointers for CityBlock
+    std::map<std::string, double> departments;
+    double income;
 
 public:
     /**
      * @brief Constructs a new CityStructure with the given name.
      * @param name The name of the city structure.
      */
-  CityStructure(std::string name);
+    CityStructure(std::string name);
+
     /**
      * @brief Accepts a TaxAndBudgetVisitor for processing taxes or budgets.
      * @param visitor The visitor used for processing.
      */
-  void accept(TaxAndBudgetVisitor *visitor);
+    void accept(TaxAndBudgetVisitor *visitor);
+
     /**
      * @brief Adds a city block to the structure.
-     * @param block The CityBlock to add.
+     * @param block The shared pointer to the CityBlock to add.
      */
-  void addBlock(CityBlock *block);
+    void addBlock(std::shared_ptr<CityBlock> block); // Accept shared pointer
 
     /**
      * @brief Allocates a specified budget to a department.
      * @param dept The department name.
      * @param amount The amount to allocate.
      */
-  void allocateBudget(std::string dept, double amount);
+    void allocateBudget(std::string dept, double amount);
+
     /**
      * @brief Gets the income of the city structure.
      * @return The income of the city.
      */
-  double getIncome();
+    double getIncome();
+
     /**
      * @brief Gets the name of the city structure.
      * @return The name of the city.
      */
-  std::string getName();
+    std::string getName();
 };
 
 #endif

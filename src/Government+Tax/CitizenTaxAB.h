@@ -14,9 +14,11 @@
 #define CITIZENTAXAB_H
 
 #include "TaxAndBudgetVisitor.h"
+#include <memory> // Include for smart pointers
 
-class citizen;
-class building;
+class Citizen; // Updated to use correct casing
+class Building; // Updated to use correct casing
+
 /**
  * @class CitizenTaxAB
  * @brief Concrete visitor for calculating tax on citizens and buildings.
@@ -28,16 +30,17 @@ class CitizenTaxAB : public TaxAndBudgetVisitor
 public:
     /**
      * @brief Visits a Citizen object and calculates the tax.
-     * @param citizen The Citizen object being visited.
+     * @param citizen Shared pointer to the Citizen object being visited.
      * @return The calculated tax amount.
      */
-	double visit(Citizen *citizen);
+    double visit(std::shared_ptr<Citizen> citizen); // Changed to smart pointer
+
     /**
      * @brief Visits a Building object and calculates the tax.
-     * @param business The Building object being visited.
+     * @param business Shared pointer to the Building object being visited.
      * @return The calculated tax amount.
      */
-	double visit(Building *business);
+    double visit(std::shared_ptr<Building> business); // Changed to smart pointer
 };
 
-#endif
+#endif // CITIZENTAXAB_H

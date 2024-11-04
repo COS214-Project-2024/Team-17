@@ -15,7 +15,9 @@
 #include "TaxCommand.h"
 #include "Government.h"
 
+#include <memory> // Include for smart pointers
 #include <string>
+
 /**
  * @class AllocateTaxCommand
  * @brief A command to allocate a specific amount of tax to a government department.
@@ -28,23 +30,25 @@ class AllocateTaxCommand : public TaxCommand
 
 private:
     /**
-     * @brief Pointer to the Government instance.
+     * @brief Shared pointer to the Government instance.
      *
      * This Government instance represents the entity to which tax funds will be allocated.
      */
-	Government *government;
-	    /**
+    std::shared_ptr<Government> government;
+
+    /**
      * @brief The amount of tax to be allocated.
      *
      * This value represents the amount of funds to be allocated to the specified department.
      */
-	double amount;
-	    /**
+    double amount;
+
+    /**
      * @brief The department receiving the tax allocation.
      *
      * This string specifies the department within the government that will receive the allocated funds.
      */
-	std::string department;
+    std::string department;
 
 public:
     /**
@@ -52,17 +56,18 @@ public:
      *
      * Initializes a new instance of the AllocateTaxCommand with a target government, allocation amount, and department.
      *
-     * @param gov Pointer to the Government instance where the tax is allocated.
+     * @param gov Shared pointer to the Government instance where the tax is allocated.
      * @param amt The amount of tax funds to allocate.
      * @param dept The name of the department receiving the funds.
      */
-	AllocateTaxCommand(Government *gov, double amt, std::string dept);
-	    /**
+    AllocateTaxCommand(std::shared_ptr<Government> gov, double amt, const std::string& dept);
+
+    /**
      * @brief Executes the tax allocation command.
      *
      * Allocates the specified amount of tax funds to the designated department within the government.
      */
-	void execute();
+    void execute() override; // Assuming TaxCommand has a virtual execute function
 };
 
-#endif
+#endif // ALLOCATETAXCOMMAND_H
