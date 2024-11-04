@@ -500,13 +500,6 @@ CityCentralMediator::~CityCentralMediator()
 	}
 	citizens.clear();
 
-	// Clean up train stations
-	for (auto trainStation : trainStations)
-	{
-		delete trainStation;
-	}
-	trainStations.clear();
-
 	// Clean up buses and bus queue
 	for (auto bus : buses)
 	{
