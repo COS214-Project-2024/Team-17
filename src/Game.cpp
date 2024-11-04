@@ -362,7 +362,8 @@ void Game::initRoadGrid()
     }
   }
 }
-vvoid Game::createBuilding()
+
+void Game::createBuilding()
 {
   if (numBuildings >= MAX_BUILDINGS)
   {
