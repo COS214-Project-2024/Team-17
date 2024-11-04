@@ -60,6 +60,8 @@ public:
      * @param policy The BudgetPolicy to set.
      */
   void setBudgetPolicy(BudgetPolicy &policy);
+
+  ~Government();
 private:
   std::map<std::string, double> taxRates;
   std::map<std::string, double> cityTaxes;

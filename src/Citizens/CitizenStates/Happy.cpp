@@ -7,7 +7,7 @@ CitizenState *Happy::handleChange(int change)
     {
         return new Content();
     }
-    return new Happy();
+    return this;
 }
 
 std::string Happy::getState()

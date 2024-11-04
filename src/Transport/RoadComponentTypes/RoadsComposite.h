@@ -91,7 +91,7 @@ public:
     /**
      * @brief Destructor for the RoadsComposite class.
      */
-    ~RoadsComposite() {}
+    ~RoadsComposite();
 };
 
 #endif

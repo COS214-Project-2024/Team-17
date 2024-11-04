@@ -10,9 +10,6 @@ int main()
     Citizen *citizen = new Citizen();
     std::cout << "Created:" << std::endl;
     std::cout << " - Citizen " << citizen->getName() << " created" << std::endl;
-
-    delete citizen;
-
     std::cout << "Citizen deleted" << std::endl;
 
     // Citizen *citizen2 = new Citizen();

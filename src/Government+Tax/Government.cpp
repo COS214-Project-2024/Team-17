@@ -97,3 +97,12 @@ void Government::allocateTaxes(std::string department, double amount)
 {
   this->taxRates[department] = amount;
 }
+
+Government::~Government()
+{
+  if(budgetPolicy)
+  {
+    delete budgetPolicy;
+    budgetPolicy = nullptr;
+  }
+}
