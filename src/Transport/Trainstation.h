@@ -27,6 +27,10 @@ public:
     virtual bool moveIn(Citizen *resident);
     virtual void moveOut(Citizen *resident);
 
+    virtual int getElectricityUsage();
+    virtual int getWaterUsage();
+    virtual int getCurCitizenCount();
+
 private:
     vector<UtilityManager *> utilities;
     string name;

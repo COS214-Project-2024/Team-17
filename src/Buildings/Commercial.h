@@ -28,6 +28,11 @@ public:
 	virtual bool moveIn(Citizen *resident);
 	virtual void moveOut(Citizen *resident);
 
+	virtual int getElectricityUsage() = 0;
+    virtual int getWaterUsage() = 0;
+    virtual int getCurCitizenCount() = 0;
+
+
 	// virtual bool checkBuildRequirements() = 0;
 	// virtual int increasePopulation() = 0;
 	// virtual void affectEmotionalState() = 0;

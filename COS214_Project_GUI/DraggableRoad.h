@@ -24,7 +24,7 @@ public:
 
     ~DraggableRoad(){
         if(link!=nullptr){
-            delete link;
+            // delete link;
             cout<<"link deleted"<<endl;
         }
     }
@@ -33,17 +33,23 @@ public:
         this->link = link;
     }
 
+    RoadComponent* getLink(){
+        return link;
+    }
+
+
     bool editable = true;
     bool dragging = false;
     QFrame *frame;
     DraggableRoad * next;
+    RoadComponent * connectedRoad = nullptr;
 
     void snapToRoad(DraggableRoad *otherRoad) {
         const int snapDistance = 20;
 
         QPoint startPos = pos();
         QPoint endPos;
-        if(width()!=10||width()!=15||width()!=20){
+        if(width()!=10&&width()!=15&&width()!=20){
             endPos = pos() + QPoint(width(), 0);
         }
         else{
@@ -52,7 +58,7 @@ public:
 
         QPoint otherStartPos = otherRoad->pos();
         QPoint otherEndPos;
-        if(otherRoad->width()!=10||otherRoad->width()!=15||otherRoad->width()!=20){
+        if(otherRoad->width()!=10&&otherRoad->width()!=15&&otherRoad->width()!=20){
             otherEndPos = otherRoad->pos() + QPoint(otherRoad->width(), 0);
         }
         else{
@@ -60,6 +66,7 @@ public:
         }
 
         if ((endPos - otherStartPos).manhattanLength() <= snapDistance) {
+            connectedRoad=otherRoad->getLink();
             if(width()==10||width()==15||width()==20){
                 move(otherStartPos - QPoint(0, height()));
             }
@@ -68,9 +75,11 @@ public:
             }
         }
         else if ((startPos - otherEndPos).manhattanLength() <= snapDistance) {
+            connectedRoad=otherRoad->getLink();
             move(otherEndPos);
         }
         else if ((endPos - otherEndPos).manhattanLength() <= snapDistance) {
+            connectedRoad=otherRoad->getLink();
             if(!((otherRoad->width()==10||otherRoad->width()==15||otherRoad->width()==20)&&(width()==10||width()==15||width()==20))&&!((otherRoad->height()==10||otherRoad->height()==15||otherRoad->height()==20)&&(height()==10||height()==15||height()==20))){
                 if(width()==10||width()==15||width()==20){
                     move(otherEndPos - QPoint(0, height()));
@@ -81,9 +90,13 @@ public:
             }
         }
         else if ((startPos - otherStartPos).manhattanLength() <= snapDistance) {
+            connectedRoad=otherRoad->getLink();
             if(!((otherRoad->width()==10||otherRoad->width()==15||otherRoad->width()==20)&&(width()==10||width()==15||width()==20))&&!((otherRoad->height()==10||otherRoad->height()==15||otherRoad->height()==20)&&(height()==10||height()==15||height()==20))){
                 move(otherStartPos);
             }
+        }
+        else{
+            connectedRoad=nullptr;
         }
     }
 

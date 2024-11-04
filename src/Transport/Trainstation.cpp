@@ -79,3 +79,18 @@ bool Trainstation::moveIn(Citizen *resident)
 void Trainstation::moveOut(Citizen *resident)
 {
 }
+
+int Trainstation::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int Trainstation::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int Trainstation::getCurCitizenCount()
+{
+    return 0;
+}

@@ -112,3 +112,18 @@ void ResHouse::moveOut(Citizen *resident)
         }
     }
 }
+
+int ResHouse::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ResHouse::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ResHouse::getCurCitizenCount()
+{
+    return residents.size();
+}

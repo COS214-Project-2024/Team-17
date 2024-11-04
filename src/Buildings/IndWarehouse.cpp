@@ -122,3 +122,18 @@ bool IndWarehouse::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int IndWarehouse::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int IndWarehouse::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int IndWarehouse::getCurCitizenCount()
+{
+    return employees.size();
+}

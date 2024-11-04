@@ -9,6 +9,9 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QMessageBox>
+
+#include <QtConcurrent>
+
 QVector<DraggableFrame *> buildings;
 QVector<DraggableRoad *> roads;
 
@@ -17,6 +20,7 @@ QString type;
 DraggableFrame* frame;
 DraggableRoad* road;
 QLabel* BuildingType;
+CityCentralMediator *mediator;
 
 HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
@@ -34,7 +38,7 @@ HomePage::HomePage(QWidget *parent)
     ui->spnRoadEditX->setMaximum(ui->scAreaMainMap->width() - 100);
     ui->spnRoadEditY->setMaximum(ui->scAreaMainMap->height() - 20);
     updateInfoScreen();
-
+    mediator = CityCentralMediator::getInstance();
     //set all build costs
     ui->spnComMallCash->setValue(BuildingRequirements::mallBuildCost);
     ui->spnComOfficeCash->setValue(BuildingRequirements::officeBuildCost);
@@ -139,6 +143,11 @@ HomePage::HomePage(QWidget *parent)
     ui->spnRoadMainSteel->setValue(BuildingRequirements::mainRoadSteelCost);
     ui->spnRoadHighwaySteel->setValue(BuildingRequirements::highwaySteelCost);
 
+    //start game in async
+    Game game;
+    QtConcurrent::run([&game]() {
+        game.start();
+    });
 
 
 }
@@ -578,30 +587,100 @@ void HomePage::on_btnServEntertainment_clicked()
 }
 
 
+
+
+void HomePage::CreateUtility(QString type, UtilityManager *link){
+    ui->spnBuildingEditX->setMaximum(ui->scAreaMainMap->width()-120);
+    ui->spnBuildingEditY->setMaximum(ui->scAreaMainMap->height()-100);
+    frame = new DraggableFrame(ui->scAreaMainMap, ui->spnBuildingEditX, ui->spnBuildingEditY, this, nullptr, link);
+    frame->setFrameShape(QFrame::Box);  // Optional: set frame shape
+    frame->setLineWidth(2);  // Optional: set border width
+    frame->setStyleSheet("background-color: red");  // Set color (using hex or color names)
+
+    BuildingType = new QLabel(frame);
+    BuildingType->setText(type);
+    BuildingType->setAlignment(Qt::AlignCenter);
+    BuildingType->setStyleSheet("color: white; background-color: rgba(0, 0, 0, 0);");
+    BuildingType->setGeometry(0, 0, frame->width(), frame->height());
+    QFont font = BuildingType->font();
+    font.setPointSize(8);
+    BuildingType->setFont(font);
+    QVBoxLayout *layout = new QVBoxLayout();
+    layout->addWidget(BuildingType);
+    frame->setLayout(layout);
+
+    BuildingType->show();
+
+    frame->move(100, 50);
+    frame->show();
+    buildings.append(frame);
+    ui->scAreaMainMap->addToBuildings(frame);
+    ui->spnBuildingEditWidth->setValue(frame->width());
+    ui->spnBuildingEditHeight->setValue(frame->height());
+    ui->spnBuildingEditX->setValue(frame->x());
+    ui->spnBuildingEditY->setValue(frame->y());
+    ui->frmEditBuildingPos->show();
+    ui->frmInfo->hide();
+    ui->frmEditBuildingPos->raise();
+    updateInfoScreen();
+}
+
 void HomePage::on_btnUtilPower_clicked()
 {
-    CreateBuilding("Power Station", nullptr);
+    if(BuildingRequirements::checkUtilityRequirements("PowerPlant")){
+        UtilPowerPlants *powerPlant = new UtilPowerPlants();
+        CreateUtility("Power Station", powerPlant);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Power Plant");
+        msgBox.exec();
+    }
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilWater_clicked()
 {
-    CreateBuilding("Water Supply", nullptr);
+    if(BuildingRequirements::checkUtilityRequirements("WaterSupply")){
+        UtilWaterSupply *waterSupply = new UtilWaterSupply();
+        CreateUtility("Water Supply", waterSupply);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Water Supply");
+        msgBox.exec();
+    }
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilSewage_clicked()
 {
-    CreateBuilding("Sewage System", nullptr);
+    if(BuildingRequirements::checkUtilityRequirements("SewageSystem")){
+        UtilSewageSyst *sewageSystem = new UtilSewageSyst();
+        CreateUtility("Sewage System", sewageSystem);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Sewage System");
+        msgBox.exec();
+    }
     ui->tabBuildCity->setEnabled(0);
 }
 
 
 void HomePage::on_btnUtilWaste_clicked()
 {
-    CreateBuilding("Waste Management", nullptr);
+    if(BuildingRequirements::checkUtilityRequirements("WasteManagement")){
+        UtilWasteMan *wasteManagement = new UtilWasteMan();
+        CreateUtility("Waste Management", wasteManagement);
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("Not enough resources to build Waste Management");
+        msgBox.exec();
+    }
     ui->tabBuildCity->setEnabled(0);
 }
 
@@ -663,19 +742,35 @@ void HomePage::on_btnRoadHighway_clicked()
 void HomePage::on_btnBuildRoad_clicked()
 {
     if(type=="Res"){
-        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "residential"));
+        RoadComponent *residentialStreet = new RoadsComposite(road->x(), 0, road->y(), 0, "residential");
+        if(road->connectedRoad!=nullptr){
+            residentialStreet->addConnection(road->connectedRoad, 0);
+            cout<<"connection added"<<endl;
+        }
+        road->setLink(residentialStreet);
     }
     else if(type=="Main"){
-        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "main"));
+        RoadComponent *mainRoad = new RoadsComposite(road->x(), 0, road->y(), 0, "main");
+        road->setLink(mainRoad);
+        if(road->connectedRoad!=nullptr){
+            mainRoad->addConnection(road->connectedRoad, 0);
+            cout<<"connection added"<<endl;
+        }
     }
     else if(type=="Highway"){
-        road->setLink(new RoadsComposite(road->x(), 0, road->y(), 0, "highway"));
+        RoadComponent *highway = new RoadsComposite(road->x(), 0, road->y(), 0, "highway");
+        road->setLink(highway);
+        if(road->connectedRoad!=nullptr){
+            highway->addConnection(road->connectedRoad, 0);
+            cout<<"connection added"<<endl;
+        }
     }
     ui->frmEditRoadPos->hide();
     ui->frmInfo->show();
     road->editable=false;
     road=nullptr;
     ui->tabBuildCity->setEnabled(1);
+    updateInfoScreen();
 }
 
 

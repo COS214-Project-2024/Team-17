@@ -12,7 +12,7 @@ class DraggableFrame : public QFrame {
     Q_OBJECT
 
 public:
-    explicit DraggableFrame(QWidget *parent = nullptr, QSpinBox *EditXpos = nullptr, QSpinBox *EditYpos = nullptr, HomePage *homePage = nullptr, Building *link = nullptr) : QFrame(parent) {
+    explicit DraggableFrame(QWidget *parent = nullptr, QSpinBox *EditXpos = nullptr, QSpinBox *EditYpos = nullptr, HomePage *homePage = nullptr, Building *link = nullptr, UtilityManager* utilLink = nullptr) : QFrame(parent) {
         setFrameShape(QFrame::Box);
         setLineWidth(2);
         setStyleSheet("background-color: #3498db;");
@@ -21,11 +21,16 @@ public:
         this->EditYpos = EditYpos;
         this->homePage = homePage;
         this->link = link;
+        this->utilLink = utilLink;
     }
     ~DraggableFrame(){
         if(link!=nullptr){
             delete link;
         }
+        if(utilLink!=nullptr){
+            delete utilLink;
+        }
+
     }
     bool editable = true;
     bool dragging = false;
@@ -201,4 +206,5 @@ private:
     QSpinBox *EditYpos;
     HomePage *homePage;
     Building *link;
+    UtilityManager *utilLink;
 };

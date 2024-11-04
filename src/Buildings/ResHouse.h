@@ -27,6 +27,10 @@ public:
     bool moveIn(Citizen *resident);
     void moveOut(Citizen *resident);
 
+    int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
     int capacity;
     string type = "Residential House";

@@ -24,6 +24,10 @@ public:
 	void removeEmployee(Citizen* employee);
 	void notifyEmployeeLeft(Citizen* employee);
 	bool hasJob();
+	
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
 
 private:
     vector<Citizen*> employees;

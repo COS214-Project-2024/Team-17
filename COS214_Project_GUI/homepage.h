@@ -14,6 +14,13 @@ class DraggableRoad;
 #include "../src/Buildings/FactService.h"
 #include "../src/Buildings/Building.h"
 #include "../src/Transport/TransportInclude.h"
+#include "../src/Citizens/CityCentralMediator.h"
+#include "../src/Utilities/UtilPowerPlants.h"
+#include "../src/Utilities/UtilWaterSupply.h"
+#include "../src/Utilities/UtilSewageSyst.h"
+#include "../src/Utilities/UtilWasteMan.h"
+
+#include "../src/Game.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,6 +40,7 @@ public:
     Ui::HomePage *ui;
     void CreateBuilding(QString buildingType, Building* link);
     void CreateRoad(QString roadType, RoadComponent *link);
+    void CreateUtility(QString type, UtilityManager *link);
     void updateInfoScreen();
 
     void resizeEvent(QResizeEvent *event);

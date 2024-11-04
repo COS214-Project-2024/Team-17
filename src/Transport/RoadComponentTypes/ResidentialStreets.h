@@ -2,6 +2,7 @@
 #define RESIDENTIALSTREETS_H
 
 #include "../RoadComponent.h"
+#include <iostream>
 
 class ResidentialStreets : public RoadComponent
 {
@@ -21,7 +22,7 @@ public:
 
 	float calculateDistance(int x, int y);
 
-	~ResidentialStreets() {}
+    ~ResidentialStreets() {}
 };
 
 #endif

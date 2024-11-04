@@ -124,3 +124,18 @@ bool ServEducation::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int ServEducation::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ServEducation::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ServEducation::getCurCitizenCount()
+{
+    return employees.size();
+}

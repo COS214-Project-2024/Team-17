@@ -26,6 +26,10 @@ public:
 	void notifyEmployeeLeft(Citizen *employee);
 	bool hasJob();
 
+	int getElectricityUsage();
+    int getWaterUsage();
+    int getCurCitizenCount();
+
 private:
 	int visitors;
 	bool operational; // CS State

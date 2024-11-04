@@ -124,3 +124,18 @@ bool ServSecurity::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int ServSecurity::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int ServSecurity::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int ServSecurity::getCurCitizenCount()
+{
+    return employees.size();
+}

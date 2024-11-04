@@ -128,3 +128,18 @@ bool LandCCenter::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int LandCCenter::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int LandCCenter::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int LandCCenter::getCurCitizenCount()
+{
+    return employees.size();
+}

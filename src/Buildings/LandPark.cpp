@@ -122,3 +122,18 @@ bool LandPark::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int LandPark::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int LandPark::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int LandPark::getCurCitizenCount()
+{
+    return employees.size();
+}

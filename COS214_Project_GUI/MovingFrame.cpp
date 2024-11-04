@@ -9,9 +9,9 @@ void MovingFrame::mouseMoveEvent(QMouseEvent *event){
         QPoint offset = event->pos() - m_dragStartPosition;
 
         for (auto* building : buildings) {
-            if (!building->editable){
+            // if (!building->editable){
                 building->move(building->pos() + offset);
-            }
+            // }
             if(building->showingInfo){
                 building->frame->hide();
                 building->frame->deleteLater();
@@ -20,9 +20,9 @@ void MovingFrame::mouseMoveEvent(QMouseEvent *event){
         }
 
         for (auto* road : roads) {
-            if (!road->editable){
+            // if (!road->editable){
                 road->move(road->pos() + offset);
-            }
+            // }
         }
 
         m_dragStartPosition = event->pos();

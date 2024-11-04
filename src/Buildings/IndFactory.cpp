@@ -122,3 +122,18 @@ bool IndFactory::hasJob()
 {
     return employees.size() < jobCapacity;
 }
+
+int IndFactory::getElectricityUsage()
+{
+    return electricityUsage;
+}
+
+int IndFactory::getWaterUsage()
+{
+    return waterUsage;
+}
+
+int IndFactory::getCurCitizenCount()
+{
+    return employees.size();
+}

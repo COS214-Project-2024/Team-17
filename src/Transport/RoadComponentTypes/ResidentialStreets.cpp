@@ -2,16 +2,18 @@
 #include <iostream>
 #include "../RoadStates/RoadStatesIncludes.h"
 #include <cmath>
+#include "../../Resources.h"
+#include "../../Buildings/BuildingRequirements.h"
 
 ResidentialStreets::ResidentialStreets(int sX, int sY, int eX, int eY) : RoadComponent(sX, sY, eX, eY)
 {
 	float totalDistance = sqrt(pow(eX - sX, 2) + pow(eY - sY, 2));
 	distance = totalDistance;
 	capacity = 2;
-	// Resources::removeConcrete(BuildingRequirements::residentialStreetConcreteCost);
-	// Resources::removeSteel(BuildingRequirements::residentialStreetSteelCost);
-	// Resources::removeWood(BuildingRequirements::residentialStreetWoodCost);
-	// Resources::removeMoney(BuildingRequirements::residentialStreetBuildCost);
+	Resources::removeConcrete(BuildingRequirements::residentialStreetConcreteCost);
+	Resources::removeSteel(BuildingRequirements::residentialStreetSteelCost);
+	Resources::removeWood(BuildingRequirements::residentialStreetWoodCost);
+	Resources::removeMoney(BuildingRequirements::residentialStreetBuildCost);
 }
 
 void ResidentialStreets::displayInfo()
