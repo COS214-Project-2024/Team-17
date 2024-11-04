@@ -69,9 +69,9 @@ std::string CityStructure::getName()
 
 CityStructure::~CityStructure()
 {
-  for (CityBlock *block : blocks)
-  {
-    delete block;
-  }
+  // for (CityBlock *block : blocks)
+  // {
+  //   delete block;
+  // }
   blocks.clear();
 }
