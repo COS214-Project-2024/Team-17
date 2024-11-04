@@ -2,7 +2,7 @@
 #define WORKINGNOISSUES_H
 
 #include "../RoadState.h"
-
+#include <string>
 /**
  * @class WorkingNoIssues
  * @brief Represents a road state indicating that the road is operational without any issues.
