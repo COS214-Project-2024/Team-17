@@ -29,21 +29,22 @@ Game::Game()
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
-  CityStructure *city = new CityStructure("Pretoria");//Need to deallocate
+  city = new CityStructure("Pretoria"); // Need to deallocate
   city->addBlock(new CityBlock());
   this->gov.addCity(*city);
   initBuildingOptions();
   initRoadGrid();
 }
 
-Game::~Game()//Need to deallocate 28 pointers
+Game::~Game() // Need to deallocate 28 pointers
 {
-    // Delete mediator if exists
-    if (mediator) {
-        delete mediator;
-    }
+  // Delete mediator if exists
+  if (mediator)
+  {
+    delete mediator;
+  }
+  delete city;
 }
-
 
 std::string toLowerCase(const std::string &str)
 {
@@ -206,7 +207,8 @@ int Game::promptUserAction()
     }
     else if (input == "quit")
     {
-      exit(0);
+      running = false;
+      return 0;
     }
     else if (input == "pause")
     {
@@ -319,7 +321,7 @@ int Game::promptUserAction()
             std::cin >> amount;
             std::cout << "Enter department for allocation: ";
             std::cin >> department;
-            TaxCommand *command = new AllocateTaxCommand(&this->gov, amount, department);//Need to deallocate
+            TaxCommand *command = new AllocateTaxCommand(&this->gov, amount, department); // Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added allocation command: " << name << "\n";
           }
@@ -328,7 +330,7 @@ int Game::promptUserAction()
             std::string name;
             std::cout << "Enter name for the collection command: ";
             std::cin >> name;
-            TaxCommand *command = new CollectTaxCommand(&this->gov);//Need to deallocate
+            TaxCommand *command = new CollectTaxCommand(&this->gov); // Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added collection command: " << name << "\n";
           }
@@ -342,7 +344,7 @@ int Game::promptUserAction()
             std::cin >> rate;
             std::cout << "Enter category for the rate: ";
             std::cin >> category;
-            TaxCommand *command = new SetTaxRateCommand(&this->gov, rate, category);//Need to deallocate
+            TaxCommand *command = new SetTaxRateCommand(&this->gov, rate, category); // Need to deallocate
             this->taxManager.addCommand(name, command);
             std::cout << "Added rate command: " << name << "\n";
           }
@@ -399,50 +401,54 @@ void Game::start()
     if (!skip)
     {
       skip = promptUserAction() == 1;
+      if (!running)
+      {
+        break;
+      }
     }
 
     // Update transport every turn (5 minutes)
     if (counter % TRANSPORT_UPDATE_INTERVAL == 0)
     {
-      updateTransport();
+      // updateTransport();
     }
 
     // Update citizens every 10 minutes (2 turns)
     if (counter % CITIZEN_UPDATE_INTERVAL == 0)
     {
-      citizensDoSomething();
+      // citizensDoSomething();
     }
 
     // Specific time-based events
     if (time_of_day == CITIZEN_GROWTH_TIME)
     {
       std::cout << "======= City Growth =======" << std::endl;
-      updateCityGrowth();
+      // updateCityGrowth();
       skip = false;
     }
     if (time_of_day == JOB_UPDATE_TIME)
     {
       std::cout << "======= Jobs Updating =======" << std::endl;
-      updateJobs();
+      // updateJobs();
       skip = false;
     }
     if (time_of_day == WORK_START_TIME)
     {
       std::cout << "======= Citizens Going to Work =======" << std::endl;
-      citizensGoToWork();
+      // citizensGoToWork();
       skip = false;
     }
     if (time_of_day == WORK_END_TIME)
     {
       std::cout << "======= Citizens Going Home =======" << std::endl;
-      citizensGoHome();
-      updateResources();
+      // citizensGoHome();
+      // updateResources();
       skip = false;
     }
     if (time_of_day == TAX_COLLECTION_TIME)
     {
       std::cout << "======= Tax Collected =======" << std::endl;
-      updateCityTax();
+      // updateCityTax();
       skip = false;
     }
 
@@ -470,8 +476,8 @@ void Game::initBuildingOptions()
 
 void Game::initRoadGrid()
 {
-  RoadComponent *horizRoads[20][19];//Need to deallocate
-  RoadComponent *vertRoads[19][20];//Need to deallocate
+  RoadComponent *horizRoads[20][19]; // Need to deallocate
+  RoadComponent *vertRoads[19][20];  // Need to deallocate
 
   // Create horizontal roads
   for (int y = 0; y < 20; y++)
@@ -482,7 +488,6 @@ void Game::initRoadGrid()
           x * 100, y * 100,
           (x + 1) * 100, y * 100,
           "residential");
-      mediator->registerRoad(horizRoads[y][x]);
     }
   }
 
@@ -495,7 +500,6 @@ void Game::initRoadGrid()
           x * 100, y * 100,
           x * 100, (y + 1) * 100,
           "residential");
-      mediator->registerRoad(vertRoads[y][x]);
     }
   }
 
