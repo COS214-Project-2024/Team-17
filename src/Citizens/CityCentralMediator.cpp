@@ -132,6 +132,24 @@ RoadComponent *CityCentralMediator::getClosestRoad(int x, int y)
 	return closest;
 }
 
+int CityCentralMediator::getBusCount()
+{
+	return busQueue.size();
+}
+
+void CityCentralMediator::removeBus()
+{
+	if (busQueue.size() > 0)
+	{
+		busQueue.erase(busQueue.begin());
+		std::cout << GREEN << "Removed inactive bus!" << RESET << std::endl;
+	}
+	else
+	{
+		std::cout << GREEN << "No inactive buses to remove" << RESET << std::endl;
+	}
+}
+
 CityCentralMediator *CityCentralMediator::getInstance()
 {
 	if (instance == nullptr)
