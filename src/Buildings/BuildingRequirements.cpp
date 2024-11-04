@@ -1,5 +1,13 @@
 #include "BuildingRequirements.h"
 
+/**
+ * @class BuildingRequirements
+ * @brief A utility class for checking if building requirements are met based on type and resource availability.
+ *
+ * This class contains methods to check the resource requirements for constructing various types of buildings, 
+ * including residential, commercial, industrial, landmark, service, and utility buildings.
+ */
+
 bool BuildingRequirements::checkResidentialRequirements(string type){
     if(type == "Flat"){
         if(Resources::getMoney() >= flatBuildCost && Resources::getWood() >= flatWoodCost && Resources::getConcrete() >= flatConcreteCost && Resources::getSteel() >= flatSteelCost){
