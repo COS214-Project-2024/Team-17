@@ -63,6 +63,10 @@ private:
 public:
 	RoadComponent *getClosestRoad(int x, int y);
 
+	int getBusCount();
+
+	void removeBus();
+
 	static CityCentralMediator *getInstance();
 	static const int BUILDING_ROAD_DISTANCE = 30;
 

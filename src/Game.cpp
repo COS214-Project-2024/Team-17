@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include "./Transport/TransportInclude.h"
+#include "./Citizens/CitizensIncludes.h"
 
 static constexpr int GAME_SPEED = 20;               // millisecond timeout
 static constexpr int TURN_INTERVAL = 5;             // 5 minutes per turn
@@ -21,14 +22,16 @@ int time_of_day = 0;
 Game::Game()
 {
   Resources::removePopulation(Resources::getPopulation());
+  Resources::addMoney(10000);
+  Resources::addWood(100);
+  Resources::addConcrete(100);
+  Resources::addSteel(100);
   this->mediator = CityCentralMediator::getInstance();
   delete mediator;
   this->mediator = CityCentralMediator::getInstance();
   CityStructure *city = new CityStructure("Pretoria");//Need to deallocate
   city->addBlock(new CityBlock());
   this->gov.addCity(*city);
-  mediator->registerBuilding(new ResFlat());
-  mediator->registerBuilding(new ResHouse());
   initBuildingOptions();
   initRoadGrid();
 }
@@ -77,6 +80,31 @@ void Game::citizensGoToWork()
   }
 }
 
+void Game::outputResources()
+{
+  cout << BOLD << BLUE << "Resources updated:" << RESET << endl;
+  cout << YELLOW << "Wood: " << RESET << Resources::getWood() << "(" << Resources::getWoodPerTick() << ")" << endl;
+  cout << YELLOW << "Steel: " << RESET << Resources::getSteel() << "(" << Resources::getSteelPerTick() << ")" << endl;
+  cout << YELLOW << "Concrete: " << RESET << Resources::getConcrete() << "(" << Resources::getConcretePerTick() << ")" << endl;
+  cout << YELLOW << "Money: " << RESET << Resources::getMoney() << "(" << Resources::getIncome() << ")" << endl
+       << endl;
+  cout << YELLOW << "Overall Happiness: " << RESET << Resources::getHappiness() << endl;
+  cout << YELLOW << "Electricity generated: " << RESET << Resources::getElectricityGenerated() << endl;
+  cout << YELLOW << "Electricity consumed: " << RESET << Resources::getElectricityUsage() << endl;
+  cout << YELLOW << "Water generated: " << RESET << Resources::getWaterGenerated() << endl;
+  cout << YELLOW << "Water consumed: " << RESET << Resources::getWaterUsage() << endl;
+}
+
+void Game::updateResources()
+{
+  Resources::addConcrete(Resources::getConcretePerTick());
+  Resources::addSteel(Resources::getSteelPerTick());
+  Resources::addWood(Resources::getWoodPerTick());
+  Resources::addMoney(Resources::getIncome());
+
+  outputResources();
+}
+
 void Game::citizensGoHome()
 {
   cout << GREEN << "Notified " << Resources::getPopulation() << " citzens that it's time to go home!" << RESET << endl
@@ -92,6 +120,49 @@ void Game::updateCityGrowth()
   if (mediator)
   {
     mediator->handlePopulationGrowth();
+  }
+}
+
+void Game::handleTransport()
+{
+  // ask the user if they want to create or remove a bus
+  while (true)
+  {
+    std::string input;
+    std::cout << "What do you want to do in Transport? (Create, Remove, List, Back): ";
+    std::cin >> input;
+    input = toLowerCase(input);
+    if (input == "create")
+    {
+      RoadComponent *comp = mediator->getClosestRoad(0, 0);
+      // prompt user for bus capacity and validate input using isValidNumber()
+      int capacity;
+      std::cout << "Enter the bus capacity: ";
+      std::cin >> input;
+      if (!isValidNumber(input, capacity) || capacity < 0)
+      {
+        std::cout << RED << "Invalid capacity value." << RED << std::endl;
+        continue;
+      }
+
+      Bus *bus = new Bus(comp, capacity);
+    }
+    else if (input == "list")
+    {
+      std::cout << "There are " << RED << mediator->getBusCount() << RESET << " inactive buses in the city." << std::endl;
+    }
+    else if (input == "remove")
+    {
+      mediator->removeBus();
+    }
+    else if (input == "back")
+    {
+      return;
+    }
+    else
+    {
+      std::cout << "Invalid action. Please try again.\n";
+    }
   }
 }
 
@@ -122,7 +193,7 @@ int Game::promptUserAction()
   {
     if (!paused)
     {
-      std::cout << "What action do you want to do? (Build, Laws, Taxes, Pause, Skip, Quit): ";
+      std::cout << "What action do you want to do? (Build, Laws, Taxes, Transport, Resources, Pause, Skip, Quit): ";
       std::cin >> input;
       input = toLowerCase(input);
     }
@@ -292,6 +363,14 @@ int Game::promptUserAction()
     {
       createBuilding();
     }
+    else if (input == "transport")
+    {
+      handleTransport();
+    }
+    else if (input == "resources")
+    {
+      outputResources();
+    }
     else
     {
       std::cout << "Invalid main action. Please try again.\n";
@@ -355,6 +434,7 @@ void Game::start()
     {
       std::cout << "======= Citizens Going Home =======" << std::endl;
       citizensGoHome();
+      updateResources();
       skip = false;
     }
     if (time_of_day == TAX_COLLECTION_TIME)
@@ -524,25 +604,47 @@ void Game::createBuilding()
       return;
     }
     FactoryBuilding *factory = new FactResidential();
-    Residential *res = factory->createResBuilding(buildingType);
-    res->setCapacity(capacity);
-    building = res;
+    if (BuildingRequirements::checkResidentialRequirements(buildingType))
+    {
+      Residential *res = factory->createResBuilding(buildingType);
+
+      res->setCapacity(capacity);
+      building = res;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Commercial")
   {
     FactoryBuilding *factory = new FactCommercial();
-    Commercial *com = factory->createComBuilding(buildingType);
-    com->setJobCapacity(100); // Default value
-    building = com;
+    if (BuildingRequirements::checkCommercialRequirements(buildingType))
+    {
+      Commercial *com = factory->createComBuilding(buildingType);
+      com->setJobCapacity(100); // Default value
+      building = com;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Industrial")
   {
     FactoryBuilding *factory = new FactIndustrial();
-    Industrial *ind = factory->createIndBuilding(buildingType);
-    ind->setProductionCapacity(100); // Default value
-    building = ind;
+    if (BuildingRequirements::checkIndustrialRequirements(buildingType))
+    {
+      Industrial *ind = factory->createIndBuilding(buildingType);
+      ind->setProductionCapacity(100); // Default value
+      building = ind;
+    }
+    else
+    {
+      cout << RED << "Not enough resources!" << RESET << endl;
+    }
     delete factory;
   }
   else if (selectedOption.type == "Landmarks")
@@ -555,8 +657,11 @@ void Game::createBuilding()
   else if (selectedOption.type == "Services")
   {
     FactoryBuilding *factory = new FactService();
-    Services *serv = factory->createServiceBuilding(buildingType);
-    building = serv;
+    if (BuildingRequirements::checkServiceRequirements(buildingType))
+    {
+      Services *serv = factory->createServiceBuilding(buildingType);
+      building = serv;
+    }
     delete factory;
   }
 
