@@ -1,5 +1,12 @@
 #include "ComOffice.h"
 
+/**
+ * @class ComOffice
+ * @brief Represents a commercial office building with specific resource requirements, utility usage, and job management.
+ *
+ * This class handles resource management upon construction and destruction, maintains a list of employees, 
+ * and interacts with utility services when its operational state changes.
+ */
 ComOffice::ComOffice()
 {
     cout << BLACK << "\t-->Office created" << RESET << endl;
