@@ -1,26 +1,24 @@
 #include "Bus.h"
-
 #include "CityCentralMediator.h"
 #include "../Transport/TransportInclude.h"
 #include <iostream>
 #include "../Policy.h"
 
-
 static int busCount = 0;
 
-void Bus::recalculateRoute(RoadComponent *destination)
+void Bus::recalculateRoute(std::shared_ptr<RoadComponent> destination)
 {
     CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(this->mediator);
 
     if (destination == nullptr)
     {
         // Recalculate all routes
-        for (auto it = passengers.begin(); it != passengers.end(); it++)
+        for (auto& it : passengers)
         {
             // get last road component
-            RoadComponent *last = route.back();
+            auto last = route.back();
             // calculate route from last to destination
-            std::vector<RoadComponent *> newRoute = ccm->calculateRoute(last, it->second);
+            std::vector<std::shared_ptr<RoadComponent>> newRoute = ccm->calculateRoute(last, it.second);
             route.insert(route.end(), newRoute.begin(), newRoute.end());
         }
     }
@@ -30,54 +28,55 @@ void Bus::recalculateRoute(RoadComponent *destination)
         // Add single destination to route
         // Check if destination is on the way
         bool found = false;
-        for (auto it = passengers.begin(); it != passengers.end(); it++)
+        for (const auto& it : passengers)
         {
-            if (it->second == destination)
+            if (it.second == destination)
             {
                 found = true;
+                break;
             }
         }
 
         if (!found)
         {
             std::cout << "Destination not on the way" << std::endl;
-            if (route.size() > 0)
+            if (!route.empty())
             {
                 std::cout << "Adding to the back of the route" << std::endl;
                 // get last road component
-                RoadComponent *last = route.back();
+                auto last = route.back();
                 // calculate route from last to destination
-                std::vector<RoadComponent *> newRoute = ccm->calculateRoute(last, destination);
+                std::vector<std::shared_ptr<RoadComponent>> newRoute = ccm->calculateRoute(last, destination);
                 route.insert(route.end(), newRoute.begin(), newRoute.end());
             }
             else
             {
                 std::cout << "No queued route" << std::endl;
-                std::vector<RoadComponent *> newRoute = ccm->calculateRoute(currentLocation, destination);
+                std::vector<std::shared_ptr<RoadComponent>> newRoute = ccm->calculateRoute(currentLocation, destination);
                 route.insert(route.end(), newRoute.begin(), newRoute.end());
             }
         }
     }
 
     std::cout << "Route" << std::endl;
-    for (auto r : route)
+    for (const auto& r : route)
     {
         r->displayInfo();
     }
 }
 
-Bus::Bus(RoadComponent *start, int capacity) : Citizen(false)
+Bus::Bus(std::shared_ptr<RoadComponent> start, int capacity) : Citizen(false)
 {
     name = "Bus";
     currentLocation = start;
-    RoadsComposite *road = dynamic_cast<RoadsComposite *>(start);
+    RoadsComposite *road = dynamic_cast<RoadsComposite *>(start.get());
     if (road != nullptr)
     {
         currentLocation = road->getConnections()[0];
     }
-    if(!Policy::getBusLaw())
+    if (!Policy::getBusLaw())
     {
-      currentLocation->addUser(this);
+        currentLocation->addUser(this);
     }
     this->capacity = capacity;
     busCount++;
@@ -92,24 +91,24 @@ bool Bus::isFull()
     return passengers.size() == capacity;
 }
 
-void Bus::addPassenger(std::unique_ptr<Citizen> passenger, RoadComponent* destination)
+void Bus::addPassenger(std::unique_ptr<Citizen> passenger, std::shared_ptr<RoadComponent> destination)
 {
     recalculateRoute(destination);
     if (passengers.size() < capacity)
     {
-        passengers.push_back(std::make_pair(std::move(passenger), destination)); // Use std::move to transfer ownership
+        passengers.emplace_back(std::move(passenger), destination); // Use emplace_back with move semantics
     }
 }
 
-void Bus::removePassenger(Citizen *passenger)//CHANGED!
+void Bus::removePassenger(Citizen *passenger)
 {
-    auto it = std::find_if(passengers.begin(), passengers.end(),
-        [passenger](const auto& pair) { return pair.first.get() == passenger; });
-
-    if (it != passengers.end()) {
-        passengers.erase(it);
-    } else {
-        std::cout << "Passenger not found!" << std::endl; // Optional logging
+    for (auto it = passengers.begin(); it != passengers.end(); it++)
+    {
+        if (it->first.get() == passenger) // Compare with raw pointer
+        {
+            passengers.erase(it);
+            break;
+        }
     }
 }
 
@@ -129,20 +128,20 @@ void Bus::doSomething()
             break;
         }
     }
-    //
-    if (passengers.size() == 0 && route.size() == 0)
+
+    if (passengers.empty() && route.empty())
     {
         std::cout << "Bus is idle" << std::endl;
         CityCentralMediator *ccm = dynamic_cast<CityCentralMediator *>(this->mediator);
         ccm->notifyBusReady(this);
     }
 
-    if (route.size() > 0)
+    if (!route.empty())
     {
         std::cout << "Bus is moving" << std::endl;
         std::cout << "Current location: ";
         currentLocation->displayInfo();
-        // TODO: move buses along route
+        // Move buses along route
         if (!route[0]->isFull())
         {
             route[0]->addUser(this);
@@ -159,9 +158,10 @@ void Bus::doSomething()
 
 void Bus::notifyChange(std::string message)
 {
+    // Handle notifications
 }
 
-RoadComponent *Bus::getCurrentLocation()
+std::shared_ptr<RoadComponent> Bus::getCurrentLocation()const
 {
     return currentLocation;
 }
