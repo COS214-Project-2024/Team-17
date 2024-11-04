@@ -1,5 +1,6 @@
 #include "Government.h"
 #include "CitizenTaxAB.h"
+#include "../resources.h"
 #include <iostream>
 /**
  * @brief Processes taxes for a specified city.
@@ -17,8 +18,13 @@ void Government::processTaxes(CityStructure &city)
     double taxforCategory = income * rate;
     totalTax += taxforCategory;
   }
+  if(taxRates.size() < 1)
+  {
+    totalTax = city.getIncome();
+  }
 
   cityTaxes[city.getName()] += totalTax;
+  Resources::addMoney(totalTax);
 }
 /**
  * @brief Applies the budget policy to a city or allocates default budgets.
@@ -90,4 +96,13 @@ void Government::addCity(CityStructure &city)
 void Government::allocateTaxes(std::string department, double amount)
 {
   this->taxRates[department] = amount;
+}
+
+Government::~Government()
+{
+  if(budgetPolicy)
+  {
+    delete budgetPolicy;
+    budgetPolicy = nullptr;
+  }
 }
